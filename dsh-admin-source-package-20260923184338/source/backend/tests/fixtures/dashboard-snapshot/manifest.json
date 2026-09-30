@@ -1,0 +1,100 @@
+{
+  "purpose": "Offline regression fixtures only; not a new capture or online business acceptance.",
+  "captureDataPolicy": "Retain only aggregate scalar metric branches and date context used by this test. Omit priority cards, personal/record identifiers, service lists, and staff details. Values retained are unmodified original capture values.",
+  "sources": [
+    {
+      "originalPath": "test/runtime/group14-data-repair-20260928/round2-d01/browser/D-01__en/turn-1.json",
+      "originalSha256": "7d33038615653689296b16b02f6a4d4cf3489c568a8ea13486cb12300922b424",
+      "responses": [
+        {
+          "path": "/api/license/dashboard/performance",
+          "observedAt": "2026-09-28T08:29:34.494Z",
+          "originalDataSha256": "7835739888965a22d854e33c60a03be27a8d9bbc53ec9ef73fda8bf4eb5d1f27",
+          "retainedBranches": [
+            "summary",
+            "startDate",
+            "endDate"
+          ]
+        },
+        {
+          "path": "/api/license/dashboard/license-distribution",
+          "observedAt": "2026-09-28T08:29:34.915Z",
+          "originalDataSha256": "5fd7371cd2e2c431c7a1ad39fdf24cabddc0569e5548c37ee3d07f661544a2b8",
+          "retainedBranches": [
+            "totalCount",
+            "statusDistribution",
+            "startDate",
+            "endDate"
+          ]
+        },
+        {
+          "path": "/api/license/dashboard/overview",
+          "observedAt": "2026-09-28T08:29:35.966Z",
+          "originalDataSha256": "a86ac3d838cb844f371f320b83db734a9020416b012a000a8724a74865731aba",
+          "retainedBranches": [
+            "taskTabCounts",
+            "serviceApplicationCard",
+            "profileVerificationCard"
+          ]
+        }
+      ],
+      "fixture": "baseline-en.json",
+      "fixtureSha256": "99cec9b52c595728d95a4fdc0c3ec69375011f21cc409a2d7fb02cb4737a34c1"
+    },
+    {
+      "originalPath": "test/runtime/group14-data-repair-20260928/round2-d01/browser/D-01__ar/turn-1.json",
+      "originalSha256": "0f505d94d20307b77a7bd11682464fa37c51b2aeb82f5662102d8572327d3d16",
+      "responses": [
+        {
+          "path": "/api/license/dashboard/performance",
+          "observedAt": "2026-09-28T08:32:00.262Z",
+          "originalDataSha256": "7835739888965a22d854e33c60a03be27a8d9bbc53ec9ef73fda8bf4eb5d1f27",
+          "retainedBranches": [
+            "summary",
+            "startDate",
+            "endDate"
+          ]
+        },
+        {
+          "path": "/api/license/dashboard/license-distribution",
+          "observedAt": "2026-09-28T08:32:00.531Z",
+          "originalDataSha256": "5fd7371cd2e2c431c7a1ad39fdf24cabddc0569e5548c37ee3d07f661544a2b8",
+          "retainedBranches": [
+            "totalCount",
+            "statusDistribution",
+            "startDate",
+            "endDate"
+          ]
+        },
+        {
+          "path": "/api/license/dashboard/overview",
+          "observedAt": "2026-09-28T08:32:01.362Z",
+          "originalDataSha256": "07be732a9ee243820eb3198a2d1cc2feedb98bfe836afc74bcec0a466d153dac",
+          "retainedBranches": [
+            "taskTabCounts",
+            "serviceApplicationCard",
+            "profileVerificationCard"
+          ]
+        }
+      ],
+      "fixture": "baseline-ar.json",
+      "fixtureSha256": "fdcd2c9919c4e9047a752f0c8c523441e13e94d6c5f70c21776578c29c8f6bf5"
+    }
+  ],
+  "knowledge": [
+    {
+      "originalPath": "test/runtime/group14-data-repair-20260928/snapshot-knowledge-drafts/Admin Dashboard-多面板指标与历史比较.json",
+      "originalSha256": "ddfb732fb1709af4a7610a92f1eb72aa1bb6e39002a246497b42d2f67640b42b",
+      "fixture": "knowledge/Admin Dashboard-多面板指标与历史比较.json",
+      "fixtureSha256": "ddfb732fb1709af4a7610a92f1eb72aa1bb6e39002a246497b42d2f67640b42b",
+      "publicationState": "candidate, not activated by fixture creation"
+    },
+    {
+      "originalPath": "test/runtime/group14-data-repair-20260928/snapshot-knowledge-drafts/Admin Dashboard-许可绩效指标字段与范围.json",
+      "originalSha256": "546c7b099e22b49a4ec76b6c66f45e41b39ef160d756c0cfb01a76ba66cb8a00",
+      "fixture": "knowledge/Admin Dashboard-许可绩效指标字段与范围.json",
+      "fixtureSha256": "546c7b099e22b49a4ec76b6c66f45e41b39ef160d756c0cfb01a76ba66cb8a00",
+      "publicationState": "candidate, not activated by fixture creation"
+    }
+  ]
+}

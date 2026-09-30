@@ -1,0 +1,73 @@
+@import "@/styles/variables.less";
+
+.change-password-common-modal {
+  .ant-modal-content {
+    border-radius: 20px;
+    padding: 0;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      border-radius: 10px;
+    }
+  }
+
+  .ant-modal-header {
+    padding: 32px 40px;
+    border-bottom: 1px solid #e1e3e5;
+
+    .ant-modal-title {
+      font-size: 26px;
+      font-weight: 700;
+      color: @text-color;
+      line-height: 1.2;
+    }
+  }
+
+  .ant-modal-body {
+    padding: 0;
+  }
+
+  .ant-modal-footer {
+    padding: 24px 40px;
+    border-top: 1px solid #e1e3e5;;
+  }
+
+  .change-password-common-content {
+    min-height: 60px;
+  }
+
+  .change-password-common-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+
+    .cancel-btn,
+    .confirm-btn {
+      height: 48px;
+      padding: 0 32px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 14px;
+      }
+    }
+
+    .cancel-btn {
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+
+    .confirm-btn {
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 8px;
+    }
+  }
+}
+

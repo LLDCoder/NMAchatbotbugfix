@@ -1,0 +1,43 @@
+.workflow-action-summary {
+  margin: 24px 40px 0;
+  padding: 16px;
+  border: 1px solid #e1e3e5;
+  border-radius: 8px;
+  background: #f8f7f4;
+
+  .workflow-action-summary-title {
+    margin-bottom: 8px;
+    color: #361e12;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 18px;
+  }
+
+  li {
+    color: #5f646d;
+    font-family: Inter;
+    font-size: 14px;
+    line-height: 22px;
+
+    & + li {
+      margin-top: 4px;
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+    }
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    padding: 12px;
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "schemaVersion": "1.0",
+  "bundleId": "admin.tickets.detail.transfer-history.package",
+  "createdAt": "2026-09-28T07:37:57.865330+00:00",
+  "packageStatus": "active",
+  "searchMetadata": {
+    "titleEnglish": "Tickets Details verified transfer history",
+    "titleArabic": "تفاصيل التذاكر: سجل التحويل المتحقق منه",
+    "descriptionEnglish": "Current ticket status and independently verified departmental transfer history remain separate facts. Timeline contains only status, department and recorded event time."
+  },
+  "records": [
+    {
+      "id": "admin.tickets.detail.transfer-history",
+      "kind": "field_semantics",
+      "revision": 1,
+      "status": "active",
+      "title": "Tickets Details verified transfer history",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local",
+          "debug"
+        ],
+        "pageRefs": [
+          "/happiness/tickets/tickets-details"
+        ],
+        "runtimeVerification": "response_shape_verified",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/TicketsDetails/components/TicketTimeline/index.tsx",
+          "revision": "sha256:ae21f708f6cf104f41d3769711e787677f31cc3a4b65a74a2bfe1adcf2f40176",
+          "locator": "Ticket Timeline GET uses verified enquiry id; service GetEnquiryTrackingsAsync queries tracking events by enquiryId; each event retains its department/status/time",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/EnquiryApp/EnquiryAppService.cs",
+          "revision": "sha256:693bbed263aff3b567409dc654fe221d835351077272abc6df9ef2fc35cd31a2",
+          "locator": "Ticket Timeline GET uses verified enquiry id; service GetEnquiryTrackingsAsync queries tracking events by enquiryId; each event retains its department/status/time",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.API/Controllers/EnquiryController.cs",
+          "revision": "sha256:aee90d03eea602911e84f04871018a0c7cdf32c67d964e3f9502f537d2e44521",
+          "locator": "Ticket Timeline GET uses verified enquiry id; service GetEnquiryTrackingsAsync queries tracking events by enquiryId; each event retains its department/status/time",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "runtime_observation",
+          "reference": "test/runtime/group17-cross-repair-20260928/baselines/ticket30-latest.json",
+          "revision": "sha256:98c5b839d950ebe5cba93c8838741106fd01623452c66251de7d70a7d93ff012",
+          "locator": "Exact ticket detail and Timeline normal native reads under one authorized principal, followed by stable detail reread; no business values embedded",
+          "verification": "response_shape_verified"
+        }
+      ],
+      "payload": {
+        "pageRef": "/happiness/tickets/tickets-details",
+        "sourceBinding": {
+          "operationRef": "GET /api/Enquiry/Management/{enquiryId}/Timeline",
+          "sourcePath": "/data"
+        },
+        "relatedReads": [
+          {
+            "relationshipRef": "admin.enquiry.timeline",
+            "operationKey": "GET /api/Enquiry/Management/{enquiryId}/Timeline",
+            "parentOperationKey": "GET /api/Enquiry/Management/{enquiryId}/EnquiryInfo",
+            "parentPath": "/data",
+            "parentField": "id",
+            "parameter": "enquiryId",
+            "collectionPath": "/data",
+            "ownership": "request_parameter_collection",
+            "requiredFor": [
+              "transfer history",
+              "transfer result",
+              "transfer status",
+              "department transfer",
+              "transferred ticket",
+              "routing history",
+              "ticket timeline",
+              "سجل التحويل",
+              "نتيجة التحويل",
+              "حالة التحويل",
+              "تحويل التذكرة"
+            ]
+          }
+        ],
+        "bindings": [
+          {
+            "id": "transfer_history",
+            "kind": "attribute",
+            "concept": "transfer history",
+            "aliases": [
+              "transfer result",
+              "transfer status",
+              "department transfer",
+              "transferred ticket",
+              "routing history",
+              "ticket timeline",
+              "سجل التحويل",
+              "نتيجة التحويل",
+              "حالة التحويل",
+              "تحويل التذكرة"
+            ],
+            "operationRef": "GET /api/Enquiry/Management/{enquiryId}/Timeline",
+            "sourcePath": "/data",
+            "fields": [
+              "changeStatusObj.nameEn",
+              "changeStatusObj.statusName",
+              "departmentName",
+              "changeOnTime"
+            ],
+            "meaning": "Complete projected ticket event metadata from the reviewed parent-owned timeline read. Keep event status, target department and recorded change time together. Department Processing with the returned department identifies that recorded transfer/processing stage, not successful completion of all processing. Reassigned is an assignment event, not a new current business status. Read current enquiryStatusObj separately from the verified EnquiryInfo detail; never treat the first timeline row as the current ticket status. No internal handling note, reason text, actor identity, communication or attachment is needed."
+          }
+        ],
+        "constraints": [
+          "The server reviewed collection ownership contract is mandatory. A knowledge declaration, matching route, model-supplied metadata or old response cannot establish parent ownership.",
+          "Current ticket identity must be verified independently by its exact enquiryNumber and internal id. The gateway uses that actual id in the registered Timeline request and attests a complete field projection under the same principal and capture.",
+          "Current ticket status is the current EnquiryInfo enquiryStatusObj. Timeline events describe historical stages and assignments; preserve both sources and do not promote an old department stage into current completion.",
+          "Timestamps without offsets are displayed as source-local timestamps with timezone unspecified. Do not infer UTC or sort heterogeneous clocks as if their zones were established.",
+          "An empty verified timeline means no events returned by this authorized endpoint for the current ticket, not that no transfer ever occurred in every system.",
+          "Only the returned status labels, department and time are exposed. No target-department internal notes, message contents, attachments, actor contact details or sensitive records are part of this projection.",
+          "Event row counts are not ticket counts. A collection ownership proof does not authorize enterprise scope, change status, transfer a record or close a task.",
+          "The projected event labels are the exact returned statusName/nameEn. A localized answer may explain those statuses in the requested language but must not claim an unobserved localized dictionary label."
+        ]
+      }
+    }
+  ]
+}

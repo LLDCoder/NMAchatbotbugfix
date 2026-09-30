@@ -1,0 +1,123 @@
+.form-error-prompt--boxed {
+  display: flex;
+  align-items: center;
+  background-color: #fef2f2;
+  padding: 16px;
+  column-gap: 8px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+
+  .form-error-prompt__icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .form-error-prompt__body {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .form-error-prompt__message {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #b52520;
+    word-break: break-word;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  .form-error-prompt__message--with-link {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    column-gap: 4px;
+    white-space: nowrap;
+    word-break: normal;
+  }
+
+  .form-error-prompt__message-text {
+    color: #b52520;
+  }
+
+  .form-error-prompt__action-link {
+    flex-shrink: 0;
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #92722a;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  .form-error-prompt__action {
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #92722a;
+    cursor: pointer;
+    width: fit-content;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    padding: 12px;
+  }
+}
+
+.form-error-prompt--inline {
+  margin-top: 12px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #b52520;
+  word-break: break-word;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.form-error-prompt--boxed.form-error-prompt--compact {
+  margin-bottom: 24px;
+}
+
+.form-error-prompt--boxed.form-error-prompt--after-input {
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+.form-error-prompt--boxed.form-error-prompt--after-footer {
+  margin-top: 16px;
+  margin-bottom: 0;
+  width: 100%;
+}

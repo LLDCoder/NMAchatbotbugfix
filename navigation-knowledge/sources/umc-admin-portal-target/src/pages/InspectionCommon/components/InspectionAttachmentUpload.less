@@ -1,0 +1,76 @@
+.inspection-common-attachment-upload {
+  width: 100%;
+}
+
+.inspection-common-attachment-upload__wrapper {
+  width: 100%;
+}
+
+.inspection-common-attachment-upload__wrapper .ant-upload {
+  width: 100%;
+  display: block;
+}
+
+.inspection-common-attachment-upload__trigger {
+  width: 100%;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid #e1e3e5;
+  border-radius: 8px;
+  background: #fff;
+  color: #797e86;
+  cursor: pointer;
+}
+
+.inspection-common-attachment-upload__trigger:hover,
+.inspection-common-attachment-upload__trigger:focus {
+  border-color: #92722a;
+}
+
+.inspection-common-attachment-upload__trigger--disabled {
+  cursor: not-allowed;
+  background: #f8f7f4;
+}
+
+.inspection-common-attachment-upload__trigger--disabled:hover,
+.inspection-common-attachment-upload__trigger--disabled:focus {
+  border-color: #e1e3e5;
+}
+
+.inspection-common-attachment-upload__trigger--disabled
+  .inspection-common-attachment-upload__trigger-icon,
+.inspection-common-attachment-upload__trigger--disabled
+  .inspection-common-attachment-upload__trigger-text {
+  opacity: 0.45;
+}
+
+.inspection-common-attachment-upload__trigger-icon {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+}
+
+.inspection-common-attachment-upload__trigger-text {
+  min-width: 0;
+  overflow: hidden;
+  color: #797e86;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.inspection-common-attachment-upload__attachment-grid {
+  width: 100%;
+  margin-top: 8px;
+}

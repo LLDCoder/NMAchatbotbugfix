@@ -1,0 +1,1127 @@
+{
+  "at": "2026-09-28T22:10:02.767908+00:00",
+  "kind": "real_audit_readonly_diagnostic_not_new_model_or_QA",
+  "auditPath": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/groups1113-20260928/round27-g15-v36/C-08__en/audit-db.json",
+  "auditSHA256": "38d6fdba0298914d8e06cee139ff24035fd6f314004b411e31466f489aa1541d",
+  "conversationId": "conv_f402ebfed7184b4699fb",
+  "priorRequestId": "7ad65205-3f71-4ff4-813c-a1108d90a371",
+  "followRequestId": "78ece10b-22c2-4937-a5a1-613dc41379d4",
+  "priorQuestion": "Show the applications currently in my Licensing To Do queue.",
+  "followQuestion": "Please explain that answer more simply and give me the page navigation.",
+  "priorResult": {
+    "gaps": [],
+    "page": "/licensing/applications",
+    "facts": [
+      "Distinct applications in the To Do queue: []",
+      "Licensing To Do queue rows: []"
+    ],
+    "scope": "personal",
+    "result": "success",
+    "context": {
+      "time": {
+        "value": "current observation",
+        "evidence": []
+      },
+      "grain": {
+        "value": "One row per licensing application entity (id) in the personal To Do queue.",
+        "evidence": [
+          {
+            "sourceId": "k_20ced6e0b4b58b26fc02:p3"
+          }
+        ]
+      },
+      "scope": "personal",
+      "caveats": [
+        {
+          "value": "The To Do queue is the pending-work view (Arabic قيد الإنجاز); it includes pending modification and external approval as well as pending review, and is not a stored application status value.",
+          "evidence": [
+            {
+              "sourceId": "k_20ced6e0b4b58b26fc02:p9"
+            }
+          ]
+        },
+        {
+          "value": "Queue membership is determined by the current workflow task's approval department at runtime; a Manager role does not turn this personal queue into a team queue.",
+          "evidence": [
+            {
+              "sourceId": "k_0e1395e3dabfa9ebb60d:p3"
+            }
+          ]
+        }
+      ],
+      "population": {
+        "value": "Complete pending-work To Do queue returned by the personal MyTodoPage operation with the exact filter context; includes pending modification and external approval as well as pending review.",
+        "evidence": [
+          {
+            "sourceId": "k_20ced6e0b4b58b26fc02:p9"
+          }
+        ]
+      },
+      "filterScope": {
+        "value": "Authenticated user's personal queue, filtered by the endpoint runtime approval department; no user-entered narrowing filter.",
+        "evidence": [
+          {
+            "sourceId": "k_20ced6e0b4b58b26fc02:p7"
+          }
+        ]
+      },
+      "scopeEvidence": [
+        {
+          "sourceId": "k_20ced6e0b4b58b26fc02:p7"
+        },
+        {
+          "sourceId": "k_0e1395e3dabfa9ebb60d:p3"
+        }
+      ]
+    },
+    "missing": [],
+    "outputs": [
+      {
+        "id": "distinct_applications",
+        "role": "detail",
+        "label": "Distinct applications in the To Do queue",
+        "value": [],
+        "evidence": [
+          {
+            "page": "/licensing/applications",
+            "sourceId": "api_33170c9f32467b1ea7d1",
+            "capturedAt": "2026-09-28T21:50:13.692459+00:00",
+            "fieldStatus": {},
+            "completeness": "complete",
+            "fieldBinding": "/data/page/items",
+            "operationRef": "POST /api/Application/MyTodoPage",
+            "observationRef": "22ce4e4348dc3be2708b",
+            "semanticContext": "",
+            "buildFingerprint": "unknown",
+            "principalScopeRef": "dea9eeec1453f665ac17",
+            "populationComplete": true
+          }
+        ],
+        "knowledge": [
+          {
+            "sourceId": "k_20ced6e0b4b58b26fc02:p3"
+          }
+        ],
+        "fieldLabels": {
+          "status": "Status",
+          "applyForEn": "Apply For",
+          "serviceNameEn": "Service Name",
+          "slaDescription": "SLA",
+          "lastUpdatedTime": "Submission Time",
+          "applicationNumber": "Application No.",
+          "serviceTypeNameEn": "Type",
+          "serviceCategoryNameEn": "Service Category"
+        },
+        "unknownCount": 0,
+        "emptyListProof": {
+          "covers": "unspecified_list_shape_only",
+          "sources": [
+            {
+              "total": 0,
+              "sourceId": "api_33170c9f32467b1ea7d1",
+              "contextRef": "8d221aa290fa5756dd03065acb6031ae629989ca18b493347b531ae9f5066a63",
+              "sourcePath": "/data/page/items",
+              "receiptHash": "dc09ac3076d76beab976275702406a99e99d4548b8bbe3aa6d3c4971d183f7a2",
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "stablePasses": 2,
+              "observationRef": "22ce4e4348dc3be2708b"
+            }
+          ]
+        },
+        "requirementIds": [
+          "object",
+          "grain",
+          "scope",
+          "population",
+          "detail",
+          "view"
+        ],
+        "dataCompleteness": "complete",
+        "verifiedAbsences": [],
+        "unavailableFields": [],
+        "verifiedInterpretations": []
+      },
+      {
+        "id": "public_read_todo_rows",
+        "role": "observation",
+        "label": "Licensing To Do queue rows",
+        "value": [],
+        "evidence": [
+          {
+            "page": "/licensing/applications",
+            "sourceId": "api_33170c9f32467b1ea7d1",
+            "capturedAt": "2026-09-28T21:50:13.692459+00:00",
+            "fieldStatus": {},
+            "completeness": "complete",
+            "fieldBinding": "/data/page/items",
+            "operationRef": "POST /api/Application/MyTodoPage",
+            "observationRef": "22ce4e4348dc3be2708b",
+            "semanticContext": "",
+            "buildFingerprint": "unknown",
+            "principalScopeRef": "dea9eeec1453f665ac17",
+            "populationComplete": true
+          }
+        ],
+        "knowledge": [
+          {
+            "sourceId": "k_20ced6e0b4b58b26fc02:p13"
+          },
+          {
+            "sourceId": "k_0a12ad247f9f2c194ef5:p0"
+          }
+        ],
+        "fieldLabels": {
+          "status": "Status",
+          "applyForEn": "Apply For",
+          "serviceNameEn": "Service Name",
+          "slaDescription": "SLA",
+          "lastUpdatedTime": "Submission Time",
+          "applicationNumber": "Application No.",
+          "serviceTypeNameEn": "Type",
+          "serviceCategoryNameEn": "Service Category"
+        },
+        "unknownCount": 0,
+        "emptyListProof": {
+          "covers": "unspecified_list_shape_only",
+          "sources": [
+            {
+              "total": 0,
+              "sourceId": "api_33170c9f32467b1ea7d1",
+              "contextRef": "8d221aa290fa5756dd03065acb6031ae629989ca18b493347b531ae9f5066a63",
+              "sourcePath": "/data/page/items",
+              "receiptHash": "dc09ac3076d76beab976275702406a99e99d4548b8bbe3aa6d3c4971d183f7a2",
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "stablePasses": 2,
+              "observationRef": "22ce4e4348dc3be2708b"
+            }
+          ]
+        },
+        "requirementIds": [
+          "object",
+          "scope",
+          "population",
+          "view"
+        ],
+        "dataCompleteness": "complete",
+        "verifiedAbsences": [],
+        "unavailableFields": [],
+        "verifiedInterpretations": []
+      }
+    ],
+    "section": "Applications",
+    "pipeline": "generic_v3",
+    "requestId": "7ad65205-3f71-4ff4-813c-a1108d90a371",
+    "runtimeId": "rt_625905d364884e8a",
+    "replyDraft": null,
+    "answerShape": "list",
+    "intentState": {
+      "task": {
+        "view": "todo",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "list",
+        "searchQuery": "licensing applications currently in my personal To Do queue pending tasks list",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "application",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "businessFocus",
+            "value": "currently in my Licensing To Do queue",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedScope",
+            "value": "personal",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedGrain",
+            "value": "application",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "outputShape",
+            "value": "list",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "view",
+            "value": "todo",
+            "source": "page",
+            "evidence": "k_0e1395e3dabfa9ebb60d:p1"
+          },
+          {
+            "field": "disclosurePurpose",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "recordIdentity",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "current",
+            "evidence": "parsed current request"
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "currently in my Licensing To Do queue",
+        "clarification": null,
+        "needsLiveData": true,
+        "businessObject": "application",
+        "recordIdentity": "",
+        "requestedGrain": "application",
+        "requestedScope": "personal",
+        "contextRelation": "new",
+        "unresolvedSlots": [],
+        "disclosurePurpose": "",
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [],
+        "evidenceExplanations": []
+      },
+      "status": "ready",
+      "version": 1,
+      "requestId": "7ad65205-3f71-4ff4-813c-a1108d90a371",
+      "slotStates": [
+        {
+          "field": "businessObject",
+          "value": "application",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "businessFocus",
+          "value": "currently in my Licensing To Do queue",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedScope",
+          "value": "personal",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedGrain",
+          "value": "application",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "outputShape",
+          "value": "list",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "view",
+          "value": "todo",
+          "source": "page",
+          "evidence": "k_0e1395e3dabfa9ebb60d:p1"
+        },
+        {
+          "field": "disclosurePurpose",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedMeasures",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedAttributes",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupBy",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeRange",
+          "value": "unknown",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "filters",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "recordIdentity",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeField",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedOrdering",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupCompleteness",
+          "value": "observed",
+          "source": "current",
+          "evidence": "parsed current request"
+        }
+      ],
+      "taskRevision": 1,
+      "referenceTime": {
+        "nowUtc": "2026-09-28T21:48:33.269633+00:00",
+        "source": "server_clock_and_config",
+        "businessNow": "2026-09-29T01:48:33.269633+04:00",
+        "businessDate": "2026-09-29",
+        "businessTimezone": "Asia/Dubai"
+      },
+      "browserContext": {
+        "view": "todo",
+        "query": {},
+        "route": "/licensing/applications",
+        "filters": [
+          {
+            "name": "tableFilters",
+            "value": "{\"contextVersion\":\"table-2:1\",\"filters\":{}}"
+          }
+        ]
+      },
+      "catalogVersion": "923ec44fe50a2342995e281c82aafca24ba1f1db20bf2c2184ec663e33329bf1",
+      "parentRequestId": null,
+      "taskFingerprint": "f257bb0e252ca065c9ece14947690f5fd33273f04dd5de7e496d6535e02f670b",
+      "knowledgeVersion": "db60c1f442ba7f8ec0f7",
+      "originalQuestion": "Show the applications currently in my Licensing To Do queue.",
+      "lastClarification": null,
+      "clarificationRounds": 0,
+      "pendingClarification": null,
+      "principalFingerprint": "dea9eeec1453f665ac17"
+    },
+    "completeness": "complete",
+    "knowledgeGap": null,
+    "queryReceipt": {
+      "captures": [
+        {
+          "page": "/licensing/applications",
+          "source": "verified_gateway_collection_observation",
+          "sourceId": "api_33170c9f32467b1ea7d1",
+          "capturedAt": "2026-09-28T21:50:13.692459+00:00",
+          "sourcePath": "/data/page/items",
+          "operationRef": "POST /api/Application/MyTodoPage",
+          "appliedFilters": [],
+          "observationRef": "22ce4e4348dc3be2708b",
+          "principalScopeRef": "dea9eeec1453f665ac17",
+          "collectionContextRef": "8d221aa290fa5756dd03065acb6031ae629989ca18b493347b531ae9f5066a63",
+          "collectionReceiptHash": "dc09ac3076d76beab976275702406a99e99d4548b8bbe3aa6d3c4971d183f7a2"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "page": "/licensing/applications",
+          "sourceId": "api_33170c9f32467b1ea7d1",
+          "capturedAt": "2026-09-28T21:50:13.692459+00:00",
+          "completeness": "complete",
+          "observationRef": "22ce4e4348dc3be2708b",
+          "principalScopeRef": "dea9eeec1453f665ac17"
+        },
+        {
+          "page": "/licensing/applications",
+          "sourceId": "api_33170c9f32467b1ea7d1",
+          "capturedAt": "2026-09-28T21:50:13.692459+00:00",
+          "completeness": "complete",
+          "observationRef": "22ce4e4348dc3be2708b",
+          "principalScopeRef": "dea9eeec1453f665ac17"
+        }
+      ],
+      "schemaVersion": "observed-query-receipt/1"
+    },
+    "recoveryUsed": true,
+    "requirements": [
+      {
+        "id": "object",
+        "kind": "object",
+        "value": "application"
+      },
+      {
+        "id": "grain",
+        "kind": "grain",
+        "value": "application"
+      },
+      {
+        "id": "scope",
+        "kind": "scope",
+        "value": "personal"
+      },
+      {
+        "id": "population",
+        "kind": "population",
+        "value": "currently in my Licensing To Do queue"
+      },
+      {
+        "id": "detail",
+        "kind": "detail",
+        "value": "list"
+      },
+      {
+        "id": "view",
+        "kind": "view",
+        "value": "todo"
+      }
+    ],
+    "workflowState": "ready",
+    "analysisStatus": "complete",
+    "answerCoverage": [],
+    "executionStatus": [
+      {
+        "code": "identity_permissions_and_bound_context_verified",
+        "stage": "identity_context",
+        "status": "passed"
+      },
+      {
+        "code": "original_clauses_reviewed",
+        "stage": "intent",
+        "status": "passed"
+      },
+      {
+        "code": "requirement_bound_bilingual_terms",
+        "stage": "query_expansion",
+        "status": "passed"
+      },
+      {
+        "code": "retrieval_receipt_verified",
+        "stage": "knowledge_retrieval",
+        "status": "passed"
+      },
+      {
+        "code": "coverage_and_conflicts_checked",
+        "stage": "knowledge_coverage",
+        "status": "passed"
+      },
+      {
+        "code": "authorized_documented_route_selected",
+        "stage": "page_routing",
+        "status": "passed"
+      },
+      {
+        "code": "actual_page_and_observed_sources_checked",
+        "stage": "page_observation",
+        "status": "passed"
+      },
+      {
+        "code": "observed_sources_and_citations_validated",
+        "stage": "source_selection",
+        "status": "passed"
+      },
+      {
+        "code": "source_receipts_and_collection_constraints_checked",
+        "stage": "data_collection",
+        "status": "passed"
+      },
+      {
+        "code": "computation_and_evidence_validated",
+        "stage": "analysis",
+        "status": "passed"
+      },
+      {
+        "code": "all_requested_requirements_verified",
+        "stage": "task_completion",
+        "status": "passed"
+      },
+      {
+        "code": "evidence_projection_and_sensitive_fields_checked",
+        "stage": "output",
+        "status": "passed"
+      }
+    ],
+    "failureCategory": "",
+    "knowledgeAnswer": [],
+    "knowledgeQuotes": [],
+    "qualityBlockers": [],
+    "taskFingerprint": "f257bb0e252ca065c9ece14947690f5fd33273f04dd5de7e496d6535e02f670b",
+    "routeVerification": {
+      "stage": "route_verification",
+      "checks": [
+        {
+          "reason": "",
+          "status": "verified",
+          "sourceIds": [],
+          "requirementId": "page"
+        },
+        {
+          "reason": "",
+          "status": "verified",
+          "sourceIds": [
+            "api_33170c9f32467b1ea7d1",
+            "section_0",
+            "page_metrics"
+          ],
+          "requirementId": "view"
+        }
+      ],
+      "passed": true,
+      "actualRoute": "/licensing/applications",
+      "requestedRoute": "/licensing/applications",
+      "taskFingerprint": "f257bb0e252ca065c9ece14947690f5fd33273f04dd5de7e496d6535e02f670b"
+    },
+    "requirementCoverage": [
+      {
+        "id": "object",
+        "kind": "object",
+        "value": "application",
+        "fields": [
+          "id"
+        ],
+        "reason": "",
+        "status": "satisfied",
+        "stepIds": [
+          "read_todo_rows",
+          "distinct_applications"
+        ],
+        "evidence": [
+          {
+            "quote": "",
+            "sourceId": "k_20ced6e0b4b58b26fc02:p0"
+          }
+        ],
+        "sourceId": "api_33170c9f32467b1ea7d1",
+        "outputIds": [
+          "distinct_applications",
+          "public_read_todo_rows"
+        ],
+        "sourcePath": "/data/page/items",
+        "outputStepIds": {
+          "distinct_applications": [
+            "distinct_applications",
+            "read_todo_rows"
+          ],
+          "public_read_todo_rows": [
+            "read_todo_rows"
+          ]
+        }
+      },
+      {
+        "id": "grain",
+        "kind": "grain",
+        "value": "application",
+        "fields": [
+          "id"
+        ],
+        "reason": "",
+        "status": "satisfied",
+        "stepIds": [
+          "distinct_applications"
+        ],
+        "evidence": [
+          {
+            "quote": "",
+            "sourceId": "k_20ced6e0b4b58b26fc02:p0"
+          }
+        ],
+        "sourceId": "api_33170c9f32467b1ea7d1",
+        "outputIds": [
+          "distinct_applications"
+        ],
+        "sourcePath": "/data/page/items",
+        "outputStepIds": {
+          "distinct_applications": [
+            "distinct_applications"
+          ]
+        }
+      },
+      {
+        "id": "scope",
+        "kind": "scope",
+        "value": "personal",
+        "fields": [
+          "id"
+        ],
+        "reason": "",
+        "status": "satisfied",
+        "stepIds": [
+          "read_todo_rows",
+          "distinct_applications"
+        ],
+        "evidence": [
+          {
+            "quote": "",
+            "sourceId": "k_20ced6e0b4b58b26fc02:p0"
+          }
+        ],
+        "sourceId": "api_33170c9f32467b1ea7d1",
+        "outputIds": [
+          "distinct_applications",
+          "public_read_todo_rows"
+        ],
+        "sourcePath": "/data/page/items",
+        "outputStepIds": {
+          "distinct_applications": [
+            "distinct_applications",
+            "read_todo_rows"
+          ],
+          "public_read_todo_rows": [
+            "read_todo_rows"
+          ]
+        }
+      },
+      {
+        "id": "population",
+        "kind": "population",
+        "value": "currently in my Licensing To Do queue",
+        "fields": [
+          "id"
+        ],
+        "reason": "",
+        "status": "satisfied",
+        "stepIds": [
+          "read_todo_rows",
+          "distinct_applications"
+        ],
+        "evidence": [
+          {
+            "quote": "",
+            "sourceId": "k_20ced6e0b4b58b26fc02:p0"
+          }
+        ],
+        "sourceId": "api_33170c9f32467b1ea7d1",
+        "outputIds": [
+          "distinct_applications",
+          "public_read_todo_rows"
+        ],
+        "sourcePath": "/data/page/items",
+        "outputStepIds": {
+          "distinct_applications": [
+            "distinct_applications",
+            "read_todo_rows"
+          ],
+          "public_read_todo_rows": [
+            "read_todo_rows"
+          ]
+        }
+      },
+      {
+        "id": "detail",
+        "kind": "detail",
+        "value": "list",
+        "reason": "",
+        "status": "satisfied",
+        "stepIds": [
+          "distinct_applications",
+          "public_read_todo_rows"
+        ],
+        "outputIds": [
+          "distinct_applications"
+        ],
+        "outputStepIds": {
+          "distinct_applications": [
+            "distinct_applications"
+          ]
+        }
+      },
+      {
+        "id": "view",
+        "kind": "view",
+        "value": "todo",
+        "reason": "",
+        "status": "satisfied",
+        "stepIds": [
+          "distinct_applications",
+          "public_read_todo_rows"
+        ],
+        "outputIds": [
+          "distinct_applications",
+          "public_read_todo_rows"
+        ],
+        "outputStepIds": {
+          "distinct_applications": [
+            "distinct_applications"
+          ],
+          "public_read_todo_rows": [
+            "public_read_todo_rows"
+          ]
+        }
+      }
+    ],
+    "requirementsSatisfied": true,
+    "knowledgeRequirementCoverage": [
+      {
+        "reason": "The todo read contract defines the application entity on /licensing/applications: id identifies the application represented by a row, and page-scoped aliases (license request / طلبات الترخيص) denote that application entity, not licence entities or workflow tasks. The page definition confirms the page purpose is personal Licensing review applications and tasks.",
+        "status": "covered",
+        "evidence": [
+          {
+            "sourceId": "k_20ced6e0b4b58b26fc02:p2"
+          },
+          {
+            "sourceId": "k_0e1395e3dabfa9ebb60d:p0"
+          }
+        ],
+        "followupQuery": "",
+        "requirementId": "object",
+        "requiredPoints": [
+          "On the Licensing My Application Tasks page, each To Do row represents one licensing application (a submitted service request), identified internally by its application entity key.",
+          "The public row reference shown is the Application No. (applicationNumber), not the internal key.",
+          "Page-scoped terms such as license request / licensing request / طلبات الترخيص refer to this application entity, not to licence certificates or workflow tasks."
+        ],
+        "missingEvidenceType": "none"
+      },
+      {
+        "reason": "Application grain is explicitly id, and the contract states distinct application counts can differ from projected workflow/disposition rows; task grain uses a nonempty taskId and is a different unit. This supports listing at application grain while noting the To Do projection deduplicates by (id, dispositionCaseId).",
+        "status": "covered",
+        "evidence": [
+          {
+            "sourceId": "k_20ced6e0b4b58b26fc02:p3"
+          },
+          {
+            "sourceId": "k_20ced6e0b4b58b26fc02:p5"
+          }
+        ],
+        "followupQuery": "",
+        "requirementId": "grain",
+        "requiredPoints": [
+          "The list is at application grain: one row per application entity (id).",
+          "Projected workflow/task rows (taskId) are a different unit and can outnumber distinct applications.",
+          "The personal To Do projection deduplicates rows by (id, dispositionCaseId), so row count is not automatically distinct application count."
+        ],
+        "missingEvidenceType": "none"
+      },
+      {
+        "reason": "Personal scope is defined: tasks come from the authenticated user's task list, filtered by the endpoint runtime approval department, with no user-entered narrowing filter; the native My Tasks label is مهامي. The page definition adds that the same application may move across approval departments and the current task approval department controls the queue.",
+        "status": "covered",
+        "evidence": [
+          {
+            "sourceId": "k_20ced6e0b4b58b26fc02:p7"
+          },
+          {
+            "sourceId": "k_0e1395e3dabfa9ebb60d:p3"
+          }
+        ],
+        "followupQuery": "",
+        "requirementId": "scope",
+        "requiredPoints": [
+          "\"My\" means the authenticated user's personal queue (native label مهامي), not a team queue.",
+          "Membership is determined by the current workflow task's approval department at runtime, not by the service's owning department.",
+          "A Manager role does not convert this personal queue into a team queue.",
+          "The exact request context and current permission must be verified at runtime; no literal user ID is stored in knowledge."
+        ],
+        "missingEvidenceType": "none"
+      },
+      {
+        "reason": "The pending population is defined as the complete To Do queue from the MyTodoPage operation with the exact filter context; it includes pending modification and external approval as well as pending review, and is not only Pending Review. The To Do operation establishes queue membership; there is no generic row status literal Pending replacing all pending workflow states.",
+        "status": "covered",
+        "evidence": [
+          {
+            "sourceId": "k_20ced6e0b4b58b26fc02:p9"
+          },
+          {
+            "sourceId": "k_20ced6e0b4b58b26fc02:p11"
+          }
+        ],
+        "followupQuery": "",
+        "requirementId": "population",
+        "requiredPoints": [
+          "\"Currently in my Licensing To Do queue\" means the complete pending-work queue returned by the personal To Do operation, not a stored application status value.",
+          "It includes pending modification and external approval as well as pending review; it is not limited to Pending Review.",
+          "The Arabic To Do tab label is قيد الإنجاز; the statistics card reuses the label but is a different count source and not proof of list completeness.",
+          "A blocked or failed response is not an empty population; an empty list requires a successful permitted response."
+        ],
+        "missingEvidenceType": "none"
+      },
+      {
+        "reason": "The To Do view is defined on /licensing/applications: view id todo with label To Do and aliases including pending queue and قيد الإنجاز, backed by the MyTodoPage read. The user manual confirms the To Do tab selects the current user's pending Licensing application workflow tasks on that page.",
+        "status": "covered",
+        "evidence": [
+          {
+            "sourceId": "k_0e1395e3dabfa9ebb60d:p1"
+          },
+          {
+            "sourceId": "k_0a12ad247f9f2c194ef5:p0"
+          }
+        ],
+        "followupQuery": "",
+        "requirementId": "view",
+        "requiredPoints": [
+          "The To Do view is the pending-work tab on /licensing/applications (view id todo, label To Do, Arabic قيد الإنجاز).",
+          "It lists the current user's pending Licensing application workflow tasks, distinct from the Completed tab and from Team Management's To Do.",
+          "Verify the To Do tab is active and the displayed rows belong to that list before interpreting them."
+        ],
+        "missingEvidenceType": "none"
+      }
+    ],
+    "knowledgeRequirementsSatisfied": true
+  },
+  "priorAnswer": "Current page results:\n\nDistinct applications in the To Do queue:\nNo matching rows.\n\nLicensing To Do queue rows (observation):\nNo matching rows.\n\nScope: personal.\nThe To Do queue is the pending-work view (Arabic قيد الإنجاز); it includes pending modification and external approval as well as pending review, and is not a stored application status value.",
+  "followProjection": {
+    "kind": "simplify_navigation",
+    "context": {
+      "time": "current observation",
+      "grain": "One row per licensing application entity (id) in the personal To Do queue.",
+      "scope": "personal",
+      "caveats": [
+        "The To Do queue is the pending-work view (Arabic قيد الإنجاز); it includes pending modification and external approval as well as pending review, and is not a stored application status value.",
+        "Queue membership is determined by the current workflow task's approval department at runtime; a Manager role does not turn this personal queue into a team queue."
+      ],
+      "population": "Complete pending-work To Do queue returned by the personal MyTodoPage operation with the exact filter context; includes pending modification and external approval as well as pending review.",
+      "filterScope": "Authenticated user's personal queue, filtered by the endpoint runtime approval department; no user-entered narrowing filter."
+    },
+    "outputs": [
+      {
+        "id": "distinct_applications",
+        "role": "detail",
+        "label": "Distinct applications in the To Do queue",
+        "value": [],
+        "evidence": [
+          {
+            "page": "/licensing/applications",
+            "sourceId": "api_33170c9f32467b1ea7d1",
+            "capturedAt": "2026-09-28T21:50:13.692459+00:00",
+            "fieldStatus": {},
+            "completeness": "complete",
+            "fieldBinding": "/data/page/items",
+            "operationRef": "POST /api/Application/MyTodoPage",
+            "observationRef": "22ce4e4348dc3be2708b",
+            "semanticContext": "",
+            "buildFingerprint": "unknown",
+            "principalScopeRef": "dea9eeec1453f665ac17",
+            "populationComplete": true
+          }
+        ],
+        "knowledge": [
+          {
+            "sourceId": "k_20ced6e0b4b58b26fc02:p3"
+          }
+        ],
+        "fieldLabels": {
+          "status": "Status",
+          "applyForEn": "Apply For",
+          "serviceNameEn": "Service Name",
+          "slaDescription": "SLA",
+          "lastUpdatedTime": "Submission Time",
+          "applicationNumber": "Application No.",
+          "serviceTypeNameEn": "Type",
+          "serviceCategoryNameEn": "Service Category"
+        },
+        "unknownCount": 0,
+        "emptyListProof": {
+          "covers": "unspecified_list_shape_only",
+          "sources": [
+            {
+              "total": 0,
+              "sourceId": "api_33170c9f32467b1ea7d1",
+              "contextRef": "8d221aa290fa5756dd03065acb6031ae629989ca18b493347b531ae9f5066a63",
+              "sourcePath": "/data/page/items",
+              "receiptHash": "dc09ac3076d76beab976275702406a99e99d4548b8bbe3aa6d3c4971d183f7a2",
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "stablePasses": 2,
+              "observationRef": "22ce4e4348dc3be2708b"
+            }
+          ]
+        },
+        "requirementIds": [
+          "object",
+          "grain",
+          "scope",
+          "population",
+          "detail",
+          "view"
+        ],
+        "dataCompleteness": "complete",
+        "verifiedAbsences": [],
+        "unavailableFields": [],
+        "verifiedInterpretations": []
+      },
+      {
+        "id": "public_read_todo_rows",
+        "role": "observation",
+        "label": "Licensing To Do queue rows",
+        "value": [],
+        "evidence": [
+          {
+            "page": "/licensing/applications",
+            "sourceId": "api_33170c9f32467b1ea7d1",
+            "capturedAt": "2026-09-28T21:50:13.692459+00:00",
+            "fieldStatus": {},
+            "completeness": "complete",
+            "fieldBinding": "/data/page/items",
+            "operationRef": "POST /api/Application/MyTodoPage",
+            "observationRef": "22ce4e4348dc3be2708b",
+            "semanticContext": "",
+            "buildFingerprint": "unknown",
+            "principalScopeRef": "dea9eeec1453f665ac17",
+            "populationComplete": true
+          }
+        ],
+        "knowledge": [
+          {
+            "sourceId": "k_20ced6e0b4b58b26fc02:p13"
+          },
+          {
+            "sourceId": "k_0a12ad247f9f2c194ef5:p0"
+          }
+        ],
+        "fieldLabels": {
+          "status": "Status",
+          "applyForEn": "Apply For",
+          "serviceNameEn": "Service Name",
+          "slaDescription": "SLA",
+          "lastUpdatedTime": "Submission Time",
+          "applicationNumber": "Application No.",
+          "serviceTypeNameEn": "Type",
+          "serviceCategoryNameEn": "Service Category"
+        },
+        "unknownCount": 0,
+        "emptyListProof": {
+          "covers": "unspecified_list_shape_only",
+          "sources": [
+            {
+              "total": 0,
+              "sourceId": "api_33170c9f32467b1ea7d1",
+              "contextRef": "8d221aa290fa5756dd03065acb6031ae629989ca18b493347b531ae9f5066a63",
+              "sourcePath": "/data/page/items",
+              "receiptHash": "dc09ac3076d76beab976275702406a99e99d4548b8bbe3aa6d3c4971d183f7a2",
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "stablePasses": 2,
+              "observationRef": "22ce4e4348dc3be2708b"
+            }
+          ]
+        },
+        "requirementIds": [
+          "object",
+          "scope",
+          "population",
+          "view"
+        ],
+        "dataCompleteness": "complete",
+        "verifiedAbsences": [],
+        "unavailableFields": [],
+        "verifiedInterpretations": []
+      }
+    ],
+    "verified": true,
+    "navigation": [
+      {
+        "label": "Applications",
+        "route": "/licensing/applications"
+      }
+    ],
+    "observedAt": [
+      "2026-09-28T21:50:13.692459+00:00"
+    ],
+    "completeness": "complete",
+    "liveDataRead": false,
+    "catalogVersion": "923ec44fe50a2342995e281c82aafca24ba1f1db20bf2c2184ec663e33329bf1",
+    "observedFilters": [],
+    "sourceRequestId": "7ad65205-3f71-4ff4-813c-a1108d90a371",
+    "rowScopeVerified": false,
+    "principalScopeRef": "dea9eeec1453f665ac17",
+    "currentStatusClaimed": false,
+    "sensitiveFieldAuthorityEstablished": false
+  },
+  "followAnswer": "Earlier result, not a new query. Observed at: 2026-09-28T21:50:13.692459+00:00.\n\nDistinct applications in the To Do queue: no matching rows.\n\nLicensing To Do queue rows: no matching rows.\n\nScope: personal\n\nLimitations: The To Do queue is the pending-work view \\(Arabic قيد الإنجاز\\); it includes pending modification and external approval as well as pending review, and is not a stored application status value.; Queue membership is determined by the current workflow task's approval department at runtime; a Manager role does not turn this personal queue into a team queue.\n\nPage navigation: [Applications](/licensing/applications)\n\nThis earlier information does not establish the current status or access to additional records.",
+  "priorAssembly": {
+    "input": {
+      "factCount": 2,
+      "answerShape": "list",
+      "missingCount": 0,
+      "readerStatus": "success"
+    },
+    "stage": "answer_assembly",
+    "output": {
+      "strategy": "generic_verified_projection",
+      "responseChars": 352,
+      "usedFormattingFallback": false
+    },
+    "status": "passed",
+    "durationMs": 2.2,
+    "failureCode": ""
+  },
+  "followAssembly": {
+    "input": {
+      "factCount": 0,
+      "answerShape": "detail",
+      "missingCount": 0,
+      "readerStatus": "success"
+    },
+    "stage": "answer_assembly",
+    "output": {
+      "strategy": "generic_verified_projection",
+      "responseChars": 729,
+      "usedFormattingFallback": false
+    },
+    "status": "passed",
+    "durationMs": 2.2,
+    "failureCode": ""
+  }
+}

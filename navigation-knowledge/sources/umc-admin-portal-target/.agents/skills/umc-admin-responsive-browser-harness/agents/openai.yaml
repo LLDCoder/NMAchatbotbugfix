@@ -1,0 +1,4 @@
+interface:
+  display_name: "UMC Responsive Browser Harness"
+  short_description: "Audit responsive UMC pages with real browser evidence"
+  default_prompt: "Use $umc-admin-responsive-browser-harness to audit these UMC Admin routes across project breakpoints and deliver reviewed screenshots."

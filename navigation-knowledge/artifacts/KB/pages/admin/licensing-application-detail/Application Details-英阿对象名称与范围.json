@@ -1,0 +1,128 @@
+{
+  "schemaVersion": "1.0",
+  "packageStatus": "active",
+  "bundleId": "admin.licensing.application-detail.bilingual-object-names.package",
+  "createdAt": "2026-09-27T07:41:13.783779+00:00",
+  "searchMetadata": {
+    "titleEnglish": "Application Details licensing request application object names",
+    "titleArabic": "تفاصيل طلب الترخيص: اسم الكيان ونطاقه",
+    "descriptionEnglish": "On the Licensing Application Details page, request and Arabic طلب refer to the application record whose public Application Number is verified, not a ticket, a license certificate or a workflow task.",
+    "descriptionArabic": "في صفحة تفاصيل طلب الترخيص يشير الطلب إلى كيان طلب الخدمة المعروض برقم الطلب، وليس إلى تذكرة أو شهادة ترخيص أو مهمة سير عمل."
+  },
+  "records": [
+    {
+      "id": "admin.licensing.application-detail.bilingual-object-names",
+      "kind": "field_semantics",
+      "revision": 1,
+      "status": "active",
+      "title": "Application Details licensing request object name and bilingual scope",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local",
+          "debug"
+        ],
+        "pageRefs": [
+          "/licensing/applications/applicationsDetails"
+        ],
+        "runtimeVerification": "response_shape_verified",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/ApplicationsDetails/index.tsx",
+          "revision": "sha256:a4fa7dd9b78a3b5d3a23ebce16a55575d920c7261639fa3f1c33714f1ad36755",
+          "locator": "taskId entry and application detail data",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "runtime_observation",
+          "reference": "test/runtime/sequential-repair-batch4-20260927/baselines/licensing-detail-0.json",
+          "revision": "sha256:2a6413f5b5b2da9c30f81c2ca243973c56de881412ac3ecd9c65c9e31d8fd8e0",
+          "locator": "Authorized response shape: data.detail.id/applicationNumber and workflow task; no record values embedded",
+          "verification": "response_shape_verified"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/localization/licensing/en.json",
+          "revision": "sha256:569221c3d1f096bf773b2add711d9846921883e99bf48f3d8aa2793a46a72792",
+          "locator": "applications.details.applicationNumber and Licensing.details.tabs.applicationDetails; shared English/Arabic localization keys",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/localization/licensing/ar.json",
+          "revision": "sha256:39644eab73051f826224af4af6da02cb8fd8baeb3268df85b49440e66980d653",
+          "locator": "applications.details.applicationNumber and Licensing.details.tabs.applicationDetails; shared English/Arabic localization keys",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/licensing/applications/applicationsDetails",
+        "sourceBinding": {
+          "operationRef": "GET /api/Application/MyReviewDetail/{taskId}",
+          "sourcePath": "/data/detail"
+        },
+        "fields": {
+          "id": "Application entity key; not a displayed public reference.",
+          "applicationNumber": "Public Application Number / رقم الطلب; verify live identity before use.",
+          "taskId": "Workflow task key, distinct from the application entity."
+        },
+        "bindings": [
+          {
+            "id": "object",
+            "kind": "object",
+            "concept": "application",
+            "aliases": [
+              "request",
+              "licensing request",
+              "license application",
+              "licensing application",
+              "طلب",
+              "الطلب",
+              "طلب الترخيص",
+              "طلب الخدمة"
+            ],
+            "fields": [
+              "id"
+            ],
+            "operationRef": "GET /api/Application/MyReviewDetail/{taskId}",
+            "sourcePath": "/data/detail",
+            "meaning": "The application entity in the verified Licensing Application Details page and its exact MyReviewDetail operation. Application Number and رقم الطلب label the same public application reference. In this page context request/طلب means that application, not its workflow task or issued license certificate."
+          },
+          {
+            "id": "grain",
+            "kind": "grain",
+            "concept": "application",
+            "aliases": [
+              "request",
+              "licensing request",
+              "license application",
+              "licensing application",
+              "طلب",
+              "الطلب",
+              "طلب الترخيص",
+              "طلب الخدمة"
+            ],
+            "fields": [
+              "id"
+            ],
+            "operationRef": "GET /api/Application/MyReviewDetail/{taskId}",
+            "sourcePath": "/data/detail",
+            "meaning": "The application entity in the verified Licensing Application Details page and its exact MyReviewDetail operation. Application Number and رقم الطلب label the same public application reference. In this page context request/طلب means that application, not its workflow task or issued license certificate."
+          }
+        ],
+        "relationships": [
+          "English Application Number / Application Details and Arabic رقم الطلب / تفاصيل الطلب use the same localization keys for the same application page.",
+          "This is a page- and operation-scoped lexical equivalence; it does not equate every occurrence of request with an application.",
+          "Public applicationNumber and workflow taskId remain distinct: use a verified record lookup and the actual current response."
+        ],
+        "constraints": [
+          "Use only the named page, operation and data path after identity and permission checks. The definition grants no access and supplies no current counts, status, handler or outcome.",
+          "Tickets, enquiries, workflow tasks and issued license certificates remain distinct entities. An ambiguous request outside this page context must not use this alias."
+        ]
+      }
+    }
+  ]
+}

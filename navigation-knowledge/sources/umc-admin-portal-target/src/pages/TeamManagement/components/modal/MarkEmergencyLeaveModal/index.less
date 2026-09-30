@@ -1,0 +1,77 @@
+.team-management-modal--leave {
+  .ant-modal-body {
+    padding-bottom: 60px;
+  }
+
+  .ant-form-item-label > label {
+    color: #361E12;
+    font-size: 14px;
+    font-weight: 500;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+    }
+  }
+
+  .team-management-modal__control.ant-select-single:not(
+      .ant-select-customize-input
+    ) {
+    .ant-select-selector {
+      padding: 0 16px;
+      min-height: 48px;
+      height: 48px;
+    }
+
+    .ant-select-selection-item,
+    .ant-select-selection-placeholder {
+      font-size: 14px;
+      line-height: 22px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .team-management-modal__control.ant-picker {
+    padding: 0 16px;
+  }
+
+  .team-management-modal__control.ant-picker .ant-picker-input > input,
+  .team-management-modal__textarea textarea.ant-input {
+
+    font-size: 14px;
+    line-height: 22px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+    }
+  }
+
+  .team-management-modal__control.ant-select-single
+      .ant-select-selector
+      .ant-select-selection-placeholder,
+  .ant-picker-input > input::placeholder,
+  .ant-picker-input > input::-webkit-input-placeholder,
+  .ant-input-textarea textarea.ant-input::placeholder,
+  .ant-input-textarea textarea.ant-input::-webkit-input-placeholder {
+    color: #797e86;
+    font-size: 14px;
+    line-height: 22px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+    }
+  }
+
+  .team-management-modal__textarea{
+    textarea{
+      padding: 14px 16px;
+      font-size: 14px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+      }
+    }
+  }
+}

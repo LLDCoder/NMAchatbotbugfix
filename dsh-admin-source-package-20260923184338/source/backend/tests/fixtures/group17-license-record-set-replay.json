@@ -1,0 +1,3395 @@
+{
+  "purpose": "Saved original X10 License plans and metadata, no fresh business acceptance. Native earlier Todo rows are separately labelled, not substituted for current source values.",
+  "packages": [
+    {
+      "path": "navigation-knowledge/artifacts/KB/pages/admin/licensing-applications/My Application Tasks-实体标识与字段绑定.json",
+      "sha256": "6db349e8f9772490ee40476bafd6f21a4c555192fbd5bea10fc9847746771f76",
+      "content": {
+        "schemaVersion": "1.0",
+        "bundleId": "admin-application-page-field-bindings",
+        "createdAt": "2026-09-24T06:42:24.934787+00:00",
+        "packageStatus": "active",
+        "records": [
+          {
+            "id": "admin.licensing.applications.bindings.todo",
+            "kind": "field_semantics",
+            "revision": 1,
+            "status": "active",
+            "title": "Application page todo field bindings",
+            "applicability": {
+              "portal": "admin",
+              "environments": [
+                "local",
+                "debug"
+              ],
+              "pageRefs": [
+                "/licensing/applications"
+              ],
+              "runtimeVerification": "pending",
+              "deployedBuildMatch": "unknown"
+            },
+            "sources": [
+              {
+                "kind": "source_code",
+                "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Applications/index.tsx",
+                "revision": "sha256:be9c81e58706b9071a3c0f4ddd1950df113cf6971e6c1f6efbf90dafff1f89e4",
+                "locator": "234; 701-880; 932-1105; 1231-1285; 1528-1660",
+                "verification": "source_inspected"
+              },
+              {
+                "kind": "source_code",
+                "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/application.ts",
+                "revision": "sha256:32978ed7cc15c3bfb93d26f4c2c83a75cc3ad33ef2e2e87709c7feb3a50a3908",
+                "locator": "326-353",
+                "verification": "source_inspected"
+              },
+              {
+                "kind": "source_code",
+                "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ApplicationAppService.cs",
+                "revision": "sha256:22e94773e70c95fab9ce479919b51d0241e046bf085cd0c3f8b5991b9004772e",
+                "locator": "216-319",
+                "verification": "source_inspected"
+              },
+              {
+                "kind": "source_code",
+                "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ReviewTaskProjection.cs",
+                "revision": "sha256:9df0f7b49cd9c099c78d1ccd2e8967216a477fd533f90a312573f287eef1b797",
+                "locator": "11-51; 88-106",
+                "verification": "source_inspected"
+              },
+              {
+                "kind": "source_code",
+                "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/MyReviewFilter.cs",
+                "revision": "sha256:e85bf61625c530802e0a177de8eeba436c26ba8ad98952b7908ddfa915073ebb",
+                "locator": "22-99",
+                "verification": "source_inspected"
+              },
+              {
+                "kind": "source_code",
+                "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Application/ApplicationDto.cs",
+                "revision": "sha256:3efae9b26845ec68130f314cbccfd0861bb76f19a22ab6d083f5ec9435042cdc",
+                "locator": "12-157",
+                "verification": "source_inspected"
+              },
+              {
+                "kind": "source_code",
+                "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Api/Controllers/ApplicationController.cs",
+                "revision": "sha256:c43e5e7e836b3aa6f2f5070d8456f4378ab205112cddc012fde6949e26a44397",
+                "locator": "30-57",
+                "verification": "source_inspected"
+              },
+              {
+                "kind": "page_catalog",
+                "reference": "navigation-knowledge/artifacts/page-catalog.json",
+                "revision": "sha256:f28b1c0d3bde64f2e7a76c415579c9bb968f60099b9b9fec5e5a3dfb70d9e4f2",
+                "locator": "Applications",
+                "verification": "static_extracted"
+              }
+            ],
+            "payload": {
+              "pageRef": "/licensing/applications",
+              "bindings": [
+                {
+                  "id": "application_entity",
+                  "kind": "object",
+                  "concept": "application",
+                  "aliases": [
+                    "applications",
+                    "申请"
+                  ],
+                  "operationRef": "POST /api/Application/MyTodoPage",
+                  "sourcePath": "/data/page/items",
+                  "fields": [
+                    "id"
+                  ],
+                  "meaning": "The id field identifies the application represented by a row. Service types are not implicitly restricted to a department."
+                },
+                {
+                  "id": "application_identity",
+                  "kind": "grain",
+                  "concept": "application",
+                  "aliases": [
+                    "applications",
+                    "申请"
+                  ],
+                  "operationRef": "POST /api/Application/MyTodoPage",
+                  "sourcePath": "/data/page/items",
+                  "fields": [
+                    "id"
+                  ],
+                  "meaning": "Application identity is id. Projection row identity and taskId are different units. Conflicting application field values require a separately verified resolution rule."
+                },
+                {
+                  "id": "personal_queue",
+                  "kind": "scope",
+                  "concept": "personal",
+                  "aliases": [
+                    "my",
+                    "own",
+                    "个人"
+                  ],
+                  "operationRef": "POST /api/Application/MyTodoPage",
+                  "sourcePath": "/data/page/items",
+                  "fields": [
+                    "id"
+                  ],
+                  "meaning": "This personal view uses the authenticated account. A Manager role does not change it to a team queue."
+                },
+                {
+                  "id": "application_status",
+                  "kind": "group",
+                  "concept": "status",
+                  "aliases": [
+                    "application status",
+                    "process status",
+                    "状态"
+                  ],
+                  "operationRef": "POST /api/Application/MyTodoPage",
+                  "sourcePath": "/data/page/items",
+                  "fields": [
+                    "status"
+                  ],
+                  "meaning": "The displayed Status dimension binds status. taskStatus and card categories have different meanings."
+                },
+                {
+                  "id": "service_category",
+                  "kind": "group",
+                  "concept": "service category",
+                  "aliases": [
+                    "服务分类"
+                  ],
+                  "operationRef": "POST /api/Application/MyTodoPage",
+                  "sourcePath": "/data/page/items",
+                  "fields": [
+                    "serviceCategoryNameEn"
+                  ],
+                  "meaning": "The Service Category field is serviceCategoryNameEn."
+                },
+                {
+                  "id": "workflow_task_status",
+                  "kind": "group",
+                  "concept": "task status",
+                  "aliases": [
+                    "workflow task status"
+                  ],
+                  "operationRef": "POST /api/Application/MyTodoPage",
+                  "sourcePath": "/data/page/items",
+                  "fields": [
+                    "taskStatus"
+                  ],
+                  "meaning": "In this view taskStatus describes the workflow task/node."
+                }
+              ],
+              "sourceBinding": {
+                "pageRef": "/licensing/applications",
+                "responseRoot": "/data",
+                "views": [
+                  "todo"
+                ]
+              },
+              "fields": [],
+              "relationships": [],
+              "constraints": [
+                "Target deployment field and entity semantics have not yet been verified.",
+                "Define whether license application means all applications in this page or a service-restricted subset; do not infer this from serviceTypeId=1.",
+                "Define pending/outstanding population terminology from the view and active filters before adding aliases.",
+                "Scope/population contextParameters require verified default values for every data-affecting request parameter; those values are not established in this file."
+              ]
+            }
+          },
+          {
+            "id": "admin.licensing.applications.bindings.completed",
+            "kind": "field_semantics",
+            "revision": 1,
+            "status": "active",
+            "title": "Application page completed field bindings",
+            "applicability": {
+              "portal": "admin",
+              "environments": [
+                "local",
+                "debug"
+              ],
+              "pageRefs": [
+                "/licensing/applications"
+              ],
+              "runtimeVerification": "pending",
+              "deployedBuildMatch": "unknown"
+            },
+            "sources": [
+              {
+                "kind": "source_code",
+                "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Applications/index.tsx",
+                "revision": "sha256:be9c81e58706b9071a3c0f4ddd1950df113cf6971e6c1f6efbf90dafff1f89e4",
+                "locator": "234; 701-880; 932-1105; 1231-1285; 1528-1660",
+                "verification": "source_inspected"
+              },
+              {
+                "kind": "source_code",
+                "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/application.ts",
+                "revision": "sha256:32978ed7cc15c3bfb93d26f4c2c83a75cc3ad33ef2e2e87709c7feb3a50a3908",
+                "locator": "326-353",
+                "verification": "source_inspected"
+              },
+              {
+                "kind": "source_code",
+                "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ApplicationAppService.cs",
+                "revision": "sha256:22e94773e70c95fab9ce479919b51d0241e046bf085cd0c3f8b5991b9004772e",
+                "locator": "216-319",
+                "verification": "source_inspected"
+              },
+              {
+                "kind": "source_code",
+                "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ReviewTaskProjection.cs",
+                "revision": "sha256:9df0f7b49cd9c099c78d1ccd2e8967216a477fd533f90a312573f287eef1b797",
+                "locator": "11-51; 88-106",
+                "verification": "source_inspected"
+              },
+              {
+                "kind": "source_code",
+                "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/MyReviewFilter.cs",
+                "revision": "sha256:e85bf61625c530802e0a177de8eeba436c26ba8ad98952b7908ddfa915073ebb",
+                "locator": "22-99",
+                "verification": "source_inspected"
+              },
+              {
+                "kind": "source_code",
+                "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Application/ApplicationDto.cs",
+                "revision": "sha256:3efae9b26845ec68130f314cbccfd0861bb76f19a22ab6d083f5ec9435042cdc",
+                "locator": "12-157",
+                "verification": "source_inspected"
+              },
+              {
+                "kind": "source_code",
+                "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Api/Controllers/ApplicationController.cs",
+                "revision": "sha256:c43e5e7e836b3aa6f2f5070d8456f4378ab205112cddc012fde6949e26a44397",
+                "locator": "30-57",
+                "verification": "source_inspected"
+              },
+              {
+                "kind": "page_catalog",
+                "reference": "navigation-knowledge/artifacts/page-catalog.json",
+                "revision": "sha256:f28b1c0d3bde64f2e7a76c415579c9bb968f60099b9b9fec5e5a3dfb70d9e4f2",
+                "locator": "Applications",
+                "verification": "static_extracted"
+              }
+            ],
+            "payload": {
+              "pageRef": "/licensing/applications",
+              "bindings": [
+                {
+                  "id": "application_entity",
+                  "kind": "object",
+                  "concept": "application",
+                  "aliases": [
+                    "applications",
+                    "申请"
+                  ],
+                  "operationRef": "POST /api/Application/MyComplatedPage",
+                  "sourcePath": "/data/page/items",
+                  "fields": [
+                    "id"
+                  ],
+                  "meaning": "The id field identifies the application represented by a row. Service types are not implicitly restricted to a department."
+                },
+                {
+                  "id": "application_identity",
+                  "kind": "grain",
+                  "concept": "application",
+                  "aliases": [
+                    "applications",
+                    "申请"
+                  ],
+                  "operationRef": "POST /api/Application/MyComplatedPage",
+                  "sourcePath": "/data/page/items",
+                  "fields": [
+                    "id"
+                  ],
+                  "meaning": "Application identity is id. Projection row identity and taskId are different units. Conflicting application field values require a separately verified resolution rule."
+                },
+                {
+                  "id": "personal_queue",
+                  "kind": "scope",
+                  "concept": "personal",
+                  "aliases": [
+                    "my",
+                    "own",
+                    "个人"
+                  ],
+                  "operationRef": "POST /api/Application/MyComplatedPage",
+                  "sourcePath": "/data/page/items",
+                  "fields": [
+                    "id"
+                  ],
+                  "meaning": "This personal view uses the authenticated account. A Manager role does not change it to a team queue."
+                },
+                {
+                  "id": "application_status",
+                  "kind": "group",
+                  "concept": "status",
+                  "aliases": [
+                    "application status",
+                    "process status",
+                    "状态"
+                  ],
+                  "operationRef": "POST /api/Application/MyComplatedPage",
+                  "sourcePath": "/data/page/items",
+                  "fields": [
+                    "status"
+                  ],
+                  "meaning": "The displayed Status dimension binds status. taskStatus and card categories have different meanings."
+                },
+                {
+                  "id": "service_category",
+                  "kind": "group",
+                  "concept": "service category",
+                  "aliases": [
+                    "服务分类"
+                  ],
+                  "operationRef": "POST /api/Application/MyComplatedPage",
+                  "sourcePath": "/data/page/items",
+                  "fields": [
+                    "serviceCategoryNameEn"
+                  ],
+                  "meaning": "The Service Category field is serviceCategoryNameEn."
+                },
+                {
+                  "id": "review_decision",
+                  "kind": "group",
+                  "concept": "review decision",
+                  "aliases": [
+                    "my decision"
+                  ],
+                  "operationRef": "POST /api/Application/MyComplatedPage",
+                  "sourcePath": "/data/page/items",
+                  "fields": [
+                    "taskStatus"
+                  ],
+                  "meaning": "In this view the My Decision column uses the taskStatus compatibility projection."
+                }
+              ],
+              "sourceBinding": {
+                "pageRef": "/licensing/applications",
+                "responseRoot": "/data",
+                "views": [
+                  "completed"
+                ]
+              },
+              "fields": [],
+              "relationships": [],
+              "constraints": [
+                "Target deployment field and entity semantics have not yet been verified.",
+                "Define whether license application means all applications in this page or a service-restricted subset; do not infer this from serviceTypeId=1.",
+                "Define pending/outstanding population terminology from the view and active filters before adding aliases.",
+                "Scope/population contextParameters require verified default values for every data-affecting request parameter; those values are not established in this file."
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "path": "navigation-knowledge/artifacts/KB/逐例修复-20260927/My Application Tasks-待办分页字段与统计范围.json",
+      "sha256": "bc2e6305b52427c2d9e7fa5271e84645b6455f9129308ca2083e2b44e83ae297",
+      "content": {
+        "schemaVersion": "1.0",
+        "bundleId": "page-supplement.admin.page-docs.licensing.applications.todo.collection",
+        "createdAt": "2026-09-26T17:25:26.440049+00:00",
+        "packageStatus": "active",
+        "records": [
+          {
+            "id": "admin.page-docs.licensing.applications.todo.collection",
+            "kind": "field_semantics",
+            "revision": 2,
+            "status": "active",
+            "title": "My Application Tasks todo read contract",
+            "applicability": {
+              "portal": "admin",
+              "environments": [
+                "local"
+              ],
+              "pageRefs": [
+                "/licensing/applications"
+              ],
+              "sourceSnapshot": "source-inspected-20260924",
+              "runtimeVerification": "pending",
+              "deployedBuildMatch": "unknown"
+            },
+            "sources": [
+              {
+                "kind": "source_code",
+                "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Applications/index.tsx",
+                "revision": "be9c81e58706b9071a3c0f4ddd1950df113cf6971e6c1f6efbf90dafff1f89e4",
+                "locator": "request/getPageList, table columns, To Do and Completed tabs",
+                "verification": "source_inspected"
+              },
+              {
+                "kind": "source_code",
+                "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ApplicationAppService.cs",
+                "revision": "22e94773e70c95fab9ce479919b51d0241e046bf085cd0c3f8b5991b9004772e",
+                "locator": "GetMyReviewPageAsync; GetMyReviewListAsync; FilterPersonalWorkflowTasksByDepartment",
+                "verification": "source_inspected"
+              },
+              {
+                "kind": "source_code",
+                "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/MyReviewFilter.cs",
+                "revision": "e85bf61625c530802e0a177de8eeba436c26ba8ad98952b7908ddfa915073ebb",
+                "locator": "Apply; NormalizeCompletedMyDecisionFilters",
+                "verification": "source_inspected"
+              },
+              {
+                "kind": "source_code",
+                "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ReviewTaskProjection.cs",
+                "revision": "9df0f7b49cd9c099c78d1ccd2e8967216a477fd533f90a312573f287eef1b797",
+                "locator": "SelectPersonalTodo; SelectCompleted",
+                "verification": "source_inspected"
+              },
+              {
+                "kind": "source_code",
+                "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Application/ApplicationDto.cs",
+                "revision": "3efae9b26845ec68130f314cbccfd0861bb76f19a22ab6d083f5ec9435042cdc",
+                "locator": "MyReviewPageRequest; MyReviewPageResponse; MyReviewResponse",
+                "verification": "source_inspected"
+              }
+            ],
+            "payload": {
+              "pageRef": "/licensing/applications",
+              "view": "todo",
+              "bindings": [
+                {
+                  "id": "application_object",
+                  "kind": "object",
+                  "concept": "application",
+                  "aliases": [
+                    "applications",
+                    "license application",
+                    "license applications",
+                    "licensing applications",
+                    "license request",
+                    "license requests",
+                    "licensing request",
+                    "licensing requests",
+                    "licence request",
+                    "licence requests",
+                    "طلب ترخيص",
+                    "طلبات الترخيص",
+                    "طلبات التراخيص"
+                  ],
+                  "operationRef": "POST /api/Application/MyTodoPage",
+                  "sourcePath": "/data/page/items",
+                  "fields": [
+                    "id"
+                  ],
+                  "meaning": "id identifies the application entity. Departmental assignment determines queue access; the service owning department alone does not prove queue membership. On this licensing applications page, license request / licensing request / طلبات الترخيص denotes the application entity identified by id. These are page-scoped language aliases, not licence entities or workflow tasks; they do not alter the selected queue or any status definition."
+                },
+                {
+                  "id": "application_grain",
+                  "kind": "grain",
+                  "concept": "application",
+                  "aliases": [
+                    "applications",
+                    "unique applications",
+                    "license request",
+                    "license requests",
+                    "licensing request",
+                    "licensing requests",
+                    "licence request",
+                    "licence requests",
+                    "طلب ترخيص",
+                    "طلبات الترخيص",
+                    "طلبات التراخيص",
+                    "license application",
+                    "licensing application",
+                    "licence application"
+                  ],
+                  "operationRef": "POST /api/Application/MyTodoPage",
+                  "sourcePath": "/data/page/items",
+                  "fields": [
+                    "id"
+                  ],
+                  "meaning": "Application grain is id. Distinct application counts can differ from projected workflow/disposition rows. On this licensing applications page, license request / licensing request / طلبات الترخيص denotes the application entity identified by id. These are page-scoped language aliases, not licence entities or workflow tasks; they do not alter the selected queue or any status definition."
+                },
+                {
+                  "id": "task_object",
+                  "kind": "object",
+                  "concept": "task",
+                  "aliases": [
+                    "tasks",
+                    "review tasks",
+                    "license application tasks"
+                  ],
+                  "operationRef": "POST /api/Application/MyTodoPage",
+                  "sourcePath": "/data/page/items",
+                  "fields": [
+                    "taskId"
+                  ],
+                  "meaning": "The task represented by a current queue row. The server projection has already selected representative tasks; this is not every historical workflow task."
+                },
+                {
+                  "id": "task_grain",
+                  "kind": "grain",
+                  "concept": "task",
+                  "aliases": [
+                    "tasks",
+                    "review tasks"
+                  ],
+                  "operationRef": "POST /api/Application/MyTodoPage",
+                  "sourcePath": "/data/page/items",
+                  "fields": [
+                    "taskId"
+                  ],
+                  "meaning": "Task grain uses a nonempty taskId. Distinct visible projected tasks are different from distinct applications and from all historical workflow tasks."
+                },
+                {
+                  "id": "status",
+                  "kind": "group",
+                  "concept": "status",
+                  "aliases": [
+                    "application status",
+                    "process status"
+                  ],
+                  "operationRef": "POST /api/Application/MyTodoPage",
+                  "sourcePath": "/data/page/items",
+                  "fields": [
+                    "status"
+                  ],
+                  "meaning": "status is the current application/process status label; statusId is its numeric code. It is distinct from workflow node taskStatus and the statusCount card taxonomy."
+                },
+                {
+                  "id": "service_category",
+                  "kind": "group",
+                  "concept": "service category",
+                  "aliases": [
+                    "service categories"
+                  ],
+                  "operationRef": "POST /api/Application/MyTodoPage",
+                  "sourcePath": "/data/page/items",
+                  "fields": [
+                    "serviceCategoryNameEn"
+                  ],
+                  "meaning": "serviceCategoryNameEn is the localized service category display, not an authorization scope."
+                },
+                {
+                  "id": "handler",
+                  "kind": "group",
+                  "concept": "officer",
+                  "aliases": [
+                    "handler",
+                    "assignee",
+                    "assigned officer"
+                  ],
+                  "operationRef": "POST /api/Application/MyTodoPage",
+                  "sourcePath": "/data/page/items",
+                  "fields": [
+                    "assignee"
+                  ],
+                  "meaning": "assignee is the current workflow handler user key. assignedTo is a display name, not a stable unique grouping key."
+                },
+                {
+                  "id": "personal_scope",
+                  "kind": "scope",
+                  "concept": "personal",
+                  "aliases": [
+                    "my",
+                    "mine",
+                    "my tasks",
+                    "current user"
+                  ],
+                  "operationRef": "POST /api/Application/MyTodoPage",
+                  "sourcePath": "/data/page/items",
+                  "fields": [
+                    "id"
+                  ],
+                  "meaning": "Personal scope: tasks come from the authenticated user task list, filtered by the endpoint runtime approval department. This exact request context has no user-entered narrowing filter.",
+                  "contextParameters": {
+                    "keyword": "",
+                    "startTime": null,
+                    "endTime": null,
+                    "serviceTypeId": "1"
+                  }
+                },
+                {
+                  "id": "pending_population",
+                  "kind": "population",
+                  "concept": "pending",
+                  "aliases": [
+                    "pending applications",
+                    "pending tasks",
+                    "todo",
+                    "to do",
+                    "outstanding"
+                  ],
+                  "operationRef": "POST /api/Application/MyTodoPage",
+                  "sourcePath": "/data/page/items",
+                  "fields": [
+                    "id"
+                  ],
+                  "meaning": "Pending population means the complete To Do queue from this operation with this exact filter context. It includes pending modification and external approval as well as pending review; it is not only Pending Review.",
+                  "contextParameters": {
+                    "keyword": "",
+                    "startTime": null,
+                    "endTime": null,
+                    "serviceTypeId": "1"
+                  }
+                },
+                {
+                  "id": "assigned_to_current_user",
+                  "kind": "filter",
+                  "concept": "assignee=me",
+                  "aliases": [
+                    "assigned to me",
+                    "my assigned tasks"
+                  ],
+                  "operationRef": "POST /api/Application/MyTodoPage",
+                  "sourcePath": "/data/page/items",
+                  "fields": [
+                    "assignee"
+                  ],
+                  "meaning": "The upstream personal task query is bound to the authenticated user. The exact request context and current permission must be verified; no literal user ID is stored in knowledge.",
+                  "contextParameters": {
+                    "keyword": "",
+                    "startTime": null,
+                    "endTime": null,
+                    "serviceTypeId": "1"
+                  }
+                },
+                {
+                  "id": "pending_filter",
+                  "kind": "filter",
+                  "concept": "pending",
+                  "aliases": [
+                    "status=pending",
+                    "pending tasks",
+                    "to do"
+                  ],
+                  "operationRef": "POST /api/Application/MyTodoPage",
+                  "sourcePath": "/data/page/items",
+                  "fields": [
+                    "id"
+                  ],
+                  "meaning": "The To Do operation establishes queue membership; there is no generic row status literal Pending that replaces all pending workflow states.",
+                  "contextParameters": {
+                    "keyword": "",
+                    "startTime": null,
+                    "endTime": null,
+                    "serviceTypeId": "1"
+                  }
+                },
+                {
+                  "id": "node_status",
+                  "kind": "group",
+                  "concept": "task status",
+                  "aliases": [
+                    "workflow node",
+                    "review stage"
+                  ],
+                  "operationRef": "POST /api/Application/MyTodoPage",
+                  "sourcePath": "/data/page/items",
+                  "fields": [
+                    "taskStatus"
+                  ],
+                  "meaning": "taskStatus is the workflow node status in To Do responses. It is independent from application status."
+                }
+              ],
+              "sourceBinding": {
+                "operationRef": "POST /api/Application/MyTodoPage",
+                "sourcePath": "/data/page/items",
+                "scope": "authenticated personal queue; current runtime approval department"
+              },
+              "pagination": {
+                "pageIndex": "Request integer page number, starts at 1; Skip((pageIndex-1)*pageSize).",
+                "pageSize": "Request integer maximum rows per page; UI default 10, choices 10/20/50/100. This is not a proven server maximum.",
+                "rowsPath": "/data/page/items",
+                "totalPath": "/data/page/total",
+                "total": "page.total counts rows of the selected view AFTER filters and BEFORE pagination. It is not necessarily distinct application count.",
+                "preservedContext": "Keep all filters, identity, language and sort context fixed across pages; two agreeing scans are not a transactional snapshot."
+              },
+              "requestFields": {
+                "keyword": "Case-insensitive substring of applicationNumber, serviceNameAr/serviceNameEn and applyForAr/applyForEn; not an exact unique lookup.",
+                "serviceTypeId": "String 1 is ALL SERVICE TYPES, not a Licensing department or Foreign Media selector. A different nonempty value filters serviceTypeId exactly.",
+                "processInstanceStatus": "Exact equality to row status.",
+                "approvalStatus": "To Do matches taskStatus; Completed matches myDecision.",
+                "serviceCodes": "Filter by stable service codes, not one service version ID.",
+                "serviceCategoryId": "Exact service category ID filter.",
+                "startTime": "lastUpdatedTime >= startTime.Date.",
+                "endTime": "lastUpdatedTime < endTime.Date.AddDays(1). Source server time interpretation needs deployed verification."
+              },
+              "fields": {
+                "id": "Application entity key; not a workflow task key.",
+                "applicationNumber": "Displayed application business number; no global uniqueness constraint was established from the inspected snapshot.",
+                "taskId": "Workflow task identifier and task detail route parameter. A single application can have multiple task IDs over time.",
+                "dispositionCaseId": "Nullable disposition identifier; the personal To Do projection deduplicates (id, dispositionCaseId). A nullable component cannot be silently dropped from a task-row identity.",
+                "status": "Application/process status display; group this field when the requested dimension is application status.",
+                "statusId": "Application/process status numeric code.",
+                "taskStatus": "To Do: workflow node; personal Completed: compatibility projection of myDecision.",
+                "myDecision": "Completed reviewer decision; a dash is not a workflow state.",
+                "assignee": "Current handler user identifier.",
+                "assignedTo": "Current handler display name.",
+                "serviceCode": "Stable service code shared by service versions.",
+                "serviceNameEn": "Service display; may be localized by response language.",
+                "serviceCategoryNameEn": "Service category display; may be localized.",
+                "serviceTypeNameEn": "Service type display; may be localized.",
+                "applyForEn": "Apply For display value; not the handler.",
+                "submissionTime": "Submission timestamp in the DTO.",
+                "lastUpdatedTime": "Latest application timeline/update timestamp. Request startTime/endTime filter this field, even where a control label says Submission Time.",
+                "sla": "SLA value with business pause/state handling; use current supplied slaDescription rather than inventing clock calculations.",
+                "slaDescription": "Localized SLA display produced by the service; not a priority category."
+              },
+              "relationships": [
+                "To Do selects noncompleted canonical-instance rows and deduplicates by (id, dispositionCaseId). Completed deduplicates by id.",
+                "statusCount is computed before list filters; page.total is computed after filters. Card buckets are not the row status dimension or a proven mutually exclusive breakdown.",
+                "A Manager role does not turn this personal queue into a team queue."
+              ],
+              "constraints": [
+                "Source-inspected definitions; the remote deployed build has not been matched to this snapshot. Validate current authorized response shape and request context before using these definitions.",
+                "This page knowledge does not authorize API access or business writes. A blocked or failed response is not an empty population.",
+                "A bounded page is not a complete population. Counts and grouping require complete collection at the requested entity grain and stable request context.",
+                "Do not equate row count or todoCount with unique application count when duplicate id values or conflicting projected fields exist.",
+                "Scope/population context bindings cover only their exact contextParameters. Omitted defaults, nulls, empty strings and added filters are not interchangeable.",
+                "The list has no demonstrated generic priority field. SLA, urgency and priority are separate concepts.",
+                "Foreign Media classification must use an authoritative service/category mapping and current permission; serviceTypeId=1 does not establish it."
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "path": "navigation-knowledge/artifacts/KB/分组修复第二组-20260928/My Application Tasks-页面范围与记录定位.json",
+      "sha256": "8d09d2e4c7f610abc64006ab64fc96487d9fab81c45cfc7f10449996ddc2d72e",
+      "content": {
+        "schemaVersion": "1.0",
+        "bundleId": "page-supplement.admin.page-docs.licensing.applications.routing",
+        "createdAt": "2026-09-27T18:22:25.403680+00:00",
+        "packageStatus": "active",
+        "records": [
+          {
+            "id": "admin.page-docs.licensing.applications.routing",
+            "kind": "page_definition",
+            "revision": 2,
+            "status": "active",
+            "title": "My Application Tasks page and record identity",
+            "applicability": {
+              "portal": "admin",
+              "environments": [
+                "local"
+              ],
+              "pageRefs": [
+                "/licensing/applications"
+              ],
+              "sourceSnapshot": "source-inspected-20260924",
+              "runtimeVerification": "pending",
+              "deployedBuildMatch": "unknown"
+            },
+            "sources": [
+              {
+                "kind": "source_code",
+                "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Applications/index.tsx",
+                "revision": "be9c81e58706b9071a3c0f4ddd1950df113cf6971e6c1f6efbf90dafff1f89e4",
+                "locator": "tab rendering; row click route",
+                "verification": "source_inspected"
+              },
+              {
+                "kind": "source_code",
+                "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.API/Controllers/ApplicationController.cs",
+                "revision": "c43e5e7e836b3aa6f2f5070d8456f4378ab205112cddc012fde6949e26a44397",
+                "locator": "MyTodoPage; MyComplatedPage; MyReviewDetail",
+                "verification": "source_inspected"
+              },
+              {
+                "kind": "source_code",
+                "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ApplicationAppService.cs",
+                "revision": "22e94773e70c95fab9ce479919b51d0241e046bf085cd0c3f8b5991b9004772e",
+                "locator": "GetMyReviewListAsync; CanViewWorkflowTaskDetail",
+                "verification": "source_inspected"
+              }
+            ],
+            "payload": {
+              "pageIdentity": {
+                "catalogId": "a3780c35dd57_da1a77697e11:Page:98e33b0f3104fcf1b812",
+                "component": "Applications",
+                "route": "/licensing/applications",
+                "name": "My Application Tasks"
+              },
+              "purpose": "Personal Licensing review applications and tasks.",
+              "entryConditions": [
+                "Authenticated Admin user; current page and operation permissions. Personal ownership is verified upstream, not inferred from the role label."
+              ],
+              "views": [
+                {
+                  "id": "todo",
+                  "label": "To Do",
+                  "aliases": [
+                    "1",
+                    "to do",
+                    "pending queue"
+                  ]
+                },
+                {
+                  "id": "completed",
+                  "label": "Completed",
+                  "aliases": [
+                    "2",
+                    "completed queue"
+                  ]
+                }
+              ],
+              "routing": {
+                "records": [
+                  {
+                    "id": "todo_business_number",
+                    "operationRef": "POST /api/Application/MyTodoPage",
+                    "sourcePath": "/data/page/items",
+                    "identityField": "applicationNumber",
+                    "keyFields": [
+                      "id"
+                    ],
+                    "unique": false
+                  },
+                  {
+                    "id": "completed_business_number",
+                    "operationRef": "POST /api/Application/MyComplatedPage",
+                    "sourcePath": "/data/page/items",
+                    "identityField": "applicationNumber",
+                    "keyFields": [
+                      "id"
+                    ],
+                    "unique": false
+                  }
+                ],
+                "views": [
+                  {
+                    "id": "todo",
+                    "label": "To Do",
+                    "aliases": [
+                      "1",
+                      "to do",
+                      "pending queue"
+                    ]
+                  },
+                  {
+                    "id": "completed",
+                    "label": "Completed",
+                    "aliases": [
+                      "2",
+                      "completed queue"
+                    ]
+                  }
+                ]
+              },
+              "readinessAssertions": [
+                "Current selected tab is known; its successful permitted response is present; loading has ended. A blocked call or default zero card is not an empty result."
+              ],
+              "detailEntry": {
+                "route": "/licensing/applications/applicationsDetails",
+                "queryParameter": "taskId",
+                "sourceField": "taskId",
+                "meaning": "Use the matched current row workflow task ID. applicationNumber and id cannot be substituted. Multiple matching task IDs require a verified view/task selection."
+              },
+              "scopeBoundaries": [
+                "The same application may move across approval departments; the current task approval department controls the queue.",
+                "Team analysis belongs to the corresponding Team Management entry; issued licenses belong to the Licenses entry."
+              ],
+              "recordLookup": "Exact-match the supplied business number against observed rows. unique=false deliberately retains ambiguity checks; a substring search or first page alone does not establish uniqueness.",
+              "readOperations": [
+                "POST /api/Application/MyTodoPage",
+                "POST /api/Application/MyComplatedPage"
+              ],
+              "writeOperations": "Approve, reject, reassign, send back, modification, recall and deletion are business mutations; listing them does not enable them in the Reader.",
+              "constraints": [
+                "Source-inspected definitions; the remote deployed build has not been matched to this snapshot. Validate current authorized response shape and request context before using these definitions.",
+                "This page knowledge does not authorize API access or business writes. A blocked or failed response is not an empty population.",
+                "A bounded page is not a complete population. Counts and grouping require complete collection at the requested entity grain and stable request context."
+              ],
+              "knowledgeDependencies": [
+                {
+                  "purpose": "collection",
+                  "operationRef": "POST /api/Application/MyTodoPage",
+                  "document": "My Application Tasks-待办分页字段与统计范围.json"
+                },
+                {
+                  "purpose": "collection",
+                  "operationRef": "POST /api/Application/MyComplatedPage",
+                  "document": "My Application Tasks-已完成分页字段与审批决定.json"
+                }
+              ],
+              "relationships": [
+                "The routing identifiers locate records. Full pagination and scalar-field definitions are in the explicitly named collection documents; routing knowledge alone is not a paging contract."
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "en": {
+    "task": {
+      "view": "",
+      "stage": "task",
+      "filters": [
+        "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]"
+      ],
+      "groupBy": [],
+      "readOnly": true,
+      "timeField": "",
+      "timeRange": "unknown",
+      "outputShape": "list",
+      "searchQuery": "application find records ML-2-804-9226243 ML-2-804-0460740 separate records lookup",
+      "slotUpdates": [
+        {
+          "field": "businessObject",
+          "value": "application",
+          "source": "current",
+          "evidence": "clarification choice application"
+        },
+        {
+          "field": "requestedGrain",
+          "value": "application",
+          "source": "current",
+          "evidence": "clarification choice application"
+        },
+        {
+          "field": "filters",
+          "value": [
+            "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]"
+          ],
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "outputShape",
+          "value": "list",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "requestedScope",
+          "value": "unknown",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "timeRange",
+          "value": "unknown",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "businessFocus",
+          "value": "",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "requestedMeasures",
+          "value": [],
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "requestedAttributes",
+          "value": [],
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "groupBy",
+          "value": [],
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "recordIdentity",
+          "value": "",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "view",
+          "value": "",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "timeField",
+          "value": "",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "requestedOrdering",
+          "value": [],
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "groupCompleteness",
+          "value": "observed",
+          "source": "previous",
+          "evidence": ""
+        }
+      ],
+      "responseMode": "answer",
+      "businessFocus": "",
+      "clarification": null,
+      "needsLiveData": true,
+      "businessObject": "application",
+      "recordIdentity": "",
+      "requestedGrain": "application",
+      "requestedScope": "unknown",
+      "contextRelation": "continue",
+      "unresolvedSlots": [],
+      "groupCompleteness": "observed",
+      "requestBoundaries": [],
+      "requestedMeasures": [],
+      "requestedOrdering": [],
+      "requestedAttributes": [],
+      "evidenceExplanations": []
+    },
+    "sourceMetadata": {
+      "kind": "api_response",
+      "page": "/licensing/applications",
+      "sourceId": "api_6aace97e75465ed4880b",
+      "truncated": true,
+      "capturedAt": "2026-09-28T10:25:40.960900+00:00",
+      "completeness": "bounded",
+      "operationRef": "POST /api/Application/MyTodoPage",
+      "candidateKind": "business",
+      "fieldEvidence": {
+        "/message": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "e0cc7d31c742c7979bcc99ff6ceb319d8a831f6e604af9097cf9ce44b59346a2"
+        },
+        "/isSuccess": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        "/statusCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "27badc983df1780b60c2b3fa9d3a19a00e46aac798451f0febdca52920faaddf"
+        },
+        "/data/page/items": {
+          "kind": "array",
+          "status": "bounded",
+          "valueHash": "c851c84c1b6cf431473ac222d0c96ac01ecb3a6f24a6dc2bcdb8c768dc52a6a7"
+        },
+        "/data/page/total": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "7f2253d7e228b22a08bda1f09c516f6fead81df6536eb02fa991a34bb38d9be8"
+        },
+        "/data/page/pageSize": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5"
+        },
+        "/data/page/pageIndex": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+        },
+        "/data/page/items/0/id": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "7b3087f7c84638235f3faf074627cde9c39a713dbe6a6c9984e84f2242df4fca"
+        },
+        "/data/page/items/1/id": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "6ef02a389c6415e7dc6ac8cdf0fd65c83b678022e9c0bb37c6feedf318297c43"
+        },
+        "/data/page/items/0/sla": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "293077dd489599c0878e4040392f998ccde5edc4c61da2b4054f982d6e5636fe"
+        },
+        "/data/page/items/1/sla": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "718c5c6869595665c7a52fa48b233afe1e7e66bef861d414dbc7b32bcd02b8a4"
+        },
+        "/data/page/items/0/isbn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/page/items/0/sort": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+        },
+        "/data/page/items/1/isbn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/page/items/0/title": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/page/items/1/title": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/page/items/0/isTest": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        "/data/page/items/0/status": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "c62abb111449705768f7f82646a9b00a9f18c8403d2e6cbff8583b39894a285e"
+        },
+        "/data/page/items/0/taskId": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "052fada1593a01e72f07ea62df18207f61c9d200ab2304fb761a4835a9e928df"
+        },
+        "/data/page/items/0/userId": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "b9b9349fd98f6ae9ce7b0845cd88e82743bc4b4077157497a4e95ccced5a7e6f"
+        },
+        "/data/page/items/0/aiResult": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/page/items/0/aiStatus": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/page/items/0/assignee": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "bda22964ed60753b9868d3e18d50f6281a28ed35856513a125101a9c0a1a0514"
+        },
+        "/data/page/items/0/duration": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/page/items/0/statusId": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451"
+        },
+        "/data/page/items/1/aiResult": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/page/items/1/aiStatus": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/statusCount/todoCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "7f2253d7e228b22a08bda1f09c516f6fead81df6536eb02fa991a34bb38d9be8"
+        },
+        "/data/page/items/0/bookCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/page/items/0/isOverdue": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        "/data/page/items/0/profileId": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "9ebbcf9ff1a9a75cd07a5b11d7a8c1371fca1c90f460e421f6f6b279955eac6c"
+        },
+        "/data/page/items/0/serviceId": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "e9627bf1367d542b0df6de2a21e1178948013fe55c691fe91c6e1c015cdbc6b9"
+        },
+        "/data/page/items/1/serviceId": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "4809d1306cd4f438bdfbeed76fb13c0f55047f94f44d6bb94faf554af3c4075e"
+        },
+        "/data/page/items/0/applyForAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "43f51c31f9e012c76a5e1175ad0e96933082cf20b7383cbf304a584adf65f007"
+        },
+        "/data/page/items/0/applyForEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "0c78f2510afbc12d31cb5b235577249205b73d74fc57c423091aab4114d7a46c"
+        },
+        "/data/page/items/0/assignedTo": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "090cb68a94381025d58b389d5d1af712015b17b0e4ea61b56bbbd30dc2534808"
+        },
+        "/data/page/items/0/authorName": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/page/items/0/buttonJson": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "3884e7cf989d7ce14ff8922b77252f522fd96bba73a4bcd17dab89f1a52f3ce3"
+        },
+        "/data/page/items/0/myDecision": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/page/items/0/taskStatus": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "714bc0625438584b5009564e3edf03f9313a9682a5e4276c07789b9d86443653"
+        },
+        "/data/page/items/1/authorName": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/page/items/0/aiRiskLevel": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "14c4849191d018fc8b00b02dc1e49d9f8b36a152066023b3b4c609b2f62ba328"
+        },
+        "/data/page/items/0/serviceCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "266aa5886067fbbc1a3a39fe432fc5bbf561abc90e4b8a322215ac17df6ce012"
+        },
+        "/data/page/items/0/taskDueTime": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "1df936451b173a69c5118aea28451d6c21b63541ce5346953b65e2946d6cd8df"
+        },
+        "/data/page/items/1/aiRiskLevel": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "14c4849191d018fc8b00b02dc1e49d9f8b36a152066023b3b4c609b2f62ba328"
+        },
+        "/data/page/items/1/serviceCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "6952d0a888ee0a5f33fe531a4610a915e52ef4b2ced57d42b9e4e244343dc6b7"
+        },
+        "/data/statusCount/overdueCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/page/items/0/profileIsVIP": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/page/items/0/taskStatusId": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35"
+        },
+        "/data/page/items/0/userTypeCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "391552c099c101b131feaf24c5795a6a15bc8ec82015424e0d2b4274a369a0bf"
+        },
+        "/data/page/items/0/serviceNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "1c9f4c6e1671ec26e3310f2f3886910304100831af8f674cd9de9dbdaf659930"
+        },
+        "/data/page/items/0/serviceNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "ba062a6cd0c090abf059b333d03b71f5f0d3dd2e4bc3a99c2a309934982a2480"
+        },
+        "/data/page/items/0/serviceTypeId": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "cc11310c456c3690d5a74c23aa31cc25b4e74cdae146c71e54ad9dbc1d109fde"
+        },
+        "/data/page/items/1/serviceNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "e9a4ea9263a090ed328e8afa1da6e4d476a368b4ee672b6760fcb10fa800043b"
+        },
+        "/data/page/items/1/serviceNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "393948dc655fa1a2cd872ee0172cea71fe296b498011f72f7ef290c8467b6a71"
+        },
+        "/data/page/items/1/serviceTypeId": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "cc11310c456c3690d5a74c23aa31cc25b4e74cdae146c71e54ad9dbc1d109fde"
+        },
+        "/data/statusCount/completedCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "9ae8f17cfc8ba7fd8fb34b2a194ef965a3b36a40839a46eeab1350e916692ac9"
+        },
+        "/data/page/items/0/myDecisionCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/page/items/0/slaDescription": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "2e2136468ed714b02f156e02134d3655c6fdbe2699ba97dfdc61666b65252ac8"
+        },
+        "/data/page/items/0/submissionTime": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "df07d27f19b806a6b794927f0dca626703b18d5813f695824329d7fd2e24304b"
+        },
+        "/data/page/items/0/taskApprovalAt": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/page/items/1/slaDescription": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "0941d87087cbaf74a78c3b4458a0525edab41c67a4a1a8e4b0a468946e36abb4"
+        },
+        "/data/page/items/0/dispositionCase": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/page/items/0/establishmentId": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/page/items/0/lastUpdatedTime": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "928edb4a9fa0077fcf4aa14d1cd8784cbf89846f131d57c324eb49a8145c79d5"
+        },
+        "/data/page/items/0/taskCreatedTime": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "928edb4a9fa0077fcf4aa14d1cd8784cbf89846f131d57c324eb49a8145c79d5"
+        },
+        "/data/page/items/0/taskApprovalRole": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "b4777ae9e7d66281912b6217d3f9ea314ee871feb11640706193a37a752de79b"
+        },
+        "/data/page/items/0/applicationNumber": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "88724c7c47a81ee593fa342ffd84c641e0db158c7111c18e55953a5b4b18d114"
+        },
+        "/data/page/items/0/dispositionCaseId": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/page/items/0/processInstanceId": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "8ab3a2a3e3f7d0b7084e720fe0eed0e39023948be25a0144be9b53b89ed6de6a"
+        },
+        "/data/page/items/0/serviceCategoryId": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "131b0c35e2d7edef9dd63f48eff39341ef0a5f770538aa4e0017f41b9cdb135d"
+        },
+        "/data/page/items/0/serviceTypeNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "dab7baf37fc10874a1ed6d51faa145558161c1aec6f8eea8627d2ad93e4461d7"
+        },
+        "/data/page/items/0/serviceTypeNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "e9f7cceb39860c56f09a3a0183afaaede84c2ae5f7c00ce003ec93f065080881"
+        },
+        "/data/page/items/1/applicationNumber": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "8e0db55c1d94edd980583b41a2029956946f1005accfc855ed60c4bde5e5c089"
+        },
+        "/data/page/items/1/serviceCategoryId": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "600b4cdf20cc06a7b5a5cca5f7464296861815519af6d8a14604201b13965ab8"
+        },
+        "/data/page/items/1/serviceTypeNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "dab7baf37fc10874a1ed6d51faa145558161c1aec6f8eea8627d2ad93e4461d7"
+        },
+        "/data/page/items/1/serviceTypeNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "e9f7cceb39860c56f09a3a0183afaaede84c2ae5f7c00ce003ec93f065080881"
+        },
+        "/data/statusCount/pendingReviewCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "2fca346db656187102ce806ac732e06a62df0dbb2829e511a770556d398e1a6e"
+        },
+        "/data/page/items/0/ageClassificationId": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/page/items/0/applicationDetailId": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "d0a04b4400e5d231122862325cd7335f33d9284c2fa45ac5e79affca63729063"
+        },
+        "/data/page/items/1/ageClassificationId": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/statusCount/externalApproveCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+        },
+        "/data/page/items/0/aiAnalysisInProgress": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        "/data/page/items/0/aiAnalysisShowReport": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        "/data/page/items/0/oldProcessInstanceId": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "8ab3a2a3e3f7d0b7084e720fe0eed0e39023948be25a0144be9b53b89ed6de6a"
+        },
+        "/data/page/items/0/requiresFahrApproval": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        "/data/page/items/1/requiresFahrApproval": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        "/data/page/items/0/serviceCategoryNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "4475e14334f4ac53a752ebe055dd3a8ee9bc991e8bf30ea5a422fcda2408701c"
+        },
+        "/data/page/items/0/serviceCategoryNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "93c0109b9237f5a4e72cb4ce043bc09b22ff81c6b78b2b98f8a0a977c1601eb1"
+        },
+        "/data/page/items/1/serviceCategoryNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "29f87344d6bde9e18ee3ea67155696945e1d0094f8bf1b7030b4bd8f297d0d08"
+        },
+        "/data/page/items/1/serviceCategoryNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "b66a468058ec7806a75ba93a89e0f7c344f0ac0a963fb1fabdb6aaffc1e758a7"
+        },
+        "/data/page/items/0/aiAnalysisPhaseLabelEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/page/items/0/externalOrganizationId": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/page/items/0/taskApprovalDepartment": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+        },
+        "/data/statusCount/pendingDispositionCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/page/items/0/ageClassificationNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/page/items/0/ageClassificationNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/page/items/1/ageClassificationNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/statusCount/pendingModificationCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "3fdba35f04dc8c462986c992bcf875546257113072a909c162f7e470e581e278"
+        },
+        "/data/statusCount/dispositionVerificationCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        }
+      },
+      "observationRef": "5cb127d1dc2b8d0c720d",
+      "documentSchemas": [],
+      "taskFingerprint": "15460a216a5c885a3ad4c538203902d7200c25239f7f099ae62aee7aea555252",
+      "buildFingerprint": "unknown",
+      "collectionContext": {
+        "mode": "page_number_two_pass",
+        "contextRef": "5c743c8149bd44ccdc71b8c432ed438d066bc64b01b28a2baa45297f3320ec23",
+        "rowSchemas": [
+          {
+            "path": "/data/processInstanceStatus",
+            "fields": [],
+            "sampledRows": 4,
+            "nullableFields": [],
+            "fieldsTruncated": false,
+            "nullableFieldsTruncated": false
+          },
+          {
+            "path": "/data/approvalStatus",
+            "fields": [],
+            "sampledRows": 3,
+            "nullableFields": [],
+            "fieldsTruncated": false,
+            "nullableFieldsTruncated": false
+          },
+          {
+            "path": "/data/myDecisionOptions",
+            "fields": [],
+            "sampledRows": 0,
+            "nullableFields": [],
+            "fieldsTruncated": false,
+            "nullableFieldsTruncated": false
+          },
+          {
+            "path": "/data/serviceOptions",
+            "fields": [
+              "serviceCode",
+              "serviceNameAr",
+              "serviceNameEn"
+            ],
+            "sampledRows": 16,
+            "nullableFields": [],
+            "fieldsTruncated": false,
+            "nullableFieldsTruncated": false
+          },
+          {
+            "path": "/data/page/items",
+            "fields": [
+              "ageClassificationId",
+              "ageClassificationNameAr",
+              "ageClassificationNameEn",
+              "aiAnalysisInProgress",
+              "aiAnalysisPhaseLabelEn",
+              "aiAnalysisShowReport",
+              "aiResult",
+              "aiRiskLevel",
+              "aiStatus",
+              "applicationDetailId",
+              "applicationNumber",
+              "applyForAr",
+              "applyForEn",
+              "assignedTo",
+              "assignee",
+              "authorName",
+              "bookCount",
+              "buttonJson",
+              "dispositionCase",
+              "dispositionCaseId",
+              "duration",
+              "externalOrganizationId",
+              "id",
+              "isOverdue",
+              "isbn",
+              "lastUpdatedTime",
+              "myDecision",
+              "myDecisionCode",
+              "oldProcessInstanceId",
+              "processInstanceId",
+              "profileId",
+              "profileIsVIP",
+              "requiresFahrApproval",
+              "serviceCategoryId",
+              "serviceCategoryNameAr",
+              "serviceCategoryNameEn",
+              "serviceCode",
+              "serviceId",
+              "serviceNameAr",
+              "serviceNameEn",
+              "serviceTypeId",
+              "serviceTypeNameAr",
+              "serviceTypeNameEn",
+              "sla",
+              "slaDescription",
+              "sort",
+              "status",
+              "statusId",
+              "submissionTime",
+              "taskApprovalAt",
+              "taskApprovalDepartment",
+              "taskApprovalRole",
+              "taskCreatedTime",
+              "taskDueTime",
+              "taskId",
+              "taskStatus",
+              "taskStatusId",
+              "title",
+              "userId",
+              "userTypeCode"
+            ],
+            "sampledRows": 10,
+            "nullableFields": [
+              "ageClassificationId",
+              "ageClassificationNameAr",
+              "ageClassificationNameEn",
+              "aiAnalysisPhaseLabelEn",
+              "aiResult",
+              "aiStatus",
+              "authorName",
+              "bookCount",
+              "dispositionCase",
+              "dispositionCaseId",
+              "externalOrganizationId",
+              "isbn",
+              "myDecision",
+              "myDecisionCode",
+              "profileIsVIP",
+              "taskApprovalAt",
+              "title"
+            ],
+            "fieldsTruncated": false,
+            "nullableFieldsTruncated": false
+          }
+        ],
+        "requestFields": [
+          "keyword",
+          "startTime",
+          "endTime",
+          "sortBy",
+          "sortDirection",
+          "serviceTypeId",
+          "pageIndex",
+          "pageSize"
+        ],
+        "parameterHashes": {
+          "sortBy": "4b675ba2a21fe8190659d97b8d05c7c6af232357da78904d5ad1abcffeefbcdf",
+          "endTime": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "keyword": "12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+          "pageSize": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5",
+          "pageIndex": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+          "startTime": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "serviceTypeId": "391552c099c101b131feaf24c5795a6a15bc8ec82015424e0d2b4274a369a0bf",
+          "sortDirection": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+        },
+        "parameterShapeEvidence": {}
+      },
+      "collectionFailure": "collection_changed_between_passes",
+      "principalScopeRef": "7da85129c1862eb3c3f0",
+      "relatedReadReceipt": {},
+      "collectionDiagnostics": {
+        "reason": "collection_changed_between_passes",
+        "pagesRead": 2,
+        "startedAt": "2026-09-28T10:26:00.813300+00:00",
+        "comparison": {
+          "equivalent": false,
+          "orderChanged": false,
+          "changedFields": [
+            "sla"
+          ],
+          "firstRowCount": 71,
+          "secondRowCount": 71,
+          "addedIdentityCount": 0,
+          "changedIdentityCount": 54,
+          "removedIdentityCount": 0
+        },
+        "contextRef": "5c743c8149bd44ccdc71b8c432ed438d066bc64b01b28a2baa45297f3320ec23",
+        "finishedAt": "2026-09-28T10:26:09.999130+00:00",
+        "completeness": "incomplete",
+        "operationRef": "POST /api/Application/MyTodoPage"
+      }
+    },
+    "collectionPlan": {
+      "stage": "collection",
+      "missing": [],
+      "collections": [
+        {
+          "fields": [
+            "id",
+            "applicationNumber",
+            "taskId",
+            "status",
+            "statusId",
+            "taskStatus",
+            "serviceCategoryNameEn",
+            "serviceNameEn",
+            "serviceTypeNameEn",
+            "applyForEn",
+            "assignee",
+            "assignedTo",
+            "sla",
+            "slaDescription",
+            "submissionTime",
+            "lastUpdatedTime",
+            "dispositionCaseId"
+          ],
+          "evidence": [
+            {
+              "quote": "",
+              "sourceId": "k_48d12c37fbf123e0376e:p0"
+            },
+            {
+              "quote": "",
+              "sourceId": "k_15ce29fc75bc60aff18f:p0"
+            },
+            {
+              "quote": "",
+              "sourceId": "k_3970e26f7c59236deb12:p0"
+            }
+          ],
+          "rowsPath": "/data/page/items",
+          "sourceId": "api_6aace97e75465ed4880b",
+          "firstPage": 1,
+          "pageField": "pageIndex",
+          "sizeField": "pageSize",
+          "totalPath": "/data/page/total",
+          "unknownPolicy": "report",
+          "identityFields": [
+            "id",
+            "applicationNumber"
+          ]
+        }
+      ]
+    },
+    "actualCollectionFailure": {
+      "reason": "collection_changed_between_passes",
+      "pagesRead": 2,
+      "startedAt": "2026-09-28T10:26:00.813300+00:00",
+      "comparison": {
+        "equivalent": false,
+        "orderChanged": false,
+        "changedFields": [
+          "sla"
+        ],
+        "firstRowCount": 71,
+        "secondRowCount": 71,
+        "addedIdentityCount": 0,
+        "changedIdentityCount": 54,
+        "removedIdentityCount": 0
+      },
+      "contextRef": "5c743c8149bd44ccdc71b8c432ed438d066bc64b01b28a2baa45297f3320ec23",
+      "finishedAt": "2026-09-28T10:26:09.999130+00:00",
+      "completeness": "incomplete",
+      "operationRef": "POST /api/Application/MyTodoPage"
+    }
+  },
+  "ar": {
+    "task": {
+      "view": "",
+      "stage": "task",
+      "filters": [
+        "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]"
+      ],
+      "groupBy": [],
+      "readOnly": true,
+      "timeField": "",
+      "timeRange": "unknown",
+      "outputShape": "list",
+      "searchQuery": "application lookup two records ML-2-804-9226243 ML-2-804-0460740 separate results",
+      "slotUpdates": [
+        {
+          "field": "businessObject",
+          "value": "application",
+          "source": "previous",
+          "evidence": "clarification choice application"
+        },
+        {
+          "field": "requestedGrain",
+          "value": "application",
+          "source": "previous",
+          "evidence": "clarification choice application"
+        },
+        {
+          "field": "filters",
+          "value": [
+            "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]"
+          ],
+          "source": "current",
+          "evidence": "ابحث عن ML-2-804-9226243 و ML-2-804-0460740"
+        },
+        {
+          "field": "outputShape",
+          "value": "list",
+          "source": "current",
+          "evidence": "احتفظ بالسجلين منفصلين"
+        },
+        {
+          "field": "requestedScope",
+          "value": "unknown",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "timeRange",
+          "value": "unknown",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "businessFocus",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedMeasures",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedAttributes",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupBy",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "recordIdentity",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "view",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeField",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedOrdering",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupCompleteness",
+          "value": "observed",
+          "source": "current",
+          "evidence": "parsed current request"
+        }
+      ],
+      "responseMode": "answer",
+      "businessFocus": "",
+      "clarification": null,
+      "needsLiveData": true,
+      "businessObject": "application",
+      "recordIdentity": "",
+      "requestedGrain": "application",
+      "requestedScope": "unknown",
+      "contextRelation": "continue",
+      "unresolvedSlots": [],
+      "groupCompleteness": "observed",
+      "requestBoundaries": [],
+      "requestedMeasures": [],
+      "requestedOrdering": [],
+      "requestedAttributes": [],
+      "evidenceExplanations": []
+    },
+    "sourceMetadata": {
+      "kind": "projected_collection",
+      "page": "/licensing/applications",
+      "sourceId": "api_7e937113c1fc82eaa5c8",
+      "truncated": false,
+      "capturedAt": "2026-09-28T10:29:10.877306+00:00",
+      "completeness": "complete",
+      "operationRef": "POST /api/Application/MyTodoPage",
+      "candidateKind": "business",
+      "fieldEvidence": {
+        "/message": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "e0cc7d31c742c7979bcc99ff6ceb319d8a831f6e604af9097cf9ce44b59346a2"
+        },
+        "/isSuccess": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        "/statusCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "27badc983df1780b60c2b3fa9d3a19a00e46aac798451f0febdca52920faaddf"
+        },
+        "/data/page/items": {
+          "kind": "array",
+          "status": "complete",
+          "valueHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "/data/page/total": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/page/pageSize": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5"
+        },
+        "/data/approvalStatus": {
+          "kind": "array",
+          "status": "complete",
+          "valueHash": "6f0fa80504e7453f143b27358fbea3832f989814c79522636ee01815fa3cb4db"
+        },
+        "/data/page/pageIndex": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+        },
+        "/data/serviceOptions": {
+          "kind": "array",
+          "status": "complete",
+          "valueHash": "f27d91ee75aa979d282427b562ffc31cebdcbd5b694e2280174eb218083b1896"
+        },
+        "/data/approvalStatus/0": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "0370db0947fcf1d609ca2f7d8cc53b5e69115064efb11ead326d3904356ecd8b"
+        },
+        "/data/approvalStatus/1": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "c62abb111449705768f7f82646a9b00a9f18c8403d2e6cbff8583b39894a285e"
+        },
+        "/data/approvalStatus/2": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "714bc0625438584b5009564e3edf03f9313a9682a5e4276c07789b9d86443653"
+        },
+        "/data/myDecisionOptions": {
+          "kind": "array",
+          "status": "complete",
+          "valueHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "/data/processInstanceStatus": {
+          "kind": "array",
+          "status": "complete",
+          "valueHash": "a993a024ed4fb7d2d05241362ad0bce80688443260ec63229054c3fee33c8c7e"
+        },
+        "/data/statusCount/todoCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "7f2253d7e228b22a08bda1f09c516f6fead81df6536eb02fa991a34bb38d9be8"
+        },
+        "/data/processInstanceStatus/0": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "0370db0947fcf1d609ca2f7d8cc53b5e69115064efb11ead326d3904356ecd8b"
+        },
+        "/data/processInstanceStatus/1": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "c62abb111449705768f7f82646a9b00a9f18c8403d2e6cbff8583b39894a285e"
+        },
+        "/data/processInstanceStatus/2": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "714bc0625438584b5009564e3edf03f9313a9682a5e4276c07789b9d86443653"
+        },
+        "/data/processInstanceStatus/3": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "7ea2d4a7c7b3d201d46df168b3b3a54100ff31afedda4341b0016959abb797f8"
+        },
+        "/data/statusCount/overdueCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/statusCount/completedCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "9ae8f17cfc8ba7fd8fb34b2a194ef965a3b36a40839a46eeab1350e916692ac9"
+        },
+        "/data/serviceOptions/0/serviceCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "92e9e7e5922d26e17e48f0869ab25cc99499fdab722c065de8e0965c96c68e86"
+        },
+        "/data/serviceOptions/1/serviceCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "6952d0a888ee0a5f33fe531a4610a915e52ef4b2ced57d42b9e4e244343dc6b7"
+        },
+        "/data/serviceOptions/2/serviceCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "391552c099c101b131feaf24c5795a6a15bc8ec82015424e0d2b4274a369a0bf"
+        },
+        "/data/serviceOptions/3/serviceCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "266aa5886067fbbc1a3a39fe432fc5bbf561abc90e4b8a322215ac17df6ce012"
+        },
+        "/data/serviceOptions/4/serviceCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "a4cc762069723c56927790329e0c46865ce103f000f11d39030d6067414ec771"
+        },
+        "/data/serviceOptions/5/serviceCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "446a357439a13a0c7c6b7e83ad1125780ab8870717405727513131141c995dea"
+        },
+        "/data/serviceOptions/6/serviceCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "e5e5832207bc24dd3114202398f4224af936d95266acefab49a02d7f41777617"
+        },
+        "/data/serviceOptions/7/serviceCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "f87483de5eaddf12d0274fcc2bff78367cbb293e4f4fc12c1cf4aba112b647bc"
+        },
+        "/data/serviceOptions/8/serviceCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "2bf175f9655e7bb7357b9f0a7c6051465a5ae701104ffe741b98e852c0e4d460"
+        },
+        "/data/serviceOptions/9/serviceCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "1d2fba84d085254072f17a3761a0ad76827b16d8bb2d6f92ed09ebcd3c9efc68"
+        },
+        "/data/serviceOptions/10/serviceCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "e23f8f39182c82127c1bef3cbfd9b54e30e1df4916da81dcfc2a801c23f3bf01"
+        },
+        "/data/serviceOptions/11/serviceCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "18d9d86662388099e6c0c589fc854cdeb067b65bef4bb7dc940f0446ff5f7205"
+        },
+        "/data/serviceOptions/12/serviceCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "8bfa5ea6090827e103800a42da4771f4914785a381ca39002ac721841a745639"
+        },
+        "/data/serviceOptions/13/serviceCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "ac91d2981d1a3d8b5f0bba81662b575953ba2c5dbfb037d967c99b384a7ff3f7"
+        },
+        "/data/serviceOptions/14/serviceCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "f5e8abc918c8a3003302ebeecef572f672403e6ae4f8e9f74e1d6cb50de560b0"
+        },
+        "/data/serviceOptions/15/serviceCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "485a807045e4525b3a1c03c61fa2378de9129d9046ff02408b10dfb6676ede68"
+        },
+        "/data/serviceOptions/0/serviceNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "238ec34f32d663e9f067efaa9afcb84da1e8541c3bb893a614e6687061d05b1a"
+        },
+        "/data/serviceOptions/0/serviceNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "0283b08a510266deff220fc701323f186c6ccf4cd560333d5939edd7707f6ab8"
+        },
+        "/data/serviceOptions/1/serviceNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "e9a4ea9263a090ed328e8afa1da6e4d476a368b4ee672b6760fcb10fa800043b"
+        },
+        "/data/serviceOptions/1/serviceNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "393948dc655fa1a2cd872ee0172cea71fe296b498011f72f7ef290c8467b6a71"
+        },
+        "/data/serviceOptions/2/serviceNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "b1affc4e763b8840edef0c59d6135dbd9a1948c5c57f10440fb4580dca63cbf1"
+        },
+        "/data/serviceOptions/2/serviceNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "c1910768b7a9e1c6d0b95a9693539cfd99d6b4a1bea5bf28d6cc12aaa2e9ddab"
+        },
+        "/data/serviceOptions/3/serviceNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "1c9f4c6e1671ec26e3310f2f3886910304100831af8f674cd9de9dbdaf659930"
+        },
+        "/data/serviceOptions/3/serviceNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "ba062a6cd0c090abf059b333d03b71f5f0d3dd2e4bc3a99c2a309934982a2480"
+        },
+        "/data/serviceOptions/4/serviceNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "df9de01154e5fdc2f1e23bb1f998ac5518c2b29c9b4bf421be1e6e6f31a9591c"
+        },
+        "/data/serviceOptions/4/serviceNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "dbe248f686e442dfcaace6800ab0e84fdbc2f2ced5d4eee8742b58dd68f883d8"
+        },
+        "/data/serviceOptions/5/serviceNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "c6c29336805e616053d80b2f8139ad279fdf78ec045af24b82bbc770c63adf68"
+        },
+        "/data/serviceOptions/5/serviceNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "a0543be4f38520b90594041817bed4a52da28a217e1039f76845c6c2aedafbf7"
+        },
+        "/data/serviceOptions/6/serviceNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "ebd0117ea2d7eaed8be30863f3c0a1cde94ae6aa67c024e8c25ea6f2220e3540"
+        },
+        "/data/serviceOptions/6/serviceNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "cad4a78610e8f88a3f17f2b79576f608f93eaa9e7f4100955665c32c47d855e1"
+        },
+        "/data/serviceOptions/7/serviceNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "9fe9131fd76b166523ce820d62cb481880368a7708e4d34be5485b37514ac53c"
+        },
+        "/data/serviceOptions/7/serviceNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "0250ad99bc98c9fe9b75cc9754686d62080bb880e0e022df3448480dc81789f5"
+        },
+        "/data/serviceOptions/8/serviceNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "747d548e3caaf24fbf77408adba577e3eb08e1cd18c24f275371b390fae17260"
+        },
+        "/data/serviceOptions/8/serviceNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "526cf0c96df575892dd4ff64adfc4a1ed28cea94c27e3f3864d05de33af77a3e"
+        },
+        "/data/serviceOptions/9/serviceNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "143a901ff11dbf84dc2b6acec0993620e850b38f15776778373c35b6261e6054"
+        },
+        "/data/serviceOptions/9/serviceNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "e4c1449b70d1e9e89d590c42c871c28d83f08c368ae1926af28125aeee273e38"
+        },
+        "/data/statusCount/pendingReviewCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "2fca346db656187102ce806ac732e06a62df0dbb2829e511a770556d398e1a6e"
+        },
+        "/data/serviceOptions/10/serviceNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "8a820cb105c14206df88459486c8828b1f243dc095ccbeaedc7d2dc106b47a06"
+        },
+        "/data/serviceOptions/10/serviceNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "61d3665b7d128cac751316b26a50ecf0ba8cb9d86b2fca2f038e10ed307e517e"
+        },
+        "/data/serviceOptions/11/serviceNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "8c8d48172ea1ff45ddb4b123a701c4625b44e4b2eed372f6fcdf44b9ddd4f34b"
+        },
+        "/data/serviceOptions/11/serviceNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "d4583670f9ed83dbd3e10162d6c39e6c87eff715917ca4537aea29149124cf73"
+        },
+        "/data/serviceOptions/12/serviceNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "94e9639b449db2e7723b52d99086960ef1041252eb9a55f1c4a35100056e8d1e"
+        },
+        "/data/serviceOptions/12/serviceNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "e34ea9f0f943f782bf6c3b12a802e8d5a808cb9537d37de557af77d0268f348b"
+        },
+        "/data/serviceOptions/13/serviceNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "070a63a5d09de1cce43238d17a4582fd93184a088e38c53547a53e26b60ed37c"
+        },
+        "/data/serviceOptions/13/serviceNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5be764a5805b216d749b02e3f1924f831fd6616cd04df2a2f3ad5c5f81c6ecd5"
+        },
+        "/data/serviceOptions/14/serviceNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "0979e99fd71ff6f1f74de9b6401d4e7c6a999f59d20e50667419e2ba68ccbdc9"
+        },
+        "/data/serviceOptions/14/serviceNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "869d8634d2edfdca2254e216fa9b3decc3ba15e7a83bf707872d28e53bb8e963"
+        },
+        "/data/serviceOptions/15/serviceNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "c3ea73acabaa1d4b003a3cf33cf0d6bb13259124d57722b570dfdbc116b41d67"
+        },
+        "/data/serviceOptions/15/serviceNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "576d93bcda29e76369b0f19e2f3aa16cb71cf1ccd15eb87a67d46fe16b657f52"
+        },
+        "/data/statusCount/externalApproveCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+        },
+        "/data/statusCount/pendingDispositionCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/statusCount/pendingModificationCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "3fdba35f04dc8c462986c992bcf875546257113072a909c162f7e470e581e278"
+        },
+        "/data/statusCount/dispositionVerificationCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        }
+      },
+      "observationRef": "a19173e00bc010e3225a",
+      "documentSchemas": [],
+      "taskFingerprint": "15460a216a5c885a3ad4c538203902d7200c25239f7f099ae62aee7aea555252",
+      "buildFingerprint": "unknown",
+      "collectionContext": {
+        "mode": "page_number_two_pass",
+        "contextRef": "dcc1e437e31dab6b18af829ccaa1c65a21b9eff284763763151dee7065fa88e4",
+        "rowSchemas": [
+          {
+            "path": "/data/processInstanceStatus",
+            "fields": [],
+            "sampledRows": 4,
+            "nullableFields": [],
+            "fieldsTruncated": false,
+            "nullableFieldsTruncated": false
+          },
+          {
+            "path": "/data/approvalStatus",
+            "fields": [],
+            "sampledRows": 3,
+            "nullableFields": [],
+            "fieldsTruncated": false,
+            "nullableFieldsTruncated": false
+          },
+          {
+            "path": "/data/myDecisionOptions",
+            "fields": [],
+            "sampledRows": 0,
+            "nullableFields": [],
+            "fieldsTruncated": false,
+            "nullableFieldsTruncated": false
+          },
+          {
+            "path": "/data/serviceOptions",
+            "fields": [
+              "serviceCode",
+              "serviceNameAr",
+              "serviceNameEn"
+            ],
+            "sampledRows": 16,
+            "nullableFields": [],
+            "fieldsTruncated": false,
+            "nullableFieldsTruncated": false
+          },
+          {
+            "path": "/data/page/items",
+            "fields": [],
+            "sampledRows": 0,
+            "nullableFields": [],
+            "fieldsTruncated": false,
+            "nullableFieldsTruncated": false
+          }
+        ],
+        "requestFields": [
+          "keyword",
+          "startTime",
+          "endTime",
+          "sortBy",
+          "sortDirection",
+          "serviceTypeId",
+          "pageIndex",
+          "pageSize"
+        ],
+        "parameterHashes": {
+          "sortBy": "4b675ba2a21fe8190659d97b8d05c7c6af232357da78904d5ad1abcffeefbcdf",
+          "endTime": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "keyword": "cdd22bbb9f9703c25b8b9a6a960a2833b28122286654da4070be4e1e33ca797c",
+          "pageSize": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5",
+          "pageIndex": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+          "startTime": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "serviceTypeId": "391552c099c101b131feaf24c5795a6a15bc8ec82015424e0d2b4274a369a0bf",
+          "sortDirection": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+        },
+        "parameterShapeEvidence": {}
+      },
+      "collectionReceipt": {
+        "total": 0,
+        "fields": [
+          "id",
+          "applicationNumber",
+          "taskId",
+          "status",
+          "statusId",
+          "taskStatus",
+          "taskStatusId",
+          "assignee",
+          "assignedTo",
+          "serviceCode",
+          "serviceNameEn",
+          "serviceCategoryNameEn",
+          "serviceTypeNameEn",
+          "applyForEn",
+          "submissionTime",
+          "lastUpdatedTime",
+          "sla",
+          "slaDescription",
+          "overdueDays",
+          "dispositionCaseId"
+        ],
+        "rowCount": 0,
+        "rowsPath": "/data/page/items",
+        "bytesRead": 7776,
+        "pagesRead": 2,
+        "startedAt": "2026-09-28T10:29:02.001182+00:00",
+        "totalPath": "/data/page/total",
+        "comparison": {
+          "equivalent": true,
+          "orderChanged": false,
+          "changedFields": [],
+          "firstRowCount": 0,
+          "secondRowCount": 0,
+          "addedIdentityCount": 0,
+          "changedIdentityCount": 0,
+          "removedIdentityCount": 0
+        },
+        "contextRef": "dcc1e437e31dab6b18af829ccaa1c65a21b9eff284763763151dee7065fa88e4",
+        "derivation": {
+          "kind": "fixed_reference_computation",
+          "definitions": [
+            {
+              "field": "sla",
+              "recordId": "admin.page-docs.licensing.applications.sla-semantics",
+              "revision": 11,
+              "documentId": "4fcacf3cbbf040ffb668a3fc87b330b1",
+              "definitionHash": "d70d3b0f401f7011e687824e201646a5afa9998e31c6b1d4497f87b760ca6cc4"
+            },
+            {
+              "field": "overdueDays",
+              "recordId": "admin.page-docs.licensing.applications.sla-semantics",
+              "revision": 11,
+              "documentId": "4fcacf3cbbf040ffb668a3fc87b330b1",
+              "definitionHash": "7449cfbec74ff16e801ee9940937a90124dfba37220e53409ff4ac3d41b17806"
+            }
+          ],
+          "inputFields": [
+            "id",
+            "applicationNumber",
+            "taskId",
+            "status",
+            "statusId",
+            "taskStatus",
+            "taskStatusId",
+            "assignee",
+            "assignedTo",
+            "serviceCode",
+            "serviceNameEn",
+            "serviceCategoryNameEn",
+            "serviceTypeNameEn",
+            "applyForEn",
+            "submissionTime",
+            "lastUpdatedTime",
+            "slaDescription",
+            "dispositionCaseId",
+            "taskDueTime",
+            "taskApprovalAt"
+          ],
+          "referenceUtc": "2026-09-28T10:29:02.001182+00:00",
+          "fieldDiagnostics": {
+            "sla": {
+              "computedRows": 0,
+              "unverifiedRows": 0,
+              "documentedNullRows": 0
+            },
+            "overdueDays": {
+              "computedRows": 0,
+              "unverifiedRows": 0,
+              "documentedNullRows": 0
+            }
+          },
+          "snapshotIsolation": false,
+          "inputProjectionHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "finishedAt": "2026-09-28T10:29:10.877306+00:00",
+        "pagination": {
+          "pageSize": 500,
+          "pageField": "pageIndex",
+          "sizeField": "pageSize",
+          "observedPageSize": 10
+        },
+        "consistency": "two_pass_observation",
+        "fieldStatus": {
+          "id": "complete",
+          "sla": "complete",
+          "status": "complete",
+          "taskId": "complete",
+          "assignee": "complete",
+          "statusId": "complete",
+          "applyForEn": "complete",
+          "assignedTo": "complete",
+          "taskStatus": "complete",
+          "overdueDays": "complete",
+          "serviceCode": "complete",
+          "taskStatusId": "complete",
+          "serviceNameEn": "complete",
+          "slaDescription": "complete",
+          "submissionTime": "complete",
+          "lastUpdatedTime": "complete",
+          "applicationNumber": "complete",
+          "dispositionCaseId": "complete",
+          "serviceTypeNameEn": "complete",
+          "serviceCategoryNameEn": "complete"
+        },
+        "completeness": "complete",
+        "operationRef": "POST /api/Application/MyTodoPage",
+        "stablePasses": 2,
+        "schemaVersion": "projected-collection/1",
+        "identityFields": [
+          "id",
+          "applicationNumber"
+        ],
+        "projectionHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "snapshotIsolation": false
+      },
+      "principalScopeRef": "7da85129c1862eb3c3f0",
+      "relatedReadReceipt": {}
+    },
+    "captures": [
+      {
+        "page": "/licensing/applications",
+        "policy": "trusted_gateway",
+        "actions": [],
+        "capturedAt": "2026-09-28T10:27:31.362677+00:00",
+        "buildFingerprint": "unknown",
+        "bindingVerification": "observed_current_session"
+      },
+      {
+        "page": "/licensing/applications",
+        "policy": "trusted_gateway",
+        "actions": [
+          {
+            "type": "filter",
+            "value": "ML-2-804-9226243",
+            "selector": "input[placeholder=\"Search\"]"
+          }
+        ],
+        "capturedAt": "2026-09-28T10:27:56.358231+00:00",
+        "buildFingerprint": "unknown",
+        "bindingVerification": "observed_current_session"
+      },
+      {
+        "page": "/licensing/applications",
+        "policy": "trusted_gateway",
+        "actions": [
+          {
+            "type": "filter",
+            "value": "ML-2-804-9226243",
+            "selector": "input[placeholder=\"Search\"]"
+          },
+          {
+            "type": "filter",
+            "value": "ML-2-804-0460740",
+            "selector": "input[placeholder=\"Search\"]"
+          }
+        ],
+        "capturedAt": "2026-09-28T10:28:21.571403+00:00",
+        "buildFingerprint": "unknown",
+        "bindingVerification": "observed_current_session"
+      }
+    ],
+    "failedAnalysis": [
+      {
+        "stage": "AnalysisPlan",
+        "attempt": 1,
+        "failure": "{\"code\":\"record_set_lookup_definition_required\"}",
+        "candidate": {
+          "stage": "analysis",
+          "steps": [
+            {
+              "id": "read_todo_rows",
+              "op": "read_rows",
+              "path": "/data/page/items",
+              "role": "detail",
+              "label": "قراءة صفوف قائمة المهام المطلوبة",
+              "expose": false,
+              "fields": [
+                "id",
+                "applicationNumber",
+                "taskId",
+                "status",
+                "serviceNameEn",
+                "serviceCategoryNameEn",
+                "applyForEn",
+                "submissionTime",
+                "lastUpdatedTime",
+                "slaDescription"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "k_3970e26f7c59236deb12:p11"
+                },
+                {
+                  "sourceId": "k_3970e26f7c59236deb12:p13"
+                }
+              ],
+              "sourceId": "api_7e937113c1fc82eaa5c8",
+              "totalPath": "/data/page/total",
+              "unknownPolicy": "report"
+            },
+            {
+              "id": "filter_identifiers_step",
+              "op": "filter_identifiers",
+              "path": "/data/page/items",
+              "role": "detail",
+              "field": "",
+              "label": "مطابقة المعرّفين المطلوبين",
+              "expose": false,
+              "fields": [
+                "applicationNumber"
+              ],
+              "inputs": [
+                "read_todo_rows"
+              ],
+              "operand": [
+                "ML-2-804-9226243",
+                "ML-2-804-0460740"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "k_75e718c88eca8026cef7:p0"
+                },
+                {
+                  "sourceId": "k_3970e26f7c59236deb12:p12"
+                }
+              ],
+              "sourceId": "api_7e937113c1fc82eaa5c8",
+              "predicate": "in",
+              "unknownPolicy": "report",
+              "knowledgeBindingId": ""
+            },
+            {
+              "id": "distinct_applications",
+              "op": "distinct",
+              "path": "/data/page/items",
+              "role": "detail",
+              "label": "تمييز الطلبات المطابقة",
+              "expose": false,
+              "fields": [
+                "id"
+              ],
+              "inputs": [
+                "filter_identifiers_step"
+              ],
+              "evidence": [],
+              "sourceId": "api_7e937113c1fc82eaa5c8",
+              "unknownPolicy": "report",
+              "knowledgeBindingId": "admin.page-docs.licensing.applications.todo.collection#application_grain"
+            },
+            {
+              "id": "project_records",
+              "op": "project",
+              "path": "/data/page/items",
+              "role": "detail",
+              "label": "السجلات المطابقة",
+              "expose": true,
+              "fields": [
+                "applicationNumber",
+                "serviceNameEn",
+                "serviceCategoryNameEn",
+                "applyForEn",
+                "status",
+                "slaDescription",
+                "submissionTime",
+                "lastUpdatedTime"
+              ],
+              "inputs": [
+                "distinct_applications"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "k_3970e26f7c59236deb12:p13"
+                },
+                {
+                  "sourceId": "k_3970e26f7c59236deb12:p14"
+                }
+              ],
+              "sourceId": "api_7e937113c1fc82eaa5c8",
+              "fieldLabels": {
+                "status": "حالة الطلب",
+                "applyForEn": "مقدَّم الطلب",
+                "serviceNameEn": "اسم الخدمة",
+                "slaDescription": "اتفاقية مستوى الخدمة",
+                "submissionTime": "وقت التقديم",
+                "lastUpdatedTime": "آخر تحديث",
+                "applicationNumber": "رقم الطلب",
+                "serviceCategoryNameEn": "فئة الخدمة"
+              }
+            }
+          ],
+          "context": {
+            "time": {
+              "value": "لا يوجد مرشّح زمني مطلوب في هذا السؤال.",
+              "evidence": [
+                {
+                  "sourceId": "k_3970e26f7c59236deb12:p12"
+                }
+              ]
+            },
+            "grain": {
+              "value": "الطلب الواحد؛ هوية الطلب هي id وليست هوية صف الإسقاط أو taskId.",
+              "evidence": [
+                {
+                  "sourceId": "k_48d12c37fbf123e0376e:p1"
+                },
+                {
+                  "sourceId": "k_3970e26f7c59236deb12:p3"
+                }
+              ]
+            },
+            "scope": "personal",
+            "caveats": [
+              {
+                "value": "لا يوجد ضمان تفرد عالمي لرقم الطلب، وقد يرتبط الطلب الواحد بأكثر من مهمة سير عمل؛ لذلك يُعرض كل معرّف مطلوب كسجل مستقل دون دمج.",
+                "evidence": [
+                  {
+                    "sourceId": "k_3970e26f7c59236deb12:p13"
+                  },
+                  {
+                    "sourceId": "k_9c9a74f0a2084c22af91:p8"
+                  }
+                ]
+              },
+              {
+                "value": "نطاق القراءة هو قائمة المهام الشخصية للمستخدم الموثّق؛ ولا يثبت ذلك الوصول إلى طلبات فريق آخر.",
+                "evidence": [
+                  {
+                    "sourceId": "k_3970e26f7c59236deb12:p7"
+                  },
+                  {
+                    "sourceId": "k_c6411a6a61f78f2d6115:p1"
+                  }
+                ]
+              }
+            ],
+            "population": {
+              "value": "قائمة المهام المطلوبة (To Do) الشخصية للمستخدم الموثّق، بعد تطبيق مرشّح البحث على رقم الطلب.",
+              "evidence": [
+                {
+                  "sourceId": "k_3970e26f7c59236deb12:p8"
+                },
+                {
+                  "sourceId": "k_3970e26f7c59236deb12:p9"
+                }
+              ]
+            },
+            "filterScope": {
+              "value": "مرشّح البحث (keyword) على رقم الطلب للمعرّفين ML-2-804-9226243 و ML-2-804-0460740؛ البحث بحث جزئي غير حصري، لذا يُتحقق من التطابق الدقيق لكل معرّف في النتيجة.",
+              "evidence": [
+                {
+                  "sourceId": "k_3970e26f7c59236deb12:p12"
+                },
+                {
+                  "sourceId": "k_75e718c88eca8026cef7:p0"
+                }
+              ]
+            },
+            "scopeEvidence": [
+              {
+                "sourceId": "k_48d12c37fbf123e0376e:p1"
+              },
+              {
+                "sourceId": "k_3970e26f7c59236deb12:p7"
+              }
+            ]
+          },
+          "missing": [],
+          "metricCoverage": [],
+          "requirementBindings": [
+            {
+              "fields": [
+                "id"
+              ],
+              "stepIds": [
+                "read_todo_rows",
+                "distinct_applications"
+              ],
+              "evidence": [],
+              "sourceId": "api_7e937113c1fc82eaa5c8",
+              "sourcePath": "/data/page/items",
+              "requirementId": "object",
+              "knowledgeBindingId": "admin.page-docs.licensing.applications.todo.collection#application_object"
+            },
+            {
+              "fields": [
+                "id"
+              ],
+              "stepIds": [
+                "read_todo_rows",
+                "distinct_applications"
+              ],
+              "evidence": [],
+              "sourceId": "api_7e937113c1fc82eaa5c8",
+              "sourcePath": "/data/page/items",
+              "requirementId": "grain",
+              "knowledgeBindingId": "admin.page-docs.licensing.applications.todo.collection#application_grain"
+            },
+            {
+              "fields": [
+                "applicationNumber"
+              ],
+              "stepIds": [
+                "filter_identifiers_step"
+              ],
+              "evidence": [
+                {
+                  "quote": "- **identity:** The selected visible Application No.; service names alone are not unique identifiers.",
+                  "sourceId": "k_75e718c88eca8026cef7:p0"
+                },
+                {
+                  "quote": "\"keyword\": \"Case-insensitive substring of applicationNumber, serviceNameAr/serviceNameEn and applyForAr/applyForEn; not an exact unique lookup.\"",
+                  "sourceId": "k_3970e26f7c59236deb12:p12"
+                }
+              ],
+              "sourceId": "api_7e937113c1fc82eaa5c8",
+              "sourcePath": "/data/page/items",
+              "requirementId": "filter_0",
+              "knowledgeBindingId": ""
+            },
+            {
+              "fields": [
+                "applicationNumber",
+                "serviceNameEn",
+                "serviceCategoryNameEn",
+                "applyForEn",
+                "status",
+                "slaDescription",
+                "submissionTime",
+                "lastUpdatedTime"
+              ],
+              "stepIds": [
+                "project_records"
+              ],
+              "evidence": [
+                {
+                  "quote": "\"applicationNumber\": \"Displayed application business number; no global uniqueness constraint was established from the inspected snapshot.\"",
+                  "sourceId": "k_3970e26f7c59236deb12:p13"
+                }
+              ],
+              "sourceId": "api_7e937113c1fc82eaa5c8",
+              "sourcePath": "/data/page/items",
+              "requirementId": "detail",
+              "knowledgeBindingId": ""
+            }
+          ]
+        }
+      },
+      {
+        "stage": "AnalysisPlan",
+        "attempt": 2,
+        "failure": "{\"code\":\"analysis_binding_inapplicable\",\"requirementId\":\"filter_0\",\"allowedBindingIds\":[\"admin.licensing.applications.bindings.todo#application_entity\",\"admin.licensing.applications.bindings.todo#application_identity\",\"admin.licensing.applications.bindings.todo#application_status\",\"admin.licensing.applications.bindings.todo#personal_queue\",\"admin.licensing.applications.bindings.todo#service_category\",\"admin.licensing.applications.bindings.todo#workflow_task_status\",\"admin.page-docs.licensing.applications.sla-semantics#over_sla_population\",\"admin.page-docs.licensing.applications.sla-semantics#overdue\",\"admin.page-docs.licensing.applications.sla-semantics#overdue_count\",\"admin.page-docs.licensing.applications.sla-semantics#overdue_days\",\"admin.page-docs.licensing.applications.sla-semantics#sla\",\"admin.page-docs.licensing.applications.sla-semantics#sla_display\",\"admin.page-docs.licensing.applications.sla-semantics#sla_order\",\"admin.page-docs.licensing.applications.todo.collection#application_grain\",\"admin.page-docs.licensing.applications.todo.collection#application_object\",\"admin.page-docs.licensing.applications.todo.collection#assigned_to_current_user\",\"admin.page-docs.licensing.applications.todo.collection#handler\",\"admin.page-docs.licensing.applications.todo.collection#node_status\",\"admin.page-docs.licensing.applications.todo.collection#pending_filter\",\"admin.page-docs.licensing.applications.todo.collection#pending_population\",\"admin.page-docs.licensing.applications.todo.collection#personal_scope\",\"admin.page-docs.licensing.applications.todo.collection#service_category\",\"admin.page-docs.licensing.applications.todo.collection#status\",\"admin.page-docs.licensing.applications.todo.collection#status_attribute\",\"admin.page-docs.licensing.applications.todo.collection#task_grain\",\"admin.page-docs.licensing.applications.todo.collection#task_object\"],\"selectedDefinition\":{\"knowledgeBindingId\":\"admin.page-docs.licensing.applications.todo.collection#application_object\",\"operationRef\":\"POST /api/Application/MyTodoPage\",\"sourcePath\":\"/data/page/items\",\"fields\":[\"id\"],\"conditions\":null},\"providedFields\":[\"applicationNumber\"],\"providedPath\":\"/data/page/items\",\"correction\":\"Select a binding for this exact live operation/path. Copy its complete physical dependency fields into the requirement binding, not only the visible columns. The contributing read must retain the required identity and condition fields; apply documented filters and use a final project step for public display columns. Do not reuse another interface binding.\"}",
+        "candidate": {
+          "stage": "analysis",
+          "steps": [
+            {
+              "id": "read_todo_rows",
+              "op": "read_rows",
+              "path": "/data/page/items",
+              "label": "قراءة صفوف قائمة المهام المطلوبة",
+              "expose": false,
+              "fields": [
+                "id",
+                "applicationNumber",
+                "taskId",
+                "status",
+                "statusId",
+                "taskStatus",
+                "taskStatusId",
+                "assignee",
+                "assignedTo",
+                "serviceCode",
+                "serviceNameEn",
+                "serviceCategoryNameEn",
+                "serviceTypeNameEn",
+                "applyForEn",
+                "submissionTime",
+                "lastUpdatedTime",
+                "sla",
+                "slaDescription",
+                "overdueDays",
+                "dispositionCaseId"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "k_3970e26f7c59236deb12:p11"
+                }
+              ],
+              "sourceId": "api_7e937113c1fc82eaa5c8",
+              "totalPath": "/data/page/total",
+              "unknownPolicy": "report"
+            },
+            {
+              "id": "filter_requested_ids",
+              "op": "filter_identifiers",
+              "field": "",
+              "label": "تقييد القائمة بالمعرّفين المطلوبين",
+              "expose": false,
+              "fields": [
+                "applicationNumber"
+              ],
+              "inputs": [
+                "read_todo_rows"
+              ],
+              "operand": [
+                "ML-2-804-9226243",
+                "ML-2-804-0460740"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "k_75e718c88eca8026cef7:p0"
+                }
+              ],
+              "predicate": "in",
+              "unknownPolicy": "report",
+              "knowledgeBindingId": "admin.page-docs.licensing.applications.todo.collection#application_object"
+            },
+            {
+              "id": "distinct_applications",
+              "op": "distinct",
+              "label": "تمييز الطلبات المطابقة على مستوى هوية الطلب",
+              "expose": false,
+              "fields": [
+                "id"
+              ],
+              "inputs": [
+                "filter_requested_ids"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "k_3970e26f7c59236deb12:p3"
+                }
+              ],
+              "unknownPolicy": "report"
+            },
+            {
+              "id": "project_records",
+              "op": "project",
+              "role": "detail",
+              "label": "السجلات المطابقة",
+              "expose": true,
+              "fields": [
+                "applicationNumber",
+                "serviceNameEn",
+                "serviceCategoryNameEn",
+                "status",
+                "slaDescription",
+                "applyForEn",
+                "submissionTime"
+              ],
+              "inputs": [
+                "distinct_applications"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "k_3970e26f7c59236deb12:p13"
+                }
+              ],
+              "fieldLabels": {
+                "status": "الحالة",
+                "applyForEn": "مقدَّم الطلب",
+                "serviceNameEn": "اسم الخدمة",
+                "slaDescription": "اتفاقية مستوى الخدمة",
+                "submissionTime": "وقت التقديم",
+                "applicationNumber": "رقم الطلب",
+                "serviceCategoryNameEn": "فئة الخدمة"
+              }
+            }
+          ],
+          "context": {
+            "time": {
+              "value": "لا يوجد نطاق زمني مطلوب؛ لم يُطبَّق أي مرشّح زمني.",
+              "evidence": [
+                {
+                  "sourceId": "k_3970e26f7c59236deb12:p12"
+                }
+              ]
+            },
+            "grain": {
+              "value": "طلب واحد لكل سجل، وهوية الطلب هي id وليست هوية صف الإسقاط أو taskId.",
+              "evidence": [
+                {
+                  "sourceId": "k_3970e26f7c59236deb12:p3"
+                }
+              ]
+            },
+            "scope": "personal",
+            "caveats": [
+              {
+                "value": "لا يوجد ضمان تفرد عالمي لرقم الطلب، لذا يُتحقق من تطابق رقم الطلب المعروض مع كل معرّف مطلوب على حدة.",
+                "evidence": [
+                  {
+                    "sourceId": "k_3970e26f7c59236deb12:p13"
+                  }
+                ]
+              },
+              {
+                "value": "نطاق القراءة شخصي (قائمة المهام المطلوبة للمستخدم الموثّق)؛ ودور المدير لا يحوّله إلى قائمة فريق.",
+                "evidence": [
+                  {
+                    "sourceId": "k_3970e26f7c59236deb12:p15"
+                  }
+                ]
+              }
+            ],
+            "population": {
+              "value": "قائمة المهام المطلوبة (To Do) الخاصة بالمستخدم الموثّق ضمن قسم الموافقة الحالي.",
+              "evidence": [
+                {
+                  "sourceId": "k_3970e26f7c59236deb12:p8"
+                }
+              ]
+            },
+            "filterScope": {
+              "value": "تقييد القائمة بالمعرّفين المطلوبين ML-2-804-9226243 و ML-2-804-0460740 مع إبقاء كل سجل منفصلًا.",
+              "evidence": [
+                {
+                  "sourceId": "k_75e718c88eca8026cef7:p0"
+                }
+              ]
+            },
+            "scopeEvidence": [
+              {
+                "sourceId": "k_3970e26f7c59236deb12:p7"
+              }
+            ]
+          },
+          "missing": [],
+          "metricCoverage": [],
+          "requirementBindings": [
+            {
+              "fields": [
+                "id"
+              ],
+              "stepIds": [
+                "read_todo_rows",
+                "filter_requested_ids",
+                "distinct_applications"
+              ],
+              "evidence": [],
+              "sourceId": "api_7e937113c1fc82eaa5c8",
+              "sourcePath": "/data/page/items",
+              "requirementId": "object",
+              "knowledgeBindingId": "admin.page-docs.licensing.applications.todo.collection#application_object"
+            },
+            {
+              "fields": [
+                "id"
+              ],
+              "stepIds": [
+                "read_todo_rows",
+                "filter_requested_ids",
+                "distinct_applications"
+              ],
+              "evidence": [],
+              "sourceId": "api_7e937113c1fc82eaa5c8",
+              "sourcePath": "/data/page/items",
+              "requirementId": "grain",
+              "knowledgeBindingId": "admin.page-docs.licensing.applications.todo.collection#application_grain"
+            },
+            {
+              "fields": [
+                "applicationNumber"
+              ],
+              "stepIds": [
+                "filter_requested_ids"
+              ],
+              "evidence": [],
+              "sourceId": "api_7e937113c1fc82eaa5c8",
+              "sourcePath": "/data/page/items",
+              "requirementId": "filter_0",
+              "knowledgeBindingId": "admin.page-docs.licensing.applications.todo.collection#application_object"
+            },
+            {
+              "fields": [
+                "applicationNumber",
+                "serviceNameEn",
+                "serviceCategoryNameEn",
+                "status",
+                "slaDescription",
+                "applyForEn",
+                "submissionTime"
+              ],
+              "stepIds": [
+                "project_records"
+              ],
+              "evidence": [],
+              "sourceId": "api_7e937113c1fc82eaa5c8",
+              "sourcePath": "/data/page/items",
+              "requirementId": "detail",
+              "knowledgeBindingId": ""
+            }
+          ]
+        }
+      },
+      {
+        "stage": "AnalysisPlan",
+        "attempt": 3,
+        "failure": "{\"code\":\"analysis_binding_inapplicable\",\"requirementId\":\"filter_0\",\"allowedBindingIds\":[\"admin.licensing.applications.bindings.todo#application_entity\",\"admin.licensing.applications.bindings.todo#application_identity\",\"admin.licensing.applications.bindings.todo#application_status\",\"admin.licensing.applications.bindings.todo#personal_queue\",\"admin.licensing.applications.bindings.todo#service_category\",\"admin.licensing.applications.bindings.todo#workflow_task_status\",\"admin.page-docs.licensing.applications.sla-semantics#over_sla_population\",\"admin.page-docs.licensing.applications.sla-semantics#overdue\",\"admin.page-docs.licensing.applications.sla-semantics#overdue_count\",\"admin.page-docs.licensing.applications.sla-semantics#overdue_days\",\"admin.page-docs.licensing.applications.sla-semantics#sla\",\"admin.page-docs.licensing.applications.sla-semantics#sla_display\",\"admin.page-docs.licensing.applications.sla-semantics#sla_order\",\"admin.page-docs.licensing.applications.todo.collection#application_grain\",\"admin.page-docs.licensing.applications.todo.collection#application_object\",\"admin.page-docs.licensing.applications.todo.collection#assigned_to_current_user\",\"admin.page-docs.licensing.applications.todo.collection#handler\",\"admin.page-docs.licensing.applications.todo.collection#node_status\",\"admin.page-docs.licensing.applications.todo.collection#pending_filter\",\"admin.page-docs.licensing.applications.todo.collection#pending_population\",\"admin.page-docs.licensing.applications.todo.collection#personal_scope\",\"admin.page-docs.licensing.applications.todo.collection#service_category\",\"admin.page-docs.licensing.applications.todo.collection#status\",\"admin.page-docs.licensing.applications.todo.collection#status_attribute\",\"admin.page-docs.licensing.applications.todo.collection#task_grain\",\"admin.page-docs.licensing.applications.todo.collection#task_object\"],\"selectedDefinition\":{\"knowledgeBindingId\":\"admin.page-docs.licensing.applications.todo.collection#application_object\",\"operationRef\":\"POST /api/Application/MyTodoPage\",\"sourcePath\":\"/data/page/items\",\"fields\":[\"id\"],\"conditions\":null},\"providedFields\":[\"id\",\"applicationNumber\"],\"providedPath\":\"/data/page/items\",\"correction\":\"Select a binding for this exact live operation/path. Copy its complete physical dependency fields into the requirement binding, not only the visible columns. The contributing read must retain the required identity and condition fields; apply documented filters and use a final project step for public display columns. Do not reuse another interface binding.\"}",
+        "candidate": {
+          "stage": "analysis",
+          "steps": [
+            {
+              "id": "read_todo_rows",
+              "op": "read_rows",
+              "path": "/data/page/items",
+              "label": "قراءة صفوف قائمة المهام المطلوبة",
+              "expose": false,
+              "fields": [
+                "id",
+                "applicationNumber",
+                "taskId",
+                "status",
+                "statusId",
+                "taskStatus",
+                "taskStatusId",
+                "assignee",
+                "assignedTo",
+                "serviceCode",
+                "serviceNameEn",
+                "serviceCategoryNameEn",
+                "serviceTypeNameEn",
+                "applyForEn",
+                "submissionTime",
+                "lastUpdatedTime",
+                "sla",
+                "slaDescription",
+                "overdueDays",
+                "dispositionCaseId"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "k_3970e26f7c59236deb12:p11"
+                },
+                {
+                  "sourceId": "k_3970e26f7c59236deb12:p13"
+                }
+              ],
+              "sourceId": "api_7e937113c1fc82eaa5c8",
+              "totalPath": "/data/page/total",
+              "unknownPolicy": "report"
+            },
+            {
+              "id": "filter_identifiers_step",
+              "op": "filter_identifiers",
+              "path": "/data/page/items",
+              "field": "",
+              "label": "تقييد الصفوف على المعرّفين المطلوبين",
+              "expose": false,
+              "fields": [
+                "applicationNumber"
+              ],
+              "inputs": [
+                "read_todo_rows"
+              ],
+              "operand": [
+                "ML-2-804-9226243",
+                "ML-2-804-0460740"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "k_3970e26f7c59236deb12:p2"
+                },
+                {
+                  "sourceId": "k_75e718c88eca8026cef7:p0"
+                }
+              ],
+              "sourceId": "api_7e937113c1fc82eaa5c8",
+              "predicate": "in",
+              "unknownPolicy": "report",
+              "knowledgeBindingId": "admin.page-docs.licensing.applications.todo.collection#application_object"
+            },
+            {
+              "id": "distinct_applications",
+              "op": "distinct",
+              "path": "/data/page/items",
+              "label": "تمييز الطلبات المطابقة",
+              "expose": false,
+              "fields": [
+                "id"
+              ],
+              "inputs": [
+                "filter_identifiers_step"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "k_3970e26f7c59236deb12:p3"
+                }
+              ],
+              "sourceId": "api_7e937113c1fc82eaa5c8",
+              "unknownPolicy": "report",
+              "knowledgeBindingId": "admin.page-docs.licensing.applications.todo.collection#application_grain"
+            },
+            {
+              "id": "project_records",
+              "op": "project",
+              "path": "/data/page/items",
+              "role": "detail",
+              "label": "السجلات المطابقة",
+              "fields": [
+                "applicationNumber",
+                "serviceNameEn",
+                "serviceCategoryNameEn",
+                "status",
+                "slaDescription",
+                "applyForEn",
+                "submissionTime"
+              ],
+              "inputs": [
+                "distinct_applications"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "k_3970e26f7c59236deb12:p2"
+                },
+                {
+                  "sourceId": "k_75e718c88eca8026cef7:p0"
+                }
+              ],
+              "sourceId": "api_7e937113c1fc82eaa5c8",
+              "fieldLabels": {
+                "status": "الحالة",
+                "applyForEn": "مقدَّم الطلب",
+                "serviceNameEn": "اسم الخدمة",
+                "slaDescription": "اتفاقية مستوى الخدمة",
+                "submissionTime": "وقت التقديم",
+                "applicationNumber": "رقم الطلب",
+                "serviceCategoryNameEn": "فئة الخدمة"
+              }
+            }
+          ],
+          "context": {
+            "time": {
+              "value": "لا يوجد نطاق زمني مطلوب؛ لم يُطبَّق أي مرشح زمني.",
+              "evidence": [
+                {
+                  "sourceId": "k_3970e26f7c59236deb12:p12"
+                }
+              ]
+            },
+            "grain": {
+              "value": "طلب واحد لكل سجل؛ هوية الطلب هي id وليست هوية صف الإسقاط أو taskId.",
+              "evidence": [
+                {
+                  "sourceId": "k_3970e26f7c59236deb12:p3"
+                },
+                {
+                  "sourceId": "k_48d12c37fbf123e0376e:p1"
+                }
+              ]
+            },
+            "scope": "personal",
+            "caveats": [
+              {
+                "value": "لا يوجد ضمان تفرد عالمي لرقم الطلب؛ يُتحقق من تطابق رقم الطلب المعروض مع كل معرّف مطلوب على حدة.",
+                "evidence": [
+                  {
+                    "sourceId": "k_3970e26f7c59236deb12:p13"
+                  },
+                  {
+                    "sourceId": "k_9c9a74f0a2084c22af91:p8"
+                  }
+                ]
+              },
+              {
+                "value": "النطاق شخصي: قائمة المهام المطلوبة للمستخدم الموثق، ولا يوسّعها دور المدير إلى قائمة فريق.",
+                "evidence": [
+                  {
+                    "sourceId": "k_3970e26f7c59236deb12:p7"
+                  },
+                  {
+                    "sourceId": "k_48d12c37fbf123e0376e:p1"
+                  }
+                ]
+              }
+            ],
+            "population": {
+              "value": "قائمة المهام المطلوبة (To Do) الشخصية للمستخدم الموثق على صفحة طلبات الترخيص.",
+              "evidence": [
+                {
+                  "sourceId": "k_3970e26f7c59236deb12:p8"
+                },
+                {
+                  "sourceId": "k_3970e26f7c59236deb12:p7"
+                }
+              ]
+            },
+            "filterScope": {
+              "value": "تقييد النتيجة على المعرّفين العامّين المطلوبين ML-2-804-9226243 و ML-2-804-0460740، مع إبقاء كل سجل منفصلًا.",
+              "evidence": [
+                {
+                  "sourceId": "k_75e718c88eca8026cef7:p0"
+                },
+                {
+                  "sourceId": "k_3970e26f7c59236deb12:p2"
+                }
+              ]
+            },
+            "scopeEvidence": [
+              {
+                "sourceId": "k_3970e26f7c59236deb12:p7"
+              },
+              {
+                "sourceId": "k_48d12c37fbf123e0376e:p1"
+              }
+            ]
+          },
+          "missing": [],
+          "metricCoverage": [],
+          "requirementBindings": [
+            {
+              "fields": [
+                "id"
+              ],
+              "reason": "الكيان المطلوب هو الطلب كما يعرّفه ربط الكيان على نفس العملية والمسار.",
+              "stepIds": [
+                "read_todo_rows",
+                "filter_identifiers_step",
+                "distinct_applications"
+              ],
+              "sourceId": "api_7e937113c1fc82eaa5c8",
+              "sourcePath": "/data/page/items",
+              "requirementId": "object",
+              "knowledgeBindingId": "admin.page-docs.licensing.applications.todo.collection#application_object"
+            },
+            {
+              "fields": [
+                "id"
+              ],
+              "reason": "حبيبة الطلب هي id؛ التمييز يمنع دمج السجلين المطلوبين.",
+              "stepIds": [
+                "read_todo_rows",
+                "filter_identifiers_step",
+                "distinct_applications"
+              ],
+              "sourceId": "api_7e937113c1fc82eaa5c8",
+              "sourcePath": "/data/page/items",
+              "requirementId": "grain",
+              "knowledgeBindingId": "admin.page-docs.licensing.applications.todo.collection#application_grain"
+            },
+            {
+              "fields": [
+                "id",
+                "applicationNumber"
+              ],
+              "reason": "رقم الطلب هو المرجع العام المعروض للصف؛ يُطبَّق مرشح الهوية على المعرّفين المطلوبين مع الاحتفاظ بحقل الهوية id.",
+              "stepIds": [
+                "read_todo_rows",
+                "filter_identifiers_step",
+                "distinct_applications"
+              ],
+              "sourceId": "api_7e937113c1fc82eaa5c8",
+              "sourcePath": "/data/page/items",
+              "requirementId": "filter_0",
+              "knowledgeBindingId": "admin.page-docs.licensing.applications.todo.collection#application_object"
+            },
+            {
+              "fields": [
+                "applicationNumber",
+                "serviceNameEn",
+                "serviceCategoryNameEn",
+                "status",
+                "slaDescription",
+                "applyForEn",
+                "submissionTime"
+              ],
+              "reason": "مخرَج القائمة يُعرض من خطوة الإسقاط النهائية على السجلات المطابقة.",
+              "stepIds": [
+                "project_records"
+              ],
+              "sourceId": "api_7e937113c1fc82eaa5c8",
+              "sourcePath": "/data/page/items",
+              "requirementId": "detail",
+              "knowledgeBindingId": ""
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "originalQuestion": "Find ML-2-804-9226243 and ML-2-804-0460740. Keep the two records separate."
+}

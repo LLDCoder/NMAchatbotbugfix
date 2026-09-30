@@ -1,0 +1,208 @@
+@import "@/styles/variables.less";
+
+.gap-right(@dis: 1px) {
+  margin-right: @dis;
+}
+.gap {
+  .gap-right(8px);
+}
+
+.font-size(@size: 16px) {
+  font-size: @size;
+}
+
+.warning-txt {
+  color: rgba(234, 79, 73, 1);
+}
+
+.members-container {
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 20px;
+  p {
+    margin: 0;
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    padding: 12px;
+    border-radius: 10px;
+  }
+}
+
+
+.filter-facade {
+  border-radius: 8px;
+  height: 48px;
+  width: 360px;
+}
+
+.members-filter {
+  display: flex;
+  align-items: center;
+
+  // mixin
+  .font-size();
+
+  .search-input {
+    .filter-facade();
+    .ant-input {
+      border-radius: 8px;
+    }
+  
+    &:hover,
+    &:focus-within {
+      .ant-input {
+        border-color: @primary-color;
+      }
+    }
+  }
+  .range-picker {
+    .filter-facade();
+    .ant-picker-input input[size="12"] {
+      font-size: 16px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.empty-members {
+  margin-top: 20px;
+}
+.members-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+  row-gap: 16px;
+  margin-top: 20px;
+  .user-content {
+    display: flex;
+    border: 1px solid rgba(225, 227, 229, 1);
+    border-radius: 12px;
+    padding: 20px;
+    &.leave {
+      border: 1px solid rgba(250, 170, 167, 1);
+    }
+    .user-img {
+      align-self: flex-start;
+      margin-right: 20px;
+      padding: 12px;
+      background: linear-gradient(rgba(247, 246, 243, 1), rgba(246, 246, 245, 1), rgba(247, 242, 235, 1));
+      border-radius: 50%;
+      color: rgba(215, 188, 109, 1);
+      // prevent line-height from affecting the svg
+      line-height: 0;
+      & svg {
+        width: 32px;
+        height: 32px;
+      }
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        padding: 8px;
+      }
+    }
+    .user-information {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      .resume-work {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(254, 242, 242, 1);
+        padding: 12px;
+        border-radius: 8px;
+        .resume-work-content {
+          font-size: 14px;
+          color: rgba(234, 79, 73, 1);
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            font-size: 12px;
+          }
+        }
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          padding: 8px;
+        }
+      }
+      .user-tasks {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 56px;
+        .user-tasks-content {
+          margin: 2px 2px 2px 0;
+          &.flow {
+            display: flex;
+            align-items: center;
+            .task-title-container {
+              margin-right: 8px;
+            }
+          }
+          .task-title-container {
+            line-height: 14px;
+            .task-title {
+              font-size: 14px;
+              color: rgba(95, 100, 109, 1);
+              /* rwd-ramp */
+              @media (max-width: 1919.98px) {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+      .user-work {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        row-gap: 20px;
+        column-gap: 20px;
+        align-items: flex-start;
+        margin-bottom: 20px;
+        flex-grow: 1;
+        .task-item {
+          .workload-progress {
+            &.success {
+              .ant-progress-success-bg, .ant-progress-bg {
+                background-color: rgba(160, 213, 171, 1);
+              }
+            }
+            .ant-progress-success-bg, .ant-progress-bg {
+              background-color: rgba(215, 188, 109, 1);
+            }
+          }
+        }
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          row-gap: 12px;
+          column-gap: 12px;
+        }
+      }
+      .mark-emg-btn {
+        color: rgba(146, 114, 42, 1);
+        font-size: 16px;
+        line-height: 48px;
+        text-align: center;
+        border-radius: 8px;
+        cursor: pointer;
+        background-color: rgba(189, 148, 55, 0.1);
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 14px;
+        }
+      }
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      padding: 12px;
+    }
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    column-gap: 12px;
+    row-gap: 12px;
+  }
+}

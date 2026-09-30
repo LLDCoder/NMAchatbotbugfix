@@ -1,0 +1,10 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="ListNumbers">
+<path id="Vector" d="M8.125 10H16.875" stroke="#CBA344" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M8.125 5H16.875" stroke="#CBA344" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M8.125 15H16.875" stroke="#CBA344" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M4.375 8.125V3.125L3.125 3.75" stroke="#CBA344" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_5" d="M5.625 16.2506H3.125L5.36563 13.2529C5.46726 13.1226 5.5415 12.9731 5.5839 12.8134C5.62629 12.6537 5.63595 12.4871 5.61231 12.3236C5.58867 12.16 5.5322 12.0029 5.44631 11.8618C5.36042 11.7206 5.24687 11.5983 5.1125 11.5021C4.83867 11.3022 4.49804 11.2162 4.16212 11.2621C3.8262 11.308 3.52113 11.4822 3.31094 11.7482C3.23187 11.8498 3.16914 11.9632 3.125 12.0842" stroke="#CBA344" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+
+</svg>

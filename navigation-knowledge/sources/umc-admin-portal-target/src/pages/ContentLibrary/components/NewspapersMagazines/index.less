@@ -1,0 +1,37 @@
+.newspapers-magazines-table-wrapper{
+    padding: 24px;
+    margin-top: 16px;
+    background-color: #fff;
+    border-radius: 20px;
+    .newspapers-magazines-table {
+        td.content-library-actions-column .books-table-actions {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+        }
+        td.content-library-actions-column .books-table-actions .ant-btn {
+            display: flex;
+            justify-content: flex-start;
+            text-align: left;
+            flex: 0 0 auto;
+            white-space: nowrap;
+        }
+    }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+.newspapers-magazines-filter{
+    display: flex;
+    justify-content: space-between;
+    .newspapers-magazines-form{
+        display: flex;
+        column-gap: 12px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        column-gap: 8px;
+      }
+    }
+}

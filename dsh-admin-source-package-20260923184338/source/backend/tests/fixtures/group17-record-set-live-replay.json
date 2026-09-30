@@ -1,0 +1,757 @@
+{
+  "en": {
+    "firstTask": {
+      "stage": "task",
+      "businessObject": "record",
+      "businessFocus": "",
+      "requestedScope": "unknown",
+      "requestedGrain": "record",
+      "requestedMeasures": [],
+      "requestedAttributes": [],
+      "requestedOrdering": [],
+      "groupBy": [],
+      "groupCompleteness": "observed",
+      "timeRange": "unknown",
+      "timeField": "",
+      "filters": [
+        "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]"
+      ],
+      "outputShape": "list",
+      "needsLiveData": true,
+      "readOnly": true,
+      "responseMode": "answer",
+      "requestBoundaries": [],
+      "searchQuery": "find records ML-2-804-9226243 ML-2-804-0460740 separate records lookup",
+      "unresolvedSlots": [
+        "businessObject"
+      ],
+      "recordIdentity": "ML-2-804-9226243, ML-2-804-0460740",
+      "view": "",
+      "contextRelation": "new",
+      "slotUpdates": [
+        {
+          "field": "filters",
+          "source": "current",
+          "value": [
+            "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]"
+          ],
+          "evidence": "Find ML-2-804-9226243 and ML-2-804-0460740"
+        },
+        {
+          "field": "outputShape",
+          "source": "current",
+          "value": "list",
+          "evidence": "Find ML-2-804-9226243 and ML-2-804-0460740"
+        },
+        {
+          "field": "requestedGrain",
+          "source": "current",
+          "value": "record",
+          "evidence": "Keep the two records separate"
+        },
+        {
+          "field": "businessObject",
+          "source": "current",
+          "value": "record",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "businessFocus",
+          "source": "current",
+          "value": "",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedScope",
+          "source": "current",
+          "value": "unknown",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedMeasures",
+          "source": "current",
+          "value": [],
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedAttributes",
+          "source": "current",
+          "value": [],
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupBy",
+          "source": "current",
+          "value": [],
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeRange",
+          "source": "current",
+          "value": "unknown",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "recordIdentity",
+          "source": "current",
+          "value": "ML-2-804-9226243, ML-2-804-0460740",
+          "evidence": "Find ML-2-804-9226243 and ML-2-804-0460740"
+        },
+        {
+          "field": "view",
+          "source": "current",
+          "value": "",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeField",
+          "source": "current",
+          "value": "",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedOrdering",
+          "source": "current",
+          "value": [],
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupCompleteness",
+          "source": "current",
+          "value": "observed",
+          "evidence": "parsed current request"
+        }
+      ],
+      "clarification": {
+        "question": "Which type of record should I look up for ML-2-804-9226243 and ML-2-804-0460740?",
+        "missingSlots": [
+          "businessObject"
+        ],
+        "options": [
+          {
+            "id": "transaction",
+            "label": "Transaction",
+            "updates": [
+              {
+                "field": "businessObject",
+                "source": "current",
+                "value": "transaction",
+                "evidence": ""
+              }
+            ]
+          },
+          {
+            "id": "refund",
+            "label": "Refund",
+            "updates": [
+              {
+                "field": "businessObject",
+                "source": "current",
+                "value": "refund",
+                "evidence": ""
+              }
+            ]
+          },
+          {
+            "id": "application",
+            "label": "Application",
+            "updates": [
+              {
+                "field": "businessObject",
+                "source": "current",
+                "value": "application",
+                "evidence": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "clarifiedTask": {
+      "stage": "task",
+      "businessObject": "transaction",
+      "businessFocus": "",
+      "requestedScope": "unknown",
+      "requestedGrain": "record",
+      "requestedMeasures": [],
+      "requestedAttributes": [],
+      "requestedOrdering": [],
+      "groupBy": [],
+      "groupCompleteness": "observed",
+      "timeRange": "unknown",
+      "timeField": "",
+      "filters": [
+        "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]"
+      ],
+      "outputShape": "list",
+      "needsLiveData": true,
+      "readOnly": true,
+      "responseMode": "answer",
+      "requestBoundaries": [],
+      "searchQuery": "transaction find records ML-2-804-9226243 ML-2-804-0460740 separate records lookup",
+      "unresolvedSlots": [],
+      "recordIdentity": "ML-2-804-9226243, ML-2-804-0460740",
+      "view": "",
+      "contextRelation": "clarify",
+      "slotUpdates": [
+        {
+          "field": "filters",
+          "source": "current",
+          "value": [
+            "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]"
+          ],
+          "evidence": "Find ML-2-804-9226243 and ML-2-804-0460740"
+        },
+        {
+          "field": "outputShape",
+          "source": "current",
+          "value": "list",
+          "evidence": "Find ML-2-804-9226243 and ML-2-804-0460740"
+        },
+        {
+          "field": "requestedGrain",
+          "source": "current",
+          "value": "record",
+          "evidence": "Keep the two records separate"
+        },
+        {
+          "field": "businessObject",
+          "source": "current",
+          "value": "transaction",
+          "evidence": "clarification choice transaction"
+        },
+        {
+          "field": "businessFocus",
+          "source": "current",
+          "value": "",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedScope",
+          "source": "current",
+          "value": "unknown",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedMeasures",
+          "source": "current",
+          "value": [],
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedAttributes",
+          "source": "current",
+          "value": [],
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupBy",
+          "source": "current",
+          "value": [],
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeRange",
+          "source": "current",
+          "value": "unknown",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "recordIdentity",
+          "source": "current",
+          "value": "ML-2-804-9226243, ML-2-804-0460740",
+          "evidence": "Find ML-2-804-9226243 and ML-2-804-0460740"
+        },
+        {
+          "field": "view",
+          "source": "current",
+          "value": "",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeField",
+          "source": "current",
+          "value": "",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedOrdering",
+          "source": "current",
+          "value": [],
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupCompleteness",
+          "source": "current",
+          "value": "observed",
+          "evidence": "parsed current request"
+        }
+      ],
+      "clarification": null
+    },
+    "choice": {
+      "choiceId": "transaction",
+      "updates": [
+        {
+          "field": "businessObject",
+          "source": "current",
+          "value": "transaction",
+          "evidence": ""
+        }
+      ]
+    },
+    "originalQuestion": "Find ML-2-804-9226243 and ML-2-804-0460740. Keep the two records separate.",
+    "selectedLabel": "Transaction",
+    "observedResult": "no_data",
+    "observedMissing": [
+      "record_not_found_in_checked_view"
+    ],
+    "intentPreservation": {
+      "fields": [
+        "recordIdentity"
+      ],
+      "reason": "knowledge_refinement_cannot_replace_user_requirements"
+    },
+    "observedCollectionReceipts": [
+      {
+        "total": 273,
+        "fields": [
+          "id",
+          "transactionNo"
+        ],
+        "rowCount": 273,
+        "rowsPath": "/data/items",
+        "bytesRead": 478658,
+        "pagesRead": 2,
+        "startedAt": "2026-09-28T08:52:09.743708+00:00",
+        "totalPath": "/data/totalCount",
+        "comparison": {
+          "equivalent": true,
+          "orderChanged": false,
+          "changedFields": [],
+          "firstRowCount": 273,
+          "secondRowCount": 273,
+          "addedIdentityCount": 0,
+          "changedIdentityCount": 0,
+          "removedIdentityCount": 0
+        },
+        "contextRef": "c2669173928b5a4a3a921b58d389f307bb0558ea689d7ec5a8463e31c8bced70",
+        "finishedAt": "2026-09-28T08:52:16.496752+00:00",
+        "pagination": {
+          "pageSize": 500,
+          "pageField": "PageIndex",
+          "sizeField": "PageSize",
+          "observedPageSize": 10
+        },
+        "consistency": "two_pass_observation",
+        "fieldStatus": {
+          "id": "complete",
+          "transactionNo": "complete"
+        },
+        "completeness": "complete",
+        "operationRef": "GET /api/admin/finance/transactions",
+        "stablePasses": 2,
+        "schemaVersion": "projected-collection/1",
+        "identityFields": [
+          "id",
+          "transactionNo"
+        ],
+        "projectionHash": "0f866c9a63661326cd047abec11902d57116db1a557cb42a6a5046e76732cd7a",
+        "snapshotIsolation": false
+      }
+    ],
+    "observedAbsenceProof": {
+      "scope": "checked_authorized_view",
+      "sources": [
+        {
+          "field": "transactionNo",
+          "rowCount": 273,
+          "sourceId": "api_7790d2986cbbfc363551",
+          "bindingId": "admin.page.finance.transaction.detail.page#transaction_number",
+          "capturedAt": "2026-09-28T08:52:16.496752+00:00",
+          "operationRef": "GET /api/admin/finance/transactions",
+          "projectionHash": "0f866c9a63661326cd047abec11902d57116db1a557cb42a6a5046e76732cd7a"
+        }
+      ],
+      "globalAbsence": false,
+      "recordIdentity": "ML-2-804-9226243, ML-2-804-0460740"
+    }
+  },
+  "ar": {
+    "firstTask": {
+      "stage": "task",
+      "businessObject": "record",
+      "businessFocus": "",
+      "requestedScope": "unknown",
+      "requestedGrain": "record",
+      "requestedMeasures": [],
+      "requestedAttributes": [],
+      "requestedOrdering": [],
+      "groupBy": [],
+      "groupCompleteness": "observed",
+      "timeRange": "unknown",
+      "timeField": "",
+      "filters": [
+        "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]"
+      ],
+      "outputShape": "list",
+      "needsLiveData": true,
+      "readOnly": true,
+      "responseMode": "answer",
+      "requestBoundaries": [],
+      "searchQuery": "search records ML-2-804-9226243 ML-2-804-0460740 keep two records separate",
+      "unresolvedSlots": [
+        "businessObject"
+      ],
+      "recordIdentity": "",
+      "view": "",
+      "contextRelation": "new",
+      "slotUpdates": [
+        {
+          "field": "businessObject",
+          "source": "current",
+          "value": "record",
+          "evidence": ""
+        },
+        {
+          "field": "requestedGrain",
+          "source": "current",
+          "value": "record",
+          "evidence": ""
+        },
+        {
+          "field": "filters",
+          "source": "current",
+          "value": [
+            "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]"
+          ],
+          "evidence": ""
+        },
+        {
+          "field": "outputShape",
+          "source": "current",
+          "value": "list",
+          "evidence": ""
+        },
+        {
+          "field": "businessFocus",
+          "source": "current",
+          "value": "",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedScope",
+          "source": "current",
+          "value": "unknown",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedMeasures",
+          "source": "current",
+          "value": [],
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedAttributes",
+          "source": "current",
+          "value": [],
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupBy",
+          "source": "current",
+          "value": [],
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeRange",
+          "source": "current",
+          "value": "unknown",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "recordIdentity",
+          "source": "current",
+          "value": "",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "view",
+          "source": "current",
+          "value": "",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeField",
+          "source": "current",
+          "value": "",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedOrdering",
+          "source": "current",
+          "value": [],
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupCompleteness",
+          "source": "current",
+          "value": "observed",
+          "evidence": "parsed current request"
+        }
+      ],
+      "clarification": {
+        "question": "ما نوع السجلين المطلوب البحث عنهما بالمعرّفين ML-2-804-9226243 و ML-2-804-0460740؟",
+        "missingSlots": [
+          "businessObject"
+        ],
+        "options": [
+          {
+            "id": "transaction",
+            "label": "معاملات مالية",
+            "updates": [
+              {
+                "field": "businessObject",
+                "source": "current",
+                "value": "transaction",
+                "evidence": ""
+              }
+            ]
+          },
+          {
+            "id": "refund",
+            "label": "طلبات استرداد",
+            "updates": [
+              {
+                "field": "businessObject",
+                "source": "current",
+                "value": "refund",
+                "evidence": ""
+              }
+            ]
+          },
+          {
+            "id": "document",
+            "label": "مستندات",
+            "updates": [
+              {
+                "field": "businessObject",
+                "source": "current",
+                "value": "document",
+                "evidence": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "clarifiedTask": {
+      "stage": "task",
+      "businessObject": "transaction",
+      "businessFocus": "",
+      "requestedScope": "unknown",
+      "requestedGrain": "record",
+      "requestedMeasures": [],
+      "requestedAttributes": [],
+      "requestedOrdering": [],
+      "groupBy": [],
+      "groupCompleteness": "observed",
+      "timeRange": "unknown",
+      "timeField": "",
+      "filters": [
+        "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]"
+      ],
+      "outputShape": "list",
+      "needsLiveData": true,
+      "readOnly": true,
+      "responseMode": "answer",
+      "requestBoundaries": [],
+      "searchQuery": "transaction search records ML-2-804-9226243 ML-2-804-0460740 keep two records separate",
+      "unresolvedSlots": [],
+      "recordIdentity": "",
+      "view": "",
+      "contextRelation": "clarify",
+      "slotUpdates": [
+        {
+          "field": "businessObject",
+          "source": "current",
+          "value": "transaction",
+          "evidence": "clarification choice transaction"
+        },
+        {
+          "field": "requestedGrain",
+          "source": "current",
+          "value": "record",
+          "evidence": ""
+        },
+        {
+          "field": "filters",
+          "source": "current",
+          "value": [
+            "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]"
+          ],
+          "evidence": ""
+        },
+        {
+          "field": "outputShape",
+          "source": "current",
+          "value": "list",
+          "evidence": ""
+        },
+        {
+          "field": "businessFocus",
+          "source": "current",
+          "value": "",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedScope",
+          "source": "current",
+          "value": "unknown",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedMeasures",
+          "source": "current",
+          "value": [],
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedAttributes",
+          "source": "current",
+          "value": [],
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupBy",
+          "source": "current",
+          "value": [],
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeRange",
+          "source": "current",
+          "value": "unknown",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "recordIdentity",
+          "source": "current",
+          "value": "",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "view",
+          "source": "current",
+          "value": "",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeField",
+          "source": "current",
+          "value": "",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedOrdering",
+          "source": "current",
+          "value": [],
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupCompleteness",
+          "source": "current",
+          "value": "observed",
+          "evidence": "parsed current request"
+        }
+      ],
+      "clarification": null
+    },
+    "choice": {
+      "choiceId": "transaction",
+      "updates": [
+        {
+          "field": "businessObject",
+          "source": "current",
+          "value": "transaction",
+          "evidence": ""
+        }
+      ]
+    },
+    "originalQuestion": "ابحث عن ML-2-804-9226243 و ML-2-804-0460740. احتفظ بالسجلين منفصلين.",
+    "selectedLabel": "معاملات مالية",
+    "observedResult": "not_confirmed",
+    "observedMissing": [
+      "analysis_binding_inapplicable"
+    ],
+    "intentPreservation": null,
+    "observedCollectionReceipts": [
+      {
+        "total": 273,
+        "fields": [
+          "id",
+          "transactionNo",
+          "amount",
+          "currency",
+          "statusObj.name",
+          "statusId"
+        ],
+        "rowCount": 273,
+        "rowsPath": "/data/items",
+        "bytesRead": 478658,
+        "pagesRead": 2,
+        "startedAt": "2026-09-28T08:54:05.141604+00:00",
+        "totalPath": "/data/totalCount",
+        "comparison": {
+          "equivalent": true,
+          "orderChanged": false,
+          "changedFields": [],
+          "firstRowCount": 273,
+          "secondRowCount": 273,
+          "addedIdentityCount": 0,
+          "changedIdentityCount": 0,
+          "removedIdentityCount": 0
+        },
+        "contextRef": "c2669173928b5a4a3a921b58d389f307bb0558ea689d7ec5a8463e31c8bced70",
+        "finishedAt": "2026-09-28T08:54:11.943466+00:00",
+        "pagination": {
+          "pageSize": 500,
+          "pageField": "PageIndex",
+          "sizeField": "PageSize",
+          "observedPageSize": 10
+        },
+        "consistency": "two_pass_observation",
+        "fieldStatus": {
+          "id": "complete",
+          "amount": "complete",
+          "currency": "complete",
+          "statusId": "complete",
+          "transactionNo": "complete",
+          "statusObj.name": "complete"
+        },
+        "completeness": "complete",
+        "operationRef": "GET /api/admin/finance/transactions",
+        "stablePasses": 2,
+        "schemaVersion": "projected-collection/1",
+        "identityFields": [
+          "id",
+          "transactionNo"
+        ],
+        "projectionHash": "afb3da74128c80e08672a78a085dbed631a00a51936bd0770f8f85867ca056af",
+        "snapshotIsolation": false
+      }
+    ],
+    "observedAbsenceProof": null
+  },
+  "sources": [
+    {
+      "path": "test/runtime/group17-cross-repair-20260928/round1-x10-finance-clarification/answers/X-10__finance__en.json",
+      "sha256": "58830d61e7732485ef2300c89a7067385b0bb23c063a316cfbaee8eb0f20988a"
+    },
+    {
+      "path": "test/runtime/group17-cross-repair-20260928/round1-x10-finance-clarification/answers/X-10__finance__ar.json",
+      "sha256": "da6a83086b6a6a1cba9e0b12eb822ecfae62d63f129e345990f3155178fd64c9"
+    }
+  ],
+  "businessAcceptance": false
+}

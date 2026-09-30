@@ -1,0 +1,239 @@
+{
+  "schemaVersion": "1.0",
+  "bundleId": "admin.licensing.team-management.bindings.route-target",
+  "createdAt": "2026-09-28T05:36:15.436690+00:00",
+  "packageStatus": "active",
+  "records": [
+    {
+      "id": "admin.licensing.team-management.bindings.route-target",
+      "kind": "field_semantics",
+      "revision": 4,
+      "status": "active",
+      "title": "Licensing team scope and field roles",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local"
+        ],
+        "pageRefs": [
+          "/licensing/team-management"
+        ],
+        "runtimeVerification": "pending",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Licensing/LicensingTeamManagementDtos.cs",
+          "revision": "c53db02049db433ee2132f20e5ede8e2ee3ec1d28c579a27cc8c3ac3d89c56d6",
+          "locator": "TaskQueryRequest; TaskItemDto; SlaDto declarations",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/LicensingTeamManagement/LicensingTeamManagementAppService.cs",
+          "revision": "9e96ade01af09bbb7c963093ee30c8bee68b7423cf78f81bd1bc4b4c4905151f",
+          "locator": "QueryTasksV2Async",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/teamManagement.ts",
+          "revision": "d5b960da8ae6422a95ba3807237d9c4ba30cfecc526d6a5730b93bf2f9be79ab",
+          "locator": "buildLicensingTaskQueryPayload; buildContentTaskQueryPayload",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/TeamManagement/components/TeamTasksPanel/utils.ts",
+          "revision": "1495f5802007cfb67030bd9ec006d355896fa105b7621db645f1c7aecda830c5",
+          "locator": "buildTeamTaskRequestPayload",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/licensing/team-management",
+        "fields": {
+          "sourceType": "Entity/source discriminator.",
+          "sourceId": "Identifier within the source type.",
+          "taskNo": "Display task/application number; no uniqueness guarantee across source types.",
+          "taskCategoryCode": "Category code.",
+          "assignedToUserId": "Current handler identifier.",
+          "assignedTo": "Current handler display name.",
+          "statusCode": "Stable filter code.",
+          "status": "Localized status display.",
+          "statusDisplay": "Localized status display.",
+          "statusId": "Source numeric status representation.",
+          "lastUpdatedOn": "Latest source update timestamp.",
+          "isUrgent": "Business urgency flag returned by the query.",
+          "canReassign": "UI operation capability; it does not authorize the Reader to write.",
+          "sla": "Nested object; null means hidden/unavailable SLA, not zero. Contains remainingMinutes, displayText, isOverdue and dueOn.",
+          "detailTarget": "Returned navigation hint; validate against the existing page catalog and permitted parameter mappings before entering."
+        },
+        "relationships": [
+          "Team queue rows use a typed (sourceType, sourceId) identity.",
+          "assignedToUserId identifies the current handler; assignedTo is display text; applyFor identifies the applicant/customer.",
+          "Current team, request view and category determine data scope; a Manager label alone does not establish access.",
+          "The Licensing department queue and members from the authenticated leader departments are different sets. For my managed team, join assignedToUserId to the current MyTeamMembers userId set before aggregation. Preserve zero-task members and unknown assignment keys; never equate a role label with current membership."
+        ],
+        "constraints": [
+          "The task query is distinct from the personal MyTodoPage and from member performance cards.",
+          "The view and category filters must accompany aggregates. Equal columns do not prove equal membership.",
+          "Missing SLA or unknown returned-state mapping cannot be converted to zero.",
+          "The canonical detailed queue definitions and current metadata describe filter values. No page knowledge grants access."
+        ],
+        "view": "todo",
+        "bindings": [
+          {
+            "id": "task_object",
+            "kind": "object",
+            "concept": "task",
+            "aliases": [
+              "tasks",
+              "team tasks",
+              "team application tasks"
+            ],
+            "operationRef": "POST /api/licensing/team-management/tasks/query",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "sourceType",
+              "sourceId"
+            ],
+            "meaning": "Typed team queue item; sourceId is interpreted within sourceType."
+          },
+          {
+            "id": "task_grain",
+            "kind": "grain",
+            "concept": "task",
+            "aliases": [
+              "tasks",
+              "team task"
+            ],
+            "operationRef": "POST /api/licensing/team-management/tasks/query",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "sourceType",
+              "sourceId"
+            ],
+            "meaning": "Composite queue identity is (sourceType, sourceId); taskNo is a display/business identifier."
+          },
+          {
+            "id": "officer",
+            "kind": "group",
+            "concept": "officer",
+            "aliases": [
+              "officers",
+              "assignee",
+              "assigned officer",
+              "handler"
+            ],
+            "operationRef": "POST /api/licensing/team-management/tasks/query",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "assignedToUserId"
+            ],
+            "meaning": "Stable current assignee key. assignedTo is display text and can be duplicated or empty."
+          },
+          {
+            "id": "status",
+            "kind": "group",
+            "concept": "status",
+            "aliases": [
+              "task status"
+            ],
+            "operationRef": "POST /api/licensing/team-management/tasks/query",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "statusCode"
+            ],
+            "meaning": "Stable status filter code. status/statusDisplay are localized labels; statusId may identify a different numeric source status."
+          },
+          {
+            "id": "category",
+            "kind": "group",
+            "concept": "category",
+            "aliases": [
+              "task category"
+            ],
+            "operationRef": "POST /api/licensing/team-management/tasks/query",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "taskCategoryCode"
+            ],
+            "meaning": "Typed queue category, distinct from the status dimension."
+          },
+          {
+            "id": "urgency",
+            "kind": "group",
+            "concept": "urgency",
+            "aliases": [
+              "urgent flag"
+            ],
+            "operationRef": "POST /api/licensing/team-management/tasks/query",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "isUrgent"
+            ],
+            "meaning": "Upstream business urgency indicator, not a generic priority level or a universal overdue flag."
+          }
+        ],
+        "sourceBinding": {
+          "operationRef": "POST /api/licensing/team-management/tasks/query",
+          "sourcePath": "/data/page/items"
+        },
+        "pagination": {
+          "pageIndex": "1-based request page; nonpositive input falls back to 1 in the inspected V2 implementation.",
+          "pageSize": "Request page size; nonpositive input falls back to 20 in the inspected V2 implementation.",
+          "rowsPath": "/data/page/items",
+          "totalPath": "/data/page/total",
+          "total": "Count of filtered team query rows before paging."
+        },
+        "requestFields": {
+          "view": "todo or completed.",
+          "applicationTaskOnly": "Controls application-only versus mixed-source queue population.",
+          "category": "Category constraint; use the actual serialized request. all and applications are different parameter values even when a toggle narrows effective population.",
+          "memberId": "Optional current assignee filter.",
+          "keyword": "Optional search term.",
+          "status": "Stable source filter code.",
+          "lastUpdatedFrom": "Optional source update lower boundary.",
+          "lastUpdatedTo": "Optional source update upper boundary."
+        },
+        "pageReads": [
+          {
+            "operationKey": "GET /api/Team/MyTeamMembers",
+            "parameters": {
+              "isLeave": false
+            },
+            "requiredScope": "team",
+            "requiredObjects": [
+              "task",
+              "tasks",
+              "team tasks",
+              "team application tasks"
+            ],
+            "requiredFor": [
+              "managed team",
+              "my team",
+              "team I manage",
+              "officer",
+              "assigned officer",
+              "handler"
+            ]
+          }
+        ],
+        "knowledgeDependencies": [
+          {
+            "purpose": "analysis",
+            "operationRef": "POST /api/licensing/team-management/tasks/query",
+            "document": "Licensing Team Management-本人管理成员与统计范围.json"
+          },
+          {
+            "purpose": "analysis",
+            "operationRef": "POST /api/licensing/team-management/tasks/query",
+            "document": "Licensing Team Management-全部类型待办与统计口径.json"
+          }
+        ]
+      }
+    }
+  ]
+}

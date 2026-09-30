@@ -1,0 +1,251 @@
+{
+  "schemaVersion": "1.0",
+  "bundleId": "page-supplement.admin.page-docs.licensing.applications.completed.collection",
+  "createdAt": "2026-09-24T09:11:26.749708+00:00",
+  "packageStatus": "active",
+  "records": [
+    {
+      "id": "admin.page-docs.licensing.applications.completed.collection",
+      "kind": "field_semantics",
+      "revision": 1,
+      "status": "active",
+      "title": "My Application Tasks completed read contract",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local"
+        ],
+        "pageRefs": [
+          "/licensing/applications"
+        ],
+        "sourceSnapshot": "source-inspected-20260924",
+        "runtimeVerification": "pending",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Applications/index.tsx",
+          "revision": "be9c81e58706b9071a3c0f4ddd1950df113cf6971e6c1f6efbf90dafff1f89e4",
+          "locator": "request/getPageList, table columns, To Do and Completed tabs",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ApplicationAppService.cs",
+          "revision": "22e94773e70c95fab9ce479919b51d0241e046bf085cd0c3f8b5991b9004772e",
+          "locator": "GetMyReviewPageAsync; GetMyReviewListAsync; FilterPersonalWorkflowTasksByDepartment",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/MyReviewFilter.cs",
+          "revision": "e85bf61625c530802e0a177de8eeba436c26ba8ad98952b7908ddfa915073ebb",
+          "locator": "Apply; NormalizeCompletedMyDecisionFilters",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ReviewTaskProjection.cs",
+          "revision": "9df0f7b49cd9c099c78d1ccd2e8967216a477fd533f90a312573f287eef1b797",
+          "locator": "SelectPersonalTodo; SelectCompleted",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Application/ApplicationDto.cs",
+          "revision": "3efae9b26845ec68130f314cbccfd0861bb76f19a22ab6d083f5ec9435042cdc",
+          "locator": "MyReviewPageRequest; MyReviewPageResponse; MyReviewResponse",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/licensing/applications",
+        "view": "completed",
+        "bindings": [
+          {
+            "id": "application_object",
+            "kind": "object",
+            "concept": "application",
+            "aliases": [
+              "applications",
+              "license application",
+              "license applications",
+              "licensing applications"
+            ],
+            "operationRef": "POST /api/Application/MyComplatedPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "id"
+            ],
+            "meaning": "id identifies the application entity. Departmental assignment determines queue access; the service owning department alone does not prove queue membership."
+          },
+          {
+            "id": "application_grain",
+            "kind": "grain",
+            "concept": "application",
+            "aliases": [
+              "applications",
+              "unique applications"
+            ],
+            "operationRef": "POST /api/Application/MyComplatedPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "id"
+            ],
+            "meaning": "Application grain is id. Distinct application counts can differ from projected workflow/disposition rows."
+          },
+          {
+            "id": "task_object",
+            "kind": "object",
+            "concept": "task",
+            "aliases": [
+              "tasks",
+              "review tasks",
+              "license application tasks"
+            ],
+            "operationRef": "POST /api/Application/MyComplatedPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "taskId"
+            ],
+            "meaning": "The task represented by a current queue row. The server projection has already selected representative tasks; this is not every historical workflow task."
+          },
+          {
+            "id": "task_grain",
+            "kind": "grain",
+            "concept": "task",
+            "aliases": [
+              "tasks",
+              "review tasks"
+            ],
+            "operationRef": "POST /api/Application/MyComplatedPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "taskId"
+            ],
+            "meaning": "Task grain uses a nonempty taskId. Distinct visible projected tasks are different from distinct applications and from all historical workflow tasks."
+          },
+          {
+            "id": "status",
+            "kind": "group",
+            "concept": "status",
+            "aliases": [
+              "application status",
+              "process status"
+            ],
+            "operationRef": "POST /api/Application/MyComplatedPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "status"
+            ],
+            "meaning": "status is the current application/process status label; statusId is its numeric code. It is distinct from workflow node taskStatus and the statusCount card taxonomy."
+          },
+          {
+            "id": "service_category",
+            "kind": "group",
+            "concept": "service category",
+            "aliases": [
+              "service categories"
+            ],
+            "operationRef": "POST /api/Application/MyComplatedPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "serviceCategoryNameEn"
+            ],
+            "meaning": "serviceCategoryNameEn is the localized service category display, not an authorization scope."
+          },
+          {
+            "id": "handler",
+            "kind": "group",
+            "concept": "officer",
+            "aliases": [
+              "handler",
+              "assignee",
+              "assigned officer"
+            ],
+            "operationRef": "POST /api/Application/MyComplatedPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "assignee"
+            ],
+            "meaning": "assignee is the current workflow handler user key. assignedTo is a display name, not a stable unique grouping key."
+          },
+          {
+            "id": "decision",
+            "kind": "group",
+            "concept": "review decision",
+            "aliases": [
+              "my decision",
+              "approval result"
+            ],
+            "operationRef": "POST /api/Application/MyComplatedPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "myDecision"
+            ],
+            "meaning": "myDecision is the reviewer decision. In personal completed responses taskStatus is a compatibility projection of that decision; it no longer means the current workflow node."
+          }
+        ],
+        "sourceBinding": {
+          "operationRef": "POST /api/Application/MyComplatedPage",
+          "sourcePath": "/data/page/items",
+          "scope": "authenticated personal queue; current runtime approval department"
+        },
+        "pagination": {
+          "pageIndex": "Request integer page number, starts at 1; Skip((pageIndex-1)*pageSize).",
+          "pageSize": "Request integer maximum rows per page; UI default 10, choices 10/20/50/100. This is not a proven server maximum.",
+          "rowsPath": "/data/page/items",
+          "totalPath": "/data/page/total",
+          "total": "page.total counts rows of the selected view AFTER filters and BEFORE pagination. It is not necessarily distinct application count.",
+          "preservedContext": "Keep all filters, identity, language and sort context fixed across pages; two agreeing scans are not a transactional snapshot."
+        },
+        "requestFields": {
+          "keyword": "Case-insensitive substring of applicationNumber, serviceNameAr/serviceNameEn and applyForAr/applyForEn; not an exact unique lookup.",
+          "serviceTypeId": "String 1 is ALL SERVICE TYPES, not a Licensing department or Foreign Media selector. A different nonempty value filters serviceTypeId exactly.",
+          "processInstanceStatus": "Exact equality to row status.",
+          "approvalStatus": "To Do matches taskStatus; Completed matches myDecision.",
+          "serviceCodes": "Filter by stable service codes, not one service version ID.",
+          "serviceCategoryId": "Exact service category ID filter.",
+          "startTime": "lastUpdatedTime >= startTime.Date.",
+          "endTime": "lastUpdatedTime < endTime.Date.AddDays(1). Source server time interpretation needs deployed verification."
+        },
+        "fields": {
+          "id": "Application entity key; not a workflow task key.",
+          "applicationNumber": "Displayed application business number; no global uniqueness constraint was established from the inspected snapshot.",
+          "taskId": "Workflow task identifier and task detail route parameter. A single application can have multiple task IDs over time.",
+          "dispositionCaseId": "Nullable disposition identifier; the personal To Do projection deduplicates (id, dispositionCaseId). A nullable component cannot be silently dropped from a task-row identity.",
+          "status": "Application/process status display; group this field when the requested dimension is application status.",
+          "statusId": "Application/process status numeric code.",
+          "taskStatus": "To Do: workflow node; personal Completed: compatibility projection of myDecision.",
+          "myDecision": "Completed reviewer decision; a dash is not a workflow state.",
+          "assignee": "Current handler user identifier.",
+          "assignedTo": "Current handler display name.",
+          "serviceCode": "Stable service code shared by service versions.",
+          "serviceNameEn": "Service display; may be localized by response language.",
+          "serviceCategoryNameEn": "Service category display; may be localized.",
+          "serviceTypeNameEn": "Service type display; may be localized.",
+          "applyForEn": "Apply For display value; not the handler.",
+          "submissionTime": "Submission timestamp in the DTO.",
+          "lastUpdatedTime": "Latest application timeline/update timestamp. Request startTime/endTime filter this field, even where a control label says Submission Time.",
+          "sla": "SLA value with business pause/state handling; use current supplied slaDescription rather than inventing clock calculations.",
+          "slaDescription": "Localized SLA display produced by the service; not a priority category."
+        },
+        "relationships": [
+          "To Do selects noncompleted canonical-instance rows and deduplicates by (id, dispositionCaseId). Completed deduplicates by id.",
+          "statusCount is computed before list filters; page.total is computed after filters. Card buckets are not the row status dimension or a proven mutually exclusive breakdown.",
+          "A Manager role does not turn this personal queue into a team queue."
+        ],
+        "constraints": [
+          "Source-inspected definitions; the remote deployed build has not been matched to this snapshot. Validate current authorized response shape and request context before using these definitions.",
+          "This page knowledge does not authorize API access or business writes. A blocked or failed response is not an empty population.",
+          "A bounded page is not a complete population. Counts and grouping require complete collection at the requested entity grain and stable request context.",
+          "Do not equate row count or todoCount with unique application count when duplicate id values or conflicting projected fields exist.",
+          "Scope/population context bindings cover only their exact contextParameters. Omitted defaults, nulls, empty strings and added filters are not interchangeable.",
+          "The list has no demonstrated generic priority field. SLA, urgency and priority are separate concepts.",
+          "Foreign Media classification must use an authoritative service/category mapping and current permission; serviceTypeId=1 does not establish it."
+        ]
+      }
+    }
+  ]
+}

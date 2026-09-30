@@ -1,0 +1,771 @@
+{
+  "Licensing": {
+    "stats": {
+      "total": "الإجمالي"
+    },
+    "fahrReview": {
+      "title": "تفاصيل مراجعة اعتماد",
+      "systemLabel": "اعتماد",
+      "personalProfile": "الملف الشخصي",
+      "itimadNumber": "رقم اعتماد: {{number}}",
+      "timelineTitle": "الخط الزمني",
+      "permitFallback": "تصريح اعتماد.pdf",
+      "permitLabel": "تصريح اعتماد",
+      "status": {
+        "pendingReview": "قيد المراجعة",
+        "underProcessing": "قيد المعالجة",
+        "submitted": "تم الإرسال",
+        "received": "تم الاستلام",
+        "approved": "موافق عليه",
+        "rejected": "مرفوض",
+        "requestForInformation": "طلب معلومات إضافية",
+        "revoked": "مسحوب",
+        "cancelled": "ملغى",
+        "autoCancelled": "إلغاء تلقائي",
+        "pushFailed": "فشل الإرسال",
+        "cancelRequested": "طلب الإلغاء قيد الانتظار",
+        "transactionApplied": "تم تنفيذ المعاملة",
+        "transactionUnapplied": "تم إلغاء تنفيذ المعاملة",
+        "unknown": "حالة غير معروفة"
+      },
+      "sessionStatus": {
+        "notRequired": "غير مطلوب",
+        "pending": "قيد الانتظار",
+        "partiallyDecided": "تم اتخاذ قرار جزئي",
+        "allDecided": "اكتملت جميع القرارات",
+        "pendingRfi": "بانتظار الرد على طلب المعلومات",
+        "closedApproved": "مغلق - موافق عليه",
+        "closedRejected": "مغلق - مرفوض"
+      },
+      "state": {
+        "current": "حالة اعتماد: {{status}}",
+        "triggerMissing": "لم يتم بدء مراجعة اعتماد للطلب {{applicationId}}. يرجى التواصل مع فريق دعم العمليات.",
+        "partialPushFailed": "تعذر إرسال {{count}} من الأشخاص إلى اعتماد. يرجى التواصل مع فريق دعم العمليات لإعادة الإرسال."
+      },
+      "timeline": {
+        "registerRequest": "تسجيل الطلب",
+        "decisionReceived": "استلام القرار",
+        "rfiSent": "إرسال رد طلب المعلومات",
+        "rfiUploaded": "مرفقات طلب المعلومات",
+        "transactionApplied": "تطبيق المعاملة",
+        "decisionRevoked": "سحب القرار",
+        "requestCanceled": "إلغاء الطلب",
+        "reconsiderationRequest": "طلب إعادة النظر",
+        "attachments": "المرفقات",
+        "attachmentList": "المرفقات",
+        "failed": "فشل",
+        "milestones": {
+          "registerRequest": "تسجيل الطلب",
+          "decisionApproved": "استلام القرار - موافقة",
+          "decisionRejected": "استلام القرار - رفض",
+          "decisionRfi": "استلام القرار - طلب معلومات إضافية",
+          "decisionRevoked": "استلام القرار - سحب",
+          "decisionCancelled": "استلام القرار - إلغاء",
+          "decisionReceived": "استلام القرار",
+          "supplementarySubmitted": "تم تقديم المواد الإضافية",
+          "rfiResponseSubmitted": "تم تقديم رد طلب المعلومات",
+          "reconsiderationSubmitted": "تم تقديم طلب إعادة النظر",
+          "transactionApplied": "تم تنفيذ المعاملة",
+          "modifyDataSubmitted": "تم تقديم تعديل البيانات",
+          "cancelApplicationRequested": "تم تقديم طلب إلغاء الطلب",
+          "autoCancelledByItimad": "أُلغي تلقائياً بواسطة اعتماد",
+          "externalApproved": "تمت الموافقة الخارجية",
+          "externalRejected": "تم الرفض الخارجي",
+          "manualDecisionRecorded": "تم تسجيل قرار يدوي"
+        },
+        "interactions": {
+          "externalApprovalClicked": "الموافقة الخارجية",
+          "triggerEvaluated": "تقييم شرط الإرسال",
+          "requestCreated": "تسجيل الطلب",
+          "statusChangedToPending": "بانتظار الموافقة الخارجية",
+          "personPushed": "إرسال الشخص",
+          "personPushFailed": "فشل إرسال الشخص",
+          "attachmentSubmitted": "إرسال المواد الإضافية",
+          "decisionReceived": "استلام القرار",
+          "statusRollUp": "تحديث حالة الجلسة",
+          "permitReceived": "استلام التصريح",
+          "permitFetchFailed": "فشل جلب التصريح",
+          "manualDecision": "قرار يدوي",
+          "umcExternalApproved": "إرسال الموافقة الخارجية",
+          "umcExternalRejected": "إرسال الرفض الخارجي"
+        }
+      },
+      "actions": {
+        "refresh": "تحديث",
+        "applyTransaction": "تطبيق المعاملة",
+        "unapplyTransaction": "إلغاء تطبيق المعاملة",
+        "modifyData": "تعديل البيانات",
+        "cancelApplication": "إلغاء الطلب",
+        "cancel": "إلغاء",
+        "submit": "إرسال",
+        "submitRfiResponse": "إرسال رد طلب المعلومات",
+        "applyReconsider": "طلب إعادة النظر"
+      },
+      "confirm": {
+        "cancelTitle": "إلغاء المعاملة",
+        "cancelContent": "هل أنت متأكد من رغبتك في إلغاء هذه المعاملة؟ بعد التأكيد، سيتم إلغاء المعاملة وإرسال طلب الإلغاء إلى نظام اعتماد.",
+        "applyTitle": "إرسال للموافقة الخارجية",
+        "applyContent": "يتطلب هذا الطلب موافقة خارجية من اعتماد. عند التأكيد، سيرسل النظام معلومات الأشخاص المطلوبة إلى اعتماد للمراجعة الأمنية.",
+        "applyTransactionTitle": "تطبيق المعاملة",
+        "applyTransactionContent": "هل أنت متأكد من رغبتك في تطبيق هذه المعاملة؟ بمجرد التأكيد، سيتم تطبيق المعاملة وإخطار نظام اعتماد.",
+        "unapplyTitle": "إلغاء تنفيذ المعاملة",
+        "unapplyContent": "هل أنت متأكد من رغبتك في إلغاء تطبيق هذه المعاملة؟ بمجرد التأكيد، ستُعكس المعاملة التي تم تطبيقها مسبقًا وسيتم إخطار نظام اعتماد."
+      },
+      "submission": {
+        "resubmitTitle": "إعادة إرسال تفاصيل الطلب",
+        "resubmitPlaceholder": "الرد على الملاحظة الواردة من نظام اعتماد",
+        "reconsiderTitle": "إعادة النظر في قرار اعتماد",
+        "reconsiderPlaceholder": "مبررات طلب إعادة النظر",
+        "modifyTitle": "تعديل بيانات الطلب الموافق عليه",
+        "modifyPlaceholder": "يرجى وصف تعديلات البيانات الموافق عليها",
+        "notes": "ملاحظات",
+        "reconsiderNotes": "سبب إعادة النظر",
+        "notesRequired": "الملاحظات مطلوبة.",
+        "notesMax": "يجب ألا تتجاوز الملاحظات {{max}} حرفاً.",
+        "attachment": "المرفق",
+        "reconsiderAttachment": "رفع مرفق إعادة النظر",
+        "uploadFile": "رفع ملف",
+        "uploadTip": "الحد الأقصى للحجم: 2 ميجابايت. أنواع الملفات: jpg وjpeg وpng وpdf."
+      },
+      "messages": {
+        "invalidApplicationId": "رقم الطلب غير صالح.",
+        "triggerFailed": "تعذر بدء موافقة اعتماد.",
+        "notTriggered": "لم يتم بدء موافقة اعتماد.",
+        "invalidRequestId": "رقم طلب موافقة اعتماد مفقود أو غير صالح.",
+        "refreshFailed": "تعذر تحديث تفاصيل طلب موافقة اعتماد.",
+        "pushFailed": "تم إنشاء طلب اعتماد، لكن عملية الإرسال لم تنجح.",
+        "requestSent": "تم إرسال طلب موافقة اعتماد.",
+        "actionFailed": "تعذر إكمال إجراء اعتماد.",
+        "attachmentReadFailed": "تعذرت قراءة المرفق.",
+        "attachmentEncodeFailed": "تعذر ترميز المرفق.",
+        "attachmentLoadFailed": "تعذر تحميل المرفق المرفوع.",
+        "attachmentSize": "يجب أن يكون حجم مرفق اعتماد بين بايت واحد و5 ميجابايت.",
+        "actionUnavailable": "إجراء اعتماد غير متاح للحالة الحالية.",
+        "decisionSaveFailed": "تعذر حفظ قرار اعتماد.",
+        "oneAttachmentRequired": "مرفق اعتماد واحد مطلوب.",
+        "registrationFormRequired": "نموذج تسجيل اعتماد الكامل مطلوب للرد على طلب المعلومات.",
+        "materialsRejected": "لم يقبل اعتماد المواد المقدمة.",
+        "actionSuccess": "اكتمل إجراء اعتماد بنجاح.",
+        "requestIdInvalid": "رقم طلب موافقة اعتماد غير صالح.",
+        "requestsLoadFailed": "تعذر تحميل طلبات اعتماد.",
+        "requestDetailsLoadFailed": "تعذر تحميل تفاصيل طلب موافقة اعتماد.",
+        "applicationMismatch": "طلب موافقة اعتماد لا يطابق هذا الطلب.",
+        "sessionExpired": "انتهت الجلسة. يرجى تسجيل الدخول مرة أخرى.",
+        "recordNotFound": "لم يتم العثور على سجل موافقة اعتماد.",
+        "recordsLoadFailed": "تعذر تحميل سجلات موافقة اعتماد.",
+        "externalDecisionSuccess": "تم إرسال قرار المراجعة الخارجية بنجاح.",
+        "externalDecisionFailed": "تعذر إرسال قرار المراجعة الخارجية.",
+        "permitUnavailable": "تصريح اعتماد غير متاح أو انتهت صلاحيته."
+      }
+    },
+    "status": {
+      "active": "نشط",
+      "expireSoon": "ينتهي قريبًا",
+      "expired": "منتهٍ",
+      "cancelled": "ملغى",
+      "disabled": "موقوف"
+    },
+    "table": {
+      "licenseNo": "رقم الترخيص",
+      "applicationNo": "رقم الطلب",
+      "license": "اسم الترخيص",
+      "mediaActivity": "النشاط الإعلامي",
+      "applyFor": "مقدم الطلب",
+      "status": "الحالة",
+      "effectiveDate": "تاريخ السريان",
+      "expirationDate": "تاريخ الانتهاء",
+      "actions": "الإجراءات"
+    },
+    "rowActions": {
+      "download": "تنزيل",
+      "disable": "إيقاف",
+      "enable": "إعادة تفعيل"
+    },
+    "modal": {
+      "enableTitle": "إعادة تفعيل الترخيص",
+      "enableContent": "هل أنت متأكد من إعادة تفعيل هذا الترخيص؟",
+      "confirm": "تأكيد",
+      "cancel": "إلغاء"
+    },
+    "disableModal": {
+      "title": "إيقاف الترخيص",
+      "disabledReasonLabel": "سبب الإيقاف",
+      "selectReasonPlaceholder": "اختر سبب الإيقاف",
+      "notesLabel": "ملاحظات",
+      "remarksPlaceholder": "أدخل سبب إيقاف هذا الترخيص",
+      "charCount": "{{current}}/{{max}}"
+    },
+    "messages": {
+      "enableSuccess": "تمت إعادة تفعيل الترخيص بنجاح",
+      "enableFailed": "فشلت إعادة تفعيل الترخيص",
+      "disableSuccess": "تم إيقاف الترخيص بنجاح",
+      "disableFailed": "فشل إيقاف الترخيص"
+    },
+    "filters": {
+      "effectiveStartDate": "تاريخ بدء السريان",
+      "effectiveEndDate": "تاريخ انتهاء السريان",
+      "allStatuses": "جميع الحالات"
+    },
+    "export": "تصدير",
+    "documentDownload": {
+      "title": "رمز الوصول إلى ملف PDF",
+      "subtitle": "استخدم رمز الوصول أدناه لفتح ملف PDF الذي تم تنزيله.",
+      "passwordLabel": "رمز الوصول",
+      "noteTitle": "ملاحظة",
+      "noteBody": "انسخ رمز الوصول هذا واحتفظ به. ستحتاج إليه لفتح ملف PDF بعد تنزيله.",
+      "copyRedirect": "نسخ رمز الوصول وتنزيل الملف",
+      "downloading": "جارٍ التنزيل...",
+      "downloadUnavailable": "الملف غير جاهز بعد. يرجى المحاولة لاحقًا.",
+      "downloadFailed": "تعذر تنزيل الملف. يرجى المحاولة مرة أخرى."
+    },
+    "details": {
+      "licenseDetails": "تفاصيل الترخيص",
+      "issuingLicenseTitle": "إصدار ترخيص بيع الكتب والمنشورات",
+      "licenseNumber": "رقم الترخيص",
+      "issuanceDate": "تاريخ الإصدار",
+      "effectiveDate": "تاريخ السريان",
+      "expiryDate": "تاريخ الانتهاء",
+      "daysRemaining": "الأيام المتبقية",
+      "back": "رجوع",
+      "download": "تنزيل",
+      "disable": "إيقاف",
+      "enable": "إعادة تفعيل",
+      "enableLicense": "إعادة تفعيل الترخيص",
+      "enableConfirm": "هل أنت متأكد من إعادة تفعيل هذا الترخيص؟",
+      "confirm": "تأكيد",
+      "licenseIdMissing": "معرّف الترخيص مفقود",
+      "enableSuccess": "تمت إعادة تفعيل الترخيص بنجاح",
+      "enableFailed": "فشلت إعادة تفعيل الترخيص",
+      "relatedApplications": "الطلبات ذات الصلة",
+      "number": "الرقم",
+      "applicationNumber": "رقم الطلب",
+      "serviceName": "اسم الخدمة",
+      "type": "النوع",
+      "submissionTime": "وقت التقديم",
+      "new": "جديد",
+      "renew": "تجديد",
+      "modify": "تعديل",
+      "cancel": "إلغاء",
+      "transfer": "نقل",
+      "partnerManagement": "إدارة الشركاء",
+      "tabs": {
+        "applicationDetails": "تفاصيل الطلب",
+        "establishmentOverview": "نظرة عامة على المنشأة",
+        "applicantDetails": "تفاصيل مقدم الطلب"
+      },
+      "timeline": {
+        "finalApproval": "الموافقة النهائية",
+        "documentVerification": "التحقق من المستندات",
+        "initialAssessment": "التقييم الأولي"
+      },
+      "addressInfo": {
+        "title": "معلومات العنوان",
+        "emirate": "الإمارة",
+        "region": "المنطقة",
+        "area": "الحي",
+        "street": "الشارع"
+      },
+      "establishmentInfo": {
+        "title": "معلومات المنشأة",
+        "subTypes": "الأنواع الفرعية للمنشأة",
+        "workEmail": "البريد الإلكتروني للعمل",
+        "commercialLicenseNumber": "رقم الرخصة التجارية",
+        "licenseExpiryDate": "تاريخ انتهاء الرخصة",
+        "arabicName": "اسم المنشأة بالعربية",
+        "englishName": "اسم المنشأة بالإنجليزية",
+        "emirate": "الإمارة",
+        "licensingAuthority": "جهة الترخيص",
+        "workMobileNumber": "رقم الجوال للعمل",
+        "phoneNumber": "رقم الهاتف",
+        "tenancyContractEndDate": "تاريخ انتهاء عقد الإيجار"
+      },
+      "establishmentDocuments": {
+        "title": "مستندات المنشأة",
+        "commercialLicense": "الرخصة التجارية",
+        "tenancyContract": "عقد الإيجار",
+        "memorandumOfAssociation": "عقد التأسيس",
+        "powerOfAttorney": "التوكيل"
+      },
+      "legalPersonInfo": {
+        "title": "معلومات الممثل القانوني",
+        "legalPerson": "الممثل القانوني",
+        "contactNumber": "رقم تواصل الممثل القانوني",
+        "idType": "نوع الهوية",
+        "emiratesId": "الهوية الإماراتية",
+        "uid": "UID",
+        "passportNumber": "رقم جواز السفر",
+        "dateOfBirth": "تاريخ الميلاد",
+        "email": "البريد الإلكتروني"
+      }
+    }
+  },
+  "Profile": {
+    "stats": {
+      "total": "الإجمالي",
+      "individual": "فردي",
+      "commercial": "تجاري",
+      "freeZone": "منطقة حرة",
+      "talentAgency": "وكالة مواهب",
+      "government": "جهة حكومية",
+      "embassy": "سفارة",
+      "consulate": "قنصلية",
+      "culturalClubs": "نوادي ثقافية"
+    },
+    "details": {
+      "summary": {
+        "applicationNumber": "رقم الطلب",
+        "applicant": "مقدم الطلب",
+        "sla": "SLA",
+        "processingTime": "وقت المعالجة",
+        "status": "الحالة",
+        "individualApplication": "طلب فردي",
+        "commercialApplication": "طلب تجاري",
+        "governmentApplication": "طلب حكومي",
+        "applicationWithType": "طلب {{type}}"
+      },
+      "statuses": {
+        "approved": "موافق عليه",
+        "rejected": "مرفوض",
+        "pendingReview": "قيد المراجعة",
+        "underReview": "قيد المراجعة"
+      },
+      "section": {
+        "personalInformation": "المعلومات الشخصية",
+        "addressInformation": "معلومات العنوان",
+        "personalDocuments": "المستندات الشخصية",
+        "establishmentInformation": "معلومات المنشأة",
+        "establishmentDocuments": "مستندات المنشأة",
+        "legalPersonInformation": "معلومات الممثل القانوني",
+        "partnerManagement": "إدارة الشركاء"
+      },
+      "empty": {
+        "noEstablishmentInformation": "لا توجد معلومات عن المنشأة",
+        "noDocuments": "لا توجد مستندات",
+        "noLegalPersonInformation": "لا توجد معلومات عن الممثل القانوني",
+        "noAddressInformation": "لا توجد معلومات عن العنوان",
+        "noPersonalInformation": "لا توجد معلومات شخصية"
+      },
+      "buttons": {
+        "back": "رجوع",
+        "approve": "موافقة",
+        "reject": "رفض",
+        "details": "التفاصيل"
+      },
+      "modal": {
+        "partnerDetails": "تفاصيل الشريك",
+        "approveApplication": "الموافقة على الطلب",
+        "approveConfirm": "هل أنت متأكد من الموافقة على هذا الطلب؟",
+        "cancel": "إلغاء",
+        "confirm": "تأكيد"
+      },
+      "messages": {
+        "profileUnavailable": "معلومات الملف الشخصي غير متاحة.",
+        "failedToLoadPersonalDetails": "تعذر تحميل تفاصيل الملف الشخصي الفردي.",
+        "failedToLoadProfileDetails": "تعذر تحميل تفاصيل الملف الشخصي.",
+        "invalidProfileIdentifier": "معرّف الملف الشخصي غير صالح."
+      },
+      "partner": {
+        "partnerType": "نوع الشريك",
+        "nationality": "الجنسية",
+        "establishmentNameAr": "اسم المنشأة بالعربية",
+        "establishmentNameEn": "اسم المنشأة بالإنجليزية",
+        "memorandumOfAssociation": "عقد التأسيس",
+        "powerOfAttorney": "التوكيل",
+        "statement": "البيان",
+        "dateOfBirth": "تاريخ الميلاد",
+        "emiratesId": "الهوية الإماراتية",
+        "fullNameAr": "الاسم بالعربية",
+        "fullNameEn": "الاسم بالإنجليزية",
+        "gender": "الجنس",
+        "expiryDate": "تاريخ الانتهاء",
+        "occupation": "المهنة",
+        "personalPhoto": "الصورة الشخصية",
+        "contactNumber": "رقم التواصل",
+        "idType": "نوع الهوية",
+        "email": "البريد الإلكتروني"
+      },
+      "address": {
+        "emirate": "الإمارة",
+        "region": "المنطقة",
+        "area": "الحي",
+        "street": "الشارع"
+      },
+      "personal": {
+        "verifyMethod": "كيف ترغب في التحقق من هويتك؟",
+        "emiratesId": "الهوية الإماراتية",
+        "uid": "الرقم الموحد الإماراتي (UID)",
+        "passport": "جواز السفر",
+        "dateOfBirth": "تاريخ الميلاد",
+        "passportNumber": "رقم جواز السفر",
+        "fullNameAr": "الاسم بالعربية",
+        "fullNameEn": "الاسم بالإنجليزية",
+        "nationality": "الجنسية",
+        "gender": "الجنس",
+        "occupation": "المهنة",
+        "expiryDate": "تاريخ الانتهاء"
+      },
+      "establishment": {
+        "subTypes": "الأنواع الفرعية للمنشأة",
+        "workEmail": "البريد الإلكتروني للعمل",
+        "licenseExpiryDate": "تاريخ انتهاء الرخصة",
+        "tenancyContractEndDate": "تاريخ انتهاء عقد الإيجار",
+        "workMobileNumber": "رقم الجوال للعمل",
+        "establishmentNameAr": "اسم المنشأة بالعربية",
+        "entityEstablishmentNameAr": "اسم الجهة / المنشأة بالعربية",
+        "licensingAuthority": "جهة الترخيص",
+        "commercialLicenseNumber": "رقم الرخصة التجارية",
+        "establishmentNameEn": "اسم المنشأة بالإنجليزية",
+        "entityEstablishmentNameEn": "اسم الجهة / المنشأة بالإنجليزية",
+        "phoneNumber": "رقم الهاتف"
+      },
+      "document": {
+        "fromWeb": "من الموقع",
+        "commercialLicense": "الرخصة التجارية",
+        "tenancyContract": "عقد الإيجار",
+        "memorandumOfAssociation": "عقد التأسيس",
+        "powerOfAttorney": "التوكيل",
+        "officialLetterFromEntityToNma": "الخطاب الرسمي من الجهة إلى الهيئة الوطنية للإعلام",
+        "statement": "البيان",
+        "frequency": "التكرار",
+        "uploadTip": "الحجم الأقصى: 5 ميجابايت. أنواع الملفات: jpg و jpeg و png."
+      }
+    },
+    "table": {
+      "applicationNo": "رقم الطلب",
+      "userType": "نوع الملف الشخصي",
+      "applyFor": "مقدم الطلب",
+      "sla": "SLA",
+      "applicant": "مقدم الطلب",
+      "status": "الحالة",
+      "lastUpdated": "آخر تحديث",
+      "actions": "الإجراءات"
+    },
+    "actions": {
+      "approve": "موافقة",
+      "reject": "رفض"
+    },
+    "filters": {
+      "searchPlaceholder": "بحث",
+      "allStatuses": "جميع الحالات",
+      "allUserTypes": "جميع أنواع المستخدمين",
+      "lastUpdated": "آخر تحديث",
+      "myDecision": "قراري",
+      "allResults": "جميع النتائج",
+      "startTime": "وقت البدء",
+      "endTime": "وقت الانتهاء"
+    },
+    "export": "تصدير",
+    "approveModal": {
+      "title": "الموافقة على الطلب",
+      "content": "هل أنت متأكد من الموافقة على هذا الطلب؟",
+      "cancel": "إلغاء",
+      "confirm": "تأكيد"
+    },
+    "rejectModal": {
+      "notesPlaceholder": "أدخل الملاحظات"
+    },
+    "messages": {
+      "approveSuccess": "تمت الموافقة على الطلب بنجاح.",
+      "approveFailed": "فشلت الموافقة على الطلب.",
+      "rejectSuccess": "تم رفض الطلب بنجاح.",
+      "rejectFailed": "فشل رفض الطلب."
+    },
+    "rejectReasons": {
+      "documentUnclear": "مستند غير واضح",
+      "documentMismatch": "عدم تطابق المستندات",
+      "faceNotClearlyVisible": "الوجه غير واضح في الصورة",
+      "missingRequiredDocument": "مستند مطلوب مفقود",
+      "invalidEmiratesId": "هوية إماراتية غير صالحة أو منتهية",
+      "documentExpired": "المستند منتهٍ",
+      "licenseNumberMismatch": "عدم تطابق رقم الرخصة",
+      "licenseExpired": "الرخصة منتهية",
+      "unableVerifyEconomy": "تعذّر التحقق مع وزارة الاقتصاد"
+    }
+  },
+  "applications": {
+    "tabs": {
+      "myTasks": "مهامي",
+      "teamMembers": "أعضاء الفريق",
+      "teamTasks": "مهام الفريق"
+    },
+    "statistics": {
+      "todo": "قيد الإنجاز",
+      "completed": "مكتمل",
+      "pendingReview": "قيد المراجعة",
+      "pendingModification": "بانتظار التعديل",
+      "pendingDisposition": "بانتظار الفصل",
+      "dispositionVerification": "التحقق من الفصل",
+      "externalReview": "موافقة خارجية"
+    },
+    "subTabs": {
+      "todo": "قيد الإنجاز",
+      "completed": "مكتمل"
+    },
+    "selectors": {
+      "allTypes": "جميع الأنواع"
+    },
+    "filters": {
+    "submissionTime": "وقت التقديم",
+    "myDecision": "قراري",
+    "allResults": "كل القرارات"
+    },
+    "buttons": {
+      "markEmergencyLeave": "تسجيل إجازة طارئة",
+      "resumeWork": "استئناف العمل",
+      "resumeWorkWarning": "هل تريد تأكيد العودة إلى العمل؟",
+      "reassign": "إعادة تعيين",
+      "export": "تصدير",
+      "approve": "موافقة",
+      "reassignTasks": "إعادة تعيين المهام",
+      "reject": "رفض",
+      "extraapprove": "موافقة خارجية",
+      "extrareject": "رفض خارجي",
+      "requestModification": "طلب تعديل",
+      "sendBack": "إرجاع",
+      "externalApproval": "موافقة خارجية",
+      "recallApproval": "استرجاع الموافقة",
+      "recall": "استرجاع"
+      },
+    "teamModals": {
+      "messages": {
+        "operationSuccess": "تمت العملية بنجاح",
+        "resumeFailed": "تعذرت إعادة الموظف إلى العمل",
+        "emergencyLeaveFailed": "تعذر تسجيل الإجازة الطارئة",
+        "reassignSuccess": "تمت إعادة إسناد المهمة بنجاح",
+        "reassignFailed": "تعذرت إعادة إسناد المهمة",
+        "membersLoadFailed": "تعذر تحميل أعضاء الفريق"
+      },
+      "leave": {
+        "type": "نوع الإجازة",
+        "typeRequired": "يرجى اختيار نوع الإجازة",
+        "selectType": "اختر نوع الإجازة",
+        "expectedReturnDate": "تاريخ العودة المتوقع",
+        "dateRequired": "يرجى اختيار تاريخ",
+        "datePlaceholder": "DD/MM/YYYY HH:MM:SS"
+      },
+      "reassign": {
+        "assignPersonRequired": "يرجى اختيار الشخص الذي ستُسند إليه المهمة",
+        "selectAssignPerson": "اختر الشخص الذي ستُسند إليه المهمة"
+      }
+    },
+    "teamMembers": {
+      "emergencyLeave": "إجازة طارئة",
+      "returnTime": "وقت العودة",
+      "tasks": "المهام"
+    },
+    "messages": {
+      "memberTasksLoadFailed": "تعذر تحميل مهام أعضاء الفريق",
+      "todoReviewExportFailed": "تعذر تصدير مراجعة المهام",
+      "urgentCountLoadFailed": "تعذر تحميل عدد الطلبات العاجلة"
+    },
+    "requestModal": {
+      "modificationReason": "سبب طلب التعديل",
+      "modificationReasonRequired": "يرجى اختيار سبب طلب التعديل",
+      "selectModificationReason": "يرجى اختيار سبب طلب التعديل"
+    },
+    "recallApproval": {
+      "title": "تأكيد استرجاع الموافقة",
+      "warning": "هل أنت متأكد أنك تريد استرجاع هذه الموافقة؟ سيعود الطلب إلى قائمة الطلبات المعلقة لديك لإعادة مراجعته.",
+      "reason": "سبب الاسترجاع",
+      "reasonPlaceholder": "أدخل ملاحظات",
+      "confirm": "تأكيد",
+      "cancel": "إلغاء",
+      "validation": {
+        "required": "سبب الاسترجاع مطلوب",
+        "maxLength": "يجب ألا يتجاوز سبب الاسترجاع 500 حرف"
+      }
+    },
+    "approveModal": {
+      "title": "الموافقة على الطلب",
+      "description": "هل أنت متأكد من الموافقة على هذا الطلب؟",
+      "warning": "يرجى التأكد من صحة جميع بيانات الطلب. بعد الموافقة، سينتقل الطلب إلى الخطوة التالية.",
+      "confirm": "تأكيد",
+      "cancel": "إلغاء",
+      "attachments": "المرفقات",
+      "notes": "ملاحظات",
+      "uploadFile": "رفع ملف",
+      "uploadTip": "الحد الأقصى: 5 ميجابايت، الأنواع: jpg و jpeg و png و pdf.",
+      "enterNotes": "أدخل الملاحظات"
+    },
+    "rejectModal": {
+      "title": "رفض الطلب",
+      "description": "هل أنت متأكد من رفض هذا الطلب؟",
+      "warning": "يرجى ملاحظة أنه بعد الرفض سيستمر التدفق إلى العقدة التالية.",
+      "confirm": "رفض",
+      "cancel": "إلغاء",
+      "rejectionReason": "سبب الرفض",
+      "uploadAttachment": "رفع مرفق",
+      "notes": "ملاحظات",
+      "enterNotes": "أدخل الملاحظات",
+      "selectRejectionReason": "اختر سبب الرفض",
+      "quickNote": "ملاحظات سريعة",
+      "upload": "رفع",
+      "quickNote1": "فشل التحقق من الرخصة التجارية",
+      "quickNote2": "رقم الاسم التجاري المحجوز لم يعد مقبولًا",
+      "quickNote3": "مقدم الطلب لا يستوفي المتطلبات",
+      "quickNote4": "المحتوى ينتهك قواعد الإعلام الإماراتية"
+    },
+    "approvalModals": {
+      "common": {
+        "operationFailed": "تعذر إكمال العملية.",
+        "refreshFailed": "تم تنفيذ الإجراء بنجاح، ولكن تعذر تحميل أحدث بيانات الطلب.",
+        "quickNote": "ملاحظة سريعة",
+        "cancel": "إلغاء",
+        "confirm": "تأكيد",
+        "attachments": "المرفقات",
+        "upload": "رفع",
+        "uploadFile": "رفع ملف",
+        "uploadTip": "الحد الأقصى للحجم: 5 ميجابايت، أنواع الملفات: jpg و jpeg و png و pdf.",
+        "notes": "ملاحظات",
+        "enterNotes": "أدخل الملاحظات"
+      },
+      "approve": {
+        "title": "الموافقة على الطلب",
+        "operationCompleted": "تمت الموافقة على الطلب.",
+        "defaultTip": "يرجى التأكد من صحة جميع تفاصيل الطلب. بعد الموافقة، سينتقل الطلب إلى الخطوة التالية إن وجدت.",
+        "conditionalTip": "بعد الموافقة، سيتم إنشاء مسودات طلبات تصاريح التوزيع تلقائيًا للعناصر المعتمدة والعناصر التي تتطلب مراجعة. أما العناصر المرفوضة فستستلزم اتخاذ إجراء التصرف.",
+        "externalApprovalResultTip": "يُكمل هذا الإجراء العقدة الحالية بنتيجة الموافقة الخارجية. بعد الموافقة، سينتقل إلى العقدة التالية.",
+        "quickNotes": {
+          "allDocumentsVerified": "تم التحقق من جميع المستندات",
+          "materialsComply": "المواد متوافقة مع اللوائح"
+        }
+      },
+      "reject": {
+        "title": "رفض الطلب",
+        "operationCompleted": "تم رفض الطلب.",
+        "defaultTip": "يرجى ملاحظة أنه بعد الرفض سيستمر التدفق إلى العقدة التالية.",
+        "routeTip": "ينطبق هذا الرفض على هذه الخطوة فقط. سيواصل الطلب الانتقال إلى مرحلة المراجعة التالية.",
+        "materialDispositionTip": "بمجرد الرفض، سيتم رفض جميع المنشورات في هذا الطلب. سيُطلب من مقدم الطلب اختيار طريقة التصرف وتقديم المستندات الداعمة خلال 14 يومًا.",
+        "externalApprovalResultTip": "يُكمل هذا الإجراء العقدة الحالية بنتيجة الموافقة الخارجية. بعد الرفض، ستنتهي العملية مباشرة.",
+        "rejectionReason": "سبب الرفض",
+        "selectRejectionReason": "اختر سبب الرفض",
+        "rejectionReasonRequired": "سبب الرفض مطلوب",
+        "quickNotes": {
+          "licenseExpired": "الرخصة التجارية منتهية أو غير صالحة",
+          "prohibitedContent": "تم تحديد محتوى محظور"
+        }
+      },
+      "disposition": {
+        "approveTitle": "الموافقة على التصرف",
+        "rejectTitle": "رفض التصرف",
+        "approveTip": "هل أنت متأكد من الموافقة على هذا التصرف؟ يرجى التأكد من التحقق من جميع المستندات المرفوعة.",
+        "rejectTip": "بعد الرفض، يجب على مقدم الطلب إعادة تقديم مستندات التصرف خلال المدة المتبقية.",
+        "verificationNotes": "ملاحظات التحقق",
+        "caseIdMissing": "معرّف حالة التصرف غير موجود"
+      },
+      "mediaReport": {
+        "title": "تقرير المواد الإعلامية",
+        "ageClassification": "التصنيف العمري",
+        "selectAgeClassification": "اختر التصنيف العمري",
+        "ageClassificationRequired": "يرجى اختيار التصنيف العمري",
+        "uploadObligationLetter": "رفع خطاب التعهد",
+        "detailedReport": "التقرير التفصيلي",
+        "detailedReportRequired": "التقرير التفصيلي مطلوب",
+        "noteList": "قائمة الملاحظات",
+        "addNew": "إضافة جديد",
+        "addNewNote": "إضافة ملاحظة جديدة",
+        "pageNumber": "رقم الصفحة",
+        "sceneTime": "وقت المشهد",
+        "enterPageNumber": "أدخل رقم الصفحة",
+        "action": "الإجراء",
+        "selectAction": "اختر الإجراء",
+        "actionRequired": "يرجى اختيار الإجراء",
+        "note": "الملاحظة",
+        "enterNote": "أدخل الملاحظة",
+        "noteRequired": "الملاحظة مطلوبة",
+        "actions": "الإجراءات",
+        "edit": "تعديل",
+        "delete": "حذف",
+        "fieldRequired": "هذا الحقل مطلوب",
+        "submitSuccess": "تم إرسال تقرير المواد الإعلامية بنجاح.",
+        "submitFailed": "تعذر إرسال تقرير المواد الإعلامية.",
+        "submitTip": "سيؤدي إرسال هذا التقرير إلى إكمال العقدة الحالية وتسجيل تصنيف المحتوى في الشهادة النهائية. سيواصل الطلب الانتقال إلى خطوة الموافقة التالية.",
+        "classifySubtitle": "صنّف محتوى المادة الإعلامية على النحو الآتي",
+        "noteActions": {
+          "add": "إضافة",
+          "delete": "حذف",
+          "change": "تغيير"
+        },
+        "sections": {
+          "general": "عام",
+          "violence": "العنف والرعب",
+          "language": "اللغة",
+          "sexuality": "المحتوى الجنسي",
+          "substances": "الكحول والتدخين والمخدرات",
+          "gambling": "المقامرة"
+        },
+        "options": {
+          "bookGeneral1": "تُعدّ الكتب والروايات بهذا التصنيف آمنة لجميع الفئات العمرية، سواء كانت مخصصة للأطفال أو للجمهور العام، ولا تحتوي على محتوى غير مناسب.",
+          "bookGeneral2": "قصص بسيطة تحتوي على كلمات قليلة وتركز على شرح المفاهيم الأساسية للطفل كالألوان والأشكال والأرقام والحروف.",
+          "bookGeneral3": "محتوى يتضمن رسائل وسلوكيات إيجابية ويراعي التفاعل بين الصورة والنص، وقد يشمل أحداثًا درامية وصراعات خيالية.",
+          "cinemaGeneral1": "لا يحتوي على أي مادة تتعارض مع معايير المحتوى الإعلامي.",
+          "cinemaGeneral2": "قد يحتوي الفيلم على بعض مشاهد العنف أو الرعب أو ألفاظ أو مشاهد غير مناسبة.",
+          "videoGameGeneral1": "الألعاب بهذا التصنيف آمنة لجميع الفئات العمرية ولا تحتوي على محتوى غير مناسب.",
+          "videoGameGeneral2": "لا يخالف المحتوى الآداب العامة من حيث الصور والأفعال والكلمات. تحتوي اللعبة على شخصيات خيالية أو شبيهة بالبشر بطابع كرتوني طفولي، وقد تكون مزعجة للأطفال الأصغر سنًا.",
+          "videoGameGeneral3": "تتميز هذه الفئة بشخصيات خيالية ذات طابع أكثر واقعية.",
+          "violenceItem": "بند مراجعة العنف والرعب {{index}}",
+          "languageItem": "بند مراجعة اللغة {{index}}",
+          "sexualityItem": "بند مراجعة المحتوى الجنسي {{index}}",
+          "substancesItem": "بند مراجعة الكحول والتدخين والمخدرات {{index}}",
+          "gamblingItem": "بند مراجعة المقامرة {{index}}"
+        }
+      }
+    },
+    "placeholders": {
+      "allMembers": "جميع الأعضاء",
+      "registrationType": "اختر نوع التسجيل",
+      "allStatuses": "جميع الحالات",
+      "allPortals": "جميع البوابات",
+      "allCategories": "جميع الفئات",
+      "startTime": "تاريخ البدء",
+      "endTime": "تاريخ الانتهاء",
+      "UpdatedForm": "تاريخ البدء",
+      "UpdatedTo": "تاريخ الانتهاء",
+      "eventstartTime": "تاريخ بدء الفعالية",
+      "eventendTime": "تاريخ انتهاء الفعالية",
+      "publishFrom": "تاريخ النشر من",
+      "publishTo": "تاريخ النشر إلى"
+    },
+    "labels": {
+      "assignPerson": "تعيين الشخص"
+    },
+    "tableColumns": {
+      "applicationNo": "رقم الطلب",
+      "serviceName": "اسم الخدمة",
+      "serviceCategory": "فئة الخدمة",
+      "type": "النوع",
+      "sla": "SLA",
+      "submissionTime": "وقت التقديم",
+      "lastUpdatedTime": "وقت آخر تحديث",
+      "applyFor": "مقدم الطلب",
+      "status": "الحالة",
+      "assignedTo": "مُسند إلى",
+      "action": "الإجراء"
+    },
+    "details": {
+      "applicationNumber": "رقم الطلب",
+      "licenseNumber": "رقم الترخيص",
+      "serviceCategory": "فئة الخدمة",
+      "type": "النوع",
+      "sla": "SLA",
+      "status": "الحالة",
+      "myDecision": "قراري",
+      "fromWeb": "من الموقع",
+      "onTime": "ضمن الوقت",
+      "exceeded": "متجاوز",
+      "applicationTimeline": "الجدول الزمني للطلب",
+      "applicationSubmitted": "تم تقديم الطلب",
+      "duration": "المدة",
+      "reviewResult": "نتيجة المراجعة",
+      "suggestion": "المقترح",
+      "attachments": "المرفقات",
+      "deliveryInformation": {
+        "title": "معلومات التوصيل",
+        "courierService": "خدمة التوصيل",
+        "recipientName": "اسم المستلم",
+        "mobileNumber": "رقم الهاتف المتحرك",
+        "address": "العنوان"
+      }
+    }
+  }
+}

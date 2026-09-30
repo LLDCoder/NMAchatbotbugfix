@@ -1,0 +1,227 @@
+@import "@/styles/variables.less";
+
+.team-management-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &--embedded {
+    height: auto;
+    overflow: visible;
+
+    .team-management-page__members-section {
+      flex: 0 0 auto;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 16px;
+  }
+
+  &__breadcrumb {
+    color: #8b8f97;
+    font-size: 14px;
+    margin-bottom: 8px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+    }
+  }
+
+  h1 {
+    margin: 0;
+    color: #2c2016;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  &__tabs-card {
+    flex-shrink: 0;
+    padding: 0 24px;
+    background: #fff;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 24px rgba(31, 25, 19, 0.04);
+
+    .ant-tabs-nav {
+      margin-bottom: 0;
+    }
+
+    .ant-tabs-tab {
+      padding: 18px 0 16px;
+      font-size: 16px;
+      font-weight: 600;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 14px;
+      }
+    }
+
+    .ant-tabs-ink-bar {
+      background: #be8c32;
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      border-radius: 10px;
+    }
+  }
+
+  &__tab-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+  }
+
+  &__badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // min-width: 20px;
+    // height: 20px;
+    padding: 0 6px;
+    border-radius: 50%;
+    background: #e24d2f;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    line-height: 20px;
+    white-space: nowrap;
+    box-sizing: border-box;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 10px;
+      line-height: 16px;
+    }
+  }
+
+  [dir="rtl"] &__badge {
+    right: auto;
+    left: -14px;
+  }
+
+  &__toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    color: #5d6169;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+
+    .ant-switch {
+      background: #c3c6cb;
+    }
+
+    .ant-switch-checked {
+      background: #b8852e;
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 8px;
+      font-size: 12px;
+    }
+  }
+
+  .team-management-page__task-source-switch {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px;
+    border-radius: 999px;
+    background: fade(@primary-color, 10%);
+
+    .ant-radio-button-wrapper {
+      height: 32px;
+      padding: 0 16px;
+      border: none;
+      border-radius: 999px;
+      background: transparent;
+      color: @primary-color;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 32px;
+      box-shadow: none !important;
+      transition: color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 10px;
+      }
+    }
+
+    .ant-radio-button-wrapper::before {
+      display: none !important;
+    }
+
+    .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+      background: linear-gradient(90deg, @primary-color 0%, @ant-hover-color 100%);
+      border-color: transparent;
+      color: #fff;
+    }
+
+    .ant-radio-button-wrapper:hover {
+      color: @ant-hover-color;
+    }
+
+    .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover {
+      background: linear-gradient(90deg, @primary-color 0%, @ant-hover-color 100%);
+      border-color: transparent;
+      color: #fff;
+    }
+
+    .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):active {
+      background: linear-gradient(
+        90deg,
+        darken(@primary-color, 4%) 0%,
+        @primary-color 100%
+      );
+      border-color: transparent;
+      color: #fff;
+    }
+
+    .ant-radio-button-wrapper:focus-within,
+    .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):focus-within {
+      box-shadow: 0 0 0 3px fade(@primary-color, 18%) !important;
+    }
+  }
+
+  &__members-section {
+    display: flex;
+    flex: 1 1 auto;
+    min-height: 0;
+    min-width: 0;
+  }
+}
+
+.team-management-cancel-task-modal__content {
+  p {
+    margin-bottom: 16px;
+  }
+
+  p:first-child {
+    margin-bottom: 0;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+[dir="rtl"] .team-management-page__task-source-switch {
+  direction: ltr;
+
+  .ant-radio-button-wrapper,
+  .ant-radio-button-wrapper:first-child,
+  .ant-radio-button-wrapper:last-child,
+  .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+    border-radius: 999px !important;
+    direction: rtl;
+  }
+}

@@ -1,0 +1,247 @@
+/* Portal-wide border grey: #eeeeee was too faint to read as a stroke (Figma annotation). */
+@service-fees-card-border: #e1e3e5;
+@service-fees-title: #1a1a1a;
+@service-fees-header-bg: #f9f8f6;
+@service-fees-header-text: #8c8c8c;
+@service-fees-header-font-size: 13px;
+@service-fees-row-border: #f0f0f0;
+@service-fees-body-text: #1a1a1a;
+@service-fees-total-accent: #8b734b;
+
+.ServicesFeesCard {
+  margin-top: 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-radius: 10px;
+  padding: 24px !important;
+  border: 1px solid @service-fees-card-border;
+  background: #ffffff;
+
+  /* Override global index.css .aed-icon (26×20): header and footer use same size, no stroke bolding */
+  .service-fees-header-currency-icon.aed-icon,
+  .service-fees-total-currency-icon.aed-icon {
+    width: 15px !important;
+    height: 13px !important;
+    vertical-align: -0.15em;
+  }
+
+  p {
+    margin: 0 0 20px;
+    padding: 0;
+    font-weight: 700;
+    font-size: 18px !important;
+    color: @service-fees-title;
+  }
+
+  /* Body cells only: avoids thead 13px clash; header AED size overrides global .aed-icon above */
+  .ant-table-tbody > tr > td.ant-table-cell {
+    font-size: 15px !important;
+  }
+
+  .table-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+    padding: 0;
+    padding-top: 16px;
+    background: transparent;
+    border-top: none;
+
+    .total-label {
+      font-size: 15px;
+      font-weight: 600;
+      color: @service-fees-body-text;
+    }
+
+    .total-amount {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: @service-fees-header-text;
+
+      .total-value {
+        font-size: 18px;
+        font-weight: 400;
+        color: @service-fees-total-accent;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 16px;
+        }
+      }
+
+      .service-fees-total-currency-icon {
+        flex-shrink: 0;
+        font-size: @service-fees-header-font-size;
+        line-height: 1;
+        color: inherit;
+      }
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 8px;
+    }
+  }
+
+  .select-table-custom-container {
+    .ant-formily-item {
+      margin-bottom: 0px;
+      display: block;
+      .ant-formily-item-label-tooltip-icon {
+        margin-bottom: 8px;
+      }
+      .ant-formily-item-label {
+        justify-content: flex-start;
+        align-items: center;
+      }
+    }
+  }
+
+  .ServiceFeesCard {
+    // margin-top: 20px;
+  }
+  .ant-select,
+  .select-table-tree {
+    width: 100%;
+  }
+
+  .ant-table,
+  .tabletitle {
+    // margin-top: 16px;
+  }
+
+  .select-table-node {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 12px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 8px;
+    }
+  }
+  .select-table-node-label {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .select-table-node-right {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    gap: 8px;
+  }
+  .service-fees-amount-cell {
+    justify-content: flex-end;
+  }
+  .select-table-node-fee {
+    color: @service-fees-body-text;
+    font-weight: 400;
+  }
+
+  .select-table-node-count {
+    color: #5f646d;
+    background: #f1f2f4;
+    border-radius: 8px;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: 600;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 10px;
+    }
+  }
+
+  .select-table-tree .ant-select-selector {
+    min-height: 44px;
+    border-radius: 10px;
+    padding: 6px 10px !important;
+  }
+  .select-table-tree
+    .ant-select-selection-overflow-item
+    .ant-select-selection-item {
+    border-radius: 8px;
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+  }
+
+  .servicefees {
+    background-color: #f9fafb;
+    color: #21252e;
+    font-weight: 600;
+    height: 48px;
+    border-radius: 16px 16px 0 0;
+    padding: 0 20px;
+    line-height: 48px;
+  }
+
+  .formtable.service-fees-table {
+    .moneybox {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: flex-end;
+      color: inherit;
+
+      .service-fees-header-currency-icon {
+        flex-shrink: 0;
+        font-size: @service-fees-header-font-size;
+        line-height: 1;
+        color: inherit;
+      }
+    }
+
+    .ant-table {
+      color: @service-fees-body-text;
+      background: transparent;
+    }
+
+    .ant-table-container {
+      border: 1px solid @service-fees-row-border;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .ant-table-thead > tr > th {
+      background: @service-fees-header-bg !important;
+      color: @service-fees-header-text;
+      font-size: @service-fees-header-font-size !important;
+      font-weight: 500;
+      border-bottom: 1px solid @service-fees-row-border !important;
+      border-right: none !important;
+      border-top: none !important;
+      border-left: none !important;
+      padding: 12px 16px !important;
+      vertical-align: middle;
+
+      &::before {
+        display: none !important;
+      }
+    }
+
+    .ant-table-tbody > tr > td {
+      border-bottom: 1px solid @service-fees-row-border;
+      border-right: none !important;
+      border-left: none !important;
+      padding: 14px 16px !important;
+      color: @service-fees-body-text;
+      vertical-align: middle;
+    }
+
+    .ant-table-tbody > tr:last-child > td {
+      border-bottom: none;
+    }
+
+    .ant-table-placeholder .ant-table-cell {
+      border-bottom: none;
+    }
+  }
+}

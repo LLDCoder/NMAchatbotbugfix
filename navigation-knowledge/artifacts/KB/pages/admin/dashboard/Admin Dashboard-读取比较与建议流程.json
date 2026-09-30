@@ -1,0 +1,293 @@
+{
+  "schemaVersion": "1.0",
+  "bundleId": "admin.dashboard.reading-workflow",
+  "packageStatus": "active",
+  "createdAt": "2026-09-28T07:04:59.048133+00:00",
+  "searchMetadata": {
+    "titleEnglish": "Dashboard comparisons, staff context, forecast limits, queue advice and export boundaries",
+    "titleArabic": "نطاق لوحة المعلومات والمقارنة التاريخية وتقييم الموظفين والتوقعات وأولويات العمل وحدود التصدير"
+  },
+  "records": [
+    {
+      "id": "admin.dashboard.interpretation-and-action-boundaries",
+      "kind": "page_definition",
+      "revision": 1,
+      "status": "active",
+      "title": "Dashboard comparisons, staff context, forecast limits, queue advice and export boundaries",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local"
+        ],
+        "pageRefs": [
+          "/dashboard"
+        ],
+        "runtimeVerification": "not_a_live_execution",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/licenseDashboard.ts",
+          "revision": "sha256:7ed99b6783c36f5849e1d21584a68630bcb8e48f64e9ec2c4fef470759b5cf8b",
+          "locator": "getScope; createTaskHubDonutCard; createPerformanceTiles; createDistributionStatusCard; createTrendCard; getLicenseDashboardData",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/LicenseDashboard/LicenseDashboardAppService.cs",
+          "revision": "sha256:a3a0bd755cf7ac404d6388b6b03021880de5a0cf0bd3035725b95a6d4dba0890",
+          "locator": "GetTaskTabCountsAsync; GetPriorityCardsAsync; BuildServiceApplicationCardAsync; BuildProfileVerificationCardAsync; GetPerformanceMetricsAsync; GetPerformanceTrendAsync; ResolveRoleScopeAsync",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/dashboardApiShared.ts",
+          "revision": "sha256:3c31d383c4781bb437c3aedf348f9e50fde1f7e8e390f4ad396bba30d4718760",
+          "locator": "resolveDashboardDateRange; resolveDashboardTrendDateRange; formatPercent",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Dashboard/index.tsx",
+          "revision": "sha256:7c9a862100b8cb2ed0300767b555a354dd402c7ca1fa7584f2ffb1ce5d032485",
+          "locator": "applied department, roleVariant and timeFilter reader attributes; cancel stale requests on context changes",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "manual",
+          "reference": "navigation-knowledge/artifacts/KB/业务知识全量整理-20260926/可上传页面知识/Admin Dashboard-筛选范围指标与比较.md",
+          "revision": "sha256:e10fd0da5c60e5a35b0a7065902ed5edcce2d2f9184ac0f02b686b661a85887d",
+          "locator": "Business meaning; Page facts and business distinctions",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "manual",
+          "reference": "navigation-knowledge/artifacts/KB/业务知识全量整理-20260926/可上传页面知识/Admin Portal-页面阅读与结果边界.md",
+          "revision": "sha256:2bd11eb2769b4580bd6c597a5912e186cf9f8b8087b153a474775214c88467ed",
+          "locator": "Business meaning; Page facts and business distinctions",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "manual",
+          "reference": "navigation-knowledge/artifacts/KB/业务知识全量整理-20260926/可上传页面知识/Admin Portal-身份权限与业务工作区.md",
+          "revision": "sha256:5b5abf0a609c8eaf512feb98ed2c3b8e8e27b6f8daefd22872687f546e2db0aa",
+          "locator": "Business meaning; Page facts and business distinctions",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/dashboard",
+        "businessMeaning": "Current observations, retrospective comparisons, predictions and business actions are distinct capabilities.",
+        "rules": {
+          "current_scope": [
+            "A Dashboard summary belongs to the current authenticated workspace, rendered role view, applied date filter and observed responses. The word my in my Dashboard is not a personal-record filter.",
+            "When the applied filter changes, the repeated question refers to the newly applied range. Preserve the new browser context and verify new completed response requests; previous answers are not evidence for the new range. A draft custom date range is not applied until Apply is used."
+          ],
+          "card_list_comparison": [
+            "A difference between a summary card and list does not by itself prove a data defect. Compare entity and task category, personal/department scope, queue/status definitions, date field, selected period, timezone where supplied, paging completeness, and observation/refresh time.",
+            "The inspected License My Tasks tab and priority cards use the personal click perspective even for a manager; the Service Application summary uses the role-derived scope. A department summary and a personal task tab are not the same population.",
+            "Service Application summary counts use the selected review-update window, but its Done Today count is independent of that window. The Profile Verification summary currently filters CreatedOn while the tab/list filters UpdateOn. Verify the actual deployment and responses before assigning a specific mismatch to either rule.",
+            "License Distribution sums independent status buckets that may overlap. Its displayed total is not guaranteed to equal a distinct-license list count. A limited list page also cannot stand for a full total.",
+            "Cache existence alone does not prove staleness. Preserve the actual response time; if the service gives no as-of timestamp, say that refresh timing is unverified rather than inventing it."
+          ],
+          "comparison_and_forecast": [
+            "A yesterday or last-week comparison requires the same metric, population, time basis and comparable explicit periods. If no matching historical series exists for an indicator, the supported conclusion is that its change cannot be determined from the available evidence.",
+            "License performance-trend returns completed tasks per actual bucket and category. It does not return incoming application, complaint or inspection volume, nor yesterday values for every KPI.",
+            "The inspected Dashboard APIs provide descriptive summaries and historical completed-task series. They do not establish a next-month forecasting model. A precise arrivals forecast needs a matching historical arrivals series, explicit method and assumptions, validation and uncertainty. Without those, a precise number is unsupported; no historical count should be relabeled as a prediction."
+          ],
+          "employee_comparison": [
+            "A single workload, overdue count, processing duration or SLA value does not establish the worst employee. Those are specific operational measures, not a complete judgment of overall performance.",
+            "An interpretable comparison names the measure and period and accounts for assigned workload, task mix/complexity, role and relevant absences or external dependencies where evidenced. Missing context remains missing; it must not be invented.",
+            "The coaching panel is described as staff who may benefit from guidance or follow-up. A returned coaching row is not proof of incompetence or permission to disclose unrelated employee information.",
+            "Native authorized responses determine whether current employee metrics are accessible. A role name, visible menu, documentation omission or empty knowledge search must not be converted into an access-denied finding. Do not display contact or leave details merely to discuss operational performance."
+          ],
+          "queue_priority": [
+            "Work-priority advice is read-only. It preserves human choice and does not reorder, reassign, approve or complete tasks.",
+            "Use the verified selected queue/category and its real status, active SLA/deadline and explicit urgency/risk fields. An urgent SLA is not automatically a regulatory-risk rating; no universal risk score is established here.",
+            "For the License ServiceApplication priorityCards source, the inspected order is overdue first (most overdue first), then least remaining time, then paused/not applicable. ServiceApplication remainingMinutes has the MyTodoPage convention: positive overdue, negative remaining. Other task categories use a different sign convention; never apply one to all categories.",
+            "Pending Modification and External Approval can have paused/not-applicable SLA. They may need follow-up for a stated dependency but cannot be ranked as active overdue merely from age or a dash label. Preserve unknown values.",
+            "When multiple queues are actually in view, identify the selected panel/category or ask for that choice; do not silently switch from My Tasks to department Urgent/Blocked rows. A recommendation based on a visible subset must say that it is a subset."
+          ],
+          "export_and_external_email": [
+            "Permission to read a report does not establish permission to export it or send it externally. Export controls, external-disclosure authorization and assistant capability are separate checks.",
+            "The current Reader is a read-only assistant and cannot execute business export/send operations through page-reading actions. It may explain the permitted workflow and prepare an authorized summary for human review without claiming that a file was exported or an email sent.",
+            "No external recipient or approved disclosure scope is established by the generic export/send request. No data is sent to a third party by explaining these boundaries. The exact organizational approval procedure remains unverified unless an applicable source supplies it."
+          ]
+        },
+        "arabicSummary": "تخص مؤشرات لوحة المعلومات القسم والدور والفترة الفعلية. لا تثبت البطاقة الحالية تغيراً تاريخياً أو توقعاً دقيقاً، ولا يحدد مؤشر واحد أسوأ موظف. تُبنى أولويات العمل على المهلة والحالة والمخاطر المثبتة وتبقى القرار للإنسان. إذن القراءة لا يثبت إذن التصدير أو الإرسال إلى بريد خارجي؛ لا يدّعي المساعد تنفيذ أي إرسال."
+      }
+    },
+    {
+      "id": "admin.dashboard.license-priority.application",
+      "kind": "field_semantics",
+      "revision": 1,
+      "status": "active",
+      "title": "License ServiceApplication priority-card facts",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local"
+        ],
+        "pageRefs": [
+          "/dashboard"
+        ],
+        "runtimeVerification": "pending",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/licenseDashboard.ts",
+          "revision": "sha256:7ed99b6783c36f5849e1d21584a68630bcb8e48f64e9ec2c4fef470759b5cf8b",
+          "locator": "getScope; createTaskHubDonutCard; createPerformanceTiles; createDistributionStatusCard; createTrendCard; getLicenseDashboardData",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/LicenseDashboard/LicenseDashboardAppService.cs",
+          "revision": "sha256:a3a0bd755cf7ac404d6388b6b03021880de5a0cf0bd3035725b95a6d4dba0890",
+          "locator": "GetTaskTabCountsAsync; GetPriorityCardsAsync; BuildServiceApplicationCardAsync; BuildProfileVerificationCardAsync; GetPerformanceMetricsAsync; GetPerformanceTrendAsync; ResolveRoleScopeAsync",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/dashboardApiShared.ts",
+          "revision": "sha256:3c31d383c4781bb437c3aedf348f9e50fde1f7e8e390f4ad396bba30d4718760",
+          "locator": "resolveDashboardDateRange; resolveDashboardTrendDateRange; formatPercent",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Dashboard/index.tsx",
+          "revision": "sha256:7c9a862100b8cb2ed0300767b555a354dd402c7ca1fa7584f2ffb1ce5d032485",
+          "locator": "applied department, roleVariant and timeFilter reader attributes; cancel stale requests on context changes",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/dashboard",
+        "sourceBinding": {
+          "operationRef": "GET /api/license/dashboard/overview",
+          "sourcePath": "/data/priorityCards"
+        },
+        "fields": {
+          "taskId": "Internal card identity.",
+          "referenceNumber": "Public task reference.",
+          "status": "Current task status.",
+          "sla.displayText": "Displayed signed/paused SLA description.",
+          "sla.remainingMinutes": "Only this category: positive overdue, negative remaining, null paused/unavailable."
+        },
+        "bindings": [
+          {
+            "operationRef": "GET /api/license/dashboard/overview",
+            "sourcePath": "/data/priorityCards",
+            "contextParameters": {
+              "taskCategory": "0"
+            },
+            "id": "object",
+            "kind": "object",
+            "concept": "application task",
+            "aliases": [
+              "task",
+              "work item"
+            ],
+            "fields": [
+              "taskId"
+            ],
+            "displayFields": [
+              "referenceNumber"
+            ],
+            "meaning": "An authorized ServiceApplication priority card; this category uses the personal click perspective."
+          },
+          {
+            "operationRef": "GET /api/license/dashboard/overview",
+            "sourcePath": "/data/priorityCards",
+            "contextParameters": {
+              "taskCategory": "0"
+            },
+            "id": "grain",
+            "kind": "grain",
+            "concept": "application task",
+            "aliases": [
+              "task",
+              "work item"
+            ],
+            "fields": [
+              "taskId"
+            ],
+            "entityKeyFields": [
+              "taskId"
+            ],
+            "meaning": "One returned application task card within taskCategory=0. Do not mix identity values from other categories."
+          },
+          {
+            "id": "reference",
+            "kind": "attribute",
+            "concept": "task reference",
+            "aliases": [
+              "task number",
+              "reference number",
+              "رقم المهمة"
+            ],
+            "operationRef": "GET /api/license/dashboard/overview",
+            "sourcePath": "/data/priorityCards",
+            "fields": [
+              "referenceNumber"
+            ],
+            "meaning": "Displayed public task/application reference, not an internal row or workflow identifier.",
+            "contextParameters": {
+              "taskCategory": "0"
+            }
+          },
+          {
+            "id": "current_status",
+            "kind": "attribute",
+            "concept": "status",
+            "aliases": [
+              "current status",
+              "الحالة"
+            ],
+            "operationRef": "GET /api/license/dashboard/overview",
+            "sourcePath": "/data/priorityCards",
+            "fields": [
+              "status"
+            ],
+            "meaning": "Current returned status for this card; not a past decision.",
+            "contextParameters": {
+              "taskCategory": "0"
+            }
+          },
+          {
+            "id": "current_sla",
+            "kind": "attribute",
+            "concept": "SLA",
+            "aliases": [
+              "deadline status",
+              "اتفاقية مستوى الخدمة"
+            ],
+            "operationRef": "GET /api/license/dashboard/overview",
+            "sourcePath": "/data/priorityCards",
+            "fields": [
+              "sla.displayText"
+            ],
+            "meaning": "Actual formatted SLA with its unit/direction or paused/not-applicable marker; do not treat a missing marker as zero.",
+            "contextParameters": {
+              "taskCategory": "0"
+            }
+          }
+        ],
+        "constraints": [
+          "This source snapshot defines field meanings, not current values or access grants. Verify the native response and current authenticated scope. A missing field is unavailable, not zero.",
+          "The current Dashboard is a selected UI context, not automatically personal scope. Preserve observed department, roleVariant and applied timeFilter. The same route can display another department or period.",
+          "The backend ResolveRoleScopeAsync uses the authenticated role context. A manually supplied scope query parameter cannot grant or independently establish personal, department or managed-team access.",
+          "Each panel has its own population and time basis. Do not turn an overview response, attention list or performance summary into a common record collection, and do not add counts from different panels.",
+          "A summary of current Dashboard key metrics covers the visible task tabs, Service Application and Profile Verification summary cards, License Distribution, and My/Team Performance where observed. Keep panel names with their values; unavailable panels stay explicitly unavailable. It is not just one SLA percentage.",
+          "A requested individual indicator uses only its matching property. A full Dashboard overview must not silently substitute an attention-table row list for all key metrics.",
+          "Advice can describe the verified returned SLA ordering, but does not execute any action or assert a complete formal risk-ranking policy.",
+          "The inspected backend returns all matching priority cards, but completeness still requires the actual response receipt and selected category/date context. Do not infer completeness from the source comment or an arbitrary page-size parameter alone."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "Finance": {
+    "transactions": {
+      "tabs": {
+        "payments": "Payments",
+        "recharges": "Recharges"
+      },
+      "common": {
+        "search": "Search",
+        "allTypes": "All Types",
+        "allStatuses": "All Statuses",
+        "noData": "No Data"
+      },
+      "actions": {
+        "filter": "Filter",
+        "export": "Export"
+      },
+      "table": {
+        "transactionNo": "Transaction No.",
+        "type": "Type",
+        "applyFor": "Apply For",
+        "accountOrCardHolder": "Account/Card Holder",
+        "paymentMethod": "Payment Method",
+        "amount": "Amount",
+        "status": "Status",
+        "submissionTime": "Submission Time",
+        "transactionTime": "Transaction Time"
+      },
+      "statistics": {
+        "payments": "Payments",
+        "revenue": "Revenue",
+        "total": "Total",
+        "totalAmount": "Total Amount",
+        "last7Days": "Last 7 Days",
+        "inLast7Days": "in the last 7 days",
+        "serviceApplication": "Service Application",
+        "serviceApplicationFees": "Service Application Fees",
+        "fines": "Fines",
+        "refunds": "Refunds",
+        "wallet": "Wallet",
+        "creditDebitCard": "Credit / Debit Card",
+        "failed": "Failed",
+        "failedRefund": "Failed Refund",
+        "completed": "Completed",
+        "onlyCompletedHint": "Only completed transactions are counted",
+        "calculationRule": "Calculation Rule: Service Application Fees + Fines - Refunds"
+      },
+      "filterModal": {
+        "title": "Filter",
+        "paymentMethod": "Payment Method",
+        "allPaymentMethods": "All Payment Methods",
+        "startDate": "Start time",
+        "endDate": "End time"
+      },
+      "recharges": {
+        "accountHolder": "Account Holder",
+        "accountEmail": "Account Email",
+        "cardHolder": "Card Holder",
+        "cardInformation": "Card Information",
+        "lastUpdatedTime": "Last Updated Time",
+        "totalRecharges": "Total Recharges"
+      }
+    },
+    "transactionsDetail": {
+      "messages": {
+        "receiptUnavailable": "Receipt is not available",
+        "relatedPaymentUnavailable": "Related payment details are not available."
+      },
+      "actions": {
+        "downloadReceipt": "Download Receipt"
+      },
+      "header": {
+        "transactionNumber": "Transaction Number"
+      },
+      "failureReason": {
+        "title": "Failure Reason",
+        "description": "Invalid card number. Please check and re-enter."
+      },
+      "sections": {
+        "paymentInformation": "Payment Information",
+        "relatedApplications": "Related Applications",
+        "relatedInspectionViolation": "Related Inspection Violation",
+        "refundInformation": "Refund Information",
+        "refundApplicationInformation": "Refund Application Information",
+        "relatedPaymentInformation": "Related Payment Information",
+        "walletInformation": "Wallet Information"
+      },
+      "breadcrumbs": {
+        "financeAndPayments": "Finance & Payments",
+        "transactions": "Transactions",
+        "payments": "Payments",
+        "paymentsDetails": "Payments Details"
+      },
+      "fields": {
+        "amountCharged": "Amount Charged",
+        "accountHolderName": "Account Holder Name",
+        "cardHolderName": "Card Holder Name",
+        "description": "Description",
+        "serviceName": "Service Name",
+        "appliedFor": "Applied For",
+        "violationId": "Violation ID",
+        "violationType": "Violation Type",
+        "violationTime": "Violation Time",
+        "fineAmount": "Fine Amount",
+        "inspector": "Inspector",
+        "entityName": "Entity Name",
+        "processedBy": "Processed By",
+        "processorAccount": "Processor Account",
+        "applicationNumber": "Application Number",
+        "refundStatus": "Refund Status",
+        "refundType": "Refund Type",
+        "lastUpdated": "Last Updated",
+        "refundCharged": "Refund Charged",
+        "refundScope": "Refund Scope",
+        "refundReason": "Refund Reason",
+        "transactionType": "Transaction Type",
+        "accountInformation": "Account Information",
+        "rechargeAmount": "Recharge Amount",
+        "transactionFee": "Transaction Fee",
+        "currentBalance": "Current Balance",
+        "lastRecharge": "Last Recharge"
+      },
+      "violationTypes": {
+        "licensing": "License Violation",
+        "content": "Content Violation"
+      },
+      "defaults": {
+        "serviceApplicationFeeDesc": "Payment for service application fee",
+        "finePaymentDesc": "Payment for inspection violation fine"
+      }
+    },
+    "financialRefunds": {
+      "common": {
+        "search": "Search",
+        "allStatuses": "All Statuses",
+        "startTime": "Start date",
+        "endTime": "End date"
+      },
+      "actions": {
+        "refund": "Refund"
+      },
+      "messages": {
+        "loadDetailsFailed": "Failed to load refund details.",
+        "executionFailed": "Refund execution failed.",
+        "executionSuccess": "Refund completed successfully."
+      },
+      "table": {
+        "applicationNo": "Application No.",
+        "refundNo": "Refund No.",
+        "transactionNo": "Transaction No.",
+        "type": "Type",
+        "partial": "Partial",
+        "applyFor": "Apply For",
+        "accountOrCardHolder": "Account/Card Holder",
+        "paymentMethod": "Payment Method",
+        "amount": "Amount",
+        "status": "Status",
+        "lastUpdated": "Last Updated",
+        "actions": "Actions"
+      },
+      "status": {
+        "refunded": "Refunded",
+        "pendingRefund": "Pending Refund"
+      },
+      "statistics": {
+        "total": "Total",
+        "totalRefundAmount": "Total Refund Amount",
+        "totalRefundCount": "Total Refund Count",
+        "pendingRefundCount": "Pending Refund Count",
+        "pendingRefundAmount": "Pending Refund Amount",
+        "walletRefund": "Wallet Refund",
+        "cardRefund": "Card Refund",
+        "onlyCompletedHint": "Only completed refund transactions are counted"
+      },
+      "confirmModal": {
+        "warning": "Are you sure you want to confirm refund? This action cannot be undone."
+      },
+      "details": {
+        "refundAmount": "Refund Amount",
+        "accountHolder": "Account Holder",
+        "account": "Account",
+        "cardHolder": "Card Holder",
+        "cardInformation": "Card Information"
+      },
+      "errors": {
+        "refundNotFound": "Current refund record does not exist or has been removed.",
+        "originalTransactionNotFound": "Original payment record does not exist. Refund cannot be executed.",
+        "unsupportedPaymentMethod": "The current payment method is not supported for refund.",
+        "invalidOriginalTransactionStatus": "The original transaction status does not allow a refund.",
+        "amountExceeded": "Refund amount exceeds the remaining refundable balance.",
+        "alreadyCompleted": "This refund has already been completed.",
+        "concurrencyConflict": "This record was handled elsewhere. Refresh and try again.",
+        "gatewayTimeout": "Gateway timeout. Please try again later.",
+        "gatewayFailed": "Gateway execution failed. Check the failure reason.",
+        "executionFailedContactBackend": "Refund execution failed. Please contact the backend team."
+      }
+    },
+    "financialRefundsDetails": {
+      "messages": {
+        "noPermission": "No permission to view refund details.",
+        "notFound": "Refund details were not found."
+      },
+      "failureReason": "Failure Reason",
+      "refundAmount": "Refund Amount",
+      "sections": {
+        "refundApplicationInformation": "Refund Application Information",
+        "relatedPaymentInformation": "Related Payment Information"
+      },
+      "fields": {
+        "cardInformation": "Card Information",
+        "email": "Email",
+        "refundScope": "Refund Scope",
+        "refundReason": "Refund Reason",
+        "transactionNumber": "Transaction Number",
+        "transactionType": "Transaction Type",
+        "amountCharged": "Amount Charged",
+        "description": "Description"
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+services:
+  backend:
+    environment:
+      # Read the same local Portal build as the user's browser. Its /api proxy
+      # still forwards to the authorized UMC API configured in .env.local.
+      UMC_ADMIN_BASE_URL: http://host.docker.internal:18086
+      # Fresh installations initialize by default. Existing databases may opt
+      # out in the private .env.local file before a development reload.
+      DATABASE_INIT_ENABLED: ${DATABASE_INIT_ENABLED:-true}
+      READER_PIPELINE: generic_v3
+      READER_TOTAL_TIMEOUT_SECONDS: '240'
+      # A root query plus both manifest checks measured 45–60 seconds on KB43.
+      # Optional expansion is separately capped; total turn deadline is 240s.
+      KNOWLEDGE_TIMEOUT_SECONDS: '75'
+      READER_ARTIFACTS_DIR: /reader-artifacts
+      # Match the Portal's gstTime.ts contract; browser timezone is only a hint.
+      READER_BUSINESS_TIMEZONE: ${READER_BUSINESS_TIMEZONE:-Asia/Dubai}
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ../dsh-admin-source-package-20260923184338/source/backend/app:/app/app
+      - ../navigation-knowledge/artifacts:/reader-artifacts:ro
+    ports: ['127.0.0.1:8001:8000']
+  platform-gateway:
+    environment:
+      UMC_ADMIN_BASE_URL: http://host.docker.internal:18086
+    command: uvicorn app:app --host 0.0.0.0 --port 8102 --reload
+    volumes:
+      - ../dsh-admin-source-package-20260923184338/source/platform-gateway:/app
+  knowledge-gateway:
+    environment:
+      # Preserve the Reader's candidate/JSON continuation budget at this hop.
+      KNOWLEDGE_UPSTREAM_MAX_TOP_K: '100'
+      # KB43 admits two searches while its Milvus client is serialized.
+      # Allow its 45s queue/execution deadline plus transport overhead.
+      KNOWLEDGE_TIMEOUT_SECONDS: '50'
+    command: uvicorn app:app --host 0.0.0.0 --port 8101 --reload
+    volumes:
+      - ../dsh-admin-source-package-20260923184338/source/knowledge-gateway:/app
+  audit:
+    ports: ['127.0.0.1:18112:80']

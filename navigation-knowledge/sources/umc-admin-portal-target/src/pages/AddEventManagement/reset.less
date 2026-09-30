@@ -1,0 +1,140 @@
+.add-newsManagement-container{
+  .custom-form {
+    padding: 24px 40px 32px;
+
+    &:has(+ .custom-quick-note) {
+      padding-bottom: 20px;
+    }
+
+    .custom-textarea {
+      .ant-input {
+        min-height: 108px;
+      }
+      &.ant-input-textarea-show-count{
+        &.ant-input-textarea-in-form-item::after {
+          float: left;
+        }
+      }
+    }
+
+    .ant-form-item-control{
+      .ant-select {
+        font-size: 14px;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 12px;
+        }
+      }
+      textarea{
+        border-radius: 8px;
+        font-size: 14px;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .ant-form-item-label
+      > label.ant-form-item-required:not(
+        .ant-form-item-required-mark-optional
+      )::before {
+      display: none;
+    }
+
+    .ant-form-item-label
+      > label.ant-form-item-required:not(
+        .ant-form-item-required-mark-optional
+      )::after {
+      display: inline-block;
+      margin-left: 4px;
+      color: #e60000;
+      font-size: 14px;
+      font-family: SimSun, sans-serif;
+      line-height: 1;
+      content: "*";
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 12px;
+        }
+    }
+  }
+
+  .custom-table {
+    .ant-table-column-has-sorters{
+      .ant-table-column-sorters {
+        justify-content: initial;
+        .ant-table-column-title {
+          flex: initial;
+        }
+      }
+    }
+  
+    .ant-input {
+      &::placeholder {
+        color: rgba(121, 126, 134, 1);
+      }
+    }
+  
+    .ant-picker-input > input::placeholder {
+      color: rgba(121, 126, 134, 1);
+    }
+  
+    // reset the color of table actions btn 
+    .table-actions{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      .table-btn{
+        font-weight: 500;
+        font-size: 16px;
+        color: rgba(146, 114, 42, 1);
+        cursor: pointer;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 14px;
+        }
+      }
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        gap: 8px;
+      }
+    }
+  
+    .status-tag,
+    .approval-result{
+      display: inline-block;
+      border-radius: 4px;
+      padding: 3px 6px;
+      color: #F29F0E;
+      font-size: 14px;
+      background-color: #FFFBEB;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+      }
+    }
+    .ExternalApproval {
+      color: #F29F0E;
+      background-color: #FFFBEB;
+    }
+    .Completed,
+    .Approval {
+      color: #4A9D5C;
+      background-color: #F3FAF4;
+    }
+    .FinalApproval,
+    .InitialApproval {
+      color: #EB5F24;
+      background-color: #FEF5EE;
+    }
+    .Cancelled {
+      color: #5F646D;
+      background-color: rgba(225, 227, 229, .5);
+    }
+    .Rejected {
+      color: #EA4F49;
+      background-color: #FEF2F2;
+    }
+  }
+}

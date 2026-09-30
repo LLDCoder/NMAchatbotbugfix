@@ -1,0 +1,26 @@
+.inspection-task-management__task-form
+  .ant-form-item-label
+  > label.ant-form-item-required:not(
+    .ant-form-item-required-mark-optional
+  )::before {
+  display: none;
+}
+
+.inspection-task-management__task-form
+  .ant-form-item-label
+  > label.ant-form-item-required:not(
+    .ant-form-item-required-mark-optional
+  )::after {
+  display: inline-block;
+  margin-inline-start: 4px;
+  margin-inline-end: 0;
+  color: #e60000;
+  font-family: SimSun, sans-serif;
+  font-size: 14px;
+  line-height: 1;
+  content: "*";
+
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+  }
+}

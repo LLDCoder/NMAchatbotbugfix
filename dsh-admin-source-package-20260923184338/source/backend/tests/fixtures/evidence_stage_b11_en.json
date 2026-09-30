@@ -1,0 +1,1364 @@
+{
+  "question": "I am seeing a conflicting status for this same application on the page. Please re-check the current record, explain which source and observation time your answer uses, and tell me how to refresh or verify the discrepancy. Do not change any data.",
+  "task": {
+    "view": "",
+    "stage": "task",
+    "filters": [],
+    "groupBy": [],
+    "readOnly": true,
+    "timeField": "",
+    "timeRange": "unknown",
+    "outputShape": "detail",
+    "searchQuery": "application ML-1-7-6577159 current status conflicting status source observation time refresh verify discrepancy",
+    "slotUpdates": [
+      {
+        "field": "businessObject",
+        "value": "application",
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "requestedAttributes",
+        "value": [
+          "status",
+          "source of the status answer",
+          "observation time of the status answer",
+          "how to refresh or verify the status discrepancy"
+        ],
+        "source": "current",
+        "evidence": "re-check the current record, explain which source and observation time your answer uses, and tell me how to refresh or verify the discrepancy"
+      },
+      {
+        "field": "recordIdentity",
+        "value": "ML-1-7-6577159",
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "outputShape",
+        "value": "detail",
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "requestedGrain",
+        "value": "application",
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "requestedScope",
+        "value": "unknown",
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "timeRange",
+        "value": "unknown",
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "businessFocus",
+        "value": "",
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "disclosurePurpose",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedMeasures",
+        "value": [],
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "groupBy",
+        "value": [],
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "filters",
+        "value": [],
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "view",
+        "value": "",
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "timeField",
+        "value": "",
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "requestedOrdering",
+        "value": [],
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "groupCompleteness",
+        "value": "observed",
+        "source": "previous",
+        "evidence": ""
+      }
+    ],
+    "responseMode": "answer",
+    "businessFocus": "",
+    "clarification": null,
+    "needsLiveData": true,
+    "businessObject": "application",
+    "recordIdentity": "ML-1-7-6577159",
+    "requestedGrain": "application",
+    "requestedScope": "unknown",
+    "contextRelation": "continue",
+    "unresolvedSlots": [],
+    "disclosurePurpose": "",
+    "groupCompleteness": "observed",
+    "requestBoundaries": [],
+    "requestedMeasures": [],
+    "requestedOrdering": [],
+    "requestedAttributes": [
+      "status",
+      "source of the status answer",
+      "observation time of the status answer",
+      "how to refresh or verify the status discrepancy"
+    ],
+    "evidenceExplanations": [
+      {
+        "kind": "source",
+        "attribute": "source of the status answer",
+        "questionQuote": "explain which source and observation time your answer uses",
+        "aboutAttribute": "status"
+      },
+      {
+        "kind": "observation_time",
+        "attribute": "observation time of the status answer",
+        "questionQuote": "explain which source and observation time your answer uses",
+        "aboutAttribute": "status"
+      },
+      {
+        "kind": "knowledge_guidance",
+        "attribute": "how to refresh or verify the status discrepancy",
+        "questionQuote": "tell me how to refresh or verify the discrepancy",
+        "aboutAttribute": ""
+      }
+    ]
+  },
+  "expansion": {
+    "stage": "query_expansion",
+    "terms": [
+      {
+        "arabic": "طلب",
+        "english": "application",
+        "sourceText": "application",
+        "alternatives": [
+          "application record",
+          "سجل الطلب"
+        ],
+        "requirementId": "object"
+      },
+      {
+        "arabic": "طلب",
+        "english": "application",
+        "sourceText": "application",
+        "alternatives": [
+          "per application",
+          "لكل طلب"
+        ],
+        "requirementId": "grain"
+      },
+      {
+        "arabic": "الحالة",
+        "english": "status",
+        "sourceText": "status",
+        "alternatives": [
+          "current status",
+          "الحالة الحالية"
+        ],
+        "requirementId": "attribute_0"
+      },
+      {
+        "arabic": "مصدر إجابة الحالة",
+        "english": "source of the status answer",
+        "sourceText": "source of the status answer",
+        "alternatives": [
+          "status answer source",
+          "مصدر إجابة الحالة"
+        ],
+        "requirementId": "attribute_1"
+      },
+      {
+        "arabic": "وقت ملاحظة إجابة الحالة",
+        "english": "observation time of the status answer",
+        "sourceText": "observation time of the status answer",
+        "alternatives": [
+          "status observation time",
+          "وقت ملاحظة الحالة"
+        ],
+        "requirementId": "attribute_2"
+      },
+      {
+        "arabic": "كيفية تحديث أو التحقق من تعارض الحالة",
+        "english": "how to refresh or verify the status discrepancy",
+        "sourceText": "how to refresh or verify the status discrepancy",
+        "alternatives": [
+          "refresh or verify the status discrepancy",
+          "تحديث أو التحقق من تعارض الحالة"
+        ],
+        "requirementId": "attribute_3"
+      },
+      {
+        "arabic": "تفصيلي",
+        "english": "detail",
+        "sourceText": "detail",
+        "alternatives": [
+          "detailed view",
+          "عرض تفصيلي"
+        ],
+        "requirementId": "detail"
+      },
+      {
+        "arabic": "ML-1-7-6577159",
+        "english": "ML-1-7-6577159",
+        "sourceText": "ML-1-7-6577159",
+        "alternatives": [],
+        "requirementId": "record"
+      }
+    ],
+    "issues": [],
+    "intentStatus": "consistent"
+  },
+  "assignment": {
+    "originalTask": {
+      "view": "",
+      "stage": "task",
+      "filters": [],
+      "groupBy": [],
+      "readOnly": true,
+      "timeField": "",
+      "timeRange": "unknown",
+      "outputShape": "detail",
+      "searchQuery": "application ML-1-7-6577159 current status conflicting status source observation time refresh verify discrepancy",
+      "slotUpdates": [
+        {
+          "field": "businessObject",
+          "value": "application",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "requestedAttributes",
+          "value": [
+            "status",
+            "source of the status answer",
+            "observation time of the status answer",
+            "how to refresh or verify the status discrepancy"
+          ],
+          "source": "current",
+          "evidence": "re-check the current record, explain which source and observation time your answer uses, and tell me how to refresh or verify the discrepancy"
+        },
+        {
+          "field": "recordIdentity",
+          "value": "ML-1-7-6577159",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "outputShape",
+          "value": "detail",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "requestedGrain",
+          "value": "application",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "requestedScope",
+          "value": "unknown",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "timeRange",
+          "value": "unknown",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "businessFocus",
+          "value": "",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "disclosurePurpose",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedMeasures",
+          "value": [],
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "groupBy",
+          "value": [],
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "filters",
+          "value": [],
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "view",
+          "value": "",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "timeField",
+          "value": "",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "requestedOrdering",
+          "value": [],
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "groupCompleteness",
+          "value": "observed",
+          "source": "previous",
+          "evidence": ""
+        }
+      ],
+      "responseMode": "answer",
+      "businessFocus": "",
+      "clarification": null,
+      "needsLiveData": true,
+      "businessObject": "application",
+      "recordIdentity": "ML-1-7-6577159",
+      "requestedGrain": "application",
+      "requestedScope": "unknown",
+      "contextRelation": "continue",
+      "unresolvedSlots": [],
+      "disclosurePurpose": "",
+      "groupCompleteness": "observed",
+      "requestBoundaries": [],
+      "requestedMeasures": [],
+      "requestedOrdering": [],
+      "requestedAttributes": [
+        "status",
+        "source of the status answer",
+        "observation time of the status answer",
+        "how to refresh or verify the status discrepancy"
+      ],
+      "evidenceExplanations": [
+        {
+          "kind": "source",
+          "attribute": "source of the status answer",
+          "questionQuote": "explain which source and observation time your answer uses",
+          "aboutAttribute": "status"
+        },
+        {
+          "kind": "observation_time",
+          "attribute": "observation time of the status answer",
+          "questionQuote": "explain which source and observation time your answer uses",
+          "aboutAttribute": "status"
+        },
+        {
+          "kind": "knowledge_guidance",
+          "attribute": "how to refresh or verify the status discrepancy",
+          "questionQuote": "tell me how to refresh or verify the discrepancy",
+          "aboutAttribute": ""
+        }
+      ]
+    },
+    "assignedLiveTask": {
+      "view": "",
+      "stage": "task",
+      "filters": [],
+      "groupBy": [],
+      "readOnly": true,
+      "timeField": "",
+      "timeRange": "unknown",
+      "outputShape": "detail",
+      "searchQuery": "application ML-1-7-6577159 current status conflicting status source observation time refresh verify discrepancy",
+      "slotUpdates": [
+        {
+          "field": "businessObject",
+          "value": "application",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "requestedAttributes",
+          "value": [
+            "status"
+          ],
+          "source": "current",
+          "evidence": "re-check the current record, explain which source and observation time your answer uses, and tell me how to refresh or verify the discrepancy"
+        },
+        {
+          "field": "recordIdentity",
+          "value": "ML-1-7-6577159",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "outputShape",
+          "value": "detail",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "requestedGrain",
+          "value": "application",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "requestedScope",
+          "value": "unknown",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "timeRange",
+          "value": "unknown",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "businessFocus",
+          "value": "",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "disclosurePurpose",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedMeasures",
+          "value": [],
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "groupBy",
+          "value": [],
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "filters",
+          "value": [],
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "view",
+          "value": "",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "timeField",
+          "value": "",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "requestedOrdering",
+          "value": [],
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "groupCompleteness",
+          "value": "observed",
+          "source": "previous",
+          "evidence": ""
+        }
+      ],
+      "responseMode": "answer",
+      "businessFocus": "",
+      "clarification": null,
+      "needsLiveData": true,
+      "businessObject": "application",
+      "recordIdentity": "ML-1-7-6577159",
+      "requestedGrain": "application",
+      "requestedScope": "unknown",
+      "contextRelation": "continue",
+      "unresolvedSlots": [],
+      "disclosurePurpose": "",
+      "groupCompleteness": "observed",
+      "requestBoundaries": [],
+      "requestedMeasures": [],
+      "requestedOrdering": [],
+      "requestedAttributes": [
+        "status"
+      ],
+      "evidenceExplanations": []
+    },
+    "liveRequirementIdMap": {
+      "grain": "grain",
+      "detail": "detail",
+      "object": "object",
+      "record": "record",
+      "attribute_0": "attribute_0"
+    },
+    "originalRequirements": [
+      {
+        "id": "object",
+        "kind": "object",
+        "value": "application"
+      },
+      {
+        "id": "grain",
+        "kind": "grain",
+        "value": "application"
+      },
+      {
+        "id": "attribute_0",
+        "kind": "attribute",
+        "value": "status"
+      },
+      {
+        "id": "attribute_1",
+        "kind": "attribute",
+        "value": "source of the status answer"
+      },
+      {
+        "id": "attribute_2",
+        "kind": "attribute",
+        "value": "observation time of the status answer"
+      },
+      {
+        "id": "attribute_3",
+        "kind": "attribute",
+        "value": "how to refresh or verify the status discrepancy"
+      },
+      {
+        "id": "detail",
+        "kind": "detail",
+        "value": "detail"
+      },
+      {
+        "id": "record",
+        "kind": "record",
+        "value": "ML-1-7-6577159"
+      }
+    ],
+    "delegatedRequirements": [
+      {
+        "kind": "source",
+        "attribute": "source of the status answer",
+        "questionQuote": "explain which source and observation time your answer uses",
+        "requirementId": "attribute_1",
+        "aboutAttribute": "status",
+        "aboutRequirementId": "attribute_0"
+      },
+      {
+        "kind": "observation_time",
+        "attribute": "observation time of the status answer",
+        "questionQuote": "explain which source and observation time your answer uses",
+        "requirementId": "attribute_2",
+        "aboutAttribute": "status",
+        "aboutRequirementId": "attribute_0"
+      },
+      {
+        "kind": "knowledge_guidance",
+        "attribute": "how to refresh or verify the status discrepancy",
+        "questionQuote": "tell me how to refresh or verify the discrepancy",
+        "requirementId": "attribute_3",
+        "aboutAttribute": "",
+        "aboutRequirementId": null
+      }
+    ],
+    "delegationEstablishesFacts": false
+  },
+  "rejectedPlans": [
+    {
+      "stage": "KnowledgeCoverage",
+      "attempt": 1,
+      "failure": "{\"code\":\"knowledge_requirement_coverage_invalid\",\"requiredIds\":[\"attribute_0\",\"attribute_1\",\"grain\",\"object\"]}",
+      "candidate": {
+        "stage": "knowledge_coverage",
+        "checks": [
+          {
+            "reason": "The Application Details page definition binds the object 'application' to the detail record at /data/detail of GET /api/Application/MyReviewDetail/{taskId}, identified by id, with taskId identifying the workflow task. This gives the business meaning of the requested object in context.",
+            "status": "covered",
+            "evidence": [
+              {
+                "sourceId": "k_6e2d25db6a6bbe8df2fb:p0"
+              },
+              {
+                "sourceId": "k_cc329ac0a1339c5635ee:p2"
+              }
+            ],
+            "requirementId": "object",
+            "requiredPoints": [
+              "The requested object is a Licensing application shown on the Application Details page.",
+              "It is identified by its application key, while the workflow task key (taskId) identifies the task, not the application."
+            ],
+            "missingEvidenceType": "none"
+          },
+          {
+            "reason": "The grain binding states the application entity is identified by id, and the page facts state an application detail belongs to one uniquely resolved application and its service-specific detail record. One row per application is also confirmed by the data dictionary.",
+            "status": "covered",
+            "evidence": [
+              {
+                "sourceId": "k_6e2d25db6a6bbe8df2fb:p1"
+              },
+              {
+                "sourceId": "k_9c9a74f0a2084c22af91:p22"
+              }
+            ],
+            "requirementId": "grain",
+            "requiredPoints": [
+              "The answer is at one-application grain: one uniquely resolved application and its service-specific detail record."
+            ],
+            "missingEvidenceType": "none"
+          },
+          {
+            "reason": "The status binding defines detail.status as the current application/process state read from /data/detail, and the lifecycle document supplies the ten-value status set (101-110) with terminal states. The page also distinguishes application status from taskStatus and payment status, which explains why two displayed values can differ.",
+            "status": "covered",
+            "evidence": [
+              {
+                "sourceId": "k_6e2d25db6a6bbe8df2fb:p1"
+              },
+              {
+                "sourceId": "k_cc329ac0a1339c5635ee:p2"
+              },
+              {
+                "sourceId": "k_c45d4b2e198b504c6173:p1"
+              }
+            ],
+            "requirementId": "attribute_0",
+            "requiredPoints": [
+              "Application status is the current application/process state of the application, read from the detail record.",
+              "It is distinct from the workflow task status (current node) and from payment status; these are different business objects and can legitimately differ.",
+              "The lifecycle status set is 101 Draft, 102 UnderReview, 103 PendingPayment, 104 PendingModification, 105 Completed, 106 Rejected, 107 Cancelled, 108 PendingDisposition, 109 UnderVerification, 110 Submitted; Completed, Rejected and Cancelled are terminal."
+            ],
+            "missingEvidenceType": "none"
+          },
+          {
+            "reason": "The page definition names the read operation and data path for the detail record, and the update-time contract states the value must be read only after binding the current authorized response to the exact application identity. The cross-department document requires the source page, role, selected object, query time and field meaning to accompany each reported status.",
+            "status": "covered",
+            "evidence": [
+              {
+                "sourceId": "k_cc329ac0a1339c5635ee:p2"
+              },
+              {
+                "sourceId": "k_b5915cf178fcd2f130e5:p0"
+              },
+              {
+                "sourceId": "k_c0b2f5f8e4074708fa11:p5"
+              }
+            ],
+            "requirementId": "attribute_1",
+            "requiredPoints": [
+              "The status answer comes from the authorized Application Details detail read for the exact application identity, not from a list row, card count or another module.",
+              "The source page, current role, selected object and field meaning must accompany the reported status.",
+              "Application status, task status and payment status must stay separately labelled."
+            ],
+            "missingEvidenceType": "none"
+          },
+          {
+            "reason": "The update-time contract distinguishes the stored business timestamp (lastUpdatedTime) from reader capture time, and states a later capture does not imply the business row changed. The cross-department document requires the query time to accompany each reported status, so the observation time is the time of the authorized read.",
+            "status": "covered",
+            "evidence": [
+              {
+                "sourceId": "k_b5915cf178fcd2f130e5:p1"
+              },
+              {
+                "sourceId": "k_b5915cf178fcd2f130e5:p2"
+              },
+              {
+                "sourceId": "k_c0b2f5f8e4074708fa11:p5"
+              }
+            ],
+            "requirementId": "attribute_2",
+            "requiredPoints": [
+              "The observation time is the time of the current authorized read of the detail record, reported alongside the status.",
+              "The stored application last-update timestamp is a separate business timestamp, not the reader capture time; a later capture does not by itself prove the business row changed.",
+              "An offsetless timestamp has no verified timezone and must not be silently labelled UTC."
+            ],
+            "missingEvidenceType": "none"
+          },
+          {
+            "reason": "The cross-department document states contradictory observations must remain visible until scope/version/time are reconciled, and that a relation does not imply immediate agreement of all views. The update-time contract requires the actual committed change receipt and authorized before/after reads for the same typed record before any convergence claim. The page facts distinguish lifecycle status from approval position and current handler from historical actors.",
+            "status": "covered",
+            "evidence": [
+              {
+                "sourceId": "k_c0b2f5f8e4074708fa11:p4"
+              },
+              {
+                "sourceId": "k_c0b2f5f8e4074708fa11:p5"
+              },
+              {
+                "sourceId": "k_b5915cf178fcd2f130e5:p2"
+              },
+              {
+                "sourceId": "k_9c9a74f0a2084c22af91:p22"
+              }
+            ],
+            "requirementId": "attribute_3",
+            "requiredPoints": [
+              "Re-read the same authorized application detail for the exact application identity and compare the status, task status and last-update timestamp against the earlier observation.",
+              "Keep the conflicting observations visible until their scope, version and time are reconciled; do not assume all views agree immediately.",
+              "Check whether the two values describe different objects (application status vs workflow task status vs payment status) or different points in time before treating them as a true conflict.",
+              "A convergence or update claim needs the actual committed change receipt and authorized before/after reads of the same typed record; a later capture alone does not prove the row changed.",
+              "This is read-only: do not perform any approval, rejection, modification or other business write while verifying."
+            ],
+            "missingEvidenceType": "none"
+          }
+        ]
+      }
+    },
+    {
+      "stage": "KnowledgeCoverage",
+      "attempt": 2,
+      "failure": "{\"code\":\"knowledge_requirement_coverage_invalid\",\"requiredIds\":[\"attribute_0\",\"attribute_1\",\"grain\",\"object\"]}",
+      "candidate": {
+        "stage": "knowledge_coverage",
+        "checks": [
+          {
+            "reason": "The Application Details page definition binds the object 'application' to the detail record returned by GET /api/Application/MyReviewDetail/{taskId} at /data/detail, identified by id, with applicationNumber as the business number to compare against the user-supplied identity. This gives the business meaning of the requested object in context.",
+            "status": "covered",
+            "evidence": [
+              {
+                "sourceId": "k_6e2d25db6a6bbe8df2fb:p0"
+              },
+              {
+                "sourceId": "k_cc329ac0a1339c5635ee:p2"
+              }
+            ],
+            "requirementId": "object",
+            "requiredPoints": [
+              "The requested object is a Licensing application shown on the Application Details page.",
+              "It is identified by its application number (business number) and an internal id; the workflow taskId is a separate key.",
+              "The detail record is read from the application detail operation for the selected task."
+            ],
+            "missingEvidenceType": "none"
+          },
+          {
+            "reason": "The grain binding states the application entity is identified by id, and the page facts state an application detail belongs to one uniquely resolved application and its service-specific detail record. taskId identifies the workflow task, a different unit from the application grain.",
+            "status": "covered",
+            "evidence": [
+              {
+                "sourceId": "k_6e2d25db6a6bbe8df2fb:p1"
+              },
+              {
+                "sourceId": "k_9c9a74f0a2084c22af91:p22"
+              }
+            ],
+            "requirementId": "grain",
+            "requiredPoints": [
+              "One row/record per application, identified by its application id.",
+              "The workflow taskId is a separate unit and does not define the application grain.",
+              "The detail belongs to one uniquely resolved application and its service-specific detail record."
+            ],
+            "missingEvidenceType": "none"
+          },
+          {
+            "reason": "The status attribute is bound to the detail.status field, meaning the current application/process state, distinct from taskStatus (current workflow node) and from the Completed list decision projection. The lifecycle reference supplies the status set (101-110) with terminal states Completed, Rejected, Cancelled, so the meaning of the displayed status is supported.",
+            "status": "covered",
+            "evidence": [
+              {
+                "sourceId": "k_6e2d25db6a6bbe8df2fb:p1"
+              },
+              {
+                "sourceId": "k_cc329ac0a1339c5635ee:p2"
+              },
+              {
+                "sourceId": "k_c45d4b2e198b504c6173:p1"
+              }
+            ],
+            "requirementId": "attribute_0",
+            "requiredPoints": [
+              "Status is the current application/process state of the selected application.",
+              "It is distinct from taskStatus (the current workflow node) and from the Completed list decision projection.",
+              "The lifecycle status set runs 101-110, with Completed, Rejected and Cancelled being terminal."
+            ],
+            "missingEvidenceType": "none"
+          },
+          {
+            "reason": "Sources state that each reported status must be accompanied by its source page, current role, selected object, query time and field meaning, and that contradictory observations must remain visible until scope/version/time are reconciled. The application detail lastUpdatedTime is a stored business timestamp separate from reader capture time, and the page facts distinguish lifecycle status from approval position. This supports explaining which source the status answer uses.",
+            "status": "covered",
+            "evidence": [
+              {
+                "sourceId": "k_c0b2f5f8e4074708fa11:p5"
+              },
+              {
+                "sourceId": "k_b5915cf178fcd2f130e5:p1"
+              },
+              {
+                "sourceId": "k_9c9a74f0a2084c22af91:p22"
+              }
+            ],
+            "requirementId": "attribute_1",
+            "requiredPoints": [
+              "State the source page and operation the status value comes from (the application detail record for the selected task).",
+              "State the selected object and the field meaning used (application lifecycle status, not taskStatus or approval position).",
+              "Keep any conflicting observations visible until their scope, version and time are reconciled."
+            ],
+            "missingEvidenceType": "none"
+          },
+          {
+            "reason": "The update-time definition states lastUpdatedTime is a stored business timestamp read from the authorized detail response, separate from reader capture time, and that an offsetless timestamp has no verified timezone and must not be silently labelled UTC. The cross-department source requires the query time to accompany each reported status. This supports explaining the observation time.",
+            "status": "covered",
+            "evidence": [
+              {
+                "sourceId": "k_b5915cf178fcd2f130e5:p1"
+              },
+              {
+                "sourceId": "k_b5915cf178fcd2f130e5:p2"
+              },
+              {
+                "sourceId": "k_c0b2f5f8e4074708fa11:p5"
+              }
+            ],
+            "requirementId": "attribute_2",
+            "requiredPoints": [
+              "Distinguish the source-reported application lastUpdatedTime from the reader's capture time.",
+              "Report the timestamp as returned; an offsetless value has no verified timezone and must not be assumed UTC.",
+              "State the query/capture time used for the observation alongside the source timestamp."
+            ],
+            "missingEvidenceType": "none"
+          },
+          {
+            "reason": "Sources state contradictory observations must remain visible until scope/version/time are reconciled, that a later capture does not imply the business row changed and equal timestamps/statuses do not prove a committed update, and that the Application No. control reopens the selected application's detail from a permitted list row. Together these support a read-only refresh/verification path without changing data.",
+            "status": "covered",
+            "evidence": [
+              {
+                "sourceId": "k_c0b2f5f8e4074708fa11:p5"
+              },
+              {
+                "sourceId": "k_b5915cf178fcd2f130e5:p2"
+              },
+              {
+                "sourceId": "k_0a12ad247f9f2c194ef5:p2"
+              }
+            ],
+            "requirementId": "attribute_3",
+            "requiredPoints": [
+              "Re-open the same application from its permitted list row (Application No.) and confirm the detail's application number matches the selected row.",
+              "Re-read the detail status and its source-reported lastUpdatedTime, keeping the same selected object and query context.",
+              "Keep the conflicting observations visible until scope, version and time are reconciled; a later capture alone does not prove the business row changed.",
+              "Do not perform any write action while verifying."
+            ],
+            "missingEvidenceType": "none"
+          }
+        ]
+      }
+    }
+  ],
+  "knowledge": [
+    {
+      "chunkId": "kbfile:fe5c4a93052a4cedacb09ebebd7519a9#complete",
+      "recordId": "admin.happiness.ticket.status-display",
+      "revision": "1",
+      "sourceId": "k_39d52360d49fafb2365e",
+      "documentId": "fe5c4a93052a4cedacb09ebebd7519a9",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:8c52bae68451435ba9f500ed5234b127#complete",
+      "recordId": "admin.finance.payment-reconciliation",
+      "revision": "2",
+      "sourceId": "k_dfa1b1053dd2e5e98b69",
+      "documentId": "8c52bae68451435ba9f500ed5234b127",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:e3185387d75d4a76834d297911183b08#complete",
+      "recordId": "admin.licensing.application.update-time",
+      "revision": "1",
+      "sourceId": "k_b5915cf178fcd2f130e5",
+      "documentId": "e3185387d75d4a76834d297911183b08",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:27526e90accd487b8e8d7eed0a3c7224#source-lines-1-429",
+      "recordId": "",
+      "revision": "46a7fc3f0eb8b06e601ad85e91a2e1c2ab5a9f58ee9716830a893d0e8b35a140",
+      "sourceId": "k_9c9a74f0a2084c22af91",
+      "documentId": "27526e90accd487b8e8d7eed0a3c7224",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:a9cfe30fc6334c5aaf979db1f9a510f8#source-lines-1-79",
+      "recordId": "",
+      "revision": "f02c8329d6a5ed35c8905d3f173cc409eb0ed991f39cef52b36f5dade6ad610f",
+      "sourceId": "k_c0b2f5f8e4074708fa11",
+      "documentId": "a9cfe30fc6334c5aaf979db1f9a510f8",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:c90e9dbb082d47c18a2d1760a6ff4b6c#source-lines-1-529",
+      "recordId": "",
+      "revision": "2ea8dd453624b0bade0098634e9103d92be0578948e51c3dd16c56af3a710fc0",
+      "sourceId": "k_9fbc8e262b825aeeca0f",
+      "documentId": "c90e9dbb082d47c18a2d1760a6ff4b6c",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:1be1884020574c208bc8f00a5e89c9c8#source-lines-249-291",
+      "recordId": "",
+      "revision": "625363144cdf5fced5b9cfcb85061e8b67407b9b2b4fce8bf8e577a8e4b9fc9e",
+      "sourceId": "k_4cc20030c0eae35af77f",
+      "documentId": "1be1884020574c208bc8f00a5e89c9c8",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:9a911d023e5d472faa88dfa31b28e833#source-lines-1-321",
+      "recordId": "",
+      "revision": "0a37cd01a212261b52018fc33570338964f7993ad328b2ed705808dc320b474b",
+      "sourceId": "k_c45d4b2e198b504c6173",
+      "documentId": "9a911d023e5d472faa88dfa31b28e833",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:f7e0fc20678a487a841a00797b0efb24#part-000007-chunk-000",
+      "recordId": "",
+      "revision": "e1001d0d1cdee180985553c9c2c6baea37f10d461f3e6bbb55002e91fced5e1d",
+      "sourceId": "k_8d3d0600a177aef727ae",
+      "documentId": "f7e0fc20678a487a841a00797b0efb24",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:08948bd874c9478ab5506fdb8866ef75#part-000005-chunk-000",
+      "recordId": "",
+      "revision": "555691d8b0e4ca8feb97f345b8b6f53a55cfaa30ecaa7edef9ab1efc3a8ccf1b",
+      "sourceId": "k_64f51b65c1bf160bc06d",
+      "documentId": "08948bd874c9478ab5506fdb8866ef75",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:36ad2672110242bf9a800d0ae3e37d10#source-lines-416-423",
+      "recordId": "",
+      "revision": "e2e3f6e461b70c731a8cc213938b3d3b2ed93adf4faa92313b74fc1fc9ff69cc",
+      "sourceId": "k_a1c6f3d7fc71b850b56c",
+      "documentId": "36ad2672110242bf9a800d0ae3e37d10",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:b9efa791efc743618a1b1cd470fc851c#source-lines-465-468",
+      "recordId": "",
+      "revision": "c15ceabd204ff263f45b701ca00a1de64d1cc0c7a226239a12b8197b95bb9cb1",
+      "sourceId": "k_a46855aa9a6f4862f69c",
+      "documentId": "b9efa791efc743618a1b1cd470fc851c",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:ebbeddf0b317469aa9bee3ccbb37d986#source-lines-1-256",
+      "recordId": "",
+      "revision": "59dff5ad03a6e5f34ff37970a3c8b983e3cb3fe5c40e605b1dc98e2733c4702f",
+      "sourceId": "k_ed0844459cd1ea2f1754",
+      "documentId": "ebbeddf0b317469aa9bee3ccbb37d986",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:3403c141825547cbb0a7962ae18c8397#source-lines-1-368",
+      "recordId": "",
+      "revision": "3d53651fd7759e246e34c4283412608af11ac8795cb8ad0e4f072a320d5e936d",
+      "sourceId": "k_564e279513697074fdca",
+      "documentId": "3403c141825547cbb0a7962ae18c8397",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:f042688782704b7f9a134905cc7cf826#source-lines-330-400",
+      "recordId": "",
+      "revision": "0bd9015b67f631087e806dfa5380dbd24ac1cfb9fc317a7a14634643887e532e",
+      "sourceId": "k_594c8ef603aeb3eaaf82",
+      "documentId": "f042688782704b7f9a134905cc7cf826",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:4e91775157244a11a9aa042127cc8602#part-000008-chunk-000",
+      "recordId": "",
+      "revision": "d4e9e6ea9bb4c32c3ae3e4294bedb62a7aa16b6d02ef0ac217939f53b47c8d18",
+      "sourceId": "k_68e550a3691787c09fb1",
+      "documentId": "4e91775157244a11a9aa042127cc8602",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:5ef0c46d63824cdbbb784d3e1d2cb143#part-000021-chunk-000",
+      "recordId": "",
+      "revision": "42c1ab3e667e48dffd91a6635ba86c9471b35535ba43841e8e6095dd5ece8b6f",
+      "sourceId": "k_cebfd37821ad1af47833",
+      "documentId": "5ef0c46d63824cdbbb784d3e1d2cb143",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "graph:0:c1c4674463d345a5",
+      "recordId": "",
+      "revision": "c1c4674463d345a5cd2c09de829888be5585eb2f5a45a7b7a1dab1ed9ea30ea0",
+      "sourceId": "k_7454cb23c37f0e10a74e",
+      "documentId": "c7819ce2626c47f49380d1811caee5c8",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:4927c234b8324e7988b874a741e3b27b#part-000025-chunk-000",
+      "recordId": "",
+      "revision": "d1235c493b75d71d00a45b84d8c8cb52415511a4d721b96858f640a64d6be899",
+      "sourceId": "k_33e01f164a0ea8097b19",
+      "documentId": "4927c234b8324e7988b874a741e3b27b",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "graph:1:c67bcd4873f9b264",
+      "recordId": "",
+      "revision": "c67bcd4873f9b26489c166983dada3537131dd9a60c5717f89dae703c405db31",
+      "sourceId": "k_d831de5e0b36e2e1abdf",
+      "documentId": "ec03a49f16ab4558b7b56abc2b44b6ea",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "graph:0:f38d50e429a1e2c0",
+      "recordId": "",
+      "revision": "f38d50e429a1e2c0aa23d7313c4595cc66efabb69c885268b07f1c7e00738c5b",
+      "sourceId": "k_4750af3f86370514a5d5",
+      "documentId": "f312f585a1e945b5b5eb08320af36cad",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "graph:2:507f846bc26d83af",
+      "recordId": "",
+      "revision": "507f846bc26d83af9a055856bc6603ae44244668fbfe38120304716bcbc80750",
+      "sourceId": "k_b34ccfe072386c186756",
+      "documentId": "ec3ffa9685fc400cbc269476b5038fa2",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "KB/pages/admin/dashboard/Admin Dashboard-多面板指标与历史比较.json",
+      "recordId": "admin.dashboard.license-summary.serviceApplicationCard",
+      "revision": "2",
+      "sourceId": "k_31f7cfc016292eae6d71",
+      "documentId": "",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "KB/pages/admin/dashboard/Admin Dashboard-多面板指标与历史比较.json",
+      "recordId": "admin.dashboard.license-summary.profileVerificationCard",
+      "revision": "2",
+      "sourceId": "k_81ec8cf8aba55944d47c",
+      "documentId": "",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "KB/pages/admin/dashboard/Admin Dashboard-多面板指标与历史比较.json",
+      "recordId": "admin.dashboard.license-task-tabs",
+      "revision": "2",
+      "sourceId": "k_6e3576d9a0a39149646c",
+      "documentId": "",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "KB/pages/admin/dashboard/Admin Dashboard-多面板指标与历史比较.json",
+      "recordId": "admin.dashboard.license-distribution",
+      "revision": "2",
+      "sourceId": "k_38819b7f65119f8055c6",
+      "documentId": "",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "KB/pages/admin/dashboard/Admin Dashboard-多面板指标与历史比较.json",
+      "recordId": "admin.dashboard.license-historical-series",
+      "revision": "1",
+      "sourceId": "k_69cfe4119031ee5dcbdf",
+      "documentId": "",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "KB/pages/admin/dashboard/Admin Dashboard-多面板指标与历史比较.json",
+      "recordId": "admin.dashboard.license-overview-panels",
+      "revision": "1",
+      "sourceId": "k_5570a9bdf89a9a61df7d",
+      "documentId": "",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "KB/pages/admin/dashboard/Admin Dashboard-许可绩效指标字段与范围.json",
+      "recordId": "admin.dashboard.license-performance.personal",
+      "revision": "4",
+      "sourceId": "k_32675f43f588dea9a268",
+      "documentId": "",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "KB/pages/admin/dashboard/Admin Dashboard-许可绩效指标字段与范围.json",
+      "recordId": "admin.dashboard.license-performance.department",
+      "revision": "4",
+      "sourceId": "k_02d05901aa0212265920",
+      "documentId": "",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "KB/pages/admin/dashboard/Admin Dashboard-读取比较与建议流程.json",
+      "recordId": "admin.dashboard.interpretation-and-action-boundaries",
+      "revision": "1",
+      "sourceId": "k_edf65656488d01a27eae",
+      "documentId": "",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "KB/pages/admin/dashboard/Admin Dashboard-读取比较与建议流程.json",
+      "recordId": "admin.dashboard.license-priority.application",
+      "revision": "1",
+      "sourceId": "k_36ca901ee0b421327bae",
+      "documentId": "",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "KB/pages/admin/happiness-ticket-detail/Tickets Details-最小披露与可追溯补充说明.json",
+      "recordId": "admin.page.tickets.minimum-disclosure-and-correction",
+      "revision": "3",
+      "sourceId": "k_5665bf5a212fe16c5e3a",
+      "documentId": "",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "KB/pages/admin/happiness-ticket-detail/Tickets Details-核验转交历史与当前状态-20260928-r1.json",
+      "recordId": "admin.tickets.detail.transfer-history",
+      "revision": "1",
+      "sourceId": "k_7e5ebb63b637bcb1a639",
+      "documentId": "",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "KB/pages/admin/happiness-tickets/Tickets-团队待办列表与统计口径.json",
+      "recordId": "admin.happiness.tickets.team-todo-population",
+      "revision": "1",
+      "sourceId": "k_528836269526ffd70edd",
+      "documentId": "",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "KB/pages/admin/licensing-application-detail/Application Details-关联付款金额与状态-20260928-r1.json",
+      "recordId": "admin.licensing.application.linked-payment",
+      "revision": "1",
+      "sourceId": "k_b3ad44544cf08e9d4f5a",
+      "documentId": "",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "KB/pages/admin/licensing-application-detail/Application Details-属性与表单证据绑定.json",
+      "recordId": "admin.page-docs.licensing.application-detail.attributes",
+      "revision": "5",
+      "sourceId": "k_6e2d25db6a6bbe8df2fb",
+      "documentId": "",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "KB/pages/admin/licensing-applications/My Application Tasks-实体标识与字段绑定.json",
+      "recordId": "admin.licensing.applications.bindings.todo",
+      "revision": "1",
+      "sourceId": "k_48d12c37fbf123e0376e",
+      "documentId": "",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "KB/pages/admin/licensing-applications/My Application Tasks-实体标识与字段绑定.json",
+      "recordId": "admin.licensing.applications.bindings.completed",
+      "revision": "1",
+      "sourceId": "k_bc1021194e8f334fe61f",
+      "documentId": "",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "KB/pages/admin/licensing-applications/My Application Tasks-待办分页字段与统计范围.json",
+      "recordId": "admin.page-docs.licensing.applications.todo.collection",
+      "revision": "5",
+      "sourceId": "k_20ced6e0b4b58b26fc02",
+      "documentId": "",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:6a3a5236cd944d26b08260d5a4d297e3#complete",
+      "recordId": "admin.page-docs.licensing.applications.routing",
+      "revision": "3",
+      "sourceId": "k_0e1395e3dabfa9ebb60d",
+      "documentId": "6a3a5236cd944d26b08260d5a4d297e3",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "KB/pages/admin/licensing-license-detail/License Details-属性与实体绑定.json",
+      "recordId": "admin.page-docs.licensing.license-detail.attributes",
+      "revision": "1",
+      "sourceId": "k_632527be8ac7a0632e27",
+      "documentId": "",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "KB/pages/admin/licensing-licenses/Licenses-日期语义与输出字段.json",
+      "recordId": "admin.page-docs.licensing.licenses.temporal",
+      "revision": "3",
+      "sourceId": "k_322e671fc0de9e8c04b1",
+      "documentId": "",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "KB/pages/admin/licensing-team-management/Licensing Team Management-全部类型待办与统计口径.json",
+      "recordId": "admin.licensing.team-management.all-types-queue",
+      "revision": "1",
+      "sourceId": "k_ea5c8ce650b4584e418c",
+      "documentId": "",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "KB/pages/admin/licensing-team-management/Licensing Team Management-团队范围与字段职责.json",
+      "recordId": "admin.licensing.team-management.bindings.route-target",
+      "revision": "4",
+      "sourceId": "k_e9464e6b1d0e4086e7b2",
+      "documentId": "",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "KB/pages/admin/licensing-team-management/Licensing Team Management-嵌套SLA与指标语义.json",
+      "recordId": "admin.page-docs.licensing.team.sla-measures",
+      "revision": "1",
+      "sourceId": "k_9710ec9f85f8a7f2a8ad",
+      "documentId": "",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "KB/pages/admin/personal-center/Personal Center-当前账号部门与角色.json",
+      "recordId": "admin.personal-center.profile.bindings",
+      "revision": "2",
+      "sourceId": "k_8eadf20d8e64652fc5bf",
+      "documentId": "",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:cf064f312518410794dcd606e772a3f9#complete",
+      "recordId": "admin.page-docs.content.application-detail.attributes",
+      "revision": "3",
+      "sourceId": "k_4cce01cf80f0397ce94f",
+      "documentId": "cf064f312518410794dcd606e772a3f9",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:4fcacf3cbbf040ffb668a3fc87b330b1#complete",
+      "recordId": "admin.page-docs.licensing.applications.sla-semantics",
+      "revision": "11",
+      "sourceId": "k_6fc2b73fad4cdd72e3a5",
+      "documentId": "4fcacf3cbbf040ffb668a3fc87b330b1",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:6a99cf208e51485cac4276211d162aa1-chunk-000",
+      "recordId": "admin.page.licensing.scope-and-historical-evidence",
+      "revision": "1",
+      "sourceId": "k_c6411a6a61f78f2d6115",
+      "documentId": "6a99cf208e51485cac4276211d162aa1",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:f312f585a1e945b5b5eb08320af36cad#source-lines-469-487",
+      "recordId": "",
+      "revision": "aa51b77febfcff68d86f72854b04b05be03ba7eda363421ad59c43a63f1e2381",
+      "sourceId": "k_a3bdbe9056c9e2c68a31",
+      "documentId": "f312f585a1e945b5b5eb08320af36cad",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:1be1884020574c208bc8f00a5e89c9c8#source-lines-439-465",
+      "recordId": "",
+      "revision": "34a646b0ef7cc99faaae188e85033cb54ea3caad98d0d75ce8a20bcc48fce7f2",
+      "sourceId": "k_605e3e3183c052d87e21",
+      "documentId": "1be1884020574c208bc8f00a5e89c9c8",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:932342c246fd4e1d8a70af22e4d7fef6-chunk-000",
+      "recordId": "admin.licensing.approval-form-guidance",
+      "revision": "1",
+      "sourceId": "k_23b3f5b849f677eefbfd",
+      "documentId": "932342c246fd4e1d8a70af22e4d7fef6",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:39739d14738a48589a1bb0ad6b42f3e3-chunk-000",
+      "recordId": "admin.licensing.licenses.bindings.sla-query",
+      "revision": "2",
+      "sourceId": "k_7bb5da9cada2a85404dc",
+      "documentId": "39739d14738a48589a1bb0ad6b42f3e3",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:c1c71bff271547b7ace49ad493d82a69#source-lines-11-258",
+      "recordId": "",
+      "revision": "4970939aa949aee0bb82144151186f88b807b36c354fbac095d4797491cf2c96",
+      "sourceId": "k_ae196f6ce4bbb064e587",
+      "documentId": "c1c71bff271547b7ace49ad493d82a69",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:f042688782704b7f9a134905cc7cf826#source-lines-134-220",
+      "recordId": "",
+      "revision": "f22fbae54732ca9b7acc11ed3748bb2ca52105eee9b4bed91299838fa210f2bb",
+      "sourceId": "k_1128977b019d0fe6f6c9",
+      "documentId": "f042688782704b7f9a134905cc7cf826",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:b6f44711be2d46c68029b84836f87d52#part-000001-chunk-000",
+      "recordId": "",
+      "revision": "269778ca385a86f62c5bce2c219026e4134ccc26b1b0a95685d36ec02e010313",
+      "sourceId": "k_2a29e8bdba2ac84d933b",
+      "documentId": "b6f44711be2d46c68029b84836f87d52",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:27526e90accd487b8e8d7eed0a3c7224#part-000019-chunk-000",
+      "recordId": "",
+      "revision": "540327a26f0a4dbf9ed9f494af8cb299917ef632239f7c58d549c7954a577cbb",
+      "sourceId": "k_775f4a4edf12686ee68f",
+      "documentId": "27526e90accd487b8e8d7eed0a3c7224",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:f312f585a1e945b5b5eb08320af36cad#part-000016-chunk-000",
+      "recordId": "",
+      "revision": "912c2f2e0e6c36ae4c1d9935f1fdbdee9dccf6923edaff9028bde0dd5e66c539",
+      "sourceId": "k_86fe752fba9bc57156f6",
+      "documentId": "f312f585a1e945b5b5eb08320af36cad",
+      "verification": "reference_only"
+    },
+    {
+      "chunkId": "kbfile:c90e9dbb082d47c18a2d1760a6ff4b6c#part-000005-chunk-000",
+      "recordId": "",
+      "revision": "d829d7b3f41a94900e05fdd5ff4d72f612345f1526f321db80d24e8ee0aee778",
+      "sourceId": "k_f98c546da24d06e3e434",
+      "documentId": "c90e9dbb082d47c18a2d1760a6ff4b6c",
+      "verification": "reference_only"
+    }
+  ]
+}

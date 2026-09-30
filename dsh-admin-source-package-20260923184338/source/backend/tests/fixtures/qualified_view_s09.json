@@ -1,0 +1,257 @@
+{
+  "raw": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/group16-security-repair-20260928/round8-protocol/S-09__en.json",
+  "rawSHA256": "9e9137a3e59708a563de51847351df5757ef326e2c60693c73a7d40c9a27b325",
+  "task": {
+    "view": "Licensing To Do",
+    "stage": "task",
+    "filters": [],
+    "groupBy": [],
+    "readOnly": true,
+    "timeField": "",
+    "timeRange": "unknown",
+    "outputShape": "list",
+    "searchQuery": "Licensing To Do queue applications personal pending list",
+    "slotUpdates": [
+      {
+        "field": "businessObject",
+        "value": "application",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "businessFocus",
+        "value": "in my Licensing To Do queue",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedScope",
+        "value": "personal",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedGrain",
+        "value": "application",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedMeasures",
+        "value": [],
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedAttributes",
+        "value": [],
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "groupBy",
+        "value": [],
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "timeRange",
+        "value": "unknown",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "filters",
+        "value": [],
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "outputShape",
+        "value": "list",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "view",
+        "value": "Licensing To Do",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "recordIdentity",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "timeField",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedOrdering",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "groupCompleteness",
+        "value": "observed",
+        "source": "current",
+        "evidence": "parsed current request"
+      }
+    ],
+    "responseMode": "answer",
+    "businessFocus": "in my Licensing To Do queue",
+    "clarification": null,
+    "needsLiveData": true,
+    "businessObject": "application",
+    "recordIdentity": "",
+    "requestedGrain": "application",
+    "requestedScope": "personal",
+    "contextRelation": "switch",
+    "unresolvedSlots": [],
+    "groupCompleteness": "observed",
+    "requestBoundaries": [],
+    "requestedMeasures": [],
+    "requestedOrdering": [],
+    "requestedAttributes": []
+  },
+  "observation": {
+    "metrics": [
+      {
+        "label": "To Do",
+        "value": "0"
+      },
+      {
+        "label": "Pending Review",
+        "value": "0"
+      },
+      {
+        "label": "Pending Modification",
+        "value": "0"
+      },
+      {
+        "label": "Pending Disposition",
+        "value": "0"
+      },
+      {
+        "label": "Disposition Verification",
+        "value": "0"
+      },
+      {
+        "label": "External Approval",
+        "value": "0"
+      },
+      {
+        "label": "Completed",
+        "value": "0"
+      }
+    ],
+    "controls": [
+      "D­a­s­h­b­o­a­r­d",
+      "Ar",
+      "License Staff ff Licensing Officer",
+      "To Do",
+      "Completed",
+      "Filter",
+      "Reset",
+      "Export"
+    ],
+    "headings": [],
+    "readHealth": {
+      "failed": [],
+      "blocked": [],
+      "healthy": true,
+      "pending": [],
+      "uncertain": []
+    },
+    "tabControls": [
+      {
+        "name": "To Do",
+        "groupRef": "tab-group-0",
+        "selected": true
+      },
+      {
+        "name": "Completed",
+        "groupRef": "tab-group-0",
+        "selected": false
+      }
+    ],
+    "columnHeaders": [
+      "Application No.",
+      "Service Name",
+      "Service Category",
+      "Type",
+      "Status",
+      "SLA",
+      "Apply For",
+      "Submission Time"
+    ],
+    "appliedFilters": [],
+    "filterControls": [
+      {
+        "role": "textbox",
+        "label": "Search",
+        "options": [],
+        "commands": [],
+        "selected": [],
+        "selector": "input[placeholder=\"Search\"]",
+        "filterSurface": true
+      },
+      {
+        "role": "combobox",
+        "label": "All Type",
+        "options": [
+          "All Types",
+          "New",
+          "Renew",
+          "Modify",
+          "Cancel",
+          "Transfer",
+          "Partner Management"
+        ],
+        "commands": [],
+        "selected": [],
+        "selector": "[id=\"rc_select_0\"][role=\"combobox\"]",
+        "filterSurface": true
+      },
+      {
+        "role": "combobox",
+        "label": "All Statuses",
+        "options": [],
+        "commands": [],
+        "selected": [],
+        "selector": "[id=\"rc_select_1\"][role=\"combobox\"]",
+        "filterSurface": true
+      }
+    ],
+    "pageReadOutcomes": null,
+    "relatedReadOutcomes": null,
+    "filterDialogCommands": []
+  },
+  "actualFailedVerification": {
+    "stage": "route_verification",
+    "checks": [
+      {
+        "reason": "",
+        "status": "verified",
+        "sourceIds": [],
+        "requirementId": "page"
+      },
+      {
+        "reason": "requested_view_unverified",
+        "status": "mismatch",
+        "sourceIds": [],
+        "requirementId": "view"
+      }
+    ],
+    "passed": false,
+    "actualRoute": "/licensing/applications",
+    "requestedRoute": "/licensing/applications",
+    "taskFingerprint": "3f30f2c42b1cb7ff902dac1cc3ec62b982d02a5a30ebdddedf98a79e8cda1d0b"
+  },
+  "proposedCanonicalView": "todo"
+}

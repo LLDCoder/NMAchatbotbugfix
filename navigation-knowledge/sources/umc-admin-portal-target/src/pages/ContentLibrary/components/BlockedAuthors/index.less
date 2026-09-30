@@ -1,0 +1,247 @@
+.blocked-authors {
+  min-height: calc(100% - 86px);
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.blocked-authors__filter-table {
+  .filter-table-header {
+    margin-bottom: 16px;
+  }
+
+  .table-panel-body {
+    margin-top: 0;
+  }
+
+  .ant-table-thead > tr > th {
+    height: 46px;
+    padding: 13px 16px;
+    background-color: #f8f7f4;
+    color: #797e86;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  .ant-table-tbody > tr > td {
+    height: 52px;
+    padding: 14px 16px;
+    color: #361e12;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+}
+
+.blocked-authors__search-icon {
+  color: #797e86;
+  font-size: 16px;
+}
+
+.blocked-authors__add-button {
+  min-width: 130px;
+}
+
+.blocked-authors__arabic-name {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.blocked-authors__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  white-space: nowrap;
+}
+
+.blocked-authors__action-button.custom-button {
+  width: auto;
+  min-width: 0;
+  height: 24px;
+  padding: 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.blocked-authors__form-modal {
+  .ant-modal-content {
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .ant-modal-header {
+    min-height: 94px;
+    padding: 32px 40px;
+    border-bottom: 1px solid #e1e3e5;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .ant-modal-title {
+    color: #361e12;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 30px;
+  }
+
+  .ant-modal-close {
+    top: 23px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .ant-modal-close-x {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-top: 0;
+    line-height: 48px;
+  }
+
+  .ant-modal-body {
+    padding: 0;
+  }
+}
+
+.blocked-authors__form {
+  min-height: 402px;
+  padding: 32px 40px;
+
+  .ant-form-item {
+    margin-bottom: 24px;
+  }
+
+  .ant-form-item-label {
+    padding-bottom: 8px;
+  }
+
+  .ant-form-item-label > label {
+    height: 20px;
+    color: #361e12;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  .ant-input {
+    min-height: 48px;
+    padding: 13px 16px;
+    border-color: #e1e3e5;
+    border-radius: 8px;
+    color: #361e12;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  textarea.ant-input {
+    min-height: 110px;
+    resize: vertical;
+  }
+
+  .ant-input::placeholder,
+  textarea.ant-input::placeholder {
+    color: #797e86;
+  }
+
+  .ant-input[dir="ltr"] {
+    direction: ltr;
+    text-align: left;
+  }
+
+  .ant-input-textarea-show-count::after {
+    margin-top: 4px;
+    color: #797e86;
+    direction: ltr;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: right;
+  }
+}
+
+.blocked-authors__notes-field.ant-form-item {
+  margin-bottom: 0;
+}
+
+.blocked-authors__form-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  padding: 24px 40px;
+  border-top: 1px solid #e1e3e5;
+
+  .custom-button {
+    min-width: 140px;
+  }
+}
+
+@media (max-width: 1919.98px) {
+  .blocked-authors {
+    border-radius: 10px;
+  }
+
+  .blocked-authors__filter-table {
+    .filter-table-header {
+      margin-bottom: 12px;
+    }
+
+    .ant-table-thead > tr > th,
+    .ant-table-tbody > tr > td {
+      font-size: 14px;
+    }
+  }
+
+  .blocked-authors__add-button.custom-button {
+    height: 40px;
+    min-height: 40px;
+  }
+
+  .blocked-authors__form-modal {
+    .ant-modal-content,
+    .ant-modal-header {
+      border-radius: 10px;
+    }
+  }
+
+  .blocked-authors__form {
+    min-height: 410px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .blocked-authors {
+    padding: 16px;
+  }
+
+  .blocked-authors__form-modal {
+    max-width: calc(100vw - 32px);
+
+    .ant-modal-header {
+      padding: 24px;
+    }
+
+    .ant-modal-title {
+      font-size: 22px;
+      line-height: 28px;
+    }
+  }
+
+  .blocked-authors__form {
+    padding: 24px;
+  }
+
+  .blocked-authors__form-footer {
+    padding: 20px 24px;
+
+    .custom-button {
+      min-width: 0;
+      flex: 1;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_609_6444)">
+<path d="M0 7.5C0 3.35786 3.35786 0 7.5 0C11.6421 0 15 3.35786 15 7.5C15 11.6421 11.6421 15 7.5 15C3.35786 15 0 11.6421 0 7.5Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M-3 10H18V15H-3V10Z" fill="#101097"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M-3 0H18V5H-3V0Z" fill="#F93939"/>
+<mask id="mask0_609_6444" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="5" y="5" width="5" height="6">
+<path d="M10 8.5C10 9.88 8.88 11 7.5 11C6.12 11 5 9.88 5 8.5V5H10V8.5Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_609_6444)">
+<path d="M10 8.5C10 9.88 8.88 11 7.5 11C6.12 11 5 9.88 5 8.5V5H10V8.5Z" fill="#F93939"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6 10H7V11H6V10ZM8 10H9V11H8V10ZM7 9H8V10H7V9ZM6 8H7V9H6V8ZM8 8H9V9H8V8ZM7 7H8V8H7V7ZM6 6H7V7H6V6ZM8 6H9V7H8V6ZM7 5H8V6H7V5ZM9 5H10V6H9V5ZM9 7H10V8H9V7ZM9 9H10V10H9V9ZM5 9H6V10H5V9ZM5 7H6V8H5V7ZM5 5H6V6H5V5Z" fill="white"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_609_6444">
+<path d="M0 7.5C0 3.35786 3.35786 0 7.5 0C11.6421 0 15 3.35786 15 7.5C15 11.6421 11.6421 15 7.5 15C3.35786 15 0 11.6421 0 7.5Z" fill="white"/>
+</clipPath>
+</defs>
+</svg>

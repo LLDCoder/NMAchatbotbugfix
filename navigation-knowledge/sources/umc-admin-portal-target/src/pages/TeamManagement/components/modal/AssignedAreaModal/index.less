@@ -1,0 +1,119 @@
+.team-management-modal--assigned-area {
+  .ant-modal-body {
+    padding: 0;
+  }
+
+  .team-management-assigned-area-modal__warnings {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+    padding: 16px 40px;
+    background: #FFFBEB;
+  }
+
+  .team-management-assigned-area-modal__form {
+    padding: 0 40px;
+    min-height: 368px;
+  }
+
+  .team-management-assigned-area-modal__select .dropdown-selector {
+    height: 48px;
+    min-height: 48px;
+    padding: 8px 16px;
+    border-color: #e1e3e5;
+  }
+
+  .team-management-assigned-area-modal__select .selected-content {
+    flex-wrap: nowrap;
+    min-height: 30px;
+    overflow: hidden;
+  }
+
+  .team-management-assigned-area-modal__select .selected-tag {
+    flex: 0 1 auto;
+    height: 28px;
+    padding: 3px 8px;
+    border-color: #e1e3e5;
+    background: #f1f2f3;
+    color: #361e12;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  .team-management-assigned-area-modal__select .more-tag {
+    flex: 0 0 auto;
+  }
+
+  .ant-form-item-extra {
+    min-height: 20px;
+    color: #797e86;
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .team-management-assigned-area-modal__warning-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+
+    img {
+      display: block;
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+  }
+
+  .team-management-assigned-area-modal__warning-copy {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: 0;
+    min-width: 0;
+  }
+
+  .team-management-assigned-area-modal__warning-text {
+    margin: 0;
+    color: #361E12;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}
+
+.team-management-assigned-area-modal__dropdown {
+  max-height: 328px;
+  border-color: #e1e3e5;
+  border-radius: 8px;
+}
+
+.team-management-assigned-area-modal__dropdown .search-box {
+  padding: 8px 16px;
+}
+
+.team-management-assigned-area-modal__dropdown .option-item {
+  padding: 10px 16px;
+}
+
+.team-management-assigned-area-modal__dropdown .option-item:hover {
+  background: #f9f7ed;
+}
+
+.team-management-modal--rtl.team-management-modal--assigned-area {
+  .team-management-assigned-area-modal__warnings {
+    flex-direction: row-reverse;
+  }
+
+  .team-management-assigned-area-modal__warning-copy {
+    text-align: right;
+  }
+}

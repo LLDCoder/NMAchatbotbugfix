@@ -1,0 +1,55 @@
+.news-table {
+  padding: 24px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 1);
+  .ant-table .ant-table-tbody > tr > td {
+    height: 76px;
+  }
+
+  .status-tag {
+    display: inline-block;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    border-radius: 4px;
+    padding: 3px 6px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+    }
+  }
+  .PendingReview {
+    background-color: rgba(255, 251, 235, 1);
+    color: rgba(242, 159, 14, 1);
+  }
+
+  .Draft,
+  .Unpublished {
+    color: rgba(95, 100, 109, 1);
+    background-color: rgba(225, 227, 229, 0.5);
+  }
+
+  .Published {
+    color: rgba(74, 157, 92, 1);
+    background-color: rgba(243, 250, 244, 1);
+  }
+
+  .Rejected {
+    color: rgba(234, 79, 73, 1);
+    background-color: rgba(254, 242, 242, 1);
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.cms-filter-table.filter-table.filter-table--responsive-toolbar
+  .header-filter
+  > .filter-table__filter-field--range {
+  flex: 0 0 300px;
+  width: 300px;
+  min-width: 300px;
+  max-width: 300px;
+}

@@ -1,0 +1,2246 @@
+{
+  "task": {
+    "view": "",
+    "stage": "task",
+    "filters": [],
+    "groupBy": [],
+    "readOnly": true,
+    "timeField": "",
+    "timeRange": "unknown",
+    "outputShape": "detail",
+    "searchQuery": "dashboard key indicators summary panels Service Application Profile Verification License Distribution My Performance Team Performance",
+    "slotUpdates": [
+      {
+        "field": "businessObject",
+        "value": "dashboard",
+        "source": "page",
+        "evidence": "لوحة المعلومات الحالية"
+      },
+      {
+        "field": "requestedGrain",
+        "value": "dashboard",
+        "source": "page",
+        "evidence": ""
+      },
+      {
+        "field": "requestedAttributes",
+        "value": [
+          "key indicators"
+        ],
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "outputShape",
+        "value": "detail",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedScope",
+        "value": "unknown",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "timeRange",
+        "value": "unknown",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "filters",
+        "value": [],
+        "source": "clear",
+        "evidence": ""
+      },
+      {
+        "field": "businessFocus",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "disclosurePurpose",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedMeasures",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "groupBy",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "recordIdentity",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "view",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "timeField",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedOrdering",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "groupCompleteness",
+        "value": "observed",
+        "source": "current",
+        "evidence": "parsed current request"
+      }
+    ],
+    "responseMode": "answer",
+    "businessFocus": "",
+    "clarification": null,
+    "needsLiveData": true,
+    "businessObject": "dashboard",
+    "recordIdentity": "",
+    "requestedGrain": "dashboard",
+    "requestedScope": "unknown",
+    "contextRelation": "new",
+    "unresolvedSlots": [],
+    "disclosurePurpose": "",
+    "groupCompleteness": "observed",
+    "requestBoundaries": [],
+    "requestedMeasures": [],
+    "requestedOrdering": [],
+    "requestedAttributes": [
+      "key indicators"
+    ],
+    "evidenceExplanations": []
+  },
+  "plans": [
+    {
+      "stage": "analysis",
+      "steps": [
+        {
+          "id": "read_overview",
+          "op": "read_rows",
+          "path": "/data",
+          "role": "observation",
+          "label": "قراءة مكوّن النظرة العامة من استجابة لوحة المعلومات",
+          "expose": false,
+          "fields": [
+            "taskTabCounts.ServiceApplication",
+            "taskTabCounts.ProfileVerification",
+            "taskTabCounts.Enquiries",
+            "taskTabCounts.Refunds",
+            "taskTabCounts.Appeals",
+            "serviceApplicationCard.totalCount",
+            "serviceApplicationCard.totalTasks",
+            "serviceApplicationCard.doneToday",
+            "serviceApplicationCard.overdueTasks",
+            "profileVerificationCard.totalCount",
+            "profileVerificationCard.totalTasks",
+            "profileVerificationCard.doneToday",
+            "profileVerificationCard.overdueTasks",
+            "serviceApplicationCard.slaDistribution.pendingReview",
+            "serviceApplicationCard.slaDistribution.pendingModification",
+            "serviceApplicationCard.slaDistribution.externalApproval",
+            "profileVerificationCard.statusBreakdown.pendingReview",
+            "profileVerificationCard.statusBreakdown.approved",
+            "profileVerificationCard.statusBreakdown.rejected"
+          ],
+          "evidence": [
+            {
+              "sourceId": "k_5570a9bdf89a9a61df7d:p5"
+            },
+            {
+              "sourceId": "k_5570a9bdf89a9a61df7d:p6"
+            }
+          ],
+          "sourceId": "api_11c41b2554cc206eedfe",
+          "unknownPolicy": "report",
+          "knowledgeBindingId": "admin.dashboard.license-overview-panels#key_metrics"
+        },
+        {
+          "id": "read_performance",
+          "op": "read_rows",
+          "path": "/data/summary",
+          "role": "observation",
+          "label": "قراءة مكوّن مؤشرات الأداء من استجابة الأداء",
+          "expose": false,
+          "fields": [
+            "slaComplianceRate",
+            "averageHandlingTimeMinutes",
+            "approvalRateOfApplication",
+            "overdueTasks"
+          ],
+          "evidence": [
+            {
+              "sourceId": "k_32675f43f588dea9a268:p11"
+            },
+            {
+              "sourceId": "k_02d05901aa0212265920:p11"
+            }
+          ],
+          "sourceId": "api_8080c0de4e6a7b165633",
+          "unknownPolicy": "report",
+          "knowledgeBindingId": "admin.dashboard.license-performance.department#dashboard_summary_component"
+        },
+        {
+          "id": "read_distribution",
+          "op": "read_rows",
+          "path": "/data",
+          "role": "observation",
+          "label": "قراءة مكوّن توزيع التراخيص",
+          "expose": false,
+          "fields": [
+            "totalCount",
+            "statusDistribution.Active",
+            "statusDistribution.Expired",
+            "statusDistribution.ExpiringSoon",
+            "statusDistribution.Canceled",
+            "statusDistribution.Suspended"
+          ],
+          "evidence": [
+            {
+              "sourceId": "k_38819b7f65119f8055c6:p3"
+            },
+            {
+              "sourceId": "k_38819b7f65119f8055c6:p4"
+            }
+          ],
+          "sourceId": "api_601ef82dc37d9594288a",
+          "unknownPolicy": "report",
+          "knowledgeBindingId": "admin.dashboard.license-distribution#summary_metrics"
+        },
+        {
+          "id": "project_overview",
+          "op": "project",
+          "role": "detail",
+          "label": "مكوّن النظرة العامة: أعداد مهامي وملخصا طلبات الخدمة والتحقق من الملف الشخصي",
+          "expose": true,
+          "fields": [
+            "taskTabCounts.ServiceApplication",
+            "taskTabCounts.ProfileVerification",
+            "taskTabCounts.Enquiries",
+            "taskTabCounts.Refunds",
+            "taskTabCounts.Appeals",
+            "serviceApplicationCard.totalCount",
+            "serviceApplicationCard.totalTasks",
+            "serviceApplicationCard.doneToday",
+            "serviceApplicationCard.overdueTasks",
+            "profileVerificationCard.totalCount",
+            "profileVerificationCard.totalTasks",
+            "profileVerificationCard.doneToday",
+            "profileVerificationCard.overdueTasks",
+            "serviceApplicationCard.slaDistribution.pendingReview",
+            "serviceApplicationCard.slaDistribution.pendingModification",
+            "serviceApplicationCard.slaDistribution.externalApproval",
+            "profileVerificationCard.statusBreakdown.pendingReview",
+            "profileVerificationCard.statusBreakdown.approved",
+            "profileVerificationCard.statusBreakdown.rejected"
+          ],
+          "inputs": [
+            "read_overview"
+          ],
+          "evidence": [
+            {
+              "sourceId": "k_5570a9bdf89a9a61df7d:p5"
+            },
+            {
+              "sourceId": "k_5570a9bdf89a9a61df7d:p6"
+            }
+          ],
+          "fieldLabels": {
+            "taskTabCounts.Appeals": "مهامي — الاستئنافات",
+            "taskTabCounts.Refunds": "مهامي — المبالغ المستردة",
+            "taskTabCounts.Enquiries": "مهامي — الاستفسارات والشكاوى",
+            "serviceApplicationCard.doneToday": "طلبات الخدمة — المنجَز اليوم",
+            "taskTabCounts.ServiceApplication": "مهامي — طلبات الخدمة",
+            "profileVerificationCard.doneToday": "التحقق من الملف الشخصي — المنجَز اليوم",
+            "serviceApplicationCard.totalCount": "طلبات الخدمة — العدد المرتجع",
+            "serviceApplicationCard.totalTasks": "طلبات الخدمة — إجمالي المهام",
+            "taskTabCounts.ProfileVerification": "مهامي — التحقق من الملف الشخصي",
+            "profileVerificationCard.totalCount": "التحقق من الملف الشخصي — العدد المرتجع",
+            "profileVerificationCard.totalTasks": "التحقق من الملف الشخصي — إجمالي المهام",
+            "serviceApplicationCard.overdueTasks": "طلبات الخدمة — المهام المتأخرة",
+            "profileVerificationCard.overdueTasks": "التحقق من الملف الشخصي — المهام المتأخرة",
+            "profileVerificationCard.statusBreakdown.approved": "التحقق من الملف الشخصي — معتمد",
+            "profileVerificationCard.statusBreakdown.rejected": "التحقق من الملف الشخصي — مرفوض",
+            "serviceApplicationCard.slaDistribution.pendingReview": "طلبات الخدمة — قيد المراجعة",
+            "profileVerificationCard.statusBreakdown.pendingReview": "التحقق من الملف الشخصي — قيد المراجعة",
+            "serviceApplicationCard.slaDistribution.externalApproval": "طلبات الخدمة — موافقة خارجية",
+            "serviceApplicationCard.slaDistribution.pendingModification": "طلبات الخدمة — بانتظار التعديل"
+          }
+        },
+        {
+          "id": "project_performance",
+          "op": "project",
+          "role": "detail",
+          "label": "مكوّن مؤشرات الأداء: الالتزام ومتوسط المعالجة والمهام المتأخرة ونسبة الموافقة",
+          "expose": true,
+          "fields": [
+            "slaComplianceRate",
+            "averageHandlingTimeMinutes",
+            "approvalRateOfApplication",
+            "overdueTasks"
+          ],
+          "inputs": [
+            "read_performance"
+          ],
+          "evidence": [
+            {
+              "sourceId": "k_32675f43f588dea9a268:p11"
+            },
+            {
+              "sourceId": "k_02d05901aa0212265920:p11"
+            }
+          ],
+          "fieldLabels": {
+            "overdueTasks": "المهام المتأخرة",
+            "slaComplianceRate": "الالتزام باتفاقية مستوى الخدمة",
+            "approvalRateOfApplication": "نسبة الموافقة على الطلب",
+            "averageHandlingTimeMinutes": "متوسط وقت المعالجة (دقائق)"
+          }
+        },
+        {
+          "id": "project_distribution",
+          "op": "project",
+          "role": "detail",
+          "label": "مكوّن توزيع التراخيص: الإجمالي وخمس حالات",
+          "expose": true,
+          "fields": [
+            "totalCount",
+            "statusDistribution.Active",
+            "statusDistribution.Expired",
+            "statusDistribution.ExpiringSoon",
+            "statusDistribution.Canceled",
+            "statusDistribution.Suspended"
+          ],
+          "inputs": [
+            "read_distribution"
+          ],
+          "evidence": [
+            {
+              "sourceId": "k_38819b7f65119f8055c6:p3"
+            },
+            {
+              "sourceId": "k_38819b7f65119f8055c6:p4"
+            }
+          ],
+          "fieldLabels": {
+            "totalCount": "توزيع التراخيص — الإجمالي",
+            "statusDistribution.Active": "توزيع التراخيص — نشط",
+            "statusDistribution.Expired": "توزيع التراخيص — منتهٍ",
+            "statusDistribution.Canceled": "توزيع التراخيص — ملغى",
+            "statusDistribution.Suspended": "توزيع التراخيص — موقوف",
+            "statusDistribution.ExpiringSoon": "توزيع التراخيص — قارب على الانتهاء"
+          }
+        }
+      ],
+      "context": {
+        "time": {
+          "value": "الفترة الزمنية المطبَّقة على اللوحة تحدد أساس المقاييس؛ وبطاقة توزيع التراخيص تُرشَّح بتاريخ الإصدار، ومؤشرات الأداء تُعيد بداية ونهاية نافذة الاستعلام.",
+          "evidence": [
+            {
+              "sourceId": "k_38819b7f65119f8055c6:p3"
+            },
+            {
+              "sourceId": "k_32675f43f588dea9a268:p15"
+            }
+          ]
+        },
+        "grain": {
+          "value": "استجابة واحدة حالية للوحة المعلومات (كائن مفرد)؛ قيم المقاييس ملاحظات عددية وليست معرّفات كيانات.",
+          "evidence": [
+            {
+              "sourceId": "k_31f7cfc016292eae6d71:p3"
+            },
+            {
+              "sourceId": "k_5570a9bdf89a9a61df7d:p4"
+            }
+          ]
+        },
+        "scope": "unknown",
+        "caveats": [
+          {
+            "value": "لكل لوحة في لوحة المعلومات مجموعتها وأساسها الزمني الخاص؛ ولا يجوز جمع أعداد اللوحات المختلفة ولا اعتبارها مجموعة سجلات واحدة.",
+            "evidence": [
+              {
+                "sourceId": "k_5570a9bdf89a9a61df7d:p7"
+              },
+              {
+                "sourceId": "k_32675f43f588dea9a268:p14"
+              }
+            ]
+          },
+          {
+            "value": "إجمالي توزيع التراخيص هو مجموع حزم حالات مستقلة قد تتداخل، وليس عددًا مُتحقَّقًا من تراخيص متمايزة.",
+            "evidence": [
+              {
+                "sourceId": "k_38819b7f65119f8055c6:p3"
+              },
+              {
+                "sourceId": "k_38819b7f65119f8055c6:p6"
+              }
+            ]
+          },
+          {
+            "value": "مؤشرات الأداء المعروضة تخص مسار الطلبات فقط، ونسبة الالتزام باتفاقية مستوى الخدمة ليست عدد المهام المتأخرة.",
+            "evidence": [
+              {
+                "sourceId": "k_32675f43f588dea9a268:p4"
+              },
+              {
+                "sourceId": "k_32675f43f588dea9a268:p15"
+              }
+            ]
+          },
+          {
+            "value": "أعداد مهامي وبطاقات الأولوية تخص منظور المهام الشخصية حتى للمدير، بينما ملخص طلبات الخدمة يتبع نطاق الدور من الخادم؛ ولا تُقارن إجمالياتها تلقائيًا.",
+            "evidence": [
+              {
+                "sourceId": "k_5570a9bdf89a9a61df7d:p8"
+              },
+              {
+                "sourceId": "k_6e3576d9a0a39149646c:p3"
+              }
+            ]
+          }
+        ],
+        "population": {
+          "value": "لوحات لوحة المعلومات المرئية: مهامي، وبطاقتا طلبات الخدمة والتحقق من الملف الشخصي، وتوزيع التراخيص، ومؤشرات الأداء؛ ولكل لوحة مجموعتها وأساسها الزمني.",
+          "evidence": [
+            {
+              "sourceId": "k_5570a9bdf89a9a61df7d:p6"
+            },
+            {
+              "sourceId": "k_32675f43f588dea9a268:p11"
+            },
+            {
+              "sourceId": "k_38819b7f65119f8055c6:p4"
+            }
+          ]
+        },
+        "filterScope": {
+          "value": "سياق لوحة المعلومات الحالي: القسم والدور والفترة المطبَّقة تحدد العرض المعروض؛ و«لوحة المعلومات الخاصة بي» ليست مرشّح سجلات شخصية.",
+          "evidence": [
+            {
+              "sourceId": "k_edf65656488d01a27eae:p0"
+            },
+            {
+              "sourceId": "k_31f7cfc016292eae6d71:p7"
+            }
+          ]
+        },
+        "scopeEvidence": [
+          {
+            "sourceId": "k_edf65656488d01a27eae:p0"
+          },
+          {
+            "sourceId": "k_31f7cfc016292eae6d71:p7"
+          }
+        ]
+      },
+      "missing": [
+        "dashboard_scope_unverified"
+      ],
+      "metricCoverage": [],
+      "requirementBindings": [
+        {
+          "fields": [
+            "taskTabCounts.ServiceApplication",
+            "taskTabCounts.ProfileVerification",
+            "taskTabCounts.Enquiries",
+            "taskTabCounts.Refunds",
+            "taskTabCounts.Appeals",
+            "serviceApplicationCard.totalCount",
+            "serviceApplicationCard.totalTasks",
+            "serviceApplicationCard.doneToday",
+            "serviceApplicationCard.overdueTasks",
+            "profileVerificationCard.totalCount",
+            "profileVerificationCard.totalTasks",
+            "profileVerificationCard.doneToday",
+            "profileVerificationCard.overdueTasks",
+            "serviceApplicationCard.slaDistribution.pendingReview",
+            "serviceApplicationCard.slaDistribution.pendingModification",
+            "serviceApplicationCard.slaDistribution.externalApproval",
+            "profileVerificationCard.statusBreakdown.pendingReview",
+            "profileVerificationCard.statusBreakdown.approved",
+            "profileVerificationCard.statusBreakdown.rejected"
+          ],
+          "stepIds": [
+            "read_overview",
+            "project_overview"
+          ],
+          "sourceId": "api_11c41b2554cc206eedfe",
+          "sourcePath": "/data",
+          "requirementId": "object",
+          "knowledgeBindingId": "admin.dashboard.license-overview-panels#object"
+        },
+        {
+          "fields": [
+            "slaComplianceRate",
+            "averageHandlingTimeMinutes",
+            "approvalRateOfApplication",
+            "overdueTasks"
+          ],
+          "stepIds": [
+            "read_performance",
+            "project_performance"
+          ],
+          "sourceId": "api_8080c0de4e6a7b165633",
+          "sourcePath": "/data/summary",
+          "requirementId": "object",
+          "knowledgeBindingId": "admin.dashboard.license-performance.department#object"
+        },
+        {
+          "fields": [
+            "totalCount",
+            "statusDistribution.Active",
+            "statusDistribution.Expired",
+            "statusDistribution.ExpiringSoon",
+            "statusDistribution.Canceled",
+            "statusDistribution.Suspended"
+          ],
+          "stepIds": [
+            "read_distribution",
+            "project_distribution"
+          ],
+          "sourceId": "api_601ef82dc37d9594288a",
+          "sourcePath": "/data",
+          "requirementId": "object",
+          "knowledgeBindingId": "admin.dashboard.license-distribution#object"
+        },
+        {
+          "fields": [
+            "taskTabCounts.ServiceApplication",
+            "taskTabCounts.ProfileVerification",
+            "taskTabCounts.Enquiries",
+            "taskTabCounts.Refunds",
+            "taskTabCounts.Appeals",
+            "serviceApplicationCard.totalCount",
+            "serviceApplicationCard.totalTasks",
+            "serviceApplicationCard.doneToday",
+            "serviceApplicationCard.overdueTasks",
+            "profileVerificationCard.totalCount",
+            "profileVerificationCard.totalTasks",
+            "profileVerificationCard.doneToday",
+            "profileVerificationCard.overdueTasks",
+            "serviceApplicationCard.slaDistribution.pendingReview",
+            "serviceApplicationCard.slaDistribution.pendingModification",
+            "serviceApplicationCard.slaDistribution.externalApproval",
+            "profileVerificationCard.statusBreakdown.pendingReview",
+            "profileVerificationCard.statusBreakdown.approved",
+            "profileVerificationCard.statusBreakdown.rejected"
+          ],
+          "stepIds": [
+            "read_overview",
+            "project_overview"
+          ],
+          "sourceId": "api_11c41b2554cc206eedfe",
+          "sourcePath": "/data",
+          "requirementId": "grain",
+          "knowledgeBindingId": "admin.dashboard.license-overview-panels#grain"
+        },
+        {
+          "fields": [
+            "slaComplianceRate",
+            "averageHandlingTimeMinutes",
+            "approvalRateOfApplication",
+            "overdueTasks"
+          ],
+          "stepIds": [
+            "read_performance",
+            "project_performance"
+          ],
+          "sourceId": "api_8080c0de4e6a7b165633",
+          "sourcePath": "/data/summary",
+          "requirementId": "grain",
+          "knowledgeBindingId": "admin.dashboard.license-performance.department#grain"
+        },
+        {
+          "fields": [
+            "totalCount",
+            "statusDistribution.Active",
+            "statusDistribution.Expired",
+            "statusDistribution.ExpiringSoon",
+            "statusDistribution.Canceled",
+            "statusDistribution.Suspended"
+          ],
+          "stepIds": [
+            "read_distribution",
+            "project_distribution"
+          ],
+          "sourceId": "api_601ef82dc37d9594288a",
+          "sourcePath": "/data",
+          "requirementId": "grain",
+          "knowledgeBindingId": "admin.dashboard.license-distribution#grain"
+        },
+        {
+          "fields": [
+            "taskTabCounts.ServiceApplication",
+            "taskTabCounts.ProfileVerification",
+            "taskTabCounts.Enquiries",
+            "taskTabCounts.Refunds",
+            "taskTabCounts.Appeals",
+            "serviceApplicationCard.totalCount",
+            "serviceApplicationCard.totalTasks",
+            "serviceApplicationCard.doneToday",
+            "serviceApplicationCard.overdueTasks",
+            "profileVerificationCard.totalCount",
+            "profileVerificationCard.totalTasks",
+            "profileVerificationCard.doneToday",
+            "profileVerificationCard.overdueTasks",
+            "serviceApplicationCard.slaDistribution.pendingReview",
+            "serviceApplicationCard.slaDistribution.pendingModification",
+            "serviceApplicationCard.slaDistribution.externalApproval",
+            "profileVerificationCard.statusBreakdown.pendingReview",
+            "profileVerificationCard.statusBreakdown.approved",
+            "profileVerificationCard.statusBreakdown.rejected"
+          ],
+          "stepIds": [
+            "read_overview",
+            "project_overview"
+          ],
+          "sourceId": "api_11c41b2554cc206eedfe",
+          "sourcePath": "/data",
+          "requirementId": "attribute_0",
+          "knowledgeBindingId": "admin.dashboard.license-overview-panels#key_metrics"
+        },
+        {
+          "fields": [
+            "slaComplianceRate",
+            "averageHandlingTimeMinutes",
+            "approvalRateOfApplication",
+            "overdueTasks"
+          ],
+          "stepIds": [
+            "read_performance",
+            "project_performance"
+          ],
+          "sourceId": "api_8080c0de4e6a7b165633",
+          "sourcePath": "/data/summary",
+          "requirementId": "attribute_0",
+          "knowledgeBindingId": "admin.dashboard.license-performance.department#dashboard_summary_component"
+        },
+        {
+          "fields": [
+            "totalCount",
+            "statusDistribution.Active",
+            "statusDistribution.Expired",
+            "statusDistribution.ExpiringSoon",
+            "statusDistribution.Canceled",
+            "statusDistribution.Suspended"
+          ],
+          "stepIds": [
+            "read_distribution",
+            "project_distribution"
+          ],
+          "sourceId": "api_601ef82dc37d9594288a",
+          "sourcePath": "/data",
+          "requirementId": "attribute_0",
+          "knowledgeBindingId": "admin.dashboard.license-distribution#summary_metrics"
+        },
+        {
+          "fields": [
+            "taskTabCounts.ServiceApplication",
+            "taskTabCounts.ProfileVerification",
+            "taskTabCounts.Enquiries",
+            "taskTabCounts.Refunds",
+            "taskTabCounts.Appeals",
+            "serviceApplicationCard.totalCount",
+            "serviceApplicationCard.totalTasks",
+            "serviceApplicationCard.doneToday",
+            "serviceApplicationCard.overdueTasks",
+            "profileVerificationCard.totalCount",
+            "profileVerificationCard.totalTasks",
+            "profileVerificationCard.doneToday",
+            "profileVerificationCard.overdueTasks",
+            "serviceApplicationCard.slaDistribution.pendingReview",
+            "serviceApplicationCard.slaDistribution.pendingModification",
+            "serviceApplicationCard.slaDistribution.externalApproval",
+            "profileVerificationCard.statusBreakdown.pendingReview",
+            "profileVerificationCard.statusBreakdown.approved",
+            "profileVerificationCard.statusBreakdown.rejected"
+          ],
+          "stepIds": [
+            "project_overview"
+          ],
+          "sourceId": "api_11c41b2554cc206eedfe",
+          "sourcePath": "/data",
+          "requirementId": "detail",
+          "knowledgeBindingId": ""
+        },
+        {
+          "fields": [
+            "slaComplianceRate",
+            "averageHandlingTimeMinutes",
+            "approvalRateOfApplication",
+            "overdueTasks"
+          ],
+          "stepIds": [
+            "project_performance"
+          ],
+          "sourceId": "api_8080c0de4e6a7b165633",
+          "sourcePath": "/data/summary",
+          "requirementId": "detail",
+          "knowledgeBindingId": ""
+        },
+        {
+          "fields": [
+            "totalCount",
+            "statusDistribution.Active",
+            "statusDistribution.Expired",
+            "statusDistribution.ExpiringSoon",
+            "statusDistribution.Canceled",
+            "statusDistribution.Suspended"
+          ],
+          "stepIds": [
+            "project_distribution"
+          ],
+          "sourceId": "api_601ef82dc37d9594288a",
+          "sourcePath": "/data",
+          "requirementId": "detail",
+          "knowledgeBindingId": ""
+        }
+      ]
+    },
+    {
+      "stage": "analysis",
+      "steps": [
+        {
+          "id": "read_overview",
+          "op": "read_rows",
+          "path": "/data",
+          "role": "observation",
+          "label": "قراءة مكوّن النظرة العامة من استجابة لوحة المعلومات",
+          "expose": false,
+          "fields": [
+            "taskTabCounts.ServiceApplication",
+            "taskTabCounts.ProfileVerification",
+            "taskTabCounts.Enquiries",
+            "taskTabCounts.Refunds",
+            "taskTabCounts.Appeals",
+            "serviceApplicationCard.totalCount",
+            "serviceApplicationCard.totalTasks",
+            "serviceApplicationCard.doneToday",
+            "serviceApplicationCard.overdueTasks",
+            "serviceApplicationCard.slaDistribution.pendingReview",
+            "serviceApplicationCard.slaDistribution.pendingModification",
+            "serviceApplicationCard.slaDistribution.externalApproval",
+            "profileVerificationCard.totalCount",
+            "profileVerificationCard.totalTasks",
+            "profileVerificationCard.doneToday",
+            "profileVerificationCard.overdueTasks",
+            "profileVerificationCard.statusBreakdown.pendingReview",
+            "profileVerificationCard.statusBreakdown.approved",
+            "profileVerificationCard.statusBreakdown.rejected"
+          ],
+          "evidence": [
+            {
+              "sourceId": "k_5570a9bdf89a9a61df7d:p5"
+            },
+            {
+              "sourceId": "k_5570a9bdf89a9a61df7d:p6"
+            }
+          ],
+          "sourceId": "api_11c41b2554cc206eedfe",
+          "unknownPolicy": "report"
+        },
+        {
+          "id": "project_overview",
+          "op": "project",
+          "role": "detail",
+          "label": "مكوّن النظرة العامة من المؤشرات الرئيسية",
+          "expose": true,
+          "fields": [
+            "taskTabCounts.ServiceApplication",
+            "taskTabCounts.ProfileVerification",
+            "taskTabCounts.Enquiries",
+            "taskTabCounts.Refunds",
+            "taskTabCounts.Appeals",
+            "serviceApplicationCard.totalCount",
+            "serviceApplicationCard.totalTasks",
+            "serviceApplicationCard.doneToday",
+            "serviceApplicationCard.overdueTasks",
+            "serviceApplicationCard.slaDistribution.pendingReview",
+            "serviceApplicationCard.slaDistribution.pendingModification",
+            "serviceApplicationCard.slaDistribution.externalApproval",
+            "profileVerificationCard.totalCount",
+            "profileVerificationCard.totalTasks",
+            "profileVerificationCard.doneToday",
+            "profileVerificationCard.overdueTasks",
+            "profileVerificationCard.statusBreakdown.pendingReview",
+            "profileVerificationCard.statusBreakdown.approved",
+            "profileVerificationCard.statusBreakdown.rejected"
+          ],
+          "inputs": [
+            "read_overview"
+          ],
+          "evidence": [
+            {
+              "sourceId": "k_5570a9bdf89a9a61df7d:p5"
+            },
+            {
+              "sourceId": "k_5570a9bdf89a9a61df7d:p6"
+            }
+          ],
+          "sourceId": "api_11c41b2554cc206eedfe",
+          "fieldLabels": {
+            "taskTabCounts.Appeals": "مهامي — الاستئنافات",
+            "taskTabCounts.Refunds": "مهامي — المبالغ المستردة",
+            "taskTabCounts.Enquiries": "مهامي — الاستفسارات والشكاوى",
+            "serviceApplicationCard.doneToday": "طلبات الخدمة — المنجزة اليوم",
+            "taskTabCounts.ServiceApplication": "مهامي — طلبات الخدمة",
+            "profileVerificationCard.doneToday": "التحقق من الملف الشخصي — المنجزة اليوم",
+            "serviceApplicationCard.totalCount": "طلبات الخدمة — العدد",
+            "serviceApplicationCard.totalTasks": "طلبات الخدمة — إجمالي المهام",
+            "taskTabCounts.ProfileVerification": "مهامي — التحقق من الملف الشخصي",
+            "profileVerificationCard.totalCount": "التحقق من الملف الشخصي — العدد",
+            "profileVerificationCard.totalTasks": "التحقق من الملف الشخصي — إجمالي المهام",
+            "serviceApplicationCard.overdueTasks": "طلبات الخدمة — المهام المتأخرة",
+            "profileVerificationCard.overdueTasks": "التحقق من الملف الشخصي — المهام المتأخرة",
+            "profileVerificationCard.statusBreakdown.approved": "التحقق من الملف الشخصي — مقبول",
+            "profileVerificationCard.statusBreakdown.rejected": "التحقق من الملف الشخصي — مرفوض",
+            "serviceApplicationCard.slaDistribution.pendingReview": "طلبات الخدمة — قيد المراجعة",
+            "profileVerificationCard.statusBreakdown.pendingReview": "التحقق من الملف الشخصي — قيد المراجعة",
+            "serviceApplicationCard.slaDistribution.externalApproval": "طلبات الخدمة — موافقة خارجية",
+            "serviceApplicationCard.slaDistribution.pendingModification": "طلبات الخدمة — قيد التعديل"
+          }
+        },
+        {
+          "id": "read_performance",
+          "op": "read_rows",
+          "path": "/data/summary",
+          "role": "observation",
+          "label": "قراءة مكوّن مؤشرات الأداء",
+          "expose": false,
+          "fields": [
+            "slaComplianceRate",
+            "averageHandlingTimeMinutes",
+            "approvalRateOfApplication",
+            "overdueTasks"
+          ],
+          "evidence": [
+            {
+              "sourceId": "k_32675f43f588dea9a268:p9"
+            },
+            {
+              "sourceId": "k_32675f43f588dea9a268:p11"
+            }
+          ],
+          "sourceId": "api_8080c0de4e6a7b165633",
+          "unknownPolicy": "report"
+        },
+        {
+          "id": "project_performance",
+          "op": "project",
+          "role": "detail",
+          "label": "مكوّن مؤشرات الأداء من المؤشرات الرئيسية",
+          "expose": true,
+          "fields": [
+            "slaComplianceRate",
+            "averageHandlingTimeMinutes",
+            "approvalRateOfApplication",
+            "overdueTasks"
+          ],
+          "inputs": [
+            "read_performance"
+          ],
+          "evidence": [
+            {
+              "sourceId": "k_32675f43f588dea9a268:p9"
+            },
+            {
+              "sourceId": "k_32675f43f588dea9a268:p11"
+            }
+          ],
+          "sourceId": "api_8080c0de4e6a7b165633",
+          "fieldLabels": {
+            "overdueTasks": "المهام المتأخرة",
+            "slaComplianceRate": "الالتزام باتفاقية مستوى الخدمة",
+            "approvalRateOfApplication": "نسبة الموافقة على الطلب",
+            "averageHandlingTimeMinutes": "متوسط وقت المعالجة (دقائق)"
+          }
+        },
+        {
+          "id": "read_distribution",
+          "op": "read_rows",
+          "path": "/data",
+          "role": "observation",
+          "label": "قراءة مكوّن توزيع التراخيص",
+          "expose": false,
+          "fields": [
+            "totalCount",
+            "statusDistribution.Active",
+            "statusDistribution.Expired",
+            "statusDistribution.ExpiringSoon",
+            "statusDistribution.Canceled",
+            "statusDistribution.Suspended"
+          ],
+          "evidence": [
+            {
+              "sourceId": "k_38819b7f65119f8055c6:p3"
+            },
+            {
+              "sourceId": "k_38819b7f65119f8055c6:p4"
+            }
+          ],
+          "sourceId": "api_601ef82dc37d9594288a",
+          "unknownPolicy": "report"
+        },
+        {
+          "id": "project_distribution",
+          "op": "project",
+          "role": "detail",
+          "label": "مكوّن توزيع التراخيص من المؤشرات الرئيسية",
+          "expose": true,
+          "fields": [
+            "totalCount",
+            "statusDistribution.Active",
+            "statusDistribution.Expired",
+            "statusDistribution.ExpiringSoon",
+            "statusDistribution.Canceled",
+            "statusDistribution.Suspended"
+          ],
+          "inputs": [
+            "read_distribution"
+          ],
+          "evidence": [
+            {
+              "sourceId": "k_38819b7f65119f8055c6:p3"
+            },
+            {
+              "sourceId": "k_38819b7f65119f8055c6:p4"
+            }
+          ],
+          "sourceId": "api_601ef82dc37d9594288a",
+          "fieldLabels": {
+            "totalCount": "توزيع التراخيص — الإجمالي",
+            "statusDistribution.Active": "توزيع التراخيص — نشط",
+            "statusDistribution.Expired": "توزيع التراخيص — منتهٍ",
+            "statusDistribution.Canceled": "توزيع التراخيص — ملغى",
+            "statusDistribution.Suspended": "توزيع التراخيص — موقوف",
+            "statusDistribution.ExpiringSoon": "توزيع التراخيص — قارب على الانتهاء"
+          }
+        }
+      ],
+      "context": {
+        "time": {
+          "value": "الفترة الزمنية المطبَّقة على لوحة المعلومات الحالية؛ ولا تُستنتج حدود زمنية دقيقة من تسمية الفترة وحدها.",
+          "evidence": [
+            {
+              "sourceId": "k_edf65656488d01a27eae:p0"
+            },
+            {
+              "sourceId": "k_32675f43f588dea9a268:p15"
+            }
+          ]
+        },
+        "grain": {
+          "value": "استجابة واحدة حالية للوحة المعلومات (كائن مفرد)؛ قيم المقاييس ملاحظات عددية وليست معرّفات كيانات أو عدد سجلات محسوبًا من صفوف.",
+          "evidence": [
+            {
+              "sourceId": "k_31f7cfc016292eae6d71:p3"
+            },
+            {
+              "sourceId": "k_5570a9bdf89a9a61df7d:p4"
+            }
+          ]
+        },
+        "scope": "unknown",
+        "caveats": [
+          {
+            "value": "لكل لوحة مجموعتها السكانية وأساسها الزمني الخاص؛ ولا يجوز جمع أعداد اللوحات المختلفة ولا استبدال لوحة غير متاحة بلوحة أخرى.",
+            "evidence": [
+              {
+                "sourceId": "k_5570a9bdf89a9a61df7d:p7"
+              },
+              {
+                "sourceId": "k_32675f43f588dea9a268:p14"
+              }
+            ]
+          },
+          {
+            "value": "إجمالي توزيع التراخيص هو مجموع حزم حالات قد تتداخل، وليس عددًا موثَّقًا لتراخيص متمايزة.",
+            "evidence": [
+              {
+                "sourceId": "k_38819b7f65119f8055c6:p3"
+              },
+              {
+                "sourceId": "k_38819b7f65119f8055c6:p6"
+              }
+            ]
+          },
+          {
+            "value": "مؤشرات الأداء المعروضة تخص مسار الطلبات فقط، ولا تشمل الاستفسارات والمبالغ المستردة والاستئنافات.",
+            "evidence": [
+              {
+                "sourceId": "k_32675f43f588dea9a268:p15"
+              }
+            ]
+          }
+        ],
+        "population": {
+          "value": "لوحات لوحة المعلومات الحالية: مهامي، وبطاقتا طلبات الخدمة والتحقق من الملف الشخصي، وتوزيع التراخيص، ومؤشرات الأداء؛ ولكل لوحة مجموعتها وأساسها الزمني الخاص.",
+          "evidence": [
+            {
+              "sourceId": "k_5570a9bdf89a9a61df7d:p6"
+            },
+            {
+              "sourceId": "k_32675f43f588dea9a268:p11"
+            }
+          ]
+        },
+        "filterScope": {
+          "value": "سياق لوحة المعلومات الحالي: القسم والدور والفترة المطبَّقة تحدد العرض؛ و«لوحة المعلومات الخاصة بي» ليست مرشّح سجلات شخصية.",
+          "evidence": [
+            {
+              "sourceId": "k_edf65656488d01a27eae:p0"
+            },
+            {
+              "sourceId": "k_31f7cfc016292eae6d71:p7"
+            }
+          ]
+        },
+        "scopeEvidence": [
+          {
+            "sourceId": "k_edf65656488d01a27eae:p0"
+          },
+          {
+            "sourceId": "k_31f7cfc016292eae6d71:p7"
+          }
+        ]
+      },
+      "missing": [],
+      "requirementBindings": [
+        {
+          "fields": [
+            "taskTabCounts.ServiceApplication",
+            "taskTabCounts.ProfileVerification",
+            "taskTabCounts.Enquiries",
+            "taskTabCounts.Refunds",
+            "taskTabCounts.Appeals",
+            "serviceApplicationCard.totalCount",
+            "serviceApplicationCard.totalTasks",
+            "serviceApplicationCard.doneToday",
+            "serviceApplicationCard.overdueTasks",
+            "profileVerificationCard.totalCount",
+            "profileVerificationCard.totalTasks",
+            "profileVerificationCard.doneToday",
+            "profileVerificationCard.overdueTasks"
+          ],
+          "stepIds": [
+            "read_overview",
+            "project_overview"
+          ],
+          "evidence": [],
+          "sourceId": "api_11c41b2554cc206eedfe",
+          "sourcePath": "/data",
+          "requirementId": "object",
+          "knowledgeBindingId": "admin.dashboard.license-overview-panels#object"
+        },
+        {
+          "fields": [
+            "slaComplianceRate",
+            "averageHandlingTimeMinutes",
+            "approvalRateOfApplication",
+            "overdueTasks"
+          ],
+          "stepIds": [
+            "read_performance",
+            "project_performance"
+          ],
+          "evidence": [],
+          "sourceId": "api_8080c0de4e6a7b165633",
+          "sourcePath": "/data/summary",
+          "requirementId": "object",
+          "knowledgeBindingId": "admin.dashboard.license-performance.department#object"
+        },
+        {
+          "fields": [
+            "totalCount",
+            "statusDistribution.Active",
+            "statusDistribution.Expired",
+            "statusDistribution.ExpiringSoon",
+            "statusDistribution.Canceled",
+            "statusDistribution.Suspended"
+          ],
+          "stepIds": [
+            "read_distribution",
+            "project_distribution"
+          ],
+          "evidence": [],
+          "sourceId": "api_601ef82dc37d9594288a",
+          "sourcePath": "/data",
+          "requirementId": "object",
+          "knowledgeBindingId": "admin.dashboard.license-distribution#object"
+        },
+        {
+          "fields": [
+            "taskTabCounts.ServiceApplication",
+            "taskTabCounts.ProfileVerification",
+            "taskTabCounts.Enquiries",
+            "taskTabCounts.Refunds",
+            "taskTabCounts.Appeals",
+            "serviceApplicationCard.totalCount",
+            "serviceApplicationCard.totalTasks",
+            "serviceApplicationCard.doneToday",
+            "serviceApplicationCard.overdueTasks",
+            "profileVerificationCard.totalCount",
+            "profileVerificationCard.totalTasks",
+            "profileVerificationCard.doneToday",
+            "profileVerificationCard.overdueTasks"
+          ],
+          "stepIds": [
+            "read_overview",
+            "project_overview"
+          ],
+          "evidence": [],
+          "sourceId": "api_11c41b2554cc206eedfe",
+          "sourcePath": "/data",
+          "requirementId": "grain",
+          "knowledgeBindingId": "admin.dashboard.license-overview-panels#grain"
+        },
+        {
+          "fields": [
+            "slaComplianceRate",
+            "averageHandlingTimeMinutes",
+            "approvalRateOfApplication",
+            "overdueTasks"
+          ],
+          "stepIds": [
+            "read_performance",
+            "project_performance"
+          ],
+          "evidence": [],
+          "sourceId": "api_8080c0de4e6a7b165633",
+          "sourcePath": "/data/summary",
+          "requirementId": "grain",
+          "knowledgeBindingId": "admin.dashboard.license-performance.department#grain"
+        },
+        {
+          "fields": [
+            "totalCount",
+            "statusDistribution.Active",
+            "statusDistribution.Expired",
+            "statusDistribution.ExpiringSoon",
+            "statusDistribution.Canceled",
+            "statusDistribution.Suspended"
+          ],
+          "stepIds": [
+            "read_distribution",
+            "project_distribution"
+          ],
+          "evidence": [],
+          "sourceId": "api_601ef82dc37d9594288a",
+          "sourcePath": "/data",
+          "requirementId": "grain",
+          "knowledgeBindingId": "admin.dashboard.license-distribution#grain"
+        },
+        {
+          "fields": [
+            "taskTabCounts.ServiceApplication",
+            "taskTabCounts.ProfileVerification",
+            "taskTabCounts.Enquiries",
+            "taskTabCounts.Refunds",
+            "taskTabCounts.Appeals",
+            "serviceApplicationCard.totalCount",
+            "serviceApplicationCard.totalTasks",
+            "serviceApplicationCard.doneToday",
+            "serviceApplicationCard.overdueTasks",
+            "serviceApplicationCard.slaDistribution.pendingReview",
+            "serviceApplicationCard.slaDistribution.pendingModification",
+            "serviceApplicationCard.slaDistribution.externalApproval",
+            "profileVerificationCard.totalCount",
+            "profileVerificationCard.totalTasks",
+            "profileVerificationCard.doneToday",
+            "profileVerificationCard.overdueTasks",
+            "profileVerificationCard.statusBreakdown.pendingReview",
+            "profileVerificationCard.statusBreakdown.approved",
+            "profileVerificationCard.statusBreakdown.rejected"
+          ],
+          "stepIds": [
+            "read_overview",
+            "project_overview"
+          ],
+          "evidence": [],
+          "sourceId": "api_11c41b2554cc206eedfe",
+          "sourcePath": "/data",
+          "requirementId": "attribute_0",
+          "knowledgeBindingId": "admin.dashboard.license-overview-panels#key_metrics"
+        },
+        {
+          "fields": [
+            "slaComplianceRate",
+            "averageHandlingTimeMinutes",
+            "approvalRateOfApplication",
+            "overdueTasks"
+          ],
+          "stepIds": [
+            "read_performance",
+            "project_performance"
+          ],
+          "evidence": [],
+          "sourceId": "api_8080c0de4e6a7b165633",
+          "sourcePath": "/data/summary",
+          "requirementId": "attribute_0",
+          "knowledgeBindingId": "admin.dashboard.license-performance.department#dashboard_summary_component"
+        },
+        {
+          "fields": [
+            "totalCount",
+            "statusDistribution.Active",
+            "statusDistribution.Expired",
+            "statusDistribution.ExpiringSoon",
+            "statusDistribution.Canceled",
+            "statusDistribution.Suspended"
+          ],
+          "stepIds": [
+            "read_distribution",
+            "project_distribution"
+          ],
+          "evidence": [],
+          "sourceId": "api_601ef82dc37d9594288a",
+          "sourcePath": "/data",
+          "requirementId": "attribute_0",
+          "knowledgeBindingId": "admin.dashboard.license-distribution#summary_metrics"
+        },
+        {
+          "fields": [
+            "taskTabCounts.ServiceApplication",
+            "taskTabCounts.ProfileVerification",
+            "taskTabCounts.Enquiries",
+            "taskTabCounts.Refunds",
+            "taskTabCounts.Appeals",
+            "serviceApplicationCard.totalCount",
+            "serviceApplicationCard.totalTasks",
+            "serviceApplicationCard.doneToday",
+            "serviceApplicationCard.overdueTasks",
+            "serviceApplicationCard.slaDistribution.pendingReview",
+            "serviceApplicationCard.slaDistribution.pendingModification",
+            "serviceApplicationCard.slaDistribution.externalApproval",
+            "profileVerificationCard.totalCount",
+            "profileVerificationCard.totalTasks",
+            "profileVerificationCard.doneToday",
+            "profileVerificationCard.overdueTasks",
+            "profileVerificationCard.statusBreakdown.pendingReview",
+            "profileVerificationCard.statusBreakdown.approved",
+            "profileVerificationCard.statusBreakdown.rejected"
+          ],
+          "stepIds": [
+            "project_overview"
+          ],
+          "evidence": [],
+          "sourceId": "api_11c41b2554cc206eedfe",
+          "sourcePath": "/data",
+          "requirementId": "detail",
+          "knowledgeBindingId": ""
+        },
+        {
+          "fields": [
+            "slaComplianceRate",
+            "averageHandlingTimeMinutes",
+            "approvalRateOfApplication",
+            "overdueTasks"
+          ],
+          "stepIds": [
+            "project_performance"
+          ],
+          "evidence": [],
+          "sourceId": "api_8080c0de4e6a7b165633",
+          "sourcePath": "/data/summary",
+          "requirementId": "detail",
+          "knowledgeBindingId": ""
+        },
+        {
+          "fields": [
+            "totalCount",
+            "statusDistribution.Active",
+            "statusDistribution.Expired",
+            "statusDistribution.ExpiringSoon",
+            "statusDistribution.Canceled",
+            "statusDistribution.Suspended"
+          ],
+          "stepIds": [
+            "project_distribution"
+          ],
+          "evidence": [],
+          "sourceId": "api_601ef82dc37d9594288a",
+          "sourcePath": "/data",
+          "requirementId": "detail",
+          "knowledgeBindingId": ""
+        }
+      ]
+    }
+  ],
+  "sources": {
+    "api_11c41b2554cc206eedfe": {
+      "kind": "api_response",
+      "page": "/dashboard",
+      "sourceId": "api_11c41b2554cc206eedfe",
+      "truncated": false,
+      "capturedAt": "2026-09-28T13:52:34.543996+00:00",
+      "completeness": "bounded",
+      "operationRef": "GET /api/license/dashboard/overview",
+      "candidateKind": "business",
+      "fieldEvidence": {
+        "/message": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "e0cc7d31c742c7979bcc99ff6ceb319d8a831f6e604af9097cf9ce44b59346a2"
+        },
+        "/isSuccess": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        "/statusCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "27badc983df1780b60c2b3fa9d3a19a00e46aac798451f0febdca52920faaddf"
+        },
+        "/data/priorityCards": {
+          "kind": "array",
+          "status": "complete",
+          "valueHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "/data/appealCard/totalCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/refundCard/totalCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/taskTabCounts/Appeals": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/taskTabCounts/Refunds": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/enquiryCard/totalCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35"
+        },
+        "/data/taskTabCounts/Enquiries": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/refundCard/totalAmountPending": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/serviceApplicationCard/doneToday": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/taskTabCounts/ServiceApplication": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/appealCard/slaDistribution/onTime": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/appealCard/slaDistribution/paused": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/profileVerificationCard/doneToday": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/refundCard/slaDistribution/onTime": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/refundCard/slaDistribution/paused": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/serviceApplicationCard/totalCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce"
+        },
+        "/data/serviceApplicationCard/totalTasks": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+        },
+        "/data/taskTabCounts/ProfileVerification": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/appealCard/slaDistribution/overdue": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/enquiryCard/slaDistribution/onTime": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/enquiryCard/slaDistribution/paused": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/profileVerificationCard/totalCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/profileVerificationCard/totalTasks": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/refundCard/slaDistribution/overdue": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/serviceApplicationCard/topServices": {
+          "kind": "array",
+          "status": "complete",
+          "valueHash": "8228ea6d978b7e81d1fdc4d0bc6304969cede0b70a5610b9c015602095b4f1a7"
+        },
+        "/data/enquiryCard/slaDistribution/overdue": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35"
+        },
+        "/data/serviceApplicationCard/overdueTasks": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35"
+        },
+        "/data/profileVerificationCard/overdueTasks": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/enquiryCard/statusBreakdown/Escalated": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35"
+        },
+        "/data/appealCard/slaDistribution/upcomingDue": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/refundCard/slaDistribution/upcomingDue": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/appealCard/departmentStats/totalMembers": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "3fdba35f04dc8c462986c992bcf875546257113072a909c162f7e470e581e278"
+        },
+        "/data/enquiryCard/slaDistribution/upcomingDue": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/profileVerificationCard/departmentStats": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/refundCard/departmentStats/totalMembers": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "3fdba35f04dc8c462986c992bcf875546257113072a909c162f7e470e581e278"
+        },
+        "/data/enquiryCard/departmentStats/totalMembers": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "3fdba35f04dc8c462986c992bcf875546257113072a909c162f7e470e581e278"
+        },
+        "/data/appealCard/departmentStats/membersOnLeave": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d"
+        },
+        "/data/refundCard/departmentStats/membersOnLeave": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d"
+        },
+        "/data/enquiryCard/departmentStats/membersOnLeave": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d"
+        },
+        "/data/profileVerificationCard/distribution/Expired": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/profileVerificationCard/distribution/Approved": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/profileVerificationCard/distribution/Rejected": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/profileVerificationCard/slaDistribution/onTime": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/profileVerificationCard/slaDistribution/paused": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/serviceApplicationCard/topServices/0/serviceId": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "d7827558d408d7af184cf3ab50d6ad7886ee44b67c6a9d0d7beafe3d0c902c85"
+        },
+        "/data/serviceApplicationCard/topServices/0/taskCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "480f5a496560ae4228bb7977ecf29b2c589d7a7aa6b609534566af8cbc229a9e"
+        },
+        "/data/serviceApplicationCard/topServices/1/serviceId": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "b519d4ef719504d4c0ec7a666a305b153178a79c98228c93666bfb6a5387644f"
+        },
+        "/data/serviceApplicationCard/topServices/1/taskCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "bc52dd634277c4a34a2d6210994a9a5e2ab6d33bb4a3a8963410e00ca6c15a02"
+        },
+        "/data/serviceApplicationCard/topServices/2/serviceId": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "4809d1306cd4f438bdfbeed76fb13c0f55047f94f44d6bb94faf554af3c4075e"
+        },
+        "/data/serviceApplicationCard/topServices/2/taskCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "2747b7c718564ba5f066f0523b03e17f6a496b06851333d2d59ab6d863225848"
+        },
+        "/data/serviceApplicationCard/topServices/3/serviceId": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "71eebf8f5760b70c2eb19230bef73d7cc009bbf06695182f42782114b0d53ab7"
+        },
+        "/data/serviceApplicationCard/topServices/3/taskCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "7b1a278f5abe8e9da907fc9c29dfd432d60dc76e17b0fabab659d2a508bc65c4"
+        },
+        "/data/serviceApplicationCard/topServices/4/serviceId": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "76c9d56531b032e8416e7e9a6235618a712a19f7edfcfd310f2a551e937124db"
+        },
+        "/data/serviceApplicationCard/topServices/4/taskCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "bbb965ab0c80d6538cf2184babad2a564a010376712012bd07b0af92dcd3097d"
+        },
+        "/data/profileVerificationCard/slaDistribution/overdue": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/profileVerificationCard/statusBreakdown/expired": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/profileVerificationCard/statusBreakdown/approved": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/profileVerificationCard/statusBreakdown/rejected": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/serviceApplicationCard/topServices/0/serviceCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "f87483de5eaddf12d0274fcc2bff78367cbb293e4f4fc12c1cf4aba112b647bc"
+        },
+        "/data/serviceApplicationCard/topServices/1/serviceCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "f87483de5eaddf12d0274fcc2bff78367cbb293e4f4fc12c1cf4aba112b647bc"
+        },
+        "/data/serviceApplicationCard/topServices/2/serviceCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "6952d0a888ee0a5f33fe531a4610a915e52ef4b2ced57d42b9e4e244343dc6b7"
+        },
+        "/data/serviceApplicationCard/topServices/3/serviceCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "f87483de5eaddf12d0274fcc2bff78367cbb293e4f4fc12c1cf4aba112b647bc"
+        },
+        "/data/serviceApplicationCard/topServices/4/serviceCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "e5e5832207bc24dd3114202398f4224af936d95266acefab49a02d7f41777617"
+        },
+        "/data/profileVerificationCard/distribution/PendingReview": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/serviceApplicationCard/topServices/0/serviceNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "9fe9131fd76b166523ce820d62cb481880368a7708e4d34be5485b37514ac53c"
+        },
+        "/data/serviceApplicationCard/topServices/0/serviceNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "0250ad99bc98c9fe9b75cc9754686d62080bb880e0e022df3448480dc81789f5"
+        },
+        "/data/serviceApplicationCard/topServices/1/serviceNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "9fe9131fd76b166523ce820d62cb481880368a7708e4d34be5485b37514ac53c"
+        },
+        "/data/serviceApplicationCard/topServices/1/serviceNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "0250ad99bc98c9fe9b75cc9754686d62080bb880e0e022df3448480dc81789f5"
+        },
+        "/data/serviceApplicationCard/topServices/2/serviceNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "e9a4ea9263a090ed328e8afa1da6e4d476a368b4ee672b6760fcb10fa800043b"
+        },
+        "/data/serviceApplicationCard/topServices/2/serviceNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "393948dc655fa1a2cd872ee0172cea71fe296b498011f72f7ef290c8467b6a71"
+        },
+        "/data/serviceApplicationCard/topServices/3/serviceNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "9fe9131fd76b166523ce820d62cb481880368a7708e4d34be5485b37514ac53c"
+        },
+        "/data/serviceApplicationCard/topServices/3/serviceNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "0250ad99bc98c9fe9b75cc9754686d62080bb880e0e022df3448480dc81789f5"
+        },
+        "/data/serviceApplicationCard/topServices/4/serviceNameAr": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "ebd0117ea2d7eaed8be30863f3c0a1cde94ae6aa67c024e8c25ea6f2220e3540"
+        },
+        "/data/serviceApplicationCard/topServices/4/serviceNameEn": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "cad4a78610e8f88a3f17f2b79576f608f93eaa9e7f4100955665c32c47d855e1"
+        },
+        "/data/profileVerificationCard/slaDistribution/upcomingDue": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/serviceApplicationCard/departmentStats/totalMembers": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "3fdba35f04dc8c462986c992bcf875546257113072a909c162f7e470e581e278"
+        },
+        "/data/serviceApplicationCard/slaDistribution/pendingReview": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35"
+        },
+        "/data/appealCard/departmentStats/averageHandlingTimeMinutes": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/profileVerificationCard/statusBreakdown/pendingReview": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/refundCard/departmentStats/averageHandlingTimeMinutes": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/serviceApplicationCard/departmentStats/membersOnLeave": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d"
+        },
+        "/data/enquiryCard/departmentStats/averageHandlingTimeMinutes": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "/data/serviceApplicationCard/slaDistribution/externalApproval": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+        },
+        "/data/serviceApplicationCard/slaDistribution/pendingModification": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/serviceApplicationCard/departmentStats/averageHandlingTimeMinutes": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        }
+      },
+      "observationRef": "7eab7d15614fc9cb586b",
+      "documentSchemas": [],
+      "taskFingerprint": "e687ae631410306bbb4e7851230cc1f54f8246becf42522962d75dc51356f556",
+      "buildFingerprint": "unknown",
+      "collectionContext": {
+        "mode": "page_number_two_pass",
+        "contextRef": "897fa3d0473ac44d317b7aa0e640c1f542b9db37249a04e4379b11a81e2a05ac",
+        "rowSchemas": [
+          {
+            "path": "/data/priorityCards",
+            "fields": [],
+            "sampledRows": 0,
+            "nullableFields": [],
+            "fieldsTruncated": false,
+            "nullableFieldsTruncated": false
+          },
+          {
+            "path": "/data/serviceApplicationCard/topServices",
+            "fields": [
+              "serviceCode",
+              "serviceId",
+              "serviceNameAr",
+              "serviceNameEn",
+              "taskCount"
+            ],
+            "sampledRows": 5,
+            "nullableFields": [],
+            "fieldsTruncated": false,
+            "nullableFieldsTruncated": false
+          }
+        ],
+        "requestFields": [
+          "taskCategory",
+          "scope",
+          "priorityCardCount",
+          "startDate",
+          "endDate"
+        ],
+        "parameterHashes": {
+          "scope": "391552c099c101b131feaf24c5795a6a15bc8ec82015424e0d2b4274a369a0bf",
+          "endDate": "a1326e4e01f20f8d02d1a0c036b5cdfa84e51366b25bddbd915b0573f3a881b4",
+          "startDate": "9ae0631fc55f60fea857df73e2f5282345c3cbd3446a30c9380aa2bacb70f0e4",
+          "taskCategory": "98089e6d36f78e9766c9ea34d5acb3611f3a92cd81c5eb102095d924ffc7d08b",
+          "priorityCardCount": "536549599ec6c3b859cd3970025779a13d061783c73e663fea7f963e98379aa8"
+        },
+        "parameterShapeEvidence": {
+          "endDate": {
+            "format": "date",
+            "status": "complete",
+            "valueHash": "a1326e4e01f20f8d02d1a0c036b5cdfa84e51366b25bddbd915b0573f3a881b4"
+          },
+          "startDate": {
+            "format": "date",
+            "status": "complete",
+            "valueHash": "9ae0631fc55f60fea857df73e2f5282345c3cbd3446a30c9380aa2bacb70f0e4"
+          }
+        }
+      },
+      "principalScopeRef": "7da85129c1862eb3c3f0",
+      "relatedReadReceipt": {},
+      "data": {
+        "data": {
+          "taskTabCounts": {
+            "Appeals": 0,
+            "Refunds": 0,
+            "Enquiries": 0,
+            "ServiceApplication": 0,
+            "ProfileVerification": 0
+          },
+          "serviceApplicationCard": {
+            "doneToday": 0,
+            "totalCount": 3,
+            "totalTasks": 4,
+            "overdueTasks": 2,
+            "slaDistribution": {
+              "pendingReview": 2,
+              "externalApproval": 1,
+              "pendingModification": 0
+            }
+          },
+          "profileVerificationCard": {
+            "doneToday": 0,
+            "totalCount": 0,
+            "totalTasks": 0,
+            "overdueTasks": 0,
+            "statusBreakdown": {
+              "approved": 0,
+              "rejected": 0,
+              "pendingReview": 0
+            }
+          }
+        }
+      },
+      "ready": true
+    },
+    "api_8080c0de4e6a7b165633": {
+      "kind": "api_response",
+      "page": "/dashboard",
+      "sourceId": "api_8080c0de4e6a7b165633",
+      "truncated": false,
+      "capturedAt": "2026-09-28T13:52:34.543996+00:00",
+      "completeness": "bounded",
+      "operationRef": "GET /api/license/dashboard/performance",
+      "candidateKind": "business",
+      "fieldEvidence": {
+        "/message": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "e0cc7d31c742c7979bcc99ff6ceb319d8a831f6e604af9097cf9ce44b59346a2"
+        },
+        "/isSuccess": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        "/statusCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "27badc983df1780b60c2b3fa9d3a19a00e46aac798451f0febdca52920faaddf"
+        },
+        "/data/endDate": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "8a5a2c56f836d10b0a017f37064c1d0635b19a6768ee6fabe68ac54f5e3b3c94"
+        },
+        "/data/startDate": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "7bb8f992cee03aa07a6873858e24c1e5d856fa3dfe3bf2b2477b80dd4a36a703"
+        },
+        "/data/summary/overdueTasks": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce"
+        },
+        "/data/summary/slaComplianceRate": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "ad57366865126e55649ecb23ae1d48887544976efea46a48eb5d85a6eeb4d306"
+        },
+        "/data/summary/averageProcessingTime": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "274379391c934b99b24ab60bcf8a95bf27eef9f93629269c5890e867ecbcc1b7"
+        },
+        "/data/summary/approvedApplicationCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/summary/rejectedApplicationCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/summary/approvalRateOfApplication": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/summary/averageHandlingTimeMinutes": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "31ed4582b03c6baf085f2cc8fe0956e4694ce123b630eb56256e429d859a1d03"
+        }
+      },
+      "observationRef": "7eab7d15614fc9cb586b",
+      "documentSchemas": [],
+      "taskFingerprint": "e687ae631410306bbb4e7851230cc1f54f8246becf42522962d75dc51356f556",
+      "buildFingerprint": "unknown",
+      "collectionContext": {
+        "mode": "page_number_two_pass",
+        "contextRef": "a8792f0261ae1d56435e4dd5eb85e33bdfe6375e74969f2c8cfc04ffd7fc79f0",
+        "rowSchemas": [],
+        "requestFields": [
+          "scope",
+          "startDate",
+          "endDate"
+        ],
+        "parameterHashes": {
+          "scope": "391552c099c101b131feaf24c5795a6a15bc8ec82015424e0d2b4274a369a0bf",
+          "endDate": "a1326e4e01f20f8d02d1a0c036b5cdfa84e51366b25bddbd915b0573f3a881b4",
+          "startDate": "9ae0631fc55f60fea857df73e2f5282345c3cbd3446a30c9380aa2bacb70f0e4"
+        },
+        "parameterShapeEvidence": {
+          "endDate": {
+            "format": "date",
+            "status": "complete",
+            "valueHash": "a1326e4e01f20f8d02d1a0c036b5cdfa84e51366b25bddbd915b0573f3a881b4"
+          },
+          "startDate": {
+            "format": "date",
+            "status": "complete",
+            "valueHash": "9ae0631fc55f60fea857df73e2f5282345c3cbd3446a30c9380aa2bacb70f0e4"
+          }
+        }
+      },
+      "principalScopeRef": "7da85129c1862eb3c3f0",
+      "relatedReadReceipt": {},
+      "data": {
+        "data": {
+          "endDate": "2026-09-28T23:59:59",
+          "startDate": "2026-09-22T00:00:00",
+          "summary": {
+            "overdueTasks": 3,
+            "slaComplianceRate": 100,
+            "approvalRateOfApplication": 0,
+            "averageHandlingTimeMinutes": 5.24
+          }
+        }
+      },
+      "ready": true
+    },
+    "api_601ef82dc37d9594288a": {
+      "kind": "api_response",
+      "page": "/dashboard",
+      "sourceId": "api_601ef82dc37d9594288a",
+      "truncated": false,
+      "capturedAt": "2026-09-28T13:52:34.543996+00:00",
+      "completeness": "bounded",
+      "operationRef": "GET /api/license/dashboard/license-distribution",
+      "candidateKind": "business",
+      "fieldEvidence": {
+        "/message": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "e0cc7d31c742c7979bcc99ff6ceb319d8a831f6e604af9097cf9ce44b59346a2"
+        },
+        "/isSuccess": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        "/statusCode": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "27badc983df1780b60c2b3fa9d3a19a00e46aac798451f0febdca52920faaddf"
+        },
+        "/data/endDate": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "aa46ae5af5c443098471fcbd2eef04eb6b26e8e9b26a5048da6644e00b6127a5"
+        },
+        "/data/startDate": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "7bb8f992cee03aa07a6873858e24c1e5d856fa3dfe3bf2b2477b80dd4a36a703"
+        },
+        "/data/totalCount": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/statusDistribution/Active": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/statusDistribution/Expired": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/statusDistribution/Canceled": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/statusDistribution/Suspended": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "/data/statusDistribution/ExpiringSoon": {
+          "kind": "scalar",
+          "status": "complete",
+          "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        }
+      },
+      "observationRef": "7eab7d15614fc9cb586b",
+      "documentSchemas": [],
+      "taskFingerprint": "e687ae631410306bbb4e7851230cc1f54f8246becf42522962d75dc51356f556",
+      "buildFingerprint": "unknown",
+      "collectionContext": {
+        "mode": "page_number_two_pass",
+        "contextRef": "f5d1fdb8ae9daa694e3ba61c0aa9d260d1fcf0a0af6f76d1259fbde2128ed68c",
+        "rowSchemas": [],
+        "requestFields": [
+          "startDate",
+          "endDate"
+        ],
+        "parameterHashes": {
+          "endDate": "a1326e4e01f20f8d02d1a0c036b5cdfa84e51366b25bddbd915b0573f3a881b4",
+          "startDate": "9ae0631fc55f60fea857df73e2f5282345c3cbd3446a30c9380aa2bacb70f0e4"
+        },
+        "parameterShapeEvidence": {
+          "endDate": {
+            "format": "date",
+            "status": "complete",
+            "valueHash": "a1326e4e01f20f8d02d1a0c036b5cdfa84e51366b25bddbd915b0573f3a881b4"
+          },
+          "startDate": {
+            "format": "date",
+            "status": "complete",
+            "valueHash": "9ae0631fc55f60fea857df73e2f5282345c3cbd3446a30c9380aa2bacb70f0e4"
+          }
+        }
+      },
+      "principalScopeRef": "7da85129c1862eb3c3f0",
+      "relatedReadReceipt": {},
+      "data": {
+        "data": {
+          "endDate": "2026-09-28T00:00:00",
+          "startDate": "2026-09-22T00:00:00",
+          "totalCount": 0,
+          "statusDistribution": {
+            "Active": 0,
+            "Expired": 0,
+            "Canceled": 0,
+            "Suspended": 0,
+            "ExpiringSoon": 0
+          }
+        }
+      },
+      "ready": true
+    }
+  },
+  "provenance": {
+    "businessAcceptance": false,
+    "questionLanguage": "ar",
+    "audit": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/group14-data-repair-20260928/round7-d01/ar-reader-evidence.json",
+    "auditSha256": "4f54d1d24b62ab2fa4e9081a057c12c9070b50bd46d84fcb5b931db3d1d524a7",
+    "browser": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/group14-data-repair-20260928/round7-d01/browser/D-01__ar/turn-1.json",
+    "browserSha256": "99141482caa4acd4523a41712cab05bf2467216adebeff560e5140450dbfe0a8",
+    "scalarChecks": [
+      {
+        "sourceId": "api_11c41b2554cc206eedfe",
+        "path": "/data/taskTabCounts/Appeals",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      {
+        "sourceId": "api_11c41b2554cc206eedfe",
+        "path": "/data/taskTabCounts/Refunds",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      {
+        "sourceId": "api_11c41b2554cc206eedfe",
+        "path": "/data/taskTabCounts/Enquiries",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      {
+        "sourceId": "api_11c41b2554cc206eedfe",
+        "path": "/data/serviceApplicationCard/doneToday",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      {
+        "sourceId": "api_11c41b2554cc206eedfe",
+        "path": "/data/taskTabCounts/ServiceApplication",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      {
+        "sourceId": "api_11c41b2554cc206eedfe",
+        "path": "/data/profileVerificationCard/doneToday",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      {
+        "sourceId": "api_11c41b2554cc206eedfe",
+        "path": "/data/serviceApplicationCard/totalCount",
+        "valueHash": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce"
+      },
+      {
+        "sourceId": "api_11c41b2554cc206eedfe",
+        "path": "/data/serviceApplicationCard/totalTasks",
+        "valueHash": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+      },
+      {
+        "sourceId": "api_11c41b2554cc206eedfe",
+        "path": "/data/taskTabCounts/ProfileVerification",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      {
+        "sourceId": "api_11c41b2554cc206eedfe",
+        "path": "/data/profileVerificationCard/totalCount",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      {
+        "sourceId": "api_11c41b2554cc206eedfe",
+        "path": "/data/profileVerificationCard/totalTasks",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      {
+        "sourceId": "api_11c41b2554cc206eedfe",
+        "path": "/data/serviceApplicationCard/overdueTasks",
+        "valueHash": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35"
+      },
+      {
+        "sourceId": "api_11c41b2554cc206eedfe",
+        "path": "/data/profileVerificationCard/overdueTasks",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      {
+        "sourceId": "api_11c41b2554cc206eedfe",
+        "path": "/data/profileVerificationCard/statusBreakdown/approved",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      {
+        "sourceId": "api_11c41b2554cc206eedfe",
+        "path": "/data/profileVerificationCard/statusBreakdown/rejected",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      {
+        "sourceId": "api_11c41b2554cc206eedfe",
+        "path": "/data/serviceApplicationCard/slaDistribution/pendingReview",
+        "valueHash": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35"
+      },
+      {
+        "sourceId": "api_11c41b2554cc206eedfe",
+        "path": "/data/profileVerificationCard/statusBreakdown/pendingReview",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      {
+        "sourceId": "api_11c41b2554cc206eedfe",
+        "path": "/data/serviceApplicationCard/slaDistribution/externalApproval",
+        "valueHash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+      },
+      {
+        "sourceId": "api_11c41b2554cc206eedfe",
+        "path": "/data/serviceApplicationCard/slaDistribution/pendingModification",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      {
+        "sourceId": "api_8080c0de4e6a7b165633",
+        "path": "/data/endDate",
+        "valueHash": "8a5a2c56f836d10b0a017f37064c1d0635b19a6768ee6fabe68ac54f5e3b3c94"
+      },
+      {
+        "sourceId": "api_8080c0de4e6a7b165633",
+        "path": "/data/startDate",
+        "valueHash": "7bb8f992cee03aa07a6873858e24c1e5d856fa3dfe3bf2b2477b80dd4a36a703"
+      },
+      {
+        "sourceId": "api_8080c0de4e6a7b165633",
+        "path": "/data/summary/overdueTasks",
+        "valueHash": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce"
+      },
+      {
+        "sourceId": "api_8080c0de4e6a7b165633",
+        "path": "/data/summary/slaComplianceRate",
+        "valueHash": "ad57366865126e55649ecb23ae1d48887544976efea46a48eb5d85a6eeb4d306"
+      },
+      {
+        "sourceId": "api_8080c0de4e6a7b165633",
+        "path": "/data/summary/approvalRateOfApplication",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      {
+        "sourceId": "api_8080c0de4e6a7b165633",
+        "path": "/data/summary/averageHandlingTimeMinutes",
+        "valueHash": "31ed4582b03c6baf085f2cc8fe0956e4694ce123b630eb56256e429d859a1d03"
+      },
+      {
+        "sourceId": "api_601ef82dc37d9594288a",
+        "path": "/data/endDate",
+        "valueHash": "aa46ae5af5c443098471fcbd2eef04eb6b26e8e9b26a5048da6644e00b6127a5"
+      },
+      {
+        "sourceId": "api_601ef82dc37d9594288a",
+        "path": "/data/startDate",
+        "valueHash": "7bb8f992cee03aa07a6873858e24c1e5d856fa3dfe3bf2b2477b80dd4a36a703"
+      },
+      {
+        "sourceId": "api_601ef82dc37d9594288a",
+        "path": "/data/totalCount",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      {
+        "sourceId": "api_601ef82dc37d9594288a",
+        "path": "/data/statusDistribution/Active",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      {
+        "sourceId": "api_601ef82dc37d9594288a",
+        "path": "/data/statusDistribution/Expired",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      {
+        "sourceId": "api_601ef82dc37d9594288a",
+        "path": "/data/statusDistribution/Canceled",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      {
+        "sourceId": "api_601ef82dc37d9594288a",
+        "path": "/data/statusDistribution/Suspended",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      {
+        "sourceId": "api_601ef82dc37d9594288a",
+        "path": "/data/statusDistribution/ExpiringSoon",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      }
+    ],
+    "readyReconstructedFromActualHealthyRead": true,
+    "notice": "Original TaskSpec and rejected plans are unchanged. Only scalar values matching actual Reader field hashes are restored from the separately saved browser response; this is offline evidence reconstruction, not a new business receipt. Unstructured reference passages are not reconstructed. Only the 29 requested metric scalar paths plus echoed period endpoints are rebuilt. Unrelated topServices paths are deliberately excluded; the original AR browser/Reader value differed at topServices[0].serviceNameEn and is not used as proof."
+  }
+}

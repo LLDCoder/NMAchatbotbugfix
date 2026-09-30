@@ -1,0 +1,432 @@
+[
+  {
+    "path": "/dashboard",
+    "title": "Dashboard",
+    "isMenu": true
+  },
+  {
+    "path": "/inspection",
+    "title": "Inspection",
+    "isMenu": true
+  },
+  {
+    "path": "/service-management",
+    "title": "Service",
+    "isMenu": true
+  },
+  {
+    "path": "/financial-payment",
+    "title": "Finance",
+    "isMenu": true
+  },
+  {
+    "path": "/system-management",
+    "title": "Settings",
+    "isMenu": true
+  },
+  {
+    "path": "/personal-center",
+    "title": "Personal Center",
+    "isMenu": false
+  },
+  {
+    "path": "/licensing/applications",
+    "title": "Applications",
+    "isMenu": false
+  },
+  {
+    "path": "/licensing/team-management",
+    "title": "TeamManagement",
+    "isMenu": false
+  },
+  {
+    "path": "/licensing/team-management/appealsDetails",
+    "title": "Appeals Details",
+    "isMenu": false
+  },
+  {
+    "path": "/licensing/reports-analytics",
+    "title": "LicenseReportsAnalytics",
+    "isMenu": false
+  },
+  {
+    "path": "/content/ContentApplications",
+    "title": "Applications",
+    "isMenu": false
+  },
+  {
+    "path": "/content/team-management",
+    "title": "TeamManagement",
+    "isMenu": false
+  },
+  {
+    "path": "/content/ContentLibrary",
+    "title": "Content Library",
+    "isMenu": false
+  },
+  {
+    "path": "/content/ContentLibrary/Books",
+    "title": "Books",
+    "isMenu": false
+  },
+  {
+    "path": "/content/ContentLibrary/Newspapers",
+    "title": "NewsPapers",
+    "isMenu": false
+  },
+  {
+    "path": "/content/ContentLibrary/Cinema",
+    "title": "Cinema",
+    "isMenu": false
+  },
+  {
+    "path": "/content/ContentLibrary/videoGames",
+    "title": "VideoGames",
+    "isMenu": false
+  },
+  {
+    "path": "/content/Permits",
+    "title": "Permits",
+    "isMenu": false
+  },
+  {
+    "path": "/content/reports-analytics",
+    "title": "ReportsAnalytics",
+    "isMenu": false
+  },
+  {
+    "path": "/inspection/tasks",
+    "title": "Task Management",
+    "isMenu": false
+  },
+  {
+    "path": "/inspection/tasks/detail",
+    "title": "Task Details",
+    "isMenu": false
+  },
+  {
+    "path": "/inspection/tasks/execution",
+    "title": "Task Execution",
+    "isMenu": false
+  },
+  {
+    "path": "/inspection/tasks/report",
+    "title": "Inspection Report",
+    "isMenu": false
+  },
+  {
+    "path": "/inspection/violations",
+    "title": "Violation Management",
+    "isMenu": false
+  },
+  {
+    "path": "/inspection/violations/detail",
+    "title": "Violation Details",
+    "isMenu": false
+  },
+  {
+    "path": "/inspection/reports-analytics",
+    "title": "Reports & Analytics",
+    "isMenu": false
+  },
+  {
+    "path": "/happiness/team-management",
+    "title": "TeamManagement",
+    "isMenu": false
+  },
+  {
+    "path": "/happiness/refunds",
+    "title": "Refunds",
+    "isMenu": false
+  },
+  {
+    "path": "/happiness/refunds/refundsDetails",
+    "title": "Refunds Details",
+    "isMenu": false
+  },
+  {
+    "path": "/happiness/appeals",
+    "title": "Appeals",
+    "isMenu": false
+  },
+  {
+    "path": "/happiness/appeals/appealsDetails",
+    "title": "Appeals Details",
+    "isMenu": false
+  },
+  {
+    "path": "/happiness/reports-analytics",
+    "title": "CustomerReportsAnalytics",
+    "isMenu": false
+  },
+  {
+    "path": "/service-management/reports-analytics",
+    "title": "Reports & Analytics",
+    "isMenu": false
+  },
+  {
+    "path": "/financial-payment/refunds",
+    "title": "refunds",
+    "isMenu": false
+  },
+  {
+    "path": "/financial-payment/refunds/refundsDetails",
+    "title": "Refunds Details",
+    "isMenu": false
+  },
+  {
+    "path": "/financial-payment/reports-analytics",
+    "title": "Reports & Analytics",
+    "isMenu": false
+  },
+  {
+    "path": "/cms/pageManagement",
+    "title": "Pages",
+    "isMenu": false
+  },
+  {
+    "path": "/cms/NewsManagement",
+    "title": "News",
+    "isMenu": false
+  },
+  {
+    "path": "/cms/EventManagement",
+    "title": "Event",
+    "isMenu": false
+  },
+  {
+    "path": "/cms/JobOpeningsManagement",
+    "title": "Job Openings",
+    "isMenu": false
+  },
+  {
+    "path": "/system-management/adminPortalLogs",
+    "title": "logs",
+    "isMenu": false
+  },
+  {
+    "path": "/cms/EventManagement/AddEventManagement",
+    "title": "AddEventManagement",
+    "isMenu": false
+  },
+  {
+    "path": "/cms/JobOpeningsManagement/addJobOpeningsManagement",
+    "title": "AddJobOpeningsManagement",
+    "isMenu": false
+  },
+  {
+    "path": "/service-management/service-configuration/addnewservice",
+    "title": "AddNewService",
+    "isMenu": false
+  },
+  {
+    "path": "/cms/NewsManagement/AddNewsManagement",
+    "title": "AddNewsManagement",
+    "isMenu": false
+  },
+  {
+    "path": "/system-management/adminPortalLogs/adminPortalLogsDetail",
+    "title": "AdminPortalLogsDetail",
+    "isMenu": false
+  },
+  {
+    "path": "/licensing/applications/applicationsDetails",
+    "title": "ApplicationsDetails",
+    "isMenu": false
+  },
+  {
+    "path": "/system-management/broadcast",
+    "title": "Broadcast",
+    "isMenu": false
+  },
+  {
+    "path": "/communications/broadcastEdit",
+    "title": "BroadcastEdit",
+    "isMenu": false
+  },
+  {
+    "path": "/system-management/broadcastView",
+    "title": "BroadcastView",
+    "isMenu": false
+  },
+  {
+    "path": "/changepassword",
+    "title": "ChangePassword",
+    "isMenu": false
+  },
+  {
+    "path": "/content/ContentApplications/ContentApplicationsDetails",
+    "title": "ContentApplicationsDetails",
+    "isMenu": false
+  },
+  {
+    "path": "/contentdashboard",
+    "title": "ContentDashboard",
+    "isMenu": false
+  },
+  {
+    "path": "/contentview",
+    "title": "ContentView",
+    "isMenu": false
+  },
+  {
+    "path": "/happiness/customerManagement/customer-details",
+    "title": "CustomerDetails",
+    "isMenu": false
+  },
+  {
+    "path": "/happiness/customerManagement",
+    "title": "CustomerManagement",
+    "isMenu": false
+  },
+  {
+    "path": "/happiness/customerManagement/customerProfileDetail",
+    "title": "CustomerProfileDetail",
+    "isMenu": false
+  },
+  {
+    "path": "/system-management/message-templates/EditTemplate",
+    "title": "EditTemplate",
+    "isMenu": false
+  },
+  {
+    "path": "/cms/EventManagement/EventManagementDetail",
+    "title": "EventManagementDetail",
+    "isMenu": false
+  },
+  {
+    "path": "/forgotpassword",
+    "title": "ForgotPassword",
+    "isMenu": false
+  },
+  {
+    "path": "/cms/JobOpeningsManagement/JobOpeningsManagementDetail",
+    "title": "JobOpeningsManagementDetail",
+    "isMenu": false
+  },
+  {
+    "path": "/licensing/license/LicenseDatails",
+    "title": "LicenseDatails",
+    "isMenu": false
+  },
+  {
+    "path": "/licensereports",
+    "title": "LicenseReports",
+    "isMenu": false
+  },
+  {
+    "path": "/licensing/licenses",
+    "title": "Licenses",
+    "isMenu": false
+  },
+  {
+    "path": "/system-management/message-templates",
+    "title": "MessageTemplates",
+    "isMenu": false
+  },
+  {
+    "path": "/service-management/mydashboard",
+    "title": "MyDashboard",
+    "isMenu": false
+  },
+  {
+    "path": "/newpassword",
+    "title": "NewPassword",
+    "isMenu": false
+  },
+  {
+    "path": "/cms/NewsManagement/NewsManagementDetail",
+    "title": "NewsManagementDetail",
+    "isMenu": false
+  },
+  {
+    "path": "/notifications",
+    "title": "Notifications",
+    "isMenu": false
+  },
+  {
+    "path": "/cms/pageManagement/PageManagementAbout",
+    "title": "PageManagementAbout",
+    "isMenu": false
+  },
+  {
+    "path": "/cms/pageManagement/PageManagementHome",
+    "title": "PageManagementHome",
+    "isMenu": false
+  },
+  {
+    "path": "/cms/pageManagement/PageManagementLeadership",
+    "title": "PageManagementLeadership",
+    "isMenu": false
+  },
+  {
+    "path": "/performanceanalytics",
+    "title": "PerformanceAnalytics",
+    "isMenu": false
+  },
+  {
+    "path": "/content/Permits/PermitsDetails",
+    "title": "PermitsDetails",
+    "isMenu": false
+  },
+  {
+    "path": "/licensing/profile",
+    "title": "Profile",
+    "isMenu": false
+  },
+  {
+    "path": "/licensing/Profile/ProfileDetails",
+    "title": "ProfileDetails",
+    "isMenu": false
+  },
+  {
+    "path": "/pwdresetsuccess",
+    "title": "PwdResetSuccess",
+    "isMenu": false
+  },
+  {
+    "path": "/system-management/roleManagement/roledetails",
+    "title": "RoleDetails",
+    "isMenu": false
+  },
+  {
+    "path": "/system-management/roleManagement",
+    "title": "RoleManagement",
+    "isMenu": false
+  },
+  {
+    "path": "/service-management/service-categories",
+    "title": "ServiceCategories",
+    "isMenu": false
+  },
+  {
+    "path": "/service-management/service-configuration",
+    "title": "ServiceConfiguration",
+    "isMenu": false
+  },
+  {
+    "path": "/happiness/tickets",
+    "title": "Tickets",
+    "isMenu": false
+  },
+  {
+    "path": "/happiness/tickets/tickets-details",
+    "title": "TicketsDetails",
+    "isMenu": false
+  },
+  {
+    "path": "/financial-payment/transactions",
+    "title": "Transactions",
+    "isMenu": false
+  },
+  {
+    "path": "/financial-payment/transactions/transactions-detail",
+    "title": "TransactionsDetail",
+    "isMenu": false
+  },
+  {
+    "path": "/system-management/userManagement",
+    "title": "UserManagement",
+    "isMenu": false
+  }
+]

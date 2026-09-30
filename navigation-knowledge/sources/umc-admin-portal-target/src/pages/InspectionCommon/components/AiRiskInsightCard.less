@@ -1,0 +1,244 @@
+.inspection-common-ai-risk-insight {
+  display: flex;
+  flex-direction: column;
+}
+
+.inspection-common-ai-risk-insight--expanded {
+  max-width: 760px;
+}
+
+.inspection-common-ai-risk-insight__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 16px 16px;
+  border-radius: 10px;
+  background: #f8f7f4;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.inspection-common-ai-risk-insight__gauge {
+  position: relative;
+  width: 120px;
+  height: 68px;
+  flex-shrink: 0;
+}
+
+.inspection-common-ai-risk-insight__gauge-svg {
+  position: absolute;
+  inset: 0;
+  width: 120px;
+  height: 68px;
+  display: block;
+  overflow: visible;
+  shape-rendering: geometricPrecision;
+}
+
+.inspection-common-ai-risk-insight__gauge-segment {
+  fill: #d9d9d9;
+}
+
+.inspection-common-ai-risk-insight__gauge-segment.is-active {
+  fill: #ea4f49;
+}
+
+.inspection-common-ai-risk-insight__gauge.is-warning .inspection-common-ai-risk-insight__gauge-segment.is-active {
+  fill: #f29f0e;
+}
+
+.inspection-common-ai-risk-insight__gauge.is-success .inspection-common-ai-risk-insight__gauge-segment.is-active {
+  fill: #4a9d5c;
+}
+
+.inspection-common-ai-risk-insight__gauge-score {
+  position: absolute;
+  top: 44px;
+  left: 50%;
+  color: #ea4f49;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+.inspection-common-ai-risk-insight__gauge.is-warning .inspection-common-ai-risk-insight__gauge-score {
+  color: #f29f0e;
+}
+
+.inspection-common-ai-risk-insight__gauge.is-success .inspection-common-ai-risk-insight__gauge-score {
+  color: #4a9d5c;
+}
+
+.inspection-common-ai-risk-insight__level {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #ea4f49;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.inspection-common-ai-risk-insight__level.is-warning {
+  color: #f29f0e;
+}
+
+.inspection-common-ai-risk-insight__level.is-success {
+  color: #4a9d5c;
+}
+
+.inspection-common-ai-risk-insight__level-text {
+  min-width: 0;
+}
+
+.inspection-common-ai-risk-insight__info {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  cursor: default;
+  flex-shrink: 0;
+  outline: none;
+}
+
+.inspection-common-ai-risk-insight__info img {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.inspection-common-ai-risk-insight__info:focus-visible {
+  border-radius: 50%;
+  outline: 2px solid rgb(242 159 14 / 40%);
+  outline-offset: 2px;
+}
+
+.inspection-common-ai-risk-insight__tooltip {
+  max-width: 800px;
+}
+
+.inspection-common-ai-risk-insight__tooltip .ant-tooltip-inner {
+  width: auto;
+  max-width: 800px;
+  min-height: 0;
+  padding: 8px 12px;
+  color: #5f646d;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.inspection-common-ai-risk-insight__tooltip .ant-tooltip-arrow-content::before {
+  background: #fff;
+}
+
+.inspection-common-ai-risk-insight__tooltip .ant-tooltip-arrow-content {
+  background: #fff;
+}
+
+.inspection-common-ai-risk-insight__dimension-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px dashed #cae8cf;
+}
+
+.inspection-common-ai-risk-insight__dimension-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.inspection-common-ai-risk-insight__dimension-title {
+  min-width: 0;
+  color: #5f646d;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-transform: capitalize;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.inspection-common-ai-risk-insight__dimension-score {
+  color: #5f646d;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  flex-shrink: 0;
+  min-width: 24px;
+  text-align: right;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.inspection-common-ai-risk-insight__dimension-score.is-danger {
+  color: #ea4f49;
+}
+
+.inspection-common-ai-risk-insight__dimension-score.is-warning {
+  color: #f29f0e;
+}
+
+.inspection-common-ai-risk-insight__dimension-score.is-success {
+  color: #4a9d5c;
+}
+
+.inspection-common-ai-risk-insight__empty-value {
+  width: 100%;
+  padding-top: 16px;
+  border-top: 1px dashed #cae8cf;
+  color: #5f646d;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: center;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

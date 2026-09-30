@@ -1,0 +1,27 @@
+@import "./reset.less";
+.content-applications-container {
+  height: 100%;
+  overflow: hidden scroll;
+}
+
+.content-applications__task-summary {
+  margin-bottom: 16px;
+
+  .tasks-panel {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    .task-card {
+      min-width: 0;
+
+      .task-content {
+        min-width: 0;
+
+        .task-label {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,3405 @@
+{
+  "provenance": {
+    "mode": "saved actual v39 AR evidence; controlled re-expression supplied only by tests, no model replay",
+    "conversationId": "conv_c16ee50f2ba746e6a266",
+    "requestId": "fbcd2d78-819d-47d7-9439-1d69c7f050df",
+    "evidenceFiles": {
+      "test/runtime/groups1113-20260928/round31-g15-v39/C-08__ar/audit-db.json": "1a88d56a675874239e88020d00758d5773ba54f77bb5c901db440e94c5665b4b",
+      "test/runtime/groups1113-20260928/round31-g15-v39/C-08__ar/result.json": "556e9d09a4d1340ea2b64222d11e0a648602309f1725f46ba5ab20291061875f"
+    },
+    "rawSourceData": "not saved; tests reconstruct empty items/total only from recorded complete 0/0 collection receipt; no claim of observed raw response"
+  },
+  "question": "اعرض الطلبات الموجودة حاليًا في عرض «قيد الإنجاز» الخاص بي ضمن التراخيص.",
+  "normalization": {
+    "stage": "input_normalization",
+    "clauses": [
+      {
+        "english": "Display the requests currently in my \"قيد الإنجاز\" view within the licenses.",
+        "sourceQuote": "اعرض الطلبات الموجودة حاليًا في عرض «قيد الإنجاز» الخاص بي ضمن التراخيص."
+      }
+    ]
+  },
+  "task": {
+    "view": "قيد الإنجاز",
+    "stage": "task",
+    "filters": [],
+    "groupBy": [],
+    "readOnly": true,
+    "timeField": "",
+    "timeRange": "unknown",
+    "outputShape": "list",
+    "searchQuery": "licensing applications in-progress view my requests list application number status",
+    "slotUpdates": [
+      {
+        "field": "businessObject",
+        "value": "application",
+        "source": "page",
+        "evidence": "pageCandidates Applications module 许可与申请"
+      },
+      {
+        "field": "businessFocus",
+        "value": "requests in the \"قيد الإنجاز\" view",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedScope",
+        "value": "personal",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedGrain",
+        "value": "application",
+        "source": "page",
+        "evidence": ""
+      },
+      {
+        "field": "view",
+        "value": "قيد الإنجاز",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "outputShape",
+        "value": "list",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "disclosurePurpose",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedMeasures",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedAttributes",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "groupBy",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "timeRange",
+        "value": "unknown",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "filters",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "recordIdentity",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "timeField",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedOrdering",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "groupCompleteness",
+        "value": "observed",
+        "source": "current",
+        "evidence": "parsed current request"
+      }
+    ],
+    "responseMode": "answer",
+    "businessFocus": "requests in the \"قيد الإنجاز\" view",
+    "clarification": null,
+    "needsLiveData": true,
+    "businessObject": "application",
+    "recordIdentity": "",
+    "requestedGrain": "application",
+    "requestedScope": "personal",
+    "contextRelation": "new",
+    "unresolvedSlots": [],
+    "disclosurePurpose": "",
+    "groupCompleteness": "observed",
+    "requestBoundaries": [],
+    "requestedMeasures": [],
+    "requestedOrdering": [],
+    "requestedAttributes": [],
+    "evidenceExplanations": []
+  },
+  "queryExpansion": {
+    "stage": "query_expansion",
+    "intentStatus": "consistent",
+    "issues": [],
+    "terms": [
+      {
+        "arabic": "طلب",
+        "english": "application",
+        "sourceText": "application",
+        "alternatives": [
+          "applications",
+          "الطلبات"
+        ],
+        "requirementId": "object"
+      },
+      {
+        "arabic": "طلب",
+        "english": "application",
+        "sourceText": "application",
+        "alternatives": [
+          "applications",
+          "الطلبات"
+        ],
+        "requirementId": "grain"
+      },
+      {
+        "arabic": "الخاصة بي",
+        "english": "my own",
+        "sourceText": "personal",
+        "alternatives": [
+          "my",
+          "الخاص بي"
+        ],
+        "requirementId": "scope"
+      },
+      {
+        "arabic": "الطلبات الموجودة في عرض \"قيد الإنجاز\"",
+        "english": "requests in the \"قيد الإنجاز\" view",
+        "sourceText": "requests in the \"قيد الإنجاز\" view",
+        "alternatives": [
+          "requests in the \"قيد الإنجاز\" view",
+          "الطلبات في عرض \"قيد الإنجاز\""
+        ],
+        "requirementId": "population"
+      },
+      {
+        "arabic": "قائمة",
+        "english": "list",
+        "sourceText": "list",
+        "alternatives": [
+          "display as a list",
+          "عرض كقائمة"
+        ],
+        "requirementId": "detail"
+      },
+      {
+        "arabic": "عرض \"قيد الإنجاز\"",
+        "english": "view \"قيد الإنجاز\"",
+        "sourceText": "قيد الإنجاز",
+        "alternatives": [
+          "\"قيد الإنجاز\" view",
+          "عرض \"قيد الإنجاز\""
+        ],
+        "requirementId": "view"
+      }
+    ]
+  },
+  "knowledge": [
+    {
+      "record": {
+        "id": "admin.licensing.applications.bindings.todo",
+        "kind": "field_semantics",
+        "revision": 1,
+        "status": "active",
+        "title": "Application page todo field bindings",
+        "applicability": {
+          "portal": "admin",
+          "environments": [
+            "local",
+            "debug"
+          ],
+          "pageRefs": [
+            "/licensing/applications"
+          ],
+          "runtimeVerification": "pending",
+          "deployedBuildMatch": "unknown"
+        },
+        "sources": [
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Applications/index.tsx",
+            "revision": "sha256:be9c81e58706b9071a3c0f4ddd1950df113cf6971e6c1f6efbf90dafff1f89e4",
+            "locator": "234; 701-880; 932-1105; 1231-1285; 1528-1660",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/application.ts",
+            "revision": "sha256:32978ed7cc15c3bfb93d26f4c2c83a75cc3ad33ef2e2e87709c7feb3a50a3908",
+            "locator": "326-353",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ApplicationAppService.cs",
+            "revision": "sha256:22e94773e70c95fab9ce479919b51d0241e046bf085cd0c3f8b5991b9004772e",
+            "locator": "216-319",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ReviewTaskProjection.cs",
+            "revision": "sha256:9df0f7b49cd9c099c78d1ccd2e8967216a477fd533f90a312573f287eef1b797",
+            "locator": "11-51; 88-106",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/MyReviewFilter.cs",
+            "revision": "sha256:e85bf61625c530802e0a177de8eeba436c26ba8ad98952b7908ddfa915073ebb",
+            "locator": "22-99",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Application/ApplicationDto.cs",
+            "revision": "sha256:3efae9b26845ec68130f314cbccfd0861bb76f19a22ab6d083f5ec9435042cdc",
+            "locator": "12-157",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Api/Controllers/ApplicationController.cs",
+            "revision": "sha256:c43e5e7e836b3aa6f2f5070d8456f4378ab205112cddc012fde6949e26a44397",
+            "locator": "30-57",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "page_catalog",
+            "reference": "navigation-knowledge/artifacts/page-catalog.json",
+            "revision": "sha256:f28b1c0d3bde64f2e7a76c415579c9bb968f60099b9b9fec5e5a3dfb70d9e4f2",
+            "locator": "Applications",
+            "verification": "static_extracted"
+          }
+        ],
+        "payload": {
+          "pageRef": "/licensing/applications",
+          "bindings": [
+            {
+              "id": "application_entity",
+              "kind": "object",
+              "concept": "application",
+              "aliases": [
+                "applications",
+                "申请"
+              ],
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "sourcePath": "/data/page/items",
+              "fields": [
+                "id"
+              ],
+              "meaning": "The id field identifies the application represented by a row. Service types are not implicitly restricted to a department."
+            },
+            {
+              "id": "application_identity",
+              "kind": "grain",
+              "concept": "application",
+              "aliases": [
+                "applications",
+                "申请"
+              ],
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "sourcePath": "/data/page/items",
+              "fields": [
+                "id"
+              ],
+              "meaning": "Application identity is id. Projection row identity and taskId are different units. Conflicting application field values require a separately verified resolution rule."
+            },
+            {
+              "id": "personal_queue",
+              "kind": "scope",
+              "concept": "personal",
+              "aliases": [
+                "my",
+                "own",
+                "个人"
+              ],
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "sourcePath": "/data/page/items",
+              "fields": [
+                "id"
+              ],
+              "meaning": "This personal view uses the authenticated account. A Manager role does not change it to a team queue."
+            },
+            {
+              "id": "application_status",
+              "kind": "group",
+              "concept": "status",
+              "aliases": [
+                "application status",
+                "process status",
+                "状态"
+              ],
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "sourcePath": "/data/page/items",
+              "fields": [
+                "status"
+              ],
+              "meaning": "The displayed Status dimension binds status. taskStatus and card categories have different meanings."
+            },
+            {
+              "id": "service_category",
+              "kind": "group",
+              "concept": "service category",
+              "aliases": [
+                "服务分类"
+              ],
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "sourcePath": "/data/page/items",
+              "fields": [
+                "serviceCategoryNameEn"
+              ],
+              "meaning": "The Service Category field is serviceCategoryNameEn."
+            },
+            {
+              "id": "workflow_task_status",
+              "kind": "group",
+              "concept": "task status",
+              "aliases": [
+                "workflow task status"
+              ],
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "sourcePath": "/data/page/items",
+              "fields": [
+                "taskStatus"
+              ],
+              "meaning": "In this view taskStatus describes the workflow task/node."
+            }
+          ],
+          "sourceBinding": {
+            "pageRef": "/licensing/applications",
+            "responseRoot": "/data",
+            "views": [
+              "todo"
+            ]
+          },
+          "fields": [],
+          "relationships": [],
+          "constraints": [
+            "Target deployment field and entity semantics have not yet been verified.",
+            "Define whether license application means all applications in this page or a service-restricted subset; do not infer this from serviceTypeId=1.",
+            "Define pending/outstanding population terminology from the view and active filters before adding aliases.",
+            "Scope/population contextParameters require verified default values for every data-affecting request parameter; those values are not established in this file."
+          ]
+        }
+      },
+      "metadata": {
+        "chunkId": "kbfile:e211bf45f6e1473bb1496ab9405d2f03#complete",
+        "recordId": "admin.licensing.applications.bindings.todo",
+        "revision": "1",
+        "sourceId": "k_48d12c37fbf123e0376e",
+        "documentId": "e211bf45f6e1473bb1496ab9405d2f03",
+        "verification": "reference_only"
+      },
+      "package": {
+        "schemaVersion": "1.0",
+        "bundleId": "admin-application-page-field-bindings",
+        "createdAt": "2026-09-24T06:42:24.934787+00:00",
+        "packageStatus": "active"
+      },
+      "sourceFile": "artifacts/KB/pages/admin/licensing-applications/My Application Tasks-实体标识与字段绑定.json",
+      "sourceFileSHA256": "6db349e8f9772490ee40476bafd6f21a4c555192fbd5bea10fc9847746771f76"
+    },
+    {
+      "record": {
+        "id": "admin.licensing.applications.bindings.completed",
+        "kind": "field_semantics",
+        "revision": 1,
+        "status": "active",
+        "title": "Application page completed field bindings",
+        "applicability": {
+          "portal": "admin",
+          "environments": [
+            "local",
+            "debug"
+          ],
+          "pageRefs": [
+            "/licensing/applications"
+          ],
+          "runtimeVerification": "pending",
+          "deployedBuildMatch": "unknown"
+        },
+        "sources": [
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Applications/index.tsx",
+            "revision": "sha256:be9c81e58706b9071a3c0f4ddd1950df113cf6971e6c1f6efbf90dafff1f89e4",
+            "locator": "234; 701-880; 932-1105; 1231-1285; 1528-1660",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/application.ts",
+            "revision": "sha256:32978ed7cc15c3bfb93d26f4c2c83a75cc3ad33ef2e2e87709c7feb3a50a3908",
+            "locator": "326-353",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ApplicationAppService.cs",
+            "revision": "sha256:22e94773e70c95fab9ce479919b51d0241e046bf085cd0c3f8b5991b9004772e",
+            "locator": "216-319",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ReviewTaskProjection.cs",
+            "revision": "sha256:9df0f7b49cd9c099c78d1ccd2e8967216a477fd533f90a312573f287eef1b797",
+            "locator": "11-51; 88-106",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/MyReviewFilter.cs",
+            "revision": "sha256:e85bf61625c530802e0a177de8eeba436c26ba8ad98952b7908ddfa915073ebb",
+            "locator": "22-99",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Application/ApplicationDto.cs",
+            "revision": "sha256:3efae9b26845ec68130f314cbccfd0861bb76f19a22ab6d083f5ec9435042cdc",
+            "locator": "12-157",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Api/Controllers/ApplicationController.cs",
+            "revision": "sha256:c43e5e7e836b3aa6f2f5070d8456f4378ab205112cddc012fde6949e26a44397",
+            "locator": "30-57",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "page_catalog",
+            "reference": "navigation-knowledge/artifacts/page-catalog.json",
+            "revision": "sha256:f28b1c0d3bde64f2e7a76c415579c9bb968f60099b9b9fec5e5a3dfb70d9e4f2",
+            "locator": "Applications",
+            "verification": "static_extracted"
+          }
+        ],
+        "payload": {
+          "pageRef": "/licensing/applications",
+          "bindings": [
+            {
+              "id": "application_entity",
+              "kind": "object",
+              "concept": "application",
+              "aliases": [
+                "applications",
+                "申请"
+              ],
+              "operationRef": "POST /api/Application/MyComplatedPage",
+              "sourcePath": "/data/page/items",
+              "fields": [
+                "id"
+              ],
+              "meaning": "The id field identifies the application represented by a row. Service types are not implicitly restricted to a department."
+            },
+            {
+              "id": "application_identity",
+              "kind": "grain",
+              "concept": "application",
+              "aliases": [
+                "applications",
+                "申请"
+              ],
+              "operationRef": "POST /api/Application/MyComplatedPage",
+              "sourcePath": "/data/page/items",
+              "fields": [
+                "id"
+              ],
+              "meaning": "Application identity is id. Projection row identity and taskId are different units. Conflicting application field values require a separately verified resolution rule."
+            },
+            {
+              "id": "personal_queue",
+              "kind": "scope",
+              "concept": "personal",
+              "aliases": [
+                "my",
+                "own",
+                "个人"
+              ],
+              "operationRef": "POST /api/Application/MyComplatedPage",
+              "sourcePath": "/data/page/items",
+              "fields": [
+                "id"
+              ],
+              "meaning": "This personal view uses the authenticated account. A Manager role does not change it to a team queue."
+            },
+            {
+              "id": "application_status",
+              "kind": "group",
+              "concept": "status",
+              "aliases": [
+                "application status",
+                "process status",
+                "状态"
+              ],
+              "operationRef": "POST /api/Application/MyComplatedPage",
+              "sourcePath": "/data/page/items",
+              "fields": [
+                "status"
+              ],
+              "meaning": "The displayed Status dimension binds status. taskStatus and card categories have different meanings."
+            },
+            {
+              "id": "service_category",
+              "kind": "group",
+              "concept": "service category",
+              "aliases": [
+                "服务分类"
+              ],
+              "operationRef": "POST /api/Application/MyComplatedPage",
+              "sourcePath": "/data/page/items",
+              "fields": [
+                "serviceCategoryNameEn"
+              ],
+              "meaning": "The Service Category field is serviceCategoryNameEn."
+            },
+            {
+              "id": "review_decision",
+              "kind": "group",
+              "concept": "review decision",
+              "aliases": [
+                "my decision"
+              ],
+              "operationRef": "POST /api/Application/MyComplatedPage",
+              "sourcePath": "/data/page/items",
+              "fields": [
+                "taskStatus"
+              ],
+              "meaning": "In this view the My Decision column uses the taskStatus compatibility projection."
+            }
+          ],
+          "sourceBinding": {
+            "pageRef": "/licensing/applications",
+            "responseRoot": "/data",
+            "views": [
+              "completed"
+            ]
+          },
+          "fields": [],
+          "relationships": [],
+          "constraints": [
+            "Target deployment field and entity semantics have not yet been verified.",
+            "Define whether license application means all applications in this page or a service-restricted subset; do not infer this from serviceTypeId=1.",
+            "Define pending/outstanding population terminology from the view and active filters before adding aliases.",
+            "Scope/population contextParameters require verified default values for every data-affecting request parameter; those values are not established in this file."
+          ]
+        }
+      },
+      "metadata": {
+        "chunkId": "kbfile:e211bf45f6e1473bb1496ab9405d2f03#complete",
+        "recordId": "admin.licensing.applications.bindings.completed",
+        "revision": "1",
+        "sourceId": "k_bc1021194e8f334fe61f",
+        "documentId": "e211bf45f6e1473bb1496ab9405d2f03",
+        "verification": "reference_only"
+      },
+      "package": {
+        "schemaVersion": "1.0",
+        "bundleId": "admin-application-page-field-bindings",
+        "createdAt": "2026-09-24T06:42:24.934787+00:00",
+        "packageStatus": "active"
+      },
+      "sourceFile": "artifacts/KB/pages/admin/licensing-applications/My Application Tasks-实体标识与字段绑定.json",
+      "sourceFileSHA256": "6db349e8f9772490ee40476bafd6f21a4c555192fbd5bea10fc9847746771f76"
+    },
+    {
+      "record": {
+        "id": "admin.page-docs.licensing.applications.todo.collection",
+        "kind": "field_semantics",
+        "revision": 5,
+        "status": "active",
+        "title": "My Application Tasks todo read contract",
+        "applicability": {
+          "portal": "admin",
+          "environments": [
+            "local"
+          ],
+          "pageRefs": [
+            "/licensing/applications"
+          ],
+          "sourceSnapshot": "source-inspected-20260924",
+          "runtimeVerification": "pending",
+          "deployedBuildMatch": "unknown"
+        },
+        "sources": [
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Applications/index.tsx",
+            "revision": "be9c81e58706b9071a3c0f4ddd1950df113cf6971e6c1f6efbf90dafff1f89e4",
+            "locator": "request/getPageList, table columns, To Do and Completed tabs",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ApplicationAppService.cs",
+            "revision": "22e94773e70c95fab9ce479919b51d0241e046bf085cd0c3f8b5991b9004772e",
+            "locator": "GetMyReviewPageAsync; GetMyReviewListAsync; FilterPersonalWorkflowTasksByDepartment",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/MyReviewFilter.cs",
+            "revision": "e85bf61625c530802e0a177de8eeba436c26ba8ad98952b7908ddfa915073ebb",
+            "locator": "Apply; NormalizeCompletedMyDecisionFilters",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ReviewTaskProjection.cs",
+            "revision": "9df0f7b49cd9c099c78d1ccd2e8967216a477fd533f90a312573f287eef1b797",
+            "locator": "SelectPersonalTodo; SelectCompleted",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Application/ApplicationDto.cs",
+            "revision": "3efae9b26845ec68130f314cbccfd0861bb76f19a22ab6d083f5ec9435042cdc",
+            "locator": "MyReviewPageRequest; MyReviewPageResponse; MyReviewResponse",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/localization/licensing/ar.json",
+            "revision": "39644eab73051f826224af4af6da02cb8fd8baeb3268df85b49440e66980d653",
+            "locator": "applications.subTabs.todo and applications.tabs.myTasks",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/localization/licensing/en.json",
+            "revision": "569221c3d1f096bf773b2add711d9846921883e99bf48f3d8aa2793a46a72792",
+            "locator": "applications.subTabs.todo and applications.tabs.myTasks",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Applications/index.tsx",
+            "revision": "433c90d2018350b78f1f51a50c31aa2ba3089e2b0753a9f1dd76de95066c962e",
+            "locator": "To Do tab rendering applications.subTabs.todo at data-reader-view=todo; applicationMyTodoPage read dispatch",
+            "verification": "source_inspected"
+          }
+        ],
+        "payload": {
+          "pageRef": "/licensing/applications",
+          "view": "todo",
+          "bindings": [
+            {
+              "id": "application_object",
+              "kind": "object",
+              "concept": "application",
+              "aliases": [
+                "applications",
+                "license application",
+                "license applications",
+                "licensing applications",
+                "license request",
+                "license requests",
+                "licensing request",
+                "licensing requests",
+                "licence request",
+                "licence requests",
+                "طلب ترخيص",
+                "طلبات الترخيص",
+                "طلبات التراخيص",
+                "request",
+                "requests",
+                "licensing application"
+              ],
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "sourcePath": "/data/page/items",
+              "fields": [
+                "id"
+              ],
+              "meaning": "id identifies the application entity. Departmental assignment determines queue access; the service owning department alone does not prove queue membership. On this licensing applications page, license request / licensing request / طلبات الترخيص denotes the application entity identified by id. These are page-scoped language aliases, not licence entities or workflow tasks; they do not alter the selected queue or any status definition. For an application list, applicationNumber is the public row reference displayed in the Application No. column. Preserve it alongside the requested attributes; the internal id is an entity key, not its public display substitute.",
+              "displayFields": [
+                "applicationNumber"
+              ]
+            },
+            {
+              "id": "application_grain",
+              "kind": "grain",
+              "concept": "application",
+              "aliases": [
+                "applications",
+                "unique applications",
+                "license request",
+                "license requests",
+                "licensing request",
+                "licensing requests",
+                "licence request",
+                "licence requests",
+                "طلب ترخيص",
+                "طلبات الترخيص",
+                "طلبات التراخيص",
+                "license application",
+                "licensing application",
+                "licence application",
+                "request",
+                "requests"
+              ],
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "sourcePath": "/data/page/items",
+              "fields": [
+                "id"
+              ],
+              "meaning": "Application grain is id. Distinct application counts can differ from projected workflow/disposition rows. On this licensing applications page, license request / licensing request / طلبات الترخيص denotes the application entity identified by id. These are page-scoped language aliases, not licence entities or workflow tasks; they do not alter the selected queue or any status definition."
+            },
+            {
+              "id": "task_object",
+              "kind": "object",
+              "concept": "task",
+              "aliases": [
+                "tasks",
+                "review tasks",
+                "license application tasks"
+              ],
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "sourcePath": "/data/page/items",
+              "fields": [
+                "taskId"
+              ],
+              "meaning": "The task represented by a current queue row. The server projection has already selected representative tasks; this is not every historical workflow task. For an application list, applicationNumber is the public row reference displayed in the Application No. column. Preserve it alongside the requested attributes; the internal id is an entity key, not its public display substitute.",
+              "displayFields": [
+                "applicationNumber"
+              ]
+            },
+            {
+              "id": "task_grain",
+              "kind": "grain",
+              "concept": "task",
+              "aliases": [
+                "tasks",
+                "review tasks"
+              ],
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "sourcePath": "/data/page/items",
+              "fields": [
+                "taskId"
+              ],
+              "meaning": "Task grain uses a nonempty taskId. Distinct visible projected tasks are different from distinct applications and from all historical workflow tasks."
+            },
+            {
+              "id": "status",
+              "kind": "group",
+              "concept": "status",
+              "aliases": [
+                "application status",
+                "process status"
+              ],
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "sourcePath": "/data/page/items",
+              "fields": [
+                "status"
+              ],
+              "meaning": "status is the current application/process status label; statusId is its numeric code. It is distinct from workflow node taskStatus and the statusCount card taxonomy."
+            },
+            {
+              "id": "service_category",
+              "kind": "group",
+              "concept": "service category",
+              "aliases": [
+                "service categories"
+              ],
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "sourcePath": "/data/page/items",
+              "fields": [
+                "serviceCategoryNameEn"
+              ],
+              "meaning": "serviceCategoryNameEn is the localized service category display, not an authorization scope."
+            },
+            {
+              "id": "handler",
+              "kind": "group",
+              "concept": "officer",
+              "aliases": [
+                "handler",
+                "assignee",
+                "assigned officer"
+              ],
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "sourcePath": "/data/page/items",
+              "fields": [
+                "assignee"
+              ],
+              "meaning": "assignee is the current workflow handler user key. assignedTo is a display name, not a stable unique grouping key."
+            },
+            {
+              "id": "personal_scope",
+              "kind": "scope",
+              "concept": "personal",
+              "aliases": [
+                "my",
+                "mine",
+                "my tasks",
+                "current user",
+                "مهامي",
+                "قائمة مهامي"
+              ],
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "sourcePath": "/data/page/items",
+              "fields": [
+                "id"
+              ],
+              "meaning": "Personal scope: tasks come from the authenticated user task list, filtered by the endpoint runtime approval department. This exact request context has no user-entered narrowing filter. The native My Tasks label is مهامي; this names the authenticated personal queue, not a team queue.",
+              "contextParameters": {
+                "keyword": "",
+                "startTime": null,
+                "endTime": null,
+                "serviceTypeId": "1"
+              }
+            },
+            {
+              "id": "pending_population",
+              "kind": "population",
+              "concept": "pending",
+              "aliases": [
+                "pending applications",
+                "pending tasks",
+                "todo",
+                "to do",
+                "outstanding",
+                "قيد الإنجاز"
+              ],
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "sourcePath": "/data/page/items",
+              "fields": [
+                "id"
+              ],
+              "meaning": "Pending population means the complete To Do queue from this operation with this exact filter context. It includes pending modification and external approval as well as pending review; it is not only Pending Review. On this personal Licensing My Application Tasks page, the actual Arabic To Do tab label is قيد الإنجاز (applications.subTabs.todo), and the My Tasks label is مهامي (applications.tabs.myTasks). In a reference to this page/tab or personal queue, the native label identifies the To Do pending-work view; it does not assert that every application status equals an English In Progress literal. It does not change the authenticated personal scope, runtime department or request filters. Explicit requests for a stored application/process status, additional status predicates, negation or another page/entity must retain those requirements rather than be converted to queue membership. The statistics card reuses the same label but is a different count source, not proof of list completeness.",
+              "contextParameters": {
+                "keyword": "",
+                "startTime": null,
+                "endTime": null,
+                "serviceTypeId": "1"
+              }
+            },
+            {
+              "id": "assigned_to_current_user",
+              "kind": "filter",
+              "concept": "assignee=me",
+              "aliases": [
+                "assigned to me",
+                "my assigned tasks"
+              ],
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "sourcePath": "/data/page/items",
+              "fields": [
+                "assignee"
+              ],
+              "meaning": "The upstream personal task query is bound to the authenticated user. The exact request context and current permission must be verified; no literal user ID is stored in knowledge.",
+              "contextParameters": {
+                "keyword": "",
+                "startTime": null,
+                "endTime": null,
+                "serviceTypeId": "1"
+              }
+            },
+            {
+              "id": "pending_filter",
+              "kind": "filter",
+              "concept": "pending",
+              "aliases": [
+                "status=pending",
+                "pending tasks",
+                "to do"
+              ],
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "sourcePath": "/data/page/items",
+              "fields": [
+                "id"
+              ],
+              "meaning": "The To Do operation establishes queue membership; there is no generic row status literal Pending that replaces all pending workflow states.",
+              "contextParameters": {
+                "keyword": "",
+                "startTime": null,
+                "endTime": null,
+                "serviceTypeId": "1"
+              }
+            },
+            {
+              "id": "node_status",
+              "kind": "group",
+              "concept": "task status",
+              "aliases": [
+                "workflow node",
+                "review stage"
+              ],
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "sourcePath": "/data/page/items",
+              "fields": [
+                "taskStatus"
+              ],
+              "meaning": "taskStatus is the workflow node status in To Do responses. It is independent from application status."
+            },
+            {
+              "id": "status_attribute",
+              "kind": "attribute",
+              "concept": "status",
+              "aliases": [
+                "current status",
+                "application status",
+                "current application status",
+                "request status",
+                "الحالة الحالية",
+                "حالة الطلب"
+              ],
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "sourcePath": "/data/page/items",
+              "fields": [
+                "status"
+              ],
+              "meaning": "Displayed Status for the uniquely matched application row. It is distinct from workflow taskStatus and a list card category. A status read alone does not establish missing required documents."
+            }
+          ],
+          "sourceBinding": {
+            "operationRef": "POST /api/Application/MyTodoPage",
+            "sourcePath": "/data/page/items",
+            "scope": "authenticated personal queue; current runtime approval department"
+          },
+          "pagination": {
+            "pageIndex": "Request integer page number, starts at 1; Skip((pageIndex-1)*pageSize).",
+            "pageSize": "Request integer maximum rows per page; UI default 10, choices 10/20/50/100. This is not a proven server maximum.",
+            "rowsPath": "/data/page/items",
+            "totalPath": "/data/page/total",
+            "total": "page.total counts rows of the selected view AFTER filters and BEFORE pagination. It is not necessarily distinct application count.",
+            "preservedContext": "Keep all filters, identity, language and sort context fixed across pages; two agreeing scans are not a transactional snapshot."
+          },
+          "requestFields": {
+            "keyword": "Case-insensitive substring of applicationNumber, serviceNameAr/serviceNameEn and applyForAr/applyForEn; not an exact unique lookup.",
+            "serviceTypeId": "String 1 is ALL SERVICE TYPES, not a Licensing department or Foreign Media selector. A different nonempty value filters serviceTypeId exactly.",
+            "processInstanceStatus": "Exact equality to row status.",
+            "approvalStatus": "To Do matches taskStatus; Completed matches myDecision.",
+            "serviceCodes": "Filter by stable service codes, not one service version ID.",
+            "serviceCategoryId": "Exact service category ID filter.",
+            "startTime": "lastUpdatedTime >= startTime.Date.",
+            "endTime": "lastUpdatedTime < endTime.Date.AddDays(1). Source server time interpretation needs deployed verification."
+          },
+          "fields": {
+            "id": "Application entity key; not a workflow task key.",
+            "applicationNumber": "Displayed application business number; no global uniqueness constraint was established from the inspected snapshot.",
+            "taskId": "Workflow task identifier and task detail route parameter. A single application can have multiple task IDs over time.",
+            "dispositionCaseId": "Nullable disposition identifier; the personal To Do projection deduplicates (id, dispositionCaseId). A nullable component cannot be silently dropped from a task-row identity.",
+            "status": "Application/process status display; group this field when the requested dimension is application status.",
+            "statusId": "Application/process status numeric code.",
+            "taskStatus": "To Do: workflow node; personal Completed: compatibility projection of myDecision.",
+            "myDecision": "Completed reviewer decision; a dash is not a workflow state.",
+            "assignee": "Current handler user identifier.",
+            "assignedTo": "Current handler display name.",
+            "serviceCode": "Stable service code shared by service versions.",
+            "serviceNameEn": "Service display; may be localized by response language.",
+            "serviceCategoryNameEn": "Service category display; may be localized.",
+            "serviceTypeNameEn": "Service type display; may be localized.",
+            "applyForEn": "Apply For display value; not the handler.",
+            "submissionTime": "Submission timestamp in the DTO.",
+            "lastUpdatedTime": "Latest application timeline/update timestamp. Request startTime/endTime filter this field, even where a control label says Submission Time.",
+            "sla": "SLA value with business pause/state handling; use current supplied slaDescription rather than inventing clock calculations.",
+            "slaDescription": "Localized SLA display produced by the service; not a priority category."
+          },
+          "relationships": [
+            "To Do selects noncompleted canonical-instance rows and deduplicates by (id, dispositionCaseId). Completed deduplicates by id.",
+            "statusCount is computed before list filters; page.total is computed after filters. Card buckets are not the row status dimension or a proven mutually exclusive breakdown.",
+            "A Manager role does not turn this personal queue into a team queue."
+          ],
+          "constraints": [
+            "Source-inspected definitions; the remote deployed build has not been matched to this snapshot. Validate current authorized response shape and request context before using these definitions.",
+            "This page knowledge does not authorize API access or business writes. A blocked or failed response is not an empty population.",
+            "A bounded page is not a complete population. Counts and grouping require complete collection at the requested entity grain and stable request context.",
+            "Do not equate row count or todoCount with unique application count when duplicate id values or conflicting projected fields exist.",
+            "Scope/population context bindings cover only their exact contextParameters. Omitted defaults, nulls, empty strings and added filters are not interchangeable.",
+            "The list has no demonstrated generic priority field. SLA, urgency and priority are separate concepts.",
+            "Foreign Media classification must use an authoritative service/category mapping and current permission; serviceTypeId=1 does not establish it.",
+            "On this personal Licensing My Application Tasks page, the actual Arabic To Do tab label is قيد الإنجاز (applications.subTabs.todo), and the My Tasks label is مهامي (applications.tabs.myTasks). In a reference to this page/tab or personal queue, the native label identifies the To Do pending-work view; it does not assert that every application status equals an English In Progress literal. It does not change the authenticated personal scope, runtime department or request filters. Explicit requests for a stored application/process status, additional status predicates, negation or another page/entity must retain those requirements rather than be converted to queue membership. The statistics card reuses the same label but is a different count source, not proof of list completeness."
+          ]
+        }
+      },
+      "metadata": {
+        "chunkId": "kbfile:dcd65bcae20b4d5cbf223708e50de58d#complete",
+        "recordId": "admin.page-docs.licensing.applications.todo.collection",
+        "revision": "5",
+        "sourceId": "k_20ced6e0b4b58b26fc02",
+        "documentId": "dcd65bcae20b4d5cbf223708e50de58d",
+        "verification": "reference_only"
+      },
+      "package": {
+        "schemaVersion": "1.0",
+        "bundleId": "page-supplement.admin.page-docs.licensing.applications.todo.collection",
+        "createdAt": "2026-09-27T20:21:34.363071+00:00",
+        "packageStatus": "active"
+      },
+      "sourceFile": "artifacts/KB/pages/admin/licensing-applications/My Application Tasks-待办分页字段与统计范围.json",
+      "sourceFileSHA256": "528866a336312b4bfa03943a9b12e1d99092b5016cc8d17ef109b45059804172"
+    },
+    {
+      "record": {
+        "id": "admin.page-docs.licensing.applications.routing",
+        "kind": "page_definition",
+        "revision": 3,
+        "status": "active",
+        "title": "My Application Tasks page and record identity",
+        "applicability": {
+          "portal": "admin",
+          "environments": [
+            "local"
+          ],
+          "pageRefs": [
+            "/licensing/applications"
+          ],
+          "sourceSnapshot": "source-inspected-20260924",
+          "runtimeVerification": "pending",
+          "deployedBuildMatch": "unknown"
+        },
+        "sources": [
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Applications/index.tsx",
+            "revision": "be9c81e58706b9071a3c0f4ddd1950df113cf6971e6c1f6efbf90dafff1f89e4",
+            "locator": "tab rendering; row click route",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.API/Controllers/ApplicationController.cs",
+            "revision": "c43e5e7e836b3aa6f2f5070d8456f4378ab205112cddc012fde6949e26a44397",
+            "locator": "MyTodoPage; MyComplatedPage; MyReviewDetail",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ApplicationAppService.cs",
+            "revision": "22e94773e70c95fab9ce479919b51d0241e046bf085cd0c3f8b5991b9004772e",
+            "locator": "GetMyReviewListAsync; CanViewWorkflowTaskDetail",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/localization/licensing/ar.json",
+            "revision": "39644eab73051f826224af4af6da02cb8fd8baeb3268df85b49440e66980d653",
+            "locator": "applications.subTabs.todo and applications.tabs.myTasks",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/localization/licensing/en.json",
+            "revision": "569221c3d1f096bf773b2add711d9846921883e99bf48f3d8aa2793a46a72792",
+            "locator": "applications.subTabs.todo and applications.tabs.myTasks",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Applications/index.tsx",
+            "revision": "433c90d2018350b78f1f51a50c31aa2ba3089e2b0753a9f1dd76de95066c962e",
+            "locator": "To Do tab rendering applications.subTabs.todo at data-reader-view=todo; applicationMyTodoPage read dispatch",
+            "verification": "source_inspected"
+          }
+        ],
+        "payload": {
+          "pageIdentity": {
+            "catalogId": "a3780c35dd57_da1a77697e11:Page:98e33b0f3104fcf1b812",
+            "component": "Applications",
+            "route": "/licensing/applications",
+            "name": "My Application Tasks"
+          },
+          "purpose": "Personal Licensing review applications and tasks.",
+          "entryConditions": [
+            "Authenticated Admin user; current page and operation permissions. Personal ownership is verified upstream, not inferred from the role label."
+          ],
+          "views": [
+            {
+              "id": "todo",
+              "label": "To Do",
+              "aliases": [
+                "1",
+                "to do",
+                "pending queue",
+                "قيد الإنجاز"
+              ]
+            },
+            {
+              "id": "completed",
+              "label": "Completed",
+              "aliases": [
+                "2",
+                "completed queue"
+              ]
+            }
+          ],
+          "routing": {
+            "records": [
+              {
+                "id": "todo_business_number",
+                "operationRef": "POST /api/Application/MyTodoPage",
+                "sourcePath": "/data/page/items",
+                "identityField": "applicationNumber",
+                "keyFields": [
+                  "id"
+                ],
+                "unique": false
+              },
+              {
+                "id": "completed_business_number",
+                "operationRef": "POST /api/Application/MyComplatedPage",
+                "sourcePath": "/data/page/items",
+                "identityField": "applicationNumber",
+                "keyFields": [
+                  "id"
+                ],
+                "unique": false
+              }
+            ],
+            "views": [
+              {
+                "id": "todo",
+                "label": "To Do",
+                "aliases": [
+                  "1",
+                  "to do",
+                  "pending queue",
+                  "قيد الإنجاز"
+                ]
+              },
+              {
+                "id": "completed",
+                "label": "Completed",
+                "aliases": [
+                  "2",
+                  "completed queue"
+                ]
+              }
+            ]
+          },
+          "readinessAssertions": [
+            "Current selected tab is known; its successful permitted response is present; loading has ended. A blocked call or default zero card is not an empty result."
+          ],
+          "detailEntry": {
+            "route": "/licensing/applications/applicationsDetails",
+            "queryParameter": "taskId",
+            "sourceField": "taskId",
+            "meaning": "Use the matched current row workflow task ID. applicationNumber and id cannot be substituted. Multiple matching task IDs require a verified view/task selection."
+          },
+          "scopeBoundaries": [
+            "The same application may move across approval departments; the current task approval department controls the queue.",
+            "Team analysis belongs to the corresponding Team Management entry; issued licenses belong to the Licenses entry.",
+            "On this personal Licensing My Application Tasks page, the actual Arabic To Do tab label is قيد الإنجاز (applications.subTabs.todo), and the My Tasks label is مهامي (applications.tabs.myTasks). In a reference to this page/tab or personal queue, the native label identifies the To Do pending-work view; it does not assert that every application status equals an English In Progress literal. It does not change the authenticated personal scope, runtime department or request filters. Explicit requests for a stored application/process status, additional status predicates, negation or another page/entity must retain those requirements rather than be converted to queue membership. The statistics card reuses the same label but is a different count source, not proof of list completeness."
+          ],
+          "recordLookup": "Exact-match the supplied business number against observed rows. unique=false deliberately retains ambiguity checks; a substring search or first page alone does not establish uniqueness.",
+          "readOperations": [
+            "POST /api/Application/MyTodoPage",
+            "POST /api/Application/MyComplatedPage"
+          ],
+          "writeOperations": "Approve, reject, reassign, send back, modification, recall and deletion are business mutations; listing them does not enable them in the Reader.",
+          "constraints": [
+            "Source-inspected definitions; the remote deployed build has not been matched to this snapshot. Validate current authorized response shape and request context before using these definitions.",
+            "This page knowledge does not authorize API access or business writes. A blocked or failed response is not an empty population.",
+            "A bounded page is not a complete population. Counts and grouping require complete collection at the requested entity grain and stable request context."
+          ],
+          "knowledgeDependencies": [
+            {
+              "purpose": "collection",
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "document": "My Application Tasks-待办分页字段与统计范围.json"
+            },
+            {
+              "purpose": "collection",
+              "operationRef": "POST /api/Application/MyComplatedPage",
+              "document": "My Application Tasks-已完成分页字段与审批决定.json"
+            }
+          ],
+          "relationships": [
+            "The routing identifiers locate records. Full pagination and scalar-field definitions are in the explicitly named collection documents; routing knowledge alone is not a paging contract."
+          ]
+        }
+      },
+      "metadata": {
+        "chunkId": "kbfile:6a3a5236cd944d26b08260d5a4d297e3#complete",
+        "recordId": "admin.page-docs.licensing.applications.routing",
+        "revision": "3",
+        "sourceId": "k_0e1395e3dabfa9ebb60d",
+        "documentId": "6a3a5236cd944d26b08260d5a4d297e3",
+        "verification": "reference_only"
+      },
+      "package": {
+        "schemaVersion": "1.0",
+        "bundleId": "page-supplement.admin.page-docs.licensing.applications.routing",
+        "createdAt": "2026-09-27T18:22:25.403680+00:00",
+        "packageStatus": "active"
+      },
+      "sourceFile": "artifacts/KB/pages/admin/licensing-applications/My Application Tasks-页面范围与记录定位.json",
+      "sourceFileSHA256": "25c23efe96fc33545b3622169a61be1aaec6551a4f4b81679b2fc80eb4ed0394"
+    }
+  ],
+  "knowledgeInputs": [
+    {
+      "phase": "",
+      "stage": "AnalysisPlan",
+      "inputs": [
+        {
+          "chunkId": "catalog:d148f5bd85c7adc6a164",
+          "passages": [
+            {
+              "sha256": "0b3c88c842435a3313b9f2f4d4f25be5a4e8d54de12aad32eb11f9bd4e5b279f",
+              "sourceId": "k_3d02e7d4b02e2eb1c64d:p0",
+              "characters": 416
+            }
+          ],
+          "recordId": "",
+          "truncated": false,
+          "documentId": "",
+          "documentVersion": ""
+        },
+        {
+          "chunkId": "catalog:c4211f0909fa9679eada",
+          "passages": [
+            {
+              "sha256": "032108f04478ea4c58345e56b76b5a60d616c0b5c217af8ccf3a83e1f692414c",
+              "sourceId": "k_2a712504d84d3e55ae3d:p0",
+              "characters": 847
+            }
+          ],
+          "recordId": "",
+          "truncated": false,
+          "documentId": "",
+          "documentVersion": ""
+        },
+        {
+          "chunkId": "kbfile:6a3a5236cd944d26b08260d5a4d297e3#complete",
+          "passages": [
+            {
+              "sha256": "aad0703172125a54f1c78e7360ad01a54ddc18cee753e0e359d2f1e4ed09926b",
+              "sourceId": "k_0e1395e3dabfa9ebb60d:p0",
+              "characters": 988
+            },
+            {
+              "sha256": "5a1dfb9fb60e5d907ca5a1d11072bf3ff349a170c20ef3f2f4c65fc215960cbf",
+              "sourceId": "k_0e1395e3dabfa9ebb60d:p1",
+              "characters": 978
+            },
+            {
+              "sha256": "2cc4521ca0e16e88dea09073a70072aae778c118e646e39e29d6b50f5df492eb",
+              "sourceId": "k_0e1395e3dabfa9ebb60d:p2",
+              "characters": 929
+            },
+            {
+              "sha256": "fa295c0b906992b9ddf29b1677d8ad9eb61d77f109b37b58ec7f1aaeedffe5e8",
+              "sourceId": "k_0e1395e3dabfa9ebb60d:p3",
+              "characters": 246
+            },
+            {
+              "sha256": "f1746677f87892fe6cb2e44ee7897b1bca7c5ba5c2969cd4cd06e603e11ff259",
+              "sourceId": "k_0e1395e3dabfa9ebb60d:p4",
+              "characters": 801
+            },
+            {
+              "sha256": "9730de1ec86a0f2e712f54661aede09ceff61be3820eda0d14dde0887e893ffd",
+              "sourceId": "k_0e1395e3dabfa9ebb60d:p5",
+              "characters": 855
+            },
+            {
+              "sha256": "bb36209f75a1eee8d00439eb22ac8f9585e508116b69277a710dbc0b6cc8cc0a",
+              "sourceId": "k_0e1395e3dabfa9ebb60d:p6",
+              "characters": 934
+            },
+            {
+              "sha256": "a13d248c2365d33d6462a857fb20d864294087ec508052d215c9858cf04cfb1f",
+              "sourceId": "k_0e1395e3dabfa9ebb60d:p7",
+              "characters": 964
+            },
+            {
+              "sha256": "a49af2b3e56e2ca8fc86c7bdea96d7cbd7fae250c4f319f8446b196e5437734a",
+              "sourceId": "k_0e1395e3dabfa9ebb60d:p8",
+              "characters": 904
+            },
+            {
+              "sha256": "8d0ceafac79b4014e85b73efac241aa7efaa1d345dd43ea16bbe046f96a92760",
+              "sourceId": "k_0e1395e3dabfa9ebb60d:p9",
+              "characters": 180
+            }
+          ],
+          "recordId": "admin.page-docs.licensing.applications.routing",
+          "truncated": false,
+          "documentId": "6a3a5236cd944d26b08260d5a4d297e3",
+          "documentVersion": "1790595950.8166862"
+        },
+        {
+          "chunkId": "kbfile:5946523875b846bc803563b44195699e#source-lines-1-474",
+          "passages": [
+            {
+              "sha256": "fedbc1eb4822b28f52ddcbfa5b5317653dfcd89d5b77e64f11f1ffef07d1b297",
+              "sourceId": "k_eb29c47e31107fe6506b:p0",
+              "characters": 958
+            },
+            {
+              "sha256": "870a35302017c4959a7d302f23d2a5f785d1a438b5a6b13605e5c55885583da1",
+              "sourceId": "k_eb29c47e31107fe6506b:p2",
+              "characters": 992
+            },
+            {
+              "sha256": "3948ce72f7f5e553133bacd7c41f49c034f05f7c0327278dba4916ee6e8f863b",
+              "sourceId": "k_eb29c47e31107fe6506b:p7",
+              "characters": 901
+            },
+            {
+              "sha256": "aadeee23e1b03f8bb06dd7fbd58760cc4d4f22e38f5f92a59e4961f4a5daf243",
+              "sourceId": "k_eb29c47e31107fe6506b:p18",
+              "characters": 954
+            },
+            {
+              "sha256": "6c01b76038898f69b14047242bcb1fc460ae686f225ce760aef9653b67f58d47",
+              "sourceId": "k_eb29c47e31107fe6506b:p19",
+              "characters": 874
+            }
+          ],
+          "recordId": "",
+          "truncated": true,
+          "documentId": "5946523875b846bc803563b44195699e",
+          "documentVersion": "1790417731.689733"
+        },
+        {
+          "chunkId": "kbfile:dcd65bcae20b4d5cbf223708e50de58d#complete",
+          "passages": [
+            {
+              "sha256": "bd8d835d259d46d9188b6fd00a5930787e766a0bac7417bd87ae8980f0fe80dc",
+              "sourceId": "k_20ced6e0b4b58b26fc02:p0",
+              "characters": 994
+            },
+            {
+              "sha256": "0ba8b00cc2bfe9d313141399b0e4f86a37f5044636b5053736f04527db845173",
+              "sourceId": "k_20ced6e0b4b58b26fc02:p1",
+              "characters": 314
+            },
+            {
+              "sha256": "9df5d4ddf4a9cb89e780cc1483e5a28b3da6cd818039212c26ace9ae4ae79374",
+              "sourceId": "k_20ced6e0b4b58b26fc02:p2",
+              "characters": 975
+            },
+            {
+              "sha256": "71f3c953816ba7a60a08ce34fb0639a08d10df897ccbd2d1315644c87b960f06",
+              "sourceId": "k_20ced6e0b4b58b26fc02:p3",
+              "characters": 986
+            },
+            {
+              "sha256": "e38886009b1716953c9621501cba23c68788193c4f7319b10eb70e9ddd0cab0e",
+              "sourceId": "k_20ced6e0b4b58b26fc02:p4",
+              "characters": 965
+            },
+            {
+              "sha256": "a53c72eeb2b01b190193afa449e6180e87be0d42530b906a53f2ac1220b68fc5",
+              "sourceId": "k_20ced6e0b4b58b26fc02:p5",
+              "characters": 983
+            },
+            {
+              "sha256": "80c04633bd1e96f59e1859c26b982e34aeeda2fb69bbdb915b1c9b522df104cc",
+              "sourceId": "k_20ced6e0b4b58b26fc02:p6",
+              "characters": 996
+            },
+            {
+              "sha256": "d3000a925f12608244999c6f0d8258e522016b62117129fbcc5ef0f5e302bcd6",
+              "sourceId": "k_20ced6e0b4b58b26fc02:p7",
+              "characters": 979
+            },
+            {
+              "sha256": "da047ef26ee7752ce9aae65466527df009a631ffc55254d50aee7457eaddf8a2",
+              "sourceId": "k_20ced6e0b4b58b26fc02:p8",
+              "characters": 148
+            },
+            {
+              "sha256": "ed36f4c37eaded8cf45a70ecd9bb7a033973945b189741c975ac55e55b12dd0e",
+              "sourceId": "k_20ced6e0b4b58b26fc02:p9",
+              "characters": 1000
+            },
+            {
+              "sha256": "09dc04d31f0253355b6050e9546beef78159ef8b90c2ee5553f8c6c73647a6e6",
+              "sourceId": "k_20ced6e0b4b58b26fc02:p10",
+              "characters": 998
+            },
+            {
+              "sha256": "5050bbba8d9a0206eaf2c415d51a8f156a21930ec29e9e7ee823740a01c1dfb2",
+              "sourceId": "k_20ced6e0b4b58b26fc02:p11",
+              "characters": 913
+            },
+            {
+              "sha256": "a73240634b9a00d0dc9257b6a80983447a335481edbe95d7e0edb0c3f18d8012",
+              "sourceId": "k_20ced6e0b4b58b26fc02:p12",
+              "characters": 944
+            },
+            {
+              "sha256": "211815fcb02c383b162d11652dd0f5435df412bc6b496f605aff7f90a120c379",
+              "sourceId": "k_20ced6e0b4b58b26fc02:p13",
+              "characters": 901
+            },
+            {
+              "sha256": "489ecdc30e394245638ff99b9110a2b5a885e9f21cd39efc7cbf6575b7376b4f",
+              "sourceId": "k_20ced6e0b4b58b26fc02:p14",
+              "characters": 880
+            },
+            {
+              "sha256": "c1cfb979f73c973723fb8f86b8fb4006bed0ad33d7a5fa4e34ce1b5cb59c8983",
+              "sourceId": "k_20ced6e0b4b58b26fc02:p15",
+              "characters": 977
+            },
+            {
+              "sha256": "9ea31a6467aabd35857430b9a5821b3a8d5f615cac70c13bd905a2c03576e5c1",
+              "sourceId": "k_20ced6e0b4b58b26fc02:p16",
+              "characters": 844
+            },
+            {
+              "sha256": "6a6a5e97beaafebb177f975a8c8411ddfa6af5da0feaf21ba4e4db94d50b533b",
+              "sourceId": "k_20ced6e0b4b58b26fc02:p17",
+              "characters": 919
+            }
+          ],
+          "recordId": "admin.page-docs.licensing.applications.todo.collection",
+          "truncated": true,
+          "documentId": "dcd65bcae20b4d5cbf223708e50de58d",
+          "documentVersion": "1790595960.4506433"
+        },
+        {
+          "chunkId": "kbfile:4e91775157244a11a9aa042127cc8602#source-lines-1-111",
+          "passages": [
+            {
+              "sha256": "9aabc85c5d0fe0bff82271570c458cbc94ccc95e995232ded9cf11c110e3e034",
+              "sourceId": "k_5e165afb79c5c3965a55:p0",
+              "characters": 838
+            },
+            {
+              "sha256": "35760b49647a9eb6e7e38ec227b09836cd50bac145f0a0402ef63f2897484ece",
+              "sourceId": "k_5e165afb79c5c3965a55:p2",
+              "characters": 863
+            },
+            {
+              "sha256": "ddd7ca465d835b015ea28f0571d36a18a02863618aeaa3c20a430ea7fa66b06e",
+              "sourceId": "k_5e165afb79c5c3965a55:p6",
+              "characters": 956
+            },
+            {
+              "sha256": "a534ec2d9c5743d6494c8a9a7a4abe012f217d804bd2ed2d288c4ff25e16b040",
+              "sourceId": "k_5e165afb79c5c3965a55:p7",
+              "characters": 854
+            },
+            {
+              "sha256": "b537b85003d227882c1968480b64a8a8bd7e718b7e94a773858882f8044703a1",
+              "sourceId": "k_5e165afb79c5c3965a55:p9",
+              "characters": 552
+            },
+            {
+              "sha256": "566d51d3be29a31752047e4fce40ab1ba2b28346373174a11c6b88f8b5dfb0f9",
+              "sourceId": "k_5e165afb79c5c3965a55:p13",
+              "characters": 862
+            }
+          ],
+          "recordId": "",
+          "truncated": true,
+          "documentId": "4e91775157244a11a9aa042127cc8602",
+          "documentVersion": "1790415207.5011492"
+        },
+        {
+          "chunkId": "kbfile:e211bf45f6e1473bb1496ab9405d2f03#complete",
+          "passages": [
+            {
+              "sha256": "cebb1d89b9ea7f5014357a2a2658c64fae5f008a39e6a2e501e19ad08d569e3b",
+              "sourceId": "k_48d12c37fbf123e0376e:p0",
+              "characters": 974
+            },
+            {
+              "sha256": "7910ac00d04ecf7091b09c6845ea18378c8249ff460bac946da903091c09592a",
+              "sourceId": "k_48d12c37fbf123e0376e:p1",
+              "characters": 980
+            },
+            {
+              "sha256": "ee1d87d1c1a06487b570fa49cda03aa03e5f3b2320c232de31f5dec642316303",
+              "sourceId": "k_48d12c37fbf123e0376e:p2",
+              "characters": 990
+            },
+            {
+              "sha256": "a039ff22f594a3cc950d41c0e523a1e0c4c98dc1172b55e3e3e23464f391c411",
+              "sourceId": "k_48d12c37fbf123e0376e:p3",
+              "characters": 873
+            },
+            {
+              "sha256": "c903458c063d77010277aff489062bbd63a8d3dd38ceddd83a6840c1ef0938e4",
+              "sourceId": "k_48d12c37fbf123e0376e:p4",
+              "characters": 883
+            },
+            {
+              "sha256": "205a98dad1c9bafe94e0eca4781105e0064b88b85604d107213a011507c13282",
+              "sourceId": "k_48d12c37fbf123e0376e:p5",
+              "characters": 966
+            },
+            {
+              "sha256": "2eae86555857848515d0470c5ce4cbe7a772df624045b30f5e518f54b037d540",
+              "sourceId": "k_48d12c37fbf123e0376e:p6",
+              "characters": 998
+            }
+          ],
+          "recordId": "admin.licensing.applications.bindings.todo",
+          "truncated": false,
+          "documentId": "e211bf45f6e1473bb1496ab9405d2f03",
+          "documentVersion": "1790233786.650134"
+        },
+        {
+          "chunkId": "kbfile:c90e9dbb082d47c18a2d1760a6ff4b6c#source-lines-1-529",
+          "passages": [
+            {
+              "sha256": "63991a49e4b68143f5b761086a01e1dde7b6b62f56531f09044dbdcabf25e6aa",
+              "sourceId": "k_9fbc8e262b825aeeca0f:p0",
+              "characters": 881
+            },
+            {
+              "sha256": "fe0b03c492307333d7b1846a683fceedcfadc340c8d73d7856ea3b7a05df3036",
+              "sourceId": "k_9fbc8e262b825aeeca0f:p5",
+              "characters": 943
+            },
+            {
+              "sha256": "0276a8c61b097db8b540e91f6cb241d32f5fa52751f959e1e690847dd6e5c95d",
+              "sourceId": "k_9fbc8e262b825aeeca0f:p6",
+              "characters": 959
+            },
+            {
+              "sha256": "defffd6543e6e30470b4ef988353bbe4522155110f60e68d1da021ef28f9bf7c",
+              "sourceId": "k_9fbc8e262b825aeeca0f:p8",
+              "characters": 958
+            },
+            {
+              "sha256": "f11df6a4b688234859ce8118648f676ae77ea80287ee98c232c89d0b5117e824",
+              "sourceId": "k_9fbc8e262b825aeeca0f:p19",
+              "characters": 773
+            }
+          ],
+          "recordId": "",
+          "truncated": true,
+          "documentId": "c90e9dbb082d47c18a2d1760a6ff4b6c",
+          "documentVersion": "1790417725.588439"
+        },
+        {
+          "chunkId": "KB/pages/admin/licensing-applications/My Application Tasks-已办分页字段与统计范围.json",
+          "passages": [
+            {
+              "sha256": "0f771e9cf31616417faba751e5d34d2b67107e259ce587e2e46a57be41d0a5e5",
+              "sourceId": "k_1a3faf389591efc18488:p0",
+              "characters": 991
+            },
+            {
+              "sha256": "cf8ccaa01ceda251bcb6d65c717a75445692bea4fd8bf7f32d67a0a86e41cdfb",
+              "sourceId": "k_1a3faf389591efc18488:p1",
+              "characters": 999
+            },
+            {
+              "sha256": "7d184c1b35f47bf3fb6703ccb452f24dd361b8567dddaa23e933b93882ad03a8",
+              "sourceId": "k_1a3faf389591efc18488:p2",
+              "characters": 998
+            },
+            {
+              "sha256": "258a3db9c3fdd3330d264eae815b9b99a3aa18863915837205204ef1ec09f69f",
+              "sourceId": "k_1a3faf389591efc18488:p3",
+              "characters": 967
+            },
+            {
+              "sha256": "1d8de18cda7a5d1329ba57fcaad2ad955f15572e59ba7209097fcda1f0fa73ce",
+              "sourceId": "k_1a3faf389591efc18488:p4",
+              "characters": 918
+            },
+            {
+              "sha256": "211815fcb02c383b162d11652dd0f5435df412bc6b496f605aff7f90a120c379",
+              "sourceId": "k_1a3faf389591efc18488:p5",
+              "characters": 901
+            },
+            {
+              "sha256": "489ecdc30e394245638ff99b9110a2b5a885e9f21cd39efc7cbf6575b7376b4f",
+              "sourceId": "k_1a3faf389591efc18488:p6",
+              "characters": 880
+            },
+            {
+              "sha256": "c1cfb979f73c973723fb8f86b8fb4006bed0ad33d7a5fa4e34ce1b5cb59c8983",
+              "sourceId": "k_1a3faf389591efc18488:p7",
+              "characters": 977
+            },
+            {
+              "sha256": "9ea31a6467aabd35857430b9a5821b3a8d5f615cac70c13bd905a2c03576e5c1",
+              "sourceId": "k_1a3faf389591efc18488:p8",
+              "characters": 844
+            },
+            {
+              "sha256": "6a6a5e97beaafebb177f975a8c8411ddfa6af5da0feaf21ba4e4db94d50b533b",
+              "sourceId": "k_1a3faf389591efc18488:p9",
+              "characters": 919
+            },
+            {
+              "sha256": "54f9390ddb77d6992c1dcdd9b26463dd6cd6592f3260f51e19e3c8b18ecf2b72",
+              "sourceId": "k_1a3faf389591efc18488:p10",
+              "characters": 995
+            },
+            {
+              "sha256": "5e311478b315e06c680895a01fe42062b7a27fe55729d2b8a9f658fc27a76943",
+              "sourceId": "k_1a3faf389591efc18488:p11",
+              "characters": 987
+            },
+            {
+              "sha256": "937408bc200df1e9cc438ace825aaa03ff95d53ce9c92828f7a63b2d05a42d5c",
+              "sourceId": "k_1a3faf389591efc18488:p12",
+              "characters": 380
+            }
+          ],
+          "recordId": "admin.page-docs.licensing.applications.completed.collection",
+          "truncated": false,
+          "documentId": "",
+          "documentVersion": ""
+        },
+        {
+          "chunkId": "kbfile:27526e90accd487b8e8d7eed0a3c7224#source-lines-1-429",
+          "passages": [
+            {
+              "sha256": "cc1de419c6adcf3b3ec5e736d75ec8ed6beab2cfcc03799dadb8bfe5e27bd48e",
+              "sourceId": "k_9c9a74f0a2084c22af91:p1",
+              "characters": 917
+            },
+            {
+              "sha256": "ba9f42bbcc9475a13e963c6baf6f9b5a319b11c09956df75623e34e624fc6a45",
+              "sourceId": "k_9c9a74f0a2084c22af91:p3",
+              "characters": 982
+            },
+            {
+              "sha256": "b5c2a0a208a7fb23ef0bb6b243cea66f53cd796f0c020989da7235b9d73f0948",
+              "sourceId": "k_9c9a74f0a2084c22af91:p8",
+              "characters": 996
+            },
+            {
+              "sha256": "29e2c7bcc0fe55da91129cacdf6d98ba649de6d0db0a2f6e501c8807e5769182",
+              "sourceId": "k_9c9a74f0a2084c22af91:p12",
+              "characters": 995
+            },
+            {
+              "sha256": "5b507b6d54c9a84e09a6eb0979825134e2974d837a751fc7c6c15836a7fbb6ab",
+              "sourceId": "k_9c9a74f0a2084c22af91:p20",
+              "characters": 961
+            }
+          ],
+          "recordId": "",
+          "truncated": true,
+          "documentId": "27526e90accd487b8e8d7eed0a3c7224",
+          "documentVersion": "1790417728.715221"
+        },
+        {
+          "chunkId": "KB/pages/admin/licensing-applications/My Application Tasks-多编号精确定位只读来源.json",
+          "passages": [
+            {
+              "sha256": "3dc9eb630c05688b190534217c3599e4e8e7f0c243f69d9c265e4e9aa46e4471",
+              "sourceId": "k_ca33d9ca3743dfc54f35:p0",
+              "characters": 993
+            },
+            {
+              "sha256": "aab7be86fc2e7dca1737cd31acdd018787f85ad27bf8456c60313e962e60cf08",
+              "sourceId": "k_ca33d9ca3743dfc54f35:p1",
+              "characters": 978
+            },
+            {
+              "sha256": "850d11d473927e23af0ded891258d90581f497839b9a0782488cbf29e2b8f9eb",
+              "sourceId": "k_ca33d9ca3743dfc54f35:p2",
+              "characters": 849
+            },
+            {
+              "sha256": "4edd2cd43272122eb0a1534534c1ea48aebf3afccb707900fdcc5a7c879e2e11",
+              "sourceId": "k_ca33d9ca3743dfc54f35:p3",
+              "characters": 861
+            },
+            {
+              "sha256": "85345b3858e5e6357629b0f6b1974971b37558e43f9523fa11c0997091ac5850",
+              "sourceId": "k_ca33d9ca3743dfc54f35:p4",
+              "characters": 797
+            },
+            {
+              "sha256": "b1b20d3b6d8384b122bd2684c31eb61c6161d08cc190ca03593a765ee7c71cfd",
+              "sourceId": "k_ca33d9ca3743dfc54f35:p5",
+              "characters": 958
+            },
+            {
+              "sha256": "bd2dcf458fdf1bf4af827a773e1bc3f1241da5708c7693debee91568457adb09",
+              "sourceId": "k_ca33d9ca3743dfc54f35:p6",
+              "characters": 965
+            },
+            {
+              "sha256": "543e3a8e243ba2947feeebe1a3ac62e2dc952eed07e67e305898ae5efb6302b7",
+              "sourceId": "k_ca33d9ca3743dfc54f35:p7",
+              "characters": 997
+            },
+            {
+              "sha256": "1a863901c0ccd7b07301867dbf2df831e5eb66b300349f70a09b1e0d717b3fb2",
+              "sourceId": "k_ca33d9ca3743dfc54f35:p8",
+              "characters": 268
+            }
+          ],
+          "recordId": "admin.licensing.applications.exact-set-page-reads",
+          "truncated": false,
+          "documentId": "",
+          "documentVersion": ""
+        },
+        {
+          "chunkId": "kbfile:330f9add30364f61a7c9094227b55ce6#source-lines-111-158",
+          "passages": [
+            {
+              "sha256": "fc2a59dc317fc5c40cee3e1f4cf3f8686d4780e6fcb795901c80fa42245337ed",
+              "sourceId": "k_26dcc681740c92352a40:p0",
+              "characters": 823
+            },
+            {
+              "sha256": "fefd6beef156be482a8f26d2c389e1bc16732c8cb55415880aeb62267365d02f",
+              "sourceId": "k_26dcc681740c92352a40:p1",
+              "characters": 854
+            },
+            {
+              "sha256": "65b96d1f4bdd9b067fec9812e22b2e5bcf3b36f0ece6e1faf082034247d695a4",
+              "sourceId": "k_26dcc681740c92352a40:p2",
+              "characters": 884
+            }
+          ],
+          "recordId": "",
+          "truncated": false,
+          "documentId": "330f9add30364f61a7c9094227b55ce6",
+          "documentVersion": "1790265934.8727098"
+        },
+        {
+          "chunkId": "kbfile:6a99cf208e51485cac4276211d162aa1-chunk-000",
+          "passages": [
+            {
+              "sha256": "91bb479229f49eb1cd16654958e34cc34e4f0f768da24fc8734ac0f42b983fb9",
+              "sourceId": "k_c6411a6a61f78f2d6115:p0",
+              "characters": 684
+            },
+            {
+              "sha256": "707bb5eba0ad9586cd50c069e0145ab3bc0f4e6cbfe4ec0e348744b07345ac24",
+              "sourceId": "k_c6411a6a61f78f2d6115:p1",
+              "characters": 772
+            },
+            {
+              "sha256": "528d6644013aaa6083f01ae56d3aa08d6e70249921a0ab5e23302c378191b3b8",
+              "sourceId": "k_c6411a6a61f78f2d6115:p2",
+              "characters": 721
+            },
+            {
+              "sha256": "b4f8107d4f9da73b8994122ce5c4d62708f4d6db24ffaa1f8797d50d0e0376a5",
+              "sourceId": "k_c6411a6a61f78f2d6115:p3",
+              "characters": 627
+            },
+            {
+              "sha256": "8cf11b9d6a6481708c07decb6e9747f3f2ed091c05328a4e2ac3b328bd90c074",
+              "sourceId": "k_c6411a6a61f78f2d6115:p4",
+              "characters": 989
+            },
+            {
+              "sha256": "65ce106760b943214dce6507288f487f4dd96f163c1375682d014f23201e2f41",
+              "sourceId": "k_c6411a6a61f78f2d6115:p5",
+              "characters": 996
+            }
+          ],
+          "recordId": "admin.page.licensing.scope-and-historical-evidence",
+          "truncated": false,
+          "documentId": "6a99cf208e51485cac4276211d162aa1",
+          "documentVersion": "1790565550.7828338"
+        },
+        {
+          "chunkId": "kbfile:b9efa791efc743618a1b1cd470fc851c#source-lines-208-404",
+          "passages": [
+            {
+              "sha256": "b7f1091efaa314b5c7a2dc1754f82397ce64dcfcc06a9314aaf786e557907404",
+              "sourceId": "k_80e3cc1bf6bc2f372bd4:p2",
+              "characters": 993
+            },
+            {
+              "sha256": "d13e9f969c42016ce8f541814b72ad0c028365f1d4e9243695f768ade1a1fbe7",
+              "sourceId": "k_80e3cc1bf6bc2f372bd4:p4",
+              "characters": 960
+            },
+            {
+              "sha256": "2eaeb8c6e948d272da8cce6847026f41be40f039cfc41afc3ffde3b879d87131",
+              "sourceId": "k_80e3cc1bf6bc2f372bd4:p6",
+              "characters": 1000
+            },
+            {
+              "sha256": "bec0286ba3a13ab5712dfa58ab5554c2389dcce9e6aa3fecfdf959d4ca2606ca",
+              "sourceId": "k_80e3cc1bf6bc2f372bd4:p7",
+              "characters": 985
+            },
+            {
+              "sha256": "23872007d4806a9faf10f389faeae9d3bea5ed7e5ee3edc74faff10441f1a196",
+              "sourceId": "k_80e3cc1bf6bc2f372bd4:p8",
+              "characters": 303
+            }
+          ],
+          "recordId": "",
+          "truncated": true,
+          "documentId": "b9efa791efc743618a1b1cd470fc851c",
+          "documentVersion": "1790417934.0868132"
+        },
+        {
+          "chunkId": "kbfile:0e82fa63e7e44a26bc6a59da023fcfbb#complete",
+          "passages": [
+            {
+              "sha256": "79d465d45da63ae13fc0530ffa12c9b9b3c48fcc00890344977c95d99638fc66",
+              "sourceId": "k_b8ca81330dda4c1bed4e:p0",
+              "characters": 972
+            },
+            {
+              "sha256": "6ee73d2964f0dcc8257e6bdd0336130da4e3f4dbb6e5166f9d63cfc0c25eedb3",
+              "sourceId": "k_b8ca81330dda4c1bed4e:p1",
+              "characters": 964
+            },
+            {
+              "sha256": "2f7279094f74da092268a7a8a3c3096578d543e444d6a53b0568a1d7d9cec0d9",
+              "sourceId": "k_b8ca81330dda4c1bed4e:p2",
+              "characters": 837
+            },
+            {
+              "sha256": "b37ea7d19eb92b1ab8a9f2cc9d3d4d3986e289bbcbd3faf871c763bb2a7b0b35",
+              "sourceId": "k_b8ca81330dda4c1bed4e:p3",
+              "characters": 984
+            },
+            {
+              "sha256": "076bc34b95ffe8d1ff629d5798acfbeb2e5f4569f19a102622fa7d5fecddacc5",
+              "sourceId": "k_b8ca81330dda4c1bed4e:p4",
+              "characters": 999
+            },
+            {
+              "sha256": "a8336d82faf18ab87bfc717ba979ccc323ab9cc4ad71c9aed653bc26d51141f4",
+              "sourceId": "k_b8ca81330dda4c1bed4e:p5",
+              "characters": 983
+            },
+            {
+              "sha256": "15fdd0a0947ed3e8f8fe3dc444c8d5af5d753097efd0c649f3cc10106ead180c",
+              "sourceId": "k_b8ca81330dda4c1bed4e:p6",
+              "characters": 989
+            },
+            {
+              "sha256": "8578d7fb17d5fe4c01fb5ca40a921dc799c083d55f61e44969ae2e4ad96a6158",
+              "sourceId": "k_b8ca81330dda4c1bed4e:p7",
+              "characters": 983
+            },
+            {
+              "sha256": "0d4612104b49b9ad24d18aa5158a8d091744202f4fc7ddf67557e3ef7614d439",
+              "sourceId": "k_b8ca81330dda4c1bed4e:p8",
+              "characters": 1000
+            },
+            {
+              "sha256": "707fcbb61032b4f0236f9839f9018bb8a67709d25adbd354bdb2d55f446a4a42",
+              "sourceId": "k_b8ca81330dda4c1bed4e:p9",
+              "characters": 976
+            },
+            {
+              "sha256": "4a0dd1067c872237aa01a4eff831e0cbf0f219fcc4ffe10741957ce6a066a3a1",
+              "sourceId": "k_b8ca81330dda4c1bed4e:p10",
+              "characters": 601
+            },
+            {
+              "sha256": "54e9683bf6ed0a154a6b1eda2313b486a126ffbb55c79886924477b519b3f67b",
+              "sourceId": "k_b8ca81330dda4c1bed4e:p11",
+              "characters": 995
+            },
+            {
+              "sha256": "ebbb19f3f151849c39049a8da5e01a8721346a0b749f7a3705e93274c211387b",
+              "sourceId": "k_b8ca81330dda4c1bed4e:p12",
+              "characters": 723
+            },
+            {
+              "sha256": "7a5299b4e3dfa24938fc557ff112d7ba0cc36b2910a400e1de423510a7c94021",
+              "sourceId": "k_b8ca81330dda4c1bed4e:p13",
+              "characters": 979
+            },
+            {
+              "sha256": "308b90a96d8cc27826ef344380e122b493870307ac39c9ef62c596bcbe766db1",
+              "sourceId": "k_b8ca81330dda4c1bed4e:p14",
+              "characters": 902
+            },
+            {
+              "sha256": "8b34a7406fbf571c3bff1a3661e76adefea8dc24408edb803fc496193c0431ae",
+              "sourceId": "k_b8ca81330dda4c1bed4e:p15",
+              "characters": 976
+            },
+            {
+              "sha256": "7239e96c35c62b3eac8be8423b4ee17dd07d7d022b181e1bc82971a34a7ecbfe",
+              "sourceId": "k_b8ca81330dda4c1bed4e:p16",
+              "characters": 938
+            }
+          ],
+          "recordId": "admin.page-docs.licensing.applications.sla-semantics",
+          "truncated": false,
+          "documentId": "0e82fa63e7e44a26bc6a59da023fcfbb",
+          "documentVersion": "1790636570.5012755"
+        },
+        {
+          "chunkId": "kbfile:cd76d1da224f4b52bb87b9c109218c58#part-000006-chunk-000",
+          "passages": [
+            {
+              "sha256": "07f5f18649f183d6f0938dc722b535574be592a3a9258739b3206b0c6885ac89",
+              "sourceId": "k_6d6b80544a9022d14150:p0",
+              "characters": 970
+            },
+            {
+              "sha256": "e215ec192dff269b240dcfc96cef88c227db6e04f84dca153fbd7d9325b4feb9",
+              "sourceId": "k_6d6b80544a9022d14150:p1",
+              "characters": 303
+            }
+          ],
+          "recordId": "",
+          "truncated": false,
+          "documentId": "cd76d1da224f4b52bb87b9c109218c58",
+          "documentVersion": "1790414904.2091079"
+        },
+        {
+          "chunkId": "kbfile:932342c246fd4e1d8a70af22e4d7fef6#complete",
+          "passages": [
+            {
+              "sha256": "5580dd3f7bade3f53dc205d503e581a5c358df15cba152e373cd4d27e533da5a",
+              "sourceId": "k_23b3f5b849f677eefbfd:p0",
+              "characters": 830
+            },
+            {
+              "sha256": "ac42ba044de912690fbadabc654e692592a9ab8f25c8bf374e8a689240e87392",
+              "sourceId": "k_23b3f5b849f677eefbfd:p1",
+              "characters": 849
+            },
+            {
+              "sha256": "892852557f0a0b27fac1ec569375284f1f5340ff17718a17c346b0f4dc930dce",
+              "sourceId": "k_23b3f5b849f677eefbfd:p2",
+              "characters": 767
+            },
+            {
+              "sha256": "3a307b66a3c072b3101c4e357c52bf64f5266d7315718089a8f7dee29ea73084",
+              "sourceId": "k_23b3f5b849f677eefbfd:p3",
+              "characters": 999
+            },
+            {
+              "sha256": "cf09870b4c6527d29a48c8bb285f780a258817942534b11e7fa6d3e4f44adf63",
+              "sourceId": "k_23b3f5b849f677eefbfd:p4",
+              "characters": 221
+            }
+          ],
+          "recordId": "admin.licensing.approval-form-guidance",
+          "truncated": false,
+          "documentId": "932342c246fd4e1d8a70af22e4d7fef6",
+          "documentVersion": "1790522502.9596696"
+        },
+        {
+          "chunkId": "kbfile:f7e0fc20678a487a841a00797b0efb24#source-lines-304-596",
+          "passages": [
+            {
+              "sha256": "c6377fcb0a5dad731fe363cbf28521eb85fdf76f107c68dfd4750a32c2c57151",
+              "sourceId": "k_4bd73fcc878aedf67a01:p0",
+              "characters": 980
+            },
+            {
+              "sha256": "a6c2496ddd805424fdc3852cde7ee38f59d3f36d22eb57cec905cc8ee5b4211c",
+              "sourceId": "k_4bd73fcc878aedf67a01:p2",
+              "characters": 943
+            },
+            {
+              "sha256": "3b576f0813a7742b91c5f7f96ce8a1358e7ff7e7cae4e8059a0c4b3e37666f0d",
+              "sourceId": "k_4bd73fcc878aedf67a01:p7",
+              "characters": 999
+            },
+            {
+              "sha256": "2ae238267952b46a024ce9ea5dcf6992845851098e0c10dc758361e0b95a02be",
+              "sourceId": "k_4bd73fcc878aedf67a01:p10",
+              "characters": 991
+            },
+            {
+              "sha256": "bb61ea9fe83770e7e20c0fff86ff4abc4f346a3a83a8346aa93629e5dfdda61f",
+              "sourceId": "k_4bd73fcc878aedf67a01:p11",
+              "characters": 983
+            }
+          ],
+          "recordId": "",
+          "truncated": true,
+          "documentId": "f7e0fc20678a487a841a00797b0efb24",
+          "documentVersion": "1790417950.5548084"
+        },
+        {
+          "chunkId": "kbfile:e211bf45f6e1473bb1496ab9405d2f03#complete",
+          "passages": [
+            {
+              "sha256": "9892b176c1935a0bdf7d43b049a82d0a501ee5d34291932e2f2d54ae3ef239f5",
+              "sourceId": "k_bc1021194e8f334fe61f:p0",
+              "characters": 989
+            },
+            {
+              "sha256": "5afe730681ad165947637401a7942d9bf9cbd41ae52c2736693741cc00d97f26",
+              "sourceId": "k_bc1021194e8f334fe61f:p1",
+              "characters": 990
+            },
+            {
+              "sha256": "bfdc875b617a7afc78ced612f1fe09fc5b95e96a1fb388fc18d4dd23cfda6bdc",
+              "sourceId": "k_bc1021194e8f334fe61f:p2",
+              "characters": 999
+            },
+            {
+              "sha256": "4d26b9aa41569880d59b6496cf550f8619f4be009b812ffd91dafb8748560da6",
+              "sourceId": "k_bc1021194e8f334fe61f:p3",
+              "characters": 898
+            },
+            {
+              "sha256": "c903458c063d77010277aff489062bbd63a8d3dd38ceddd83a6840c1ef0938e4",
+              "sourceId": "k_bc1021194e8f334fe61f:p4",
+              "characters": 883
+            },
+            {
+              "sha256": "205a98dad1c9bafe94e0eca4781105e0064b88b85604d107213a011507c13282",
+              "sourceId": "k_bc1021194e8f334fe61f:p5",
+              "characters": 966
+            },
+            {
+              "sha256": "2eae86555857848515d0470c5ce4cbe7a772df624045b30f5e518f54b037d540",
+              "sourceId": "k_bc1021194e8f334fe61f:p6",
+              "characters": 998
+            }
+          ],
+          "recordId": "admin.licensing.applications.bindings.completed",
+          "truncated": false,
+          "documentId": "e211bf45f6e1473bb1496ab9405d2f03",
+          "documentVersion": "1790233786.650134"
+        },
+        {
+          "chunkId": "kbfile:36ad2672110242bf9a800d0ae3e37d10#part-000020-chunk-000",
+          "passages": [
+            {
+              "sha256": "8e249ea64061e75a83b0ff23dd8b3feaee06672f103b0f1f27ad51ea572a535d",
+              "sourceId": "k_2bc6eb9926c3730b6610:p0",
+              "characters": 968
+            }
+          ],
+          "recordId": "",
+          "truncated": false,
+          "documentId": "36ad2672110242bf9a800d0ae3e37d10",
+          "documentVersion": "1790418077.1233907"
+        },
+        {
+          "chunkId": "kbfile:2e20d04c671a4be3bd06dd9cfc851718#source-lines-1-791",
+          "passages": [
+            {
+              "sha256": "7396aae4603ec2c27ae36b2e049aba6c66ce8a31cee866d56b800095112a4209",
+              "sourceId": "k_2e7f428f71deda70954d:p0",
+              "characters": 945
+            },
+            {
+              "sha256": "48198e447142206618c93816f7fd463b03e436c5727a5def7f0e616ca6073301",
+              "sourceId": "k_2e7f428f71deda70954d:p1",
+              "characters": 995
+            },
+            {
+              "sha256": "1cbb78730404805c48de6d2c8c36f175931f6c1b0fb91220204f865e155bc688",
+              "sourceId": "k_2e7f428f71deda70954d:p10",
+              "characters": 874
+            },
+            {
+              "sha256": "c458d0365f3f363bc21c0b9703aa9e32a22d7f603ca65a567767a74bb4806774",
+              "sourceId": "k_2e7f428f71deda70954d:p18",
+              "characters": 972
+            },
+            {
+              "sha256": "4d65f84f9dc0ad5c553dd25f016fb04d93468abe3ad27112ce8565ed99a7aa00",
+              "sourceId": "k_2e7f428f71deda70954d:p21",
+              "characters": 969
+            },
+            {
+              "sha256": "0113cbda51c0ca938c4467a626ab0f21ecae9b0f690df4152429c27121b1a48b",
+              "sourceId": "k_2e7f428f71deda70954d:p25",
+              "characters": 22
+            }
+          ],
+          "recordId": "",
+          "truncated": true,
+          "documentId": "2e20d04c671a4be3bd06dd9cfc851718",
+          "documentVersion": "1787715384.7376215"
+        },
+        {
+          "chunkId": "kbfile:b6f44711be2d46c68029b84836f87d52#source-lines-1-411",
+          "passages": [
+            {
+              "sha256": "18eec63f60704e64d8e3ce3bba259e96da898e67e9c52574a85e7f877bf0001d",
+              "sourceId": "k_aab0932050e5c758c350:p0",
+              "characters": 931
+            },
+            {
+              "sha256": "6e7bf17ad4216e2bcea2df6f342985f61462403621b0fc4460180560b5f7b26a",
+              "sourceId": "k_aab0932050e5c758c350:p3",
+              "characters": 944
+            },
+            {
+              "sha256": "23a494691838c3c0d206219aaeb7ddf709a10d135a79a004f3439c5e9865deba",
+              "sourceId": "k_aab0932050e5c758c350:p4",
+              "characters": 947
+            },
+            {
+              "sha256": "f8674074e6a33e0401597e9a449e1917352c0ac523b7570f16e35a0d003467b7",
+              "sourceId": "k_aab0932050e5c758c350:p7",
+              "characters": 904
+            },
+            {
+              "sha256": "6c3824a32d5ab8097e9038f02c367550b09f250f1153e3b3b50f9d3ddbb041c8",
+              "sourceId": "k_aab0932050e5c758c350:p15",
+              "characters": 948
+            }
+          ],
+          "recordId": "",
+          "truncated": true,
+          "documentId": "b6f44711be2d46c68029b84836f87d52",
+          "documentVersion": "1790417809.5221832"
+        },
+        {
+          "chunkId": "kbfile:f312f585a1e945b5b5eb08320af36cad#part-000008-chunk-000",
+          "passages": [
+            {
+              "sha256": "a0fa02aa27428d1afd65b3e19a74325964c02863d70d209e4bddf3f2c6141b38",
+              "sourceId": "k_9b3e7dc7daf232b38899:p0",
+              "characters": 923
+            },
+            {
+              "sha256": "c9fba944ed6afbcfa7edccfc55b86fe156272feadfb6f7f5501193345f486523",
+              "sourceId": "k_9b3e7dc7daf232b38899:p1",
+              "characters": 517
+            }
+          ],
+          "recordId": "",
+          "truncated": false,
+          "documentId": "f312f585a1e945b5b5eb08320af36cad",
+          "documentVersion": "1788704592.2256906"
+        },
+        {
+          "chunkId": "kbfile:1be1884020574c208bc8f00a5e89c9c8#source-lines-439-465",
+          "passages": [
+            {
+              "sha256": "5983ef59a8ba4e2e62959c7e83f237c91a936037ed300d3a6b874dfa31c3a30e",
+              "sourceId": "k_605e3e3183c052d87e21:p0",
+              "characters": 901
+            },
+            {
+              "sha256": "a5dd2e755dc5afa97c0782dca2696d73973ad4c533b0ca2ca8d6ee7bee7e5f91",
+              "sourceId": "k_605e3e3183c052d87e21:p1",
+              "characters": 939
+            }
+          ],
+          "recordId": "",
+          "truncated": false,
+          "documentId": "1be1884020574c208bc8f00a5e89c9c8",
+          "documentVersion": "1788683812.5857918"
+        },
+        {
+          "chunkId": "kbfile:c1c71bff271547b7ace49ad493d82a69#source-lines-259-506",
+          "passages": [
+            {
+              "sha256": "81d6b19f702b6c3d0b26d71f9d25b12672fa6ba707384256b67b493ad41c84bc",
+              "sourceId": "k_775385e9240e5de85e1c:p0",
+              "characters": 962
+            },
+            {
+              "sha256": "70b4ee01a943d1c5ad7280e6e1c5458ac55748422a35ba8132f348ee4b33bed0",
+              "sourceId": "k_775385e9240e5de85e1c:p1",
+              "characters": 942
+            },
+            {
+              "sha256": "de1c5102197e4d62100e298dbbf68794e0c7a22a35156bab3ec83325a4cfc0d0",
+              "sourceId": "k_775385e9240e5de85e1c:p2",
+              "characters": 797
+            },
+            {
+              "sha256": "65063b597488e074883b688aaefc96c451fc2b5d3ef9e13da1f326c9f7b2d734",
+              "sourceId": "k_775385e9240e5de85e1c:p5",
+              "characters": 991
+            },
+            {
+              "sha256": "98bf11014b1dd0c5c9ea687f7ac39fffbce51a216bbe4b3476a327c4ecdd6b67",
+              "sourceId": "k_775385e9240e5de85e1c:p7",
+              "characters": 932
+            }
+          ],
+          "recordId": "",
+          "truncated": true,
+          "documentId": "c1c71bff271547b7ace49ad493d82a69",
+          "documentVersion": "1790417828.6562803"
+        },
+        {
+          "chunkId": "graph:0:36897141c6e04bdf",
+          "passages": [
+            {
+              "sha256": "36897141c6e04bdf0962a0fb650ce652f2eb388083d4c9e773bdb6810f8ec99b",
+              "sourceId": "k_431d189bc651b60db1df:p0",
+              "characters": 85
+            }
+          ],
+          "recordId": "",
+          "truncated": false,
+          "documentId": "94c47d645b5a46f693f1d4567f526d63",
+          "documentVersion": "1790307116.6031706"
+        },
+        {
+          "chunkId": "graph:3:feaee8c745478b40",
+          "passages": [
+            {
+              "sha256": "feaee8c745478b40104432a02937d2e11d526172a26481e1366bedde54336aff",
+              "sourceId": "k_0f8b86c711dade5a9945:p0",
+              "characters": 135
+            }
+          ],
+          "recordId": "",
+          "truncated": false,
+          "documentId": "f042688782704b7f9a134905cc7cf826",
+          "documentVersion": "1790530438.6154284"
+        },
+        {
+          "chunkId": "kbfile:9a911d023e5d472faa88dfa31b28e833#part-000003-chunk-000",
+          "passages": [
+            {
+              "sha256": "f9d06160014a173d4c7ad31bb155c61ec6e6aaf513dbc98cbb593686561c91a8",
+              "sourceId": "k_a00faccdcba8b48b2483:p0",
+              "characters": 924
+            },
+            {
+              "sha256": "4fa0fef9ee867082fe0223b435b77534d19e5d4aa768db1b393b717792c1a7e2",
+              "sourceId": "k_a00faccdcba8b48b2483:p1",
+              "characters": 309
+            }
+          ],
+          "recordId": "",
+          "truncated": false,
+          "documentId": "9a911d023e5d472faa88dfa31b28e833",
+          "documentVersion": "1790266339.071088"
+        },
+        {
+          "chunkId": "graph:1:410e34edfa1ae77d",
+          "passages": [
+            {
+              "sha256": "410e34edfa1ae77dbf8618b4b0cf629c7ae7f2c520b7509d382d20550feea03d",
+              "sourceId": "k_37f614da48a0308e073c:p0",
+              "characters": 148
+            }
+          ],
+          "recordId": "",
+          "truncated": false,
+          "documentId": "9c57fe7d66af471d9900a9b18b66df49",
+          "documentVersion": "1790307333.8079767"
+        },
+        {
+          "chunkId": "graph:3:b8632135af9b6e89",
+          "passages": [
+            {
+              "sha256": "b8632135af9b6e8971fd31f2634907e2d0bd6a727b88cb6bb0fea4f87fcb1aaf",
+              "sourceId": "k_b125bfd80d3fd6e223fa:p0",
+              "characters": 63
+            }
+          ],
+          "recordId": "",
+          "truncated": false,
+          "documentId": "6041098e6f1e4fdcb04ab79b9c813c4f",
+          "documentVersion": "1787715388.9182866"
+        },
+        {
+          "chunkId": "kbfile:5946523875b846bc803563b44195699e#part-000016-chunk-000",
+          "passages": [
+            {
+              "sha256": "856143d969399ada6c880de0971218d5737571cb9f5238677ea3c284f205149c",
+              "sourceId": "k_c2073169b0ebf74e12dc:p0",
+              "characters": 884
+            },
+            {
+              "sha256": "7a92450cf5b46ae1971c8ada3e1044b1a67135ab2a7fe8424c80e8f83566662f",
+              "sourceId": "k_c2073169b0ebf74e12dc:p1",
+              "characters": 363
+            }
+          ],
+          "recordId": "",
+          "truncated": false,
+          "documentId": "5946523875b846bc803563b44195699e",
+          "documentVersion": "1790417731.689733"
+        },
+        {
+          "chunkId": "kbfile:c90e9dbb082d47c18a2d1760a6ff4b6c#part-000009-chunk-000",
+          "passages": [
+            {
+              "sha256": "3a1ea6b296cb5a20dab157cf6080fd94ad574d4631db22bc664ec5baf9d2fffb",
+              "sourceId": "k_94a9225ad0cdff5fd477:p0",
+              "characters": 989
+            },
+            {
+              "sha256": "9b9500caf3a0496d1030c078d7494511211969aaf7004a2c3b76ebd45aad2435",
+              "sourceId": "k_94a9225ad0cdff5fd477:p1",
+              "characters": 992
+            },
+            {
+              "sha256": "4cf1740327e53f73bb4a2a3d812439a0f3989a13c8dd29778f005df6049f74fb",
+              "sourceId": "k_94a9225ad0cdff5fd477:p2",
+              "characters": 913
+            }
+          ],
+          "recordId": "",
+          "truncated": false,
+          "documentId": "c90e9dbb082d47c18a2d1760a6ff4b6c",
+          "documentVersion": "1790417725.588439"
+        }
+      ],
+      "algorithm": "requirement_rank_document_diversity_v1",
+      "poolItems": 69,
+      "excludedItems": 37,
+      "selectedItems": 32,
+      "excludedSample": [
+        {
+          "reason": "context_budget",
+          "chunkId": "kbfile:b9efa791efc743618a1b1cd470fc851c#part-000020-chunk-000",
+          "sourceId": "k_762846fca58833e3f4fa",
+          "documentId": "b9efa791efc743618a1b1cd470fc851c"
+        },
+        {
+          "reason": "context_budget",
+          "chunkId": "kbfile:27526e90accd487b8e8d7eed0a3c7224#part-000015-chunk-000",
+          "sourceId": "k_b367569abcbd8b0d8141",
+          "documentId": "27526e90accd487b8e8d7eed0a3c7224"
+        },
+        {
+          "reason": "context_budget",
+          "chunkId": "kbfile:330f9add30364f61a7c9094227b55ce6#part-000052-chunk-000",
+          "sourceId": "k_6838b17027b1714051bb",
+          "documentId": "330f9add30364f61a7c9094227b55ce6"
+        },
+        {
+          "reason": "context_budget",
+          "chunkId": "kbfile:cd76d1da224f4b52bb87b9c109218c58#source-lines-1-88",
+          "sourceId": "k_6dbdc9b53ad6f772df27",
+          "documentId": "cd76d1da224f4b52bb87b9c109218c58"
+        },
+        {
+          "reason": "page_not_applicable",
+          "chunkId": "KB/pages/admin/dashboard/Admin Dashboard-多面板指标与历史比较.json",
+          "sourceId": "k_2d2a589cafcfb0841eb2",
+          "documentId": ""
+        },
+        {
+          "reason": "page_not_applicable",
+          "chunkId": "KB/pages/admin/dashboard/Admin Dashboard-多面板指标与历史比较.json",
+          "sourceId": "k_0e9740ea475f9695dc0a",
+          "documentId": ""
+        },
+        {
+          "reason": "page_not_applicable",
+          "chunkId": "KB/pages/admin/dashboard/Admin Dashboard-多面板指标与历史比较.json",
+          "sourceId": "k_6e3576d9a0a39149646c",
+          "documentId": ""
+        },
+        {
+          "reason": "page_not_applicable",
+          "chunkId": "KB/pages/admin/dashboard/Admin Dashboard-多面板指标与历史比较.json",
+          "sourceId": "k_82305fdbe85edf92818f",
+          "documentId": ""
+        },
+        {
+          "reason": "page_not_applicable",
+          "chunkId": "KB/pages/admin/dashboard/Admin Dashboard-多面板指标与历史比较.json",
+          "sourceId": "k_69cfe4119031ee5dcbdf",
+          "documentId": ""
+        },
+        {
+          "reason": "page_not_applicable",
+          "chunkId": "KB/pages/admin/dashboard/Admin Dashboard-多面板指标与历史比较.json",
+          "sourceId": "k_2724011d1f095378f5e0",
+          "documentId": ""
+        },
+        {
+          "reason": "page_not_applicable",
+          "chunkId": "KB/pages/admin/dashboard/Admin Dashboard-许可绩效指标字段与范围.json",
+          "sourceId": "k_ac4bc548362e0198e0ef",
+          "documentId": ""
+        },
+        {
+          "reason": "page_not_applicable",
+          "chunkId": "KB/pages/admin/dashboard/Admin Dashboard-许可绩效指标字段与范围.json",
+          "sourceId": "k_c20b7d097a835c897989",
+          "documentId": ""
+        },
+        {
+          "reason": "page_not_applicable",
+          "chunkId": "KB/pages/admin/dashboard/Admin Dashboard-读取比较与建议流程.json",
+          "sourceId": "k_edf65656488d01a27eae",
+          "documentId": ""
+        },
+        {
+          "reason": "page_not_applicable",
+          "chunkId": "KB/pages/admin/dashboard/Admin Dashboard-读取比较与建议流程.json",
+          "sourceId": "k_36ca901ee0b421327bae",
+          "documentId": ""
+        },
+        {
+          "reason": "page_not_applicable",
+          "chunkId": "KB/pages/admin/happiness-ticket-detail/Tickets Details-入口参数与记录字段.json",
+          "sourceId": "k_bcce27bf80d0fc24de9a",
+          "documentId": ""
+        },
+        {
+          "reason": "page_not_applicable",
+          "chunkId": "KB/pages/admin/happiness-ticket-detail/Tickets Details-入口参数与记录字段.json",
+          "sourceId": "k_791413fef34f9a38a6cb",
+          "documentId": ""
+        },
+        {
+          "reason": "page_not_applicable",
+          "chunkId": "KB/pages/admin/happiness-ticket-detail/Tickets Details-最小披露与可追溯补充说明.json",
+          "sourceId": "k_5665bf5a212fe16c5e3a",
+          "documentId": ""
+        },
+        {
+          "reason": "page_not_applicable",
+          "chunkId": "KB/pages/admin/happiness-ticket-detail/Tickets Details-核验转交历史与当前状态-20260928-r1.json",
+          "sourceId": "k_7e5ebb63b637bcb1a639",
+          "documentId": ""
+        },
+        {
+          "reason": "page_not_applicable",
+          "chunkId": "KB/pages/admin/happiness-tickets/Tickets-团队待办列表与统计口径.json",
+          "sourceId": "k_528836269526ffd70edd",
+          "documentId": ""
+        },
+        {
+          "reason": "page_not_applicable",
+          "chunkId": "KB/pages/admin/licensing-application-detail/Application Details-入口参数与审查证据.json",
+          "sourceId": "k_4f9269b49716110907ab",
+          "documentId": ""
+        },
+        {
+          "reason": "page_not_applicable",
+          "chunkId": "KB/pages/admin/licensing-application-detail/Application Details-关联付款金额与状态-20260928-r1.json",
+          "sourceId": "k_75771aba3816c575d0ec",
+          "documentId": ""
+        },
+        {
+          "reason": "page_not_applicable",
+          "chunkId": "KB/pages/admin/licensing-application-detail/Application Details-属性与表单证据绑定.json",
+          "sourceId": "k_5aa8d5ea911bb4b0b3f4",
+          "documentId": ""
+        },
+        {
+          "reason": "page_not_applicable",
+          "chunkId": "KB/pages/admin/licensing-application-detail/Application Details-源返回更新时间-20260928-r1.json",
+          "sourceId": "k_b5915cf178fcd2f130e5",
+          "documentId": ""
+        },
+        {
+          "reason": "page_not_applicable",
+          "chunkId": "KB/pages/admin/licensing-application-detail/Application Details-英阿对象名称与范围.json",
+          "sourceId": "k_270f6ba2b305f24ed194",
+          "documentId": ""
+        },
+        {
+          "reason": "page_not_applicable",
+          "chunkId": "KB/pages/admin/licensing-license-detail/License Details-属性与实体绑定.json",
+          "sourceId": "k_632527be8ac7a0632e27",
+          "documentId": ""
+        },
+        {
+          "reason": "page_not_applicable",
+          "chunkId": "KB/pages/admin/licensing-licenses/Licenses-日期语义与输出字段.json",
+          "sourceId": "k_322e671fc0de9e8c04b1",
+          "documentId": ""
+        },
+        {
+          "reason": "page_not_applicable",
+          "chunkId": "KB/pages/admin/personal-center/Personal Center-当前账号部门与角色.json",
+          "sourceId": "k_8eadf20d8e64652fc5bf",
+          "documentId": ""
+        },
+        {
+          "reason": "page_not_applicable",
+          "chunkId": "kbfile:cf064f312518410794dcd606e772a3f9#complete",
+          "sourceId": "k_4cce01cf80f0397ce94f",
+          "documentId": "cf064f312518410794dcd606e772a3f9"
+        },
+        {
+          "reason": "context_budget",
+          "chunkId": "kbfile:f312f585a1e945b5b5eb08320af36cad#part-000007-chunk-000",
+          "sourceId": "k_75e718c88eca8026cef7",
+          "documentId": "f312f585a1e945b5b5eb08320af36cad"
+        },
+        {
+          "reason": "page_not_applicable",
+          "chunkId": "kbfile:39739d14738a48589a1bb0ad6b42f3e3-chunk-000",
+          "sourceId": "k_7bb5da9cada2a85404dc",
+          "documentId": "39739d14738a48589a1bb0ad6b42f3e3"
+        },
+        {
+          "reason": "context_budget",
+          "chunkId": "kbfile:f042688782704b7f9a134905cc7cf826#part-000020-chunk-000",
+          "sourceId": "k_9c96f5294e8b7973518f",
+          "documentId": "f042688782704b7f9a134905cc7cf826"
+        },
+        {
+          "reason": "context_budget",
+          "chunkId": "kbfile:27526e90accd487b8e8d7eed0a3c7224#part-000019-chunk-000",
+          "sourceId": "k_775f4a4edf12686ee68f",
+          "documentId": "27526e90accd487b8e8d7eed0a3c7224"
+        },
+        {
+          "reason": "context_budget",
+          "chunkId": "kbfile:c90e9dbb082d47c18a2d1760a6ff4b6c#part-000004-chunk-000",
+          "sourceId": "k_7c5da3686fd10d2a17a8",
+          "documentId": "c90e9dbb082d47c18a2d1760a6ff4b6c"
+        },
+        {
+          "reason": "context_budget",
+          "chunkId": "kbfile:f312f585a1e945b5b5eb08320af36cad#source-lines-469-487",
+          "sourceId": "k_a3bdbe9056c9e2c68a31",
+          "documentId": "f312f585a1e945b5b5eb08320af36cad"
+        },
+        {
+          "reason": "context_budget",
+          "chunkId": "kbfile:c1c71bff271547b7ace49ad493d82a69#part-000003-chunk-000",
+          "sourceId": "k_06270c51c432eb0b0637",
+          "documentId": "c1c71bff271547b7ace49ad493d82a69"
+        },
+        {
+          "reason": "context_budget",
+          "chunkId": "kbfile:b6f44711be2d46c68029b84836f87d52#part-000001-chunk-000",
+          "sourceId": "k_2a29e8bdba2ac84d933b",
+          "documentId": "b6f44711be2d46c68029b84836f87d52"
+        },
+        {
+          "reason": "context_budget",
+          "chunkId": "kbfile:f042688782704b7f9a134905cc7cf826#source-lines-134-220",
+          "sourceId": "k_1128977b019d0fe6f6c9",
+          "documentId": "f042688782704b7f9a134905cc7cf826"
+        }
+      ],
+      "queryFingerprint": "b5762c46499381b3e50e",
+      "excludedSampleTruncated": false
+    }
+  ],
+  "source": {
+    "kind": "projected_collection",
+    "page": "/licensing/applications",
+    "sourceId": "api_33170c9f32467b1ea7d1",
+    "truncated": false,
+    "capturedAt": "2026-09-29T02:07:18.728334+00:00",
+    "completeness": "complete",
+    "operationRef": "POST /api/Application/MyTodoPage",
+    "verifiedView": "قيد الإنجاز",
+    "candidateKind": "business",
+    "fieldEvidence": {
+      "/message": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "e0cc7d31c742c7979bcc99ff6ceb319d8a831f6e604af9097cf9ce44b59346a2"
+      },
+      "/isSuccess": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+      },
+      "/statusCode": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "27badc983df1780b60c2b3fa9d3a19a00e46aac798451f0febdca52920faaddf"
+      },
+      "/data/page/items": {
+        "kind": "array",
+        "status": "complete",
+        "valueHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "/data/page/total": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      "/data/page/pageSize": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5"
+      },
+      "/data/approvalStatus": {
+        "kind": "array",
+        "status": "complete",
+        "valueHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "/data/page/pageIndex": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+      },
+      "/data/serviceOptions": {
+        "kind": "array",
+        "status": "complete",
+        "valueHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "/data/myDecisionOptions": {
+        "kind": "array",
+        "status": "complete",
+        "valueHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "/data/processInstanceStatus": {
+        "kind": "array",
+        "status": "complete",
+        "valueHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "/data/statusCount/todoCount": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      "/data/statusCount/overdueCount": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      "/data/statusCount/completedCount": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      "/data/statusCount/pendingReviewCount": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      "/data/statusCount/externalApproveCount": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      "/data/statusCount/pendingDispositionCount": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      "/data/statusCount/pendingModificationCount": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      "/data/statusCount/dispositionVerificationCount": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      }
+    },
+    "observationRef": "673ae4fb0cb131f66fbf",
+    "documentSchemas": [],
+    "sourceViewProof": {
+      "page": "/licensing/applications",
+      "view": "todo",
+      "authority": "active_page_operation_context",
+      "definitions": [
+        {
+          "view": "todo",
+          "recordId": "admin.page-docs.licensing.applications.todo.collection",
+          "revision": 5,
+          "sourcePath": "/data/page/items",
+          "operationRef": "POST /api/Application/MyTodoPage",
+          "objectBindingId": "admin.page-docs.licensing.applications.todo.collection#application_object",
+          "contextBindingIds": [
+            "admin.page-docs.licensing.applications.todo.collection#assigned_to_current_user",
+            "admin.page-docs.licensing.applications.todo.collection#pending_filter",
+            "admin.page-docs.licensing.applications.todo.collection#pending_population",
+            "admin.page-docs.licensing.applications.todo.collection#personal_scope"
+          ]
+        }
+      ]
+    },
+    "taskFingerprint": "1f6eb1194023277ea7f793d3a030d30c86cee6cd48e53f953fc5837a81480690",
+    "buildFingerprint": "unknown",
+    "collectionContext": {
+      "mode": "page_number_two_pass",
+      "contextRef": "8d221aa290fa5756dd03065acb6031ae629989ca18b493347b531ae9f5066a63",
+      "rowSchemas": [
+        {
+          "path": "/data/processInstanceStatus",
+          "fields": [],
+          "sampledRows": 0,
+          "nullableFields": [],
+          "fieldsTruncated": false,
+          "nullableFieldsTruncated": false
+        },
+        {
+          "path": "/data/approvalStatus",
+          "fields": [],
+          "sampledRows": 0,
+          "nullableFields": [],
+          "fieldsTruncated": false,
+          "nullableFieldsTruncated": false
+        },
+        {
+          "path": "/data/myDecisionOptions",
+          "fields": [],
+          "sampledRows": 0,
+          "nullableFields": [],
+          "fieldsTruncated": false,
+          "nullableFieldsTruncated": false
+        },
+        {
+          "path": "/data/serviceOptions",
+          "fields": [],
+          "sampledRows": 0,
+          "nullableFields": [],
+          "fieldsTruncated": false,
+          "nullableFieldsTruncated": false
+        },
+        {
+          "path": "/data/page/items",
+          "fields": [],
+          "sampledRows": 0,
+          "nullableFields": [],
+          "fieldsTruncated": false,
+          "nullableFieldsTruncated": false
+        }
+      ],
+      "requestFields": [
+        "keyword",
+        "startTime",
+        "endTime",
+        "sortBy",
+        "sortDirection",
+        "serviceTypeId",
+        "pageIndex",
+        "pageSize"
+      ],
+      "parameterHashes": {
+        "sortBy": "4b675ba2a21fe8190659d97b8d05c7c6af232357da78904d5ad1abcffeefbcdf",
+        "endTime": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "keyword": "12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+        "pageSize": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5",
+        "pageIndex": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "startTime": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "serviceTypeId": "391552c099c101b131feaf24c5795a6a15bc8ec82015424e0d2b4274a369a0bf",
+        "sortDirection": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+      },
+      "parameterShapeEvidence": {}
+    },
+    "collectionReceipt": {
+      "total": 0,
+      "fields": [
+        "id",
+        "applicationNumber",
+        "status",
+        "statusId",
+        "taskId",
+        "dispositionCaseId",
+        "taskStatus",
+        "taskStatusId",
+        "serviceNameEn",
+        "serviceCategoryNameEn",
+        "serviceTypeNameEn",
+        "applyForEn",
+        "submissionTime",
+        "lastUpdatedTime",
+        "slaDescription",
+        "sla",
+        "taskDueTime",
+        "taskApprovalAt"
+      ],
+      "rowCount": 0,
+      "rowsPath": "/data/page/items",
+      "bytesRead": 856,
+      "pagesRead": 2,
+      "startedAt": "2026-09-29T02:07:10.605386+00:00",
+      "totalPath": "/data/page/total",
+      "comparison": {
+        "equivalent": true,
+        "orderChanged": false,
+        "changedFields": [],
+        "firstRowCount": 0,
+        "secondRowCount": 0,
+        "addedIdentityCount": 0,
+        "changedIdentityCount": 0,
+        "removedIdentityCount": 0
+      },
+      "contextRef": "8d221aa290fa5756dd03065acb6031ae629989ca18b493347b531ae9f5066a63",
+      "derivation": {
+        "kind": "fixed_reference_computation",
+        "definitions": [
+          {
+            "field": "sla",
+            "recordId": "admin.page-docs.licensing.applications.sla-semantics",
+            "revision": 12,
+            "documentId": "0e82fa63e7e44a26bc6a59da023fcfbb",
+            "definitionHash": "d70d3b0f401f7011e687824e201646a5afa9998e31c6b1d4497f87b760ca6cc4"
+          }
+        ],
+        "inputFields": [
+          "id",
+          "applicationNumber",
+          "status",
+          "statusId",
+          "taskId",
+          "dispositionCaseId",
+          "taskStatus",
+          "taskStatusId",
+          "serviceNameEn",
+          "serviceCategoryNameEn",
+          "serviceTypeNameEn",
+          "applyForEn",
+          "submissionTime",
+          "lastUpdatedTime",
+          "slaDescription",
+          "taskDueTime",
+          "taskApprovalAt"
+        ],
+        "referenceUtc": "2026-09-29T02:07:10.605386+00:00",
+        "fieldDiagnostics": {
+          "sla": {
+            "computedRows": 0,
+            "unverifiedRows": 0,
+            "documentedNullRows": 0
+          }
+        },
+        "snapshotIsolation": false,
+        "inputProjectionHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "finishedAt": "2026-09-29T02:07:18.728334+00:00",
+      "pagination": {
+        "pageSize": 500,
+        "pageField": "pageIndex",
+        "sizeField": "pageSize",
+        "observedPageSize": 10
+      },
+      "consistency": "two_pass_observation",
+      "fieldStatus": {
+        "id": "complete",
+        "sla": "complete",
+        "status": "complete",
+        "taskId": "complete",
+        "statusId": "complete",
+        "applyForEn": "complete",
+        "taskStatus": "complete",
+        "taskDueTime": "complete",
+        "taskStatusId": "complete",
+        "serviceNameEn": "complete",
+        "slaDescription": "complete",
+        "submissionTime": "complete",
+        "taskApprovalAt": "complete",
+        "lastUpdatedTime": "complete",
+        "applicationNumber": "complete",
+        "dispositionCaseId": "complete",
+        "serviceTypeNameEn": "complete",
+        "serviceCategoryNameEn": "complete"
+      },
+      "completeness": "complete",
+      "operationRef": "POST /api/Application/MyTodoPage",
+      "stablePasses": 2,
+      "schemaVersion": "projected-collection/1",
+      "identityFields": [
+        "id"
+      ],
+      "projectionHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "snapshotIsolation": false
+    },
+    "principalScopeRef": "dea9eeec1453f665ac17",
+    "relatedReadReceipt": {}
+  },
+  "rejectedPlans": [
+    {
+      "stage": "AnalysisPlan",
+      "attempt": 1,
+      "failure": "{\"code\": \"analysis_binding_inapplicable\", \"requirementId\": \"population\", \"requestedConcept\": \"requests in the \\\"\\u0642\\u064a\\u062f \\u0627\\u0644\\u0625\\u0646\\u062c\\u0627\\u0632\\\" view\", \"matchingBindingIds\": [], \"correction\": \"The selected fact must match the requested concept and kind. Use an exact matchingBindingId when listed and update all corresponding mappings, including object and grain. Copy that definition's sourcePath and fields; its citations are compiled by the runtime. Do not rename the user's request, invent an alias or reuse another operation. Leave unsupported requirements unbound.\"}",
+      "candidate": {
+        "stage": "analysis",
+        "steps": [
+          {
+            "id": "read_todo_rows",
+            "op": "read_rows",
+            "path": "/data/page/items",
+            "role": "observation",
+            "label": "قراءة صفوف الطلبات في عرض قيد الإنجاز",
+            "expose": false,
+            "fields": [
+              "id",
+              "applicationNumber",
+              "serviceNameEn",
+              "serviceCategoryNameEn",
+              "status",
+              "slaDescription",
+              "applyForEn",
+              "submissionTime"
+            ],
+            "evidence": [
+              {
+                "sourceId": "k_20ced6e0b4b58b26fc02:p13"
+              },
+              {
+                "sourceId": "k_20ced6e0b4b58b26fc02:p15"
+              }
+            ],
+            "sourceId": "api_33170c9f32467b1ea7d1",
+            "totalPath": "/data/page/total",
+            "unknownPolicy": "report"
+          },
+          {
+            "id": "distinct_applications",
+            "op": "distinct",
+            "path": "/data/page/items",
+            "role": "observation",
+            "label": "تمييز الطلبات حسب معرّف الكيان",
+            "expose": false,
+            "fields": [
+              "id"
+            ],
+            "inputs": [
+              "read_todo_rows"
+            ],
+            "evidence": [],
+            "sourceId": "api_33170c9f32467b1ea7d1",
+            "unknownPolicy": "report",
+            "knowledgeBindingId": "admin.page-docs.licensing.applications.todo.collection#application_grain"
+          },
+          {
+            "id": "project_todo_list",
+            "op": "project",
+            "path": "/data/page/items",
+            "role": "detail",
+            "label": "قائمة الطلبات في عرض قيد الإنجاز",
+            "expose": true,
+            "fields": [
+              "applicationNumber",
+              "serviceNameEn",
+              "serviceCategoryNameEn",
+              "status",
+              "slaDescription",
+              "applyForEn",
+              "submissionTime"
+            ],
+            "inputs": [
+              "distinct_applications"
+            ],
+            "evidence": [
+              {
+                "sourceId": "k_20ced6e0b4b58b26fc02:p2"
+              },
+              {
+                "sourceId": "k_20ced6e0b4b58b26fc02:p15"
+              }
+            ],
+            "sourceId": "api_33170c9f32467b1ea7d1",
+            "fieldLabels": {
+              "status": "الحالة",
+              "applyForEn": "التقديم لـ",
+              "serviceNameEn": "اسم الخدمة",
+              "slaDescription": "اتفاقية مستوى الخدمة",
+              "submissionTime": "وقت التقديم",
+              "applicationNumber": "رقم الطلب",
+              "serviceCategoryNameEn": "فئة الخدمة"
+            },
+            "unknownPolicy": "report"
+          }
+        ],
+        "context": {
+          "time": {
+            "value": "لم يحدد المستخدم نطاقًا زمنيًا؛ لا يُطبَّق مرشح تاريخ.",
+            "evidence": [
+              {
+                "sourceId": "k_20ced6e0b4b58b26fc02:p13"
+              }
+            ]
+          },
+          "grain": {
+            "value": "طلب واحد لكل صف، وحدة الصف هي كيان الطلب (id) وليست مهمة سير عمل.",
+            "evidence": [
+              {
+                "sourceId": "k_20ced6e0b4b58b26fc02:p3"
+              },
+              {
+                "sourceId": "k_48d12c37fbf123e0376e:p1"
+              }
+            ]
+          },
+          "scope": "personal",
+          "caveats": [
+            {
+              "value": "التسمية العربية «قيد الإنجاز» هي عنوان تبويب المهام المطلوبة على هذه الصفحة، ولا تعني أن كل حالة طلب تساوي حرفيًا حالة In Progress مخزّنة.",
+              "evidence": [
+                {
+                  "sourceId": "k_20ced6e0b4b58b26fc02:p9"
+                }
+              ]
+            },
+            {
+              "value": "النطاق شخصي: تُعرض مهام المستخدم المصادق عليه فقط، مفلترة بقسم الموافقة في وقت التشغيل؛ ودور المدير لا يحوّل هذه القائمة إلى قائمة فريق.",
+              "evidence": [
+                {
+                  "sourceId": "k_20ced6e0b4b58b26fc02:p7"
+                },
+                {
+                  "sourceId": "k_48d12c37fbf123e0376e:p1"
+                }
+              ]
+            }
+          ],
+          "population": {
+            "value": "قائمة المهام المطلوبة (To Do) الكاملة من عملية قائمة مهامي بنفس سياق المرشحات، وتشمل التعديل المعلق والموافقة الخارجية والمراجعة المعلقة.",
+            "evidence": [
+              {
+                "sourceId": "k_20ced6e0b4b58b26fc02:p9"
+              },
+              {
+                "sourceId": "k_0e1395e3dabfa9ebb60d:p4"
+              }
+            ]
+          },
+          "filterScope": {
+            "value": "لا يوجد مرشح تضييق يدخله المستخدم في سياق الطلب هذا؛ الانتماء يحدده تبويب/عملية المهام المطلوبة.",
+            "evidence": [
+              {
+                "sourceId": "k_20ced6e0b4b58b26fc02:p7"
+              },
+              {
+                "sourceId": "k_20ced6e0b4b58b26fc02:p11"
+              }
+            ]
+          },
+          "scopeEvidence": [
+            {
+              "sourceId": "k_20ced6e0b4b58b26fc02:p7"
+            },
+            {
+              "sourceId": "k_48d12c37fbf123e0376e:p1"
+            }
+          ]
+        },
+        "missing": [],
+        "metricCoverage": [],
+        "requirementBindings": [
+          {
+            "fields": [
+              "id"
+            ],
+            "stepIds": [
+              "read_todo_rows",
+              "distinct_applications"
+            ],
+            "evidence": [],
+            "sourceId": "api_33170c9f32467b1ea7d1",
+            "sourcePath": "/data/page/items",
+            "requirementId": "object",
+            "knowledgeBindingId": "admin.page-docs.licensing.applications.todo.collection#application_object"
+          },
+          {
+            "fields": [
+              "id"
+            ],
+            "stepIds": [
+              "read_todo_rows",
+              "distinct_applications"
+            ],
+            "evidence": [],
+            "sourceId": "api_33170c9f32467b1ea7d1",
+            "sourcePath": "/data/page/items",
+            "requirementId": "grain",
+            "knowledgeBindingId": "admin.page-docs.licensing.applications.todo.collection#application_grain"
+          },
+          {
+            "fields": [
+              "id"
+            ],
+            "stepIds": [
+              "read_todo_rows",
+              "distinct_applications"
+            ],
+            "evidence": [],
+            "sourceId": "api_33170c9f32467b1ea7d1",
+            "sourcePath": "/data/page/items",
+            "requirementId": "scope",
+            "knowledgeBindingId": "admin.page-docs.licensing.applications.todo.collection#personal_scope"
+          },
+          {
+            "fields": [
+              "id"
+            ],
+            "stepIds": [
+              "read_todo_rows",
+              "distinct_applications"
+            ],
+            "evidence": [],
+            "sourceId": "api_33170c9f32467b1ea7d1",
+            "sourcePath": "/data/page/items",
+            "requirementId": "population",
+            "knowledgeBindingId": "admin.page-docs.licensing.applications.todo.collection#pending_population"
+          },
+          {
+            "fields": [
+              "id"
+            ],
+            "stepIds": [
+              "read_todo_rows",
+              "distinct_applications"
+            ],
+            "evidence": [],
+            "sourceId": "api_33170c9f32467b1ea7d1",
+            "sourcePath": "/data/page/items",
+            "requirementId": "view",
+            "knowledgeBindingId": "admin.page-docs.licensing.applications.todo.collection#pending_filter"
+          },
+          {
+            "fields": [
+              "applicationNumber",
+              "serviceNameEn",
+              "serviceCategoryNameEn",
+              "status",
+              "slaDescription",
+              "applyForEn",
+              "submissionTime"
+            ],
+            "stepIds": [
+              "project_todo_list"
+            ],
+            "evidence": [],
+            "sourceId": "api_33170c9f32467b1ea7d1",
+            "sourcePath": "/data/page/items",
+            "requirementId": "detail",
+            "knowledgeBindingId": ""
+          }
+        ]
+      }
+    },
+    {
+      "stage": "AnalysisPlan",
+      "attempt": 2,
+      "failure": "{\"code\": \"analysis_binding_inapplicable\", \"requirementId\": \"population\", \"requestedConcept\": \"requests in the \\\"\\u0642\\u064a\\u062f \\u0627\\u0644\\u0625\\u0646\\u062c\\u0627\\u0632\\\" view\", \"matchingBindingIds\": [], \"correction\": \"The selected fact must match the requested concept and kind. Use an exact matchingBindingId when listed and update all corresponding mappings, including object and grain. Copy that definition's sourcePath and fields; its citations are compiled by the runtime. Do not rename the user's request, invent an alias or reuse another operation. Leave unsupported requirements unbound.\"}",
+      "candidate": {
+        "stage": "analysis",
+        "steps": [
+          {
+            "id": "read_todo_rows",
+            "op": "read_rows",
+            "path": "/data/page/items",
+            "role": "detail",
+            "label": "قراءة صفوف قائمة المهام المطلوبة",
+            "expose": true,
+            "fields": [
+              "id",
+              "applicationNumber",
+              "status",
+              "serviceNameEn",
+              "serviceCategoryNameEn",
+              "submissionTime"
+            ],
+            "evidence": [
+              {
+                "sourceId": "k_20ced6e0b4b58b26fc02:p2"
+              },
+              {
+                "sourceId": "k_20ced6e0b4b58b26fc02:p9"
+              }
+            ],
+            "sourceId": "api_33170c9f32467b1ea7d1",
+            "totalPath": "/data/page/total",
+            "fieldLabels": {
+              "id": "معرّف الطلب",
+              "status": "الحالة",
+              "serviceNameEn": "اسم الخدمة",
+              "submissionTime": "وقت التقديم",
+              "applicationNumber": "رقم الطلب",
+              "serviceCategoryNameEn": "فئة الخدمة"
+            },
+            "unknownPolicy": "report"
+          },
+          {
+            "id": "distinct_applications",
+            "op": "distinct",
+            "path": "/data/page/items",
+            "role": "detail",
+            "label": "تمييز الطلبات حسب معرّف الكيان",
+            "expose": false,
+            "fields": [
+              "id"
+            ],
+            "inputs": [
+              "read_todo_rows"
+            ],
+            "evidence": [
+              {
+                "sourceId": "k_20ced6e0b4b58b26fc02:p3"
+              }
+            ],
+            "sourceId": "api_33170c9f32467b1ea7d1",
+            "unknownPolicy": "report"
+          },
+          {
+            "id": "project_todo_list",
+            "op": "project",
+            "path": "/data/page/items",
+            "role": "detail",
+            "label": "عرض قائمة الطلبات في «قيد الإنجاز»",
+            "expose": true,
+            "fields": [
+              "applicationNumber",
+              "status",
+              "serviceNameEn",
+              "serviceCategoryNameEn",
+              "submissionTime"
+            ],
+            "inputs": [
+              "distinct_applications"
+            ],
+            "evidence": [
+              {
+                "sourceId": "k_20ced6e0b4b58b26fc02:p2"
+              },
+              {
+                "sourceId": "k_20ced6e0b4b58b26fc02:p9"
+              }
+            ],
+            "sourceId": "api_33170c9f32467b1ea7d1",
+            "fieldLabels": {
+              "status": "الحالة",
+              "serviceNameEn": "اسم الخدمة",
+              "submissionTime": "وقت التقديم",
+              "applicationNumber": "رقم الطلب",
+              "serviceCategoryNameEn": "فئة الخدمة"
+            },
+            "unknownPolicy": "report"
+          }
+        ],
+        "context": {
+          "time": {
+            "value": "لا يوجد نطاق زمني مطلوب في هذا السؤال",
+            "evidence": [
+              {
+                "sourceId": "k_20ced6e0b4b58b26fc02:p13"
+              }
+            ]
+          },
+          "grain": {
+            "value": "طلب واحد لكل صف، معرّف الكيان هو id",
+            "evidence": [
+              {
+                "sourceId": "k_20ced6e0b4b58b26fc02:p3"
+              }
+            ]
+          },
+          "scope": "personal",
+          "caveats": [
+            {
+              "value": "التسمية العربية «قيد الإنجاز» هي عنوان تبويب المهام المطلوبة على صفحة طلباتي في التراخيص، وتحدد الانتماء إلى قائمة الانتظار وليس حالة طلب مخزّنة",
+              "evidence": [
+                {
+                  "sourceId": "k_0e1395e3dabfa9ebb60d:p4"
+                }
+              ]
+            }
+          ],
+          "population": {
+            "value": "قائمة المهام المطلوبة (To Do) الكاملة من عملية قائمة مهامي بنفس سياق المرشحات، وتشمل التعديل المعلق والموافقة الخارجية والمراجعة المعلقة",
+            "evidence": [
+              {
+                "sourceId": "k_20ced6e0b4b58b26fc02:p9"
+              }
+            ]
+          },
+          "filterScope": {
+            "value": "لا يوجد مرشح تضييق يدخله المستخدم في سياق الطلب هذا؛ النطاق الشخصي مفروض من العملية",
+            "evidence": [
+              {
+                "sourceId": "k_20ced6e0b4b58b26fc02:p7"
+              }
+            ]
+          },
+          "scopeEvidence": [
+            {
+              "sourceId": "k_20ced6e0b4b58b26fc02:p7"
+            }
+          ]
+        },
+        "missing": [],
+        "metricCoverage": [],
+        "requirementBindings": [
+          {
+            "fields": [
+              "id"
+            ],
+            "stepIds": [
+              "read_todo_rows",
+              "distinct_applications",
+              "project_todo_list"
+            ],
+            "evidence": [],
+            "sourceId": "api_33170c9f32467b1ea7d1",
+            "sourcePath": "/data/page/items",
+            "requirementId": "object",
+            "knowledgeBindingId": "admin.page-docs.licensing.applications.todo.collection#application_object"
+          },
+          {
+            "fields": [
+              "id"
+            ],
+            "stepIds": [
+              "read_todo_rows",
+              "distinct_applications",
+              "project_todo_list"
+            ],
+            "evidence": [],
+            "sourceId": "api_33170c9f32467b1ea7d1",
+            "sourcePath": "/data/page/items",
+            "requirementId": "grain",
+            "knowledgeBindingId": "admin.page-docs.licensing.applications.todo.collection#application_grain"
+          },
+          {
+            "fields": [
+              "id"
+            ],
+            "stepIds": [
+              "read_todo_rows",
+              "distinct_applications",
+              "project_todo_list"
+            ],
+            "evidence": [],
+            "sourceId": "api_33170c9f32467b1ea7d1",
+            "sourcePath": "/data/page/items",
+            "requirementId": "scope",
+            "knowledgeBindingId": "admin.page-docs.licensing.applications.todo.collection#personal_scope"
+          },
+          {
+            "fields": [
+              "id"
+            ],
+            "stepIds": [
+              "read_todo_rows",
+              "distinct_applications",
+              "project_todo_list"
+            ],
+            "evidence": [],
+            "sourceId": "api_33170c9f32467b1ea7d1",
+            "sourcePath": "/data/page/items",
+            "requirementId": "population",
+            "knowledgeBindingId": "admin.page-docs.licensing.applications.todo.collection#pending_population"
+          },
+          {
+            "fields": [
+              "applicationNumber",
+              "status",
+              "serviceNameEn",
+              "serviceCategoryNameEn",
+              "submissionTime"
+            ],
+            "stepIds": [
+              "project_todo_list"
+            ],
+            "evidence": [],
+            "sourceId": "api_33170c9f32467b1ea7d1",
+            "sourcePath": "/data/page/items",
+            "requirementId": "detail",
+            "knowledgeBindingId": ""
+          }
+        ]
+      }
+    }
+  ],
+  "principalScopeRef": "dea9eeec1453f665ac17",
+  "observationNotBefore": "2026-09-29T02:05:43.444271+00:00"
+}

@@ -1,0 +1,153 @@
+@import "@/styles/variables.less";
+
+.collapsible-card-header {
+  position: relative;
+  width: 100%;
+  min-height: 72px;
+  background: transparent;
+}
+
+.collapsible-card-header__toggle {
+  width: 100%;
+  min-width: 0;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px;
+  border: none;
+  background: transparent;
+  color: @text-color;
+  cursor: pointer;
+  font: inherit;
+  text-align: start;
+}
+
+.collapsible-card-header--with-action
+  .collapsible-card-header__toggle {
+  padding-inline-end: 56px;
+}
+
+.collapsible-card-header__title {
+  min-width: 0;
+  color: #361e12;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.collapsible-card-header__chevron,
+.collapsible-card-header__action,
+.collapsible-card-header__toggle-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.collapsible-card-header--with-extra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px;
+}
+
+.collapsible-card-header--with-extra
+  .collapsible-card-header__toggle {
+  flex: 1;
+  justify-content: space-between;
+  min-height: 0;
+  padding: 0;
+}
+
+.collapsible-card-header__controls {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 16px;
+}
+
+.collapsible-card-header__extra {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.collapsible-card-header--with-extra
+  .collapsible-card-header__action {
+  position: static;
+  transform: none;
+}
+
+.collapsible-card-header__chevron {
+  transition: transform 0.2s ease;
+}
+
+.collapsible-card-header__chevron--expanded {
+  transform: rotate(180deg);
+}
+
+.collapsible-card-header__chevron img,
+.collapsible-card-header__action img,
+.collapsible-card-header__toggle-icon img {
+  width: 20px;
+  height: 20px;
+  display: block;
+  object-fit: contain;
+}
+
+.collapsible-card-header__action {
+  position: absolute;
+  inset-inline-end: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.collapsible-card-header__toggle:focus-visible,
+.collapsible-card-header__toggle-icon:focus-visible {
+  outline: 2px solid #92722a;
+  outline-offset: -2px;
+}
+
+.collapsible-card-header__action:focus-visible {
+  outline: 2px solid #92722a;
+  outline-offset: 2px;
+}
+
+@media (max-width: 1919.98px) {
+  .collapsible-card-header__toggle {
+    gap: 12px;
+    padding: 24px;
+  }
+
+  .collapsible-card-header--with-action
+    .collapsible-card-header__toggle {
+    padding-inline-end: 56px;
+  }
+
+  .collapsible-card-header__title {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .collapsible-card-header__action {
+    inset-inline-end: 24px;
+  }
+
+  .collapsible-card-header--with-extra {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .collapsible-card-header__controls {
+    gap: 12px;
+  }
+}

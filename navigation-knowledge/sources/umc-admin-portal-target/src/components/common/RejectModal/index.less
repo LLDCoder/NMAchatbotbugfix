@@ -1,0 +1,147 @@
+.reject-modal {
+  .ant-modal-content {
+    border-radius: 24px;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .ant-modal-header{
+    padding: 32px 40px;
+  }
+
+  .ant-modal-body {
+    padding: 32px 40px 0;
+  }
+
+  .reject-modal__header {
+    margin: 0 -32px 24px;
+    padding: 32px 32px 16px;
+    border-bottom: 1px solid #efefef;
+
+    h3 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 700;
+      color: #372315;
+    }
+  }
+
+  .reject-modal__body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 12px;
+    }
+  }
+
+  .reject-modal__label {
+    font-size: 16px;
+    // font-weight: 600;
+    color: #372315;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    line-height: 24px;
+    margin-bottom: -8px;
+
+    .required {
+      display: inline-block;
+      position: relative;
+      top: 3px;
+      color: #d93025;
+      font-weight: 600;
+      line-height: 1;
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  .reject-modal__textarea {
+    border-radius: 12px;
+    font-size: 16px;
+    .ant-input {
+      min-height: 108px;
+    }
+
+    &.ant-input-textarea-show-count::after {
+      float: right;
+    }
+
+    &.ant-input-textarea-show-count.ant-input-textarea-rtl::after {
+      float: left;
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 14px;
+    }
+  }
+
+  .reject-modal__quick-note-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #7a7f8a;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+    }
+  }
+
+  .reject-modal__quick-note {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 100px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 8px;
+    }
+  }
+
+  .reject-modal__quick-note-item {
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    background-color: #f1f2f4;
+    color: #6f7484;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &.is-active {
+      background-color: rgba(201, 169, 97, 0.16);
+      color: #1d130b;
+      font-weight: 500;
+    }
+
+    &:hover {
+      color: #1d130b;
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+    }
+  }
+
+  .reject-modal__footer {
+    margin: 24px -32px 0;
+    padding: 24px 32px 32px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    border-top: 1px solid #efefef;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 12px;
+    }
+  }
+
+  .reject-modal__btn {
+    min-width: 120px;
+  }
+}
+

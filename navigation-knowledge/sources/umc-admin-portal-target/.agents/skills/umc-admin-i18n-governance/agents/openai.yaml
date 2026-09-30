@@ -1,0 +1,4 @@
+interface:
+  display_name: "UMC Admin i18n Governance"
+  short_description: "Govern Admin Portal English and UAE Arabic localization."
+  default_prompt: "Use $umc-admin-i18n-governance to audit or change Admin Portal internationalization with structural, semantic, runtime, and deletion evidence checks."

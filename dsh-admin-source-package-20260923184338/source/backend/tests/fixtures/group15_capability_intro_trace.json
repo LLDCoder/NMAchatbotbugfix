@@ -1,0 +1,218 @@
+[
+  {
+    "source": "test/runtime/bilingual-regression-20260926/answers/ACC-013-foreign__en.json",
+    "language": "en",
+    "question": "Hello, what can you help me do in my current role?",
+    "task": {
+      "view": "",
+      "stage": "task",
+      "filters": [],
+      "groupBy": [],
+      "readOnly": true,
+      "timeField": "",
+      "timeRange": "",
+      "outputShape": "overview",
+      "searchQuery": "available capabilities actions current role permissions licensing happiness modules",
+      "slotUpdates": [
+        {
+          "field": "businessObject",
+          "value": "capability",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "businessFocus",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedScope",
+          "value": "personal",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedGrain",
+          "value": "unknown",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedMeasures",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedAttributes",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupBy",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeRange",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "filters",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "outputShape",
+          "value": "overview",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "recordIdentity",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "view",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeField",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        }
+      ],
+      "businessFocus": "",
+      "clarification": null,
+      "needsLiveData": false,
+      "businessObject": "capability",
+      "recordIdentity": "",
+      "requestedGrain": "unknown",
+      "requestedScope": "personal",
+      "contextRelation": "new",
+      "unresolvedSlots": [],
+      "requestedMeasures": [],
+      "requestedAttributes": []
+    },
+    "historicalOnly": true
+  },
+  {
+    "source": "test/runtime/bilingual-regression-20260926/answers/ACC-013-foreign__ar.json",
+    "language": "ar",
+    "question": "مرحبًا، ما الذي يمكنك مساعدتي في فعله في دوري الحالي؟",
+    "task": {
+      "view": "",
+      "stage": "task",
+      "filters": [],
+      "groupBy": [],
+      "readOnly": true,
+      "timeField": "",
+      "timeRange": "",
+      "outputShape": "overview",
+      "searchQuery": "capabilities available actions current role permissions licensing happiness modules",
+      "slotUpdates": [
+        {
+          "field": "businessObject",
+          "value": "unknown",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "businessFocus",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedScope",
+          "value": "unknown",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedGrain",
+          "value": "unknown",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedMeasures",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedAttributes",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupBy",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeRange",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "filters",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "outputShape",
+          "value": "overview",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "recordIdentity",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "view",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeField",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        }
+      ],
+      "businessFocus": "",
+      "clarification": null,
+      "needsLiveData": false,
+      "businessObject": "unknown",
+      "recordIdentity": "",
+      "requestedGrain": "unknown",
+      "requestedScope": "unknown",
+      "contextRelation": "new",
+      "unresolvedSlots": [],
+      "requestedMeasures": [],
+      "requestedAttributes": []
+    },
+    "historicalOnly": true
+  }
+]

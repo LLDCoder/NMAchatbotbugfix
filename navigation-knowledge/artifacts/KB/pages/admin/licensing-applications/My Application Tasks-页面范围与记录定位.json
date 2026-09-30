@@ -1,0 +1,187 @@
+{
+  "schemaVersion": "1.0",
+  "bundleId": "page-supplement.admin.page-docs.licensing.applications.routing",
+  "createdAt": "2026-09-27T18:22:25.403680+00:00",
+  "packageStatus": "active",
+  "records": [
+    {
+      "id": "admin.page-docs.licensing.applications.routing",
+      "kind": "page_definition",
+      "revision": 3,
+      "status": "active",
+      "title": "My Application Tasks page and record identity",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local"
+        ],
+        "pageRefs": [
+          "/licensing/applications"
+        ],
+        "sourceSnapshot": "source-inspected-20260924",
+        "runtimeVerification": "pending",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Applications/index.tsx",
+          "revision": "be9c81e58706b9071a3c0f4ddd1950df113cf6971e6c1f6efbf90dafff1f89e4",
+          "locator": "tab rendering; row click route",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.API/Controllers/ApplicationController.cs",
+          "revision": "c43e5e7e836b3aa6f2f5070d8456f4378ab205112cddc012fde6949e26a44397",
+          "locator": "MyTodoPage; MyComplatedPage; MyReviewDetail",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ApplicationAppService.cs",
+          "revision": "22e94773e70c95fab9ce479919b51d0241e046bf085cd0c3f8b5991b9004772e",
+          "locator": "GetMyReviewListAsync; CanViewWorkflowTaskDetail",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/localization/licensing/ar.json",
+          "revision": "39644eab73051f826224af4af6da02cb8fd8baeb3268df85b49440e66980d653",
+          "locator": "applications.subTabs.todo and applications.tabs.myTasks",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/localization/licensing/en.json",
+          "revision": "569221c3d1f096bf773b2add711d9846921883e99bf48f3d8aa2793a46a72792",
+          "locator": "applications.subTabs.todo and applications.tabs.myTasks",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Applications/index.tsx",
+          "revision": "433c90d2018350b78f1f51a50c31aa2ba3089e2b0753a9f1dd76de95066c962e",
+          "locator": "To Do tab rendering applications.subTabs.todo at data-reader-view=todo; applicationMyTodoPage read dispatch",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageIdentity": {
+          "catalogId": "a3780c35dd57_da1a77697e11:Page:98e33b0f3104fcf1b812",
+          "component": "Applications",
+          "route": "/licensing/applications",
+          "name": "My Application Tasks"
+        },
+        "purpose": "Personal Licensing review applications and tasks.",
+        "entryConditions": [
+          "Authenticated Admin user; current page and operation permissions. Personal ownership is verified upstream, not inferred from the role label."
+        ],
+        "views": [
+          {
+            "id": "todo",
+            "label": "To Do",
+            "aliases": [
+              "1",
+              "to do",
+              "pending queue",
+              "قيد الإنجاز"
+            ]
+          },
+          {
+            "id": "completed",
+            "label": "Completed",
+            "aliases": [
+              "2",
+              "completed queue"
+            ]
+          }
+        ],
+        "routing": {
+          "records": [
+            {
+              "id": "todo_business_number",
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "sourcePath": "/data/page/items",
+              "identityField": "applicationNumber",
+              "keyFields": [
+                "id"
+              ],
+              "unique": false
+            },
+            {
+              "id": "completed_business_number",
+              "operationRef": "POST /api/Application/MyComplatedPage",
+              "sourcePath": "/data/page/items",
+              "identityField": "applicationNumber",
+              "keyFields": [
+                "id"
+              ],
+              "unique": false
+            }
+          ],
+          "views": [
+            {
+              "id": "todo",
+              "label": "To Do",
+              "aliases": [
+                "1",
+                "to do",
+                "pending queue",
+                "قيد الإنجاز"
+              ]
+            },
+            {
+              "id": "completed",
+              "label": "Completed",
+              "aliases": [
+                "2",
+                "completed queue"
+              ]
+            }
+          ]
+        },
+        "readinessAssertions": [
+          "Current selected tab is known; its successful permitted response is present; loading has ended. A blocked call or default zero card is not an empty result."
+        ],
+        "detailEntry": {
+          "route": "/licensing/applications/applicationsDetails",
+          "queryParameter": "taskId",
+          "sourceField": "taskId",
+          "meaning": "Use the matched current row workflow task ID. applicationNumber and id cannot be substituted. Multiple matching task IDs require a verified view/task selection."
+        },
+        "scopeBoundaries": [
+          "The same application may move across approval departments; the current task approval department controls the queue.",
+          "Team analysis belongs to the corresponding Team Management entry; issued licenses belong to the Licenses entry.",
+          "On this personal Licensing My Application Tasks page, the actual Arabic To Do tab label is قيد الإنجاز (applications.subTabs.todo), and the My Tasks label is مهامي (applications.tabs.myTasks). In a reference to this page/tab or personal queue, the native label identifies the To Do pending-work view; it does not assert that every application status equals an English In Progress literal. It does not change the authenticated personal scope, runtime department or request filters. Explicit requests for a stored application/process status, additional status predicates, negation or another page/entity must retain those requirements rather than be converted to queue membership. The statistics card reuses the same label but is a different count source, not proof of list completeness."
+        ],
+        "recordLookup": "Exact-match the supplied business number against observed rows. unique=false deliberately retains ambiguity checks; a substring search or first page alone does not establish uniqueness.",
+        "readOperations": [
+          "POST /api/Application/MyTodoPage",
+          "POST /api/Application/MyComplatedPage"
+        ],
+        "writeOperations": "Approve, reject, reassign, send back, modification, recall and deletion are business mutations; listing them does not enable them in the Reader.",
+        "constraints": [
+          "Source-inspected definitions; the remote deployed build has not been matched to this snapshot. Validate current authorized response shape and request context before using these definitions.",
+          "This page knowledge does not authorize API access or business writes. A blocked or failed response is not an empty population.",
+          "A bounded page is not a complete population. Counts and grouping require complete collection at the requested entity grain and stable request context."
+        ],
+        "knowledgeDependencies": [
+          {
+            "purpose": "collection",
+            "operationRef": "POST /api/Application/MyTodoPage",
+            "document": "My Application Tasks-待办分页字段与统计范围.json"
+          },
+          {
+            "purpose": "collection",
+            "operationRef": "POST /api/Application/MyComplatedPage",
+            "document": "My Application Tasks-已完成分页字段与审批决定.json"
+          }
+        ],
+        "relationships": [
+          "The routing identifiers locate records. Full pagination and scalar-field definitions are in the explicitly named collection documents; routing knowledge alone is not a paging contract."
+        ]
+      }
+    }
+  ]
+}

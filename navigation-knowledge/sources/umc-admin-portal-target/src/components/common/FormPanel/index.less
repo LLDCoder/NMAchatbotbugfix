@@ -1,0 +1,139 @@
+@import "@/styles/variables.less";
+
+.formPanelContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  .form-panel {
+    width: 100%;
+    border-radius: 16px;
+    background-color: #fff;
+    margin-bottom: 24px;
+    padding: 24px;
+    .ant-form-item-control-input-content {
+      height: auto;
+      .ant-picker {
+        /*
+          Was `3rem`, which keeps scaling with the root font-size even in a
+          migrated file. 48px is the value it resolved to at the 1920 baseline.
+          Left at 48 below the breakpoint: the spec's control heights step
+          48 -> 40 and 48 -> 32 depending on role, and a date picker's role is
+          not stated. Picking one would be inventing design.
+        */
+        height: 48px;
+      }
+    }
+
+    .ant-radio-group {
+      display: flex;
+      gap: 24px;
+
+      .ant-radio-wrapper {
+        font-size: 14px;
+        color: @text-color;
+
+        .ant-radio-checked .ant-radio-inner {
+          border-color: @primary-color;
+
+          &::after {
+            background-color: @primary-color;
+          }
+        }
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 12px;
+        }
+      }
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        gap: 16px;
+      }
+    }
+
+    &-header {
+      margin-bottom: 24px;
+    }
+
+    &-title {
+      color: @text-color;
+      margin-bottom: 8px;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    &-description {
+      font-size: 14px;
+      color: @text-color;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+      }
+    }
+
+    &-grid {
+      display: grid;
+      width: 100%;
+      gap: 24px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        gap: 16px;
+      }
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-item-label {
+      font-size: 14px;
+      color: @text-color;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+      }
+    }
+
+    &-item-label-text {
+      line-height: 1.4;
+      font-size: 14px;
+      color: #797e86;
+      height: auto;
+      font-weight: 500;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+      }
+    }
+
+    &-item-content {
+      font-size: 16px;
+      color: @text-color;
+      font-weight: 500;
+      margin-top: 8px;
+      word-break: break-all;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 14px;
+      }
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      border-radius: 10px;
+      padding: 12px;
+    }
+  }
+
+  .last {
+    margin-right: 0;
+    width: calc((100% - 24px) / 2);
+  }
+  .other-form-panel {
+    margin-right: 24px;
+    width: calc((100% - 24px) / 2);
+  }
+}

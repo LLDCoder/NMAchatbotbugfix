@@ -1,0 +1,278 @@
+.news-management-detail {
+  .mb20 {
+    margin-bottom: 24px;
+  }
+  .mt20 {
+    margin-top: 24px;
+  }
+  .mt44 {
+    margin-top: 44px;
+  }
+  .nomb {
+    margin-bottom: 0 !important;
+    align-items: center;
+  }
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 100%;
+  overflow: visible;
+  padding-bottom: 0;
+  .detail-content {
+    margin-top: 24px;
+  }
+  .status-tag {
+    display: inline-block;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    border-radius: 4px;
+    padding: 3px 6px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+    }
+  }
+  .PendingReview {
+    background-color: rgba(255, 251, 235, 1);
+    color: rgba(242, 159, 14, 1);
+  }
+
+  .Draft,
+  .Unpublished {
+    color: rgba(95, 100, 109, 1);
+    background-color: rgba(225, 227, 229, 0.5);
+  }
+
+  .Published {
+    color: rgba(74, 157, 92, 1);
+    background-color: rgba(243, 250, 244, 1);
+  }
+
+  .Rejected {
+    color: rgba(234, 79, 73, 1);
+    background-color: rgba(254, 242, 242, 1);
+  }
+
+  .add-news-btn {
+    margin-left: 12px;
+  }
+  .news-management-detail-header {
+    padding: 24px;
+    border-radius: 20px;
+    background-color: #fff;
+    height: 150px;
+    .news-management-detail-header-title {
+      font-family: Inter;
+      font-weight: 700;
+      font-style: Bold;
+      font-size: 24px;
+      color: #361e12;
+      line-height: 28px;
+      letter-spacing: 0px;
+      margin-bottom: 24px;
+    }
+    .news-management-detail-header-list {
+      display: flex;
+      gap: 16px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        gap: 12px;
+      }
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      padding: 12px;
+      border-radius: 10px;
+    }
+  }
+  .news-management-detail-reject {
+    background-color: #fef2f2;
+    height: 84px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    img {
+      width: 20px;
+      height: 20px;
+    }
+    .news-management-detail-reject-title {
+      font-family: Inter;
+      font-weight: 600;
+      font-style: Semi Bold;
+      font-size: 16px;
+      color: #361e12;
+      line-height: 24px;
+      letter-spacing: 0px;
+      vertical-align: middle;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+    .news-management-detail-reject-content {
+      font-family: Inter;
+      font-weight: 500;
+      font-style: Medium;
+      font-size: 14px;
+      color: #361e12;
+      line-height: 20px;
+      letter-spacing: 0px;
+      vertical-align: middle;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      padding: 12px;
+    }
+  }
+  .news-management-detail-header-item {
+    width: 356px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    .news-management-detail-header-item-img {
+      width: 40px;
+      height: 40px;
+    }
+    .news-management-detail-header-item-title {
+      font-family: Inter;
+      font-weight: 400;
+      font-style: Regular;
+      font-size: 14px;
+      color: #361e12;
+      line-height: 20px;
+      letter-spacing: 0px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+    .news-management-detail-header-item-content {
+      font-family: Inter;
+      font-weight: 600;
+      font-style: Semi Bold;
+      font-size: 16px;
+      color: #361e12;
+      line-height: 24px;
+      letter-spacing: 0px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 8px;
+    }
+  }
+  .news-management-detail-body {
+    ::-webkit-details-marker {
+      display: none;
+    }
+    ::-moz-list-bullet {
+      font-size: 0;
+    }
+    &[open] .collapse-icon {
+      transform: rotate(180deg);
+    }
+    .detail-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    border-radius: 20px;
+    padding: 24px;
+    background: #fff;
+    .news-management-detail-body-title {
+      font-family: Inter;
+      font-weight: 600;
+      font-style: Semi Bold;
+      font-size: 20px;
+      color: #361e12;
+      line-height: 24px;
+      letter-spacing: 0px;
+      margin-bottom: 24px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 18px;
+        line-height: 20px;
+      }
+    }
+    .news-management-detail-body-label {
+      font-family: Inter;
+      font-weight: 500;
+      font-style: Medium;
+      font-size: 14px;
+      color: #797e86;
+      line-height: 20px;
+      letter-spacing: 0px;
+      margin-bottom: 4px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+    .news-management-detail-body-cover {
+      width: 728px;
+      height: 408px;
+      
+      object-fit: cover;
+      object-position: center;
+      border-radius: 8px;
+    }
+    .news-management-detail-body-value {
+      font-family: Inter;
+      font-weight: 500;
+      font-size: 14px;
+      color: #361e12;
+      line-height: 20px;
+      letter-spacing: 0px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+    .Content-main {
+      display: flex;
+    }
+    .content-line {
+      // height: 100%;
+      width: 1px;
+      margin: 0 32px;
+      background-color: #e1e3e5;
+    }
+    .Content-dom {
+      flex: 1;
+      img,
+      video {
+        width: 704px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      border-radius: 10px;
+      padding: 12px;
+    }
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}

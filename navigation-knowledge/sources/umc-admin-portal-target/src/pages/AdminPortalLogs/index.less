@@ -1,0 +1,43 @@
+.Logs-container{
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    padding: 12px;
+    border-radius: 10px;
+  }
+}
+
+.Logs-container--list {
+  padding: 0 24px 24px;
+
+  > .ant-tabs {
+    .ant-tabs-tab {
+      padding: 16px 0;
+    }
+  }
+
+  @media (max-width: 1919.98px) {
+    padding: 0 24px 24px;
+  }
+}
+
+.Logs-container .status-tag {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.Logs-container .status-tag.Success,
+.LogsDetail-container .status-tag.Success {
+  background-color: #f3faf4;
+  color: #4a9d5c;
+}
+
+.Logs-container .status-tag.Failed,
+.LogsDetail-container .status-tag.Failed {
+  background-color: #fef2f2;
+  color: #ea4f49;
+}

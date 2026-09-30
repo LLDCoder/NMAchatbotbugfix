@@ -1,0 +1,200 @@
+@import "@/styles/variables.less";
+
+@service-fees-header-bg: #f9f8f6;
+@service-fees-header-text: #8c8c8c;
+@service-fees-header-font-size: 13px;
+@service-fees-row-border: #f0f0f0;
+@service-fees-body-text: #1a1a1a;
+@service-fees-total-accent: #8b734b;
+
+.ServicesFeesCard.fee-quote-display-wrap {
+  padding: 0 !important;
+  border-radius: 20px;
+  overflow: hidden;
+
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.fee-quote-display {
+  margin-top: 0;
+  border-radius: 10px;
+  padding: 0 24px 24px;
+
+  &.fee-quote-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
+  }
+
+  .fee-quote-warnings {
+    margin-bottom: 16px;
+  }
+  .fee-quote-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
+  }
+
+  .block-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: @text-color;
+    margin-bottom: 16px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 14px;
+    }
+  }
+
+  .fee-quote-table {
+    border-radius: 8px;
+    overflow: hidden;
+    /*
+      Outer stroke of the fees form (Figma annotation): #f0f0f0 was too faint
+      to read as a border at all - use the portal-wide border grey instead.
+    */
+    border: 1px solid #e1e3e5;
+
+    .fee-quote-table__header,
+    .fee-quote-table__row {
+      display: grid;
+      grid-template-columns:
+        minmax(72px, 100px)
+        minmax(0, 1fr)
+        minmax(120px, 200px);
+      padding: 12px 16px;
+      align-items: center;
+      gap: 12px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        gap: 8px;
+      }
+    }
+
+    .fee-quote-table__header {
+      background: @service-fees-header-bg;
+      font-size: @service-fees-header-font-size;
+      font-weight: 500;
+      color: @service-fees-header-text;
+      border-bottom: 1px solid @service-fees-row-border;
+
+      .fee-quote-table__amount {
+        color: #797E86;
+      }
+    }
+
+    .fee-quote-table__row {
+      font-size: 15px;
+      color: @service-fees-body-text;
+      border-bottom: 1px solid @service-fees-row-border;
+
+      &:last-of-type {
+        border-bottom: none;
+      }
+    }
+
+    .fee-quote-table__number,
+    .fee-quote-table__activity,
+    .fee-quote-table__amount {
+      min-width: 0;
+    }
+
+    .fee-quote-table__activity {
+      overflow: hidden;
+      // color: @service-fees-body-text;
+    }
+
+    .fee-quote-table__activity-text {
+      display: block;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .fee-quote-table__amount {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 2px;
+      font-weight: 400;
+      color: @service-fees-body-text;
+    }
+
+    .fee-quote-table__currency,
+    .fee-quote-table__total-currency {
+      flex-shrink: 0;
+      font-size: @service-fees-header-font-size;
+      line-height: 1;
+      color: inherit;
+    }
+
+    .fee-quote-table__currency.aed-icon {
+      width: 15px;
+      height: 13px;
+    }
+
+    .fee-quote-table__total-currency.aed-icon {
+      width: 15px;
+      height: 13px;
+    }
+
+    .col-code {
+      color: @service-fees-body-text;
+    }
+
+    .col-charge-name {
+      color: @service-fees-body-text;
+    }
+
+    .fee-quote-table__footer {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      align-items: center;
+      margin-top: 0;
+      /*
+        16px inset on every side (was 16px 0 0): with zero horizontal padding
+        the Total Fee amount sat pressed against the table border (Figma
+        annotation).
+      */
+      padding: 16px;
+      background: transparent;
+      border-top: none;
+
+      .fee-quote-table__total-label {
+        font-size: 15px;
+        font-weight: 600;
+        color: @service-fees-body-text;
+      }
+
+      .fee-quote-table__total-amount {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        color: @service-fees-header-text;
+
+        .fee-quote-table__total-value {
+          font-size: 18px;
+          font-weight: 400;
+          color: @service-fees-total-accent;
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            font-size: 16px;
+          }
+        }
+      }
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        gap: 8px;
+      }
+    }
+  }
+  .info-block {
+    border: unset;
+    padding: 0;
+  }
+}

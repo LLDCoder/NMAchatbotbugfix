@@ -1,0 +1,674 @@
+/*
+  Explicit BEM contract for custom Ant Design Form toolbars.
+  Shared FilterTable dimensions and responsive field grouping live in
+  src/components/common/FilterTable so they only affect responsiveToolbar users.
+*/
+.responsive-filter-toolbar__compact-only {
+  display: none;
+}
+
+.layout .ant-input-affix-wrapper .ant-input-prefix .anticon-search,
+.layout .ant-input-affix-wrapper .ant-input-prefix > svg[class*="search-icon"],
+.layout
+  .ant-input-affix-wrapper
+  .ant-input-prefix
+  > [class*="search-icon"]:not(.overview-search-icon) {
+  width: 16px !important;
+  min-width: 16px;
+  height: 16px !important;
+  color: #797e86 !important;
+  font-size: 16px !important;
+  line-height: 1;
+}
+
+.layout .ant-input-affix-wrapper .ant-input-prefix .anticon-search,
+.layout .ant-input-affix-wrapper .ant-input-prefix > svg[class*="search-icon"] {
+  display: block;
+  flex-shrink: 0;
+}
+
+.layout .responsive-filter-toolbar .ant-input-prefix .anticon-search,
+.layout .responsive-filter-toolbar .ant-input-prefix > svg[class*="search-icon"],
+.layout
+  .responsive-filter-toolbar
+  .ant-input-prefix
+  > [class*="search-icon"]:not(.overview-search-icon),
+.layout .filter-table--responsive-toolbar .ant-input-prefix .anticon-search,
+.layout .filter-table--responsive-toolbar .ant-input-prefix > svg[class*="search-icon"],
+.layout
+  .filter-table--responsive-toolbar
+  .ant-input-prefix
+  > [class*="search-icon"]:not(.overview-search-icon) {
+  width: 16px !important;
+  height: 16px !important;
+  color: #797e86 !important;
+  font-size: 16px !important;
+  line-height: 1;
+}
+
+.layout .responsive-filter-toolbar.responsive-filter-toolbar {
+  margin-bottom: 12px;
+}
+
+.layout .responsive-filter-toolbar__controls {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 12px;
+  width: auto;
+  min-width: 0;
+}
+
+.layout
+  .responsive-filter-toolbar
+  .responsive-filter-toolbar__field {
+  min-width: 0;
+  margin-bottom: 0;
+}
+
+.layout .responsive-filter-toolbar__field--search {
+  flex: 0 0 320px !important;
+  width: 320px !important;
+  min-width: 320px !important;
+  max-width: 320px !important;
+}
+
+.layout
+  .responsive-filter-toolbar__field:not(.responsive-filter-toolbar__field--search) {
+  flex: 0 0 240px;
+  width: 240px;
+  min-width: 240px;
+  max-width: 240px;
+}
+
+.layout .responsive-filter-toolbar__field.ant-input-affix-wrapper,
+.layout .responsive-filter-toolbar__field .ant-input-affix-wrapper,
+.layout .responsive-filter-toolbar__field.ant-picker,
+.layout .responsive-filter-toolbar__field .ant-picker,
+.layout .responsive-filter-toolbar__field.ant-select,
+.layout .responsive-filter-toolbar__field .ant-select,
+.layout .responsive-filter-toolbar__field.ant-select .ant-select-selector,
+.layout .responsive-filter-toolbar__field .ant-select .ant-select-selector {
+  height: 48px !important;
+  min-height: 48px !important;
+  max-height: 48px !important;
+}
+
+.layout .responsive-filter-toolbar__button,
+.layout .responsive-filter-toolbar__action.custom-button,
+.layout .responsive-filter-toolbar__action .custom-button {
+  height: 48px !important;
+  min-height: 48px !important;
+  max-height: 48px !important;
+}
+
+.layout
+  .responsive-filter-toolbar.responsive-filter-toolbar
+  .responsive-filter-toolbar__filter-button,
+.layout
+  .responsive-filter-toolbar.responsive-filter-toolbar
+  .responsive-filter-toolbar__reset-button {
+  box-sizing: border-box;
+  flex: 0 0 auto !important;
+  border: 1px solid #92722a !important;
+  border-radius: 8px !important;
+  background: transparent !important;
+  color: #92722a !important;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+}
+
+.layout
+  .responsive-filter-toolbar.responsive-filter-toolbar
+  .responsive-filter-toolbar__filter-button {
+  width: 100px !important;
+  min-width: 100px !important;
+  max-width: 100px !important;
+  padding: 0 16px !important;
+}
+
+.layout
+  .responsive-filter-toolbar.responsive-filter-toolbar
+  .responsive-filter-toolbar__reset-button {
+  width: 99px !important;
+  min-width: 99px !important;
+  max-width: 99px !important;
+  padding: 0 21px !important;
+}
+
+.layout
+  .responsive-filter-toolbar.responsive-filter-toolbar
+  .responsive-filter-toolbar__filter-button
+  .custom-button-contentWithIcon {
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.layout
+  .responsive-filter-toolbar.responsive-filter-toolbar
+  .responsive-filter-toolbar__filter-button
+  .custom-button-icon {
+  width: 20px;
+  height: 20px;
+  margin-inline-start: 0;
+}
+
+.layout
+  .responsive-filter-toolbar.responsive-filter-toolbar
+  .responsive-filter-toolbar__filter-button
+  .custom-button-icon
+  img,
+.layout
+  .responsive-filter-toolbar.responsive-filter-toolbar
+  .responsive-filter-toolbar__filter-button
+  .custom-button-icon
+  svg {
+  width: 20px;
+  height: 20px;
+}
+
+.layout
+  .responsive-filter-toolbar.responsive-filter-toolbar
+  .responsive-filter-toolbar__reset-button
+  .custom-button-content,
+.layout
+  .responsive-filter-toolbar.responsive-filter-toolbar
+  .responsive-filter-toolbar__reset-button
+  .custom-button-contentWithIcon {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.layout
+  .responsive-filter-toolbar
+  .responsive-filter-toolbar__field--search.ant-input-affix-wrapper,
+.layout
+  .responsive-filter-toolbar
+  .responsive-filter-toolbar__field--search
+  .ant-input-affix-wrapper {
+  border-radius: 8px;
+  padding-inline: 16px;
+}
+
+.layout
+  .responsive-filter-toolbar
+  .responsive-filter-toolbar__field--search
+  input,
+.layout
+  .responsive-filter-toolbar
+  .responsive-filter-toolbar__field--search.ant-input-affix-wrapper
+  input {
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.layout
+  .responsive-filter-toolbar
+  .responsive-filter-toolbar__field--search
+  .ant-input-prefix,
+.layout
+  .responsive-filter-toolbar
+  .responsive-filter-toolbar__field--search.ant-input-affix-wrapper
+  .ant-input-prefix {
+  display: inline-flex;
+  flex: 0 0 16px;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  min-width: 16px;
+  height: 16px;
+  margin-inline-end: 8px;
+  color: #797e86 !important;
+  font-size: 16px !important;
+  line-height: 1;
+  overflow: visible;
+}
+
+.layout
+  .responsive-filter-toolbar
+  .responsive-filter-toolbar__field--search
+  .ant-input-prefix
+  .anticon,
+.layout
+  .responsive-filter-toolbar
+  .responsive-filter-toolbar__field--search.ant-input-affix-wrapper
+  .ant-input-prefix
+  .anticon,
+.layout
+  .responsive-filter-toolbar
+  .responsive-filter-toolbar__field--search
+  .ant-input-prefix
+  svg,
+.layout
+  .responsive-filter-toolbar
+  .responsive-filter-toolbar__field--search.ant-input-affix-wrapper
+  .ant-input-prefix
+  svg {
+  width: 16px !important;
+  height: 16px !important;
+  color: #797e86 !important;
+  display: block;
+  flex-shrink: 0;
+  font-size: 16px !important;
+}
+
+.layout
+  .responsive-filter-toolbar__field--search
+  .ant-input-affix-wrapper,
+.layout
+  .responsive-filter-toolbar
+  .responsive-filter-toolbar__field--search.ant-input-affix-wrapper {
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.layout .responsive-filter-toolbar__action {
+  flex: 0 0 auto;
+  margin-inline-start: auto;
+}
+
+.layout .responsive-filter-toolbar__filter-button {
+  width: 100px !important;
+  min-width: 100px !important;
+  max-width: 100px !important;
+  padding: 0 16px !important;
+}
+
+.layout .responsive-filter-toolbar__reset-button {
+  width: 99px !important;
+  min-width: 99px !important;
+  max-width: 99px !important;
+  padding: 0 21px !important;
+}
+
+@media (max-width: 1919.98px) {
+  .layout .responsive-filter-toolbar .ant-input-prefix .anticon-search,
+  .layout .responsive-filter-toolbar .ant-input-prefix > svg[class*="search-icon"],
+  .layout
+    .responsive-filter-toolbar
+    .ant-input-prefix
+    > [class*="search-icon"]:not(.overview-search-icon),
+  .layout .filter-table--responsive-toolbar .ant-input-prefix .anticon-search,
+  .layout .filter-table--responsive-toolbar .ant-input-prefix > svg[class*="search-icon"],
+  .layout
+    .filter-table--responsive-toolbar
+    .ant-input-prefix
+    > [class*="search-icon"]:not(.overview-search-icon) {
+    width: 16px !important;
+    height: 16px !important;
+    font-size: 16px !important;
+  }
+
+  /*
+    Explicit opt-in contract for Ant Design Form toolbars that mirror the
+    compact FilterTable layout: Search and the page-owned compact actions stay
+    in one row, secondary fields move to the filter modal, and Export stays
+    right. The page decides which actions exist.
+  */
+  .layout .responsive-filter-toolbar.responsive-filter-toolbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    column-gap: 24px;
+    row-gap: 12px;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .layout .responsive-filter-toolbar__controls {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .layout
+    .responsive-filter-toolbar--wrap
+    .responsive-filter-toolbar__controls {
+    flex-wrap: wrap;
+  }
+
+  .layout .responsive-filter-toolbar__field {
+    min-width: 0;
+    margin-bottom: 0;
+  }
+
+  .layout .responsive-filter-toolbar__field--search {
+    flex: 0 0 320px !important;
+    width: 320px !important;
+    min-width: 320px !important;
+    max-width: 320px !important;
+  }
+
+  .layout
+    .responsive-filter-toolbar__field:not(.responsive-filter-toolbar__field--search) {
+    flex-basis: 240px;
+    width: 240px;
+    min-width: 240px;
+    max-width: 240px;
+  }
+
+  .layout .responsive-filter-toolbar__button {
+    flex: 0 0 auto;
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+  }
+
+  .layout
+    .responsive-filter-toolbar.responsive-filter-toolbar
+    .responsive-filter-toolbar__filter-button {
+    width: 100px !important;
+    min-width: 100px !important;
+    max-width: 100px !important;
+    padding: 0 16px !important;
+  }
+
+  .layout
+    .responsive-filter-toolbar.responsive-filter-toolbar
+    .responsive-filter-toolbar__filter-button
+    .custom-button-contentWithIcon {
+    gap: 8px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .layout
+    .responsive-filter-toolbar.responsive-filter-toolbar
+    .responsive-filter-toolbar__filter-button
+    .custom-button-icon {
+    flex: 0 0 16px;
+    width: 16px !important;
+    height: 16px !important;
+    margin-inline-start: 0;
+  }
+
+  .layout
+    .responsive-filter-toolbar.responsive-filter-toolbar
+    .responsive-filter-toolbar__filter-button
+    .custom-button-icon
+    img,
+  .layout
+    .responsive-filter-toolbar.responsive-filter-toolbar
+    .responsive-filter-toolbar__filter-button
+    .custom-button-icon
+    svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  .layout
+    .responsive-filter-toolbar.responsive-filter-toolbar
+    .responsive-filter-toolbar__reset-button {
+    width: 99px !important;
+    min-width: 99px !important;
+    max-width: 99px !important;
+    padding: 0 13px !important;
+  }
+
+  .layout
+    .responsive-filter-toolbar.responsive-filter-toolbar
+    .responsive-filter-toolbar__reset-button
+    .custom-button-content,
+  .layout
+    .responsive-filter-toolbar.responsive-filter-toolbar
+    .responsive-filter-toolbar__reset-button
+    .custom-button-contentWithIcon {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .layout
+    .responsive-filter-toolbar
+    .responsive-filter-toolbar__field--search.ant-input-affix-wrapper,
+  .layout
+    .responsive-filter-toolbar
+    .responsive-filter-toolbar__field--search
+    .ant-input-affix-wrapper {
+    border-radius: 6px;
+    padding-inline: 12px;
+  }
+
+  .layout
+    .responsive-filter-toolbar
+    .responsive-filter-toolbar__field--search
+    input,
+  .layout
+    .responsive-filter-toolbar
+    .responsive-filter-toolbar__field--search.ant-input-affix-wrapper
+    input {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  .layout
+    .responsive-filter-toolbar
+    .responsive-filter-toolbar__field--search
+    .ant-input-prefix,
+  .layout
+    .responsive-filter-toolbar
+    .responsive-filter-toolbar__field--search.ant-input-affix-wrapper
+    .ant-input-prefix {
+    flex-basis: 16px;
+    width: 16px;
+    min-width: 16px;
+    height: 16px;
+    margin-inline-end: 8px;
+    font-size: 16px !important;
+  }
+
+  .layout
+    .responsive-filter-toolbar
+    .responsive-filter-toolbar__field--search
+    .ant-input-prefix
+    .anticon,
+  .layout
+    .responsive-filter-toolbar
+    .responsive-filter-toolbar__field--search.ant-input-affix-wrapper
+    .ant-input-prefix
+    .anticon,
+  .layout
+    .responsive-filter-toolbar
+    .responsive-filter-toolbar__field--search
+    .ant-input-prefix
+    svg,
+  .layout
+    .responsive-filter-toolbar
+    .responsive-filter-toolbar__field--search.ant-input-affix-wrapper
+    .ant-input-prefix
+    svg {
+    width: 16px !important;
+    height: 16px !important;
+    display: block;
+    flex-shrink: 0;
+    font-size: 16px !important;
+  }
+
+  .layout .responsive-filter-toolbar__field .ant-input-affix-wrapper,
+  .layout .responsive-filter-toolbar__field .ant-picker,
+  .layout .responsive-filter-toolbar__field .ant-select {
+    width: 100%;
+  }
+
+  .layout .responsive-filter-toolbar__field.ant-select,
+  .layout .responsive-filter-toolbar__field .ant-select,
+  .layout .responsive-filter-toolbar__field.ant-select .ant-select-selector,
+  .layout .responsive-filter-toolbar__field .ant-select .ant-select-selector {
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+  }
+
+  .layout .responsive-filter-toolbar__field.ant-picker,
+  .layout .responsive-filter-toolbar__field .ant-picker,
+  .layout .responsive-filter-toolbar__field.ant-input-affix-wrapper,
+  .layout .responsive-filter-toolbar__field .ant-input-affix-wrapper {
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+  }
+
+  .layout
+    .responsive-filter-toolbar.responsive-filter-toolbar
+    .responsive-filter-toolbar__controls
+    .responsive-filter-toolbar__field--search
+    .ant-input-affix-wrapper,
+  .layout
+    .responsive-filter-toolbar.responsive-filter-toolbar
+    .responsive-filter-toolbar__controls
+    .responsive-filter-toolbar__field--search.ant-input-affix-wrapper,
+  .layout
+    .responsive-filter-toolbar
+    .responsive-filter-toolbar__field--search.ant-input-affix-wrapper,
+  .layout
+    .responsive-filter-toolbar__field--search.ant-input-affix-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    height: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .layout .responsive-filter-toolbar__action.custom-button,
+  .layout .responsive-filter-toolbar__action .custom-button {
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+  }
+
+  .layout .responsive-filter-toolbar__action {
+    grid-column: 2;
+    grid-row: 1;
+    flex: none;
+  }
+
+  .layout
+    .responsive-filter-toolbar__filter-button
+    .custom-button-contentWithIcon,
+  .layout
+    .responsive-filter-toolbar__reset-button
+    .custom-button-content,
+  .layout
+    .responsive-filter-toolbar__reset-button
+    .custom-button-contentWithIcon {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .layout
+    .responsive-filter-toolbar__filter-button
+    .custom-button-icon {
+    flex: 0 0 16px;
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  .layout
+    .responsive-filter-toolbar__filter-button
+    .custom-button-icon
+    img,
+  .layout
+    .responsive-filter-toolbar__filter-button
+    .custom-button-icon
+    svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  .layout .responsive-filter-toolbar__reset-button {
+    padding: 0 13px !important;
+  }
+
+  .layout
+    .responsive-filter-toolbar.responsive-filter-toolbar--center-actions {
+    align-items: center;
+  }
+
+  .layout .header-filter,
+  .layout .filters,
+  .layout
+    [class*="toolbar"]:not([class*="w-e-"]):not([class*="responsive-filter-toolbar"]):not([class*="filter-table"]),
+  .layout [class*="-table-header"]:not([class*="ant-"]) {
+    flex-wrap: wrap;
+  }
+
+  .layout .filters > .ant-form,
+  .layout .table-toolbar > .ant-form,
+  .layout
+    [class*="toolbar"]:not([class*="w-e-"]):not([class*="responsive-filter-toolbar"])
+    > .ant-form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 1439.98px) {
+  .layout .responsive-filter-toolbar__field--compact-hidden {
+    display: none;
+  }
+
+  .layout .responsive-filter-toolbar__compact-only {
+    display: inline-flex;
+  }
+
+  .layout
+    .responsive-filter-toolbar.responsive-filter-toolbar
+    .responsive-filter-toolbar__controls
+    .responsive-filter-toolbar__field--search,
+  .layout
+    .filter-table.filter-table--responsive-toolbar
+    .filter-table__filter-controls
+    > .filter-table__filter-field--search,
+  .layout
+    .filter-table.filter-table--responsive-toolbar
+    .filter-table__filter-controls
+    > .filter-table__filter-field-wrapper--search,
+  .layout .responsive-filter-toolbar__field--single-visible-search {
+    flex: 0 0 320px !important;
+    width: 320px !important;
+    min-width: 320px !important;
+    max-width: 320px !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Filter trigger carrying an applied-count badge
+ *
+ * The widths above were measured for "label + funnel" and are enforced with
+ * !important. A trigger that also shows how many attributes are filtered has
+ * to size to its content, so for that variant the figure becomes a floor
+ * instead of a cap. Triggers without a count keep their original width.
+ * ------------------------------------------------------------------------- */
+.layout .responsive-filter-toolbar__filter-button.filter-trigger-with-count,
+.layout
+  .responsive-filter-toolbar.responsive-filter-toolbar
+  .responsive-filter-toolbar__filter-button.filter-trigger-with-count {
+  width: auto !important;
+  max-width: none !important;
+}
+
+/* The funnel used to ride in the icon slot, which this file sizes explicitly;
+   it now sits directly in the button body, so it is sized here instead. */
+.layout .responsive-filter-toolbar__filter-button .filter-trigger-funnel {
+  width: 20px;
+  height: 20px;
+}
+
+/* rwd-ramp */
+@media (max-width: 1919.98px) {
+  .layout .responsive-filter-toolbar__filter-button .filter-trigger-funnel {
+    width: 16px;
+    height: 16px;
+  }
+}

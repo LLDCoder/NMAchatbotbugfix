@@ -1,0 +1,131 @@
+.idselector-container {
+  .idselector-radio-group {
+    margin-bottom: 16px;
+
+    .ant-radio-wrapper {
+      margin-right: 32px;
+    }
+  }
+
+  .idselector-row {
+    margin-top: 8px;
+
+    .ant-col {
+      margin-bottom: 16px;
+    }
+  }
+
+  .idselector-label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #361e12;
+  }
+
+  .idselector-required {
+    color: #ff4d4f;
+    margin-left: 4px;
+  }
+
+  .ant-picker {
+    height: 48px;
+    border-radius: 8px;
+    width: 100%;
+  }
+
+  .ant-input {
+    height: 48px;
+    border-radius: 8px;
+  }
+
+  .ant-select {
+    .ant-select-selector {
+      height: 48px !important;
+      border-radius: 8px !important;
+      align-items: center;
+    }
+  }
+
+
+  .idselector-query-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    min-width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 8px;
+    outline: none;
+    background: linear-gradient(to right, #8a6530, #a87f45);
+
+    &:hover {
+      border-color: unset;
+      background: linear-gradient(to right, #8a6530, #a87f45);
+    }
+  }
+
+  .ant-formily-item {
+    min-height: 48px;
+    height: 48px;
+    border-radius: 8px;
+
+    .ant-formily-item-control {
+      height: 48px;
+      border-radius: 8px;
+    }
+
+    .ant-formily-item-control-content {
+      height: 48px;
+      border-radius: 8px;
+
+      input {
+        height: 48px;
+        border-radius: 8px;
+      }
+
+      input:hover {
+        border-color: #cba344 !important;
+      }
+
+      input:focus {
+        box-shadow: none;
+      }
+    }
+
+    .ant-input-affix-wrapper {
+      height: 48px;
+      border-radius: 8px;
+    }
+  }
+}
+.idselector-query-input {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  .ant-input,
+  .ant-input-affix-wrapper {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+.idselector-container--designer {
+  .ant-formily-item {
+    padding: 0 !important;
+    min-height: auto;
+    height: auto;
+    border-radius: 0 !important;
+    background: transparent !important;
+
+    &:hover {
+      background: transparent !important;
+    }
+
+    .ant-formily-item-label,
+    .ant-formily-item-control {
+      background: transparent !important;
+    }
+  }
+}

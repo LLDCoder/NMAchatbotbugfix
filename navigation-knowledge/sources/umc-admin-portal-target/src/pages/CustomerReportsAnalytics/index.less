@@ -1,0 +1,721 @@
+@import "@/pages/ContentReportsAnalytics/index.less";
+
+.customer-reports__overview-donut-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+
+  /* Cards grow to fit their content; grid stretch makes all rows equal-height */
+  .content-reports__donut-card--permit-status {
+    height: auto;
+    min-height: 0;
+
+    /* Keep legend items tightly packed at top, don't distribute to fill height */
+    .content-reports__legend-list {
+      flex: 0 0 auto;
+      justify-content: flex-start;
+    }
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.customer-reports__two-col-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-items: stretch;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.customer-reports__three-col-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  align-items: stretch;
+
+  .content-reports__donut-card--permit-status {
+    height: auto;
+    min-height: 0;
+
+    .content-reports__legend-list {
+      flex: 0 0 auto;
+      justify-content: flex-start;
+    }
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+/*
+  Operational tab chart wrapper. At >=1280 it is transparent (display: contents) so the
+  overview donut row and the ticket/enquiry row keep their own 3-up grids. Below 1280 it
+  becomes a single 2-column grid (see media query below) that both inner rows flow into.
+*/
+.customer-reports__operational-charts {
+  display: contents;
+}
+
+.customer-reports__csat-row {
+  grid-template-columns: 3fr 7fr;
+}
+
+/* ── Emirate bars: fill the row height and scroll overflowing items ── */
+.customer-reports__emirate-bars-wrap {
+  height: 100%;
+
+  .content-reports__bars-card {
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .content-reports__bar-list {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+
+    &::-webkit-scrollbar { width: 4px; }
+    &::-webkit-scrollbar-thumb { background: #d0d0d0; border-radius: 2px; }
+  }
+}
+
+/* ── CSAT Overview Card ── */
+.customer-reports__csat-overview-card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 24px;
+}
+
+.customer-reports__csat-kpi-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.customer-reports__csat-kpi-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 16px;
+  background: #f9fafb;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+    padding: 12px;
+    border-radius: 10px;
+  }
+}
+
+.customer-reports__csat-rating-denom {
+  font-size: 13px;
+  font-weight: 500;
+  color: #5f646d;
+  margin-left: 1px;
+}
+
+.customer-reports__csat-donut-wrap {
+  flex: 1;
+}
+
+.customer-reports__csat-segment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 8px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.customer-reports__csat-segment-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #5f646d;
+}
+
+.customer-reports__csat-segment-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.customer-reports__csat-segment-name {
+  flex: 1;
+}
+
+.customer-reports__csat-segment-count {
+  font-weight: 600;
+  color: #1a1a2e;
+  min-width: 60px;
+  text-align: right;
+}
+
+.customer-reports__csat-segment-pct {
+  color: #9ea2a9;
+  min-width: 52px;
+  text-align: right;
+}
+
+/* ── Top 10 tabbed card ── */
+.customer-reports__top-ten-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.customer-reports__top-ten-tabs {
+  .ant-tabs-nav {
+    padding: 0 24px;
+    margin-bottom: 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .ant-tabs-tab {
+    min-height: 56px;
+
+    .ant-tabs-tab-btn {
+      color: #361E12;
+    }
+
+    &.ant-tabs-tab-active .ant-tabs-tab-btn {
+      color: #92722A;
+      font-weight: 600;
+    }
+  }
+
+  .ant-tabs-ink-bar {
+    background: #B68A35;
+  }
+
+  .ant-tabs-content-holder {
+    padding: 0;
+  }
+
+  .ant-tabs-tabpane {
+    padding: 16px 24px 24px 24px;
+  }
+}
+
+/* ── VIP badge ── */
+.customer-reports__vip-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #f9f7ed;
+  color: #d97706;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid #fcd34d;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+  }
+}
+
+/* ── KPI grids ── */
+.customer-reports__identifier-column {
+  min-width: 170px;
+  white-space: nowrap;
+}
+.customer-reports__identifier-link,
+.customer-reports__identifier-text {
+  color: #92722a;
+  white-space: nowrap;
+}
+.customer-reports__identifier-link {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+.customer-reports__identifier-link:hover,
+.customer-reports__identifier-link:focus {
+  color: #b68a35;
+  text-decoration: underline;
+  outline: none;
+}
+/* TODO: Enable the VIP star when the VIP feature is launched.
+.customer-reports__vip-star {
+  margin-inline-end: 4px;
+}
+*/
+.customer-reports__kpi-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.customer-reports__kpi-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.customer-reports__kpi-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 16px;
+  background: #ffffff;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+    padding: 12px;
+    border-radius: 10px;
+  }
+}
+
+.customer-reports__kpi-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #f9f7ed;
+  color: #b58a1c;
+  font-size: 20px;
+  flex-shrink: 0;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 18px;
+  }
+}
+
+.customer-reports__kpi-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.customer-reports__kpi-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: #361e12;
+  line-height: 28px;
+}
+
+.customer-reports__kpi-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  max-width: 100%;
+  font-size: 13px;
+  color: #5f646d;
+  line-height: 18px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    line-height: 16px;
+  }
+}
+
+.customer-reports__kpi-label-text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.customer-reports__kpi-info-icon {
+  font-size: 13px;
+  color: #797e86;
+  cursor: default;
+  flex-shrink: 0;
+}
+
+/* ── Overview donuts ── */
+.customer-reports__overview-card {
+  padding: 20px 24px;
+  border-radius: 16px;
+  background: #ffffff;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.customer-reports__overview-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #361e12;
+  margin-bottom: 12px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+  }
+}
+
+.customer-reports__overview-total {
+  font-size: 28px;
+  font-weight: 700;
+  color: #361e12;
+  margin-bottom: 16px;
+}
+
+.customer-reports__overview-legend-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: #5f646d;
+}
+
+.customer-reports__overview-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.customer-reports__overview-legend-label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── Satisfaction tabs card ── */
+.customer-reports__satisfaction-tabs-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.customer-reports__satisfaction-tabs {
+  .ant-tabs-nav {
+    padding: 0 24px;
+    margin-bottom: 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .ant-tabs-tab {
+    min-height: 52px;
+
+    .ant-tabs-tab-btn {
+      color: #361e12;
+      font-size: 14px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+      }
+    }
+
+    &.ant-tabs-tab-active .ant-tabs-tab-btn {
+      color: #92722a;
+      font-weight: 600;
+    }
+  }
+
+  .ant-tabs-ink-bar {
+    background: #b68a35;
+  }
+
+  .ant-tabs-content-holder {
+    padding: 0;
+  }
+
+  .ant-tabs-tabpane {
+    padding: 16px 24px 24px;
+  }
+}
+
+.customer-reports__export-btn {
+  height: 36px;
+  padding: 0 20px;
+  border: 1px solid #92722a;
+  color: #92722a;
+  border-radius: 8px;
+  font-weight: 500;
+
+  &:hover {
+    border-color: #b68a35 !important;
+    color: #b68a35 !important;
+  }
+}
+
+/* ── Team Performance Trend card ── */
+.customer-reports__team-perf-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 470px;
+  box-sizing: border-box;
+  padding: 24px;
+  border-radius: 20px;
+}
+.customer-reports__team-perf-card .content-reports__card-title {
+  margin-bottom: 0;
+  color: #361e12;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.customer-reports__team-perf-kpi-row {
+  display: flex;
+  gap: 12px;
+  margin: 0;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.customer-reports__team-perf-kpi-box {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 20px;
+  background: #F9FAFB;
+}
+@media (max-width: 640px) {
+  .customer-reports__team-perf-card {
+    padding: 16px;
+  }
+  .customer-reports__team-perf-legend {
+    gap: 16px;
+  }
+  .customer-reports__team-perf-kpi-box {
+    flex-basis: calc(50% - 8px);
+    min-width: calc(50% - 8px);
+  }
+}
+
+.customer-reports__team-perf-kpi-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(182, 138, 53, 0.1);
+  color: #B58A1C;
+  font-size: 20px;
+  flex-shrink: 0;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 16px;
+  }
+}
+.customer-reports__team-perf-kpi-icon img {
+  display: block;
+  align-self: center;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  max-width: 20px;
+  max-height: 20px;
+}
+
+.customer-reports__team-perf-kpi-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.customer-reports__team-perf-kpi-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: #361e12;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.customer-reports__team-perf-kpi-label {
+  font-size: 14px;
+  color: #5F646D;
+  line-height: 20px;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    line-height: 14px;
+  }
+}
+
+.customer-reports__team-perf-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+.customer-reports__team-perf-legend .content-reports__trend-legend-item {
+  gap: 4px;
+}
+
+.customer-reports__team-perf-chart-shell {
+  flex: 1;
+  min-height: 220px;
+}
+
+/* Dashed legend line for secondary trend series */
+.content-reports__trend-legend-line--dashed {
+  background: none;
+  border-top: 2px dashed currentColor;
+  height: 0;
+  border-radius: 0;
+}
+
+.customer-reports__overview-legend-value {
+  font-weight: 600;
+  color: #361e12;
+}
+
+.customer-reports__overview-legend-pct {
+  color: #9ea2a9;
+  min-width: 48px;
+  text-align: right;
+}
+
+/*
+  Column reflow at the Figma tablet breakpoint (1440). At >=1440 the grids follow the
+  1920 desktop frames; below 1440 they collapse to the 1280/1024 frames: the KPI rows
+  drop to 2-up / 3-up, the three-donut rows pair up 2-up, the mixed donut + bars row
+  drops its bars card to full width, and the wide split rows (trends, CSAT) stack into
+  a single column. The age / profile-type donut pair keeps two-up via the --donuts
+  modifier.
+*/
+@media (max-width: 1439.98px) {
+  .customer-reports__kpi-grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .customer-reports__two-col-grid--donuts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.customer-reports__page .customer-reports__kpi-card,
+.customer-reports__page .content-reports__donut-card,
+.customer-reports__page .content-reports__bars-card,
+.customer-reports__page .content-reports__trend-card,
+.customer-reports__page .customer-reports__csat-overview-card,
+.customer-reports__page .customer-reports__team-perf-card {
+  padding: 24px;
+}
+
+.customer-reports__page
+  .customer-reports__top-ten-tabs
+  .ant-tabs-tabpane,
+.customer-reports__page
+  .customer-reports__satisfaction-tabs
+  .ant-tabs-tabpane {
+  padding: 24px;
+}
+
+@media (max-width: 1279px) {
+  .customer-reports__kpi-grid-5 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/*
+  Customer Insights rows 2 + 3, below 1920 (Figma node 44592:75213, both the
+  "1440<W<1920" and "W<1440" frames): Profiles by Emirate pairs with the CSAT
+  Overview, and the two trend cards (Customer Growth / Satisfaction by Rating)
+  each take a full-width row. The wrapper is transparent at >=1920.
+*/
+.customer-reports__insights-groups {
+  display: contents;
+}
+
+/*
+  Below 1920 the insights-groups wrapper stays transparent (display: contents) so the
+  inner two-col-grid keeps its own 2-column layout — Profiles by Emirate stays left and
+  Customer Growth Trend stays right without creating an empty slot. The previous reflow
+  targeted a second two-col-grid child (CSAT row) that is now outside this wrapper, so
+  the nth-child ordering is no longer needed.
+*/
+
+/*
+  Profile Type Distribution / Customer Age Distribution: keep the 24px card inset at
+  every width (the module-level ramp drops it to 12px below 1920) so the legend sits
+  24px off the card bottom per the Figma annotation (node 44592:75213).
+*/
+.customer-reports__two-col-grid--donuts .content-reports__donut-card--service-horizontal {
+  padding: 24px;
+}
+
+/*
+  Operational Insights, below 1920 (Figma node 44604:69771): the Case Volume and
+  Team Performance trend cards stack full-width instead of sitting 2-up.
+*/
+@media (max-width: 1919.98px) {
+  .customer-reports__operational-trend-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/*
+  Below 1440 (Figma node 44604:69771 "W<1440"): the six chart cards pair up
+  two-per-row — the two 3-up rows merge into one continuous 2-column grid (inner
+  grids dissolve via display: contents). The pie legend text stays at 14px, the
+  desktop size, instead of ramping down.
+*/
+@media (max-width: 1439.98px) {
+  .customer-reports__operational-charts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    align-items: stretch;
+  }
+
+  .customer-reports__operational-charts .customer-reports__overview-donut-grid,
+  .customer-reports__operational-charts .customer-reports__three-col-grid {
+    display: contents;
+  }
+
+  .customer-reports__operational-charts
+    .content-reports__donut-card--service
+    .content-reports__legend-label,
+  .customer-reports__operational-charts
+    .content-reports__donut-card--service
+    .content-reports__legend-value {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

@@ -1,0 +1,58 @@
+@ant-prefix: ant;
+
+.dn-designable-form {
+  .@{ant-prefix}-input,
+  .@{ant-prefix}-input-number,
+  .@{ant-prefix}-input-affix-wrapper,
+  .@{ant-prefix}-cascader-picker,
+  .@{ant-prefix}-picker-input,
+  .@{ant-prefix}-picker,
+  .@{ant-prefix}-cascader-picker-label,
+  .@{ant-prefix}-slider,
+  .@{ant-prefix}-checkbox,
+  .@{ant-prefix}-rate,
+  .@{ant-prefix}-switch,
+  .@{ant-prefix}-radio,
+  .@{ant-prefix}-radio-wrapper,
+  .@{ant-prefix}-checkbox-group,
+  .@{ant-prefix}-checkbox-wrapper,
+  .@{ant-prefix}-radio-group,
+  .@{ant-prefix}-upload,
+  .@{ant-prefix}-transfer,
+  .@{ant-prefix}-select,
+  .@{ant-prefix}-select-selector {
+    pointer-events: none !important;
+
+    input {
+      pointer-events: none !important;
+    }
+  }
+
+  .@{ant-prefix}-btn,
+  a,
+  button,
+  input,
+  textarea {
+    pointer-events: none !important;
+  }
+  .ant-typography {
+    pointer-events: all !important;
+  }
+  .anticon svg {
+    pointer-events: none;
+  }
+}
+.dn-designable-form{
+  form{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+.ant-formily-item-feedback-layout-loose{
+  margin-bottom: 0!important;
+}
+.ant-formily-item-layout-horizontal{
+  margin-bottom: 0px!important;
+
+}

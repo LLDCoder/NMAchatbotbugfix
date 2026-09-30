@@ -1,0 +1,4 @@
+interface:
+  display_name: "Maintaining FilterTable Responsive UI"
+  short_description: "Keep FilterTable toolbars and modals responsive"
+  default_prompt: "Use $maintaining-filtertable-responsive-ui to implement and verify a responsive FilterTable change in this UMC Admin Portal module."

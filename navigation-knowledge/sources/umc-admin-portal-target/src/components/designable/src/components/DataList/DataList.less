@@ -1,0 +1,342 @@
+.datalist-wrapper {
+  width: 100%;
+  margin-top: 16px;
+
+  .ant-empty-img-default {
+    height: 100% !important;
+  }
+  .datalist-card {
+    // border-radius: 16px;
+    border: 1px solid #e1e3e5;
+
+    .ant-card-head {
+      // background: #f9fafb;
+      // border-radius: 16px 16px 0 0;
+      // border-bottom: none;
+      // min-height: 48px;
+      // padding: 0 20px;
+      // margin-bottom: 0 !important;
+      .ant-card-head-title {
+        // font-size: 16px;
+        font-weight: 600;
+        color: #21252e;
+        // padding: 12px 0;
+      }
+    }
+
+    .ant-card-body {
+      padding: 20px 0;
+    }
+  }
+
+  .datalist-inner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // margin-bottom: 16px;
+
+    .datalist-inner-title {
+      // font-size: 16px;
+      // font-weight: 600;
+      color: #361e12;
+    }
+  }
+
+  .datalist-add-btn {
+    background: linear-gradient(90deg, #9e7538, #c19453);
+    border: none;
+    border-radius: 8px;
+    height: 32px;
+    padding: 0 24px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+
+    &:hover:not(:disabled) {
+      background: linear-gradient(90deg, #b8860b, #daa520);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  .datalist-table {
+    .ant-table-thead > tr > th {
+      background: #f9fafb;
+      color: #361e12;
+      font-weight: 600;
+      font-size: 14px;
+      border-bottom: 1px solid #e1e3e5;
+      padding: 12px 16px;
+    }
+
+    .ant-table-tbody > tr > td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 14px;
+      color: #262626;
+    }
+
+    .ant-table-tbody > tr:hover > td {
+      background: #fafafa;
+    }
+  }
+
+  .datalist-material-status__select {
+    width: 100%;
+    min-width: 132px;
+
+    .ant-select-selection-item,
+    .ant-select-selection-placeholder,
+    .ant-select-arrow {
+      color: #262626;
+    }
+  }
+
+  .datalist-material-status__select--approved {
+    .ant-select-selection-item {
+      color: #4a9d5c;
+    }
+  }
+
+  .datalist-material-status__select--rejected {
+    .ant-select-selection-item {
+      color: #ea4f49;
+    }
+  }
+
+  .datalist-material-status__pill {
+    display: inline-flex;
+    align-items: center;
+    min-height: 26px;
+    padding: 3px 6px;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  .datalist-material-status__pill--approved {
+    color: #4a9d5c;
+    background: #f3faf4;
+  }
+
+  .datalist-material-status__pill--rejected {
+    color: #ea4f49;
+    background: #fef2f2;
+  }
+
+  .datalist-actions {
+    display: flex;
+    gap: 16px;
+
+    .datalist-actions__view {
+      height: auto;
+      padding: 0;
+      color: #92722a;
+      font-weight: 500;
+      background: unset;
+
+      &:hover,
+      &:focus {
+        color: #b8860b;
+      }
+    }
+
+    .action-edit {
+      color: #92722a;
+      cursor: pointer;
+      font-weight: 500;
+
+      &:hover {
+        color: #b8860b;
+      }
+    }
+
+    .action-delete {
+      color: #92722a;
+      cursor: pointer;
+      font-weight: 500;
+
+      &:hover {
+        color: #b8860b;
+      }
+    }
+  }
+
+  .datalist-pagination {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 16px;
+  }
+
+  .datalist-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    // border: 1px dashed #d9d9d9;
+    border-radius: 8px;
+  }
+}
+
+.datalist-form-modal {
+  .ant-modal-header {
+    border-bottom: 1px solid #f0f0f0;
+    padding: 20px 24px;
+
+    .ant-modal-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #361e12;
+    }
+  }
+
+  .ant-form-item-label > label {
+    font-weight: 500;
+    color: #262626;
+  }
+
+  .ant-select-selector,
+  .ant-input {
+    min-height: 40px;
+  }
+
+  .modal-footer-custom {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid #f0f0f0;
+    margin-top: 8px;
+
+    .cancel-btn {
+      min-width: 100px;
+      height: 40px;
+      border-radius: 4px;
+      font-weight: 500;
+      border: 1px solid #b8860b;
+      color: #b8860b;
+
+      &:hover {
+        border-color: #daa520;
+        color: #daa520;
+      }
+    }
+
+    .save-btn {
+      min-width: 100px;
+      height: 40px;
+      border-radius: 4px;
+      font-weight: 500;
+      background: #b8860b;
+      border-color: #b8860b;
+
+      &:hover:not(:disabled) {
+        background: #daa520;
+        border-color: #daa520;
+      }
+    }
+  }
+}
+
+.datalist-delete-modal {
+  .ant-modal-body {
+    padding: 32px !important;
+  }
+
+  .delete-modal-content {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .delete-modal-icon {
+    font-size: 24px;
+    color: #ea4f49;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .delete-modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .delete-modal-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #232528;
+  }
+
+  .delete-modal-desc {
+    font-size: 14px;
+    color: #5f646d;
+    line-height: 22px;
+  }
+
+  .delete-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+
+    .cancel-btn {
+      min-width: 96px;
+      height: 40px;
+      border-radius: 4px;
+      font-weight: 500;
+      border: 1px solid #ea4f49;
+      color: #ea4f49;
+
+      &:hover {
+        border-color: #ff7875;
+        color: #ff7875;
+      }
+    }
+
+    .confirm-btn {
+      min-width: 96px;
+      height: 40px;
+      border-radius: 4px;
+      font-weight: 500;
+      background: #ea4f49;
+      border-color: #ea4f49;
+
+      &:hover:not(:disabled) {
+        background: #ff7875;
+        border-color: #ff7875;
+      }
+    }
+  }
+}
+
+.datalist-material-status__dropdown {
+  .datalist-material-status__option {
+    font-weight: 500;
+  }
+
+  .datalist-material-status__option--approved {
+    color: #4a9d5c;
+  }
+
+  .datalist-material-status__option--rejected {
+    color: #ea4f49;
+  }
+}
+
+.data-list-max-items-setter.ant-input-number {
+  width: 100%;
+  height: 48px;
+  border-radius: 8px;
+
+  .ant-input-number-input {
+    height: 46px;
+  }
+
+  .ant-input-number-handler-wrap {
+    border-radius: 0 8px 8px 0;
+  }
+}

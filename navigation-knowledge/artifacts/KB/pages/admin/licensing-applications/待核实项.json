@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "page-maintenance/1.0",
+  "page": {
+    "id": "admin.licensing.applications",
+    "portal": "admin",
+    "route": "/licensing/applications",
+    "name": "My Application Tasks"
+  },
+  "status": "pending",
+  "items": [
+    {
+      "section": "version",
+      "missing": "Trusted target deployment fingerprint and compatibility with the inspected source snapshot."
+    },
+    {
+      "section": "data_scope",
+      "missing": "Verify deployed personal and completed projection behavior against the source definitions, including disposition cases and superseded instances."
+    },
+    {
+      "section": "time_fields",
+      "missing": "Confirm whether the time label should change or the actual filtering implementation should change; establish backend timezone."
+    },
+    {
+      "section": "pagination",
+      "missing": "Verify accepted page sizes, stable ordering and snapshot/consistency behavior during multi-page reads."
+    },
+    {
+      "section": "fields",
+      "missing": "Verify localized status/decision labels and Completed compatibility mapping in the target deployment."
+    },
+    {
+      "section": "operations",
+      "missing": "Trusted verification receipts for list/detail/export operations, parameters and permission boundaries."
+    },
+    {
+      "section": "entity_and_population_vocabulary",
+      "missing": "Verify canonical terms and aliases for application versus license application, and pending/outstanding versus each view population; publish active page field bindings only after verification. The all-types service parameter is not a licensing-only filter."
+    }
+  ],
+  "sourceRefs": [
+    "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Applications/index.tsx",
+    "navigation-knowledge/sources/umc-admin-portal-target/src/services/application.ts",
+    "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ApplicationAppService.cs",
+    "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ReviewTaskProjection.cs",
+    "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/MyReviewFilter.cs",
+    "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Application/ApplicationDto.cs",
+    "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Api/Controllers/ApplicationController.cs",
+    "navigation-knowledge/artifacts/page-catalog.json"
+  ],
+  "containsLiveBusinessValues": false
+}

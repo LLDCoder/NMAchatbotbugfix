@@ -1,0 +1,1231 @@
+{
+  "provenance": "Actual v37 plans; raw response rows are intentionally absent from audit. Controlled corrections are test examples only.",
+  "cases": {
+    "en": {
+      "path": "test/runtime/groups1113-20260928/round28-x03-v37/answers/X-03__en.json",
+      "sha256": "3009644e7ac8ed632d959238b26c1f85224f7df51375733c07bc021bc0dcc326",
+      "conversationId": "conv_d26a02cdd58d4994b4f5",
+      "requestId": "3b1389c2-888b-48a1-9c17-0389f3bf8d3a",
+      "originalQuestion": "Show the current status and transfer result of ticket HC-01-2026-9762913 transferred to another department.",
+      "task": {
+        "view": "",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "detail",
+        "searchQuery": "ticket current status transfer result transferred another department HC-01-2026-9762913",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "ticket",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "businessFocus",
+            "value": "transferred to another department",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "recordIdentity",
+            "value": "HC-01-2026-9762913",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [
+              "current status",
+              "transfer result"
+            ],
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "outputShape",
+            "value": "detail",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "disclosurePurpose",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedScope",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedGrain",
+            "value": "ticket",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "view",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "current",
+            "evidence": "parsed current request"
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "transferred to another department",
+        "clarification": null,
+        "needsLiveData": true,
+        "businessObject": "ticket",
+        "recordIdentity": "HC-01-2026-9762913",
+        "requestedGrain": "ticket",
+        "requestedScope": "unknown",
+        "contextRelation": "new",
+        "unresolvedSlots": [],
+        "disclosurePurpose": "",
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [
+          "current status",
+          "transfer result"
+        ],
+        "evidenceExplanations": []
+      },
+      "plan": {
+        "stage": "analysis",
+        "steps": [
+          {
+            "id": "read_ticket",
+            "op": "read_rows",
+            "path": "/data",
+            "role": "detail",
+            "field": "",
+            "label": "Ticket detail record",
+            "limit": null,
+            "expose": false,
+            "fields": [
+              "enquiryNumber",
+              "enquiryStatusObj.nameEn",
+              "id",
+              "enquiryTypeId"
+            ],
+            "inputs": [],
+            "operand": null,
+            "evidence": [
+              {
+                "sourceId": "k_d0a0a7098b76677cd70a:p2"
+              },
+              {
+                "sourceId": "k_39d52360d49fafb2365e:p1"
+              }
+            ],
+            "sourceId": "api_965c3fb2ce2da11f18c7",
+            "predicate": "eq",
+            "totalPath": "",
+            "contextKey": "",
+            "descending": false,
+            "fieldLabels": {
+              "enquiryNumber": "Ticket number",
+              "enquiryStatusObj.nameEn": "Current status"
+            },
+            "unknownPolicy": "report",
+            "includeZeroGroups": false,
+            "knowledgeBindingId": ""
+          },
+          {
+            "id": "read_timeline",
+            "op": "read_rows",
+            "path": "/data",
+            "role": "detail",
+            "field": "",
+            "label": "Ticket transfer events",
+            "limit": null,
+            "expose": true,
+            "fields": [
+              "changeStatusObj.nameEn",
+              "departmentName",
+              "changeOnTime"
+            ],
+            "inputs": [],
+            "operand": null,
+            "evidence": [
+              {
+                "sourceId": "k_7e5ebb63b637bcb1a639:p2"
+              }
+            ],
+            "sourceId": "api_9afa3e24cb4053e8b79c",
+            "predicate": "eq",
+            "totalPath": "",
+            "contextKey": "",
+            "descending": false,
+            "fieldLabels": {
+              "changeOnTime": "Recorded change time",
+              "departmentName": "Department",
+              "changeStatusObj.nameEn": "Event status"
+            },
+            "unknownPolicy": "report",
+            "includeZeroGroups": false,
+            "knowledgeBindingId": ""
+          },
+          {
+            "id": "visible_read_ticket",
+            "op": "project",
+            "path": "",
+            "role": "detail",
+            "field": "",
+            "label": "Ticket detail record",
+            "limit": null,
+            "expose": true,
+            "fields": [
+              "enquiryStatusObj.nameEn"
+            ],
+            "inputs": [
+              "read_ticket"
+            ],
+            "operand": null,
+            "evidence": [
+              {
+                "sourceId": "k_d0a0a7098b76677cd70a:p2"
+              },
+              {
+                "sourceId": "k_39d52360d49fafb2365e:p1"
+              }
+            ],
+            "sourceId": "",
+            "predicate": "eq",
+            "totalPath": "",
+            "contextKey": "",
+            "descending": false,
+            "fieldLabels": {
+              "enquiryStatusObj.nameEn": "Current status"
+            },
+            "unknownPolicy": "reject",
+            "includeZeroGroups": false,
+            "knowledgeBindingId": ""
+          }
+        ],
+        "context": {
+          "time": {
+            "value": "No time range was requested; the current status and the recorded transfer events are returned as observed.",
+            "evidence": [
+              {
+                "sourceId": "k_7e5ebb63b637bcb1a639:p3"
+              }
+            ]
+          },
+          "grain": {
+            "value": "One ticket record identified by its internal ticket id and displayed by its business ticket number HC-01-2026-9762913.",
+            "evidence": [
+              {
+                "sourceId": "k_d0a0a7098b76677cd70a:p1"
+              },
+              {
+                "sourceId": "k_bcce27bf80d0fc24de9a:p2"
+              }
+            ]
+          },
+          "scope": "unknown",
+          "caveats": [
+            {
+              "value": "A recorded department-processing stage with a target department identifies the recorded transfer/processing stage, not successful completion of all processing.",
+              "evidence": [
+                {
+                  "sourceId": "k_7e5ebb63b637bcb1a639:p2"
+                }
+              ]
+            },
+            {
+              "value": "The initial transfer to a business department is distinct from the ProcessedTransfer hand-back to the Happiness Center.",
+              "evidence": [
+                {
+                  "sourceId": "k_10215532a0ba1402fff4:p12"
+                }
+              ]
+            }
+          ],
+          "population": {
+            "value": "The single ticket HC-01-2026-9762913, whose recorded transfer events are read from its own ticket timeline.",
+            "evidence": [
+              {
+                "sourceId": "k_7e5ebb63b637bcb1a639:p1"
+              },
+              {
+                "sourceId": "k_cf6de544f760c5b7f8dd:p3"
+              }
+            ]
+          },
+          "filterScope": {
+            "value": "No additional business filter is applied; the record is selected by its verified ticket identity.",
+            "evidence": [
+              {
+                "sourceId": "k_bcce27bf80d0fc24de9a:p4"
+              }
+            ]
+          },
+          "scopeEvidence": []
+        },
+        "missing": [
+          "population_transfer_scope"
+        ],
+        "metricCoverage": [],
+        "requirementBindings": [
+          {
+            "fields": [
+              "id",
+              "enquiryTypeId"
+            ],
+            "reason": "",
+            "stepIds": [
+              "read_ticket"
+            ],
+            "evidence": [
+              {
+                "quote": "",
+                "sourceId": "k_d0a0a7098b76677cd70a:p0"
+              }
+            ],
+            "sourceId": "api_965c3fb2ce2da11f18c7",
+            "sourcePath": "/data",
+            "requirementId": "object",
+            "knowledgeBindingId": "admin.page.tickets.detail.fields#ticket_object"
+          },
+          {
+            "fields": [
+              "id"
+            ],
+            "reason": "",
+            "stepIds": [
+              "read_ticket",
+              "read_timeline"
+            ],
+            "evidence": [
+              {
+                "quote": "",
+                "sourceId": "k_d0a0a7098b76677cd70a:p0"
+              }
+            ],
+            "sourceId": "api_965c3fb2ce2da11f18c7",
+            "sourcePath": "/data",
+            "requirementId": "grain",
+            "knowledgeBindingId": "admin.page.tickets.detail.fields#ticket_grain"
+          },
+          {
+            "fields": [
+              "enquiryStatusObj.nameEn"
+            ],
+            "reason": "",
+            "stepIds": [
+              "read_ticket"
+            ],
+            "evidence": [
+              {
+                "quote": "",
+                "sourceId": "k_39d52360d49fafb2365e:p0"
+              }
+            ],
+            "sourceId": "api_965c3fb2ce2da11f18c7",
+            "sourcePath": "/data",
+            "requirementId": "attribute_0",
+            "knowledgeBindingId": "admin.happiness.ticket.status-display#status_english"
+          },
+          {
+            "fields": [
+              "changeStatusObj.nameEn",
+              "changeStatusObj.statusName",
+              "departmentName",
+              "changeOnTime"
+            ],
+            "reason": "",
+            "stepIds": [
+              "read_timeline"
+            ],
+            "evidence": [
+              {
+                "quote": "",
+                "sourceId": "k_7e5ebb63b637bcb1a639:p0"
+              }
+            ],
+            "sourceId": "api_9afa3e24cb4053e8b79c",
+            "sourcePath": "/data",
+            "requirementId": "attribute_1",
+            "knowledgeBindingId": "admin.tickets.detail.transfer-history#transfer_history"
+          }
+        ]
+      },
+      "requirementCoverage": [
+        {
+          "id": "object",
+          "kind": "object",
+          "value": "ticket",
+          "fields": [
+            "id",
+            "enquiryTypeId"
+          ],
+          "reason": "",
+          "status": "satisfied",
+          "stepIds": [
+            "read_ticket"
+          ],
+          "evidence": [
+            {
+              "quote": "",
+              "sourceId": "k_d0a0a7098b76677cd70a:p0"
+            }
+          ],
+          "sourceId": "api_965c3fb2ce2da11f18c7",
+          "outputIds": [
+            "visible_read_ticket"
+          ],
+          "sourcePath": "/data",
+          "outputStepIds": {
+            "visible_read_ticket": [
+              "read_ticket"
+            ]
+          }
+        },
+        {
+          "id": "grain",
+          "kind": "grain",
+          "value": "ticket",
+          "fields": [
+            "id"
+          ],
+          "reason": "",
+          "status": "satisfied",
+          "stepIds": [
+            "read_ticket",
+            "read_timeline"
+          ],
+          "evidence": [
+            {
+              "quote": "",
+              "sourceId": "k_d0a0a7098b76677cd70a:p0"
+            }
+          ],
+          "sourceId": "api_965c3fb2ce2da11f18c7",
+          "outputIds": [
+            "read_timeline",
+            "visible_read_ticket"
+          ],
+          "sourcePath": "/data",
+          "outputStepIds": {
+            "read_timeline": [
+              "read_timeline"
+            ],
+            "visible_read_ticket": [
+              "read_ticket"
+            ]
+          }
+        },
+        {
+          "id": "population",
+          "kind": "population",
+          "value": "transferred to another department",
+          "reason": "requested_population_unverified",
+          "status": "unfulfilled",
+          "stepIds": [],
+          "outputIds": [],
+          "outputStepIds": {}
+        },
+        {
+          "id": "attribute_0",
+          "kind": "attribute",
+          "value": "current status",
+          "fields": [
+            "enquiryStatusObj.nameEn"
+          ],
+          "reason": "requested_context_unverified",
+          "status": "unfulfilled",
+          "stepIds": [
+            "read_ticket"
+          ],
+          "evidence": [
+            {
+              "quote": "",
+              "sourceId": "k_39d52360d49fafb2365e:p0"
+            }
+          ],
+          "sourceId": "api_965c3fb2ce2da11f18c7",
+          "outputIds": [],
+          "sourcePath": "/data",
+          "outputStepIds": {}
+        },
+        {
+          "id": "attribute_1",
+          "kind": "attribute",
+          "value": "transfer result",
+          "reason": "requested_attribute_unverified",
+          "status": "unfulfilled",
+          "stepIds": [],
+          "outputIds": [],
+          "outputStepIds": {}
+        },
+        {
+          "id": "detail",
+          "kind": "detail",
+          "value": "detail",
+          "reason": "requested_context_unverified",
+          "status": "unfulfilled",
+          "stepIds": [
+            "read_timeline",
+            "visible_read_ticket"
+          ],
+          "outputIds": [],
+          "outputStepIds": {}
+        },
+        {
+          "id": "record",
+          "kind": "record",
+          "value": "HC-01-2026-9762913",
+          "reason": "",
+          "status": "satisfied",
+          "stepIds": [
+            "read_timeline",
+            "visible_read_ticket"
+          ],
+          "outputIds": [
+            "read_timeline",
+            "visible_read_ticket"
+          ],
+          "outputStepIds": {
+            "read_timeline": [
+              "read_timeline"
+            ],
+            "visible_read_ticket": [
+              "visible_read_ticket"
+            ]
+          }
+        }
+      ],
+      "withheldOutputContexts": [
+        {
+          "reason": "requested_record_context_unverified",
+          "outputId": "read_timeline",
+          "requirementIds": [
+            "object",
+            "population"
+          ]
+        },
+        {
+          "reason": "requested_record_context_unverified",
+          "outputId": "visible_read_ticket",
+          "requirementIds": [
+            "population"
+          ]
+        }
+      ],
+      "relatedReadDefinitions": [
+        {
+          "ownership": "request_parameter_collection",
+          "parameter": "enquiryId",
+          "parentPath": "/data",
+          "parentField": "id",
+          "projections": [
+            {
+              "path": "/data",
+              "fields": [
+                "changeOnTime",
+                "changeStatusObj.nameEn",
+                "changeStatusObj.statusName",
+                "departmentName"
+              ]
+            }
+          ],
+          "operationKey": "GET /api/Enquiry/Management/{enquiryId}/Timeline",
+          "collectionPath": "/data",
+          "relationshipRef": "admin.enquiry.timeline",
+          "responseKeyPath": null,
+          "parentOperationKey": "GET /api/Enquiry/Management/{enquiryId}/EnquiryInfo"
+        }
+      ],
+      "relatedCollectionProofs": [
+        {
+          "path": "/data",
+          "identity": "HC-01-2026-9762913",
+          "rowCount": 11,
+          "sourceId": "api_9afa3e24cb4053e8b79c",
+          "contractHash": "c56b97757b5eade7ab907cd45332fe72dfc67ec415db6f5b1e2ff2c5641f87c8",
+          "parentSourceId": "api_965c3fb2ce2da11f18c7",
+          "relationshipRef": "admin.enquiry.timeline"
+        }
+      ]
+    },
+    "ar": {
+      "path": "test/runtime/groups1113-20260928/round28-x03-v37/answers/X-03__ar.json",
+      "sha256": "b1cb823cc61d0e8a902b82b8b50bd3834f8ae08b11016ec6636bb6c5cb7f7317",
+      "conversationId": "conv_da9b7685882249f6839d",
+      "requestId": "6878c01c-68c8-440e-bc08-57439fa8d474",
+      "originalQuestion": "اعرض الحالة الحالية ونتيجة التحويل للتذكرة HC-01-2026-9762913 المحوَّلة إلى قسم آخر.",
+      "task": {
+        "view": "",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "detail",
+        "searchQuery": "ticket current status transfer result transferred another department",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "ticket",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "recordIdentity",
+            "value": "HC-01-2026-9762913",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [
+              "current status",
+              "transfer result"
+            ],
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "outputShape",
+            "value": "detail",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedGrain",
+            "value": "ticket",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedScope",
+            "value": "unknown",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "businessFocus",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "disclosurePurpose",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "view",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "current",
+            "evidence": "parsed current request"
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "",
+        "clarification": null,
+        "needsLiveData": true,
+        "businessObject": "ticket",
+        "recordIdentity": "HC-01-2026-9762913",
+        "requestedGrain": "ticket",
+        "requestedScope": "unknown",
+        "contextRelation": "new",
+        "unresolvedSlots": [],
+        "disclosurePurpose": "",
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [
+          "current status",
+          "transfer result"
+        ],
+        "evidenceExplanations": []
+      },
+      "plan": {
+        "stage": "analysis",
+        "steps": [
+          {
+            "id": "read_ticket",
+            "op": "read_rows",
+            "path": "/data",
+            "role": "detail",
+            "field": "",
+            "label": "قراءة تفاصيل التذكرة المحددة",
+            "limit": null,
+            "expose": false,
+            "fields": [
+              "id",
+              "enquiryNumber",
+              "enquiryStatusObj.nameAr",
+              "enquiryStatusObj.nameEn",
+              "enquiryTypeId"
+            ],
+            "inputs": [],
+            "operand": null,
+            "evidence": [
+              {
+                "sourceId": "k_d0a0a7098b76677cd70a:p0"
+              },
+              {
+                "sourceId": "k_39d52360d49fafb2365e:p1"
+              }
+            ],
+            "sourceId": "api_965c3fb2ce2da11f18c7",
+            "predicate": "eq",
+            "totalPath": "",
+            "contextKey": "",
+            "descending": false,
+            "fieldLabels": {},
+            "unknownPolicy": "report",
+            "includeZeroGroups": false,
+            "knowledgeBindingId": ""
+          },
+          {
+            "id": "project_ticket",
+            "op": "project",
+            "path": "",
+            "role": "detail",
+            "field": "",
+            "label": "الحالة الحالية للتذكرة",
+            "limit": null,
+            "expose": true,
+            "fields": [
+              "enquiryStatusObj.nameAr"
+            ],
+            "inputs": [
+              "read_ticket"
+            ],
+            "operand": null,
+            "evidence": [
+              {
+                "sourceId": "k_39d52360d49fafb2365e:p2"
+              }
+            ],
+            "sourceId": "",
+            "predicate": "eq",
+            "totalPath": "",
+            "contextKey": "",
+            "descending": false,
+            "fieldLabels": {
+              "enquiryStatusObj.nameAr": "الحالة الحالية"
+            },
+            "unknownPolicy": "reject",
+            "includeZeroGroups": false,
+            "knowledgeBindingId": ""
+          },
+          {
+            "id": "read_timeline",
+            "op": "read_rows",
+            "path": "/data",
+            "role": "detail",
+            "field": "",
+            "label": "قراءة سجل أحداث التحويل للتذكرة",
+            "limit": null,
+            "expose": false,
+            "fields": [
+              "changeStatusObj.statusName",
+              "changeStatusObj.nameEn",
+              "departmentName",
+              "changeOnTime"
+            ],
+            "inputs": [],
+            "operand": null,
+            "evidence": [
+              {
+                "sourceId": "k_7e5ebb63b637bcb1a639:p1"
+              },
+              {
+                "sourceId": "k_7e5ebb63b637bcb1a639:p2"
+              }
+            ],
+            "sourceId": "api_9afa3e24cb4053e8b79c",
+            "predicate": "eq",
+            "totalPath": "",
+            "contextKey": "",
+            "descending": false,
+            "fieldLabels": {},
+            "unknownPolicy": "report",
+            "includeZeroGroups": false,
+            "knowledgeBindingId": ""
+          },
+          {
+            "id": "project_timeline",
+            "op": "project",
+            "path": "",
+            "role": "detail",
+            "field": "",
+            "label": "نتيجة التحويل المسجَّلة",
+            "limit": null,
+            "expose": true,
+            "fields": [
+              "changeStatusObj.statusName",
+              "departmentName",
+              "changeOnTime"
+            ],
+            "inputs": [
+              "read_timeline"
+            ],
+            "operand": null,
+            "evidence": [
+              {
+                "sourceId": "k_7e5ebb63b637bcb1a639:p2"
+              }
+            ],
+            "sourceId": "",
+            "predicate": "eq",
+            "totalPath": "",
+            "contextKey": "",
+            "descending": false,
+            "fieldLabels": {
+              "changeOnTime": "وقت التغيير المسجَّل",
+              "departmentName": "القسم الوجهة",
+              "changeStatusObj.statusName": "حالة الحدث"
+            },
+            "unknownPolicy": "reject",
+            "includeZeroGroups": false,
+            "knowledgeBindingId": ""
+          }
+        ],
+        "context": {
+          "time": {
+            "value": "لا يوجد نطاق زمني مطلوب؛ تُعرض الحالة الحالية ونتيجة التحويل المسجَّلة كما أُعيدت.",
+            "evidence": [
+              {
+                "sourceId": "k_7e5ebb63b637bcb1a639:p3"
+              }
+            ]
+          },
+          "grain": {
+            "value": "تذكرة واحدة محددة برقم الأعمال HC-01-2026-9762913 ومعرّفها الداخلي.",
+            "evidence": [
+              {
+                "sourceId": "k_d0a0a7098b76677cd70a:p1"
+              },
+              {
+                "sourceId": "k_bcce27bf80d0fc24de9a:p2"
+              }
+            ]
+          },
+          "scope": "unknown",
+          "caveats": [
+            {
+              "value": "ظهور حالة «معالجة القسم» مع قسم مُعاد في سجل الأحداث يوثّق مرحلة التحويل/المعالجة المسجَّلة، ولا يعني إتمام كل المعالجة.",
+              "evidence": [
+                {
+                  "sourceId": "k_7e5ebb63b637bcb1a639:p2"
+                }
+              ]
+            },
+            {
+              "value": "الحالة الحالية للتذكرة تُقرأ من تفاصيل التذكرة، وسجل الأحداث يصف مراحل تاريخية وإسنادات؛ ولا يُرقّى حدث قسم قديم إلى إتمام حالي.",
+              "evidence": [
+                {
+                  "sourceId": "k_7e5ebb63b637bcb1a639:p3"
+                }
+              ]
+            },
+            {
+              "value": "الطوابع الزمنية دون إزاحة زمنية تُعرض كأوقات محلية للمصدر مع منطقة زمنية غير محددة.",
+              "evidence": [
+                {
+                  "sourceId": "k_7e5ebb63b637bcb1a639:p3"
+                }
+              ]
+            }
+          ],
+          "population": {
+            "value": "التذكرة المحددة HC-01-2026-9762913 كما أُعيدت من تفاصيل التذكرة.",
+            "evidence": [
+              {
+                "sourceId": "k_d0a0a7098b76677cd70a:p0"
+              },
+              {
+                "sourceId": "k_7693963cec6cc3d0ff14:p1"
+              }
+            ]
+          },
+          "filterScope": {
+            "value": "لا يوجد تصفية إضافية مطلوبة؛ يُقيَّد القراءة على هوية التذكرة المحددة.",
+            "evidence": [
+              {
+                "sourceId": "k_bcce27bf80d0fc24de9a:p4"
+              }
+            ]
+          },
+          "scopeEvidence": []
+        },
+        "missing": [],
+        "metricCoverage": [],
+        "requirementBindings": [
+          {
+            "fields": [
+              "id",
+              "enquiryTypeId"
+            ],
+            "reason": "الكيان المُعاد من تفاصيل التذكرة هو تذكرة.",
+            "stepIds": [
+              "read_ticket"
+            ],
+            "evidence": [
+              {
+                "quote": "",
+                "sourceId": "k_d0a0a7098b76677cd70a:p0"
+              }
+            ],
+            "sourceId": "api_965c3fb2ce2da11f18c7",
+            "sourcePath": "/data",
+            "requirementId": "object",
+            "knowledgeBindingId": "admin.page.tickets.detail.fields#ticket_object"
+          },
+          {
+            "fields": [
+              "id"
+            ],
+            "reason": "حبيبة التذكرة الواحدة تُحدَّد بالمعرّف الداخلي.",
+            "stepIds": [
+              "read_ticket",
+              "read_timeline"
+            ],
+            "evidence": [
+              {
+                "quote": "",
+                "sourceId": "k_d0a0a7098b76677cd70a:p0"
+              }
+            ],
+            "sourceId": "api_965c3fb2ce2da11f18c7",
+            "sourcePath": "/data",
+            "requirementId": "grain",
+            "knowledgeBindingId": "admin.page.tickets.detail.fields#ticket_grain"
+          },
+          {
+            "fields": [
+              "enquiryStatusObj.nameAr"
+            ],
+            "reason": "التسمية العربية للحالة الحالية للتذكرة.",
+            "stepIds": [
+              "project_ticket"
+            ],
+            "evidence": [
+              {
+                "quote": "",
+                "sourceId": "k_39d52360d49fafb2365e:p0"
+              }
+            ],
+            "sourceId": "api_965c3fb2ce2da11f18c7",
+            "sourcePath": "/data",
+            "requirementId": "attribute_0",
+            "knowledgeBindingId": "admin.happiness.ticket.status-display#status_arabic"
+          },
+          {
+            "fields": [
+              "changeStatusObj.nameEn",
+              "changeStatusObj.statusName",
+              "departmentName",
+              "changeOnTime"
+            ],
+            "reason": "نتيجة التحويل من سجل أحداث التذكرة المرتبط بها.",
+            "stepIds": [
+              "project_timeline"
+            ],
+            "evidence": [
+              {
+                "quote": "",
+                "sourceId": "k_7e5ebb63b637bcb1a639:p0"
+              }
+            ],
+            "sourceId": "api_9afa3e24cb4053e8b79c",
+            "sourcePath": "/data",
+            "requirementId": "attribute_1",
+            "knowledgeBindingId": "admin.tickets.detail.transfer-history#transfer_history"
+          }
+        ]
+      },
+      "requirementCoverage": [
+        {
+          "id": "object",
+          "kind": "object",
+          "value": "ticket",
+          "fields": [
+            "id",
+            "enquiryTypeId"
+          ],
+          "reason": "",
+          "status": "satisfied",
+          "stepIds": [
+            "read_ticket"
+          ],
+          "evidence": [
+            {
+              "quote": "",
+              "sourceId": "k_d0a0a7098b76677cd70a:p0"
+            }
+          ],
+          "sourceId": "api_965c3fb2ce2da11f18c7",
+          "outputIds": [
+            "project_ticket"
+          ],
+          "sourcePath": "/data",
+          "outputStepIds": {
+            "project_ticket": [
+              "read_ticket"
+            ]
+          }
+        },
+        {
+          "id": "grain",
+          "kind": "grain",
+          "value": "ticket",
+          "fields": [
+            "id"
+          ],
+          "reason": "",
+          "status": "satisfied",
+          "stepIds": [
+            "read_ticket",
+            "read_timeline"
+          ],
+          "evidence": [
+            {
+              "quote": "",
+              "sourceId": "k_d0a0a7098b76677cd70a:p0"
+            }
+          ],
+          "sourceId": "api_965c3fb2ce2da11f18c7",
+          "outputIds": [
+            "project_ticket",
+            "project_timeline"
+          ],
+          "sourcePath": "/data",
+          "outputStepIds": {
+            "project_ticket": [
+              "read_ticket"
+            ],
+            "project_timeline": [
+              "read_timeline"
+            ]
+          }
+        },
+        {
+          "id": "attribute_0",
+          "kind": "attribute",
+          "value": "current status",
+          "fields": [
+            "enquiryStatusObj.nameAr"
+          ],
+          "reason": "",
+          "status": "satisfied",
+          "stepIds": [
+            "project_ticket"
+          ],
+          "evidence": [
+            {
+              "quote": "",
+              "sourceId": "k_39d52360d49fafb2365e:p0"
+            }
+          ],
+          "sourceId": "api_965c3fb2ce2da11f18c7",
+          "outputIds": [
+            "project_ticket"
+          ],
+          "sourcePath": "/data",
+          "outputStepIds": {
+            "project_ticket": [
+              "project_ticket"
+            ]
+          }
+        },
+        {
+          "id": "attribute_1",
+          "kind": "attribute",
+          "value": "transfer result",
+          "reason": "requested_attribute_unverified",
+          "status": "unfulfilled",
+          "stepIds": [],
+          "outputIds": [],
+          "outputStepIds": {}
+        },
+        {
+          "id": "detail",
+          "kind": "detail",
+          "value": "detail",
+          "reason": "",
+          "status": "satisfied",
+          "stepIds": [
+            "project_ticket",
+            "project_timeline"
+          ],
+          "outputIds": [
+            "project_ticket"
+          ],
+          "outputStepIds": {
+            "project_ticket": [
+              "project_ticket"
+            ]
+          }
+        },
+        {
+          "id": "record",
+          "kind": "record",
+          "value": "HC-01-2026-9762913",
+          "reason": "",
+          "status": "satisfied",
+          "stepIds": [
+            "project_ticket",
+            "project_timeline"
+          ],
+          "outputIds": [
+            "project_ticket",
+            "project_timeline"
+          ],
+          "outputStepIds": {
+            "project_ticket": [
+              "project_ticket"
+            ],
+            "project_timeline": [
+              "project_timeline"
+            ]
+          }
+        }
+      ],
+      "withheldOutputContexts": [
+        {
+          "reason": "requested_record_context_unverified",
+          "outputId": "project_timeline",
+          "requirementIds": [
+            "object"
+          ]
+        }
+      ],
+      "relatedReadDefinitions": [
+        {
+          "ownership": "request_parameter_collection",
+          "parameter": "enquiryId",
+          "parentPath": "/data",
+          "parentField": "id",
+          "projections": [
+            {
+              "path": "/data",
+              "fields": [
+                "changeOnTime",
+                "changeStatusObj.nameEn",
+                "changeStatusObj.statusName",
+                "departmentName"
+              ]
+            }
+          ],
+          "operationKey": "GET /api/Enquiry/Management/{enquiryId}/Timeline",
+          "collectionPath": "/data",
+          "relationshipRef": "admin.enquiry.timeline",
+          "responseKeyPath": null,
+          "parentOperationKey": "GET /api/Enquiry/Management/{enquiryId}/EnquiryInfo"
+        }
+      ],
+      "relatedCollectionProofs": [
+        {
+          "path": "/data",
+          "identity": "HC-01-2026-9762913",
+          "rowCount": 11,
+          "sourceId": "api_9afa3e24cb4053e8b79c",
+          "contractHash": "c56b97757b5eade7ab907cd45332fe72dfc67ec415db6f5b1e2ff2c5641f87c8",
+          "parentSourceId": "api_965c3fb2ce2da11f18c7",
+          "relationshipRef": "admin.enquiry.timeline"
+        }
+      ]
+    }
+  }
+}

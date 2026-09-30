@@ -1,0 +1,61 @@
+/*
+ * Sits at the end of a Filter trigger, after the funnel icon. Pill shaped so a
+ * two-digit count widens it instead of being truncated to "9+".
+ */
+.filter-count-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 10px;
+  background: #92722a;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    min-width: 18px;
+    height: 18px;
+    font-size: 10px;
+    line-height: 18px;
+  }
+}
+
+/*
+ * Shared layout for a page-owned Filter trigger that carries a count. The
+ * label, funnel and badge sit directly in the button body: CustomButton's
+ * `icon` slot is pinned to a fixed width on several pages, which would crush
+ * the funnel and the badge together.
+ */
+.filter-trigger-with-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  /*
+   * Several pages pin their Filter trigger to a width measured before the badge
+   * existed. A trigger that carries a count has to size to its content, so the
+   * pinned width is wrong by construction; min-width still holds the design's
+   * floor, and buttons with no count keep their original width.
+   */
+  width: auto !important;
+  max-width: none !important;
+
+  .custom-button-content,
+  .custom-button-contentWithIcon {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
+}
+
+.filter-trigger-funnel {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}

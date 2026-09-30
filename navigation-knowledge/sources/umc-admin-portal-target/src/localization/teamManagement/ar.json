@@ -1,0 +1,207 @@
+{
+  "teamManagement": {
+    "tabs": {
+      "teamTasks": "مهام الفريق",
+      "teamTasksWithUrgentCount": "مهام الفريق، عدد المهام العاجلة: {{count}}",
+      "teamMembers": "أعضاء الفريق"
+    },
+    "subTabs": {
+      "todo": "قيد الإنجاز",
+      "completed": "مكتمل"
+    },
+    "taskSources": {
+      "inspectionTask": "مهمة التفتيش",
+      "otherTask": "مهمة أخرى"
+    },
+    "applicationTaskOnly": "مهام الطلبات فقط",
+    "sla": {
+      "dueInDays": "خلال {{count}} يوم",
+      "dueInHours": "خلال {{count}} ساعة",
+      "overdueDays": "متأخر {{count}} يوم",
+      "dueIn": "خلال {{duration}}",
+      "dueToday": "يستحق اليوم",
+      "exceeded": "تجاوز الوقت",
+      "onTime": "في الوقت المحدد",
+      "durationDays": "{{count}} يوم",
+      "durationDaysHours": "{{days}} يوم {{hours}} ساعة",
+      "durationHours": "{{count}} ساعة",
+      "durationHoursMinutes": "{{hours}} ساعة {{minutes}} دقيقة",
+      "durationMinutes": "{{count}} دقيقة"
+    },
+    "duration": {
+      "daysShort": "{{value}} يوم",
+      "hoursShort": "{{value}} س",
+      "minutesShort": "{{value}} د"
+    },
+    "memberActions": {
+      "editAssignedArea": "تعديل المنطقة المعيّنة",
+      "setAssignedArea": "تعيين منطقة",
+      "markEmergencyLeave": "تسجيل إجازة طارئة",
+      "resumeWork": "استئناف العمل"
+    },
+    "messages": {
+      "operationSuccess": "تمت العملية بنجاح",
+      "operationFailed": "فشلت العملية",
+      "actionNotAvailable": "هذا الإجراء غير متاح بعد.",
+      "failedToLoadMembers": "فشل تحميل الأعضاء",
+      "failedToLoadMemberCards": "فشل تحميل بطاقات الأعضاء",
+      "failedToLoadLeaveReasons": "فشل تحميل أسباب الإجازة",
+      "failedToLoadSummary": "فشل تحميل الملخص",
+      "failedToLoadTasks": "فشل تحميل المهام"
+    },
+    "assignedArea": {
+      "editWarning1": "لن تتأثر المهام الحالية. سيواصل المفتش العمل على مهامه الحالية.",
+      "editWarning2": "سيتم إسناد المهام المستقبلية تلقائيًا استنادًا إلى المنطقة المسندة الجديدة ابتداءً من دورة الإسناد التالية.",
+      "setDescription": "لم يتم تحديد منطقة مسندة. بعد تحديدها، سيتم إسناد المهام المستقبلية تلقائيًا استنادًا إليها.",
+      "emirate": "الإمارة",
+      "region": "الإقليم",
+      "area": "المنطقة",
+      "assignedArea": "المنطقة المعيّنة",
+      "selectEmirate": "اختر الإمارة",
+      "selectOneOrMoreEmirates": "اختر إمارة واحدة أو أكثر",
+      "selectOneOrMoreRegions": "اختر إقليماً واحداً أو أكثر",
+      "searchOrSelectAreas": "ابحث عن منطقة واحدة أو أكثر أو اخترها",
+      "searchArea": "البحث عن منطقة",
+      "regionShownBecause": "يظهر هذا الحقل لأن إمارة أبوظبي محددة",
+      "pleaseSelectArea": "يرجى اختيار منطقة"
+    },
+    "leave": {
+      "leaveReason": "سبب الإجازة",
+      "selectLeaveReason": "اختر سبب الإجازة",
+      "expectedReturnDate": "تاريخ العودة المتوقع",
+      "expectedReturnDatePlaceholder": "DD/MM/YYYY  HH:MM:SS",
+      "notes": "ملاحظات",
+      "notesPlaceholder": "سبب الإجازة الطارئة",
+      "enterNotes": "أدخل الملاحظات"
+    },
+    "resume": {
+      "confirmation": "هل أنت متأكد من إعادة هذا الموظف إلى العمل؟"
+    },
+    "reassign": {
+      "title": "إعادة تعيين المهمة",
+      "selectedCount": "تم تحديد {{count}}",
+      "selected": "تم التحديد",
+      "assignedPerson": "الموظف المعيَّن",
+      "selectTeamMember": "اختر عضو فريق",
+      "noEligibleMembers": "لا يوجد عضو فريق مؤهل للمهام المحددة",
+      "noRecordsFound": "لا توجد سجلات",
+      "tasksSelected": "{{count}} مهمة مختارة",
+      "action": "إعادة تعيين"
+    },
+    "profileApproval": {
+      "actions": {
+        "approve": "موافقة",
+        "reject": "رفض"
+      },
+      "approveModal": {
+        "title": "الموافقة على الطلب",
+        "content": "هل أنت متأكد من الموافقة على هذا الطلب؟",
+        "cancel": "إلغاء",
+        "confirm": "تأكيد"
+      },
+      "rejectModal": {
+        "title": "رفض الطلب",
+        "notes": "ملاحظات",
+        "placeholder": "أدخل الملاحظات",
+        "quickNote": "ملاحظة سريعة",
+        "cancel": "إلغاء",
+        "confirm": "تأكيد"
+      },
+      "messages": {
+        "approveSuccess": "تمت الموافقة على الطلب بنجاح.",
+        "approveFailed": "فشلت الموافقة على الطلب.",
+        "rejectSuccess": "تم رفض الطلب بنجاح.",
+        "rejectFailed": "فشل رفض الطلب."
+      },
+      "rejectReasons": {
+        "documentUnclear": "مستند غير واضح",
+        "documentMismatch": "عدم تطابق المستندات",
+        "faceNotClearlyVisible": "الوجه غير واضح في الصورة",
+        "missingRequiredDocument": "مستند مطلوب مفقود",
+        "invalidEmiratesId": "هوية إماراتية غير صالحة أو منتهية",
+        "documentExpired": "المستند منتهٍ",
+        "licenseNumberMismatch": "عدم تطابق رقم الرخصة",
+        "licenseExpired": "الرخصة منتهية",
+        "unableVerifyEconomy": "تعذّر التحقق مع وزارة الاقتصاد"
+      }
+    },
+    "memberCard": {
+      "assignedAreaUnassigned": "غير معيَّن",
+      "assignedAreaAssigned": "معيَّن",
+      "assignedAreaPartial": "جزئي",
+      "leaveTime": "وقت الإجازة",
+      "reason": "السبب",
+      "emergencyLeaveReturnAt": "إجازة طارئة، العودة في {{date}}"
+    },
+    "tooltips": {
+      "completedTasks": "المهام المكتملة / إجمالي المهام المسندة (ضمن الفترة الزمنية وفئة المهام المحددتين).",
+      "avgProcessingTime": "متوسط الوقت المستغرق لإكمال المهام ضمن الفترة الزمنية وفئة المهام المحددتين.",
+      "slaCompliance": "نسبة المهام المكتملة التي التزمت باتفاقية مستوى الخدمة ضمن الفترة الزمنية وفئة المهام المحددتين.",
+      "overdueTasks": "عدد المهام المفتوحة التي تجاوزت الموعد النهائي لاتفاقية مستوى الخدمة ضمن الفترة الزمنية وفئة المهام المحددتين."
+    },
+    "metrics": {
+      "completedTasks": "المهام المكتملة",
+      "avgProcessingTime": "متوسط وقت المعالجة",
+      "slaCompliance": "الالتزام باتفاقية مستوى الخدمة",
+      "overdueTasks": "المهام المتأخرة"
+    },
+    "table": {
+      "taskNo": "رقم المهمة",
+      "urgent": "عاجل",
+      "taskCategory": "فئة المهمة",
+      "applyFor": "مطلوب من",
+      "sla": "SLA",
+      "assignedTo": "مُسند إلى",
+      "selfMonitor": "الرصد الذاتي",
+      "status": "الحالة",
+      "lastUpdated": "آخر تحديث",
+      "actions": "الإجراءات"
+    },
+    "placeholders": {
+      "teamMembers": "اختر عضو فريق",
+      "allCategories": "جميع الفئات",
+      "allStatuses": "جميع الحالات",
+      "allMembers": "جميع الأعضاء",
+      "startDate": "تاريخ البدء",
+      "endDate": "تاريخ الانتهاء"
+    },
+    "filter": {
+      "member": "عضو الفريق",
+      "lastUpdated": "آخر تحديث"
+    },
+    "memberOptions": {
+      "auto": "تلقائي",
+      "selfMonitor": "المراقبة الذاتية"
+    },
+    "actions": {
+      "createTask": "إنشاء مهمة"
+    },
+    "summary": {
+      "todo": "قيد الإنجاز"
+    },
+    "categories": {
+      "applications": "الطلبات",
+      "profileVerifications": "التحقق من الملفات الشخصية",
+      "enquiries": "الاستفسارات",
+      "refunds": "الاستردادات",
+      "appeals": "التظلمات",
+      "inspectionTasks": "مهام التفتيش",
+      "violations": "المخالفات"
+    },
+    "memberCategories": {
+      "all": "الجميع",
+      "applications": "الطلبات",
+      "profileVerification": "التحقق من الملف الشخصي",
+      "enquiries": "الاستفسارات والشكاوى",
+      "appeals": "التظلمات",
+      "refunds": "الاستردادات",
+      "inspectionTasks": "التفتيش",
+      "violations": "المخالفات"
+    },
+    "validation": {
+      "futureDateRequired": "يرجى اختيار تاريخ مستقبلي",
+      "assignedPersonRequired": "يرجى اختيار موظف"
+    },
+    "title": "إدارة الفريق"
+  }
+}

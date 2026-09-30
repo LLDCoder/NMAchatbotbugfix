@@ -1,0 +1,126 @@
+// Layout and visuals aligned with ProfileForm (profile-form-container / profile-form-card)
+
+.trade-license-details-container {
+  width: 100%;
+}
+
+.trade-license-details-card {
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8e8e8;
+
+  .ant-card-head {
+    background-color: #fff;
+    border-bottom: none;
+    padding: 20px 24px 0;
+    min-height: auto;
+
+    .ant-card-head-title {
+      font-weight: 600;
+      font-size: 16px;
+      color: #361e12;
+      padding: 0;
+    }
+  }
+
+  .ant-card-body {
+    padding: 20px 24px 24px;
+  }
+
+  .ant-row {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .trade-license-details-field {
+    margin-bottom: 0;
+  }
+
+  .trade-license-details-label {
+    font-size: 14px;
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    .trade-license-details-required {
+      color: #ea4f49;
+      margin-left: 2px;
+    }
+  }
+
+  .trade-license-details-radio-group {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+  }
+
+  .ant-input {
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid #d9d9d9;
+
+    &:hover:not(:disabled) {
+      border-color: #8b7355;
+    }
+
+    &:focus {
+      border-color: #8b7355;
+      box-shadow: 0 0 0 2px rgba(139, 115, 85, 0.1);
+    }
+  }
+
+  .ant-select {
+    width: 100%;
+
+    .ant-select-selector {
+      height: 48px !important;
+      border-radius: 8px !important;
+      align-items: center;
+      padding: 0 12px !important;
+      border: 1px solid #d9d9d9;
+    }
+
+    &:not(.ant-select-disabled):hover .ant-select-selector {
+      border-color: #8b7355;
+    }
+
+    &.ant-select-focused:not(.ant-select-disabled) .ant-select-selector {
+      border-color: #8b7355;
+      box-shadow: 0 0 0 2px rgba(139, 115, 85, 0.1);
+    }
+  }
+
+  .trade-license-details-upload {
+    .document-viewer-wrapper {
+      width: 100%;
+    }
+  }
+}
+
+.trade-license-details-tax-wrap {
+  overflow: hidden;
+  transition: max-height 0.28s ease, opacity 0.22s ease;
+}
+
+.trade-license-details-tax-wrap--visible {
+  max-height: 200px;
+  opacity: 1;
+  margin-bottom: 16px;
+}
+
+.trade-license-details-tax-wrap--hidden {
+  max-height: 0;
+  opacity: 0;
+  margin-bottom: 0;
+  pointer-events: none;
+}
+
+.trade-license-details-tax-wrap--hidden .ant-row {
+  margin-bottom: 0 !important;
+}

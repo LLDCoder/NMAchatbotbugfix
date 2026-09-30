@@ -1,0 +1,579 @@
+{
+  "evidenceNote": "Real validated plan, task, operation and context receipts only. Full native body and second-read failing branch were not retained. Tests supply explicitly synthetic rows/capture timing; no claim that online context mismatch is excluded.",
+  "cases": [
+    {
+      "language": "en",
+      "answerPath": "test/runtime/groups1113-20260928/round27-x03-v36/answers/X-03__en.json",
+      "answerSha256": "2214afa876ec8332e1bad3fb84cebb6d5fb235d90c1fea712f9f52ad5fb9ece5",
+      "dbPath": "test/runtime/groups1113-20260928/round27-x03-v36/audit-db/X-03__en.json",
+      "dbSha256": "d48fc6e23d73990738269a14564431d0c062b553617de35e82aff4ccb9a176b0",
+      "task": {
+        "view": "",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "detail",
+        "searchQuery": "ticket current status transfer result transferred another department HC-01-2026-9762913",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "ticket",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "recordIdentity",
+            "value": "HC-01-2026-9762913",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [
+              "current status",
+              "transfer result"
+            ],
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "outputShape",
+            "value": "detail",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "businessFocus",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "disclosurePurpose",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedScope",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedGrain",
+            "value": "ticket",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "view",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "current",
+            "evidence": "parsed current request"
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "",
+        "clarification": null,
+        "needsLiveData": true,
+        "businessObject": "ticket",
+        "recordIdentity": "HC-01-2026-9762913",
+        "requestedGrain": "ticket",
+        "requestedScope": "unknown",
+        "contextRelation": "new",
+        "unresolvedSlots": [],
+        "disclosurePurpose": "",
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [
+          "current status",
+          "transfer result"
+        ],
+        "evidenceExplanations": []
+      },
+      "plan": {
+        "stage": "collection",
+        "missing": [],
+        "collections": [
+          {
+            "fields": [
+              "id",
+              "enquiryNumber",
+              "enquiryStatusId",
+              "enquiryStatusObj.nameAr",
+              "enquiryStatusObj.nameEn"
+            ],
+            "evidence": [
+              {
+                "quote": "",
+                "sourceId": "k_528836269526ffd70edd:p0"
+              },
+              {
+                "quote": "",
+                "sourceId": "k_6ba49bc89deca0279e82:p0"
+              }
+            ],
+            "rowsPath": "/data/items",
+            "sourceId": "api_ce8ff6c06e001aa86be3",
+            "firstPage": 1,
+            "pageField": "PageIndex",
+            "sizeField": "PageSize",
+            "totalPath": "/data/total",
+            "unknownPolicy": "report",
+            "identityFields": [
+              "id",
+              "enquiryNumber"
+            ]
+          }
+        ]
+      },
+      "lookupObservation": {
+        "page": "/happiness/tickets",
+        "acceptedOperations": [
+          "GET /api/Enquiry/EnquirySource",
+          "GET /api/Enquiry/EnquiryTypes",
+          "GET /api/Enquiry/Management/EnquiryStatus",
+          "GET /api/Enquiry/Management/Status/Count",
+          "GET /api/Enquiry/Management/TeamTask/List",
+          "GET /api/Enquiry/Management/UserInfo",
+          "GET /api/Enquiry/PriorityType",
+          "GET /api/UserManagement/GetAdminUserAsync",
+          "GET /api/serviceInfo/GetAllUserType",
+          "permitted_page_observation"
+        ],
+        "expectedOperations": [
+          "GET /api/Enquiry/Management/List",
+          "GET /api/Enquiry/Management/TeamTask/List"
+        ],
+        "observedOperations": [
+          {
+            "status": 200,
+            "policyState": "allowed",
+            "operationKey": "GET /api/UserManagement/GetAdminUserAsync",
+            "candidateKind": "business"
+          },
+          {
+            "status": 200,
+            "policyState": "allowed",
+            "operationKey": "GET /api/Enquiry/Management/UserInfo",
+            "candidateKind": "business"
+          },
+          {
+            "status": 200,
+            "policyState": "allowed",
+            "operationKey": "GET /api/Enquiry/EnquiryTypes",
+            "candidateKind": "support"
+          },
+          {
+            "status": 200,
+            "policyState": "allowed",
+            "operationKey": "GET /api/Enquiry/Management/Status/Count",
+            "candidateKind": "business"
+          },
+          {
+            "status": 200,
+            "policyState": "allowed",
+            "operationKey": "GET /api/Enquiry/EnquirySource",
+            "candidateKind": "business"
+          },
+          {
+            "status": 200,
+            "policyState": "allowed",
+            "operationKey": "GET /api/serviceInfo/GetAllUserType",
+            "candidateKind": "support"
+          },
+          {
+            "status": 200,
+            "policyState": "allowed",
+            "operationKey": "GET /api/Enquiry/PriorityType",
+            "candidateKind": "support"
+          },
+          {
+            "status": 200,
+            "policyState": "allowed",
+            "operationKey": "GET /api/Enquiry/Management/EnquiryStatus",
+            "candidateKind": "support"
+          },
+          {
+            "status": 200,
+            "policyState": "allowed",
+            "operationKey": "GET /api/Enquiry/Management/TeamTask/List",
+            "candidateKind": "business"
+          },
+          {
+            "status": null,
+            "policyState": "blocked",
+            "operationKey": "GET /api/Document/Dowload",
+            "candidateKind": "business"
+          }
+        ],
+        "expectedRequestLifecycles": {
+          "requests": [
+            {
+              "state": "complete",
+              "status": 200,
+              "elapsedMs": 10110,
+              "operationIndex": 1
+            },
+            {
+              "state": "not_issued",
+              "status": null,
+              "elapsedMs": 0,
+              "operationIndex": 0
+            }
+          ],
+          "truncated": false,
+          "waitOutcome": "settled"
+        }
+      },
+      "failedCollections": [
+        {
+          "reason": "collection_source_not_authorized",
+          "contextRef": "9d332837a30090d2179d9ea7e0cb363950cef771ff6ca1adf7453cd11eeb6a1a",
+          "completeness": "incomplete",
+          "operationRef": "GET /api/Enquiry/Management/TeamTask/List"
+        }
+      ]
+    },
+    {
+      "language": "ar",
+      "answerPath": "test/runtime/groups1113-20260928/round27-x03-v36/answers/X-03__ar.json",
+      "answerSha256": "6c761201a960a99334127cbc9de86808de2b1d065836bf8facbec22d25d2566d",
+      "dbPath": "test/runtime/groups1113-20260928/round27-x03-v36/audit-db/X-03__ar.json",
+      "dbSha256": "a38da1b9298ad147a3fbeb59e735fe1d57c86b51c7af7ff982f6ccd3b3e058ea",
+      "task": {
+        "view": "",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "detail",
+        "searchQuery": "ticket current status transfer result transferred to another department",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "ticket",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedGrain",
+            "value": "ticket",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [
+              "current status",
+              "transfer result"
+            ],
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "outputShape",
+            "value": "detail",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "recordIdentity",
+            "value": "HC-01-2026-9762913",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedScope",
+            "value": "unknown",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "businessFocus",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "disclosurePurpose",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "view",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "current",
+            "evidence": "parsed current request"
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "",
+        "clarification": null,
+        "needsLiveData": true,
+        "businessObject": "ticket",
+        "recordIdentity": "HC-01-2026-9762913",
+        "requestedGrain": "ticket",
+        "requestedScope": "unknown",
+        "contextRelation": "new",
+        "unresolvedSlots": [],
+        "disclosurePurpose": "",
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [
+          "current status",
+          "transfer result"
+        ],
+        "evidenceExplanations": []
+      },
+      "plan": {
+        "stage": "collection",
+        "missing": [],
+        "collections": [
+          {
+            "fields": [
+              "id",
+              "enquiryNumber",
+              "enquiryStatusId",
+              "enquiryStatusObj.nameAr",
+              "enquiryStatusObj.nameEn"
+            ],
+            "evidence": [
+              {
+                "quote": "",
+                "sourceId": "k_528836269526ffd70edd:p0"
+              },
+              {
+                "quote": "",
+                "sourceId": "k_6ba49bc89deca0279e82:p0"
+              }
+            ],
+            "rowsPath": "/data/items",
+            "sourceId": "api_ce8ff6c06e001aa86be3",
+            "firstPage": 1,
+            "pageField": "PageIndex",
+            "sizeField": "PageSize",
+            "totalPath": "/data/total",
+            "unknownPolicy": "report",
+            "identityFields": [
+              "id",
+              "enquiryNumber"
+            ]
+          }
+        ]
+      },
+      "lookupObservation": {
+        "page": "/happiness/tickets",
+        "acceptedOperations": [
+          "GET /api/Enquiry/EnquirySource",
+          "GET /api/Enquiry/EnquiryTypes",
+          "GET /api/Enquiry/Management/EnquiryStatus",
+          "GET /api/Enquiry/Management/Status/Count",
+          "GET /api/Enquiry/Management/TeamTask/List",
+          "GET /api/Enquiry/Management/UserInfo",
+          "GET /api/Enquiry/PriorityType",
+          "GET /api/UserManagement/GetAdminUserAsync",
+          "GET /api/serviceInfo/GetAllUserType",
+          "permitted_page_observation"
+        ],
+        "expectedOperations": [
+          "GET /api/Enquiry/Management/List",
+          "GET /api/Enquiry/Management/TeamTask/List"
+        ],
+        "observedOperations": [
+          {
+            "status": 200,
+            "policyState": "allowed",
+            "operationKey": "GET /api/UserManagement/GetAdminUserAsync",
+            "candidateKind": "business"
+          },
+          {
+            "status": 200,
+            "policyState": "allowed",
+            "operationKey": "GET /api/Enquiry/Management/UserInfo",
+            "candidateKind": "business"
+          },
+          {
+            "status": 200,
+            "policyState": "allowed",
+            "operationKey": "GET /api/Enquiry/EnquiryTypes",
+            "candidateKind": "support"
+          },
+          {
+            "status": 200,
+            "policyState": "allowed",
+            "operationKey": "GET /api/Enquiry/Management/Status/Count",
+            "candidateKind": "business"
+          },
+          {
+            "status": 200,
+            "policyState": "allowed",
+            "operationKey": "GET /api/Enquiry/EnquirySource",
+            "candidateKind": "business"
+          },
+          {
+            "status": 200,
+            "policyState": "allowed",
+            "operationKey": "GET /api/serviceInfo/GetAllUserType",
+            "candidateKind": "support"
+          },
+          {
+            "status": 200,
+            "policyState": "allowed",
+            "operationKey": "GET /api/Enquiry/PriorityType",
+            "candidateKind": "support"
+          },
+          {
+            "status": 200,
+            "policyState": "allowed",
+            "operationKey": "GET /api/Enquiry/Management/EnquiryStatus",
+            "candidateKind": "support"
+          },
+          {
+            "status": 200,
+            "policyState": "allowed",
+            "operationKey": "GET /api/Enquiry/Management/TeamTask/List",
+            "candidateKind": "business"
+          },
+          {
+            "status": null,
+            "policyState": "blocked",
+            "operationKey": "GET /api/Document/Dowload",
+            "candidateKind": "business"
+          }
+        ],
+        "expectedRequestLifecycles": {
+          "requests": [
+            {
+              "state": "complete",
+              "status": 200,
+              "elapsedMs": 10102,
+              "operationIndex": 1
+            },
+            {
+              "state": "not_issued",
+              "status": null,
+              "elapsedMs": 0,
+              "operationIndex": 0
+            }
+          ],
+          "truncated": false,
+          "waitOutcome": "settled"
+        }
+      },
+      "failedCollections": [
+        {
+          "reason": "collection_source_not_authorized",
+          "contextRef": "9d332837a30090d2179d9ea7e0cb363950cef771ff6ca1adf7453cd11eeb6a1a",
+          "completeness": "incomplete",
+          "operationRef": "GET /api/Enquiry/Management/TeamTask/List"
+        }
+      ]
+    }
+  ],
+  "remoteKnowledge": {
+    "path": "test/runtime/groups1113-20260928/round19-v26-frozen/artifacts/KB/页面检索语言元数据-20260926/可上传页面知识/Enquiries & Complaints-记录定位与分页字段.json",
+    "sha256": "9fd24c26acca121db2857b59f02bb67e9bc7c85ff9d81a00ef0d30c90eacc17f",
+    "proof": "Content SHA exactly equals actual EN/AR retrieval document 086eb74613e94e7c89a5c05730eb232b version1790419560.4924574; location is an older frozen copy of those unchanged bytes.",
+    "chunk": {
+      "id": "kbfile:086eb74613e94e7c89a5c05730eb232b#complete",
+      "document_id": "086eb74613e94e7c89a5c05730eb232b",
+      "content": "{\n  \"schemaVersion\": \"1.0\",\n  \"bundleId\": \"admin.page.tickets.lookup.page.package\",\n  \"createdAt\": \"2026-09-26T08:21:41.380497+00:00\",\n  \"packageStatus\": \"active\",\n  \"searchMetadata\": {\n    \"purpose\": \"page discovery metadata; records remain the source of structured definitions\",\n    \"titleEnglish\": \"Enquiries & Complaints\",\n    \"titleArabic\": \"الاستفسارات والشكاوى\",\n    \"descriptionEnglish\": \"Admin page /happiness/tickets for locating and reading customer tickets (enquiries and complaints). The list is read via GET /api/Enquiry/Management/List with rows at /data/items and total at /data/total, using PageIndex (1-based) and PageSize. A variant selector GET /api/Enquiry/Management/UserInfo /data/isLeader chooses TeamTasks (true, GET /api/Enquiry/Management/TeamTask/List) or TicketsTable (false); queues differ. EnquiryNumber is an exact server filter; SearchKey is broader. Detail navigation uses the internal id, not enquiryNumber. Fields include id, enquiryNumber, description, enquiryStatusId, enquiryStatusObj.nameEn/nameAr, currentHander, agnetname, slaEndTime, sla, isOverDue, enquiryTypeId, priorityId. Knowledge grants no authority; verify identity, permission and response shape.\",\n    \"descriptionArabic\": \"صفحة إدارية على المسار /happiness/tickets لتحديد وقراءة تذاكر العملاء (الاستفسارات والشكاوى). تُقرأ القائمة عبر GET /api/Enquiry/Management/List مع الصفوف في /data/items والإجمالي في /data/total، باستخدام PageIndex (يبدأ من 1) وPageSize. يحدد محدد النمط GET /api/Enquiry/Management/UserInfo /data/isLeader بين TeamTasks (صحيح، GET /api/Enquiry/Management/TeamTask/List) وTicketsTable (خطأ)؛ والطابوران مختلفان. EnquiryNumber مرشح خادم مطابق تمامًا؛ وSearchKey أوسع. يستخدم الانتقال إلى التفاصيل المعرّف الداخلي id لا enquiryNumber. تشمل الحقول id وenquiryNumber وdescription وenquiryStatusId وenquiryStatusObj.nameEn/nameAr وcurrentHander وagnetname وslaEndTime وsla وisOverDue وenquiryTypeId وpriorityId. لا تمنح المعرفة أي صلاحية؛ تحقق من الهوية والإذن وشكل الاستجابة.\",\n    \"termsEnglish\": [\n      \"customer tickets\",\n      \"ticket number\",\n      \"enquiries\",\n      \"complaints\",\n      \"ticket list\",\n      \"current handler\",\n      \"SLA deadline\",\n      \"ticket status\",\n      \"priority\",\n      \"pagination\"\n    ],\n    \"termsArabic\": [\n      \"تذاكر العملاء\",\n      \"رقم التذكرة\",\n      \"الاستفسارات\",\n      \"الشكاوى\",\n      \"قائمة التذاكر\",\n      \"المسؤول الحالي\",\n      \"الموعد النهائي لاتفاقية مستوى الخدمة\",\n      \"حالة التذكرة\",\n      \"الأولوية\",\n      \"ترقيم الصفحات\"\n    ]\n  },\n  \"records\": [\n    {\n      \"id\": \"admin.page.tickets.lookup.page\",\n      \"kind\": \"page_definition\",\n      \"revision\": 2,\n      \"status\": \"active\",\n      \"title\": \"Enquiries & Complaints\",\n      \"applicability\": {\n        \"portal\": \"admin\",\n        \"environments\": [\n          \"local\",\n          \"debug\"\n        ],\n        \"pageRefs\": [\n          \"/happiness/tickets\"\n        ],\n        \"runtimeVerification\": \"response_shape_verified\",\n        \"deployedBuildMatch\": \"unknown\"\n      },\n      \"sources\": [\n        {\n          \"kind\": \"source_code\",\n          \"reference\": \"navigation-knowledge/sources/umc-admin-portal-target/src/services/tickets.ts\",\n          \"revision\": \"sha256:f7187f3a26a387e67704abf368aa8fff61b2cf47bfbadf44dd742df23aa7f974\",\n          \"locator\": \"IEnquiryListResponse; IEnquiryInfoResponse; getEnquiryList; getEnquiryInfo\",\n          \"verification\": \"source_inspected\"\n        },\n        {\n          \"kind\": \"source_code\",\n          \"reference\": \"navigation-knowledge/sources/umc-admin-portal-target/src/pages/TicketsDetails/index.tsx\",\n          \"revision\": \"sha256:12468bf8adf1fa7c48d4c661ec5bb1da100b07760e6819b41931dfb5601965da\",\n          \"locator\": \"URL id parsing and getEnquiryInfo(id)\",\n          \"verification\": \"source_inspected\"\n        },\n        {\n          \"kind\": \"source_code\",\n          \"reference\": \"navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/EnquiryApp/EnquiryAppService.cs\",\n          \"revision\": \"sha256:693bbed263aff3b567409dc654fe221d835351077272abc6df9ef2fc35cd31a2\",\n          \"locator\": \"GetEnquiriesAsync personal scope; detail projection and SLA branches\",\n          \"verification\": \"source_inspected\"\n        },\n        {\n          \"kind\": \"runtime_observation\",\n          \"reference\": \"test/runtime/kb-remediation-20260926/page-probes/tickets-list.json\",\n          \"revision\": \"sha256:85f68c9a76bd411a420456dba9be389322e4f2b633c9ff23dd2973fa42820114\",\n          \"locator\": \"Exact business-number query and /data/items shape\",\n          \"verification\": \"response_shape_verified\"\n        },\n        {\n          \"kind\": \"runtime_observation\",\n          \"reference\": \"test/runtime/kb-remediation-20260926/page-probes/tickets-detail.json\",\n          \"revision\": \"sha256:e41b8cccbb696da3d32696ed5a755bd01e5d1b49dd233feb4902dde0746758fc\",\n          \"locator\": \"HTTP 200; id and enquiryNumber agree with list\",\n          \"verification\": \"response_shape_verified\"\n        },\n        {\n          \"kind\": \"source_code\",\n          \"reference\": \"navigation-knowledge/sources/umc-admin-portal-target/src/pages/Tickets/index.tsx\",\n          \"revision\": \"sha256:89125408a0b3eaa94685c0b2d44dfa8bd9861d167e69dd214d52d0ebddb54a23\",\n          \"locator\": \"UserInfo.isLeader selects TeamTasks; otherwise TicketsTable\",\n          \"verification\": \"source_inspected\"\n        },\n        {\n          \"kind\": \"source_code\",\n          \"reference\": \"navigation-knowledge/sources/umc-admin-portal-target/src/pages/Tickets/components/TeamTasks/index.tsx\",\n          \"revision\": \"sha256:c8cd604684f7b164a0252e1a6aaf8bfdb50fa997e2f1c88a0006683ff8696d8c\",\n          \"locator\": \"TeamTask List and detail id navigation\",\n          \"verification\": \"source_inspected\"\n        },\n        {\n          \"kind\": \"runtime_observation\",\n          \"reference\": \"test/runtime/kb-remediation-20260926/page-probes/tickets-team-list.json\",\n          \"revision\": \"sha256:5a1d4f97359f99daa8c4e5d6edc37c46dee34764e4d492c985286f3bf8b30f4f\",\n          \"locator\": \"Team list maps the same business number to the same id; UserInfo.isLeader=true\",\n          \"verification\": \"response_shape_verified\"\n        }\n      ],\n      \"payload\": {\n        \"pageRef\": \"/happiness/tickets\",\n        \"readOperation\": {\n          \"operationRef\": \"GET /api/Enquiry/Management/List\",\n          \"rowsPath\": \"/data/items\",\n          \"totalPath\": \"/data/total\"\n        },\n        \"sourceBinding\": {\n          \"operationRef\": \"GET /api/Enquiry/Management/List\",\n          \"sourcePath\": \"/data/items\"\n        },\n        \"fields\": {\n          \"id\": \"Internal ticket entity key; this is the URL id, not enquiryNumber.\",\n          \"enquiryNumber\": \"Displayed business ticket number. No database uniqueness guarantee was established.\",\n          \"description\": \"Submitted customer request text, not a review decision or current handler.\",\n          \"enquiryStatusId\": \"Current ticket status dictionary identifier.\",\n          \"enquiryStatusObj.nameEn\": \"Current status display in English.\",\n          \"enquiryStatusObj.nameAr\": \"Current status display in Arabic.\",\n          \"currentHander\": \"Current handler display. For PendingCustomer the source may display the customer; null/empty is unavailable, not proof of no assignment.\",\n          \"agnetname\": \"Happiness handling owner derived from ManangerUserId. It is not interchangeable with the current department handler.\",\n          \"slaEndTime\": \"Overall ticket SLA deadline returned by this DTO. This is not automatically the department deadline.\",\n          \"sla\": \"Role and state dependent SLA display text. Do not parse this as a universal numeric duration.\",\n          \"isOverDue\": \"Overdue indicator under the source role/state rules; a null value means no applicable boolean was supplied.\",\n          \"enquiryTypeId\": \"Ticket type dictionary identifier; complaints and enquiries remain distinct subtypes.\",\n          \"priorityId\": \"Configured priority identifier. It does not define business severity.\"\n        },\n        \"pagination\": {\n          \"rowsPath\": \"/data/items\",\n          \"totalPath\": \"/data/total\",\n          \"PageIndex\": \"1-based requested page index\",\n          \"PageSize\": \"requested page size\"\n        },\n        \"pageVariants\": {\n          \"selector\": \"GET /api/Enquiry/Management/UserInfo /data/isLeader\",\n          \"true\": {\n            \"operationRef\": \"GET /api/Enquiry/Management/TeamTask/List\",\n            \"component\": \"TeamTasks\"\n          },\n          \"false\": {\n            \"operationRef\": \"GET /api/Enquiry/Management/List\",\n            \"component\": \"TicketsTable\"\n          },\n          \"constraint\": \"Observe the actual response and variant; a role title alone is not the selector. These queues have different populations.\"\n        },\n        \"recordLookup\": \"EnquiryNumber is an exact server filter. SearchKey is broader. Preserve current authorization, status and subtype filters.\",\n        \"scopeMeaning\": \"For a Happiness user, the non-team queue includes HandlerUserId, ManangerUserId or historical participation of the authenticated user. It is not strictly only the current handler. IsEnquiryComplete=false restricts to states below Resolved; true to states at or beyond Resolved. Reopened and business-department branches differ.\",\n        \"routing\": {\n          \"records\": [\n            {\n              \"id\": \"list_ticket\",\n              \"operationRef\": \"GET /api/Enquiry/Management/List\",\n              \"sourcePath\": \"/data/items\",\n              \"identityField\": \"enquiryNumber\",\n              \"keyFields\": [\n                \"id\"\n              ],\n              \"unique\": false\n            }\n          ]\n        },\n        \"constraints\": [\n          \"Knowledge never grants page/API authority. Recheck identity, permission and observed response shape.\",\n          \"Compare exact enquiryNumber and internal id after navigation. If permitted lookup rows map to multiple ids, clarify instead of choosing the first.\",\n          \"Field names alone do not prove a deployment matches the source snapshot. Nullable displays remain unknown.\",\n          \"Only project fields needed for the current question; private applicant/contact fields are not needed for this page description.\"\n        ]\n      }\n    },\n    {\n      \"id\": \"admin.page.tickets.lookup.fields\",\n      \"kind\": \"field_semantics\",\n      \"revision\": 2,\n      \"status\": \"active\",\n      \"title\": \"Ticket list record and field meanings\",\n      \"applicability\": {\n        \"portal\": \"admin\",\n        \"environments\": [\n          \"local\",\n          \"debug\"\n        ],\n        \"pageRefs\": [\n          \"/happiness/tickets\"\n        ],\n        \"runtimeVerification\": \"response_shape_verified\",\n        \"deployedBuildMatch\": \"unknown\"\n      },\n      \"sources\": [\n        {\n          \"kind\": \"source_code\",\n          \"reference\": \"navigation-knowledge/sources/umc-admin-portal-target/src/services/tickets.ts\",\n          \"revision\": \"sha256:f7187f3a26a387e67704abf368aa8fff61b2cf47bfbadf44dd742df23aa7f974\",\n          \"locator\": \"IEnquiryListResponse; IEnquiryInfoResponse; getEnquiryList; getEnquiryInfo\",\n          \"verification\": \"source_inspected\"\n        },\n        {\n          \"kind\": \"source_code\",\n          \"reference\": \"navigation-knowledge/sources/umc-admin-portal-target/src/pages/TicketsDetails/index.tsx\",\n          \"revision\": \"sha256:12468bf8adf1fa7c48d4c661ec5bb1da100b07760e6819b41931dfb5601965da\",\n          \"locator\": \"URL id parsing and getEnquiryInfo(id)\",\n          \"verification\": \"source_inspected\"\n        },\n        {\n          \"kind\": \"source_code\",\n          \"reference\": \"navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/EnquiryApp/EnquiryAppService.cs\",\n          \"revision\": \"sha256:693bbed263aff3b567409dc654fe221d835351077272abc6df9ef2fc35cd31a2\",\n          \"locator\": \"GetEnquiriesAsync personal scope; detail projection and SLA branches\",\n          \"verification\": \"source_inspected\"\n        },\n        {\n          \"kind\": \"runtime_observation\",\n          \"reference\": \"test/runtime/kb-remediation-20260926/page-probes/tickets-list.json\",\n          \"revision\": \"sha256:85f68c9a76bd411a420456dba9be389322e4f2b633c9ff23dd2973fa42820114\",\n          \"locator\": \"Exact business-number query and /data/items shape\",\n          \"verification\": \"response_shape_verified\"\n        },\n        {\n          \"kind\": \"runtime_observation\",\n          \"reference\": \"test/runtime/kb-remediation-20260926/page-probes/tickets-detail.json\",\n          \"revision\": \"sha256:e41b8cccbb696da3d32696ed5a755bd01e5d1b49dd233feb4902dde0746758fc\",\n          \"locator\": \"HTTP 200; id and enquiryNumber agree with list\",\n          \"verification\": \"response_shape_verified\"\n        },\n        {\n          \"kind\": \"source_code\",\n          \"reference\": \"navigation-knowledge/sources/umc-admin-portal-target/src/pages/Tickets/index.tsx\",\n          \"revision\": \"sha256:89125408a0b3eaa94685c0b2d44dfa8bd9861d167e69dd214d52d0ebddb54a23\",\n          \"locator\": \"UserInfo.isLeader selects TeamTasks; otherwise TicketsTable\",\n          \"verification\": \"source_inspected\"\n        },\n        {\n          \"kind\": \"source_code\",\n          \"reference\": \"navigation-knowledge/sources/umc-admin-portal-target/src/pages/Tickets/components/TeamTasks/index.tsx\",\n          \"revision\": \"sha256:c8cd604684f7b164a0252e1a6aaf8bfdb50fa997e2f1c88a0006683ff8696d8c\",\n          \"locator\": \"TeamTask List and detail id navigation\",\n          \"verification\": \"source_inspected\"\n        },\n        {\n          \"kind\": \"runtime_observation\",\n          \"reference\": \"test/runtime/kb-remediation-20260926/page-probes/tickets-team-list.json\",\n          \"revision\": \"sha256:5a1d4f97359f99daa8c4e5d6edc37c46dee34764e4d492c985286f3bf8b30f4f\",\n          \"locator\": \"Team list maps the same business number to the same id; UserInfo.isLeader=true\",\n          \"verification\": \"response_shape_verified\"\n        }\n      ],\n      \"payload\": {\n        \"pageRef\": \"/happiness/tickets\",\n        \"bindings\": [\n          {\n            \"id\": \"ticket_object\",\n            \"kind\": \"object\",\n            \"concept\": \"ticket\",\n            \"aliases\": [\n              \"customer ticket\"\n            ],\n            \"operationRef\": \"GET /api/Enquiry/Management/List\",\n            \"sourcePath\": \"/data/items\",\n            \"fields\": [\n              \"id\",\n              \"enquiryTypeId\"\n            ],\n            \"meaning\": \"One returned entity is a ticket, distinct from an application or workflow task. Complaint and enquiry are subtypes; subtype questions require the documented type dictionary and filter.\"\n          },\n          {\n            \"id\": \"ticket_grain\",\n            \"kind\": \"grain\",\n            \"concept\": \"ticket\",\n            \"aliases\": [\n              \"customer ticket\"\n            ],\n            \"operationRef\": \"GET /api/Enquiry/Management/List\",\n            \"sourcePath\": \"/data/items\",\n            \"fields\": [\n              \"id\"\n            ],\n            \"meaning\": \"Deduplicate ticket entities by id. This does not restrict the population to a ticket subtype.\"\n          },\n          {\n            \"id\": \"business_number\",\n            \"kind\": \"attribute\",\n            \"concept\": \"ticket number\",\n            \"aliases\": [\n              \"enquiry number\",\n              \"complaint number\"\n            ],\n            \"operationRef\": \"GET /api/Enquiry/Management/List\",\n            \"sourcePath\": \"/data/items\",\n            \"fields\": [\n              \"enquiryNumber\"\n            ],\n            \"meaning\": \"Displayed business ticket number. No database uniqueness guarantee was established.\"\n          },\n          {\n            \"id\": \"request\",\n            \"kind\": \"attribute\",\n            \"concept\": \"customer request\",\n            \"aliases\": [\n              \"request description\",\n              \"description\",\n              \"request text\"\n            ],\n            \"operationRef\": \"GET /api/Enquiry/Management/List\",\n            \"sourcePath\": \"/data/items\",\n            \"fields\": [\n              \"description\"\n            ],\n            \"meaning\": \"Submitted customer request text, not a review decision or current handler.\"\n          },\n          {\n            \"id\": \"status\",\n            \"kind\": \"attribute\",\n            \"concept\": \"status\",\n            \"aliases\": [\n              \"ticket status\",\n              \"current status\"\n            ],\n            \"operationRef\": \"GET /api/Enquiry/Management/List\",\n            \"sourcePath\": \"/data/items\",\n            \"fields\": [\n              \"enquiryStatusId\",\n              \"enquiryStatusObj.nameEn\",\n              \"enquiryStatusObj.nameAr\"\n            ],\n            \"meaning\": \"Current ticket status dictionary identifier. Current status display in English. Current status display in Arabic.\"\n          },\n          {\n            \"id\": \"handler\",\n            \"kind\": \"attribute\",\n            \"concept\": \"handler\",\n            \"aliases\": [\n              \"current handler\",\n              \"assigned handler\"\n            ],\n            \"operationRef\": \"GET /api/Enquiry/Management/List\",\n            \"sourcePath\": \"/data/items\",\n            \"fields\": [\n              \"currentHander\"\n            ],\n            \"meaning\": \"Current handler display. For PendingCustomer the source may display the customer; null/empty is unavailable, not proof of no assignment.\"\n          },\n          {\n            \"id\": \"owner\",\n            \"kind\": \"attribute\",\n            \"concept\": \"handling owner\",\n            \"aliases\": [\n              \"Happiness handler\",\n              \"Happiness owner\"\n            ],\n            \"operationRef\": \"GET /api/Enquiry/Management/List\",\n            \"sourcePath\": \"/data/items\",\n            \"fields\": [\n              \"agnetname\"\n            ],\n            \"meaning\": \"Happiness handling owner derived from ManangerUserId. It is not interchangeable with the current department handler.\"\n          },\n          {\n            \"id\": \"deadline\",\n            \"kind\": \"attribute\",\n            \"concept\": \"deadline\",\n            \"aliases\": [\n              \"SLA deadline\",\n              \"due date\"\n            ],\n            \"operationRef\": \"GET /api/Enquiry/Management/List\",\n            \"sourcePath\": \"/data/items\",\n            \"fields\": [\n              \"slaEndTime\"\n            ],\n            \"meaning\": \"Overall ticket SLA deadline returned by this DTO. This is not automatically the department deadline.\"\n          },\n          {\n            \"id\": \"overdue\",\n            \"kind\": \"attribute\",\n            \"concept\": \"overdue\",\n            \"aliases\": [\n              \"SLA overdue\"\n            ],\n            \"operationRef\": \"GET /api/Enquiry/Management/List\",\n            \"sourcePath\": \"/data/items\",\n            \"fields\": [\n              \"isOverDue\"\n            ],\n            \"meaning\": \"Overdue indicator under the source role/state rules; a null value means no applicable boolean was supplied.\"\n          },\n          {\n            \"id\": \"sla\",\n            \"kind\": \"attribute\",\n            \"concept\": \"SLA status\",\n            \"aliases\": [\n              \"SLA display\",\n              \"SLA grouping\"\n            ],\n            \"operationRef\": \"GET /api/Enquiry/Management/List\",\n            \"sourcePath\": \"/data/items\",\n            \"fields\": [\n              \"sla\",\n              \"isOverDue\",\n              \"slaEndTime\"\n            ],\n            \"meaning\": \"Role and state dependent SLA display text. Do not parse this as a universal numeric duration. Overdue indicator under the source role/state rules; a null value means no applicable boolean was supplied. Overall ticket SLA deadline returned by this DTO. This is not automatically the department deadline.\"\n          }\n        ],\n        \"constraints\": [\n          \"Knowledge never grants page/API authority. Recheck identity, permission and observed response shape.\",\n          \"Compare exact enquiryNumber and internal id after navigation. If permitted lookup rows map to multiple ids, clarify instead of choosing the first.\",\n          \"Field names alone do not prove a deployment matches the source snapshot. Nullable displays remain unknown.\",\n          \"Only project fields needed for the current question; private applicant/contact fields are not needed for this page description.\"\n        ]\n      }\n    },\n    {\n      \"id\": \"admin.page.tickets.lookup.team-fields\",\n      \"kind\": \"field_semantics\",\n      \"revision\": 2,\n      \"status\": \"active\",\n      \"title\": \"Team ticket list record and pagination meanings\",\n      \"applicability\": {\n        \"portal\": \"admin\",\n        \"environments\": [\n          \"local\",\n          \"debug\"\n        ],\n        \"pageRefs\": [\n          \"/happiness/tickets\"\n        ],\n        \"runtimeVerification\": \"response_shape_verified\",\n        \"deployedBuildMatch\": \"unknown\"\n      },\n      \"sources\": [\n        {\n          \"kind\": \"source_code\",\n          \"reference\": \"navigation-knowledge/sources/umc-admin-portal-target/src/services/tickets.ts\",\n          \"revision\": \"sha256:f7187f3a26a387e67704abf368aa8fff61b2cf47bfbadf44dd742df23aa7f974\",\n          \"locator\": \"IEnquiryListResponse; IEnquiryInfoResponse; getEnquiryList; getEnquiryInfo\",\n          \"verification\": \"source_inspected\"\n        },\n        {\n          \"kind\": \"source_code\",\n          \"reference\": \"navigation-knowledge/sources/umc-admin-portal-target/src/pages/TicketsDetails/index.tsx\",\n          \"revision\": \"sha256:12468bf8adf1fa7c48d4c661ec5bb1da100b07760e6819b41931dfb5601965da\",\n          \"locator\": \"URL id parsing and getEnquiryInfo(id)\",\n          \"verification\": \"source_inspected\"\n        },\n        {\n          \"kind\": \"source_code\",\n          \"reference\": \"navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/EnquiryApp/EnquiryAppService.cs\",\n          \"revision\": \"sha256:693bbed263aff3b567409dc654fe221d835351077272abc6df9ef2fc35cd31a2\",\n          \"locator\": \"GetEnquiriesAsync personal scope; detail projection and SLA branches\",\n          \"verification\": \"source_inspected\"\n        },\n        {\n          \"kind\": \"runtime_observation\",\n          \"reference\": \"test/runtime/kb-remediation-20260926/page-probes/tickets-list.json\",\n          \"revision\": \"sha256:85f68c9a76bd411a420456dba9be389322e4f2b633c9ff23dd2973fa42820114\",\n          \"locator\": \"Exact business-number query and /data/items shape\",\n          \"verification\": \"response_shape_verified\"\n        },\n        {\n          \"kind\": \"runtime_observation\",\n          \"reference\": \"test/runtime/kb-remediation-20260926/page-probes/tickets-detail.json\",\n          \"revision\": \"sha256:e41b8cccbb696da3d32696ed5a755bd01e5d1b49dd233feb4902dde0746758fc\",\n          \"locator\": \"HTTP 200; id and enquiryNumber agree with list\",\n          \"verification\": \"response_shape_verified\"\n        },\n        {\n          \"kind\": \"source_code\",\n          \"reference\": \"navigation-knowledge/sources/umc-admin-portal-target/src/pages/Tickets/index.tsx\",\n          \"revision\": \"sha256:89125408a0b3eaa94685c0b2d44dfa8bd9861d167e69dd214d52d0ebddb54a23\",\n          \"locator\": \"UserInfo.isLeader selects TeamTasks; otherwise TicketsTable\",\n          \"verification\": \"source_inspected\"\n        },\n        {\n          \"kind\": \"source_code\",\n          \"reference\": \"navigation-knowledge/sources/umc-admin-portal-target/src/pages/Tickets/components/TeamTasks/index.tsx\",\n          \"revision\": \"sha256:c8cd604684f7b164a0252e1a6aaf8bfdb50fa997e2f1c88a0006683ff8696d8c\",\n          \"locator\": \"TeamTask List and detail id navigation\",\n          \"verification\": \"source_inspected\"\n        },\n        {\n          \"kind\": \"runtime_observation\",\n          \"reference\": \"test/runtime/kb-remediation-20260926/page-probes/tickets-team-list.json\",\n          \"revision\": \"sha256:5a1d4f97359f99daa8c4e5d6edc37c46dee34764e4d492c985286f3bf8b30f4f\",\n          \"locator\": \"Team list maps the same business number to the same id; UserInfo.isLeader=true\",\n          \"verification\": \"response_shape_verified\"\n        }\n      ],\n      \"payload\": {\n        \"pageRef\": \"/happiness/tickets\",\n        \"sourceBinding\": {\n          \"operationRef\": \"GET /api/Enquiry/Management/TeamTask/List\",\n          \"sourcePath\": \"/data/items\"\n        },\n        \"fields\": {\n          \"id\": \"Internal ticket entity key; this is the URL id, not enquiryNumber.\",\n          \"enquiryNumber\": \"Displayed business ticket number. No database uniqueness guarantee was established.\",\n          \"description\": \"Submitted customer request text, not a review decision or current handler.\",\n          \"enquiryStatusId\": \"Current ticket status dictionary identifier.\",\n          \"enquiryStatusObj.nameEn\": \"Current status display in English.\",\n          \"enquiryStatusObj.nameAr\": \"Current status display in Arabic.\",\n          \"currentHander\": \"Current handler display. For PendingCustomer the source may display the customer; null/empty is unavailable, not proof of no assignment.\",\n          \"agnetname\": \"Happiness handling owner derived from ManangerUserId. It is not interchangeable with the current department handler.\",\n          \"slaEndTime\": \"Overall ticket SLA deadline returned by this DTO. This is not automatically the department deadline.\",\n          \"sla\": \"Role and state dependent SLA display text. Do not parse this as a universal numeric duration.\",\n          \"isOverDue\": \"Overdue indicator under the source role/state rules; a null value means no applicable boolean was supplied.\",\n          \"enquiryTypeId\": \"Ticket type dictionary identifier; complaints and enquiries remain distinct subtypes.\",\n          \"priorityId\": \"Configured priority identifier. It does not define business severity.\"\n        },\n        \"pagination\": {\n          \"rowsPath\": \"/data/items\",\n          \"totalPath\": \"/data/total\",\n          \"PageIndex\": \"1-based requested page index\",\n          \"PageSize\": \"requested page size\"\n        },\n        \"scopeMeaning\": \"TeamTasks is selected when UserInfo.isLeader is true. The server enforces its team scope. StartTime/EndTime apply to CreatedOn in this branch, unlike UpdatedOn for the non-team branch. Do not transfer personal queue totals or filters to this queue.\",\n        \"bindings\": [\n          {\n            \"id\": \"ticket_object\",\n            \"kind\": \"object\",\n            \"concept\": \"ticket\",\n            \"aliases\": [\n              \"customer ticket\"\n            ],\n            \"operationRef\": \"GET /api/Enquiry/Management/TeamTask/List\",\n            \"sourcePath\": \"/data/items\",\n            \"fields\": [\n              \"id\",\n              \"enquiryTypeId\"\n            ],\n            \"meaning\": \"One returned entity is a ticket, distinct from an application or workflow task. Complaint and enquiry are subtypes; subtype questions require the documented type dictionary and filter.\"\n          },\n          {\n            \"id\": \"ticket_grain\",\n            \"kind\": \"grain\",\n            \"concept\": \"ticket\",\n            \"aliases\": [\n              \"customer ticket\"\n            ],\n            \"operationRef\": \"GET /api/Enquiry/Management/TeamTask/List\",\n            \"sourcePath\": \"/data/items\",\n            \"fields\": [\n              \"id\"\n            ],\n            \"meaning\": \"Deduplicate ticket entities by id. This does not restrict the population to a ticket subtype.\"\n          },\n          {\n            \"id\": \"business_number\",\n            \"kind\": \"attribute\",\n            \"concept\": \"ticket number\",\n            \"aliases\": [\n              \"enquiry number\",\n              \"complaint number\"\n            ],\n            \"operationRef\": \"GET /api/Enquiry/Management/TeamTask/List\",\n            \"sourcePath\": \"/data/items\",\n            \"fields\": [\n              \"enquiryNumber\"\n            ],\n            \"meaning\": \"Displayed business ticket number. No database uniqueness guarantee was established.\"\n          },\n          {\n            \"id\": \"request\",\n            \"kind\": \"attribute\",\n            \"concept\": \"customer request\",\n            \"aliases\": [\n              \"request description\",\n              \"description\",\n              \"request text\"\n            ],\n            \"operationRef\": \"GET /api/Enquiry/Management/TeamTask/List\",\n            \"sourcePath\": \"/data/items\",\n            \"fields\": [\n              \"description\"\n            ],\n            \"meaning\": \"Submitted customer request text, not a review decision or current handler.\"\n          },\n          {\n            \"id\": \"status\",\n            \"kind\": \"attribute\",\n            \"concept\": \"status\",\n            \"aliases\": [\n              \"ticket status\",\n              \"current status\"\n            ],\n            \"operationRef\": \"GET /api/Enquiry/Management/TeamTask/List\",\n            \"sourcePath\": \"/data/items\",\n            \"fields\": [\n              \"enquiryStatusId\",\n              \"enquiryStatusObj.nameEn\",\n              \"enquiryStatusObj.nameAr\"\n            ],\n            \"meaning\": \"Current ticket status dictionary identifier. Current status display in English. Current status display in Arabic.\"\n          },\n          {\n            \"id\": \"handler\",\n            \"kind\": \"attribute\",\n            \"concept\": \"handler\",\n            \"aliases\": [\n              \"current handler\",\n              \"assigned handler\"\n            ],\n            \"operationRef\": \"GET /api/Enquiry/Management/TeamTask/List\",\n            \"sourcePath\": \"/data/items\",\n            \"fields\": [\n              \"currentHander\"\n            ],\n            \"meaning\": \"Current handler display. For PendingCustomer the source may display the customer; null/empty is unavailable, not proof of no assignment.\"\n          },\n          {\n            \"id\": \"owner\",\n            \"kind\": \"attribute\",\n            \"concept\": \"handling owner\",\n            \"aliases\": [\n              \"Happiness handler\",\n              \"Happiness owner\"\n            ],\n            \"operationRef\": \"GET /api/Enquiry/Management/TeamTask/List\",\n            \"sourcePath\": \"/data/items\",\n            \"fields\": [\n              \"agnetname\"\n            ],\n            \"meaning\": \"Happiness handling owner derived from ManangerUserId. It is not interchangeable with the current department handler.\"\n          },\n          {\n            \"id\": \"deadline\",\n            \"kind\": \"attribute\",\n            \"concept\": \"deadline\",\n            \"aliases\": [\n              \"SLA deadline\",\n              \"due date\"\n            ],\n            \"operationRef\": \"GET /api/Enquiry/Management/TeamTask/List\",\n            \"sourcePath\": \"/data/items\",\n            \"fields\": [\n              \"slaEndTime\"\n            ],\n            \"meaning\": \"Overall ticket SLA deadline returned by this DTO. This is not automatically the department deadline.\"\n          },\n          {\n            \"id\": \"overdue\",\n            \"kind\": \"attribute\",\n            \"concept\": \"overdue\",\n            \"aliases\": [\n              \"SLA overdue\"\n            ],\n            \"operationRef\": \"GET /api/Enquiry/Management/TeamTask/List\",\n            \"sourcePath\": \"/data/items\",\n            \"fields\": [\n              \"isOverDue\"\n            ],\n            \"meaning\": \"Overdue indicator under the source role/state rules; a null value means no applicable boolean was supplied.\"\n          },\n          {\n            \"id\": \"sla\",\n            \"kind\": \"attribute\",\n            \"concept\": \"SLA status\",\n            \"aliases\": [\n              \"SLA display\",\n              \"SLA grouping\"\n            ],\n            \"operationRef\": \"GET /api/Enquiry/Management/TeamTask/List\",\n            \"sourcePath\": \"/data/items\",\n            \"fields\": [\n              \"sla\",\n              \"isOverDue\",\n              \"slaEndTime\"\n            ],\n            \"meaning\": \"Role and state dependent SLA display text. Do not parse this as a universal numeric duration. Overdue indicator under the source role/state rules; a null value means no applicable boolean was supplied. Overall ticket SLA deadline returned by this DTO. This is not automatically the department deadline.\"\n          }\n        ],\n        \"constraints\": [\n          \"Knowledge never grants page/API authority. Recheck identity, permission and observed response shape.\",\n          \"Compare exact enquiryNumber and internal id after navigation. If permitted lookup rows map to multiple ids, clarify instead of choosing the first.\",\n          \"Field names alone do not prove a deployment matches the source snapshot. Nullable displays remain unknown.\",\n          \"Only project fields needed for the current question; private applicant/contact fields are not needed for this page description.\"\n        ]\n      }\n    }\n  ]\n}\n"
+    }
+  }
+}

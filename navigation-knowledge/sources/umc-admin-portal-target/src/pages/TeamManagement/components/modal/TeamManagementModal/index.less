@@ -1,0 +1,114 @@
+.team-management-modal {
+  .ant-modal-content {
+    overflow: hidden;
+    border-radius: 20px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      border-radius: 10px;
+    }
+  }
+
+  .ant-modal-header {
+    padding: 28px 32px 24px;
+    border-bottom: 1px solid #edf0f4;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  .ant-modal-title {
+    padding-right: 40px;
+    color: #2c2016;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .ant-modal-body {
+    padding: 32px 32px 0;
+  }
+
+  .ant-modal-footer {
+    padding: 20px 32px;
+    border-top: 1px solid #edf0f4;
+  }
+
+  .ant-form-item {
+    margin-bottom: 24px;
+  }
+
+  .ant-form-item-label {
+    > label.ant-form-item-required:not(
+      .ant-form-item-required-mark-optional
+    )::before {
+      display: none;
+    }
+
+    > label.ant-form-item-required:not(
+      .ant-form-item-required-mark-optional
+    )::after {
+      display: inline-block;
+      margin-inline-start: 4px;
+      color: #ff4d4f;
+      font-size: 14px;
+      font-family: SimSun, sans-serif;
+      line-height: 1;
+      content: "*";
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__control {
+    width: 100%;
+  }
+
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: #343741;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+    }
+  }
+
+  &__required {
+    color: #f5222d;
+    font-size: 14px;
+    line-height: 1;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 8px;
+    }
+  }
+
+  &--rtl {
+    direction: rtl;
+
+    .ant-modal-title {
+      padding-right: 0;
+      padding-left: 40px;
+      text-align: right;
+    }
+
+    .team-management-modal__footer {
+      flex-direction: row-reverse;
+    }
+  }
+}

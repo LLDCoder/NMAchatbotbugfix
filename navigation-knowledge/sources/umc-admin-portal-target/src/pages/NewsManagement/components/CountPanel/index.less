@@ -1,0 +1,54 @@
+.count-panel {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  .count-card {
+    padding: 16px 24px;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 1);
+    .count-icon {
+      padding: 10px;
+      background-color: rgba(249, 247, 237, 1);
+      border-radius: 100%;
+      line-height: 0;
+      img {
+        height: 20px;
+        width: 20px;
+      }
+    }
+    .count-content {
+      margin-left: 12px;
+      .count-value {
+        font-weight: 600;
+        font-size: 18px;
+        color: rgba(54, 30, 18, 1);
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 16px;
+        }
+      }
+      .count-label {
+        font-size: 14px;
+        font-weight: 400;
+        color: rgba(95, 100, 109, 1);
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 12px;
+        }
+      }
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      border-radius: 10px;
+    }
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}

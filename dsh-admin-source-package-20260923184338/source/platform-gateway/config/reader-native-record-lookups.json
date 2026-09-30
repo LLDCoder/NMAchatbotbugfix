@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "description": "Reviewed first reads for record lookup. Native API authorization uses the current caller token. This diagnostic path returns only the outcome, never record data or a new page grant.",
+  "bindings": [
+    {
+      "pages": [
+        "/content/ContentApplications",
+        "/content/ContentApplications/ContentApplicationsDetails"
+      ],
+      "method": "POST",
+      "path": "/api/Content/MyTodoPage",
+      "identitySearchField": "keyword",
+      "parameters": {
+        "pageIndex": 1,
+        "pageSize": 1
+      },
+      "source": "src/pages/ContentApplications/components/MyTasks/index.tsx; ContentController.GetMyTodoPageAsync / RequirePermission(Content.MyReview.View)"
+    }
+  ]
+}

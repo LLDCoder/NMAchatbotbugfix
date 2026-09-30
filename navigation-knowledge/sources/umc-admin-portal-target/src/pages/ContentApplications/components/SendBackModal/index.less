@@ -1,0 +1,81 @@
+.send-back-form {
+  padding-top: 32px;
+}
+
+.send-back-modal {
+  width: 800px !important;
+  max-width: calc(100vw - 32px);
+
+  .ant-modal-footer {
+    padding: 24px 40px;
+    border-top: 1px solid #e1e3e5;
+  }
+}
+
+.send-back-modal__footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.send-back-modal__footer .custom-button {
+  min-width: 140px;
+  font-weight: 600;
+}
+
+.form-modal.send-back-modal .send-back-form .custom-textarea.ant-input-textarea-show-count::after,
+.form-modal.send-back-modal .send-back-form .custom-textarea.ant-input-textarea-show-count.ant-input-textarea-in-form-item::after {
+  display: block;
+  float: none;
+  width: 100%;
+  margin-top: 4px;
+  color: #797e86;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: right;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+.send-back-modal__confirm-button.custom-button.custom-button-primary {
+  min-width: 133px;
+  padding: 0 20px;
+  border: none;
+  background: linear-gradient(90deg, #9e7538 0%, #c19453 100%);
+  box-shadow: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.send-back-modal__confirm-button.custom-button.custom-button-primary:hover,
+.send-back-modal__confirm-button.custom-button.custom-button-primary:focus,
+.send-back-modal__confirm-button.custom-button.custom-button-primary:active {
+  border: none;
+  background: linear-gradient(90deg, #9e7538 0%, #c19453 100%);
+  box-shadow: none;
+  color: #fff;
+}
+
+.send-back-modal__confirm-button.custom-button.custom-button-primary[disabled],
+.send-back-modal__confirm-button.custom-button.custom-button-primary[disabled]:hover,
+.send-back-modal__confirm-button.custom-button.custom-button-primary[disabled]:focus,
+.send-back-modal__confirm-button.custom-button.custom-button-primary[disabled]:active {
+  border-color: #e1e3e5;
+  background: #e1e3e5;
+  color: #9ea2a9;
+  cursor: not-allowed;
+}

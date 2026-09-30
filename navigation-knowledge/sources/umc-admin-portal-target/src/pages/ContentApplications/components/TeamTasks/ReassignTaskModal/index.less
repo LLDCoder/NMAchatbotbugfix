@@ -1,0 +1,24 @@
+@import "@/styles/variables.less";
+
+.reassign-task-modal {
+  .ant-modal-body {
+    .ant-picker {
+      width: 100%;
+      min-height: 48px;
+    }
+  }
+  .brief-description {
+    min-height: 96px;
+  }
+  .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-left: 64px;
+    padding-top: 32px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 8px;
+    }
+  }
+}

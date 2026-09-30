@@ -1,0 +1,389 @@
+{
+  "schemaVersion": "1.0",
+  "bundleId": "admin.page-docs.licensing.application-detail.attributes",
+  "packageStatus": "active",
+  "createdAt": "2026-09-27T18:44:42.147372+00:00",
+  "records": [
+    {
+      "id": "admin.page-docs.licensing.application-detail.attributes",
+      "kind": "field_semantics",
+      "revision": 7,
+      "status": "active",
+      "title": "Application Details-属性与表单证据绑定",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local"
+        ],
+        "pageRefs": [
+          "/licensing/applications/applicationsDetails"
+        ],
+        "runtimeVerification": "pending",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Application/ApplicationDto.cs",
+          "revision": "3efae9b26845ec68130f314cbccfd0861bb76f19a22ab6d083f5ec9435042cdc",
+          "locator": "MyReviewPageResponse",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ApplicationAppService.cs",
+          "revision": "22e94773e70c95fab9ce479919b51d0241e046bf085cd0c3f8b5991b9004772e",
+          "locator": "GetMyReviewDetailAsync and ApplyForEn projection",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationMaterials/ApplicationMaterialStatusService.cs",
+          "revision": "02393670290b376dd377b628a2f6f2d8e26e487ea05e8ef21fb502d43e1b390f",
+          "locator": "GetReviewFormDataAsync and MergeFormData",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/components/common/FormliyView/index.tsx",
+          "revision": "21bd4c20ae22d1730472855697ef5da782d3de41bb780b145f49c2941680a762",
+          "locator": "schema/formValues and upload rendering",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/components/common/FormilyReviewList/stepVisibility.ts",
+          "revision": "dfc05b211a08c83ec181ae04053030c357dd6cacfdb57d7cfb528e07e715ffaa",
+          "locator": "conditional step visibility",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Domain/Models/ServiceConfig.cs",
+          "revision": "1eb8aa67ac45e740917d0e1c6e6ba1b83af6d9529c886843d83883f29bd33310",
+          "locator": "Id, Version and IsCurrentVersion",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationMaterials/ApplicationMaterialStatusService.cs",
+          "revision": "02393670290b376dd377b628a2f6f2d8e26e487ea05e8ef21fb502d43e1b390f",
+          "locator": "GetReviewFormDataAsync selects the exact application/detail stored schema and values; MergeFormData",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "official_webpage",
+          "reference": "https://www.nma.gov.ae/en/services/ground-filming-permit-within-the-country",
+          "revision": "observed-2026-09-28",
+          "locator": "Requirements; E-Service Procedures; Terms & Conditions",
+          "verification": "page_read; no edition or legal article identifier stated"
+        },
+        {
+          "kind": "official_webpage",
+          "reference": "https://www.nma.gov.ae/ar/services/تصريح-تصوير-أرضي-داخل-الدولة",
+          "revision": "observed-2026-09-28",
+          "locator": "Requirements; E-Service Procedures; Terms & Conditions",
+          "verification": "page_read; no edition or legal article identifier stated"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ApplicationAppService.cs",
+          "locator": "GetMyReviewDetailAsync selects exact scoped task detail; DTO projects ServiceNameEn from application.Service.NameEn; frontend DataCard displays detail.serviceNameEn.",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/ApplicationsDetails/DataCard/index.tsx",
+          "revision": "ffc19c4cf738aaec46349a02f0d356a30685f62be76072a196d8f6777254ea1e",
+          "locator": "DataCard SLA card, lines 48-57: normal detail uses slaDescription; completed activeTab=2 uses numeric-sign labels.",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Application/ApplicationDto.cs",
+          "revision": "3efae9b26845ec68130f314cbccfd0861bb76f19a22ab6d083f5ec9435042cdc",
+          "locator": "MyReviewPageResponse.SLA and SLADescription, lines 83-100: nullable clock and localized native formatter.",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ApplicationAppService.cs",
+          "revision": "22e94773e70c95fab9ce479919b51d0241e046bf085cd0c3f8b5991b9004772e",
+          "locator": "GetMyReviewDetailAsync lines 415-445; NormalizePausedSla lines 878-882: exact scoped task detail and PendingModification null normalization.",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Infrastructure/Utils/Extensions.ProcessInstance.cs",
+          "revision": "6adaec8378d2c091460bab450710437d206cf2a50b4f19a0f8e4393ffe58283a",
+          "locator": "ToSLAString and ToSLADueInString lines 38-121: preserve native unit/direction; null returns a dash.",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/licensing/applications/applicationsDetails",
+        "bindings": [
+          {
+            "id": "object",
+            "kind": "object",
+            "concept": "application",
+            "aliases": [
+              "applications",
+              "license application",
+              "license applications"
+            ],
+            "fields": [
+              "id"
+            ],
+            "operationRef": "GET /api/Application/MyReviewDetail/{taskId}",
+            "sourcePath": "/data/detail",
+            "meaning": "Application entity identified by id; taskId identifies the workflow task."
+          },
+          {
+            "id": "grain",
+            "kind": "grain",
+            "concept": "application",
+            "aliases": [
+              "applications",
+              "license application",
+              "license applications"
+            ],
+            "fields": [
+              "id"
+            ],
+            "operationRef": "GET /api/Application/MyReviewDetail/{taskId}",
+            "sourcePath": "/data/detail",
+            "meaning": "Application entity identified by id; taskId identifies the workflow task."
+          },
+          {
+            "id": "status",
+            "kind": "attribute",
+            "concept": "status",
+            "aliases": [
+              "current status",
+              "application status"
+            ],
+            "fields": [
+              "status"
+            ],
+            "operationRef": "GET /api/Application/MyReviewDetail/{taskId}",
+            "sourcePath": "/data/detail",
+            "meaning": "Current application/process state."
+          },
+          {
+            "id": "handler",
+            "kind": "attribute",
+            "concept": "handler",
+            "aliases": [
+              "current handler",
+              "officer",
+              "assigned officer",
+              "who is handling it"
+            ],
+            "fields": [
+              "assignedTo"
+            ],
+            "operationRef": "GET /api/Application/MyReviewDetail/{taskId}",
+            "sourcePath": "/data/detail",
+            "meaning": "Current assignee display; not historical reviewer."
+          },
+          {
+            "id": "service_type",
+            "kind": "attribute",
+            "concept": "type",
+            "aliases": [
+              "application type",
+              "service type"
+            ],
+            "fields": [
+              "serviceTypeNameEn"
+            ],
+            "operationRef": "GET /api/Application/MyReviewDetail/{taskId}",
+            "sourcePath": "/data/detail",
+            "meaning": "Service type display; does not assert publication material type."
+          },
+          {
+            "id": "applicant",
+            "kind": "attribute",
+            "concept": "applicant",
+            "aliases": [
+              "applying establishment",
+              "applicant name"
+            ],
+            "fields": [
+              "applyForEn"
+            ],
+            "operationRef": "GET /api/Application/MyReviewDetail/{taskId}",
+            "sourcePath": "/data/detail",
+            "meaning": "Applying establishment name; does not establish the submitting user."
+          },
+          {
+            "id": "submitted_at",
+            "kind": "attribute",
+            "concept": "submission time",
+            "aliases": [
+              "submission date"
+            ],
+            "fields": [
+              "submissionTime"
+            ],
+            "operationRef": "GET /api/Application/MyReviewDetail/{taskId}",
+            "sourcePath": "/data/detail",
+            "meaning": "Submission timestamp."
+          },
+          {
+            "id": "materials",
+            "kind": "attribute",
+            "concept": "missing materials",
+            "aliases": [
+              "missing documents",
+              "required materials",
+              "material requirements",
+              "missing required documents",
+              "required missing documents",
+              "missing mandatory documents",
+              "missing required materials",
+              "المستندات المطلوبة المفقودة",
+              "المواد المطلوبة الناقصة"
+            ],
+            "fields": [
+              "id"
+            ],
+            "operationRef": "GET /api/Application/MyReviewDetail/{taskId}",
+            "sourcePath": "/data/detail",
+            "meaning": "Use the selected application/detail stored form schema and values together. detail.serviceId anchors a versioned service record; resolve that record when an explicit version is needed. Do not substitute the current catalogue form for a historical submission or infer unresolved external visibility conditions. Assess schema requirements and stored values, not the raw formData text. Missing versions or applicability conditions remain unconfirmed; this definition does not assert that every absent upload is a required missing document.",
+            "formDefinition": {
+              "format": "schema_values/1",
+              "recordPath": "/data/detail",
+              "versionPath": null,
+              "documentPath": "/data/formData",
+              "containerPath": "/formData",
+              "schemaPath": "/schema",
+              "valuesPath": "/formValues",
+              "componentKey": "x-component",
+              "materialComponents": [
+                "Upload",
+                "BookListUpload",
+                "FileUploadGrid"
+              ],
+              "applicabilityComplete": false
+            }
+          },
+          {
+            "id": "service_name_en",
+            "kind": "attribute",
+            "concept": "service name",
+            "aliases": [
+              "application service name"
+            ],
+            "fields": [
+              "serviceNameEn"
+            ],
+            "operationRef": "GET /api/Application/MyReviewDetail/{taskId}",
+            "sourcePath": "/data/detail",
+            "meaning": "Name of the service attached to this authorized application; not service type, category, historical legal version or proof of decision correctness."
+          },
+          {
+            "id": "sla_display",
+            "kind": "attribute",
+            "concept": "SLA",
+            "aliases": [
+              "current SLA",
+              "review SLA",
+              "SLA display",
+              "current review SLA",
+              "service level agreement",
+              "service level agreement SLA",
+              "اتفاقية مستوى الخدمة",
+              "اتفاقية مستوى الخدمة الحالية",
+              "حالة اتفاقية مستوى الخدمة"
+            ],
+            "fields": [
+              "slaDescription"
+            ],
+            "operationRef": "GET /api/Application/MyReviewDetail/{taskId}",
+            "sourcePath": "/data/detail",
+            "meaning": "The current native review-clock display returned for this exact authorized task detail. Read slaDescription as supplied, preserving its unit and remaining/overdue direction; do not recalculate elapsed time from a browser clock or infer a priority or urgency rank. A missing, null, blank or dash display does not establish a zero duration, an on-time result, or a business SLA agreement. The inspected service normalizes PendingModification SLA to null and its formatter returns a dash; a dash alone does not prove which paused/unavailable condition applies. The normal detail card uses this display; the completed-detail tab instead derives a label from the numeric sla sign, so do not claim this raw text is that tab's processed label. This attribute does not describe contractual targets, a business deadline or a universal priority policy."
+          }
+        ],
+        "fields": {
+          "id": "Application entity key",
+          "status": "Application process state",
+          "assignedTo": "Current handler",
+          "serviceTypeNameEn": "Service type",
+          "applyForEn": "Applying establishment",
+          "submissionTime": "Submission timestamp",
+          "serviceNameEn": "Name of the service attached to the authorized application",
+          "slaDescription": "Native localized review SLA display for the exact task detail, including the returned unit/direction; blank/null/dash is unavailable, never inferred as zero or on-time."
+        },
+        "sourceBinding": {
+          "operationRef": "GET /api/Application/MyReviewDetail/{taskId}",
+          "sourcePath": "/data/detail"
+        },
+        "relationships": [
+          "Each definition applies only to its declared operation and data path."
+        ],
+        "constraints": [
+          "Definitions do not grant execution or field access. Use the current authorized response and exact operation/path.",
+          "No application-specific counts, questions or answers are stored.",
+          "Record verification, requested field completeness and output permission are independently checked.",
+          "A missing value is unknown; unavailable priority, workflow rules and source clock behavior are not guessed.",
+          "The SLA display binding reads one declared native text field only. It grants no access, does not change the clock or ranking policy, and cannot establish assignment date, today's complete task population or which task is most urgent. Preserve source identity, task and scalar-attestation checks."
+        ],
+        "unresolvedPageSemantics": [
+          "Actual submitting user differs from applicant establishment and is not established by this response mapping.",
+          "Next-step decisions require service/version/workflow rules; taskStatus is the current node, not a complete next-step recommendation.",
+          "Form applicability rules outside the stored schema require versioned definitions before missing materials can be confirmed.",
+          "serviceId is not a form version; versionPath remains unverified until the actual version field is established."
+        ],
+        "formProvenance": {
+          "storedSnapshot": "GetReviewFormDataAsync selects FormData and FormDataValues by the exact applicationId and applicationDetailId, then merges them for the review response.",
+          "serviceVersionAnchor": "ServiceConfig.Id points to a record with Version and IsCurrentVersion. Resolve the application service record, not merely the current version with the same service code.",
+          "scope": "Stored schema/value correspondence is evidenced by this source. A standalone formVersion string and every external conditional rule are not thereby supplied.",
+          "remainingEvidence": "Evaluate required/visible conditions against the selected record and check attachment metadata where authorized; an unavailable dependency remains unknown."
+        },
+        "knowledgeDependencies": [
+          {
+            "purpose": "analysis",
+            "operationRef": "GET /api/Application/MyReviewDetail/{taskId}",
+            "document": "Application Details-英阿对象名称与范围.json"
+          }
+        ],
+        "serviceReferenceGuidance": {
+          "purpose": "Current official service reference supplied alongside the exact application field definitions; it does not change any executable field binding, permission, requiredness rule or historical version proof.",
+          "references": [
+            {
+              "serviceNames": [
+                "Ground Photography Permit within the UAE",
+                "Ground filming permit within the country",
+                "تصريح تصوير أرضي داخل الدولة",
+                "رخصة التصوير الأرضي داخل دولة الإمارات العربية المتحدة"
+              ],
+              "sections": [
+                {
+                  "heading": "Use only after verifying the service",
+                  "en": "These published conditions concern the ground-filming permit service. Match the actual application service before citing them; a shared Licensing page alone is insufficient. This source describes the published service, not the recorded reasons for an individual decision."
+                },
+                {
+                  "heading": "Published materials and conditions",
+                  "en": "The NMA service page lists digital identity, a passport, a portrait, applicant data and the completed permit request. It calls for submission at least 15 working days before filming, specifying its purpose, dates and exact locations. It also requires media-content compliance, payment, coordination with the relevant authorities after permit issuance, and observance of filming restrictions. The process is online submission followed by review and, upon approval, payment. Source: https://www.nma.gov.ae/en/services/ground-filming-permit-within-the-country",
+                  "ar": "تذكر صفحة الهيئة الهوية الرقمية وجواز السفر وصورة الشخص وبياناته وطلب التصريح. وتشترط التقديم قبل التصوير بخمسة عشر يوم عمل على الأقل، وبيان الغرض والمواعيد والمواقع بدقة، والالتزام بمعايير المحتوى وسداد الرسوم واستكمال إجراءات الجهات المعنية بعد التصريح ومراعاة الأماكن المحظورة. يتم التقديم إلكترونياً ثم المراجعة والدفع عند الموافقة. المصدر: https://www.nma.gov.ae/ar/services/تصريح-تصوير-أرضي-داخل-الدولة"
+                },
+                {
+                  "heading": "Version, decision and missing-document limits",
+                  "en": "The two official pages were inspected on 28 September 2026. Neither supplies an edition, effective date or article number. This observation date is not an effective date. Do not infer which version decided a historical submission. For a particular application, verify its stored form, uploads, conditional requiredness, service configuration and decision history separately; this general requirements list alone cannot prove an attachment is missing or that a decision was correct."
+                }
+              ],
+              "constraints": [
+                "Do not generate a legal article number, historical effective date, application outcome or upload status.",
+                "This is a service-specific reference, not a universal permit checklist or a permission grant."
+              ]
+            }
+          ],
+          "useBoundary": "Match the freshly observed service of the authorized application to these service names before offering the corresponding official reference. Label it as current general service information; the historical decision basis stays unverified without its actual applicable version. Do not apply this reference to other licensing services.",
+          "matchBindingId": "admin.page-docs.licensing.application-detail.attributes#service_name_en"
+        }
+      }
+    }
+  ]
+}

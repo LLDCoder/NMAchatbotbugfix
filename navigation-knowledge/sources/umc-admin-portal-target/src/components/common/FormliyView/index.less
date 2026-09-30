@@ -1,0 +1,294 @@
+@import "@/styles/variables.less";
+
+// ── Global RTL input styles ──────────────────────────────────────────────────
+// Applied inside the designable workspace AND the runtime FormliyView.
+
+// Class added to the Input/TextArea element via applyRtl (mapProps).
+.Formily-Input-rtl {
+  direction: rtl;
+  text-align: right;
+
+  &::placeholder {
+    text-align: right;
+  }
+
+  // When AntD renders an affix-wrapper the inner <input> needs the same direction.
+  .ant-input {
+    direction: rtl;
+    text-align: right;
+
+    &::placeholder {
+      text-align: right;
+    }
+  }
+}
+
+// Class added to the ant-formily-item wrapper via x-decorator-props.className
+// (synced from x-component-props.rtl through x-reactions in the propsSchema).
+// This makes the label and control also render RTL without any :has() dependency.
+
+// ────────────────────────────────────────────────────────────────────────────
+
+.AI-flex {
+  justify-content: space-between;
+}
+.FormliyView {
+  .ant-card-extra {
+    padding: 0;
+
+    .ant-btn {
+      display: flex;
+      height: 32px;
+      min-width: 104px;
+      padding: 6px 12px;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  height: 100%;
+  overflow-y: scroll;
+  .AI-flex {
+    justify-content: space-between;
+    align-items: center;
+  }
+  .ant-input:disabled {
+    background-color: #f5f5f5;
+  }
+
+  .antformbody {
+    .formtitle {
+      font-family: Inter;
+      font-weight: 500;
+      font-style: Medium;
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 8px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+    .ant-radio-wrapper {
+      span {
+        font-size: 14px;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 12px;
+        }
+      }
+    }
+    .ant-radio {
+      font-size: 14px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+      }
+    }
+    .ant-radio-input {
+      width: 14px;
+      height: 14px;
+    }
+    .ant-radio-inner {
+      width: 16px;
+      height: 16px;
+    }
+    .ant-formily-item {
+      // margin-bottom: 22px;
+      flex-direction: column;
+      // align-items: flex-start;
+      .ant-formily-item-label {
+        justify-content: flex-start;
+      }
+    }
+
+    .ant-input::placeholder {
+      font-size: 16px;
+      font-weight: 400;
+      font-family: Inter;
+      color: @text-color-table-header;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 14px;
+      }
+    }
+    .ant-input-affix-wrapper,
+    .ant-select-selector {
+      border: 1px solid #d9d9d9;
+      // margin-bottom: 0px;
+    }
+    .ant-select-selector {
+      padding: 0 11px;
+    }
+    .ant-formily-item-control-content-component {
+      min-height: 48px !important;
+      // height: 48px;
+      line-height: 1 !important;
+    }
+
+    .ant-card-body {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .ant-formily-item-asterisk {
+      font-size: 14px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+      }
+    }
+    .ant-formily-grid-layout {
+      gap: 24px !important;
+
+      > div > .ant-formily-item + .ant-formily-item,
+      > div > .ant-formily-item + .ant-formily-grid-layout,
+      > div > .ant-formily-grid-layout + .ant-formily-grid-layout {
+        margin-top: 24px;
+      }
+    }
+    .ant-select-selection-item,
+    .ant-input,
+    .ant-radio-wrapper {
+      font-size: 14px;
+      font-weight: 500;
+      // height: auto !important;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+      }
+    }
+    .ant-select-arrow {
+      right: 11px;
+      height: 16px;
+      svg {
+        font-size: 10px;
+        color: #361e12;
+      }
+    }
+
+    .ant-formily-item-label {
+      min-height: 0;
+      height: 28px;
+    }
+    .ant-formily-item-label-content {
+      span {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 4px;
+        label {
+          font-size: 14px;
+          font-weight: 500;
+          color: @text-color;
+          // margin-bottom: 8px;
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+    .ant-formily-item-colon {
+      display: none;
+    }
+    .ant-card {
+      border-radius: 20px;
+      padding: 24px 24px !important;
+      .ant-card-head {
+        border-bottom: 0;
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+        margin-bottom: 24px;
+      }
+      .ant-card-head-title {
+        padding: 0;
+        font-weight: 600;
+        font-size: 18px !important;
+        color: @text-color;
+      }
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        border-radius: 10px;
+      }
+    }
+    .ant-card.training-program-card {
+      padding: 24px !important;
+      border-radius: 20px;
+      background: #fff;
+
+      .ant-card-head {
+        margin-bottom: 24px;
+      }
+
+      .ant-card-head-title {
+        line-height: 24px;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          line-height: 20px;
+        }
+      }
+
+      .ant-card-body,
+      .ant-formily-item-control-content-component {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        &::before,
+        &::after {
+          display: none;
+        }
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          gap: 16px;
+        }
+      }
+
+      .ant-formily-item-control-content-component {
+        min-height: 0 !important;
+      }
+
+      .ant-formily-item {
+        margin-bottom: 0;
+      }
+
+      .ant-formily-item-label,
+      .video-watching-hint {
+        display: none;
+      }
+
+      .information-container {
+        margin-bottom: 0;
+      }
+
+      .video-field-container {
+        background: transparent;
+        border-radius: 0;
+      }
+
+      .video-preview-container {
+        aspect-ratio: 1067 / 600;
+      }
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        border-radius: 10px;
+      }
+    }
+  }
+  // .ant-card-head {
+  //   // background: #f9fafb;
+  //   // border-radius: 16px 16px 0 0;
+  //   // border-bottom: none;
+  //   // min-height: 48px;
+  //   // padding: 0 20px;
+  //   margin-bottom: 0 !important;
+  //   .ant-card-head-title {
+  //     font-size: 24px;
+  //     font-weight: 600;
+  //     color: #21252e;
+  //     // padding: 12px 0;
+  //   }
+  // }
+}

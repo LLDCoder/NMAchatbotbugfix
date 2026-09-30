@@ -1,0 +1,5 @@
+# I18n Deletion Ledger
+
+| Date | Key | Owner | Search evidence | Dynamic producer conclusion | Route and state evidence | Languages | Replacement |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-09-07 | `menu.AImonitor` | `src/localization/locales` | Repository search found the page, generated route artifacts, audit route inventory, locale values, and an inactive commented route block. No active references remain after removal. | The only producer was the top-level page-directory auto-route scan. Removing `src/pages/AImonitor` removes the generated `/aimonitor` route; no backend mapping or other dynamic producer was found. | In an authenticated session, the user reported that `/aimonitor` redirected to the last authorized `/dashboard` route. The route was not available through the permission-filtered route set. The regenerated route table no longer contains `/aimonitor`. | English and Arabic values removed together. The unavailable route state is language-independent. | None; the feature and route were removed. |

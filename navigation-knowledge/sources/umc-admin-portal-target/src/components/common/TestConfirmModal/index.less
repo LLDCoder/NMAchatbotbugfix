@@ -1,0 +1,173 @@
+@import "@/styles/variables.less";
+
+.test-confirm-modal {
+  width: 600px;
+
+  .ant-modal-content {
+    border-radius: 20px;
+    padding: 0;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      border-radius: 10px;
+    }
+  }
+
+  .ant-modal-body {
+    padding: 0;
+  }
+
+  .test-confirm-modal-content {
+    padding: 32px;
+  }
+
+  .test-confirm-modal-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 32px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+  }
+
+  .test-confirm-modal-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    img {
+      width: 32px;
+      height: 32px;
+      display: block;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .test-confirm-modal-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #232528;
+    margin: 0;
+    line-height: 1.21;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 20px;
+    }
+  }
+
+  .test-confirm-modal-body {
+    margin-left: 56px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      margin-left: 40px;
+    }
+  }
+
+  .test-confirm-modal-description {
+    font-size: 16px;
+    font-weight: 600;
+    color: @text-color;
+    line-height: 1.5;
+    margin: 0 0 12px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+  }
+
+  .test-confirm-modal-account {
+    background: linear-gradient(
+      90deg,
+      #f7f6f3 0%,
+      #f6f6f5 56.3%,
+      #f7f2eb 100%
+    );
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 18px;
+    color: @text-color;
+    line-height: 22px;
+    word-break: break-all;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 14px;
+      line-height: 18px;
+      padding: 12px;
+    }
+  }
+
+  .test-confirm-modal-note {
+    font-size: 16px;
+    color: #5f646d;
+    line-height: 1.5;
+    margin: 32px 0 0;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 14px;
+      margin-top: 24px;
+    }
+  }
+
+  .test-confirm-modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+    padding-top: 32px;
+
+    .cancel-btn,
+    .confirm-btn {
+      height: 48px;
+      padding: 0 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 14px;
+        height: 40px;
+        padding: 0 16px;
+      }
+    }
+
+    .cancel-btn {
+      border: 1px solid @primary-color;
+      background-color: #ffffff;
+      color: @primary-color;
+
+      &:hover {
+        border-color: @primary-color;
+        color: @primary-color;
+      }
+    }
+
+    .confirm-btn {
+      border: none;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 12px;
+      padding-top: 24px;
+    }
+  }
+}

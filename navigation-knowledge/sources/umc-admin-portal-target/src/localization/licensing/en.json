@@ -1,0 +1,771 @@
+{
+  "Licensing": {
+    "stats": {
+      "total": "Total"
+    },
+    "fahrReview": {
+      "title": "FAHR Review Details",
+      "systemLabel": "FAHR",
+      "personalProfile": "Personal Profile",
+      "itimadNumber": "Itimad No. {{number}}",
+      "timelineTitle": "Timeline",
+      "permitFallback": "FAHR Permit.pdf",
+      "permitLabel": "FAHR Permit",
+      "status": {
+        "pendingReview": "Pending Review",
+        "underProcessing": "Under Processing",
+        "submitted": "Submitted",
+        "received": "Received",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "requestForInformation": "Request For Information",
+        "revoked": "Revoked",
+        "cancelled": "Cancelled",
+        "autoCancelled": "Auto Cancelled",
+        "pushFailed": "Push Failed",
+        "cancelRequested": "Cancellation Pending",
+        "transactionApplied": "Transaction Applied",
+        "transactionUnapplied": "Transaction Unapplied",
+        "unknown": "Unknown Status"
+      },
+      "sessionStatus": {
+        "notRequired": "Not Required",
+        "pending": "Pending",
+        "partiallyDecided": "Partially Decided",
+        "allDecided": "All Decided",
+        "pendingRfi": "Pending RFI Response",
+        "closedApproved": "Closed - Approved",
+        "closedRejected": "Closed - Rejected"
+      },
+      "state": {
+        "current": "FAHR status: {{status}}",
+        "triggerMissing": "FAHR was not triggered for application {{applicationId}}. Contact operations support.",
+        "partialPushFailed": "{{count}} person(s) could not be sent to FAHR. Contact operations support to retry the push."
+      },
+      "timeline": {
+        "registerRequest": "Register Request",
+        "decisionReceived": "Decision Received",
+        "rfiSent": "RFI Sent",
+        "rfiUploaded": "RFI Uploaded",
+        "transactionApplied": "Transaction Applied",
+        "decisionRevoked": "Decision Revoked",
+        "requestCanceled": "Request Canceled",
+        "reconsiderationRequest": "Reconsideration Request",
+        "attachments": "Attachments",
+        "attachmentList": "Attachments",
+        "failed": "Failed",
+        "milestones": {
+          "registerRequest": "Register Request",
+          "decisionApproved": "Decision Received - Approved",
+          "decisionRejected": "Decision Received - Rejected",
+          "decisionRfi": "Decision Received - Request For Information",
+          "decisionRevoked": "Decision Received - Revoked",
+          "decisionCancelled": "Decision Received - Cancelled",
+          "decisionReceived": "Decision Received",
+          "supplementarySubmitted": "Supplementary Submitted",
+          "rfiResponseSubmitted": "RFI Response Submitted",
+          "reconsiderationSubmitted": "Reconsideration Submitted",
+          "transactionApplied": "Transaction Applied",
+          "modifyDataSubmitted": "Modify Data Submitted",
+          "cancelApplicationRequested": "Cancel Application Requested",
+          "autoCancelledByItimad": "Auto Cancelled by Itimad",
+          "externalApproved": "External Approved",
+          "externalRejected": "External Rejected",
+          "manualDecisionRecorded": "Manual Decision Recorded"
+        },
+        "interactions": {
+          "externalApprovalClicked": "External Approval",
+          "triggerEvaluated": "Trigger Evaluated",
+          "requestCreated": "Register Request",
+          "statusChangedToPending": "Pending External Approval",
+          "personPushed": "Person Pushed",
+          "personPushFailed": "Person Push Failed",
+          "attachmentSubmitted": "Supplementary Material Submitted",
+          "decisionReceived": "Decision Received",
+          "statusRollUp": "Session Status Updated",
+          "permitReceived": "Permit Received",
+          "permitFetchFailed": "Permit Fetch Failed",
+          "manualDecision": "Manual Decision",
+          "umcExternalApproved": "External Approval Submitted",
+          "umcExternalRejected": "External Rejection Submitted"
+        }
+      },
+      "actions": {
+        "refresh": "Refresh",
+        "applyTransaction": "Apply Transaction",
+        "unapplyTransaction": "Unapply Transaction",
+        "modifyData": "Modify Data",
+        "cancelApplication": "Cancel Application",
+        "cancel": "Cancel",
+        "submit": "Submit",
+        "submitRfiResponse": "Submit RFI Response",
+        "applyReconsider": "Apply Reconsider"
+      },
+      "confirm": {
+        "cancelTitle": "Cancel Transaction",
+        "cancelContent": "Are you sure you want to cancel this transaction? Once confirmed, this transaction will be canceled and a cancellation request will be sent to Itimad.",
+        "applyTitle": "Submit for External Approval",
+        "applyContent": "This application requires FAHR / Itimad external approval. By confirming, the system will submit the required person information to FAHR / Itimad for security review.",
+        "applyTransactionTitle": "Apply Transaction",
+        "applyTransactionContent": "Are you sure you want to apply this transaction? Once confirmed, the transaction will be applied and FAHR will be notified.",
+        "unapplyTitle": "Unapply Transaction",
+        "unapplyContent": "Are you sure you want to unapply this transaction? Once confirmed, it will reverse the previously applied transaction and notifies FAHR."
+      },
+      "submission": {
+        "resubmitTitle": "Resubmit application details",
+        "resubmitPlaceholder": "Response to the comment received from Itimad System",
+        "reconsiderTitle": "Reconsideration of the Itimad decision",
+        "reconsiderPlaceholder": "Response to the comment received from Itimad System",
+        "modifyTitle": "Modify Approved Application Details",
+        "modifyPlaceholder": "Describe the approved data changes",
+        "notes": "Notes",
+        "reconsiderNotes": "Reconsideration Reason",
+        "notesRequired": "This field is required.",
+        "notesMax": "Notes cannot exceed {{max}} characters.",
+        "attachment": "Attachment",
+        "reconsiderAttachment": "Upload Reconsideration Attachment",
+        "uploadFile": "Upload File",
+        "uploadTip": "Maximum size: 2MB. File types: jpg, jpeg, png, and pdf."
+      },
+      "messages": {
+        "invalidApplicationId": "Invalid application ID.",
+        "triggerFailed": "Unable to trigger FAHR approval.",
+        "notTriggered": "FAHR approval was not triggered.",
+        "invalidRequestId": "FAHR approval request ID is missing or invalid.",
+        "refreshFailed": "Unable to refresh FAHR approval request details.",
+        "pushFailed": "FAHR request was created, but the push was not successful.",
+        "requestSent": "FAHR approval request sent.",
+        "actionFailed": "Unable to complete FAHR action.",
+        "attachmentReadFailed": "Unable to read the attachment.",
+        "attachmentEncodeFailed": "Unable to encode the attachment.",
+        "attachmentLoadFailed": "Unable to load the uploaded attachment.",
+        "attachmentSize": "The FAHR attachment must be between 1 byte and 5MB.",
+        "actionUnavailable": "This FAHR action is unavailable for the current state.",
+        "decisionSaveFailed": "Unable to save FAHR decision.",
+        "oneAttachmentRequired": "One FAHR attachment is required.",
+        "registrationFormRequired": "The complete FAHR registration form is required for an RFI response.",
+        "materialsRejected": "FAHR did not accept the submitted materials.",
+        "actionSuccess": "FAHR action completed successfully.",
+        "requestIdInvalid": "FAHR approval request ID is invalid.",
+        "requestsLoadFailed": "Unable to load FAHR requests.",
+        "requestDetailsLoadFailed": "Unable to load FAHR approval request details.",
+        "applicationMismatch": "FAHR approval request does not match this application.",
+        "sessionExpired": "Your session has expired. Please sign in again.",
+        "recordNotFound": "FAHR approval record was not found.",
+        "recordsLoadFailed": "Unable to load FAHR approval records.",
+        "externalDecisionSuccess": "The external review decision was submitted successfully.",
+        "externalDecisionFailed": "Unable to submit the external review decision.",
+        "permitUnavailable": "The FAHR Permit is unavailable or has expired."
+      }
+    },
+    "status": {
+      "active": "Active",
+      "expireSoon": "Expire Soon",
+      "expired": "Expired",
+      "cancelled": "Cancelled",
+      "disabled": "Suspended"
+    },
+    "table": {
+      "licenseNo": "License No.",
+      "applicationNo": "Application No.",
+      "license": "License Name",
+      "mediaActivity": "Media Activity",
+      "applyFor": "Apply For",
+      "status": "Status",
+      "effectiveDate": "Effective Date",
+      "expirationDate": "Expiry Date",
+      "actions": "Actions"
+    },
+    "rowActions": {
+      "download": "Download",
+      "disable": "Suspend",
+      "enable": "Reinstate"
+    },
+    "modal": {
+      "enableTitle": "Reinstate License",
+      "enableContent": "Are you sure you want to reinstate this license?",
+      "confirm": "Confirm",
+      "cancel": "Cancel"
+    },
+    "disableModal": {
+      "title": "Suspend License",
+      "disabledReasonLabel": "Suspend Reason",
+      "selectReasonPlaceholder": "Select suspend reason",
+      "notesLabel": "Notes",
+      "remarksPlaceholder": "Enter the reason for suspending this license",
+      "charCount": "{{current}}/{{max}}"
+    },
+    "messages": {
+      "enableSuccess": "License reinstated successfully",
+      "enableFailed": "Failed to reinstate license",
+      "disableSuccess": "License suspended successfully",
+      "disableFailed": "Failed to suspend license"
+    },
+    "filters": {
+      "effectiveStartDate": "Effective Start Date",
+      "effectiveEndDate": "Effective End Date",
+      "allStatuses": "All Statuses"
+    },
+    "export": "Export",
+    "documentDownload": {
+      "title": "PDF Access Code",
+      "subtitle": "Use the access code below to open your downloaded PDF file.",
+      "passwordLabel": "Access Code",
+      "noteTitle": "Note",
+      "noteBody": "Copy and keep this access code. You will need it to open the PDF file after downloading.",
+      "copyRedirect": "Copy Access Code & Download",
+      "downloading": "Downloading...",
+      "downloadUnavailable": "The file is not ready yet. Please try again later.",
+      "downloadFailed": "Unable to download the file. Please try again."
+    },
+    "details": {
+      "licenseDetails": "License Details",
+      "issuingLicenseTitle": "Issuing License for selling books and publications",
+      "licenseNumber": "License Number",
+      "issuanceDate": "Issuance Date",
+      "effectiveDate": "Effective Date",
+      "expiryDate": "Expiry Date",
+      "daysRemaining": "Days Remaining",
+      "back": "Back",
+      "download": "Download",
+      "disable": "Suspend",
+      "enable": "Reinstate",
+      "enableLicense": "Reinstate License",
+      "enableConfirm": "Are you sure you want to reinstate this license?",
+      "confirm": "Confirm",
+      "licenseIdMissing": "License ID is missing",
+      "enableSuccess": "License reinstated successfully",
+      "enableFailed": "Failed to reinstate license",
+      "relatedApplications": "Related Applications",
+      "number": "Number",
+      "applicationNumber": "Application Number",
+      "serviceName": "Service Name",
+      "type": "Type",
+      "submissionTime": "Submission Time",
+      "new": "New",
+      "renew": "Renew",
+      "modify": "Modify",
+      "cancel": "Cancel",
+      "transfer": "Transfer",
+      "partnerManagement": "Partner Management",
+      "tabs": {
+        "applicationDetails": "Application Details",
+        "establishmentOverview": "Establishment Overview",
+        "applicantDetails": "Applicant Details"
+      },
+      "timeline": {
+        "finalApproval": "Final Approval",
+        "documentVerification": "Document Verification",
+        "initialAssessment": "Initial Assessment"
+      },
+      "addressInfo": {
+        "title": "Address Information",
+        "emirate": "Emirate",
+        "region": "Region",
+        "area": "Area",
+        "street": "Street"
+      },
+      "establishmentInfo": {
+        "title": "Establishment Information",
+        "subTypes": "Establishment Sub-types",
+        "workMobileNumber": "Work Mobile Number",
+        "workEmail": "Work Email",
+        "commercialLicenseNumber": "Commercial License Number",
+        "licenseExpiryDate": "License Expiry Date",
+        "arabicName": "Establishment Name in Arabic",
+        "englishName": "Establishment Name in English",
+        "emirate": "Emirate",
+        "licensingAuthority": "Licensing Authority",
+        "phoneNumber": "Phone Number",
+        "tenancyContractEndDate": "Tenancy Contract End Date"
+      },
+      "establishmentDocuments": {
+        "title": "Establishment Documents",
+        "commercialLicense": "Upload Commercial License",
+        "tenancyContract": "Upload Tenancy Contract",
+        "memorandumOfAssociation": "Memorandum of Association",
+        "powerOfAttorney": "Power of Attorney"
+      },
+      "legalPersonInfo": {
+        "title": "Legal Person Information",
+        "legalPerson": "Legal Person",
+        "contactNumber": "Legal Person's Contact Number",
+        "idType": "ID Type",
+        "emiratesId": "Emirates ID",
+        "uid": "UID",
+        "passportNumber": "Passport Number",
+        "dateOfBirth": "Date of Birth",
+        "email": "Email"
+      }
+    }
+  },
+  "Profile": {
+    "stats": {
+      "total": "Total",
+      "individual": "Individual",
+      "commercial": "Commercial",
+      "freeZone": "Free Zone",
+      "talentAgency": "Talent Agency",
+      "government": "Government",
+      "embassy": "Embassy",
+      "consulate": "Consulate",
+      "culturalClubs": "Cultural Clubs"
+    },
+    "details": {
+      "summary": {
+        "applicationNumber": "Application Number",
+        "applicant": "Applicant",
+        "sla": "SLA",
+        "processingTime": "Processing Time",
+        "status": "Status",
+        "individualApplication": "Individual Application",
+        "commercialApplication": "Commercial Application",
+        "governmentApplication": "Government Application",
+        "applicationWithType": "{{type}} Application"
+      },
+      "statuses": {
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "pendingReview": "Pending Review",
+        "underReview": "Under Review"
+      },
+      "section": {
+        "personalInformation": "Personal Information",
+        "addressInformation": "Address Information",
+        "personalDocuments": "Personal Documents",
+        "establishmentInformation": "Establishment Information",
+        "establishmentDocuments": "Establishment Documents",
+        "legalPersonInformation": "Legal Person Information",
+        "partnerManagement": "Partner Management"
+      },
+      "empty": {
+        "noEstablishmentInformation": "No establishment information",
+        "noDocuments": "No documents",
+        "noLegalPersonInformation": "No legal person information",
+        "noAddressInformation": "No address information",
+        "noPersonalInformation": "No personal information"
+      },
+      "buttons": {
+        "back": "Back",
+        "approve": "Approve",
+        "reject": "Reject",
+        "details": "Details"
+      },
+      "modal": {
+        "partnerDetails": "Partner Details",
+        "approveApplication": "Approve Application",
+        "approveConfirm": "Are you sure you want to approve this application?",
+        "cancel": "Cancel",
+        "confirm": "Confirm"
+      },
+      "messages": {
+        "profileUnavailable": "Profile information is unavailable.",
+        "failedToLoadPersonalDetails": "Failed to load personal profile details.",
+        "failedToLoadProfileDetails": "Failed to load profile details.",
+        "invalidProfileIdentifier": "Invalid profile identifier."
+      },
+      "partner": {
+        "partnerType": "Partner Type",
+        "nationality": "Nationality",
+        "establishmentNameAr": "Establishment Name in Arabic",
+        "establishmentNameEn": "Establishment Name in English",
+        "memorandumOfAssociation": "Memorandum of Association",
+        "powerOfAttorney": "Power of Attorney",
+        "statement": "Statement",
+        "dateOfBirth": "Date of Birth",
+        "emiratesId": "Emirates ID",
+        "fullNameAr": "Full Name in Arabic",
+        "fullNameEn": "Full Name in English",
+        "gender": "Gender",
+        "expiryDate": "Expiry Date",
+        "occupation": "Occupation",
+        "personalPhoto": "Personal Photo",
+        "contactNumber": "Legal Person's Contact Number",
+        "idType": "ID Type",
+        "email": "Email"
+      },
+      "address": {
+        "emirate": "Emirate",
+        "region": "Region",
+        "area": "Area",
+        "street": "Street"
+      },
+      "personal": {
+        "verifyMethod": "How would you like to verify your identity?",
+        "emiratesId": "Emirates ID",
+        "uid": "UAE Unified Number (UID)",
+        "passport": "Passport",
+        "dateOfBirth": "Date of Birth",
+        "passportNumber": "Passport Number",
+        "fullNameAr": "Full Name in Arabic",
+        "fullNameEn": "Full Name in English",
+        "nationality": "Nationality",
+        "gender": "Gender",
+        "occupation": "Occupation",
+        "expiryDate": "Expiry Date"
+      },
+      "establishment": {
+        "subTypes": "Establishment Sub-types",
+        "workEmail": "Work Email",
+        "licenseExpiryDate": "License Expiry Date",
+        "tenancyContractEndDate": "Tenancy Contract End Date",
+        "workMobileNumber": "Work Mobile Number",
+        "establishmentNameAr": "Establishment Name in Arabic",
+        "entityEstablishmentNameAr": "Entity/Establishment Name in Arabic",
+        "licensingAuthority": "Licensing Authority",
+        "commercialLicenseNumber": "Commercial License Number",
+        "establishmentNameEn": "Establishment Name in English",
+        "entityEstablishmentNameEn": "Entity/Establishment Name in English",
+        "phoneNumber": "Phone Number"
+      },
+      "document": {
+        "fromWeb": "From Web",
+        "commercialLicense": "Commercial License",
+        "tenancyContract": "Tenancy Contract",
+        "memorandumOfAssociation": "Memorandum of Association",
+        "powerOfAttorney": "Power of Attorney",
+        "officialLetterFromEntityToNma": "Official Letter from the Entity to NMA",
+        "statement": "Statement",
+        "frequency": "Frequency",
+        "uploadTip": "Maximum size: 5MB. File types: jpg, jpeg, and png."
+      }
+    },
+    "table": {
+      "applicationNo": "Application No.",
+      "userType": "Profile Type",
+      "applyFor": "Apply For",
+      "sla": "SLA",
+      "applicant": "Applicant",
+      "status": "Status",
+      "lastUpdated": "Last Updated",
+      "actions": "Actions"
+    },
+    "actions": {
+      "approve": "Approve",
+      "reject": "Reject"
+    },
+    "filters": {
+      "searchPlaceholder": "Search",
+      "allStatuses": "All Statuses",
+      "allUserTypes": "All User Types",
+      "lastUpdated": "Last Updated",
+      "myDecision": "My Decision",
+      "allResults": "All Results",
+      "startTime": "Start Time",
+      "endTime": "End Time"
+    },
+    "export": "Export",
+    "approveModal": {
+      "title": "Approve Application",
+      "content": "Are you sure you want to approve this application?",
+      "cancel": "Cancel",
+      "confirm": "Confirm"
+    },
+    "rejectModal": {
+      "notesPlaceholder": "Enter notes"
+    },
+    "messages": {
+      "approveSuccess": "Application approved successfully.",
+      "approveFailed": "Failed to approve application.",
+      "rejectSuccess": "Application rejected successfully.",
+      "rejectFailed": "Failed to reject application."
+    },
+    "rejectReasons": {
+      "documentUnclear": "Document Unclear",
+      "documentMismatch": "Document Mismatch",
+      "faceNotClearlyVisible": "Face Not Clearly Visible",
+      "missingRequiredDocument": "Missing Required Document",
+      "invalidEmiratesId": "Invalid or Expired Emirates ID",
+      "documentExpired": "Document Expired",
+      "licenseNumberMismatch": "License Number Mismatch",
+      "licenseExpired": "License Expired",
+      "unableVerifyEconomy": "Unable to verify with the Ministry of Economy"
+    }
+  },
+  "applications": {
+    "tabs": {
+      "myTasks": "My Tasks",
+      "teamMembers": "Team Members",
+      "teamTasks": "Team Tasks"
+    },
+    "statistics": {
+      "todo": "To Do",
+      "completed": "Completed",
+      "pendingReview": "Pending Review",
+      "pendingModification": "Pending Modification",
+      "pendingDisposition": "Pending Disposition",
+      "dispositionVerification": "Disposition Verification",
+      "externalReview": "External Approval"
+    },
+    "subTabs": {
+      "todo": "To Do",
+      "completed": "Completed"
+    },
+    "buttons": {
+      "markEmergencyLeave": "Mark Emergency Leave",
+      "resumeWork": "Resume Work",
+      "resumeWorkWarning": "Are you sure you want to mark this employee as returned to work?",
+      "reassign": "Reassign",
+      "reassignTasks": "Reassign Tasks",
+      "export": "Export",
+      "approve": "Approve",
+      "reject": "Reject",
+      "extraapprove": "External Approve",
+      "extrareject": "External Reject",
+      "requestModification": "Request Modification",
+      "sendBack": "Send Back",
+      "externalApproval": "External Approval",
+      "recallApproval": "Recall Approval",
+      "recall": "Recall"
+      },
+    "teamModals": {
+      "messages": {
+        "operationSuccess": "Operation successful.",
+        "resumeFailed": "Failed to resume employee",
+        "emergencyLeaveFailed": "Failed to mark emergency leave",
+        "reassignSuccess": "Task reassigned successfully",
+        "reassignFailed": "Failed to reassign task",
+        "membersLoadFailed": "Failed to get team members"
+      },
+      "leave": {
+        "type": "Leave Type",
+        "typeRequired": "Please select a leave type",
+        "selectType": "Select leave type",
+        "expectedReturnDate": "Expected Return Date",
+        "dateRequired": "Please select a date",
+        "datePlaceholder": "DD/MM/YYYY HH:MM:SS"
+      },
+      "reassign": {
+        "assignPersonRequired": "Please select an assign person",
+        "selectAssignPerson": "Select assign person"
+      }
+    },
+    "teamMembers": {
+      "emergencyLeave": "Emergency Leave",
+      "returnTime": "Return Time",
+      "tasks": "Tasks"
+    },
+    "messages": {
+      "memberTasksLoadFailed": "Failed to get team members tasks",
+      "todoReviewExportFailed": "Failed to export todo review",
+      "urgentCountLoadFailed": "Failed to get urgent count"
+    },
+    "requestModal": {
+      "modificationReason": "Modification Reason",
+      "modificationReasonRequired": "Please select a modification reason",
+      "selectModificationReason": "Please select a modification reason"
+    },
+    "recallApproval": {
+      "title": "Confirm Recall",
+      "warning": "Are you sure you want to recall this approval? The application will return to your pending list for re-review.",
+      "reason": "Recall Reason",
+      "reasonPlaceholder": "Enter notes",
+      "confirm": "Confirm",
+      "cancel": "Cancel",
+      "validation": {
+        "required": "Recall reason is required",
+        "maxLength": "Recall reason cannot exceed 500 characters"
+      }
+    },
+    "approveModal": {
+      "title": "Approve Application",
+      "description": "Are you sure you want to approve this application?",
+      "warning": "Please confirm that all application details are correct. After approval, the application will proceed to the next step.",
+      "confirm": "Confirm",
+      "cancel": "Cancel",
+      "attachments": "Attachments",
+      "notes": "Notes",
+      "uploadFile": "Upload File",
+      "uploadTip": "Maximum Size: 5MB, File Types: jpg, jpeg, png, and pdf.",
+      "enterNotes": "Enter notes"
+    },
+    "rejectModal": {
+      "title": "Reject Application",
+      "description": "Are you sure you want to reject this application?",
+      "warning": "Note that after rejection, it will still flow to the next node.",
+      "confirm": "Confirm",
+      "cancel": "Cancel",
+      "rejectionReason": "Rejection Reason",
+      "uploadAttachment": "Attachments",
+      "notes": "Notes",
+      "enterNotes": "Enter notes",
+      "selectRejectionReason": "Select a rejection reason",
+      "quickNote": "Quick Note",
+      "upload": "Upload",
+      "quickNote1": "Commercial license verification failed",
+      "quickNote2": "Reserve trade number is no longer accepted",
+      "quickNote3": "Applicant does not meet eligibility requirements",
+      "quickNote4": "Content violates UAE media regulations"
+    },
+    "approvalModals": {
+      "common": {
+        "operationFailed": "Unable to complete the operation.",
+        "refreshFailed": "The action succeeded, but the latest application data could not be loaded.",
+        "quickNote": "Quick Note",
+        "cancel": "Cancel",
+        "confirm": "Confirm",
+        "attachments": "Attachments",
+        "upload": "Upload",
+        "uploadFile": "Upload File",
+        "uploadTip": "Maximum Size: 5MB, File Types: jpg, jpeg, png, and pdf.",
+        "notes": "Notes",
+        "enterNotes": "Enter notes"
+      },
+      "approve": {
+        "title": "Approve Application",
+        "operationCompleted": "Application approved.",
+        "defaultTip": "Please confirm that all application details are correct. After approval, the application will proceed to the next step if applicable.",
+        "conditionalTip": "After approval, draft applications for distribution permits will be automatically generated for Approved and Review Required items. Rejected items will require disposition.",
+        "externalApprovalResultTip": "This action completes the current node with external approval result. After approval, it will flow to the next node.",
+        "quickNotes": {
+          "allDocumentsVerified": "All documents verified",
+          "materialsComply": "Materials comply with regulations"
+        }
+      },
+      "reject": {
+        "title": "Reject Application",
+        "operationCompleted": "Application rejected.",
+        "defaultTip": "Note that after rejection, it will still flow to the next node.",
+        "routeTip": "This rejection applies to this step only. The application will still move to the next review stage.",
+        "materialDispositionTip": "Once rejected, all publications in this application will be rejected. The applicant will be required to select a disposition method and submit supporting documentation within 14 days.",
+        "externalApprovalResultTip": "This action completes the current node with external approval result. After rejection, the process will end directly.",
+        "rejectionReason": "Rejection Reason",
+        "selectRejectionReason": "Select rejection reason",
+        "rejectionReasonRequired": "Rejection reason is required",
+        "quickNotes": {
+          "licenseExpired": "Commercial license expired or invalid",
+          "prohibitedContent": "Prohibited content identified"
+        }
+      },
+      "disposition": {
+        "approveTitle": "Approve Disposition",
+        "rejectTitle": "Reject Disposition",
+        "approveTip": "Are you sure you want to approve this disposition? Please ensure all uploaded documents have been verified.",
+        "rejectTip": "Once rejected, the applicant must resubmit the disposition documents within the remaining timeframe.",
+        "verificationNotes": "Verification Notes",
+        "caseIdMissing": "Disposition case id is missing"
+      },
+      "mediaReport": {
+        "title": "Media Material Report",
+        "ageClassification": "Age Classification",
+        "selectAgeClassification": "Select Age Classification",
+        "ageClassificationRequired": "Please select age classification",
+        "uploadObligationLetter": "Upload Obligation Letter",
+        "detailedReport": "Detailed Report",
+        "detailedReportRequired": "Detailed report is required",
+        "noteList": "Note List",
+        "addNew": "Add New",
+        "addNewNote": "Add New Note",
+        "pageNumber": "Page Number",
+        "sceneTime": "Scene Time",
+        "enterPageNumber": "Enter page number",
+        "action": "Action",
+        "selectAction": "Select action",
+        "actionRequired": "Please select action",
+        "note": "Note",
+        "enterNote": "Enter note",
+        "noteRequired": "Note is required",
+        "actions": "Actions",
+        "edit": "Edit",
+        "delete": "Delete",
+        "fieldRequired": "This field is required",
+        "submitSuccess": "Media material report submitted successfully.",
+        "submitFailed": "Unable to submit the media material report.",
+        "submitTip": "Submitting this report will complete the current node and record the content classification to the final certificate. The application will continue to the next approval step.",
+        "classifySubtitle": "Classify media material content as follows",
+        "noteActions": {
+          "add": "Add",
+          "delete": "Delete",
+          "change": "Change"
+        },
+        "sections": {
+          "general": "General",
+          "violence": "Violence & Horror",
+          "language": "Language",
+          "sexuality": "Sexuality",
+          "substances": "Alcohol, Smoking & Drugs",
+          "gambling": "Gambling"
+        },
+        "options": {
+          "bookGeneral1": "Books and novels that get this rating are considered completely safe for all age groups, where they may be dedicated to children or to the general public. Books and novels do not contain any inappropriate content. May contain a little imagination and some of them sprang from the context of a comic cartoon There is no content that is scary, scary, obscene, or any kind of drug, taboo, nudity or what it symbolizes.",
+          "bookGeneral2": "Simple stories that contain a few words that focus on explaining the basic concepts of the child such as colors, shapes, numbers and letters, develops the child's emotional intelligence and understanding, explanatory books, songs, songs, and simple mental games.",
+          "bookGeneral3": "Content that includes positive messages and behavior that takes into account the interaction between image and text, can include dramatic events and fictitious conflicts.",
+          "cinemaGeneral1": "Does not contain any material that conflicts with media content standards",
+          "cinemaGeneral2": "The film may contain a few scenes of violence, horror or inappropriate words and scenes.",
+          "videoGameGeneral1": "Games that get this rating are completely safe for all age groups, where they may be for children or for the general public. The game does not contain any inappropriate content. May contain a little imagination and some of them sprang from the context of a comic strip. No scary content, terrifying sounds, dirty words, or any kind of drug, contraband, nudity, or symbolism.",
+          "videoGameGeneral2": "Existing content does not violate public morality (images, verbs, words). The game contains fictional or human-like characters that are set in a childish cartoon and are likely to be troublesome for younger children.",
+          "videoGameGeneral3": "This age group is characterized by fictional personalities of a more realistic character.",
+          "violenceItem": "Violence and horror review item {{index}}",
+          "languageItem": "Language review item {{index}}",
+          "sexualityItem": "Sexuality review item {{index}}",
+          "substancesItem": "Alcohol, smoking and drugs review item {{index}}",
+          "gamblingItem": "Gambling review item {{index}}"
+        }
+      }
+    },
+    "selectors": {
+      "allTypes": "All Types"
+    },
+    "filters": {
+    "submissionTime": "Submission Time",
+    "myDecision": "My Decision",
+    "allResults": "All Decision"
+    },
+    "placeholders": {
+      "allMembers": "All Members",
+      "registrationType": "Select registration type",
+      "allStatuses": "All Statuses",
+      "allPortals": "All Portals",
+      "allCategories": "All Categories",
+      "startTime": "Start Date",
+      "endTime": "End Date",
+      "UpdatedForm": "Start Date",
+      "UpdatedTo": "End Date",
+      "eventstartTime": "Event start date",
+      "eventendTime": "Event end date",
+      "publishFrom": "Publish from",
+      "publishTo": "Publish to"
+    },
+    "labels": {
+      "assignPerson": "Assign Person"
+    },
+    "tableColumns": {
+      "applicationNo": "Application No.",
+      "serviceName": "Service Name",
+      "serviceCategory": "Service Category",
+      "type": "Type",
+      "sla": "SLA",
+      "submissionTime": "Submission Time",
+      "lastUpdatedTime": "Last Updated Time",
+      "applyFor": "Apply For",
+      "status": "Status",
+      "assignedTo": "Assigned To",
+      "action": "Action"
+    },
+    "details": {
+      "applicationNumber": "Application Number",
+      "licenseNumber": "License Number",
+      "serviceCategory": "Service Category",
+      "type": "Type",
+      "sla": "SLA",
+      "status": "Status",
+      "myDecision": "My Decision",
+      "fromWeb": "From Web",
+      "onTime": "On Time",
+      "exceeded": "Exceeded",
+      "applicationTimeline": "Application Timeline",
+      "applicationSubmitted": "Application Submitted",
+      "duration": "Duration",
+      "reviewResult": "Review Result",
+      "suggestion": "Suggestion",
+      "attachments": "Attachments",
+      "deliveryInformation": {
+        "title": "Delivery Information",
+        "courierService": "Courier Service",
+        "recipientName": "Recipient Name",
+        "mobileNumber": "Mobile Number",
+        "address": "Address"
+      }
+    }
+  }
+}

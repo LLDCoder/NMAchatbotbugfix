@@ -1,0 +1,170 @@
+{
+  "schemaVersion": "1.0",
+  "bundleId": "admin.page-docs.licensing.licenses.temporal",
+  "packageStatus": "active",
+  "createdAt": "2026-09-25T06:36:59.506580+00:00",
+  "records": [
+    {
+      "id": "admin.page-docs.licensing.licenses.temporal",
+      "kind": "field_semantics",
+      "revision": 3,
+      "status": "active",
+      "title": "Licenses-日期语义与输出字段",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local",
+          "debug"
+        ],
+        "pageRefs": [
+          "/licensing/licenses"
+        ],
+        "runtimeVerification": "response_shape_verified",
+        "deployedBuildMatch": "relevant_expiry_runtime_asset_verified"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Licenses/index.tsx",
+          "revision": "3035ec70555afb4ebaa7f5e7807c95c2e42fb18855f8d7a5ecd6f4c659bea2e2",
+          "locator": "query; department=1; showLicenseNumber; onRow detail entry",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/License/LicenseListResponseDto.cs",
+          "revision": "eacff2981513b3c24895783b8b3c045e75700a1290ef7aec8661b4920a40d7f7",
+          "locator": "LicenseListResponseDto",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/License/LicenseListRequestDto.cs",
+          "revision": "75c2170dcb810c92a975aa63f55f079d6344c09e38f692d6a798f05638a9dcef",
+          "locator": "LicenseListRequestDto",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Domain/Service/License/LicenseManagementService.cs",
+          "revision": "7d9729203f1633f7e29e58d1d6f266cab793ce77c368dec44a7242084169e61c",
+          "locator": "GetLicenseListAsync: keyword, date and status filters; count and paging",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Domain/Shares/DateTimeHelper.cs",
+          "revision": "7f405eebfca51883b884784cebdaf92425b0496bfc357e26bf99ca61c36ed4d0",
+          "locator": "Project current time contract: Asia/Dubai, UTC+4, unspecified-kind storage wall clock",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/utils/gstTime.ts",
+          "revision": "sha256:3a214f5645dbeb19ea021b21f87d66c8ec3351330701da5d9817f724beddc695",
+          "locator": "Backend wire contract; fromApi, GST, fmt, msUntil",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Licenses/index.tsx",
+          "revision": "sha256:3035ec70555afb4ebaa7f5e7807c95c2e42fb18855f8d7a5ecd6f4c659bea2e2",
+          "locator": "expirationTime column imports and invokes msUntil and fmt",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "runtime_observation",
+          "reference": "test/runtime/sequential-repair-batch4-20260927/baselines/remote-main-BahaHspw.js",
+          "revision": "sha256:521f00f03a6ffb5c6c07675310784584aee37dbdb9990048b100b1366f9fbafe",
+          "locator": "Deployed main bundle: jt parser / it Asia/Dubai; q4 exported as o and H4 exported as ab",
+          "verification": "response_shape_verified"
+        },
+        {
+          "kind": "runtime_observation",
+          "reference": "test/runtime/sequential-repair-batch4-20260927/baselines/remote-index-amHLqpOz.js",
+          "revision": "sha256:bc77ac03db96745f50ba72c2bf3de11feff8ea022458e9e706d0adccc67916ab",
+          "locator": "Deployed Licenses bundle: main imports o as Le, ab as Se; expirationTime invokes Le and Se",
+          "verification": "response_shape_verified"
+        }
+      ],
+      "payload": {
+        "pageRef": "/licensing/licenses",
+        "bindings": [
+          {
+            "id": "expiry",
+            "kind": "time",
+            "concept": "expiry date",
+            "aliases": [
+              "expiration date",
+              "expiry",
+              "expiration"
+            ],
+            "fields": [
+              "expirationTime"
+            ],
+            "operationRef": "POST /api/LicenseManagement/list",
+            "sourcePath": "/data/items",
+            "meaning": "Current deployed Licenses page expiry timestamp; offset-free values are interpreted in Asia/Dubai. Exact offsets retain their instant. A rolling duration uses [reference instant, reference instant plus duration); a calendar-day request has separate stated boundaries.",
+            "sourceTimezone": "Asia/Dubai"
+          },
+          {
+            "id": "expiry_attribute",
+            "kind": "attribute",
+            "concept": "expiry date",
+            "aliases": [
+              "expiration date"
+            ],
+            "fields": [
+              "expirationTime"
+            ],
+            "operationRef": "POST /api/LicenseManagement/list",
+            "sourcePath": "/data/items",
+            "meaning": "License list expiry date."
+          },
+          {
+            "id": "number_attribute",
+            "kind": "attribute",
+            "concept": "license number",
+            "aliases": [
+              "number",
+              "license",
+              "license identification",
+              "public license number",
+              "displayed license number"
+            ],
+            "fields": [
+              "showLicenseNumber"
+            ],
+            "operationRef": "POST /api/LicenseManagement/list",
+            "sourcePath": "/data/items",
+            "meaning": "Display license number; not proof of global uniqueness."
+          }
+        ],
+        "fields": {
+          "expirationTime": "License expiry timestamp",
+          "showLicenseNumber": "License display number"
+        },
+        "sourceBinding": {
+          "operationRef": "POST /api/LicenseManagement/list",
+          "sourcePath": "/data/items"
+        },
+        "relationships": [
+          "Each definition applies only to its declared operation and data path.",
+          "A historical manual that does not specify the clock is incomplete evidence, not a conflicting timezone rule. Use the separately verified deployed field contract for current page calculations. Expire Soon remains distinct from a user-specified date interval."
+        ],
+        "constraints": [
+          "Definitions do not grant execution or field access. Use the current authorized response and exact operation/path.",
+          "No application-specific counts, questions or answers are stored.",
+          "Record verification, requested field completeness and output permission are independently checked.",
+          "A missing value is unknown; unavailable priority, workflow rules and source clock behavior are not guessed."
+        ],
+        "timezoneEvidence": {
+          "inspectedProjectClock": "Asia/Dubai",
+          "clockMeaning": "DateTimeHelper.Now uses Dubai wall-clock time for application comparisons.",
+          "deploymentVerification": "The deployed Licenses asset and shared date parser were inspected on 2026-09-27. The actual page interprets offset-free expirationTime with Asia/Dubai; see Licenses-有效期时区与时间区间.json and its exact runtime asset hashes. This replaces the earlier unverified-deployment statement for this field.",
+          "boundary": "This is the current portal interpretation for this operation/field, not a legal validity claim or proof of how every imported certificate was created. Keep missing or invalid dates unknown; preserve explicit offsets."
+        }
+      }
+    }
+  ]
+}

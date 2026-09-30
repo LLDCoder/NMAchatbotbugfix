@@ -1,0 +1,74 @@
+/*
+  Content / My Dashboard grid — mirrors Figma "Content / My Dashboard".
+
+  A single 10-column grid drives both rows so the design proportions land:
+    row2  Task Breakdown 40% | SLA 30% | Summary 30%   -> 4 / 3 / 3
+    row3  Recently Assigned 65% | AI Model Center 35%   -> 7 / 3
+  Named areas let the tablet band reorder the cards without touching the DOM.
+
+  Per-band gap follows the Responsive Rules spec (24 ≥1440, 16 at 1280–1440,
+  12 below); card radius/padding live inside each card component.
+*/
+.content-dashboard {
+  height: 100%;
+  overflow: auto;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  grid-template-areas:
+    "t t t t t t t t t t"
+    "b b b b s s s m m m"
+    "a a a a a a a c c c";
+
+  .cd-area {
+    min-width: 0;
+  }
+  .cd-area--apptasks {
+    grid-area: t;
+  }
+  .cd-area--breakdown {
+    grid-area: b;
+  }
+  .cd-area--sla {
+    grid-area: s;
+  }
+  .cd-area--summary {
+    grid-area: m;
+  }
+  .cd-area--assigned {
+    grid-area: a;
+  }
+  .cd-area--aicenter {
+    grid-area: c;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 0;
+  }
+
+  /* 1280–1440 — tighter gap, layout unchanged (spec: 16px). */
+  @media (max-width: 1439.98px) {
+    gap: 16px;
+    .cd-area--aicenter {
+      gap: 16px;
+    }
+  }
+
+  /*
+    Tablet reorder (design "Content / My Dashboard_Tablet", 1024): the Summary and
+    AI Model Center drop to a bottom pair and the Recently Assigned table takes the
+    full width in the middle. Applied below 1280 where the three-up stats row and
+    the 65/35 split stop being comfortable.
+  */
+  @media (max-width: 1279.98px) {
+    gap: 12px;
+    grid-template-areas:
+      "t t t t t t t t t t"
+      "b b b b b s s s s s"
+      "a a a a a a a a a a"
+      "m m m m m c c c c c";
+    .cd-area--aicenter {
+      gap: 12px;
+    }
+  }
+}

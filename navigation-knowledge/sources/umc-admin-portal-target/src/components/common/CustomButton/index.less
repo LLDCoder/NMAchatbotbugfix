@@ -1,0 +1,405 @@
+@import "@/styles/variables.less";
+
+.custom-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+  }
+  &-contentWithIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+  }
+
+  &-large {
+    height: 48px;
+    padding: 0 24px;
+    min-width: 100px;
+    font-size: 16px;
+
+    .custom-button-content,
+    .custom-button-contentWithIcon {
+      font-size: 16px;
+    }
+
+    .custom-button-icon {
+      img,
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  &-medium {
+    height: 36px;
+    padding: 0 20px;
+    min-width: 80px;
+    font-size: 14px;
+
+    .custom-button-content,
+    .custom-button-contentWithIcon {
+      font-size: 14px;
+    }
+
+    .custom-button-icon {
+      img,
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  &-small {
+    height: 32px;
+    padding: 0 16px;
+    min-width: 70px;
+    font-size: 14px;
+
+    .custom-button-content,
+    .custom-button-contentWithIcon {
+      font-size: 14px;
+    }
+
+    .custom-button-icon {
+      img,
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  .custom-button-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    margin-inline-start: 12px;
+
+    img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &:disabled {
+    border-radius: 8px;
+    background-color: #E1E3E5;
+    color: #9EA2A9;
+    cursor: not-allowed;
+  }
+  &:disabled:hover{
+    background-color: #E1E3E5;
+    color: #9EA2A9;
+  }
+}
+
+.custom-button-primary {
+  background: linear-gradient(to right, #9e7538, #c19453);
+  border: none;
+  color: #fff;
+
+  &:hover:not(:disabled) {
+    background: linear-gradient(to right, #9e7538, #c19453);
+    color: #fff;
+  }
+
+  &:active:not(:disabled) {
+    background: linear-gradient(to right, #7a5628, #95703d);
+  }
+  &:focus:not(:disabled) {
+    background: linear-gradient(to right, #9e7538, #c19453) !important;
+  }
+}
+
+.custom-button-primary:hover,
+.custom-button-primary:focus {
+  border: none;
+  color: #fff;
+}
+
+.custom-button-secondary {
+  background-color: #fff;
+  border: 1px solid @primary-color;
+  color: @primary-color;
+
+  &:hover:not(:disabled) {
+    background-color: @ant-select-panel-bgColor;
+    border-color: @ant-hover-color;
+    color: @ant-hover-color;
+  }
+
+  &:active:not(:disabled) {
+    background-color: @ant-pagination-active-color;
+  }
+}
+
+.custom-button-outline {
+  background-color: transparent;
+  border: 1px solid @primary-color;
+  color: @primary-color;
+
+  &:hover:not(:disabled) {
+    background-color: transparent;
+    border-color: @primary-color;
+    color: @primary-color;
+  }
+
+  &:active:not(:disabled) {
+    background-color: @ant-pagination-active-color;
+  }
+}
+
+.custom-button-outline:hover,
+.custom-button-outline:focus {
+  border-color: @primary-color;
+  color: @primary-color;
+}
+
+.custom-button-text:hover,
+.custom-button-text:focus {
+  color: @primary-color;
+  background: none;
+}
+.custom-button-text {
+  background-color: transparent;
+  border: none;
+  color: @primary-color;
+  padding: 0 16px;
+
+  &:hover:not(:disabled) {
+    background-color: @ant-select-panel-bgColor;
+    color: @ant-hover-color;
+  }
+
+  &:active:not(:disabled) {
+    background-color: @ant-pagination-active-color;
+  }
+}
+
+.custom-button-gold {
+  background-color: @primary-color!important;
+  border: none;
+  color: #fff!important;
+
+  &:hover:not(:disabled) {
+    background-color: @ant-hover-color;
+    color: #fff;
+  }
+
+  &:active:not(:disabled) {
+    background-color: #a87f45;
+  }
+}
+
+.custom-button-danger {
+  background-color: @darger-color;
+  border: none;
+  color: #fff;
+
+  &:hover:not(:disabled) {
+    background-color: #d43f39;
+    color: #fff;
+  }
+
+  &:active:not(:disabled) {
+    background-color: #c02f29;
+  }
+
+  &:focus:not(:disabled) {
+    // background-color: @darger-color !important;
+  }
+}
+
+.custom-button-danger:hover,
+.custom-button-danger:focus {
+  border: none;
+  color: #fff;
+  background-color: #d43f39;
+}
+
+.custom-button-danger-outline {
+  background-color: transparent;
+  border: 1px solid @darger-color;
+  color: @darger-color;
+
+  &:hover:not(:disabled) {
+    background-color: #fee;
+    border-color: #d43f39;
+    color: #d43f39;
+  }
+
+  &:active:not(:disabled) {
+    background-color: #fdd;
+    border-color: #c02f29;
+    color: #c02f29;
+  }
+}
+
+.custom-button-danger-outline:hover,
+.custom-button-danger-outline:focus {
+  border-color: @darger-color;
+  color: @darger-color;
+}
+.custom-button:disabled,
+.custom-button:disabled:hover,
+.custom-button:disabled:focus,
+.custom-button.ant-btn[disabled],
+.custom-button.ant-btn[disabled]:hover,
+.custom-button.ant-btn[disabled]:focus {
+  background: #e1e3e5 !important;
+  border-color: #e1e3e5 !important;
+  color: #9ea2a9 !important;
+  cursor: not-allowed;
+}
+.custom-button {
+  &.ant-btn-sm {
+    height: 32px;
+    padding: 0 16px;
+    font-size: 14px;
+
+    .custom-button-icon {
+      img,
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  &.ant-btn-lg {
+    height: 56px;
+    padding: 0 32px;
+    font-size: 18px;
+
+    .custom-button-icon {
+      img,
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+
+.custom-button-rounded {
+  border-radius: 24px;
+}
+
+.custom-button-circle {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+}
+
+/*
+  Migrated to *.rwd.less (postcss.config.js `MIGRATED`) -- px above stay literal
+  instead of being rewritten to rem.
+
+  Reading the size ramp from the design annotations:
+    "filter button height drops, 48 -> 40px"
+    "button size becomes small, height 32px"  /  "primary button becomes size S"
+
+  Those describe a button dropping one step, not every button collapsing to
+  32px. Mapping large -> 40 and medium -> 32 satisfies both annotations at once
+  (a filter button built on `large` lands on 40, a normal button on `medium`
+  lands on 32) and keeps the size hierarchy intact. Collapsing large straight to
+  32 would make it identical to `small`.
+
+  `small` and `ant-btn-sm` already sit at the spec's 32px floor, so their height
+  is left alone -- going lower would be inventing a size the design never gave.
+
+  Horizontal padding follows the spec's 12/20 -> 8/12 shape; font sizes follow
+  the -2px type ramp. Radius (8px) and gap (8px) are not in the spec and stay.
+*/
+@media (max-width: 1919.98px) {
+  .custom-button {
+    &-large {
+      height: 40px;
+      padding: 0 16px;
+      min-width: 88px;
+      font-size: 14px;
+
+      .custom-button-content,
+      .custom-button-contentWithIcon {
+        font-size: 14px;
+      }
+
+      .custom-button-icon {
+        img,
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+
+    &-medium {
+      height: 32px;
+      padding: 0 12px;
+      min-width: 72px;
+      font-size: 12px;
+
+      .custom-button-content,
+      .custom-button-contentWithIcon {
+        font-size: 12px;
+      }
+    }
+
+    &-small {
+      /* Height already at the spec floor; only padding and type step down. */
+      padding: 0 12px;
+      font-size: 12px;
+
+      .custom-button-content,
+      .custom-button-contentWithIcon {
+        font-size: 12px;
+      }
+    }
+
+    .custom-button-icon {
+      width: 16px;
+      height: 16px;
+      margin-inline-start: 8px;
+
+      img,
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    &.ant-btn-lg {
+      height: 48px;
+      padding: 0 24px;
+      font-size: 16px;
+    }
+
+    &.ant-btn-sm {
+      /* Already at the floor. */
+      padding: 0 12px;
+      font-size: 12px;
+    }
+  }
+}

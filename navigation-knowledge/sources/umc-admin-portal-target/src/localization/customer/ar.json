@@ -1,0 +1,1344 @@
+{
+  "Customer": {
+    "customerManagement": {
+      "tabs": {
+        "accounts": "الحسابات",
+        "profiles": "الملفات الشخصية"
+      }
+    },
+    "applications": {
+      "details": {
+        "applicationNumber": "رقم الطلب",
+        "serviceCategory": "فئة الخدمة",
+        "type": "النوع",
+        "sla": "SLA",
+        "exceeded": "تجاوز",
+        "onTime": "في الوقت",
+        "status": "الحالة",
+        "myDecision": "قراري",
+        "fromWeb": "من الويب",
+        "applicationTimeline": "جدول زمني الطلب",
+        "duration": "المدة",
+        "reviewResult": "نتيجة المراجعة",
+        "suggestion": "الاقتراح",
+        "attachments": "المرفقات",
+        "applicationSubmitted": "تم تقديم الطلب",
+        "supervisorReport": "تقرير المشرف"
+      },
+      "buttons": {
+        "reject": "رفض",
+        "requestModification": "طلب تعديل",
+        "sendBack": "إعادة إرسال",
+        "approve": "موافقة"
+      }
+    },
+    "tickets": {
+      "tabs": {
+        "todo": "قيد الإنجاز",
+        "completed": "مكتمل",
+        "myTasks": "مهامي",
+        "teamMembers": "أعضاء الفريق",
+        "teamTasks": "مهام الفريق"
+      },
+      "labels": { "reopen": "أعيد فتحه" },
+      "table": {
+        "ticketNo": "رقم التذكرة",
+        "type": "النوع",
+        "applicationNo": "رقم الطلب",
+        "serviceName": "اسم الخدمة",
+        "customer": "المتعامل",
+        "agent": "الموظف",
+        "issueCategory": "فئة المشكلة",
+        "sla": "إس إل إي",
+        "currentHandler": "المسؤول الحالي",
+        "status": "الحالة",
+        "submissionTime": "وقت التقديم",
+        "lastUpdated": "آخر تحديث",
+        "actions": "الإجراءات",
+        "source": "المصدر",
+        "Priority": "الأولوية"
+      },
+      "actions": {
+        "message": "رسالة",
+        "changeStatus": "تغيير الحالة",
+        "transfer": "تحويل",
+        "addNew": "إضافة جديدة",
+        "reassign": "إعادة تعيين",
+        "process": "معالجة",
+        "sendBack": "إرجاع"
+      },
+      "placeholders": {
+        "allStatuses": "كل الحالات",
+        "allTypes": "كل الأنواع",
+        "allIssueCategory": "كل فئات المشاكل",
+        "startDate": "تاريخ البدء",
+        "endDate": "تاريخ الانتهاء",
+        "startTime": "وقت البداية",
+        "endTime": "وقت النهاية",
+        "teamMembers": "أعضاء الفريق",
+        "allSource": "جميع مصادر الاستفسارات"
+      },
+      "messages": {
+        "failedToMarkEmergencyLeave": "فشل تحديد إجازة طارئة",
+        "failedToResumeEmployee": "فشل استئناف الموظف",
+        "reassignTaskSuccess": "تمت إعادة تعيين المهمة بنجاح",
+        "failedToReassignTaskUser": "فشل إعادة تعيين المهمة",
+        "failedToGetTeamMembers": "فشل جلب أعضاء الفريق",
+        "failedToGetTeamMembersTasks": "فشل جلب مهام أعضاء الفريق",
+        "failedToGetUrgentCount": "فشل جلب عدد المهام العاجلة",
+        "operationSuccess": "تمت العملية بنجاح"
+      },
+      "common": {
+        "notes": "ملاحظات",
+        "enterNotes": "أدخل الملاحظات",
+        "pleaseEnterNotes": "يرجى إدخال الملاحظات"
+      },
+      "addModal": {
+        "addNew": "إضافة تذكرة جديدة",
+        "ticketInfo": "معلومات التذكرة",
+        "customerInformation": "معلومات العميل",
+        "enquiryType": "نوع الاستفسار",
+        "selectEnquiryType": "اختر نوع الاستفسار",
+        "enquirySource": "مصدر الاستفسار",
+        "selectEnquirySource": "اختر مصدر الاستفسار",
+        "hasApplicationNumber": "هل لديك رقم طلب؟",
+        "noRecordsFound": "لا توجد سجلات",
+        "selectApplicationNumber": "اختر رقم الطلب",
+        "selectIssueCategory": "اختر فئة المشكلة",
+        "attachments": "المرفقات",
+        "problemDescription": "وصف المشكلة",
+        "enterProblemDescription": "أدخل وصف المشكلة",
+        "userType": "نوع المستخدم",
+        "applicationNumber": "رقم الطلب",
+        "individual": "فرد",
+        "establishmentSubTypes": "الأنواع الفرعية للمنشأة",
+        "selectEstablishmentSubTypes": "اختر الأنواع الفرعية للمنشأة",
+        "fullName": "الاسم الكامل",
+        "enterName": "أدخل الاسم",
+        "enterNameInEnglish": "أدخل الاسم الكامل",
+        "email": "البريد الإلكتروني",
+        "enterEmail": "أدخل البريد الإلكتروني",
+        "mobileNumber": "رقم الجوال",
+        "enterMobileNumber": "أدخل رقم الجوال",
+        "nooptionsfound": "لم يتم العثور على خيارات",
+        "priority": "الأولوية",
+        "selectPriority": "اختر الأولوية"
+      },
+      "reassign": {
+        "selectAssignPerson": "يرجى اختيار الشخص المعين",
+        "selectAssignPersonPlaceholder": "اختر الشخص المعين"
+      },
+      "markEmgLeave": {
+        "leaveType": "نوع الإجازة",
+        "selectLeaveType": "يرجى اختيار نوع الإجازة",
+        "selectLeaveTypePlaceholder": "اختر نوع الإجازة",
+        "expectedReturnDate": "تاريخ العودة المتوقع",
+        "selectDate": "يرجى اختيار التاريخ",
+        "datePlaceholder": "يوم/شهر/سنة  ساعة:دقيقة:ثانية",
+        "briefDescription": "وصف مختصر",
+        "enterBriefDescription": "أدخل وصفاً مختصراً"
+      },
+      "teamMembers": {
+        "emergencyLeave": "إجازة طارئة",
+        "reason": "السبب",
+        "returnTime": "وقت العودة",
+        "tasks": "المهام",
+        "workload": "عبء العمل",
+        "avgTaskDuration": "متوسط مدة المهمة",
+        "overdue": "متأخر"
+      },
+      "processModal": {
+        "title": "معالجة",
+        "problemCause": "سبب المشكلة",
+        "selectProblemCause": "اختر سبب المشكلة",
+        "pleaseSelectProblemCause": "يرجى اختيار سبب المشكلة",
+        "resolutionDescription": "وصف الحل",
+        "enterResolutionDescription": "أدخل وصف الحل",
+        "processSuccess": "تمت المعالجة بنجاح",
+        "processFailed": "فشلت المعالجة",
+        "pleaseEnterResolutionDescription": "يرجى إدخال وصف الحل"
+      },
+      "sendBackModal": {
+        "sendBackSuccess": "تم الإرجاع بنجاح",
+        "sendBackFailed": "فشل الإرجاع"
+      },
+      "filterModal": {
+        "priority": "الأولوية",
+        "allPriority": "كل الأولويات",
+        "source": "المصدر",
+        "allSource": "جميع المصادر"
+      },
+      "filterModal1": {
+        "title": "تصفية",
+        "cancel": "إلغاء",
+        "search": "بحث",
+        "approvalResults": "نتائج الموافقة",
+        "allResults": "كل النتائج",
+        "submissionTime": "وقت التقديم",
+        "results": {
+          "approved": "موافق عليه",
+          "rejected": "مرفوض",
+          "requestModification": "طلب تعديل",
+          "externalApproval": "موافقة خارجية",
+          "sendBack": "إرجاع"
+        }
+      },
+      "changeStatusModal": {
+        "selectNewStatus": "اختر الحالة الجديدة",
+        "assignedDepartment": "القسم/الدور المعين",
+        "selectDepartment": "اختر القسم/الدور",
+        "responseDeadline": "موعد الاستجابة",
+        "deadlinePlaceholder": "DD/MM/YYYY HH/MM",
+        "slaDeadlineWarning": "قد يؤدي تعيين موعد استجابة بعد الموعد النهائي لاتفاقية مستوى الخدمة للتذكرة إلى خرق التذكرة لاتفاقية مستوى الخدمة الخاصة بها.",
+        "type": "النوع",
+        "selectType": "اختر النوع",
+        "priority": "الأولوية",
+        "selectPriority": "اختر الأولوية"
+      },
+      "statusOptions": {
+        "open": "مفتوح",
+        "pendingCustomer": "في انتظار المتعامل",
+        "departmentProcessing": "قيد المعالجة في القسم",
+        "resolved": "تم الحل"
+      },
+      "upload": {
+        "tip": "الحجم الأقصى: 5 ميجابايت. أنواع الملفات: jpg، jpeg، png، pdf."
+      },
+      "priority": {
+        "high": "عالية",
+        "medium": "متوسطة",
+        "low": "منخفضة"
+      }
+    },
+    "ticketsDetails": {
+      "errors": {
+        "applicationUnavailableTitle": "الطلب غير متاح",
+        "applicationUnavailableDescription": "لا يمكن فتح تفاصيل الطلب المحدد.",
+        "unsupportedDepartmentTitle": "الطلب غير متاح",
+        "unsupportedDepartmentDescription": "قسم الطلب المحدد غير مدعوم."
+      },
+      "header": {
+        "ticketNumber": "رقم التذكرة",
+        "type": "النوع",
+        "issueCategory": "فئة المشكلة",
+        "sla": "إس إل إي",
+        "status": "الحالة",
+        "submissionTime": "وقت التقديم",
+        "priority": "الأولوية",
+        "fromPlatform": "من {{platform}}"
+      },
+      "basicInfo": {
+        "title": "المعلومات الأساسية",
+        "enquirySource": "مصدر الاستفسار",
+        "applicationNumber": "رقم الطلب",
+        "serviceName": "اسم الخدمة",
+        "problemDescription": "وصف المشكلة",
+        "attachments": "المرفقات"
+      },
+      "applicantInformation": {
+        "title": "معلومات مقدم الطلب",
+        "fullName": "الاسم الكامل",
+        "email": "البريد الإلكتروني",
+        "mobileNumber": "رقم الجوال",
+        "emiratesId": "الهوية الإماراتية",
+        "nationality": "الجنسية",
+        "documents": "المستندات",
+        "more": "المزيد"
+      },
+      "applicationOverview": {
+        "title": "نظرة عامة على الطلب",
+        "tickets": "التذاكر",
+        "historicalApplications": "الطلبات السابقة",
+        "historicalTickets": "التذاكر السابقة",
+        "historicalTicketsEnquiry": "الاستفسارات والشكاوى السابقة",
+        "relatedApplications": "الطلبات ذات الصلة",
+        "TicketsEnquiry": "الاستفسارات والشكاوى ذات الصلة",
+        "ProblemDescription": "وصف المشكلة",
+        "serviceName": "اسم الخدمة",
+        "appliedFor": "مقدم الطلب",
+        "submissionTime": "وقت الإرسال",
+        "relatedTickets": "التذاكر ذات الصلة",
+        "relatedRefund": "الاسترداد ذو الصلة",
+        "relatedAppeal": "التظلم ذو الصلة",
+        "refund": "استرداد",
+        "appeal": "تظلم"
+      },
+      "ticketStatus": "حالة التذكرة",
+      "ticketTimeline": {
+        "title": "جدول زمني الاستفسارات والشكاوى",
+        "currentHandler": "المسؤول الحالي",
+        "submittedBy": "تم الإرسال بواسطة",
+        "createdBy": "تم الإنشاء بواسطة",
+        "problemCause": "سبب المشكلة",
+        "attachments": "المرفقات",
+        "resolved": "تم الحل",
+        "pendingcustomer": "قيد الرد من المتعامل",
+        "changedStatusTo":"قام {{actorName}} بتغيير الحالة إلى <status>{{statusLabel}}</status>",
+        "changedStatusDes": "قام بتغيير الحالة إلى",
+        "automaticallyopen": "تم تعيين التذكرة تلقائيًا إلى {{actorName}} ",
+        "automaticallyopendes": "تم تعيين التذكرة تلقائيًا إلى",
+        "completed": "تمت معالجة التذكرة",
+        "cancelled": "ألغى المتعامل الطلب",
+        "transferredTo": "ونقل التذكرة إلى",
+        "autoTransferredTo": "تم نقل التذكرة تلقائيًا إلى",
+        "departmentProcessing": "قيد المعالجة في القسم",
+        "departmentProcessingTransferred": "قام {{actorName}} بتغيير الحالة إلى <status>{{statusLabel}}</status> وتم تحويل التذكرة إلى {{transferTarget}}",
+        "departmentProcessedTransferred": "{{actorName}} أعاد الطلب، وتم تحويله تلقائيًا إلى {{transferTarget}}",
+        "ProcessedDes": "أعاد الطلب، وتم تحويله تلقائيًا إلى",
+        "ProcessingDes": "تم تغيير الحالة إلى \"قيد المعالجة بالقسم\" وتم تحويل التذكرة إلى "
+      },
+      "communication": {
+        "collapseHistory": "طي السجل",
+        "title": "سجلات التواصل",
+        "showMoreMessages": "عرض المزيد من الرسائل",
+        "transferDepartment": "تم تحويل التذكرة تلقائيًا إلى ",
+        "noMessagesYet": "لا توجد رسائل بعد.",
+        "invalidFileFormat": "تنسيق الملف غير صالح. يرجى رفع JPG أو JPEG أو PNG أو PDF.",
+        "maxFilesError": "يمكنك رفع 3 ملفات فقط.",
+        "maxFileSizeError": "حجم الملف يتجاوز 5 ميجابايت",
+        "fileUploaded": "تم رفع الملف بنجاح",
+        "sendSuccessful": "تم الإرسال بنجاح",
+        "replyToCustomer": "الرد على المتعامل",
+        "internalNote": "ملاحظة داخلية",
+        "internalNotePlaceholder": "أدخل ملاحظة مرئية للقسم الداخلي فقط",
+        "customerHappiness": "سعادة المتعاملين",
+        "customer": "المتعامل",
+        "transferredTo": "تم تحويله إلى",
+        "responseDeadline": "الموعد النهائي للرد",
+        "ticketProcessed": "تمت معالجة التذكرة من قبل ",
+        "ticketSentBack": "تم إرجاع التذكرة من قبل ",
+        "changeStatus": "تم نقل التذكرة إلى ",
+        "byCustomerHappiness": " بواسطة سعادة المتعامل",
+        "problemCause": "سبب المشكلة"
+      },
+      "establishment": {
+        "title": "نظرة عامة على المنشأة",
+        "warningsViolations": "التحذيرات والمخالفات",
+        "unpaidFines": "الغرامات غير المسددة",
+        "establishmentName": "اسم المنشأة",
+        "commercialLicenseNumber": "رقم الرخصة التجارية",
+        "emirate": "الإمارة",
+        "documents": "المستندات",
+        "partners": "الشركاء",
+        "establishmentInformation": "معلومات المنشأة",
+        "establishmentDocuments": "مستندات المنشأة",
+        "addressInformation": "معلومات العنوان",
+        "partnerList": "قائمة الشركاء",
+        "establishmentSubTypes": "الأنواع الفرعية للمنشأة",
+        "workEmail": "البريد الإلكتروني للعمل",
+        "licenseExpiryDate": "تاريخ انتهاء الرخصة",
+        "establishmentNameInArabic": "اسم المنشأة بالعربية",
+        "establishmentNameInEnglish": "اسم المنشأة بالإنجليزية",
+        "licensingAuthority": "جهة الترخيص",
+        "phoneNumber": "رقم الهاتف",
+        "tenancyContractEndDate": "تاريخ انتهاء عقد الإيجار",
+        "commercialLicense": "الرخصة التجارية",
+        "tenancyContract": "عقد الإيجار",
+        "memorandumOfAssociation": "عقد التأسيس",
+        "powerOfAttorney": "الوكالة",
+        "region": "المنطقة",
+        "area": "الحي",
+        "street": "الشارع"
+      }
+    },
+    "accounts": {
+      "table": {
+        "accountId": "معرف الحساب",
+        "fullName": "الاسم الكامل",
+        "email": "البريد الإلكتروني",
+        "mobileNumber": "رقم الجوال",
+        "loginMethod": "طريقة تسجيل الدخول",
+        "profiles": "الملفات الشخصية",
+        "status": "الحالة",
+        "registerTime": "وقت التسجيل",
+        "actions": "الإجراءات"
+      },
+      "labels": {
+        "profilesCount": "{{count}} ملفات شخصية",
+        "loginMethod": "طريقة تسجيل الدخول"
+      },
+      "actions": {
+        "suspend": "إيقاف",
+        "activate": "تفعيل",
+        "externalSms": "رسالة نصية خارجية",
+        "sendSms": "إرسال رسالة نصية",
+        "sendEmail": "إرسال بريد إلكتروني",
+        "loginToAccount": "تسجيل الدخول إلى الحساب",
+        "moreActions": "المزيد من الإجراءات"
+      },
+      "messages": {
+        "failedToLoadCustomerData": "فشل تحميل بيانات المتعامل",
+        "emailSent": "تم إرسال البريد الإلكتروني بنجاح",
+        "emailFailed": "فشل إرسال البريد الإلكتروني",
+        "impersonateFailed": "فشل تسجيل الدخول إلى حساب المتعامل",
+        "customerPortalNotConfigured": "رابط بوابة المتعامل غير مهيأ",
+        "smsSubmitted": "تم إرسال الرسالة النصية للمعالجة بنجاح.",
+        "smsFailed": "فشل إرسال الرسالة النصية للمعالجة"
+      },
+      "stats": {
+        "totalAccounts": "إجمالي الحسابات",
+        "active": "نشط",
+        "suspended": "موقوف",
+        "multiProfileAccounts": "حسابات متعددة الملفات الشخصية",
+        "newInLast7Days": "جديد خلال آخر 7 أيام"
+      },
+      "placeholders": {
+        "allStatuses": "كل الحالات",
+        "allLoginMethods": "جميع طرق تسجيل الدخول",
+        "startTime": "وقت البداية",
+        "endTime": "وقت النهاية"
+      },
+      "modals": {
+        "suspendCustomer": "إيقاف المتعامل",
+        "suspendCustomerConfirm": "هل أنت متأكد أنك تريد إيقاف هذا المتعامل؟ عند الإيقاف ستتوقف كل الملفات الشخصية المرتبطة ولن يتمكن من تسجيل الدخول.",
+        "notes": "ملاحظات",
+        "enterNotes": "أدخل الملاحظات",
+        "quickNotes": "ملاحظات سريعة",
+        "quickNote1": "طلب المتعامل إيقاف الحساب.",
+        "quickNote2": "تم الإيقاف بسبب مخالفة السياسات.",
+        "quickNote3": "تم الإيقاف بسبب الاشتباه في نشاط احتيالي.",
+        "quickNote4": "تم الإيقاف بانتظار التحقق.",
+        "activateAccount": "تفعيل الحساب",
+        "activateAccountConfirm": "هل أنت متأكد أنك تريد تفعيل هذا المتعامل؟ سيتم استعادة جميع الملفات الشخصية المرتبطة إلى حالتها السابقة."
+      },
+      "emailModal": {
+        "title": "إرسال بريد إلكتروني",
+        "subject": "الموضوع",
+        "subjectPlaceholder": "أدخل الموضوع",
+        "bodyPlaceholder": "أدخل النص",
+        "subjectRequired": "يرجى إدخال الموضوع.",
+        "bodyRequired": "يرجى إدخال محتوى البريد الإلكتروني.",
+        "subjectTooLong": "يجب ألا يتجاوز الموضوع 200 حرف.",
+        "bodyTooLarge": "يجب ألا يتجاوز محتوى البريد الإلكتروني 100 كيلوبايت."
+      },
+      "sendMessageModal": {
+        "externalSmsTitle": "إرسال رسالة نصية خارجية",
+        "mobileNumberLabel": "رقم الجوال",
+        "mobilePlaceholder": "أدخل رقم الجوال",
+        "messageLabel": "الرسالة",
+        "messagePlaceholder": "أدخل الرسالة",
+        "messageRequiredText": "يرجى إدخال رسالة."
+      },
+      "impersonateModal": {
+        "title": "تسجيل الدخول إلى الحساب",
+        "content": "أنت على وشك تسجيل الدخول إلى حساب هذا العميل. هل تريد المتابعة؟",
+        "continue": "متابعة"
+      }
+    },
+    "profiles": {
+      "table": {
+        "profileNo": "رقم الملف الإعلامي",
+        "accountId": "معرف الحساب",
+        "profileType": "نوع الملف الشخصي",
+        "profileName": "اسم الملف الشخصي",
+        "accountHolder": "صاحب الحساب",
+        "status": "الحالة",
+        "lastUpdated": "آخر تحديث",
+        "submissionUpdated": "تم تحديث الإرسال",
+        "actions": "الإجراءات"
+      },
+      "chart": {
+        "profileType": "نوع الملف الشخصي",
+        "profileStatus": "حالة الملف الشخصي",
+        "profileTier": "فئة الملف الشخصي",
+        "individual": "فرد",
+        "commercial": "تجاري",
+        "freeZone": "منطقة حرة",
+        "talentAgency": "وكالة مواهب",
+        "government": "حكومي",
+        "embassy": "سفارة",
+        "consulate": "قنصلية",
+        "culturalClubs": "أندية ثقافية",
+        "approved": "موافق عليه",
+        "rejected": "مرفوض",
+        "pendingReview": "قيد المراجعة",
+        "expired": "منتهي",
+        "suspended": "موقوف",
+        "vip": "VIP",
+        "selfMonitor": "الرصد الذاتي",
+        "standard": "عادي",
+        "total": "الإجمالي"
+      },
+      "placeholders": {
+        "allStatuses": "كل الحالات",
+        "allProfileType": "كل أنواع الملفات الشخصية",
+        "allProfileTiers": "كل مستويات الملف الشخصي"
+      },
+      "filterModal": {
+        "status": "الحالة",
+        "dateRange": "النطاق الزمني",
+        "submissionTime": "وقت التقديم"
+      },
+      "modals": {
+        "activate": "تفعيل",
+        "suspend": "إيقاف",
+        "suspendProfile": "إيقاف الملف الشخصي",
+        "suspendProfileAlert": "هل أنت متأكد أنك تريد إيقاف هذا الملف الشخصي؟ بعد الإيقاف، لن يتمكن الحساب من التبديل إلى هذا الملف.",
+        "notes": "ملاحظات",
+        "enterNotes": "أدخل الملاحظات",
+        "fieldRequired": "هذا الحقل مطلوب.",
+        "quickNotes": "ملاحظات سريعة",
+        "quickNote1": "وجود مخالفات سابقة أو مشكلات امتثال مسجلة",
+        "quickNote2": "طلب المتعامل",
+        "quickNote3": "عدم الامتثال للمتطلبات التنظيمية",
+        "quickNote4": "مخالفة شروط الخدمة",
+        "activateProfile": "تفعيل الملف الشخصي",
+        "activateProfileConfirm": "هل أنت متأكد أنك تريد تفعيل هذا الملف الشخصي؟ سيتم استعادة حالته السابقة.",
+        "setAsVip": "تعيين كـ VIP"
+      }
+    },
+    "profileDetail": {
+      "actions": {
+        "activateProfile": "تفعيل الملف الشخصي",
+        "suspendProfile": "إيقاف الملف الشخصي",
+        "removeVip": "إزالة VIP",
+        "setAsVip": "تعيين كـ VIP"
+      },
+      "messages": {
+        "suspendSuccess": "تم الإيقاف بنجاح",
+        "activateSuccess": "تم التفعيل بنجاح",
+        "setVipSuccess": "تم التعيين كـ VIP بنجاح",
+        "removeVipSuccess": "تمت إزالة VIP بنجاح"
+      },
+      "modals": {
+        "suspendProfile": "إيقاف الملف الشخصي",
+        "notes": "ملاحظات",
+        "enterNotes": "أدخل الملاحظات",
+        "quickNotes": "ملاحظات سريعة",
+        "activateProfile": "تفعيل الملف الشخصي",
+        "activateProfileConfirm": "هل أنت متأكد أنك تريد تفعيل هذا الملف الشخصي؟ سيتم استعادة حالته السابقة.",
+        "setAsVip": "تعيين كـ VIP",
+        "setAsVipConfirm": "هل أنت متأكد أنك تريد تعيين هذا الملف الشخصي كـ VIP؟ ستحصل ملفات VIP على أولوية الخدمة.",
+        "removeVipStatus": "إزالة حالة VIP",
+        "removeVipStatusConfirm": "هل أنت متأكد أنك تريد إزالة حالة VIP من هذا الملف الشخصي؟ سيتم تخفيضه إلى عادي.",
+        "suspendProfileAlert": "هل أنت متأكد أنك تريد إيقاف هذا الملف الشخصي؟ بعد الإيقاف، لن يتمكن الحساب من التبديل إلى هذا الملف."
+      }
+    },
+    "customerProfileDetail": {
+      "personal": {
+        "fullNameInEnglish": "الاسم الكامل بالإنجليزية",
+        "fullNameInArabic": "الاسم الكامل بالعربية",
+        "gender": "الجنس",
+        "occupation": "المهنة",
+        "dateOfBirth": "تاريخ الميلاد",
+        "expiryDate": "تاريخ انتهاء الصلاحية"
+      },
+      "documents": {
+        "personalPhoto": "الصورة الشخصية",
+        "emiratesIdCopy": "نسخة الهوية الإماراتية",
+        "passportCopy": "نسخة جواز السفر",
+        "acquaintanceForm": "نموذج التعارف"
+      }
+    },
+    "customerDetails": {
+      "accountInformation": "معلومات الحساب",
+      "accountInfo": {
+        "fullName": "الاسم الكامل",
+        "email": "البريد الإلكتروني",
+        "mobileNumber": "رقم الجوال",
+        "emiratesId": "الهوية الإماراتية",
+        "nationality": "الجنسية",
+        "walletBalance": "رصيد المحفظة",
+        "totalSpending": "إجمالي الإنفاق",
+        "totalRefunds": "إجمالي الاستردادات",
+        "totalRecharge": "إجمالي الشحن",
+        "loginMethod": "طريقة تسجيل الدخول",
+        "mobileUsage": "استخدام الجوال",
+        "webUsage": "استخدام الويب",
+        "tabletUsage": "استخدام الجهاز اللوحي"
+      },
+      "messages": {
+        "invalidCustomerIdentifier": "معرّف المتعامل غير صالح.",
+        "operationFailed": "فشلت العملية"
+      },
+      "profilesList": {
+        "title": "قائمة الملفات الشخصية"
+      },
+      "profileCards": {
+        "allProfiles": "كل الملفات الشخصية",
+        "combinedView": "عرض مجمع",
+        "individual": "فرد",
+        "establishment": "منشأة",
+        "stats": {
+          "apps": "الطلبات",
+          "tickets": "التذاكر",
+          "refund": "المبالغ المستردة",
+          "appeal": "التظلمات",
+          "violations": "المخالفات",
+          "fines": "الغرامات"
+        }
+      },
+      "profileOverview": {
+        "pageTitle": {
+          "individual": "نظرة عامة على الفرد",
+          "default": "نظرة عامة على الملف الشخصي"
+        },
+        "tabs": {
+          "basicInformation": "المعلومات الأساسية"
+        },
+        "sections": {
+          "personalInformation": "المعلومات الشخصية",
+          "addressInformation": "معلومات العنوان",
+          "personalDocuments": "المستندات الشخصية"
+        },
+        "empty": {
+          "noPersonalInformation": "لا توجد معلومات شخصية",
+          "noAddressInformation": "لا توجد معلومات عنوان",
+          "noDocuments": "لا توجد مستندات"
+        },
+        "documentUploadTip": "الحد الأقصى للحجم: 5 ميجابايت. أنواع الملفات: jpg و jpeg و png."
+      },
+      "commercialProfileOverview": {
+        "title": "نظرة عامة على المنشأة",
+        "empty": {
+          "noPartners": "لا يوجد شركاء"
+        }
+      },
+      "addressInfo": {
+        "emirate": "الإمارة",
+        "region": "المنطقة",
+        "area": "الحي",
+        "street": "الشارع"
+      },
+      "personalInfo": {
+        "fullNameEn": "الاسم الكامل بالإنجليزية",
+        "fullNameAr": "الاسم الكامل بالعربية",
+        "emiratesId": "رقم الهوية الإماراتية",
+        "uid": "الرقم الشخصي",
+        "passportNumber": "رقم جواز السفر",
+        "nationality": "الجنسية",
+        "gender": "الجنس",
+        "occupation": "المهنة",
+        "dateOfBirth": "تاريخ الميلاد",
+        "expiryDate": "تاريخ الانتهاء"
+      },
+      "documents": {
+        "personalPhoto": "الصورة الشخصية",
+        "emiratesId": "الهوية الإماراتية",
+        "passport": "جواز السفر",
+        "acquaintanceForm": "نموذج التعرف",
+        "tradeLicense": "الرخصة التجارية",
+        "licenseCopy": "صورة الرخصة",
+        "tenancyContract": "عقد الإيجار",
+        "memorandumOfAssociation": "عقد التأسيس",
+        "powerOfAttorney": "التوكيل"
+      },
+      "establishmentInfo": {
+        "nameEn": "اسم المنشأة (بالإنجليزية)",
+        "nameAr": "اسم المنشأة (بالعربية)",
+        "licenseNumber": "رقم الرخصة",
+        "workEmail": "البريد الإلكتروني للعمل",
+        "workMobile": "رقم الهاتف المحمول للعمل",
+        "legalPerson": "الشخص القانوني"
+      },
+      "allProfilesOverview": {
+        "defaultTitle": "نظرة عامة على كل الملفات",
+        "tabs": {
+          "applications": "الطلبات",
+          "payments": "المدفوعات",
+          "licenses": "التراخيص والتصاريح",
+          "tickets": "التذاكر",
+          "enquiriesComplaints": "الاستفسارات والشكاوى",
+          "inspection": "التفتيش",
+          "violationsFines": "المخالفات والغرامات",
+          "refunds": "الاستردادات",
+          "appeal": "التظلمات"
+        },
+        "stats": {
+          "total": "الإجمالي",
+          "licenses": "التراخيص",
+          "content": "المحتوى",
+          "processing": "قيد المعالجة",
+          "completed": "مكتمل",
+          "rejected": "مرفوض",
+          "totalSpending": "إجمالي الإنفاق",
+          "serviceApplicationFees": "رسوم طلب الخدمة",
+          "totalFinesPaid": "إجمالي الغرامات المسددة",
+          "totalRefunds": "إجمالي الاستردادات",
+          "totalRecharge": "إجمالي الشحن",
+          "warningIssued": "تم إصدار تحذير",
+          "reviewInProgress": "المراجعة قيد التقدم",
+          "pendingPayment": "في انتظار الدفع",
+          "active": "نشط",
+          "expired": "منتهي",
+          "cancelled": "ملغى",
+          "disabled": "معطل",
+          "suspended": "موقوف",
+          "open": "مفتوح",
+          "pendingCustomer": "في انتظار العميل",
+          "departmentProcessing": "قيد المعالجة في القسم",
+          "departmentProcessed": "تمت المعالجة في القسم",
+          "resolved": "تم الحل",
+          "reopened": "أعيد فتحه",
+          "underAppeal": "قيد التظلم",
+          "appealRejected": "تظلم مرفوض",
+          "appealApproved": "تظلم مقبول",
+          "paid": "مدفوع",
+          "underReview": "قيد المراجعة",
+          "pendingRefund": "في انتظار الاسترداد",
+          "refunded": "تم الاسترداد",
+          "approved": "موافق عليه",
+          "pendingReview": "قيد المراجعة"
+        },
+        "ticketFilters": {
+          "allPriorities": "كل الأولويات",
+          "types": {
+            "enquiry": "استفسار",
+            "suggestion": "اقتراح",
+            "complaint": "شكوى"
+          }
+        },
+        "inspectionNoFullScan": {
+          "columns": {
+            "taskNo": "رقم المهمة",
+            "ticketNo": "رقم التذكرة",
+            "inspectionTarget": "هدف التفتيش",
+            "inspectionReason": "سبب التفتيش",
+            "priority": "الأولوية",
+            "dueDate": "تاريخ الاستحقاق",
+            "status": "الحالة",
+            "assignedTime": "وقت التعيين",
+            "inspector": "المفتش"
+          },
+          "filters": {
+            "search": "بحث",
+            "allReasons": "كل الأسباب",
+            "allStatuses": "كل الحالات",
+            "filter": "تصفية",
+            "reset": "إعادة ضبط"
+          },
+          "empty": {
+            "noData": "لا توجد بيانات"
+          },
+          "modal": {
+            "cancel": "إلغاء",
+            "apply": "تطبيق",
+            "priority": "الأولوية",
+            "dueDate": "تاريخ الاستحقاق",
+            "assignedTime": "وقت التعيين",
+            "inspector": "المفتش",
+            "allPriorities": "كل الأولويات",
+            "allInspectors": "كل المفتشين",
+            "startDate": "تاريخ البدء",
+            "endDate": "تاريخ الانتهاء"
+          }
+        }
+      },
+      "common": {
+        "search": "بحث",
+        "filter": "تصفية",
+        "reset": "إعادة ضبط",
+        "allTypes": "كل الأنواع",
+        "allStatuses": "كل الحالات",
+        "allCategories": "كل الفئات",
+        "noData": "لا توجد بيانات",
+        "startTime": "وقت البداية",
+        "endTime": "وقت النهاية",
+        "startDate": "تاريخ البدء",
+        "endDate": "تاريخ الانتهاء",
+        "failedToLoadLicenses": "فشل تحميل التراخيص.",
+        "failedToLoadPayments": "فشل تحميل المدفوعات.",
+        "failedToLoadBasicInformation": "فشل تحميل المعلومات الأساسية.",
+        "failedToLoadEstablishmentInformation": "فشل تحميل معلومات المنشأة."
+      },
+      "tabs": {
+        "applications": {
+          "applicationNo": "رقم الطلب",
+          "serviceName": "اسم الخدمة",
+          "serviceCategory": "فئة الخدمة",
+          "type": "النوع",
+          "sla": "SLA",
+          "status": "الحالة",
+          "submissionTime": "وقت التقديم",
+          "lastUpdated": "آخر تحديث",
+          "applyFor": "مقدم الطلب"
+        },
+        "payments": {
+          "transactionNo": "رقم المعاملة",
+          "transactionType": "نوع المعاملة",
+          "type": "النوع",
+          "serviceApplication": "طلب خدمة",
+          "fines": "الغرامات",
+          "fine": "غرامة",
+          "refund": "استرداد",
+          "amount": "المبلغ",
+          "paymentMethod": "طريقة الدفع",
+          "allPaymentMethod": "كل طرق الدفع",
+          "wallet": "المحفظة",
+          "creditDebitCard": "بطاقة ائتمان / خصم",
+          "status": "الحالة",
+          "transactionTime": "وقت المعاملة",
+          "submissionTime": "وقت التقديم",
+          "applyFor": "مقدم الطلب"
+        },
+        "licenses": {
+          "licenseNo": "رقم الترخيص والتصريح",
+          "applicationNo": "رقم الطلب",
+          "license": "التراخيص والتصاريح",
+          "mediaActivity": "النشاط الإعلامي",
+          "status": "الحالة",
+          "effectiveDate": "تاريخ السريان",
+          "expirationDate": "تاريخ الانتهاء",
+          "effectiveStartDate": "تاريخ بدء السريان",
+          "effectiveEndDate": "تاريخ انتهاء السريان",
+          "applyFor": "مقدم الطلب"
+        },
+        "tickets": {
+          "applyFor": "مقدم الطلب"
+        },
+        "refunds": {
+          "refundNo": "رقم الاسترداد",
+          "applicationNo": "رقم الطلب",
+          "amount": "المبلغ",
+          "refundCategory": "فئة الاسترداد",
+          "referenceNo": "الرقم المرجعي",
+          "status": "الحالة",
+          "submissionTime": "وقت التقديم",
+          "lastUpdated": "آخر تحديث",
+          "applyFor": "مقدم الطلب",
+          "transactionTime": "وقت المعاملة",
+          "recharge": "إعادة الشحن",
+          "serviceApplication": "طلب خدمة",
+          "fines": "الغرامات",
+          "refund": "استرداد",
+          "completed": "مكتمل",
+          "failedRefund": "فشل الاسترداد",
+          "failed": "فشل",
+          "refunded": "تم الاسترداد"
+        },
+        "appeals": {
+          "appealNo": "رقم التظلم",
+          "fineNo": "رقم الغرامة",
+          "appealCategory": "فئة التظلم",
+          "status": "الحالة",
+          "requestDate": "تاريخ الطلب",
+          "applyFor": "مقدم الطلب"
+        },
+        "violations": {
+          "licensingViolation": "مخالفة الترخيص",
+          "contentViolation": "مخالفة المحتوى",
+          "violationNo": "رقم المخالفة",
+          "fineNo": "رقم الغرامة",
+          "inspectionNo": "رقم التفتيش",
+          "violationType": "نوع المخالفة",
+          "violator": "المخالف",
+          "fineAmount": "قيمة الغرامة",
+          "status": "الحالة",
+          "sourceTask": "مهمة المصدر",
+          "reportedBy": "أبلغ بواسطة",
+          "creationTime": "وقت الإنشاء",
+          "paymentTime": "وقت الدفع",
+          "issueDate": "تاريخ الإصدار",
+          "paymentDate": "تاريخ الدفع",
+          "violationDate": "تاريخ المخالفة",
+          "applyFor": "مقدم الطلب"
+        }
+      }
+    },
+    "customerRefunds": {
+      "common": {
+        "customer": "المتعامل"
+      },
+      "tabs": {
+        "todo": "قيد التنفيذ",
+        "completed": "مكتمل"
+      },
+      "summary": {
+        "total": "الإجمالي",
+        "departmentProcessing": "قيد المعالجة في القسم",
+        "departmentProcessed": "تمت المعالجة في القسم",
+        "pendingCustomer": "في انتظار المتعامل",
+        "pendingRefund": "في انتظار الاسترداد",
+        "refunded": "تم الاسترداد",
+        "rejected": "مرفوض",
+        "cancelled": "ملغى"
+      },
+      "table": {
+        "applicationNo": "رقم الطلب",
+        "refundCategory": "فئة الاسترداد",
+        "referenceNo": "الرقم المرجعي",
+        "applyFor": "مقدم الطلب",
+        "amount": "المبلغ",
+        "sla": "SLA",
+        "currentHandler": "المسؤول الحالي",
+        "status": "الحالة",
+        "lastUpdated": "آخر تحديث",
+        "actions": "الإجراءات",
+        "refundSource": "مصدر الاسترداد",
+        "source": "المصدر"
+      },
+      "toolbar": {
+        "search": "بحث",
+        "allCategories": "كل الفئات",
+        "allStatuses": "كل الحالات",
+        "allSources": "كل المصادر"
+      },
+      "actions": {
+        "message": "رسالة",
+        "changeStatus": "تغيير الحالة",
+        "process": "معالجة",
+        "sendBack": "إرجاع",
+        "more": "المزيد من الإجراءات",
+        "filter": "تصفية",
+        "reset": "إعادة ضبط",
+        "export": "تصدير",
+        "uploadFile": "رفع ملف"
+      },
+      "statuses": {
+        "departmentProcessing": "قيد المعالجة في القسم",
+        "pendingCustomer": "في انتظار المتعامل",
+        "pendingRefund": "في انتظار الاسترداد",
+        "rejected": "مرفوض"
+      },
+      "sla": {
+        "overdue": "متأخر",
+        "remaining": "متبقٍ",
+        "exceeded": "تجاوز",
+        "onTime": "في الوقت المحدد"
+      },
+      "messages": {
+        "relatedApplicationNotFound": "لم يتم العثور على طلب التطبيق المرتبط.",
+        "statusMappingUnavailable": "تعذر مطابقة الحالة.",
+        "operationSuccessful": "تمت العملية بنجاح",
+        "invalidUploadFormat": "تنسيق الملف غير صالح. يرجى رفع ملف من نوع JPG أو JPEG أو PNG أو PDF.",
+        "fileSizeExceeds": "حجم الملف يتجاوز 5 ميجابايت",
+        "uploadLimit": "يمكنك رفع 5 ملفات فقط.",
+        "uploadFailed": "فشل الرفع.",
+        "fileUnavailable": "الملف غير متاح.",
+        "fieldRequired": "هذا الحقل مطلوب.",
+        "scheduleTimeInvalid": "يجب أن يكون الوقت المحدد لاحقا للوقت الحالي.",
+        "statusChangeUnavailable": "لا يمكن تغيير الحالة حتى يتم إرجاع ملاحظات القسم."
+      },
+      "filterModal": {
+        "title": "تصفية",
+        "apply": "تطبيق",
+        "allHandlers": "كل المعالجين",
+        "startDate": "تاريخ البدء",
+        "endDate": "تاريخ الانتهاء",
+        "clearCurrentHandler": "مسح المعالج الحالي",
+        "noMatchingHandlers": "لا يوجد معالجون مطابقون"
+      },
+      "statusModal": {
+        "title": "تغيير الحالة",
+        "selectNewStatus": "اختر الحالة الجديدة",
+        "assignedDepartment": "القسم/الدور المعين",
+        "selectDepartment": "اختر القسم/الدور",
+        "responseDeadline": "الموعد النهائي للرد",
+        "dateTimePlaceholder": "DD/MM/YYYY HH/MM",
+        "attachments": "المرفقات",
+        "uploadTip": "ارفع ملفات JPG أو JPEG أو PNG أو PDF. حتى 5 ملفات، 5 ميجابايت لكل ملف.",
+        "pendingRefundAlert": "يرجى التأكد من صحة جميع تفاصيل الطلب وملاحظات القسم. بعد التأكيد، سيتم تحويل الطلب إلى الإدارة المالية لمعالجة الاسترداد.",
+        "rejectedAlert": "يرجى مراجعة تفاصيل الطلب وملاحظات القسم بعناية. إذا كانت الحالة مؤهلة لاسترداد جزئي للغرامة، يرجى إرشاد المتعامل إلى تقديم تظلم بشأن المخالفة.",
+        "quickNotes": {
+          "pendingRefund1": "نوافق على استرداد الغرامة بسبب دفع مكرر.",
+          "pendingRefund2": "شكرًا لصبرك.",
+          "pendingRefund3": "تم تأكيد أهلية رسوم الطلب للاسترداد.",
+          "rejected1": "يرجى تقديم تظلم لطلب استرداد جزئي.",
+          "rejected2": "الاسترداد الكامل غير ممكن في هذه الحالة.",
+          "rejected3": "لا يمكننا تلبية طلبك لاسترداد الغرامة."
+        }
+      },
+      "departmentModal": {
+        "processTitle": "معالجة",
+        "sendBackTitle": "إرجاع",
+        "decision": "القرار",
+        "approve": "موافقة",
+        "reject": "رفض",
+        "attachments": "المرفقات",
+        "uploadTip": "ارفع ملفات JPG أو JPEG أو PNG أو PDF. حتى 5 ملفات، 5 ميجابايت لكل ملف.",
+        "quickNotes": {
+          "approve1": "يوصى برد كامل للمبلغ",
+          "approve2": "يوصى برد جزئي للمبلغ بناءً على أدلة داعمة صحيحة.",
+          "approve3": "تم التحقق من جميع المستندات المطلوبة والموافقة عليها.",
+          "reject1": "لا توجد أسباب صحيحة للاسترداد",
+          "reject2": "يرجى إرشاد المتعامل إلى تقديم تظلم لاسترداد جزئي",
+          "reject3": "المستندات المقدمة لا تستوفي متطلبات الاسترداد."
+        }
+      }
+    },
+    "customerAppeals": {
+      "common": {
+        "customer": "المتعامل",
+        "system": "النظام"
+      },
+      "tabs": {
+        "todo": "قيد التنفيذ",
+        "completed": "مكتمل"
+      },
+      "summary": {
+        "total": "الإجمالي",
+        "departmentProcessing": "قيد المعالجة في القسم",
+        "departmentProcessed": "تمت المعالجة في القسم",
+        "pendingCustomer": "في انتظار المتعامل",
+        "approved": "مقبول",
+        "rejected": "مرفوض",
+        "cancelled": "ملغى"
+      },
+      "table": {
+        "appealNo": "رقم التظلم",
+        "appealReason": "سبب التظلم",
+        "violationNo": "رقم المخالفة",
+        "applyFor": "مقدم الطلب",
+        "sla": "SLA",
+        "currentHandler": "المسؤول الحالي",
+        "status": "الحالة",
+        "submissionTime": "وقت التقديم",
+        "lastUpdated": "آخر تحديث",
+        "actions": "الإجراءات"
+      },
+      "toolbar": {
+        "search": "بحث",
+        "allReasons": "كل الأسباب",
+        "allStatuses": "كل الحالات",
+        "filter": "تصفية",
+        "reset": "إعادة ضبط",
+        "export": "تصدير"
+      },
+      "actions": {
+        "message": "رسالة",
+        "changeStatus": "تغيير الحالة",
+        "process": "معالجة",
+        "sendBack": "يرسل",
+        "more": "المزيد من الإجراءات",
+        "uploadFile": "رفع ملف"
+      },
+      "statuses": {
+        "pending": "قيد الانتظار",
+        "resolved": "تم الحل",
+        "departmentProcessing": "قيد المعالجة في القسم",
+        "departmentProcessed": "تمت المعالجة في القسم",
+        "pendingCustomer": "في انتظار المتعامل",
+        "approved": "مقبول",
+        "rejected": "مرفوض",
+        "cancelled": "ملغى",
+        "appealSubmitted": "تم تقديم التظلم"
+      },
+      "reasons": {
+        "proceduralError": "خطأ إجرائي",
+        "firstTimeViolation": "مخالفة لأول مرة",
+        "evidenceDispute": "اعتراض على الأدلة",
+        "permitApplicationInProgress": "طلب التصريح قيد الإجراء",
+        "other": "أخرى"
+      },
+      "departments": {
+        "customerHappiness": "سعادة المتعاملين",
+        "contentDepartment": "قسم المحتوى",
+        "inspectionDepartment": "قسم التفتيش",
+        "licensingDepartment": "قسم الترخيص",
+        "customer": "المتعامل",
+        "handlers": "المعالجون"
+      },
+      "sla": {
+        "overdue": "متأخر",
+        "remaining": "متبقٍ",
+        "exceeded": "تجاوز",
+        "onTime": "في الوقت المحدد"
+      },
+      "messages": {
+        "noAccessibleWorkbench": "لا توجد منصة للتظلمات يمكن الوصول إليها.",
+        "violationRouteUnavailable": "مسار تفاصيل المخالفة غير متاح في هذه الوحدة.",
+        "relatedApplicationNotFound": "لم يتم العثور على طلب التطبيق المرتبط.",
+        "operationSuccessful": "تمت العملية بنجاح",
+        "statusChangeUnavailable": "تعذر تغيير الحالة إلى أن تتم إعادة ملاحظات القسم.",
+        "invalidUploadFormat": "تدعم الملفات من نوع jpg و jpeg و png و pdf فقط.",
+        "fileSizeExceeds": "الحد الأقصى لحجم الملف هو 5 ميجابايت.",
+        "uploadLimit": "يمكنك رفع ما يصل إلى 5 مرفقات.",
+        "uploadFailed": "فشل الرفع.",
+        "fieldRequired": "هذا الحقل مطلوب.",
+        "noRolesAvailable": "لا توجد أدوار متاحة",
+        "scheduleTimeInvalid": "يجب أن يكون الوقت المحدد لاحقا للوقت الحالي.",
+        "slaDeadlineInvalid": "يجب ألا يتجاوز الوقت المحدد الموعد النهائي لاتفاقية مستوى الخدمة."
+      },
+      "filterModal": {
+        "title": "تصفية",
+        "apply": "تطبيق",
+        "currentHandler": "المسؤول الحالي",
+        "allHandlers": "كل المعالجين",
+        "search": "بحث",
+        "lastUpdated": "آخر تحديث",
+        "startDate": "تاريخ البدء",
+        "endDate": "تاريخ الانتهاء",
+        "noData": "لا توجد بيانات"
+      },
+      "statusModal": {
+        "title": "تغيير الحالة",
+        "selectNewStatus": "اختر الحالة الجديدة",
+        "assignedDepartment": "القسم/الدور المعين",
+        "selectDepartment": "اختر القسم/الدور",
+        "slaDeadlineWarning": "قد يؤدي تحديد موعد نهائي للرد بعد الموعد النهائي لاتفاقية مستوى الخدمة للتذكرة إلى تجاوز التذكرة لاتفاقية مستوى الخدمة.",
+        "responseDeadline": "الموعد النهائي للرد",
+        "dateTimePlaceholder": "DD/MM/YYYY HH/MM",
+        "attachments": "المرفقات",
+        "uploadTip": "الحد الأقصى للحجم: 5 ميجابايت؛ أنواع الملفات: jpg و jpeg و png و pdf.",
+        "approvedAlert": "يرجى تأكيد ملاحظات القسم. سيؤدي ذلك إلى إلغاء أو تعديل المخالفة أو الإنذار المرتبط. لا يمكن التراجع عن هذا الإجراء.",
+        "rejectedAlert": "يرجى تأكيد ملاحظات القسم. سيبقى تأثير المخالفة أو الإنذار الأصلي قائما. لا يمكن التراجع عن هذا الإجراء.",
+        "notes": "ملاحظات",
+        "enterNotes": "أدخل الملاحظات"
+      },
+      "departmentModal": {
+        "processTitle": "معالجة",
+        "sendBackTitle": "إرجاع",
+        "reviewDecideTitle": "المراجعة واتخاذ القرار",
+        "reviewDecideSubtitle": "يرجى مراجعة تفاصيل المخالفة واختيار القرار المناسب بناء على المستندات الداعمة.",
+        "modifyTitle": "تعديل المخالفة",
+        "decision": "القرار",
+        "recommendation": "التوصية",
+        "approve": "موافقة",
+        "reject": "رفض",
+        "modifyViolation": "تعديل المخالفة",
+        "cancelViolation": "إلغاء المخالفة",
+        "confirmViolation": "تأكيد المخالفة",
+        "saveModification": "حفظ التعديل",
+        "reset": "إعادة ضبط",
+        "paidCancelAlert": "هل أنت متأكد من إلغاء هذه المخالفة؟ عند تأكيد هذا القرار سيتم رد الغرامة المدفوعة، وسيتم إنشاء طلب استرداد ومعالجته وفق الإجراءات المالية المعمول بها.",
+        "unpaidCancelAlert": "هل أنت متأكد من أنك تريد إلغاء هذه المخالفة؟ لا يمكن التراجع عن هذا الإجراء.",
+        "modifyAlert": "يرجى مراجعة تفاصيل المخالفة واختيار القرار المناسب بناء على المستندات الداعمة.",
+        "degreeStatus": "الدرجة {{degree}}: {{amount}} درهم",
+        "degreeStatusLabel": "الدرجة {{degree}}:",
+        "degree1": "الدرجة الأولى",
+        "degree2": "الدرجة الثانية",
+        "degree3": "الدرجة الثالثة",
+        "degree4": "الدرجة الرابعة",
+        "warning1": "الإنذار الأول",
+        "warning2": "الإنذار الثاني",
+        "warning3": "الإنذار الثالث",
+        "warning4": "الإنذار الرابع",
+        "warningStatusLabel": "الإنذار {{count}}",
+        "selectDegree": "اختر الدرجة",
+        "loadingStandards": "جاري تحميل معايير المخالفة...",
+        "noViolationItems": "لا توجد بنود مخالفة متاحة.",
+        "fineStandardUnavailable": "معيار الغرامة غير متاح.",
+        "fineStandardModificationUnavailable": "لا يتوفر معيار غرامة لهذا البند، لذلك لا يمكن تعديله.",
+        "cancelBackendUnavailable": "يتطلب إرسال إلغاء المخالفة واجهة خلفية مخصصة.",
+        "adjustedViolationDataUnavailable": "بيانات تعديل المخالفة غير مكتملة. يرجى تحديث الصفحة والمحاولة مرة أخرى.",
+        "attachments": "المرفقات",
+        "uploadTip": "الحد الأقصى للحجم: 5 ميجابايت؛ أنواع الملفات: jpg و jpeg و png و pdf.",
+        "note": "ملاحظة",
+        "notes": "ملاحظات",
+        "enterNote": "أدخل ملاحظة",
+        "enterNotes": "أدخل الملاحظات"
+      },
+      "dynamic": {
+        "fineAndStatusChange": "تغيير الغرامة والحالة",
+        "fineChange": "الغرامة من {{oldAmount}} إلى {{newAmount}}",
+        "fineAdjustment": "تعديل الغرامة",
+        "statusChange": "الحالة من {{oldStatus}} إلى {{newStatus}}",
+        "violationStatusChange": "تغيير حالة المخالفة"
+      }
+    },
+    "customerAppealsDetails": {
+      "top": {
+        "appealNumber": "رقم التظلم",
+        "status": "الحالة",
+        "sla": "SLA",
+        "lastUpdated": "آخر تحديث"
+      },
+      "sections": {
+        "appealInformation": "معلومات التظلم",
+        "violationNumber": "رقم المخالفة",
+        "openViolationAria": "فتح المخالفة {{violationNumber}}",
+        "appealReason": "سبب التظلم",
+        "notes": "ملاحظات",
+        "attachments": "المرفقات",
+        "communicationRecords": "سجلات التواصل"
+      },
+      "communication": {
+        "replyToCustomer": "الرد على المتعامل",
+        "internalNote": "ملاحظة داخلية",
+        "internalNotePlaceholder": "أدخل ملاحظة تظهر للقسم الداخلي فقط",
+        "departmentInternalNotePlaceholder": "أدخل ملاحظة مرئية للقسم الداخلي فقط",
+        "departmentViewInternalNotePlaceholder": "أدخل ملاحظة مرئية للأقسام الداخلية فقط",
+        "responseDeadline": "الموعد النهائي للرد",
+        "departmentRecommendation": "توصية القسم",
+        "recommendedAction": "الإجراء الموصى به",
+        "attach": "إرفاق",
+        "send": "إرسال",
+        "noRecords": "لا توجد سجلات تواصل"
+      },
+      "side": {
+        "applicantOverview": "نظرة عامة على مقدم الطلب",
+        "accountInfo": "معلومات الحساب",
+        "profileOverview": "نظرة عامة على الملف الشخصي",
+        "applicationOverview": "نظرة عامة على الطلب",
+        "applyFor": "مقدم الطلب",
+        "relatedViolation": "المخالفة المرتبطة",
+        "violationNo": "رقم المخالفة",
+        "appealTimeline": "المخطط الزمني للتظلم"
+      },
+      "timeline": {
+        "title": "المخطط الزمني للتظلم",
+        "noTimeline": "لا يوجد خط زمني",
+        "attachments": "المرفقات",
+        "currentHandler": "المسؤول الحالي",
+        "submittedBy": "تم الإرسال بواسطة",
+        "refundNo": "رقم الاسترداد",
+        "openRefundAria": "فتح الاسترداد {{refundNo}}",
+        "departmentRecommendationPrefix": "توصية القسم: ",
+        "problemCausePrefix": "سبب المشكلة: ",
+        "appealAssignedTo": "تم إسناد التظلم إلى {{targetName}}.",
+        "appealAutoTransferredTo": "تم تحويل التظلم تلقائيًا إلى {{targetName}}.",
+        "appealSentBackTransferredTo": "أعيد التظلم وحوّل تلقائيًا إلى {{targetName}}.",
+        "appealProcessedTransferredTo": "تمت معالجة التظلم وتحويله تلقائيًا إلى {{targetName}}.",
+        "statusChangedTo": "تم تغيير الحالة إلى ",
+        "approvedDescription": "بعد المراجعة، تمت الموافقة على طلب التظلم الخاص بك.",
+        "rejectedNoDecisionWithinDeadline": "لم يتم اتخاذ أي قرار خلال 15 يوما."
+      },
+      "overview": {
+        "fullName": "الاسم الكامل",
+        "email": "البريد الإلكتروني",
+        "mobileNumber": "رقم الجوال",
+        "relatedViolation": "المخالفة المرتبطة",
+        "violationType": "نوع المخالفة",
+        "violationDate": "تاريخ المخالفة",
+        "relatedApplication": "الطلب المرتبط",
+        "establishmentName": "اسم المنشأة",
+        "commercialLicenseNumber": "رقم الرخصة التجارية",
+        "emirate": "الإمارة",
+        "nationality": "الجنسية",
+        "passportNumber": "رقم جواز السفر",
+        "documents": "المستندات",
+        "partners": "الشركاء",
+        "warningsViolations": "الإنذارات والمخالفات",
+        "unpaidFines": "الغرامات غير المدفوعة"
+      },
+      "application": {
+        "historicalApplications": "الطلبات السابقة",
+        "historicalTickets": "التذاكر السابقة",
+        "historicalTicketsEnquiry": "الاستفسارات والشكاوى السابقة",
+        "refund": "استرداد",
+        "appeal": "تظلم",
+        "serviceName": "اسم الخدمة",
+        "appliedFor": "مقدم لـ",
+        "submissionTime": "وقت التقديم"
+      },
+      "attachmentList": {
+        "title": "المرفقات",
+        "attachmentLabel": "المرفق {{index}}",
+        "noAttachments": "لا توجد مرفقات"
+      },
+      "footer": {
+        "back": "العودة",
+        "currentStatus": "الحالة الحالية",
+        "changeStatus": "تغيير الحالة",
+        "sendBack": "إرجاع",
+        "process": "معالجة"
+      },
+      "messages": {
+        "noAppealDetail": "لا توجد تفاصيل للتظلم"
+      },
+      "dynamic": {
+        "statusUpdate": "تحديث الحالة"
+      }
+    },
+    "customerRefundsDetails": {
+      "common": {
+        "attachments": "المرفقات"
+      },
+      "messages": {
+        "unableToSendWithoutRefundId": "تعذر إرسال الرسالة لعدم توفر معرف الاسترداد.",
+        "sendSuccessful": "تم الإرسال بنجاح",
+        "recordNotFound": "لم يتم العثور على سجل الاسترداد."
+      },
+      "top": {
+        "refundNumber": "رقم الاسترداد",
+        "refundCategory": "فئة الاسترداد",
+        "sla": "SLA",
+        "status": "الحالة",
+        "lastUpdated": "آخر تحديث",
+        "applyFor": "مقدم الطلب"
+      },
+      "sections": {
+        "refundApplicationInformation": "معلومات طلب الاسترداد",
+        "refundReason": "سبب الاسترداد",
+        "refundAmount": "مبلغ الاسترداد",
+        "relatedPaymentInformation": "معلومات الدفع المرتبطة",
+        "transactionNumber": "رقم المعاملة",
+        "transactionType": "نوع المعاملة",
+        "lastUpdatedTime": "وقت آخر تحديث",
+        "paymentMethod": "طريقة الدفع",
+        "cardInformation": "معلومات البطاقة",
+        "amountCharged": "المبلغ المحصل",
+        "description": "الوصف",
+        "communicationRecords": "سجلات التواصل",
+        "fineNumber": "رقم الغرامة",
+        "applicationNumber": "رقم الطلب"
+      },
+      "communication": {
+        "replyToCustomer": "الرد على المتعامل",
+        "internalNote": "ملاحظة داخلية",
+        "internalNotePlaceholder": "أدخل ملاحظة تظهر للإدارات الداخلية فقط",
+        "responseDeadline": "الموعد النهائي للرد",
+        "recommendedAction": "الإجراء الموصى به",
+        "send": "إرسال",
+        "noRecords": "لا توجد سجلات تواصل."
+      },
+      "side": {
+        "applicantOverview": "نظرة عامة على مقدم الطلب",
+        "profileOverview": "نظرة عامة على الملف الشخصي",
+        "applicationOverview": "نظرة عامة على الطلب",
+        "refundTimeline": "الخط الزمني للاسترداد"
+      },
+      "overview": {
+        "fullName": "الاسم الكامل",
+        "email": "البريد الإلكتروني",
+        "mobileNumber": "رقم الجوال",
+        "relatedViolation": "المخالفة المرتبطة",
+        "violationType": "نوع المخالفة",
+        "violationDate": "تاريخ المخالفة",
+        "relatedApplication": "الطلب المرتبط",
+        "establishmentName": "اسم المنشأة",
+        "commercialLicenseNumber": "رقم الرخصة التجارية",
+        "emirate": "الإمارة",
+        "nationality": "الجنسية",
+        "passportNumber": "رقم جواز السفر",
+        "documents": "المستندات",
+        "partners": "الشركاء",
+        "warningsViolations": "الإنذارات والمخالفات",
+        "unpaidFines": "الغرامات غير المدفوعة"
+      },
+      "application": {
+        "historicalApplications": "الطلبات السابقة",
+        "historicalTickets": "التذاكر السابقة",
+        "refund": "الاسترداد",
+        "appeal": "التظلم",
+        "serviceName": "اسم الخدمة",
+        "appliedFor": "مقدم الطلب",
+        "submissionTime": "وقت التقديم"
+      },
+      "timeline": {
+        "noTimeline": "لا يوجد خط زمني للاسترداد."
+      },
+      "attachmentList": {
+        "title": "قائمة المرفقات",
+        "attachmentLabel": "المرفق {{index}}",
+        "noAttachments": "لا توجد مرفقات"
+      },
+      "footer": {
+        "currentStatus": "الحالة الحالية"
+      },
+      "dynamic": {
+        "fromWeb": "من الويب",
+        "fromMobile": "من الهاتف",
+        "fromTablet": "من الجهاز اللوحي",
+        "customerHappiness": "سعادة المتعاملين",
+        "statusChangedBy": "{{actorName}} قام بتغيير الحالة إلى {{statusLabel}}.",
+        "submittedBy": "تم الإرسال بواسطة: {{handlerName}}",
+        "currentHandlerBy": "المسؤول الحالي: {{handlerName}}",
+        "refundAutoAssignedTo": "تم تعيين الاسترداد تلقائيا إلى {{departmentLabel}}.",
+        "refundAutoAssigned": "تم تعيين الاسترداد تلقائيا.",
+        "refundAutoTransferredTo": "تم تحويل الاسترداد تلقائيا إلى {{transferTarget}}.",
+        "refundAutoTransferred": "تم تحويل الاسترداد تلقائيا.",
+        "refundTransferredBy": "تم تحويل الاسترداد إلى {{transferTarget}} بواسطة {{actorName}}.",
+        "refundTransferredTo": "تم تحويل الاسترداد إلى {{transferTarget}}.",
+        "departmentProcessedTransferred": "{{actorName}} قام بتغيير الحالة إلى تمت المعالجة في القسم، وتم تحويل الطلب تلقائيا إلى {{transferTarget}}.",
+        "pendingRefundGeneratedBy": "{{actorName}} قام بتغيير الحالة إلى في انتظار الاسترداد. تم إنشاء طلب استرداد وإرساله تلقائيا لمتابعة المعالجة.",
+        "pendingRefundGenerated": "تم إنشاء طلب استرداد وإرساله تلقائيا لمتابعة المعالجة.",
+        "refundCompleted": "تم إكمال عملية الاسترداد.",
+        "customerCancelled": "قام المتعامل بإلغاء الطلب.",
+        "statusUpdate": "تحديث الحالة",
+        "departmentRecommendationPrefix": "توصية القسم: ",
+        "completed": "مكتمل"
+      }
+    }
+  }
+}

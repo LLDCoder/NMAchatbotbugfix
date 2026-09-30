@@ -1,0 +1,121 @@
+@import "@/styles/variables.less";
+
+/** Scope under .application-container like My Tasks; avoids clashing with generic .content selectors */
+.application-container .content {
+  .application-no-cell {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    column-gap: 10px;
+    row-gap: 6px;
+  }
+
+  .application-no-leading {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    max-width: 100%;
+    min-width: 0;
+    column-gap: 10px;
+  }
+
+  .application-no-star-slot {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 18px;
+    width: 18px;
+    line-height: 0;
+  }
+
+  .application-no-star-placeholder {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  .application-no-text {
+    flex: 1 1 auto;
+    min-width: 0;
+    text-align: start;
+    line-height: 1.35;
+    word-break: break-word;
+  }
+
+  .application-no-profile-star {
+    width: 18px;
+    height: 18px;
+    display: block;
+    flex-shrink: 0;
+    object-fit: contain;
+    vertical-align: middle;
+  }
+
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  .ant-card-body {
+    padding: 24px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      padding: 12px;
+    }
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.filter-facade {
+  border-radius: 8px;
+  width: 360px;
+  height: 48px;
+}
+
+.select-style {
+  .filter-facade();
+  width: 240px;
+}
+
+.range-picker {
+  .filter-facade();
+  .ant-picker-input input[size="12"] {
+    font-size: 16px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.search-input {
+  .filter-facade();
+  .ant-input {
+    border-radius: 8px;
+  }
+
+  &:hover,
+  &:focus-within {
+    .ant-input {
+      border-color: @primary-color;
+    }
+  }
+}
+
+.app-number {
+  border-radius: 4px;
+}
+
+.selection-tip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background-color: rgba(249, 247, 237, 1);
+  margin: 16px 0;
+  color: @primary-color;
+}

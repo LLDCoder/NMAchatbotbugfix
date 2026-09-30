@@ -1,0 +1,108 @@
+.public-auth-header {
+  flex-shrink: 0;
+  width: 100%;
+  height: 128px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  /* Shrink the header on short viewports so the auth card fits without scrolling. */
+  @media (max-height: 1060px) {
+    height: 104px;
+  }
+  @media (max-height: 740px) {
+    height: 84px;
+  }
+
+  &__left {
+    flex-shrink: 0;
+    z-index: 1;
+  }
+
+  &__back,
+  &__back-placeholder {
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 0;
+  }
+
+  &__back {
+    cursor: pointer;
+
+    img {
+      width: 56px;
+      height: 56px;
+      display: block;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 12px;
+    width: 280px;
+    height: 80px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      column-gap: 8px;
+    }
+    @media (max-height: 1060px) {
+      height: 60px;
+    }
+    @media (max-height: 740px) {
+      height: 48px;
+    }
+  }
+
+  &__logo-icon,
+  &__logo-title {
+    height: 80px;
+    object-fit: contain;
+    @media (max-height: 1060px) {
+      height: 60px;
+    }
+    @media (max-height: 740px) {
+      height: 48px;
+    }
+  }
+
+  &__logo-icon {
+    width: auto;
+    flex-shrink: 0;
+  }
+
+  &__logo-title {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin-inline-start: auto;
+    z-index: 1;
+  }
+
+  &--rtl {
+    .public-auth-header__left {
+      order: 2;
+      margin-inline-start: auto;
+    }
+
+    .public-auth-header__right {
+      order: 0;
+      margin-inline-start: 0;
+      margin-inline-end: auto;
+    }
+  }
+}

@@ -1,0 +1,227 @@
+.video-upload-setter {
+  width: 100%;
+
+  .upload-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 10px 16px;
+    border: 1px solid #e8e0d5;
+    border-radius: 8px;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #666;
+
+    &:hover {
+      border-color: #d4a853;
+      color: #d4a853;
+    }
+
+    .upload-icon {
+      font-size: 16px;
+      color: #d4a853;
+    }
+  }
+
+  .upload-hint {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #999;
+  }
+
+  .upload-progress-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    border: 1px solid #f5e6c8;
+    border-radius: 8px;
+    background: #fffbf5;
+
+    .file-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+
+      .file-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .file-name {
+        font-size: 13px;
+        color: #333;
+        max-width: 120px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    .progress-section {
+      flex: 1;
+      min-width: 60px;
+
+      .ant-progress-inner {
+        background: #f5f5f5;
+      }
+    }
+
+    .cancel-icon {
+      font-size: 16px;
+      color: #999;
+      cursor: pointer;
+      flex-shrink: 0;
+
+      &:hover {
+        color: #666;
+      }
+    }
+  }
+
+  .upload-done-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border: 1px solid #e8e0d5;
+    border-radius: 8px;
+    background: #fff;
+
+    .file-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+      min-width: 0;
+
+      .file-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .file-name {
+        font-size: 13px;
+        color: #333;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    .action-icons {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+
+      .action-icon {
+        font-size: 16px;
+        cursor: pointer;
+        transition: color 0.2s ease;
+
+        &.preview {
+          color: #999;
+
+          &:hover {
+            color: #d4a853;
+          }
+        }
+
+        &.delete {
+          color: #999;
+
+          &:hover {
+            color: #ff4d4f;
+          }
+        }
+      }
+    }
+  }
+
+  .upload-error-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border: 1px solid #e8e0d5;
+    border-radius: 8px;
+    background: #fff;
+
+    .file-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+      min-width: 0;
+
+      .file-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+
+        &.error {
+          opacity: 0.6;
+        }
+      }
+
+      .file-name {
+        font-size: 13px;
+        color: #333;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    .action-icons {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+
+      .action-icon {
+        font-size: 16px;
+        cursor: pointer;
+        transition: color 0.2s ease;
+
+        &.retry {
+          color: #d4a853;
+
+          &:hover {
+            color: #b8923f;
+          }
+        }
+
+        &.delete {
+          color: #999;
+
+          &:hover {
+            color: #ff4d4f;
+          }
+        }
+      }
+    }
+  }
+
+  .error-message {
+    margin-top: 6px;
+    font-size: 12px;
+    color: #ff4d4f;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    .anticon {
+      font-size: 12px;
+    }
+  }
+}

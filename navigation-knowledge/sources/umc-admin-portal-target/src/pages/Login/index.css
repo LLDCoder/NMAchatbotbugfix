@@ -1,0 +1,587 @@
+.login-page-scroll {
+  width: 100%;
+  height: 100vh;
+}
+
+.login-wrapper {
+  --login-card-width: 540px;
+  --login-card-padding-block: 32px;
+  --login-card-padding-inline: 24px;
+  --login-card-radius: 20px;
+  --login-control-height: 56px;
+  --login-control-font-size: 22px;
+  --login-control-icon-size: 30px;
+  --login-field-label-height: 24px;
+  --login-field-label-size: 16px;
+  --login-field-gap: 24px;
+  --login-provider-gap: 20px;
+  --login-section-gap: 24px;
+  --login-divider-height: 24px;
+  --login-divider-font-size: 16px;
+  --login-account-height: 20px;
+  --login-account-font-size: 14px;
+  --login-header-inline-offset: 30px;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: url(../../assets/images/login-bg.png) no-repeat center center;
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+.login-wrapper > .public-auth-header {
+  width: 100%;
+  height: 96px;
+  padding: 24px 30px;
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 2;
+}
+
+.login-wrapper > .public-auth-header .public-auth-header__logo {
+  width: auto;
+  height: 48px;
+  left: var(--login-header-inline-offset);
+  top: 24px;
+  transform: none;
+  column-gap: 8px;
+}
+
+.login-wrapper
+  > .public-auth-header.public-auth-header--rtl
+  .public-auth-header__logo {
+  right: var(--login-header-inline-offset);
+  left: auto;
+}
+
+.login-wrapper
+  > .public-auth-header
+  .public-auth-header__logo-icon,
+.login-wrapper
+  > .public-auth-header
+  .public-auth-header__logo-title {
+  width: auto;
+  height: 48px;
+  flex: none;
+}
+
+.login-wrapper > .public-auth-header .lang-selector {
+  --lang-selector-size: 42px;
+  margin-top: 0;
+}
+
+.login-main {
+  min-height: 100vh;
+  padding: 96px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.login-box {
+  width: var(--login-card-width);
+  margin: 0;
+  padding: var(--login-card-padding-block)
+    var(--login-card-padding-inline);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: var(--login-card-radius);
+}
+
+.login-header {
+  width: 100%;
+  height: 69px;
+  margin-bottom: var(--login-section-gap);
+}
+
+.login-header-title {
+  margin-bottom: 10px;
+  color: #361e12;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.login-header-desc {
+  color: #5f646d;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.login-type {
+  width: 100%;
+  height: var(--login-control-height);
+  min-height: var(--login-control-height);
+  padding: 4px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-sizing: border-box;
+  border: 1px solid #361e12;
+  border-radius: 8px;
+  background: #fff;
+  color: #361e12;
+  cursor: pointer;
+  user-select: none;
+  align-self: flex-start;
+}
+
+.login-type.loading,
+.login-type.disabled,
+.login-btn.loading,
+.login-btn.disabled {
+  pointer-events: none;
+}
+
+.login-uae-pass {
+  margin-top: 0;
+  border-color: #0e0f12;
+  background: #0e0f12;
+  color: #fff;
+}
+
+.login-microsoft {
+  margin-top: var(--login-provider-gap);
+}
+
+.login-type img,
+.login-microsoft img {
+  width: var(--login-control-icon-size);
+  height: var(--login-control-icon-size);
+  object-fit: contain;
+}
+
+.login-type-text {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: var(--login-control-font-size);
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.login-spinner {
+  font-size: 18px;
+}
+
+.login-divider {
+  width: 100%;
+  height: var(--login-divider-height);
+  margin: var(--login-section-gap) 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.login-divider::before,
+.login-divider::after {
+  content: "";
+  min-width: 0;
+  flex: 1;
+  border-top: 1px solid #e1e3e5;
+}
+
+.login-wrapper .login-divider-text {
+  padding: 0;
+  background: transparent;
+  color: #5f646d;
+  font-size: var(--login-divider-font-size);
+  font-weight: 300;
+  line-height: var(--login-divider-height);
+}
+
+.login-wrapper .form-error-prompt--boxed {
+  width: 100%;
+  align-self: stretch;
+}
+
+.login-wrapper .custorm-form {
+  width: 100%;
+}
+
+.login-wrapper .custorm-form .ant-form-item {
+  margin-bottom: var(--login-field-gap);
+}
+
+.login-wrapper .custorm-form .ant-form-item-label {
+  height: var(--login-field-label-height);
+  min-height: var(--login-field-label-height);
+  max-height: var(--login-field-label-height);
+  padding: 0;
+  line-height: var(--login-field-label-height);
+}
+
+.login-wrapper .custorm-form .ant-form-item-label > label {
+  height: var(--login-field-label-height);
+  color: #2a2a46;
+  font-size: var(--login-field-label-size);
+  font-weight: 500;
+  line-height: var(--login-field-label-height);
+}
+
+.login-wrapper
+  .custorm-form.ant-form-hide-required-mark
+  .ant-form-item-label
+  > label.ant-form-item-required::after {
+  display: none;
+}
+
+.login-wrapper .custorm-form .ant-input-affix-wrapper {
+  width: 100%;
+  height: var(--login-control-height);
+  padding: 0 16px;
+  border: 1px solid #e5e6eb;
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+.login-wrapper .custorm-form .ant-input-affix-wrapper:hover,
+.login-wrapper .custorm-form .ant-input-affix-wrapper-focused,
+.login-wrapper .custorm-form .ant-input-affix-wrapper:focus {
+  border-color: #d0d3d8;
+  box-shadow: none;
+}
+
+.login-wrapper .custorm-form .ant-input,
+.login-wrapper .custorm-form .ant-input:focus {
+  height: calc(var(--login-control-height) - 2px);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  color: #211c1c;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.login-wrapper .custorm-form .ant-input::placeholder {
+  color: #797e86;
+  font-weight: 400;
+}
+
+.login-wrapper .custorm-form .ant-input-clear-icon,
+.login-wrapper .custorm-form .icon-eye {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 16px;
+  height: 16px;
+  color: #797e86;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-wrapper .custorm-form .remember {
+  min-height: var(--login-account-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.login-wrapper .custorm-form .remember > div:first-child {
+  font-size: 0;
+}
+
+.login-wrapper .custorm-form .remember .forget {
+  color: #92722a;
+  font-size: var(--login-account-font-size);
+  font-weight: 500;
+  line-height: var(--login-account-height);
+  cursor: pointer;
+}
+
+.login-btn {
+  width: 100%;
+  height: var(--login-control-height);
+  margin-top: var(--login-section-gap);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #9e7538 0%, #c19453 100%);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.login-btn-text {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.login-btn.login-btn--inactive {
+  background: #e1e3e5;
+  color: #797e86;
+}
+
+.login-btn.login-btn--inactive:hover {
+  opacity: 0.92;
+}
+
+.login-reset-success {
+  width: min(calc(100vw - 80px), 720px);
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.login-reset-success__alert.ant-alert {
+  width: fit-content;
+  max-width: 100%;
+  border: 1px solid #b7eb8f;
+  border-radius: 8px;
+  background: #f6ffed;
+  align-items: center;
+  pointer-events: auto;
+}
+
+.login-reset-success__alert.ant-alert .ant-alert-content {
+  min-width: 0;
+  flex: 0 1 auto;
+}
+
+.login-reset-success__alert.ant-alert .ant-alert-message {
+  color: #389e0d;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: start;
+}
+
+.login-reset-success__alert.ant-alert .ant-alert-icon {
+  margin-right: 10px;
+  color: #52c41a;
+  font-size: 14px;
+}
+
+.login-reset-success--rtl
+  .login-reset-success__alert.ant-alert
+  .ant-alert-icon {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+.login-callback-wrapper {
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.login-callback-card {
+  width: 420px;
+  max-width: 100%;
+  padding: 48px 32px;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 20px 60px rgb(0 0 0 / 12%);
+  text-align: center;
+}
+
+.login-callback-icon {
+  color: #92722a;
+  font-size: 40px;
+}
+
+.login-callback-title {
+  margin-top: 20px;
+  color: #361e12;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+@media (min-width: 1280px) and (max-width: 1439.98px) {
+  .login-wrapper {
+    --login-card-width: 480px;
+    --login-control-height: 48px;
+    --login-field-gap: 16px;
+    --login-provider-gap: 16px;
+    --login-section-gap: 16px;
+    --login-card-radius: 20px;
+    --login-header-inline-offset: 28px;
+  }
+
+  .login-wrapper > .public-auth-header {
+    height: 80px;
+    padding: 20px 28px;
+  }
+
+  .login-wrapper > .public-auth-header .public-auth-header__logo {
+    height: 40px;
+    top: 20px;
+  }
+
+  .login-wrapper
+    > .public-auth-header
+    .public-auth-header__logo-icon,
+  .login-wrapper
+    > .public-auth-header
+    .public-auth-header__logo-title {
+    height: 40px;
+  }
+
+  .login-wrapper > .public-auth-header .lang-selector {
+    --lang-selector-size: 32px;
+  }
+
+  .login-main {
+    padding: 80px 0;
+  }
+
+  .login-type {
+    width: 100%;
+  }
+
+  .login-btn {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1279.98px) {
+  .login-wrapper {
+    --login-card-width: 384px;
+    --login-card-padding-block: 24px;
+    --login-card-radius: 20px;
+    --login-control-height: 40px;
+    --login-control-font-size: 14px;
+    --login-control-icon-size: 20px;
+    --login-field-label-height: 20px;
+    --login-field-label-size: 14px;
+    --login-field-gap: 16px;
+    --login-provider-gap: 12px;
+    --login-section-gap: 16px;
+    --login-divider-height: 16px;
+    --login-divider-font-size: 12px;
+    --login-account-height: 16px;
+    --login-account-font-size: 12px;
+    --login-header-inline-offset: 20px;
+  }
+
+  .login-wrapper > .public-auth-header {
+    height: 64px;
+    padding: 16px 20px;
+  }
+
+  .login-wrapper > .public-auth-header .public-auth-header__logo {
+    height: 32px;
+    top: 16px;
+    column-gap: 6px;
+  }
+
+  .login-wrapper
+    > .public-auth-header
+    .public-auth-header__logo-icon,
+  .login-wrapper
+    > .public-auth-header
+    .public-auth-header__logo-title {
+    height: 32px;
+  }
+
+  .login-wrapper > .public-auth-header .lang-selector {
+    --lang-selector-size: 28px;
+  }
+
+  .login-main {
+    padding: 64px 0;
+  }
+
+  .login-header-title {
+    margin-bottom: 4px;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .login-header {
+    height: 48px;
+  }
+
+  .login-header-desc {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .login-type {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .login-type-text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .login-spinner {
+    font-size: 14px;
+  }
+
+  .login-divider {
+    gap: 12px;
+  }
+
+  .login-wrapper .custorm-form .ant-input-affix-wrapper {
+    padding: 0 16px;
+    border-radius: 8px;
+  }
+
+  .login-wrapper .custorm-form .ant-input,
+  .login-wrapper .custorm-form .ant-input:focus {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .login-btn {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .login-wrapper {
+    --login-card-width: min(384px, calc(100vw - 32px));
+  }
+
+  .login-main {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .login-reset-success {
+    width: calc(100vw - 32px);
+    top: 16px;
+  }
+
+  .login-reset-success__alert.ant-alert .ant-alert-message {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}

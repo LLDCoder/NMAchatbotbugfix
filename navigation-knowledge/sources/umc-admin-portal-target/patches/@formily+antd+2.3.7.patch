@@ -1,0 +1,13 @@
+diff --git a/node_modules/@formily/antd/esm/form-item/index.js b/node_modules/@formily/antd/esm/form-item/index.js
+index 2803b3d..b72b60d 100644
+--- a/node_modules/@formily/antd/esm/form-item/index.js
++++ b/node_modules/@formily/antd/esm/form-item/index.js
+@@ -126,7 +126,7 @@ export var BaseItem = function (_a) {
+             " ",
+             feedbackText), visible: !!feedbackText, getPopupContainer: getPopupContainer }, children)) : (children);
+     var gridStyles = {};
+-    var tooltipNode = isTooltipProps(tooltip) ? (React.createElement(Tooltip, __assign({}, tooltip))) : (tooltip);
++    var tooltipNode = (tooltip);
+     var getOverflowTooltip = function () {
+         if (overflow) {
+             return (React.createElement("div", null,

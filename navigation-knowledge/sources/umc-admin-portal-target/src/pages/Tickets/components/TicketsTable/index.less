@@ -1,0 +1,553 @@
+.tickets-table-wrapper {
+  .messageBox {
+    position: relative;
+    .notification-badge {
+      top: 8px;
+      right: -4px;
+      width: 6px;
+      height: 6px;
+      border: none;
+    }
+  }
+  .tickets-table-service-name {
+    display: block;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    min-width: 0;
+    line-height: 1.35;
+  }
+
+  .tickets-table-customer-name {
+    display: block;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    line-height: 1.35;
+  }
+
+  .tickets-table-popover-trigger {
+    display: block;
+    min-width: 0;
+  }
+
+  .tickets-table-cell-ellipsis-2-lines {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-word;
+    line-height: 1.35;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .admin-table .ant-table-cell {
+    vertical-align: top;
+  }
+
+  .admin-table .tickets-table-customer-cell {
+    width: 160px;
+    max-width: 160px;
+    overflow: hidden;
+  }
+
+  .admin-table .table-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 12px;
+    white-space: nowrap;
+
+    > * {
+      flex: 0 0 auto;
+    }
+
+    .messageBox {
+      display: inline-flex;
+      flex: 0 0 auto;
+    }
+
+    .ant-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0;
+      min-width: 0;
+      flex: 0 0 auto;
+      white-space: nowrap;
+    }
+
+    .custom-button-text,
+    .ant-btn-text {
+      &:hover:not(:disabled),
+      &:focus:not(:disabled),
+      &:active:not(:disabled) {
+        background: transparent !important;
+        background-color: transparent !important;
+        color: #92722a !important;
+        border-color: transparent !important;
+      }
+    }
+
+    .custom-button-text:hover,
+    .custom-button-text:focus {
+      color: #92722a !important;
+      background: none !important;
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 8px;
+    }
+  }
+
+  .application-no-cell {
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    min-width: 0;
+
+    &--with-star {
+      column-gap: 6px;
+    }
+  }
+
+  .application-no-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .application-no-star-slot {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 18px;
+    width: 18px;
+    line-height: 0;
+  }
+
+  .application-no-text {
+    min-width: 0;
+    text-align: start;
+    line-height: 1.35;
+    word-break: break-word;
+  }
+
+  .application-no-profile-star {
+    width: 18px;
+    height: 18px;
+    display: block;
+    flex-shrink: 0;
+    object-fit: contain;
+    vertical-align: middle;
+  }
+
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 0 24px 24px;
+  /* Clip table with card; thead corners: global .admin-table in App.less */
+  .todo-tabpanel .table-container {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  /* Align with licensing/applications: 8px radius on filters, actions, table */
+  .todo-tabpanel-form.custorm-form {
+    .ant-input-affix-wrapper,
+    .ant-input,
+    .ant-select:not(.ant-select-customize-input) .ant-select-selector,
+    .ant-picker {
+      border-radius: 8px !important;
+    }
+
+    .custom-button {
+      border-radius: 8px !important;
+
+      &:disabled {
+        border-radius: 8px !important;
+      }
+    }
+  }
+
+  .todo-tabpanel-header-actions .custom-button {
+    border-radius: 8px !important;
+
+    &:disabled {
+      border-radius: 8px !important;
+    }
+  }
+
+  .admin-table {
+    .ant-table {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .ant-table-container table > thead > tr:first-child th:first-child {
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+    .ant-table-container table > thead > tr:last-child th:last-child {
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+    .ant-table-container > .ant-table-header {
+      border-radius: 8px 8px 0 0;
+    }
+    .ant-table-thead {
+      border-radius: 8px;
+    }
+  }
+  .ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    padding: 0;
+  }
+  .ant-tabs-tab-btn {
+    padding: 0;
+  }
+  .ant-tabs-tab {
+    padding: 16px 0;
+  }
+  .ant-tabs-tab + .ant-tabs-tab {
+    margin: 0 0 0 32px;
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.todo-tabpanel {
+  padding: 6px 0;
+  padding-top: 0;
+  .todo-tabpanel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    /*
+      Neither this row nor .todo-tabpanel-form wraps, and the form holds a 360px
+      search, a select and a 300px range picker. Below 1920 that exceeds the
+      panel, so tickets-wrapper scrolls sideways and the table is cut off from
+      the Customer column on -- the date picker's calendar icon is sliced too.
+
+      This row is invisible to src/styles/rwd/filter-toolbar.css: its global
+      selectors match [class*="toolbar"] and [class*="-table-header"], and
+      "todo-tabpanel-header" is neither. Same floors as that file uses.
+    */
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 8px;
+      flex-wrap: nowrap;
+      align-items: center;
+    }
+  }
+  .todo-tabpanel-form {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+
+    @media (max-width: 1919.98px) {
+      flex: 1 1 auto;
+      flex-wrap: nowrap;
+      row-gap: 0;
+      width: auto;
+      min-width: 0;
+      max-width: 100%;
+
+      .ant-form-item:first-child {
+        flex: 0 0 240px;
+        width: 240px;
+        min-width: 240px;
+        max-width: 240px;
+      }
+
+      .ant-form-item:first-child .ant-input-affix-wrapper {
+        width: 100%;
+        height: 40px !important;
+        min-height: 40px !important;
+        max-height: 40px !important;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+
+    .ant-form-item {
+      margin-bottom: 0;
+    }
+
+    .ant-form-item:first-child .ant-input-affix-wrapper {
+      width: 320px;
+    }
+
+    .ant-picker {
+      width: 300px;
+      min-width: 300px;
+      height: 48px;
+    }
+
+    .localized-date-picker.ant-picker.ant-picker-range.tickets-toolbar-date-range-picker {
+      flex-wrap: nowrap;
+    }
+
+    .localized-date-picker.ant-picker-range {
+      padding-inline-end: 11px;
+
+      .ant-picker-suffix,
+      .ant-picker-clear {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .ant-picker-suffix {
+        right: 12px;
+        left: auto;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .ant-picker-clear {
+        right: 4px;
+        left: auto;
+        z-index: 2;
+        width: 34px;
+        height: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+      }
+
+      &.localized-date-picker-rtl {
+        .ant-picker-suffix {
+          right: auto !important;
+          left: 12px;
+        }
+
+        .ant-picker-clear {
+          right: auto !important;
+          left: 4px;
+        }
+      }
+    }
+
+    .ant-select {
+      width: 240px;
+      min-width: 240px;
+      height: 48px;
+      min-height: 48px;
+      max-height: 48px;
+    }
+
+    .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+      height: 48px;
+      min-height: 48px;
+      max-height: 48px;
+    }
+
+    .filters-filterBtn {
+      /* Floor, not a cap: the applied-count badge widens the button. */
+      width: auto;
+      min-width: 103px;
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      column-gap: 8px;
+
+      .ant-form-item:first-child {
+        flex: 0 0 240px;
+        width: 240px;
+        min-width: 240px;
+        max-width: 240px;
+      }
+
+      .ant-form-item:first-child .ant-input-affix-wrapper {
+        width: 100%;
+      }
+
+      .ant-picker,
+      .ant-select {
+        min-width: 240px;
+      }
+
+      .ant-picker {
+        width: 300px;
+        min-width: 300px;
+      }
+
+      .ant-select {
+        width: 240px;
+      }
+
+      .ant-input-affix-wrapper,
+      .ant-select,
+      .ant-select:not(.ant-select-customize-input) .ant-select-selector,
+      .ant-picker {
+        height: 40px !important;
+        min-height: 40px !important;
+        max-height: 40px !important;
+      }
+
+      .ant-select-single .ant-select-selector .ant-select-selection-item,
+      .ant-select-single .ant-select-selector .ant-select-selection-placeholder {
+        line-height: 38px;
+      }
+    }
+  }
+
+  @media (max-width: 1439.98px) {
+    .todo-tabpanel-form .tickets-toolbar-secondary-filter {
+      display: none;
+    }
+  }
+  .todo-tabpanel-header-actions {
+    display: flex;
+    column-gap: 12px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      column-gap: 8px;
+    }
+  }
+  .todo-tabpanel-appno {
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #92722a;
+    cursor: pointer;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+  .todo-tabpanel-custormer {
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+
+    > svg {
+      flex: 0 0 auto;
+    }
+
+    .tickets-table-popover-trigger {
+      flex: 1 1 auto;
+      min-width: 0;
+      max-width: 100%;
+      overflow: hidden;
+    }
+  }
+  .todo-tabpanel-overdue {
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #ea4f49;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+  .todo-tabpanel-reopen-times {
+    width: fit-content;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background-color: #e1e3e580;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #5f646d;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}
+
+.tickets-status-select-dropdown.ant-select-dropdown {
+  border-radius: 8px;
+  box-shadow:
+    0 3px 6px -4px rgba(0, 0, 0, 0.12),
+    0 6px 16px 0 rgba(0, 0, 0, 0.08),
+    0 9px 28px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+.tickets-toolbar-status-select.ant-select-multiple
+  .ant-select-selector {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.tickets-toolbar-status-select.ant-select-multiple
+  .ant-select-selection-overflow {
+  align-items: center;
+}
+
+.tickets-toolbar-status-select.ant-select-multiple
+  .ant-select-selection-overflow-item {
+  display: flex;
+  align-items: center;
+}
+
+.tickets-toolbar-status-select.ant-select-multiple
+  .ant-select-selection-search {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.tickets-toolbar-status-select.ant-select-multiple
+  .ant-select-selection-search-input {
+  height: 24px;
+}
+
+.tickets-toolbar-status-select.ant-select
+  .ant-select-arrow,
+.tickets-toolbar-status-select.ant-select
+  .ant-select-clear {
+  right: auto;
+  left: auto;
+  inset-inline-end: 16px;
+}
+
+.tickets-toolbar-status-select.ant-select
+  .ant-select-arrow {
+  transform: none;
+}
+
+.table-container {
+  /*
+    Was a hard 1472px -- the content width of the 1920 board. It only ever
+    worked because pxtorem turned it into 92rem and the root font-size shrank
+    it to fit (874px at the 1024 band). With this file migrated the px is
+    literal, so the panel stays 1472px wide at every width and pushes
+    tickets-wrapper into a sideways scroll that cuts the table off from the
+    Customer column on.
+
+    The width was never load-bearing: the Table declares
+    scroll={{ x: "max-content" }}, so antd already scrolls the columns inside
+    .ant-table-content. Filling the panel is all this needs to do.
+  */
+  width: 100%;
+}

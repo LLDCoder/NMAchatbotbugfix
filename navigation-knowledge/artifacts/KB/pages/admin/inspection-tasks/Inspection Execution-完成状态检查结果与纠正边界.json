@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "1.0",
+  "packageStatus": "active",
+  "bundleId": "admin.inspection.execution.outcome-boundaries.package",
+  "createdAt": "2026-09-28T03:14:20.822620+00:00",
+  "searchMetadata": {
+    "titleEnglish": "Inspection report submission, workflow completion and evidence-based compliance finding are separate",
+    "titleArabic": "تقديم تقرير التفتيش وإكمال المهمة ونتيجة الامتثال المستندة إلى الأدلة أمور منفصلة",
+    "descriptionEnglish": "Inspection report submission, workflow completion and evidence-based compliance finding are separate",
+    "descriptionArabic": "تقديم تقرير التفتيش وإكمال المهمة ونتيجة الامتثال المستندة إلى الأدلة أمور منفصلة"
+  },
+  "records": [
+    {
+      "id": "admin.inspection.execution.outcome-boundaries",
+      "kind": "page_definition",
+      "revision": 1,
+      "status": "active",
+      "title": "Inspection report submission, workflow completion and evidence-based compliance finding are separate",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local",
+          "debug"
+        ],
+        "pageRefs": [
+          "/inspection/tasks/detail",
+          "/inspection/tasks"
+        ],
+        "sourceSnapshot": "source-inspected-20260928",
+        "runtimeVerification": "not_a_live_execution",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/InspectionExecution/InspectionExecutionAppService.cs",
+          "revision": "sha256:47fa26c72342ebdfbbd44a5f580d7185193e5e8e1a9ff01cff239a99abcc9eb0",
+          "locator": "SubmitReportAsync; EnsureStepAllowed; BuildInspectionCompletedTimelineContent",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/inspection/tasks/detail",
+        "pageMeaning": "Inspection report submission, workflow completion and evidence-based compliance finding are separate",
+        "sections": [
+          {
+            "topic": "Completion and finding",
+            "facts": [
+              "SubmitReportAsync requires the authorized execution task, the checkout stage, at least one checklist item and the applicable field-inspection contact conditions. It records HasViolationFound and reinspection fields from the submitted report, marks the workflow task Completed, creates the applicable related violations, and writes the timeline.",
+              "The timeline outcome is Violation Found when HasViolationFound is true, Compliant when false, and Submitted when null. Completed alone therefore does not establish a passed or compliant inspection. Missing findings remain unknown; do not replace them with the workflow status.",
+              "إكمال المهمة لا يثبت نجاح التفتيش. تُسجّل نتيجة المخالفة أو الامتثال من نتائج التقرير، وتظل النتيجة غير مؤكدة عند غيابها."
+            ]
+          },
+          {
+            "topic": "Correction request and legitimate handling",
+            "facts": [
+              "An instruction to change the result to passed does not establish a factual error, valid correction evidence, an authorized correction action or an approval. Do not execute or claim an arbitrary outcome change, alter checklist findings to obtain a desired result, or conceal the original evidence.",
+              "For an unsubmitted inspection, describe recording the actual checklist findings and supporting evidence, meeting the applicable execution prerequisites and submitting a truthful report. These steps may result in noncompliance and must never be advertised as a way to obtain a pass.",
+              "For a disputed or already submitted result, retain the original findings and identify the factual discrepancy and supporting evidence. This inspected submission implementation does not define a general retrospective correction, reopening or approval procedure. State that gap and request the applicable documented correction/review process; do not invent an approver, use a schedule edit as a substitute or imply that a new passing finding is justified.",
+              "Any explanation is conditional on actual task state and permission and does not perform a write. An assistant may explain the boundary without falsely requiring a live write or the user to reveal extra personal data.",
+              "لا يجوز تحويل النتيجة إلى ناجحة لمجرد الطلب. يجب الحفاظ على الأدلة الأصلية؛ ولا يمثل تعديل الموعد أو إكمال الزيارة مساراً لتصحيح النتيجة. لم يثبت هذا المصدر إجراءً عاماً لتعديل نتيجة معتمدة بأثر رجعي."
+            ]
+          }
+        ],
+        "constraints": [
+          "These are source-defined conditions, not current-record eligibility or a permission grant. Verify current authorized record, available actions and applicable deployment before a business decision.",
+          "No write is executed by reading or explaining these documents. Do not invent missing operations, formal policy owners or approval rules."
+        ]
+      }
+    }
+  ]
+}

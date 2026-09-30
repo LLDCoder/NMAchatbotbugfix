@@ -1,0 +1,475 @@
+{
+  "provenance": {
+    "path": "test/runtime/group17-cross-repair-20260928/round4-X04-ar-evidence.json",
+    "sha256": "4cffbef68f08e79fe323d3a6cf955fda938b081a61beb6cb6ff6bcb008143c97",
+    "requestId": "25ea6254-c153-40e4-a8d4-c69b85ce63d0",
+    "scope": "Original real failed task/recall/context; current formal M12 definitions are loaded separately for offline regression. Not live proof."
+  },
+  "task": {
+    "view": "",
+    "stage": "task",
+    "filters": [],
+    "groupBy": [],
+    "readOnly": true,
+    "timeField": "",
+    "timeRange": "unknown",
+    "outputShape": "detail",
+    "searchQuery": "request ML-1-7-6577159 payment completion status",
+    "slotUpdates": [
+      {
+        "field": "businessObject",
+        "value": "request",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "recordIdentity",
+        "value": "ML-1-7-6577159",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedAttributes",
+        "value": [
+          "payment completion status"
+        ],
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "outputShape",
+        "value": "detail",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedGrain",
+        "value": "request",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedScope",
+        "value": "unknown",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "timeRange",
+        "value": "unknown",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "businessFocus",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "disclosurePurpose",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedMeasures",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "groupBy",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "filters",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "view",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "timeField",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedOrdering",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "groupCompleteness",
+        "value": "observed",
+        "source": "current",
+        "evidence": "parsed current request"
+      }
+    ],
+    "responseMode": "answer",
+    "businessFocus": "",
+    "clarification": null,
+    "needsLiveData": true,
+    "businessObject": "request",
+    "recordIdentity": "ML-1-7-6577159",
+    "requestedGrain": "request",
+    "requestedScope": "unknown",
+    "contextRelation": "new",
+    "unresolvedSlots": [],
+    "disclosurePurpose": "",
+    "groupCompleteness": "observed",
+    "requestBoundaries": [],
+    "requestedMeasures": [],
+    "requestedOrdering": [],
+    "requestedAttributes": [
+      "payment completion status"
+    ],
+    "evidenceExplanations": []
+  },
+  "recall": {
+    "stage": "catalog_recall",
+    "reason": "Request detail with payment completion status: application detail workspace (c4211f0909fa9679eada) and record-detail components exposing paymentMethod/amount/transactionTime (tickets, refunds, customer, license details) are the only supplied pages with payment fields; list pages lack payment attributes.",
+    "candidateIds": [
+      "c4211f0909fa9679eada",
+      "6da253519a3f1c2d2bb7",
+      "8bc0b06b68f8eea7afba",
+      "6d44eeea1c2e58af9938",
+      "f5dc2babdbba97c95521"
+    ]
+  },
+  "allowedPages": [
+    "/dashboard",
+    "Common",
+    "/licensing",
+    "/happiness",
+    "/personal-center",
+    "Common.Document",
+    "/licensing/applications",
+    "/licensing/team-management",
+    "/licensing/licenses",
+    "/licensing/profile",
+    "/licensing/reports-analytics",
+    "/licensing/applications/applicationsDetails",
+    "/licensing/license/LicenseDatails",
+    "/licensing/Profile/ProfileDetails",
+    "/happiness/tickets",
+    "/happiness/customerManagement",
+    "/happiness/refunds",
+    "/happiness/appeals",
+    "/happiness/tickets/tickets-details",
+    "/happiness/customerManagement/customer-details",
+    "/happiness/customerManagement/customerProfileDetail",
+    "/happiness/refunds/refundsDetails",
+    "/happiness/appeals/appealsDetails"
+  ],
+  "candidateRecall": [
+    {
+      "name": "ApplicationsDetails",
+      "route": "/licensing/applications/applicationsDetails",
+      "score": 0.03057889822595705,
+      "fields": [
+        "action",
+        "note",
+        "Number",
+        "Activity",
+        "money",
+        "material_type",
+        "status",
+        "title",
+        "type",
+        "data",
+        "equipmentId",
+        "number",
+        "fullName",
+        "nationality",
+        "idNumber",
+        "occupation",
+        "emirateId",
+        "regionId",
+        "areaId",
+        "street",
+        "no",
+        "isbn",
+        "authorName",
+        "category",
+        "language1",
+        "language2",
+        "quantity",
+        "numberOfBooksRegulateEntriesApplications",
+        "numberOfComputerProgramsRegulateEntriesApplications",
+        "numberOfVideoGamesRegulateEntriesApplications"
+      ],
+      "pageId": "a3780c35dd57_da1a77697e11:Page:ea98b3b3ff504cb62c04",
+      "sourceIds": [
+        "k_b3ad44544cf08e9d4f5a:p0",
+        "k_cc329ac0a1339c5635ee:p0",
+        "k_6e2d25db6a6bbe8df2fb:p0",
+        "k_9c9a74f0a2084c22af91:p2",
+        "k_b5915cf178fcd2f130e5:p0"
+      ],
+      "parameters": [
+        "taskId",
+        "activeTab",
+        "readOnly",
+        "sourcePage",
+        "sourcePage",
+        "teamManagementScope",
+        "canReassign",
+        "teamTaskSourceType",
+        "teamTaskSourceId"
+      ],
+      "browserHint": false,
+      "candidateId": "c4211f0909fa9679eada",
+      "description": "许可申请详情与审批工作区。展示申请材料、业务表单、申请人、时间线及流程操作；同一组件还被许可团队管理入口复用。",
+      "lexicalScore": 11,
+      "catalogSourceIds": [
+        "k_2a712504d84d3e55ae3d:p0"
+      ],
+      "retrievedEvidenceCount": 5
+    },
+    {
+      "name": "TicketsDetails",
+      "route": "/happiness/tickets/tickets-details",
+      "score": 0.030309988518943745,
+      "fields": [
+        "applicationNo",
+        "serviceName",
+        "serviceCategory",
+        "type",
+        "applyFor",
+        "status",
+        "lastUpdatedTime",
+        "transactionNo",
+        "transactionType",
+        "paymentMethod",
+        "amount",
+        "transactionTime",
+        "ticketNo",
+        "customer",
+        "priority",
+        "lastUpdated",
+        "fineNo",
+        "violationType",
+        "violator",
+        "fineAmount",
+        "sourceTask",
+        "reportedBy",
+        "creationTime",
+        "refundCategory",
+        "referenceNo",
+        "licenseNumber",
+        "applicationNumber",
+        "licenseType",
+        "mediaActivity",
+        "issuanceTime"
+      ],
+      "pageId": "a3780c35dd57_da1a77697e11:Page:7b13216ee33628150b77",
+      "sourceIds": [
+        "k_5665bf5a212fe16c5e3a:p0",
+        "k_7e5ebb63b637bcb1a639:p0"
+      ],
+      "parameters": [
+        "id",
+        "from",
+        "from",
+        "id",
+        "id",
+        "id",
+        "sourcePage",
+        "teamManagementScope",
+        "canReassign",
+        "teamTaskSourceType",
+        "teamTaskSourceId"
+      ],
+      "browserHint": false,
+      "candidateId": "6da253519a3f1c2d2bb7",
+      "description": "工单详情、沟通记录和处理流程；多个团队管理入口复用同一组件，必须用稳定工单标识核验内容。",
+      "lexicalScore": 11,
+      "catalogSourceIds": [
+        "k_981ccb122fb3aada17c5:p0"
+      ],
+      "retrievedEvidenceCount": 2
+    },
+    {
+      "name": "CustomerRefundsDetails",
+      "route": "/happiness/refunds/refundsDetails",
+      "score": 0.02564102564102564,
+      "fields": [
+        "applicationNo",
+        "serviceName",
+        "serviceCategory",
+        "type",
+        "applyFor",
+        "status",
+        "lastUpdatedTime",
+        "transactionNo",
+        "transactionType",
+        "paymentMethod",
+        "amount",
+        "transactionTime",
+        "ticketNo",
+        "customer",
+        "priority",
+        "lastUpdated",
+        "fineNo",
+        "violationType",
+        "violator",
+        "fineAmount",
+        "sourceTask",
+        "reportedBy",
+        "creationTime",
+        "refundCategory",
+        "referenceNo",
+        "licenseNumber",
+        "applicationNumber",
+        "licenseType",
+        "mediaActivity",
+        "issuanceTime"
+      ],
+      "pageId": "a3780c35dd57_da1a77697e11:Page:8b13954a7488c2745a09",
+      "sourceIds": [],
+      "parameters": [
+        "refundNo",
+        "refundId",
+        "teamManagementScope",
+        "breadcrumbMode",
+        "returnTo",
+        "viewRole",
+        "pageTitleKey",
+        "breadcrumbRootKey",
+        "refundId",
+        "teamTaskSourceType",
+        "teamTaskSourceId",
+        "sourcePage",
+        "teamManagementScope",
+        "canReassign",
+        "teamTaskSourceType",
+        "teamTaskSourceId",
+        "viewRole",
+        "breadcrumbRootKey",
+        "pageTitleKey"
+      ],
+      "browserHint": false,
+      "candidateId": "8bc0b06b68f8eea7afba",
+      "description": "退款申请审核详情，关联申请、退款原因和流程信息；多个团队入口复用。",
+      "lexicalScore": 0,
+      "catalogSourceIds": [
+        "k_823b3537185d2db4a17a:p0"
+      ],
+      "retrievedEvidenceCount": 0
+    },
+    {
+      "name": "CustomerDetails",
+      "route": "/happiness/customerManagement/customer-details",
+      "score": 0.028484848484848488,
+      "fields": [
+        "applicationNo",
+        "serviceName",
+        "serviceCategory",
+        "type",
+        "applyFor",
+        "status",
+        "lastUpdatedTime",
+        "transactionNo",
+        "transactionType",
+        "paymentMethod",
+        "amount",
+        "transactionTime",
+        "ticketNo",
+        "customer",
+        "priority",
+        "lastUpdated",
+        "fineNo",
+        "violationType",
+        "violator",
+        "fineAmount",
+        "sourceTask",
+        "reportedBy",
+        "creationTime",
+        "refundCategory",
+        "referenceNo",
+        "licenseNumber",
+        "applicationNumber",
+        "licenseType",
+        "mediaActivity",
+        "issuanceTime"
+      ],
+      "pageId": "a3780c35dd57_da1a77697e11:Page:cf5437dac263f805e591",
+      "sourceIds": [],
+      "parameters": [
+        "id"
+      ],
+      "browserHint": false,
+      "candidateId": "6d44eeea1c2e58af9938",
+      "description": "客户概览与关联资料、业务对象的组合详情。跨 Tab 分析应保留同一客户/主体身份。",
+      "lexicalScore": 11,
+      "catalogSourceIds": [
+        "k_1809ce049f8f2ce30549:p0"
+      ],
+      "retrievedEvidenceCount": 0
+    },
+    {
+      "name": "LicenseDatails",
+      "route": "/licensing/license/LicenseDatails",
+      "score": 0.02531645569620253,
+      "fields": [
+        "applicationNo",
+        "serviceName",
+        "serviceCategory",
+        "type",
+        "applyFor",
+        "status",
+        "lastUpdatedTime",
+        "transactionNo",
+        "transactionType",
+        "paymentMethod",
+        "amount",
+        "transactionTime",
+        "ticketNo",
+        "customer",
+        "priority",
+        "lastUpdated",
+        "fineNo",
+        "violationType",
+        "violator",
+        "fineAmount",
+        "sourceTask",
+        "reportedBy",
+        "creationTime",
+        "refundCategory",
+        "referenceNo",
+        "licenseNumber",
+        "applicationNumber",
+        "licenseType",
+        "mediaActivity",
+        "issuanceTime"
+      ],
+      "pageId": "a3780c35dd57_da1a77697e11:Page:d6630870a8579cba78cd",
+      "sourceIds": [],
+      "parameters": [
+        "code"
+      ],
+      "browserHint": false,
+      "candidateId": "f5dc2babdbba97c95521",
+      "description": "许可证及关联主体信息详情。保留源码中的 Datails 拼写作为路由身份，不自动改为 Details。",
+      "lexicalScore": 0,
+      "catalogSourceIds": [
+        "k_6a5ff9a0f4ef70fddcaa:p0"
+      ],
+      "retrievedEvidenceCount": 0
+    }
+  ],
+  "failure": [
+    "routing_lookup_predecessor_required"
+  ],
+  "currentPage": {}
+}

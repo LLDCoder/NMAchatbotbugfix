@@ -1,0 +1,50 @@
+/*
+  P8.2 — top navigation tablet treatment.
+
+  Figma "Top Navigation/Tablet" (📒Tablet canvas, 2026-07-23): below the desktop
+  band the page title shrinks 20 -> 14, the breadcrumb tail shrinks 14 -> 12, and
+  the profile chip collapses to avatar-only — name and role hidden — with a 24px
+  avatar (design: profile shows avatar only on the narrow band, no name/role).
+
+  Boundary: max-width 1439.98px. Per the designer the full profile name shows down
+  to 1440; only below 1440 does the profile collapse to avatar-only and the title
+  shrink. (The sider rail keeps its own boundaries in sider.css.)
+
+  Matched by postcss.config.js `MIGRATED`, so px stay literal. Imported after
+  src/layout/index.css — equal or higher specificity + later source order win.
+*/
+
+@media (max-width: 1439.98px) {
+  /* Page title 20/28 -> 14/20 */
+  .layout-content .header .page-title {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .layout-content .header .page-title-row--reserve-extra-height {
+    min-height: 20px;
+  }
+
+  /* Breadcrumb text 14 -> 12 (active stays #92722a/500) */
+  .layout-content .header .breadcrumbs a,
+  .layout-content .header .breadcrumbs span {
+    font-size: 12px;
+  }
+
+  /* Profile -> avatar only: drop the name + role column. */
+  .layout-content .header .actions .profile-switcher__details {
+    display: none;
+  }
+
+  /* Shrink the chip and avatar to the tablet 24px, tighten the padding. */
+  .layout-content .header .actions .profile-switcher {
+    column-gap: 8px;
+    padding: 4px 8px 4px 4px;
+  }
+  .layout-content .header .actions .profile-switcher__avatar,
+  .layout-content .header .actions .profile-switcher__avatar img {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+  }
+}

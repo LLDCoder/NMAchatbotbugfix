@@ -1,0 +1,189 @@
+.tickets-filter-modal {
+  width: 960px !important;
+  max-width: calc(100vw - 48px);
+
+  .ant-modal-content {
+    border-radius: 20px;
+    background: #fff;
+  }
+
+  .ant-modal-header {
+    box-sizing: border-box;
+    min-height: 100px;
+    margin: 0;
+    padding: 32px 40px;
+    border-bottom: 1px solid #e1e3e5;
+    border-radius: 20px 20px 0 0;
+    background: #fff;
+  }
+
+  .ant-modal-title {
+    color: #361e12;
+    font-family: Inter, sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+
+  .ant-modal-body {
+    box-sizing: border-box;
+    min-height: 400px;
+    padding: 32px 40px;
+  }
+
+  .ant-modal-footer {
+    min-height: 96px;
+    margin: 0;
+    padding: 24px 40px;
+    border-top: 1px solid #e1e3e5;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .tickets-filter-modal-footer-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+
+    .custom-button {
+      width: 140px;
+      min-width: 140px;
+      height: 48px;
+      font-weight: 600;
+    }
+
+    .ant-btn + .ant-btn {
+      margin-left: 0;
+    }
+  }
+}
+
+.tickets-filter-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: flex-start;
+  gap: 24px;
+  padding: 0;
+
+  .ant-form-item {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 0;
+  }
+
+  .ant-form-item-label {
+    padding: 0 0 8px;
+
+    > label {
+      height: 20px;
+      color: #361e12;
+      font-family: Inter, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+    }
+  }
+
+  .ant-select,
+  .ant-picker {
+    width: 100%;
+  }
+
+  .ant-select:not(.ant-select-customize-input) .ant-select-selector,
+  .ant-picker {
+    height: 48px;
+    min-height: 48px;
+    padding-right: 16px;
+    padding-left: 16px;
+    border-color: #e1e3e5;
+    border-radius: 8px;
+  }
+
+  .ant-select-single .ant-select-selector .ant-select-selection-item,
+  .ant-select-single .ant-select-selector .ant-select-selection-placeholder {
+    color: #797e86;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 46px;
+  }
+
+  .ant-select-multiple .ant-select-selector {
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .ant-picker-input > input {
+    color: #361e12;
+    font-size: 14px;
+    font-weight: 500;
+
+    &::placeholder {
+      color: #797e86;
+    }
+  }
+
+  .ant-picker-separator,
+  .ant-picker-suffix,
+  .ant-select-arrow {
+    color: #797e86;
+  }
+
+  .localized-date-picker.ant-picker-range {
+    padding-inline-end: 16px;
+
+    .ant-picker-clear {
+      right: 16px;
+    }
+  }
+
+  .tickets-filter-form-responsive-field {
+    display: none;
+  }
+}
+
+.tickets-filter-modal.tickets-filter-modal--rtl {
+  .ant-modal-footer {
+    text-align: left;
+  }
+
+  .tickets-filter-modal-footer-actions {
+    direction: rtl;
+    justify-content: flex-end;
+
+    .ant-btn + .ant-btn {
+      margin-left: 0;
+    }
+  }
+
+  .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+    padding-right: 16px !important;
+    padding-left: 30px !important;
+  }
+
+  .ant-select-single.ant-select-show-arrow .ant-select-selection-item,
+  .ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder {
+    padding-right: 0;
+  }
+
+  .localized-date-picker.localized-date-picker-rtl.ant-picker-range
+    .ant-picker-clear {
+    right: auto !important;
+    left: 16px;
+  }
+}
+
+@media (max-width: 1439.98px) {
+  .tickets-filter-modal {
+    .tickets-filter-modal-footer-actions {
+      gap: 12px;
+    }
+  }
+
+  .tickets-filter-form {
+    .tickets-filter-form-responsive-field {
+      display: block;
+    }
+  }
+}

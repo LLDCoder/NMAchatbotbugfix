@@ -1,0 +1,207 @@
+.history-modal{
+    width: 960px !important;
+    .ant-modal-body{
+        padding: 0;
+        max-height: 850px;
+        overflow-y: scroll;
+    }
+    .history-configuration{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 40px;
+        background-color: #F9FAFB;
+        .history-configuration-title{
+            font-family: Inter;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 22px;
+            margin-bottom: 12px;
+            color: #361E12;
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            font-size: 16px;
+          }
+        }
+        .history-configuration-items{
+            display: flex;
+            column-gap: 16px;
+            .history-configuration-item{
+                display: flex;
+                align-items: center;
+                font-family: Inter;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 20px;
+                color: #361E12;
+                svg{
+                    font-size: 16px;
+                    color: #5F646D;
+                    margin-right: 6px;
+                  /* rwd-ramp */
+                  @media (max-width: 1919.98px) {
+                    font-size: 14px;
+                  }
+                }
+              /* rwd-ramp */
+              @media (max-width: 1919.98px) {
+                font-size: 14px;
+                line-height: 16px;
+              }
+            }
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            column-gap: 12px;
+          }
+        }
+        .history-view-btns{
+            display: flex;
+            align-items: center;
+            column-gap: 16px;
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            column-gap: 12px;
+          }
+        }
+        .history-view-btn{
+            cursor: pointer;
+            padding: 0 18px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Inter;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 20px;
+            color: #92722A;
+            border: 1px solid #92722A;
+            border-radius: 8px;
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            font-size: 12px;
+            line-height: 16px;
+          }
+        }
+        .history-view-btn-add{
+            background: linear-gradient(90deg, #9E7538 0%, #C19453 100%);
+            color: #fff;
+        }
+    }
+    .history-search{
+        margin-top: 24px;
+        margin-left: 40px;
+        width: 428px;
+    }
+    .history-list{
+        margin-top: 20px;
+        padding: 0 40px;
+        .history-li{
+            padding: 23px 20px;
+            border: 1px solid #E1E3E5;
+            border-radius: 8px;
+            
+            .hisotry-li-top{
+                display: flex;
+                justify-content: space-between;
+            }
+            .hisotry-li-top-left{
+                display: flex;
+                column-gap: 16px;
+                .hisotry-li-top-item{
+                    display: flex;
+                    align-items: center;
+                    font-family: Inter;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: #361E12;
+                    svg{
+                        font-size: 16px;
+                        color: #5F646D;
+                        margin-right: 6px;
+                      /* rwd-ramp */
+                      @media (max-width: 1919.98px) {
+                        font-size: 14px;
+                      }
+                    }
+                  /* rwd-ramp */
+                  @media (max-width: 1919.98px) {
+                    font-size: 14px;
+                    line-height: 16px;
+                  }
+                }
+              /* rwd-ramp */
+              @media (max-width: 1919.98px) {
+                column-gap: 12px;
+              }
+            }
+            .hisotry-li-top-right{
+                .hisotry-li-tag{
+                    border-radius: 4px;
+                    color: #286CFF;
+                    padding: 3px 6px;
+                    background-color: #E7F5FF;
+                }
+            }
+            .history-li-trigger{
+                margin-top: 16px;
+                display: flex;
+                align-items: center;
+                height: 44px;
+                padding: 12px;
+                width: 100%;
+                border-radius: 8px;
+                background-color: #F9FAFB;
+              /* rwd-ramp */
+              @media (max-width: 1919.98px) {
+                padding: 8px;
+              }
+            }
+            .history-li-footer{
+                display: flex;
+                column-gap: 12px;
+                margin-top: 16px;
+                .history-li-footer-btn {
+                    cursor: pointer;
+                    width: 104px;
+                    height: 36px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 8px;
+                    border: 1px solid #92722A;
+                    color: #92722A;
+                    font-family: Inter;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 20px;
+                  /* rwd-ramp */
+                  @media (max-width: 1919.98px) {
+                    font-size: 12px;
+                    line-height: 16px;
+                  }
+                }
+                .history-li-footer-btn-disabled{
+                    border-color: #C3C6CB;
+                    color: #9EA2A9;
+                }
+                .history-li-footer-btn-delete{
+                    border-color: #EA4F49;
+                    color: #EA4F49;
+                }
+              /* rwd-ramp */
+              @media (max-width: 1919.98px) {
+                column-gap: 8px;
+              }
+            }
+        }
+        .history-li + .history-li {
+                margin-top: 16px;
+            }
+    }
+    .history-pagination{
+        margin-top: 16px;
+        margin-bottom: 32px;
+    }
+}

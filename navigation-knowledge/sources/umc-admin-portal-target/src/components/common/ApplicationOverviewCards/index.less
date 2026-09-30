@@ -1,0 +1,42 @@
+@import "@/styles/variables.less";
+
+/* Fill the parent column width; detail pages own the sidebar width. */
+.body-right {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .body-right-column {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+
+    .body-right-column {
+      gap: 12px;
+    }
+  }
+
+  /*
+    Stacked layout (main content + sidebar wrap onto separate rows): show the
+    four overview cards as an explicit two-column grid instead of a tall
+    vertical stack.
+  */
+  @media (max-width: 1279.98px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: flex-start;
+
+    .body-right-column {
+      min-width: 0;
+    }
+  }
+}

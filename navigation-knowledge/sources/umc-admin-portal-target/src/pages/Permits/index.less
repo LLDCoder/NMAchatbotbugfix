@@ -1,0 +1,760 @@
+@import "@/styles/variables.less";
+
+/* license container */
+// .license-container{
+//   height: 100%
+// }
+/*
+    table-box
+  */
+.license-container {
+  height: 100%;
+  overflow: auto;
+  /* button */
+  /* status */
+
+  ._active {
+    font-size: 14px;
+    color: @success-color;
+    background-color: @bg-success-color;
+    padding: 2px 6px;
+    border-radius: 4px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+    }
+  }
+  ._bg-active {
+    background-color: #f9f7ed;
+  }
+  ._cancelled {
+    font-size: 14px;
+    color: @gary-color;
+    background-color: @bg-gary-color;
+    padding: 2px 6px;
+    border-radius: 4px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+    }
+  }
+  ._bg-cancelled {
+    background-color: @bg-gary-color;
+  }
+  ._expired {
+    font-size: 14px;
+    color: @danger-color;
+    background-color: @bg-danger-color;
+    padding: 2px 6px;
+    border-radius: 4px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+    }
+  }
+  ._bg-expired {
+    background-color: @bg-danger-color;
+  }
+  ._disabled {
+    font-size: 14px;
+    color: @warning-color;
+    background-color: @bg-warning-color;
+    padding: 2px 6px;
+    border-radius: 4px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+    }
+  }
+  ._bg-disabled {
+    background-color: @bg-warning-color;
+  }
+  .table-card {
+    border-radius: 20px;
+    // padding: 24px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      border-radius: 10px;
+    }
+  }
+  .filters {
+    display: flex;
+    width: 100%;
+    .ant-form{
+      flex: 1;
+    }
+    .ant-row {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 12px;
+      flex: 1;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        gap: 8px;
+      }
+    }
+
+    .ant-select {
+      width: 240px;
+    }
+    .table-header-btn {
+      width: 131px;
+    }
+  }
+  .ant-form {
+    .ant-form-item {
+      .ant-select {
+        .ant-select-selector {
+          height: 48px;
+        }
+
+        .ant-select-selection-item {
+          line-height: 48px;
+        }
+      }
+      .search-input {
+        height: 48px;
+        width: 360px;
+      }
+      .ant-picker {
+        height: 48px;
+        width: 440px;
+      }
+    }
+  }
+
+  /* Stat Cards */
+  .stat-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+    @media (max-width: 1919.98px) {
+      gap: 12px;
+    }
+  }
+
+  .stat-card {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    min-width: 0;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      border-radius: 10px;
+    }
+  }
+
+  .stat-card .ant-card-body {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      padding: 12px;
+      gap: 8px;
+    }
+  }
+
+  .stat-icon {
+    font-size: 32px;
+    color: #f5a623;
+    /*
+      Were 2.5rem / 1.25rem. rem keeps scaling with the root font-size even in a
+      migrated file, so the switch does not reach them. These are the values they
+      resolved to at the 1920 baseline.
+    */
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    // background-color: #f9f7ed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .stat-content {
+    flex: 1;
+  }
+
+  .stat-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: @text-color;
+    line-height: 1.2;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 16px;
+    }
+  }
+
+  .stat-label {
+    font-size: 14px;
+    color: #5f646d;
+    margin-top: 6px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+    }
+  }
+
+  .admin-table {
+    .permit-ellipsis-cell {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .permit-applicant {
+      display: flex;
+      align-items: center;
+    }
+
+    .permit-applicant__icon {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      margin-inline-end: 6px;
+    }
+
+    .ant-table-thead {
+      font-size: 14px;
+      color: #797e86;
+      tr>th{
+        /* No horizontal padding here: the global .admin-table rules in App.less
+           are more specific for td, so any value set here only moves the header
+           and breaks alignment. Both sides follow that 16px -> 12px ramp. */
+        padding-top: 12px;
+        padding-bottom: 12px;
+        &:first-child {
+          border-radius: 8px 0 0 8px;
+        }
+      
+        &:last-child {
+          border-radius: 0 8px 8px 0;
+        }
+      }
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+      }
+    }
+    .ant-table-tbody{
+      tr>td{
+        padding-top: 12px;
+        padding-bottom: 12px;
+      }
+    }
+    /* BUG-22: keep status tags (e.g. Expire Soon) on a single line */
+    .tag_box {
+      white-space: nowrap;
+    }
+
+    ._actions {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+
+      .ant-btn {
+        flex: 0 0 auto;
+        padding: 0;
+        white-space: nowrap;
+      }
+
+      a {
+        flex: 0 0 auto;
+        color: @primary-color;
+        margin-right: 12px;
+        white-space: nowrap;
+      }
+
+      a:hover,
+      a:focus,
+      a:active {
+        color: @ant-hover-color;
+      }
+    }
+  }
+
+  /* confirm */
+  .ant-modal-footer {
+    padding: 24px 40px;
+
+    .ant-btn {
+      height: 48px;
+      // padding: 12px 20px;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 600;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+
+    .ant-btn-primary {
+      border-color: @primary-color;
+      background: @primary-color;
+    }
+
+    .ant-btn-default {
+      color: @primary-color;
+      border-color: @primary-color;
+    }
+
+    .ant-btn-danger {
+      color: @danger-color;
+      border-color: @danger-color;
+      background-color: #fff;
+    }
+
+    .ant-btn-primary[disabled],
+    .ant-btn-primary[disabled]:hover,
+    .ant-btn-primary[disabled]:focus,
+    .ant-btn-primary[disabled]:active {
+      border-color: #d9d9d9;
+      background-color: #f5f5f5;
+    }
+  }
+  .ant-modal-confirm-btns {
+    .ant-btn-default {
+      height: 48px;
+      // padding: 12px 20px;
+      color: @primary-color;
+      border-color: @primary-color;
+    }
+
+    .ant-btn-primary {
+      height: 48px;
+      // padding: 12px 20px;
+      background-color: @primary-color;
+      border-color: @primary-color;
+    }
+  }
+}
+
+.permits-container .permits-filter-toolbar__filter-button,
+.permits-container .permits-filter-toolbar__reset-button {
+  display: none;
+}
+
+.permits-container
+  .permits-filter-toolbar
+  .permits-filter-toolbar__field--search {
+  flex: 0 0 320px;
+  width: 320px;
+  max-width: 320px;
+}
+
+.permits-container
+  .permits-filter-toolbar
+  .permits-filter-toolbar__field--select {
+  flex: 0 0 240px;
+  width: 240px;
+  max-width: 240px;
+}
+
+.permits-container
+  .permits-filter-toolbar
+  .permits-filter-toolbar__field--range {
+  flex: 0 0 300px;
+  width: 300px;
+  max-width: 300px;
+}
+
+.permits-container .permits-filter-toolbar__field .ant-input-affix-wrapper,
+.permits-container .permits-filter-toolbar__field .ant-picker,
+.permits-container .permits-filter-toolbar__field .ant-select {
+  width: 100%;
+  height: 48px;
+  min-height: 48px;
+}
+
+.permits-container
+  .permits-filter-toolbar
+  .permits-filter-toolbar__field--search
+  .search-input,
+.permits-container
+  .permits-filter-toolbar
+  .permits-filter-toolbar__field--range
+  .ant-picker,
+.permits-container
+  .permits-filter-toolbar
+  .permits-filter-toolbar__field--select
+  .ant-select {
+  width: 100%;
+}
+
+.permits-container
+  .permits-filter-toolbar__field
+  .ant-select-selector {
+  height: 48px;
+  min-height: 48px;
+}
+
+.permits-container .permits-filter-toolbar__reset-button,
+.permits-container .permits-filter-toolbar__export-button {
+  height: 48px;
+  min-height: 48px;
+}
+
+@media (max-width: 1919.98px) {
+  .permits-container
+    .permits-filter-toolbar
+    .permits-filter-toolbar__field--search,
+  .permits-container
+    .permits-filter-toolbar
+    .permits-filter-toolbar__field--select {
+    flex: 0 0 240px;
+    width: 240px;
+    min-width: 240px;
+    max-width: 240px;
+  }
+
+  .permits-container
+    .permits-filter-toolbar
+    .permits-filter-toolbar__field--range {
+    flex: 0 0 300px;
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+  }
+
+  .permits-container .permits-filter-toolbar__field .ant-input-affix-wrapper,
+  .permits-container .permits-filter-toolbar__field .ant-picker,
+  .permits-container .permits-filter-toolbar__field .ant-select,
+  .permits-container
+    .permits-filter-toolbar__field
+    .ant-select-selector,
+  .permits-container .permits-filter-toolbar__reset-button,
+  .permits-container .permits-filter-toolbar__export-button {
+    height: 40px;
+    min-height: 40px;
+  }
+}
+
+@media (max-width: 1439.98px) {
+  .permits-container .permits-filter-toolbar__field--secondary {
+    display: none;
+  }
+
+  .permits-container .permits-filter-toolbar__filter-button,
+  .permits-container .permits-filter-toolbar__reset-button {
+    display: inline-flex;
+  }
+}
+
+.license-container--rtl {
+  .filters {
+    .table-header-btn {
+      left: 24px;
+      right: auto;
+    }
+  }
+}
+
+/* FilePassword */
+.file-password {
+  .file-down_title {
+    ._tips {
+      color: #5f646d;
+      font-size: 16px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 14px;
+      }
+    }
+  }
+  .ant-modal-body {
+    width: 640px;
+    padding: 32px 40px 96px;
+    .ant-input-password {
+      height: 56px;
+      padding: 14px 16px;
+      background-color: #f8f7f4;
+      .ant-input {
+        background-color: #f8f7f4;
+      }
+    }
+  }
+  .ant-modal-footer {
+    padding: 24px 40px;
+
+    .ant-btn {
+      height: 48px;
+      // padding: 12px 20px;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 600;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+
+    .ant-btn-primary {
+      border-color: @primary-color;
+      background: @primary-color;
+    }
+
+    .ant-btn-default {
+      color: @primary-color;
+      border-color: @primary-color;
+    }
+
+    .ant-btn-danger {
+      color: @danger-color;
+      border-color: @danger-color;
+      background-color: #fff;
+    }
+
+    .ant-btn-primary[disabled],
+    .ant-btn-primary[disabled]:hover,
+    .ant-btn-primary[disabled]:focus,
+    .ant-btn-primary[disabled]:active {
+      border-color: #d9d9d9;
+      background-color: #f5f5f5;
+    }
+  }
+
+  .ant-modal-confirm-btns {
+    .ant-btn-default {
+      height: 48px;
+      // padding: 12px 20px;
+      color: @primary-color;
+      border-color: @primary-color;
+    }
+
+    .ant-btn-primary {
+      height: 48px;
+      // padding: 12px 20px;
+      background-color: @primary-color;
+      border-color: @primary-color;
+    }
+  }
+}
+
+/* disable-license */
+.disable-license {
+  .ant-modal-body {
+    width: 640px;
+    padding: 32px 40px;
+    .ant-select {
+      .ant-select-selector {
+        height: 48px;
+      }
+
+      .ant-select-selection-item {
+        line-height: 48px;
+      }
+    }
+    .ant-input {
+      height: 100px;
+      resize: none;
+    }
+  }
+  .ant-modal-footer {
+    padding: 24px 40px;
+
+    .ant-btn {
+      height: 48px;
+      // padding: 12px 20px;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 600;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+
+    .ant-btn-primary {
+      border-color: @primary-color;
+      background: @primary-color;
+    }
+
+    .ant-btn-default {
+      color: @primary-color;
+      border-color: @primary-color;
+    }
+
+    .ant-btn-danger {
+      color: @danger-color;
+      border-color: @danger-color;
+      background-color: #fff;
+    }
+
+    .ant-btn-primary[disabled],
+    .ant-btn-primary[disabled]:hover,
+    .ant-btn-primary[disabled]:focus,
+    .ant-btn-primary[disabled]:active {
+      border-color: #d9d9d9;
+      background-color: #f5f5f5;
+    }
+  }
+
+  .ant-modal-confirm-btns {
+    .ant-btn-default {
+      height: 48px;
+      // padding: 12px 20px;
+      color: @primary-color;
+      border-color: @primary-color;
+    }
+
+    .ant-btn-primary {
+      height: 48px;
+      // padding: 12px 20px;
+      background-color: @primary-color;
+      border-color: @primary-color;
+    }
+  }
+}
+.enable-license {
+  .ant-modal-confirm-body {
+
+    > .anticon {
+      vertical-align: middle !important;
+      line-height: 1 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+    }
+
+    > .anticon + .ant-modal-confirm-title {
+      vertical-align: middle !important;
+      line-height: 24px !important;
+      display: inline-block !important;
+    }
+
+    .ant-modal-confirm-content {
+      margin-left: 0 !important;
+      margin-top: 12px;
+      margin-left: 44px !important;
+      text-align: left;
+      margin-bottom: 80px !important;
+    }
+  }
+
+  .ant-modal-confirm-btns {
+    .ant-btn-primary {
+      height: 48px;
+      background-color: @primary-color;
+      border: 1px solid @primary-color;
+    }
+
+    .ant-btn-default {
+      height: 48px;
+      border: 1px solid @primary-color;
+      color: @primary-color;
+    }
+  }
+}
+.document-down{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 70px;
+  padding-left: 80px;
+  padding-right: 80px;
+  ._down-icon{
+    width: 94px;
+    height: 94px;
+    color: @primary-color;
+    font-size: 50px;
+    border-radius: 50%;
+    background-color: @primary-bgColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  ._down-title{
+    font-size: 40px;
+    font-weight: 700;
+    margin-top: 48px;
+  }
+  ._down-tips{
+    color: #5F646D;
+    font-size: 20px;
+    font-weight: 500;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 18px;
+    }
+  }
+  ._down-password{
+    width: 100%;
+    margin-top: 24px;
+    ._label{
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 14px;
+      }
+    }
+    .ant-input{
+      // height: 48px;
+    }
+  }
+  ._down-note{
+    display: flex;
+    justify-content: flex-start;
+    background-color: #F9FAFB;
+    border: 1px solid #E1E3E5;
+    border-radius: 12px;
+    margin-top: 24px;
+    padding: 16px;
+    ._icon{
+      color: @warning-color;
+      width: 20px;
+      height: 20px;
+      font-size: 16px;
+      margin-right: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 14px;
+      }
+    }
+    ._note{
+      flex: 1;
+      ._title{
+        font-size: 14px;
+        font-weight: 600;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 12px;
+        }
+      }
+      ._text{
+        font-size: 14px;
+        color: #5F646D;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 12px;
+        }
+      }
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      padding: 12px;
+    }
+  }
+  ._down-btn{
+    height: 48px;
+    margin-top: 48px;
+    margin-bottom: 48px;
+  }
+}

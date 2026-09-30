@@ -1,0 +1,161 @@
+.refund-confirm-modal {
+  .ant-modal-content {
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 0;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      border-radius: 10px;
+    }
+  }
+
+  .ant-modal-body {
+    padding: 0;
+  }
+}
+
+.refund-confirm-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 40px;
+  border-bottom: 1px solid #e1e3e5;
+}
+
+.refund-confirm-modal__title {
+  color: #361e12;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.refund-confirm-modal__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  color: #5f646d;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.refund-confirm-modal__alert {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 40px;
+  color: #361e12;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  background: #fffbeb;
+
+  img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.refund-confirm-modal__body {
+  padding: 32px 40px 40px;
+}
+
+.refund-confirm-modal__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 232px;
+}
+
+.refund-confirm-modal__rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.refund-confirm-modal__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 0;
+  border-bottom: 1px solid #e1e3e5;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.refund-confirm-modal__row:last-child {
+  border-bottom: 0;
+}
+
+.refund-confirm-modal__label {
+  color: #361e12;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.refund-confirm-modal__value {
+  color: #361e12;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: right;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.refund-confirm-modal__value--danger {
+  color: #ea4f49;
+}
+
+.refund-confirm-modal__amount {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+
+  img {
+    width: 13px;
+    height: 13px;
+    object-fit: contain;
+  }
+}
+
+.refund-confirm-modal__footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 24px 40px;
+  border-top: 1px solid #e1e3e5;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.refund-confirm-modal__button {
+  min-width: 140px;
+}
+
+.refund-confirm-modal__button--cancel {
+  min-width: 140px;
+}

@@ -1,0 +1,118 @@
+.recall-approval-modal {
+  max-width: calc(100vw - 48px);
+
+  .ant-modal-content {
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .ant-modal-header {
+    min-height: 100px;
+    padding: 32px 40px;
+    border-bottom: 1px solid #e1e3e5;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .ant-modal-title {
+    color: #361e12;
+    font-family: Inter, sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 36px;
+  }
+
+
+  &__warning {
+    display: flex;
+    min-height: 72px;
+    align-items: center;
+    padding: 16px 40px;
+    background: #fffbeb;
+    color: #d67909;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+
+    .warning-icon {
+      width: 20px;
+      height: 20px;
+      flex: 0 0 20px;
+      margin-inline-end: 8px;
+      color: #f29f01;
+    }
+  }
+
+  &__form {
+    min-height: 400px;
+    padding: 32px 40px;
+
+    .ant-form-item-label {
+      padding-bottom: 8px;
+
+      > label {
+        height: 20px;
+        color: #361e12;
+        font-family: Inter, sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+      }
+    }
+
+    .ant-form-item-label
+      > label.ant-form-item-required:not(
+        .ant-form-item-required-mark-optional
+      )::before {
+      display: none;
+    }
+
+    .ant-form-item-label
+      > label.ant-form-item-required:not(
+        .ant-form-item-required-mark-optional
+      )::after {
+      display: inline-block;
+      margin-inline-start: 4px;
+      color: #e60000;
+      font-family: SimSun, sans-serif;
+      font-size: 14px;
+      line-height: 1;
+      content: "*";
+    }
+  }
+
+  &__textarea {
+    width: 100%;
+
+    > .ant-input {
+      height: 110px;
+      min-height: 110px;
+      padding: 14px 16px;
+      border-color: #e1e3e5;
+      border-radius: 8px;
+      resize: vertical;
+    }
+  }
+
+  .ant-input-textarea-show-count::after,
+  .ant-input-textarea-show-count.ant-input-textarea-in-form-item::after {
+    display: block;
+    width: 100%;
+    margin-top: 4px;
+    color: #797e86;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: end;
+  }
+
+  .ant-modal-footer {
+    padding: 24px 40px;
+    border-top: 1px solid #e1e3e5;
+
+    > div {
+      display: flex;
+      justify-content: flex-end;
+      gap: 16px;
+    }
+  }
+}

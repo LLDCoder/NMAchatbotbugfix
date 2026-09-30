@@ -1,0 +1,224 @@
+.job-management-container {
+  height: 100%;
+  overflow-y: auto;
+  .pinned {
+    display: flex;
+    border-radius: 40px;
+    align-items: center;
+    width: 81px;
+    justify-content: center;
+    gap: 4px;
+    height: 26px;
+    background-color: #f9f7ed;
+    font-family: Inter;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    color: #92722a;
+    line-height: 20px;
+    letter-spacing: 0px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+  .custom-form {
+    padding: 24px 40px 32px;
+
+    &:has(+ .custom-quick-note) {
+      padding-bottom: 20px;
+    }
+
+    .custom-textarea {
+      .ant-input {
+        min-height: 108px;
+      }
+      &.ant-input-textarea-show-count {
+        &.ant-input-textarea-in-form-item::after {
+          float: left;
+        }
+      }
+    }
+
+    .ant-form-item-control {
+      .ant-select {
+        font-size: 14px;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 12px;
+        }
+      }
+      textarea {
+        border-radius: 8px;
+        font-size: 14px;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .ant-form-item-label
+      > label.ant-form-item-required:not(
+        .ant-form-item-required-mark-optional
+      )::before {
+      display: none;
+    }
+
+    .ant-form-item-label
+      > label.ant-form-item-required:not(
+        .ant-form-item-required-mark-optional
+      )::after {
+      display: inline-block;
+      margin-left: 4px;
+      color: #e60000;
+      font-size: 14px;
+      font-family: SimSun, sans-serif;
+      line-height: 1;
+      content: "*";
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 12px;
+        }
+    }
+  }
+
+  .custom-table {
+    .ant-table-column-has-sorters {
+      .ant-table-column-sorters {
+        justify-content: initial;
+        .ant-table-column-title {
+          flex: initial;
+        }
+      }
+    }
+
+    .ant-input {
+      &::placeholder {
+        color: rgba(121, 126, 134, 1);
+      }
+    }
+
+    .ant-picker-input > input::placeholder {
+      color: rgba(121, 126, 134, 1);
+    }
+
+    // reset the color of table actions btn
+    .table-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      gap: 12px;
+      white-space: nowrap;
+      > * {
+        flex: 0 0 auto;
+      }
+      .table-btn {
+        font-weight: 500;
+        font-size: 16px;
+        color: rgba(146, 114, 42, 1);
+        cursor: pointer;
+        white-space: nowrap;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 14px;
+        }
+      }
+      .dropdown-trigger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .anticon {
+          font-size: 16px;
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            font-size: 14px;
+          }
+        }
+      }
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        gap: 8px;
+      }
+    }
+
+    .status-tag,
+    .approval-result {
+      display: inline-block;
+      border-radius: 4px;
+      padding: 3px 6px;
+      color: #f29f0e;
+      font-size: 14px;
+      background-color: #fffbeb;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+      }
+    }
+    .Draft
+     {
+      color: rgba(95, 100, 109, 1);
+      background-color: rgba(225, 227, 229, 0.5);
+    }
+    .ExternalApproval,
+    .Unpublished {
+      color: #f29f0e;
+      background-color: #fffbeb;
+    }
+    .Completed,
+    .Approval,
+    .Published {
+      color: #4a9d5c;
+      background-color: #f3faf4;
+    }
+    .FinalApproval,
+    .InitialApproval {
+      color: #eb5f24;
+      background-color: #fef5ee;
+    }
+    .Cancelled {
+      color: #5f646d;
+      background-color: rgba(225, 227, 229, 0.5);
+    }
+    .Rejected {
+      color: #ea4f49;
+      background-color: #fef2f2;
+    }
+  }
+}
+.Menu-table-btn {
+  font-family: Inter;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 14px;
+  color: #361e12;
+  line-height: 20px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.job-openings-status-select-dropdown {
+  .ant-select-item-empty,
+  .ant-empty,
+  .ant-empty-image,
+  .ant-empty-description {
+    text-align: center;
+  }
+
+  .ant-empty {
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .ant-empty-image {
+    display: flex;
+    justify-content: center;
+  }
+}

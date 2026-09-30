@@ -1,0 +1,1329 @@
+{
+  "evidenceKind": "real_read_only_database_audit_extract",
+  "source": "round28-x05-v37/answers/X-05__ar.json",
+  "database": "x05-v37-readonly-diagnosis/audit-db-ar.json",
+  "requestId": "97cb5df1-1ca4-4f35-93a0-e74919e7d3ec",
+  "conversationId": "conv_570d85f995a1498bb4b3",
+  "question": "هل تم إلغاء الطلب ML-1-7-6577159 أو إكماله؟",
+  "task": {
+    "view": "",
+    "stage": "task",
+    "filters": [],
+    "groupBy": [],
+    "readOnly": true,
+    "timeField": "",
+    "timeRange": "unknown",
+    "outputShape": "detail",
+    "searchQuery": "application ML-1-7-6577159 cancelled completed status",
+    "slotUpdates": [
+      {
+        "field": "businessObject",
+        "value": "request",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "recordIdentity",
+        "value": "ML-1-7-6577159",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedAttributes",
+        "value": [
+          "cancellation status",
+          "completion status"
+        ],
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "outputShape",
+        "value": "detail",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "businessFocus",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "disclosurePurpose",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedScope",
+        "value": "unknown",
+        "source": "current",
+        "evidence": "no ownership or population constraint stated"
+      },
+      {
+        "field": "requestedGrain",
+        "value": "request",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedMeasures",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "groupBy",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "timeRange",
+        "value": "unknown",
+        "source": "current",
+        "evidence": "no time window stated"
+      },
+      {
+        "field": "filters",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "view",
+        "value": "",
+        "source": "current",
+        "evidence": "no view specified and knownViews is empty"
+      },
+      {
+        "field": "timeField",
+        "value": "",
+        "source": "current",
+        "evidence": "no event date constraint stated"
+      },
+      {
+        "field": "requestedOrdering",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "groupCompleteness",
+        "value": "observed",
+        "source": "current",
+        "evidence": "parsed current request"
+      }
+    ],
+    "responseMode": "answer",
+    "businessFocus": "",
+    "clarification": null,
+    "needsLiveData": true,
+    "businessObject": "request",
+    "recordIdentity": "ML-1-7-6577159",
+    "requestedGrain": "request",
+    "requestedScope": "unknown",
+    "contextRelation": "new",
+    "unresolvedSlots": [],
+    "disclosurePurpose": "",
+    "groupCompleteness": "observed",
+    "requestBoundaries": [],
+    "requestedMeasures": [],
+    "requestedOrdering": [],
+    "requestedAttributes": [
+      "cancellation status",
+      "completion status"
+    ],
+    "evidenceExplanations": []
+  },
+  "routing": {
+    "stage": "routing_decision",
+    "reason": "No supplied candidate is an application/request page. ML-1-7-6577159 is an application number (ML prefix = media licence family), and the knowledge base defines application lifecycle statuses (Cancelled 107, Completed 105) but no authorized page in this candidate set exposes an application record by that number. All candidates are refund, transaction or profile pages with conflicting object/identity, so no route or probe is possible.",
+    "missing": [
+      "application_record_page"
+    ],
+    "decision": "knowledge_gap",
+    "routePlan": [],
+    "candidates": [
+      {
+        "reason": "Financial refund detail page; wrong object and identity for an application number.",
+        "evidence": [
+          {
+            "sourceId": "k_176457f0064d5ec4a859:p0"
+          },
+          {
+            "sourceId": "k_9119f1120cba777d86ef:p1"
+          }
+        ],
+        "conditions": [
+          {
+            "reason": "Page is a financial refund detail entity keyed by refundNo, not an application/request entity.",
+            "status": "conflict",
+            "evidence": [
+              {
+                "sourceId": "k_176457f0064d5ec4a859:p0"
+              }
+            ],
+            "requirementId": "object"
+          },
+          {
+            "reason": "Grain is refund identified by refundNo, not request grain.",
+            "status": "conflict",
+            "evidence": [
+              {
+                "sourceId": "k_9119f1120cba777d86ef:p1"
+              }
+            ],
+            "requirementId": "grain"
+          },
+          {
+            "reason": "Refund status dictionary is not application cancellation status.",
+            "status": "unknown",
+            "evidence": [
+              {
+                "sourceId": "k_9119f1120cba777d86ef:p2"
+              }
+            ],
+            "requirementId": "attribute_0"
+          },
+          {
+            "reason": "No application completion status field on this refund page.",
+            "status": "unknown",
+            "evidence": [
+              {
+                "sourceId": "k_9119f1120cba777d86ef:p2"
+              }
+            ],
+            "requirementId": "attribute_1"
+          },
+          {
+            "reason": "Detail-shaped refund record.",
+            "status": "supported",
+            "evidence": [
+              {
+                "sourceId": "k_9119f1120cba777d86ef:p0"
+              }
+            ],
+            "requirementId": "detail"
+          },
+          {
+            "reason": "Identity field is refundNo; ML-1-7-6577159 is an application number, not a refund number.",
+            "status": "conflict",
+            "evidence": [
+              {
+                "sourceId": "k_9119f1120cba777d86ef:p1"
+              }
+            ],
+            "requirementId": "record"
+          }
+        ],
+        "candidateId": "647581a5d1d84987c63a"
+      },
+      {
+        "reason": "Finance refunds list; wrong object and identity.",
+        "evidence": [
+          {
+            "sourceId": "k_e63cf35ddfd1279288f9:p0"
+          },
+          {
+            "sourceId": "k_0c6465b4015689a5749d:p0"
+          }
+        ],
+        "conditions": [
+          {
+            "reason": "Refund execution queue, not an application/request entity.",
+            "status": "conflict",
+            "evidence": [
+              {
+                "sourceId": "k_e63cf35ddfd1279288f9:p0"
+              }
+            ],
+            "requirementId": "object"
+          },
+          {
+            "reason": "Refund grain keyed by refundNo.",
+            "status": "conflict",
+            "evidence": [
+              {
+                "sourceId": "k_0c6465b4015689a5749d:p1"
+              }
+            ],
+            "requirementId": "grain"
+          },
+          {
+            "reason": "Refund status field, not application cancellation status.",
+            "status": "unknown",
+            "evidence": [
+              {
+                "sourceId": "k_e63cf35ddfd1279288f9:p0"
+              }
+            ],
+            "requirementId": "attribute_0"
+          },
+          {
+            "reason": "No application completion status field.",
+            "status": "unknown",
+            "evidence": [
+              {
+                "sourceId": "k_e63cf35ddfd1279288f9:p0"
+              }
+            ],
+            "requirementId": "attribute_1"
+          },
+          {
+            "reason": "List page; detail shape not established here.",
+            "status": "unknown",
+            "evidence": [
+              {
+                "sourceId": "k_0c6465b4015689a5749d:p0"
+              }
+            ],
+            "requirementId": "detail"
+          },
+          {
+            "reason": "Exact-match key is refundNo, not the application number ML-1-7-6577159.",
+            "status": "conflict",
+            "evidence": [
+              {
+                "sourceId": "k_0c6465b4015689a5749d:p0"
+              }
+            ],
+            "requirementId": "record"
+          }
+        ],
+        "candidateId": "e945a33a99a652341748"
+      },
+      {
+        "reason": "Personal Center; unrelated object and identity.",
+        "evidence": [
+          {
+            "sourceId": "k_f03674b4a578df730fd9:p0"
+          }
+        ],
+        "conditions": [
+          {
+            "reason": "Personal profile/account page, not an application entity.",
+            "status": "conflict",
+            "evidence": [
+              {
+                "sourceId": "k_f03674b4a578df730fd9:p0"
+              }
+            ],
+            "requirementId": "object"
+          },
+          {
+            "reason": "User profile grain, not request grain.",
+            "status": "conflict",
+            "evidence": [
+              {
+                "sourceId": "k_8eadf20d8e64652fc5bf:p2"
+              }
+            ],
+            "requirementId": "grain"
+          },
+          {
+            "reason": "No application cancellation status.",
+            "status": "unknown",
+            "evidence": [
+              {
+                "sourceId": "k_f03674b4a578df730fd9:p0"
+              }
+            ],
+            "requirementId": "attribute_0"
+          },
+          {
+            "reason": "No application completion status.",
+            "status": "unknown",
+            "evidence": [
+              {
+                "sourceId": "k_f03674b4a578df730fd9:p0"
+              }
+            ],
+            "requirementId": "attribute_1"
+          },
+          {
+            "reason": "Profile detail, not application detail.",
+            "status": "unknown",
+            "evidence": [
+              {
+                "sourceId": "k_f03674b4a578df730fd9:p0"
+              }
+            ],
+            "requirementId": "detail"
+          },
+          {
+            "reason": "Identity is the signed-in userId, not an application number.",
+            "status": "conflict",
+            "evidence": [
+              {
+                "sourceId": "k_8eadf20d8e64652fc5bf:p3"
+              }
+            ],
+            "requirementId": "record"
+          }
+        ],
+        "candidateId": "676163a46f89b51fa64b"
+      },
+      {
+        "reason": "Transactions detail; wrong object and identity.",
+        "evidence": [
+          {
+            "sourceId": "k_18d350f465956db6dc72:p0"
+          }
+        ],
+        "conditions": [
+          {
+            "reason": "Transaction detail entity, not an application/request.",
+            "status": "conflict",
+            "evidence": [
+              {
+                "sourceId": "k_18d350f465956db6dc72:p0"
+              }
+            ],
+            "requirementId": "object"
+          },
+          {
+            "reason": "Transaction grain keyed by transactionNo.",
+            "status": "conflict",
+            "evidence": [
+              {
+                "sourceId": "k_18d350f465956db6dc72:p0"
+              }
+            ],
+            "requirementId": "grain"
+          },
+          {
+            "reason": "Payment status, not application cancellation status.",
+            "status": "unknown",
+            "evidence": [
+              {
+                "sourceId": "k_dfa1b1053dd2e5e98b69:p1"
+              }
+            ],
+            "requirementId": "attribute_0"
+          },
+          {
+            "reason": "Payment status is not application completion status.",
+            "status": "unknown",
+            "evidence": [
+              {
+                "sourceId": "k_dfa1b1053dd2e5e98b69:p1"
+              }
+            ],
+            "requirementId": "attribute_1"
+          },
+          {
+            "reason": "Detail-shaped transaction record.",
+            "status": "supported",
+            "evidence": [
+              {
+                "sourceId": "k_18d350f465956db6dc72:p0"
+              }
+            ],
+            "requirementId": "detail"
+          },
+          {
+            "reason": "Identity is transactionNo, not the application number.",
+            "status": "conflict",
+            "evidence": [
+              {
+                "sourceId": "k_18d350f465956db6dc72:p0"
+              }
+            ],
+            "requirementId": "record"
+          }
+        ],
+        "candidateId": "637a873374e06562cb0d"
+      },
+      {
+        "reason": "Transactions list; wrong object and identity.",
+        "evidence": [
+          {
+            "sourceId": "k_869f714abc09a3761bb2:p0"
+          },
+          {
+            "sourceId": "k_c99fab2b5cb1e21a135c:p1"
+          }
+        ],
+        "conditions": [
+          {
+            "reason": "Transaction list entity, not an application/request.",
+            "status": "conflict",
+            "evidence": [
+              {
+                "sourceId": "k_869f714abc09a3761bb2:p0"
+              }
+            ],
+            "requirementId": "object"
+          },
+          {
+            "reason": "Transaction grain keyed by transactionNo.",
+            "status": "conflict",
+            "evidence": [
+              {
+                "sourceId": "k_869f714abc09a3761bb2:p0"
+              }
+            ],
+            "requirementId": "grain"
+          },
+          {
+            "reason": "Transaction status, not application cancellation status.",
+            "status": "unknown",
+            "evidence": [
+              {
+                "sourceId": "k_869f714abc09a3761bb2:p0"
+              }
+            ],
+            "requirementId": "attribute_0"
+          },
+          {
+            "reason": "No application completion status.",
+            "status": "unknown",
+            "evidence": [
+              {
+                "sourceId": "k_869f714abc09a3761bb2:p0"
+              }
+            ],
+            "requirementId": "attribute_1"
+          },
+          {
+            "reason": "List page; detail shape not established.",
+            "status": "unknown",
+            "evidence": [
+              {
+                "sourceId": "k_869f714abc09a3761bb2:p0"
+              }
+            ],
+            "requirementId": "detail"
+          },
+          {
+            "reason": "referenceNumber may echo an application number but is not the transaction primary identity and is not unique.",
+            "status": "conflict",
+            "evidence": [
+              {
+                "sourceId": "k_c99fab2b5cb1e21a135c:p1"
+              }
+            ],
+            "requirementId": "record"
+          }
+        ],
+        "candidateId": "fc28a975734a525dd334"
+      }
+    ],
+    "clarification": null,
+    "taskFingerprint": "0b26cc8300dcb99bda3681f347e27b37b62cde4bed3e906671b9eb3a6fad46d8"
+  },
+  "candidates": [
+    {
+      "name": "FinancialRefundsDetails",
+      "route": "/financial-payment/refunds/refundsDetails",
+      "score": 0.03252247488101534,
+      "fields": [],
+      "pageId": "a3780c35dd57_da1a77697e11:Page:d8772d7d747e50249fc5",
+      "sourceIds": [
+        "k_91c01e2d444baccd7536:p0",
+        "k_7111d40ada60a9a8a4c9:p0",
+        "k_d861b1580f07e6d3799a:p0"
+      ],
+      "parameters": [
+        "refundNo",
+        "pageTitleKey",
+        "breadcrumbRootKey"
+      ],
+      "browserHint": false,
+      "candidateId": "647581a5d1d84987c63a",
+      "description": "财务退款明细及执行状态；跨模块应以 refundNo 等稳定退款标识关联。",
+      "lexicalScore": 11.0,
+      "catalogSourceIds": [
+        "k_176457f0064d5ec4a859:p0"
+      ],
+      "retrievedEvidenceCount": 3
+    },
+    {
+      "name": "FinancialRefunds",
+      "route": "/financial-payment/refunds",
+      "score": 0.032266458495966696,
+      "fields": [
+        "refundNo",
+        "originalTransactionNo",
+        "type",
+        "applyFor",
+        "paymentMethod",
+        "amount",
+        "status",
+        "lastUpdatedOn"
+      ],
+      "pageId": "a3780c35dd57_da1a77697e11:Page:00bacbde645f8ead6c75",
+      "sourceIds": [
+        "k_e3311a95b55e0d3cdb62:p0",
+        "k_e3311a95b55e0d3cdb62:p1",
+        "k_7111d40ada60a9a8a4c9:p0",
+        "k_d861b1580f07e6d3799a:p1",
+        "k_0c6465b4015689a5749d:p0"
+      ],
+      "parameters": [],
+      "browserHint": false,
+      "candidateId": "e945a33a99a652341748",
+      "description": "财务侧退款执行队列，区别于客户服务侧退款审批。执行退款是高影响业务写操作。",
+      "lexicalScore": 11.0,
+      "catalogSourceIds": [
+        "k_e63cf35ddfd1279288f9:p0"
+      ],
+      "retrievedEvidenceCount": 5
+    },
+    {
+      "name": "PersonalCenter",
+      "route": "/personal-center",
+      "score": 0.0315136476426799,
+      "fields": [],
+      "pageId": "a3780c35dd57_da1a77697e11:Page:7280b3419593b354c3b7",
+      "sourceIds": [
+        "k_8eadf20d8e64652fc5bf:p0"
+      ],
+      "parameters": [
+        "from"
+      ],
+      "browserHint": false,
+      "candidateId": "676163a46f89b51fa64b",
+      "description": "个人资料、偏好和账户信息管理；需要当前会话身份。",
+      "lexicalScore": 11.0,
+      "catalogSourceIds": [
+        "k_f03674b4a578df730fd9:p0"
+      ],
+      "retrievedEvidenceCount": 1
+    },
+    {
+      "name": "TransactionsDetail",
+      "route": "/financial-payment/transactions/transactions-detail",
+      "score": 0.031024531024531024,
+      "fields": [],
+      "pageId": "a3780c35dd57_da1a77697e11:Page:fc3ec5e315121dfbf030",
+      "sourceIds": [
+        "k_393d1bb40d50ae8d4fa1:p0",
+        "k_dfa1b1053dd2e5e98b69:p0"
+      ],
+      "parameters": [
+        "transactionNo"
+      ],
+      "browserHint": false,
+      "candidateId": "637a873374e06562cb0d",
+      "description": "交易明细、关联业务及支付状态信息；不能将页面显示的支付提交状态当作最终结算状态。",
+      "lexicalScore": 0.0,
+      "catalogSourceIds": [
+        "k_18d350f465956db6dc72:p0"
+      ],
+      "retrievedEvidenceCount": 2
+    },
+    {
+      "name": "Transactions",
+      "route": "/financial-payment/transactions",
+      "score": 0.03125,
+      "fields": [
+        "transactionNo",
+        "amount",
+        "statusId",
+        "updateOn"
+      ],
+      "pageId": "a3780c35dd57_da1a77697e11:Page:3e5136fd4b11c0dd3c14",
+      "sourceIds": [
+        "k_c99fab2b5cb1e21a135c:p0",
+        "k_dfa1b1053dd2e5e98b69:p0"
+      ],
+      "parameters": [],
+      "browserHint": false,
+      "candidateId": "fc28a975734a525dd334",
+      "description": "交易流水检索、交易状态和明细入口；金额分析必须指定币种、交易状态和退款冲销口径。",
+      "lexicalScore": 11.0,
+      "catalogSourceIds": [
+        "k_869f714abc09a3761bb2:p0"
+      ],
+      "retrievedEvidenceCount": 2
+    }
+  ],
+  "draft": {
+    "stage": "knowledge_answer_draft",
+    "blocks": [
+      {
+        "id": "status_unconfirmed",
+        "text": "لا يمكنني تأكيد ما إذا كان الطلب ML-1-7-6577159 قد أُلغي أو أُكمل. هذا سؤال عن الحالة الحالية لسجل محدّد، ولا تتوفر لديّ قراءة مباشرة لهذا السجل، كما أن المعرفة المتاحة لا تُثبت حالة الإلغاء أو الإكمال لهذا الطلب. لذلك تبقى حالته غير مؤكدة، ولا يعني ذلك نفي وجود إلغاء أو إكمال.",
+        "quoteIndexes": [
+          1,
+          7
+        ],
+        "requirementIds": [
+          "attribute_0",
+          "attribute_1",
+          "record"
+        ]
+      },
+      {
+        "id": "object_grain",
+        "text": "الطلب هنا هو سجل استرداد مالي يُعرَّف برقمه العام، ويُقرأ كسجل واحد (طلب واحد لكل صف).",
+        "quoteIndexes": [
+          0,
+          4
+        ],
+        "requirementIds": [
+          "object",
+          "grain"
+        ]
+      },
+      {
+        "id": "detail_view",
+        "text": "لعرض تفاصيل طلب استرداد بعينه، تُفتح صفحة تفاصيل الاسترداد من قائمة الاستردادات المالية المصرّح بها، حيث يُحدَّد السجل المطابق برقم الاسترداد. الحالة المعروضة هناك هي حالة المعالجة المالية الحالية وليست حكماً بالموافقة.",
+        "quoteIndexes": [
+          1,
+          3
+        ],
+        "requirementIds": [
+          "detail"
+        ]
+      }
+    ]
+  },
+  "review": {
+    "stage": "knowledge_answer_review",
+    "checks": [
+      {
+        "reason": "The extracts bind 'request' to a finance refund entity (refundNo), and the block states this. However the original question's 'الطلب' is a neutral request; the extracts only establish a refund-record sense, so the mapping is asserted rather than fully established for the user's wording.",
+        "status": "partial",
+        "pointChecks": [],
+        "quoteIndexes": [
+          0,
+          4
+        ],
+        "requirementId": "object"
+      },
+      {
+        "reason": "Extracts show refund grain keyed by refundNo (one record per row), matching the block's 'one request per row' statement, but the grain is established only for refund records, not for the user's generic 'request'.",
+        "status": "partial",
+        "pointChecks": [],
+        "quoteIndexes": [
+          0,
+          4
+        ],
+        "requirementId": "grain"
+      },
+      {
+        "reason": "No extract documents a cancellation status field or rule; the block correctly leaves cancellation unconfirmed rather than denying it. The requirement itself remains unverified.",
+        "status": "not_yet_verified",
+        "pointChecks": [],
+        "quoteIndexes": [
+          1,
+          7
+        ],
+        "requirementId": "attribute_0"
+      },
+      {
+        "reason": "No extract documents a completion status field or rule; the block correctly leaves completion unconfirmed. The requirement remains unverified.",
+        "status": "not_yet_verified",
+        "pointChecks": [],
+        "quoteIndexes": [
+          1,
+          7
+        ],
+        "requirementId": "attribute_1"
+      },
+      {
+        "reason": "The extracts support a refund detail route keyed by refundNo and that the displayed status is current finance processing, not an approval conclusion. The block's navigation statement is broadly consistent, but the 'authorized list' wording is not directly established by the cited extracts.",
+        "status": "partial",
+        "pointChecks": [],
+        "quoteIndexes": [
+          1,
+          3
+        ],
+        "requirementId": "detail"
+      },
+      {
+        "reason": "No extract establishes the current state of ML-1-7-6577159; the block correctly preserves the unknown and does not infer status from the identifier.",
+        "status": "not_yet_verified",
+        "pointChecks": [],
+        "quoteIndexes": [
+          1,
+          7
+        ],
+        "requirementId": "record"
+      }
+    ],
+    "blockChecks": [
+      {
+        "reason": "States the current status of the specific record cannot be confirmed, that no live read is available, and that this is not a denial of cancellation or completion. Consistent with the cited extracts and preserves the unknown without inventing a rule.",
+        "blockId": "status_unconfirmed",
+        "supported": true,
+        "customerFacing": true,
+        "languageMatches": true,
+        "unsupportedClaims": [],
+        "containsUnverifiedRecordFacts": false
+      },
+      {
+        "reason": "The cited extracts define the refund entity by its public refund number and its grain as one refund record per row, matching the block's wording. No record-specific facts are asserted.",
+        "blockId": "object_grain",
+        "supported": true,
+        "customerFacing": true,
+        "languageMatches": true,
+        "unsupportedClaims": [],
+        "containsUnverifiedRecordFacts": false
+      },
+      {
+        "reason": "The extracts support opening the refund detail by matching refundNo and that the displayed status is current finance processing, not an approval conclusion. Navigation description is generic and contains no internal identifiers or implementation metadata.",
+        "blockId": "detail_view",
+        "supported": true,
+        "customerFacing": true,
+        "languageMatches": true,
+        "unsupportedClaims": [],
+        "containsUnverifiedRecordFacts": false
+      }
+    ]
+  },
+  "supplementalExplanation": {
+    "blocks": [
+      {
+        "id": "status_unconfirmed",
+        "text": "لا يمكنني تأكيد ما إذا كان الطلب ML-1-7-6577159 قد أُلغي أو أُكمل. هذا سؤال عن الحالة الحالية لسجل محدّد، ولا تتوفر لديّ قراءة مباشرة لهذا السجل، كما أن المعرفة المتاحة لا تُثبت حالة الإلغاء أو الإكمال لهذا الطلب. لذلك تبقى حالته غير مؤكدة، ولا يعني ذلك نفي وجود إلغاء أو إكمال.",
+        "quoteIndexes": [
+          1,
+          7
+        ],
+        "requirementIds": [
+          "attribute_0",
+          "attribute_1",
+          "record"
+        ]
+      },
+      {
+        "id": "object_grain",
+        "text": "الطلب هنا هو سجل استرداد مالي يُعرَّف برقمه العام، ويُقرأ كسجل واحد (طلب واحد لكل صف).",
+        "quoteIndexes": [
+          0,
+          4
+        ],
+        "requirementIds": [
+          "object",
+          "grain"
+        ]
+      },
+      {
+        "id": "detail_view",
+        "text": "لعرض تفاصيل طلب استرداد بعينه، تُفتح صفحة تفاصيل الاسترداد من قائمة الاستردادات المالية المصرّح بها، حيث يُحدَّد السجل المطابق برقم الاسترداد. الحالة المعروضة هناك هي حالة المعالجة المالية الحالية وليست حكماً بالموافقة.",
+        "quoteIndexes": [
+          1,
+          3
+        ],
+        "requirementIds": [
+          "detail"
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "text": "\"meaning\": \"refund details\" }, { \"id\": \"grain\", \"kind\": \"grain\", \"concept\": \"refund\", \"fields\": [ \"refundNo\" ], \"operationRef\": \"GET /api/admin/payments/refunds/{refundNo}\", \"sourcePath\": \"/data\", \"aliases\": [ \"refund request\", \"financial refund\", \"استرداد\" ], \"meaning\": \"refund details\" }, { \"id\": \"number\", \"kind\": \"attribute\", \"concept\": \"refund number\", \"fields\": [ \"refundNo\" ], \"operationRef\": \"GET /api/admin/payments/refunds/{refundNo}\", \"sourcePath\": \"/data\", \"aliases\": [ \"application number\", \"رقم الاسترداد\" ], \"meaning\": \"Financial refund business number; exact match within refund records.\" }, { \"id\": \"status\", \"kind\": \"attribute\", \"concept\": \"status\", \"fields\": [",
+        "source": "Finance Refund Details-记录定位金额与下一步.json",
+        "pageRef": "/financial-payment/refunds/refundsDetails",
+        "recordId": "admin.finance.refund.detail.fields",
+        "revision": 3,
+        "sourceId": "k_9119f1120cba777d86ef:p1",
+        "documentId": "adead0714d0b4f57870cb435c29f27a6",
+        "recordHash": "431f40a5e4b1c094ef9bbe1d4e742fbb81002120cd5afeb66b704e3b29e348b8",
+        "documentVersion": "1790510893.6592715",
+        "definitionOrigin": "remote",
+        "sourceTextSHA256": "37e909f0ca41890d8fc7c1e43df5b94ed361cae07f93ddf488e754dad4e328e6"
+      },
+      {
+        "text": "\"status\" ], \"operationRef\": \"GET /api/admin/payments/refunds/{refundNo}\", \"sourcePath\": \"/data\", \"aliases\": [ \"refund status\", \"الحالة\", \"current status\", \"current refund status\", \"الحالة الحالية\" ], \"meaning\": \"Current finance processing display, not an approval conclusion.\" }, { \"id\": \"amount\", \"kind\": \"attribute\", \"concept\": \"amount\", \"fields\": [ \"applicationInformation.amountCharged\", \"applicationInformation.currency\" ], \"operationRef\": \"GET /api/admin/payments/refunds/{refundNo}\", \"sourcePath\": \"/data\", \"aliases\": [ \"refund amount\", \"مبلغ الاسترداد\" ],",
+        "source": "Finance Refund Details-记录定位金额与下一步.json",
+        "pageRef": "/financial-payment/refunds/refundsDetails",
+        "recordId": "admin.finance.refund.detail.fields",
+        "revision": 3,
+        "sourceId": "k_9119f1120cba777d86ef:p2",
+        "documentId": "adead0714d0b4f57870cb435c29f27a6",
+        "recordHash": "431f40a5e4b1c094ef9bbe1d4e742fbb81002120cd5afeb66b704e3b29e348b8",
+        "documentVersion": "1790510893.6592715",
+        "definitionOrigin": "remote",
+        "sourceTextSHA256": "3046d132b32ca40a62060332bc265a81dc500ddf4caef96a072960bed57c70e7"
+      },
+      {
+        "text": "{ \"id\": \"admin.finance.refund.detail.fields\", \"kind\": \"field_semantics\", \"revision\": 3, \"status\": \"active\", \"title\": \"Refund Details fields\", \"applicability\": { \"portal\": \"admin\", \"environments\": [ \"local\", \"debug\" ], \"pageRefs\": [ \"/financial-payment/refunds/refundsDetails\" ], \"runtimeVerification\": \"response_shape_verified\", \"deployedBuildMatch\": \"unknown\" }, \"payload\": { \"pageRef\": \"/financial-payment/refunds/refundsDetails\", \"sourceBinding\": { \"operationRef\": \"GET /api/admin/payments/refunds/{refundNo}\", \"sourcePath\": \"/data\" }, \"bindings\": [ { \"id\": \"object\", \"kind\": \"object\", \"concept\": \"refund\", \"fields\": [ \"refundNo\" ], \"operationRef\": \"GET /api/admin/payments/refunds/{refundNo}\", \"sourcePath\": \"/data\", \"aliases\": [ \"refund request\", \"financial refund\", \"استرداد\" ],",
+        "source": "Finance Refund Details-记录定位金额与下一步.json",
+        "pageRef": "/financial-payment/refunds/refundsDetails",
+        "recordId": "admin.finance.refund.detail.fields",
+        "revision": 3,
+        "sourceId": "k_9119f1120cba777d86ef:p0",
+        "documentId": "adead0714d0b4f57870cb435c29f27a6",
+        "recordHash": "431f40a5e4b1c094ef9bbe1d4e742fbb81002120cd5afeb66b704e3b29e348b8",
+        "documentVersion": "1790510893.6592715",
+        "definitionOrigin": "remote",
+        "sourceTextSHA256": "c0da57668968973821ef55fdef9127cda87ee967d19bb790e783bd0b879bbec2"
+      },
+      {
+        "text": "{ \"id\": \"admin.finance.refunds.lookup-fields\", \"kind\": \"field_semantics\", \"revision\": 1, \"status\": \"active\", \"title\": \"Finance Refunds entity identity and pagination\", \"applicability\": { \"portal\": \"admin\", \"environments\": [ \"local\", \"debug\" ], \"pageRefs\": [ \"/financial-payment/refunds\" ], \"runtimeVerification\": \"response_shape_verified\", \"deployedBuildMatch\": \"unknown\" }, \"payload\": { \"pageRef\": \"/financial-payment/refunds\", \"sourceBinding\": { \"operationRef\": \"GET /api/admin/payments/refunds\", \"sourcePath\": \"/data/items\" }, \"fields\": { \"refundNo\": \"Public refund number, the stable exact-match record key and detail route parameter.\" }, \"pagination\": { \"rowsPath\": \"/data/items\", \"totalPath\": \"/data/totalCount\" }, \"requestFields\": { \"pageIndex\": \"One-based page number, observed query parameter.\",",
+        "source": "Finance Refunds-实体标识与分页读取.json",
+        "pageRef": "/financial-payment/refunds",
+        "recordId": "admin.finance.refunds.lookup-fields",
+        "revision": 1,
+        "sourceId": "k_0c6465b4015689a5749d:p0",
+        "documentId": "48e0c1f99b6640db839f19620dc53afb",
+        "recordHash": "95b38b7f2cf0b51557f81a7ccbbfbd2045be5cdd352fa771f9808e6746fdfe2f",
+        "documentVersion": "1790507072.7705417",
+        "definitionOrigin": "remote",
+        "sourceTextSHA256": "72384ce6cbd45955f2edff9c1600883e39e41b3b92a1166576727548f72cc30c"
+      },
+      {
+        "text": "\"pageSize\": \"Requested page size, observed query parameter.\" }, \"bindings\": [ { \"id\": \"object\", \"kind\": \"object\", \"concept\": \"refund\", \"aliases\": [ \"refund record\", \"refund request\", \"استرداد\", \"طلب استرداد\" ], \"operationRef\": \"GET /api/admin/payments/refunds\", \"sourcePath\": \"/data/items\", \"fields\": [ \"refundNo\" ], \"meaning\": \"Refund entity identified by its public refund number in this authorized finance list.\" }, { \"id\": \"grain\", \"kind\": \"grain\", \"concept\": \"refund\", \"aliases\": [ \"refund record\", \"refund request\", \"استرداد\", \"طلب استرداد\" ], \"operationRef\": \"GET /api/admin/payments/refunds\", \"sourcePath\": \"/data/items\", \"fields\": [ \"refundNo\" ],",
+        "source": "Finance Refunds-实体标识与分页读取.json",
+        "pageRef": "/financial-payment/refunds",
+        "recordId": "admin.finance.refunds.lookup-fields",
+        "revision": 1,
+        "sourceId": "k_0c6465b4015689a5749d:p1",
+        "documentId": "48e0c1f99b6640db839f19620dc53afb",
+        "recordHash": "95b38b7f2cf0b51557f81a7ccbbfbd2045be5cdd352fa771f9808e6746fdfe2f",
+        "documentVersion": "1790507072.7705417",
+        "definitionOrigin": "remote",
+        "sourceTextSHA256": "44022a068a69107f5164b3f5501b1cddb84c428e2cd42ebc3322db4d7ce3f928"
+      },
+      {
+        "text": "\"currently signed-in user\", \"authenticated user\", \"staff user\", \"admin user\", \"user profile\", \"current user profile\", \"المستخدم الحالي\", \"المستخدم المسجل دخوله\", \"الملف الشخصي\", \"signed-in user profile\", \"authenticated user profile\", \"current staff profile\", \"signed-in staff profile\", \"currently signed-in user profile\", \"current signed-in user profile\", \"current signed-in user\" ], \"operationRef\": \"GET /api/UserManagement/GetAdminUserAsync\", \"sourcePath\": \"/data\", \"fields\": [ \"userId\" ], \"meaning\": \"One authenticated staff user profile; multiple department/role entries are properties of that same user, not extra users.\" }, { \"id\": \"profile_scope\", \"kind\": \"scope\", \"concept\": \"personal\", \"aliases\": [ \"self\",",
+        "source": "Personal Center-当前账号部门与角色.json",
+        "pageRef": "/personal-center",
+        "recordId": "admin.personal-center.profile.bindings",
+        "revision": 2,
+        "sourceId": "k_8eadf20d8e64652fc5bf:p2",
+        "documentId": "69bd78d3cdcf4395a282eb15a2ca2cfe",
+        "recordHash": "dd076e6bd7692214f39bf4816689ad3a82c22e696ee0370ad5c3adb67efc8d1a",
+        "documentVersion": "1790475692.0355556",
+        "definitionOrigin": "remote",
+        "sourceTextSHA256": "a9f7ea95b1016147e09fcb7829e128fda4deecc6c8ea66b4e49830c7f1e83add"
+      },
+      {
+        "text": "\"current user\" ], \"operationRef\": \"GET /api/UserManagement/GetAdminUserAsync\", \"sourcePath\": \"/data\", \"fields\": [ \"userId\" ], \"contextParameters\": {}, \"contextBindings\": { \"userId\": \"principal.user_id\" }, \"meaning\": \"The requested userId and observed response userId must both equal the verified signed-in subject. This definition does not authorize reading another user or expanding to a team.\" }, { \"id\": \"current_user_population\", \"kind\": \"population\", \"concept\": \"currently signed-in user\", \"aliases\": [ \"current user\", \"signed-in user\", \"current authenticated user\", \"authenticated user\", \"currently signed-in\", \"signed-in\", \"current session\", \"current account\" ], \"operationRef\": \"GET /api/UserManagement/GetAdminUserAsync\",",
+        "source": "Personal Center-当前账号部门与角色.json",
+        "pageRef": "/personal-center",
+        "recordId": "admin.personal-center.profile.bindings",
+        "revision": 2,
+        "sourceId": "k_8eadf20d8e64652fc5bf:p3",
+        "documentId": "69bd78d3cdcf4395a282eb15a2ca2cfe",
+        "recordHash": "dd076e6bd7692214f39bf4816689ad3a82c22e696ee0370ad5c3adb67efc8d1a",
+        "documentVersion": "1790475692.0355556",
+        "definitionOrigin": "remote",
+        "sourceTextSHA256": "0b3a1cd0b7983aa58d213ee6c01cfa491c2a28cbcf2f55385b06c45e5bf46170"
+      },
+      {
+        "text": "\"This page describes an investigation and verification workflow for a disputed payment state. It does not describe a manual status-override or exception-approval workflow. Investigating whether the platform and provider agree is a different business outcome from changing a transaction to successful.\", \"The normal investigation starts on the authorized Finance Transactions list: locate the exact transaction reference and open the matching available detail. Review the stored status, payment method, amount and transaction time using the displayed fields and current status dictionary. A reference number is not a timestamp specification, and a historical row in a manual is not the current record.\",",
+        "source": "Finance Transactions-支付核验与对账处理边界.json",
+        "pageRef": "/financial-payment/transactions/transactions-detail",
+        "recordId": "admin.finance.payment-reconciliation",
+        "revision": 2,
+        "sourceId": "k_dfa1b1053dd2e5e98b69:p1",
+        "documentId": "8c52bae68451435ba9f500ed5234b127",
+        "recordHash": "e3a2ce0226085e9140284008b956a4d358057adeb2bb7ff4988fab1d1829b756",
+        "documentVersion": "1790528318.7058501",
+        "definitionOrigin": "remote",
+        "sourceTextSHA256": "c4be8c5c22b3d6f25a38fbfbf7fafebb31dc240675744593d507c6eb2c443775"
+      },
+      {
+        "text": "\"referenceNumber\": \"Public payment reference returned on the same list row. It may be an application, refund or violation number according to the returned transaction data, and may repeat across transaction attempts. It is neither the transaction primary identity nor proof of a cross-module relationship.\" }, \"bindings\": [ { \"id\": \"reference-number\", \"kind\": \"attribute\", \"concept\": \"reference number\", \"aliases\": [ \"payment reference number\", \"referenceNumber\", \"الرقم المرجعي\", \"رقم مرجع الدفع\" ], \"operationRef\": \"GET /api/admin/finance/transactions\", \"sourcePath\": \"/data/items\", \"fields\": [ \"referenceNumber\" ] } ], \"recordSetLookups\": [ { \"id\": \"transaction-or-reference-number\", \"operationRef\": \"GET /api/admin/finance/transactions\", \"sourcePath\": \"/data/items\", \"identifierFields\": [",
+        "source": "KB/pages/admin/finance-transactions/Finance Transactions-交易号与参考编号精确集合-20260928-r1.json",
+        "pageRef": "/financial-payment/transactions",
+        "recordId": "admin.finance.transactions.exact-identifier-set",
+        "revision": 1,
+        "sourceId": "k_c99fab2b5cb1e21a135c:p1",
+        "documentId": "",
+        "recordHash": "409ce8b15858dc56bef3d882034e737df1b23e4bf798a5d8903a1ef4e100cc1e",
+        "documentVersion": "",
+        "definitionOrigin": "local_page_knowledge",
+        "sourceTextSHA256": "9a5af13d0ce5740db4b4852968d4af42a6a3d48e719f5c0a8449a6865e74d10b"
+      }
+    ],
+    "requestId": "97cb5df1-1ca4-4f35-93a0-e74919e7d3ec",
+    "blockChecks": [
+      {
+        "reason": "States the current status of the specific record cannot be confirmed, that no live read is available, and that this is not a denial of cancellation or completion. Consistent with the cited extracts and preserves the unknown without inventing a rule.",
+        "blockId": "status_unconfirmed",
+        "supported": true,
+        "customerFacing": true,
+        "languageMatches": true,
+        "unsupportedClaims": [],
+        "containsUnverifiedRecordFacts": false
+      },
+      {
+        "reason": "The cited extracts define the refund entity by its public refund number and its grain as one refund record per row, matching the block's wording. No record-specific facts are asserted.",
+        "blockId": "object_grain",
+        "supported": true,
+        "customerFacing": true,
+        "languageMatches": true,
+        "unsupportedClaims": [],
+        "containsUnverifiedRecordFacts": false
+      },
+      {
+        "reason": "The extracts support opening the refund detail by matching refundNo and that the displayed status is current finance processing, not an approval conclusion. Navigation description is generic and contains no internal identifiers or implementation metadata.",
+        "blockId": "detail_view",
+        "supported": true,
+        "customerFacing": true,
+        "languageMatches": true,
+        "unsupportedClaims": [],
+        "containsUnverifiedRecordFacts": false
+      }
+    ],
+    "contentHash": "e491b794b9ed6a68a808df5a302ba91922a36d0c140c4da0089ce0c2dd8d793a",
+    "requirements": [
+      {
+        "id": "object",
+        "kind": "object",
+        "value": "request"
+      },
+      {
+        "id": "grain",
+        "kind": "grain",
+        "value": "request"
+      },
+      {
+        "id": "attribute_0",
+        "kind": "attribute",
+        "value": "cancellation status"
+      },
+      {
+        "id": "attribute_1",
+        "kind": "attribute",
+        "value": "completion status"
+      },
+      {
+        "id": "detail",
+        "kind": "detail",
+        "value": "detail"
+      },
+      {
+        "id": "record",
+        "kind": "record",
+        "value": "ML-1-7-6577159"
+      }
+    ],
+    "schemaVersion": "supplemental-gap-explanation/1",
+    "originalMissing": [
+      "application_record_page"
+    ],
+    "taskFingerprint": "0b26cc8300dcb99bda3681f347e27b37b62cde4bed3e906671b9eb3a6fad46d8",
+    "responseLanguage": "ar",
+    "principalScopeRef": "17cd8f9132bd95c2d432",
+    "requirementChecks": [
+      {
+        "reason": "The extracts bind 'request' to a finance refund entity (refundNo), and the block states this. However the original question's 'الطلب' is a neutral request; the extracts only establish a refund-record sense, so the mapping is asserted rather than fully established for the user's wording.",
+        "status": "partial",
+        "pointChecks": [],
+        "quoteIndexes": [
+          0,
+          4
+        ],
+        "requirementId": "object"
+      },
+      {
+        "reason": "Extracts show refund grain keyed by refundNo (one record per row), matching the block's 'one request per row' statement, but the grain is established only for refund records, not for the user's generic 'request'.",
+        "status": "partial",
+        "pointChecks": [],
+        "quoteIndexes": [
+          0,
+          4
+        ],
+        "requirementId": "grain"
+      },
+      {
+        "reason": "No extract documents a cancellation status field or rule; the block correctly leaves cancellation unconfirmed rather than denying it. The requirement itself remains unverified.",
+        "status": "not_yet_verified",
+        "pointChecks": [],
+        "quoteIndexes": [
+          1,
+          7
+        ],
+        "requirementId": "attribute_0"
+      },
+      {
+        "reason": "No extract documents a completion status field or rule; the block correctly leaves completion unconfirmed. The requirement remains unverified.",
+        "status": "not_yet_verified",
+        "pointChecks": [],
+        "quoteIndexes": [
+          1,
+          7
+        ],
+        "requirementId": "attribute_1"
+      },
+      {
+        "reason": "The extracts support a refund detail route keyed by refundNo and that the displayed status is current finance processing, not an approval conclusion. The block's navigation statement is broadly consistent, but the 'authorized list' wording is not directly established by the cited extracts.",
+        "status": "partial",
+        "pointChecks": [],
+        "quoteIndexes": [
+          1,
+          3
+        ],
+        "requirementId": "detail"
+      },
+      {
+        "reason": "No extract establishes the current state of ML-1-7-6577159; the block correctly preserves the unknown and does not infer status from the identifier.",
+        "status": "not_yet_verified",
+        "pointChecks": [],
+        "quoteIndexes": [
+          1,
+          7
+        ],
+        "requirementId": "record"
+      }
+    ],
+    "routingFingerprint": "ae2609c811310753cbd1b8a4eebc01ff0dbe1b6542f0859cfa240984344cead4",
+    "originalRequestSatisfied": false
+  },
+  "taskProvenance": "reader.evidence.intentStages[-1].task (accepted task; generated plans.TaskSpec differs in businessObject/requestedGrain and slotUpdates)",
+  "intentState": {
+    "task": {
+      "view": "",
+      "stage": "task",
+      "filters": [],
+      "groupBy": [],
+      "readOnly": true,
+      "timeField": "",
+      "timeRange": "unknown",
+      "outputShape": "detail",
+      "searchQuery": "application ML-1-7-6577159 cancelled completed status",
+      "slotUpdates": [
+        {
+          "field": "businessObject",
+          "value": "request",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "recordIdentity",
+          "value": "ML-1-7-6577159",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedAttributes",
+          "value": [
+            "cancellation status",
+            "completion status"
+          ],
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "outputShape",
+          "value": "detail",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "businessFocus",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "disclosurePurpose",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedScope",
+          "value": "unknown",
+          "source": "current",
+          "evidence": "no ownership or population constraint stated"
+        },
+        {
+          "field": "requestedGrain",
+          "value": "request",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedMeasures",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupBy",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeRange",
+          "value": "unknown",
+          "source": "current",
+          "evidence": "no time window stated"
+        },
+        {
+          "field": "filters",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "view",
+          "value": "",
+          "source": "current",
+          "evidence": "no view specified and knownViews is empty"
+        },
+        {
+          "field": "timeField",
+          "value": "",
+          "source": "current",
+          "evidence": "no event date constraint stated"
+        },
+        {
+          "field": "requestedOrdering",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupCompleteness",
+          "value": "observed",
+          "source": "current",
+          "evidence": "parsed current request"
+        }
+      ],
+      "responseMode": "answer",
+      "businessFocus": "",
+      "clarification": null,
+      "needsLiveData": true,
+      "businessObject": "request",
+      "recordIdentity": "ML-1-7-6577159",
+      "requestedGrain": "request",
+      "requestedScope": "unknown",
+      "contextRelation": "new",
+      "unresolvedSlots": [],
+      "disclosurePurpose": "",
+      "groupCompleteness": "observed",
+      "requestBoundaries": [],
+      "requestedMeasures": [],
+      "requestedOrdering": [],
+      "requestedAttributes": [
+        "cancellation status",
+        "completion status"
+      ],
+      "evidenceExplanations": []
+    },
+    "status": "ready",
+    "version": 1,
+    "requestId": "97cb5df1-1ca4-4f35-93a0-e74919e7d3ec",
+    "slotStates": [
+      {
+        "field": "businessObject",
+        "value": "request",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "recordIdentity",
+        "value": "ML-1-7-6577159",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedAttributes",
+        "value": [
+          "cancellation status",
+          "completion status"
+        ],
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "outputShape",
+        "value": "detail",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "businessFocus",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "disclosurePurpose",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedScope",
+        "value": "unknown",
+        "source": "current",
+        "evidence": "no ownership or population constraint stated"
+      },
+      {
+        "field": "requestedGrain",
+        "value": "request",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedMeasures",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "groupBy",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "timeRange",
+        "value": "unknown",
+        "source": "current",
+        "evidence": "no time window stated"
+      },
+      {
+        "field": "filters",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "view",
+        "value": "",
+        "source": "current",
+        "evidence": "no view specified and knownViews is empty"
+      },
+      {
+        "field": "timeField",
+        "value": "",
+        "source": "current",
+        "evidence": "no event date constraint stated"
+      },
+      {
+        "field": "requestedOrdering",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "groupCompleteness",
+        "value": "observed",
+        "source": "current",
+        "evidence": "parsed current request"
+      }
+    ],
+    "taskRevision": 1,
+    "referenceTime": {
+      "nowUtc": "2026-09-28T23:44:12.452644+00:00",
+      "source": "server_clock_and_config",
+      "businessNow": "2026-09-29T03:44:12.452644+04:00",
+      "businessDate": "2026-09-29",
+      "businessTimezone": "Asia/Dubai"
+    },
+    "browserContext": null,
+    "catalogVersion": "923ec44fe50a2342995e281c82aafca24ba1f1db20bf2c2184ec663e33329bf1",
+    "parentRequestId": null,
+    "taskFingerprint": "0b26cc8300dcb99bda3681f347e27b37b62cde4bed3e906671b9eb3a6fad46d8",
+    "knowledgeVersion": "9dfa808eccf6b8991f69",
+    "originalQuestion": "هل تم إلغاء الطلب ML-1-7-6577159 أو إكماله؟",
+    "lastClarification": null,
+    "clarificationRounds": 0,
+    "pendingClarification": null,
+    "principalFingerprint": "17cd8f9132bd95c2d432"
+  }
+}

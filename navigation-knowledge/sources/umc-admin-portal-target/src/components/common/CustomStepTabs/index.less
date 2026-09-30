@@ -1,0 +1,167 @@
+.service-stepper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 0 24px;
+  box-sizing: border-box;
+  overflow-x: auto;
+  border-radius: 12px;
+  font-family: Inter, sans-serif;
+
+  .service-stepper__item {
+    position: relative;
+    flex: 1 0 168px;
+    min-width: 168px;
+    padding: 24px 16px;
+    box-sizing: border-box;
+    color: #5f646d;
+    cursor: pointer;
+  }
+
+  .service-stepper__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .service-stepper__icon {
+    display: grid;
+    flex: 0 0 24px;
+    width: 24px;
+    height: 24px;
+    place-items: center;
+    color: inherit;
+
+    > svg {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .service-stepper__label {
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: inherit;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .service-stepper__indicator {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 177px;
+    height: 4px;
+    background-color: #b68a35;
+    border-radius: 999px;
+    transform: translateX(-50%);
+  }
+
+  .service-stepper__item--active {
+    color: #92722a;
+  }
+
+  .service-stepper__item--completed {
+    color: #4a9d5c;
+  }
+}
+
+.service-step-icon {
+  position: relative;
+  display: block;
+  width: 24px;
+  height: 24px;
+  color: inherit;
+
+  &::before,
+  .service-step-icon__rules-top,
+  .service-step-icon__rules-middle,
+  .service-step-icon__rules-bottom {
+    position: absolute;
+    display: block;
+    background-color: currentColor;
+    content: "";
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+  }
+
+  &--completed::before {
+    top: 1.2px;
+    left: 1.2px;
+    width: 21.6002px;
+    height: 21.5992px;
+    mask-image: url("./assets/completed.svg");
+    -webkit-mask-image: url("./assets/completed.svg");
+  }
+
+  &--workflow::before {
+    top: 1.2px;
+    left: 1.2px;
+    width: 21.5996px;
+    height: 21.5996px;
+    mask-image: url("./assets/workflow.svg");
+    -webkit-mask-image: url("./assets/workflow.svg");
+  }
+
+  &--certificate::before {
+    top: 1.5px;
+    left: 3.748px;
+    width: 16.504px;
+    height: 21px;
+    mask-image: url("./assets/certificate.svg");
+    -webkit-mask-image: url("./assets/certificate.svg");
+  }
+
+  .service-step-icon__rules-top {
+    top: 1.2px;
+    left: 1.2px;
+    width: 21.6133px;
+    height: 11.6006px;
+    mask-image: url("./assets/rules-top.svg");
+    -webkit-mask-image: url("./assets/rules-top.svg");
+  }
+
+  .service-step-icon__rules-middle {
+    top: 11.2px;
+    left: 1.2px;
+    width: 21.5997px;
+    height: 6.59768px;
+    mask-image: url("./assets/rules-row.svg");
+    -webkit-mask-image: url("./assets/rules-row.svg");
+  }
+
+  .service-step-icon__rules-bottom {
+    top: 16.2px;
+    left: 1.2px;
+    width: 21.5997px;
+    height: 6.59768px;
+    mask-image: url("./assets/rules-row.svg");
+    -webkit-mask-image: url("./assets/rules-row.svg");
+  }
+}
+
+.step-tabs-content {
+  height: 100%;
+  .step-content {
+    height: 100%;
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}
+
+.custom-step-tabs {
+  .service-stepper {
+    margin-bottom: 32px;
+  }
+}

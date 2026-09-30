@@ -1,0 +1,107 @@
+.news-table {
+  padding: 24px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 1);
+
+
+  .ant-table .ant-table-tbody>tr>td {
+    height: 76px;
+  }
+
+  .header-filter {
+    gap: 12px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 8px;
+    }
+  }
+
+  .status-tag {
+    display: inline-block;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    border-radius: 4px;
+    padding: 3px 6px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+    }
+  }
+
+  .PendingReview {
+    background-color: rgba(255, 251, 235, 1);
+    color: rgba(242, 159, 14, 1);
+  }
+
+  .news-extra-btns {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 8px;
+    }
+  }
+
+  .Draft,
+  .Unpublished {
+    color: rgba(95, 100, 109, 1);
+    background-color: rgba(225, 227, 229, 0.5);
+  }
+
+  .Published {
+    color: rgba(74, 157, 92, 1);
+    background-color: rgba(243, 250, 244, 1);
+  }
+
+  .Rejected {
+    color: rgba(234, 79, 73, 1);
+    background-color: rgba(254, 242, 242, 1);
+  }
+
+  .text-ellipsis-pinned {
+    width: 123px;
+  }
+
+  .text-ellipsis-newsNo {
+    width: 160px;
+  }
+
+  .text-ellipsis-titleEn {
+    width: 403px;
+  }
+
+  .text-ellipsis-status {
+    width: 159px;
+  }
+
+  .text-ellipsis-UpdatedBy {
+    width: 240px;
+  }
+
+  .text-ellipsis-publishTime {
+    width: 217px;
+  }
+
+  .text-ellipsis-updateAt {
+    width: 217px;
+  }
+
+  .text-ellipsis-right {
+    white-space: nowrap;
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.news-range-picker {
+  width: 300px !important;
+}
+
+.news-range-Input {
+  width: 260px !important;
+}

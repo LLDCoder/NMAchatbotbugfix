@@ -1,0 +1,139 @@
+.data-source-config-modal {
+  .ant-modal-header {
+    border-bottom: 1px solid #f0f0f0;
+    padding: 20px 24px;
+  }
+
+  .ant-modal-close {
+    top: 20px;
+    right: 24px;
+  }
+
+  .ant-modal-close-x {
+    width: 56px;
+    height: 56px;
+    line-height: 56px;
+    font-size: 18px;
+  }
+
+  .data-source-config-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .data-source-select-section {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      .section-label {
+        font-size: 14px;
+        font-weight: 600;
+        color: #262626;
+      }
+    }
+
+    .fields-section {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      .section-label {
+        font-size: 14px;
+        font-weight: 600;
+        color: #262626;
+      }
+
+      .fields-table-container {
+        border: 1px solid #d9d9d9;
+        border-radius: 8px;
+        min-height: 400px;
+        background: #fafafa;
+        
+        .ant-table-wrapper {
+          .ant-table {
+            background: transparent;
+          }
+
+          .ant-table-thead > tr > th {
+            background: #fafafa;
+            color: #8c8c8c;
+            font-weight: 600;
+            font-size: 14px;
+            border-bottom: 1px solid #d9d9d9;
+            padding: 16px;
+          }
+
+          .ant-table-tbody > tr > td {
+            padding: 16px;
+            border-bottom: 1px solid #f0f0f0;
+            background: white;
+          }
+
+          .ant-table-tbody > tr:hover > td {
+            background: #fafafa;
+          }
+        }
+
+        .empty-fields {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 400px;
+          background: white;
+          border-radius: 8px;
+
+          .empty-text {
+            color: #8c8c8c;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .modal-footer-custom {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      padding-top: 16px;
+      border-top: 1px solid #f0f0f0;
+      margin-top: 8px;
+
+      .cancel-btn {
+        min-width: 120px;
+        height: 40px;
+        border-radius: 4px;
+        font-weight: 500;
+        border: 1px solid #b8860b;
+        color: #b8860b;
+        
+        &:hover {
+          border-color: #daa520;
+          color: #daa520;
+        }
+      }
+
+      .save-btn {
+        min-width: 120px;
+        height: 40px;
+        border-radius: 4px;
+        font-weight: 500;
+        background: #b8860b;
+        border-color: #b8860b;
+
+        &:hover:not(:disabled) {
+          background: #daa520;
+          border-color: #daa520;
+        }
+
+        &:disabled {
+          background: #d9d9d9;
+          border-color: #d9d9d9;
+          color: rgba(0, 0, 0, 0.25);
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}
+

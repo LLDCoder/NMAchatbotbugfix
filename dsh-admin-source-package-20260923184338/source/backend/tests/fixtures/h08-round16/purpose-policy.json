@@ -1,0 +1,121 @@
+{
+  "schemaVersion": "1.0",
+  "packageStatus": "active",
+  "createdAt": "2026-09-28T08:27:29.886795+00:00",
+  "records": [
+    {
+      "id": "admin.page.tickets.minimum-disclosure-and-correction",
+      "kind": "page_definition",
+      "revision": 3,
+      "status": "active",
+      "title": "Ticket-specific disclosure and traceable supplementary notes",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local",
+          "debug"
+        ],
+        "pageRefs": [
+          "/happiness/tickets",
+          "/happiness/tickets/tickets-details"
+        ],
+        "runtimeVerification": "source_inspected",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/TicketsDetails/components/CommunicationRecords/index.tsx",
+          "revision": "sha256:611b39f37040ec48b9642d34cac961b37f893c7c616f967f3c06d4f4baa3ade4",
+          "locator": "ChatBox; sourceTypeId 2 customer reply versus 4 internal note; canAddInternalNote and status-based tabs",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/EnquiryApp/EnquiryAppService.cs",
+          "revision": "sha256:693bbed263aff3b567409dc654fe221d835351077272abc6df9ef2fc35cd31a2",
+          "locator": "GetEnquiryAdminByIdAsync; CanSendInternalNote; CanAddInternalNote; CanSendCustomerVisibleMessage",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/TicketsDetails/components/ApplicantInformation/index.tsx",
+          "revision": "sha256:6808ef3e30076068dd17fcb37febeb559271311d075e09d094eb7afc76c5ab14",
+          "locator": "getApplicants for the selected enquiry; displayed applicant/contact fields",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "sections": [
+          {
+            "heading": "Current ticket summary and personal-data scope",
+            "en": "For a named ticket, start with its authorized ticket detail and return the requested request summary, status, handling stage and deadline. A request for all linked accounts, addresses, phones or historical applications does not establish a service need or blanket access. Do not broaden to all customers or automatically traverse the account/profile relationship. Explain that further disclosure is limited to the current ticket purpose and current field permissions; ask which specific information is needed before reading additional personal data. An account profile is not a separate account.",
+            "ar": "ابدأ بتفاصيل التذكرة المحددة والمسموح بها، وقدّم ملخص الطلب والحالة والطرف المعالج والموعد المطلوب. طلب جميع الحسابات والعناوين والهواتف والطلبات السابقة لا يمنح صلاحية شاملة. حدّد المعلومة اللازمة لمعالجة التذكرة قبل قراءة بيانات شخصية إضافية."
+          },
+          {
+            "heading": "Supplementary information without removing history",
+            "en": "The documented Communication Records panel offers a customer reply and, under its current permission/status conditions, an Internal Note. It appends a message; this is not a documented rating deletion or audit-history editing operation. For a disputed rating or inaccurate communication, keep the original record and prepare a factual supplementary note identifying the disputed entry, proposed correction and supporting evidence. Ask the authorized handler/leader to use the available communication path and confirm the applicable correction or appeal policy. Do not present this practical escalation as an approved rating-removal procedure, invent a retention period, or claim a message was sent."
+          },
+          {
+            "heading": "Posting and viewing permissions are separate",
+            "en": "The inspected backend permits an internal note for the assigned business-department handler while Department Processing, an eligible department leader, or Customer Happiness under its documented state guard. The frontend canAddInternalNote flag is a display condition, not universal note-reading permission. Customer-visible correspondence and internal notes are separate channels. A Staff request for all Leader escalations must be narrowed to a concrete authorized ticket; no Leader-wide history or internal notes should be inferred from a role name."
+          }
+        ],
+        "constraints": [
+          "Page behavior and retrieval guidance only; no new permission or organization policy. Current identity and record-level authorization must be verified independently.",
+          "Source inspection does not certify the remote deployed version. Missing source data, policy applicability and scope remain unconfirmed."
+        ],
+        "clarificationRules": [
+          {
+            "id": "ticket_customer_purpose_before_broad_disclosure",
+            "kind": "missing_disclosure_purpose",
+            "slot": "disclosurePurpose",
+            "autoClarify": true,
+            "requiresRecordIdentity": true,
+            "objects": [
+              "customer",
+              "customer account",
+              "ticket customer",
+              "linked customer",
+              "العميل",
+              "حساب العميل"
+            ],
+            "attributeGroups": [
+              [
+                "accounts",
+                "account information",
+                "linked accounts",
+                "customer accounts",
+                "الحسابات"
+              ],
+              [
+                "phone numbers",
+                "phone number",
+                "contact numbers",
+                "mobile number",
+                "أرقام الهواتف"
+              ],
+              [
+                "addresses",
+                "address",
+                "العناوين"
+              ],
+              [
+                "historical applications",
+                "previous requests",
+                "application history",
+                "historical requests",
+                "الطلبات السابقة"
+              ]
+            ],
+            "minimumMatchedGroups": 2,
+            "question": {
+              "en": "I cannot provide a blanket disclosure of the customer’s accounts, contact details, addresses and application history. Only information necessary for handling this ticket and independently authorized by the page and field permissions may be considered. What specific information is needed to handle this ticket, and for what purpose? Your reply will not grant access or establish the ticket-to-customer relationship.",
+              "ar": "لا يمكنني تقديم كشف شامل لحسابات العميل وبيانات الاتصال والعناوين وسجل الطلبات. يمكن النظر فقط في المعلومات اللازمة لمعالجة هذه التذكرة والمصرح بها بشكل مستقل وفق صلاحيات الصفحة والحقول. ما المعلومة المحددة اللازمة لمعالجة هذه التذكرة، ولأي غرض؟ لا تمنح إجابتك صلاحية وصول ولا تثبت العلاقة بين التذكرة والعميل."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

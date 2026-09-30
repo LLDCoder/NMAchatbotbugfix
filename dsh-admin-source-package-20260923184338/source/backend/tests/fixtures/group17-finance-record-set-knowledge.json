@@ -1,0 +1,461 @@
+{
+  "baselinePackage": {
+    "schemaVersion": "1.0",
+    "bundleId": "admin.page.finance.transactions.lookup.page.package",
+    "createdAt": "2026-09-26T18:25:54.777700+00:00",
+    "packageStatus": "active",
+    "searchMetadata": {
+      "purpose": "page discovery metadata; records remain the source of structured definitions",
+      "titleEnglish": "Finance Transactions",
+      "titleArabic": "المعاملات المالية",
+      "descriptionEnglish": "Admin page at /financial-payment/transactions for locating finance transactions. Read operation GET /api/admin/finance/transactions returns rows at /data/items and total at /data/totalCount. Pagination uses PageIndex (1-based) and PageSize; data.totalCount counts the current authorized filtered request, not page length. KeyWord is a broad search; verify exact transactionNo equality on returned rows and preserve all request filters. Fields: id (transaction entity key), transactionNo (business number used to bind the detail URL), currency (returned display currency; inspected DTO default AED; not proof of provider settlement currency; observed detail transaction object has no currency field). Detail DTO has transaction and applicationItems; use only observed paths. applicationNumber belongs to a linked application, not the transaction entity. A transaction detail question may use both the authorized list and detail for the same verified transaction id and transactionNo. For an ordinary request for the displayed currency, return the actually observed list currency and identify it as display currency. Absence from the detail object is not absence from the transaction list. It does not establish provider settlement currency. Do not replace a missing observed value with the DTO default. Payment status is the status display name; internal statusId is a verification/dictionary key, not a requested output. Linked application is displayed by applicationNumber; internal application identifiers belong to evidence unless explicitly requested.",
+      "descriptionArabic": "صفحة إدارية على /financial-payment/transactions لتحديد المعاملات المالية. عملية القراءة GET /api/admin/finance/transactions تُرجع الصفوف في /data/items والإجمالي في /data/totalCount. تستخدم الصفحات PageIndex (يبدأ من 1) وPageSize؛ وdata.totalCount يحصي الطلب المفلتر المصرح به الحالي لا طول الصفحة. KeyWord بحث واسع؛ تحقق من تطابق transactionNo التام في الصفوف المُرجعة واحتفظ بكل مرشحات الطلب. الحقول: id (مفتاح كيان المعاملة)، transactionNo (الرقم التجاري المستخدم لربط رابط التفاصيل)، currency (عملة عرض مُرجعة؛ القيمة الافتراضية في DTO المفحوص AED؛ ليست دليل عملة تسوية المزود؛ كائن تفاصيل المعاملة المرصود لا يحوي حقل currency). DTO التفاصيل يحوي transaction وapplicationItems؛ استخدم المسارات المرصودة فقط. applicationNumber يخص طلبًا مرتبطًا لا كيان المعاملة. يمكن لسؤال تفاصيل المعاملة استخدام القائمة والتفاصيل المصرح بهما للمعاملة نفسها بعد التحقق من id وtransactionNo. عند طلب عملة العرض المعتادة تُقرأ قيمة currency المرصودة فعلياً في القائمة وتُوصف بأنها عملة العرض. غيابها من كائن التفاصيل لا يعني غيابها من القائمة ولا يثبت عملة تسوية المزود. لا تُستبدل القيمة المفقودة بالقيمة الافتراضية. حالة الدفع هي اسم الحالة؛ ومعرّفات الحالة والطلب الداخلية مخصّصة للتحقق ولا تُعرض إلا إذا طلبها المستخدم. يُعرض الطلب المرتبط برقمه applicationNumber.",
+      "termsEnglish": [
+        "financial transactions",
+        "transaction number",
+        "list pagination",
+        "authorized filters",
+        "currency",
+        "linked applications",
+        "payment record",
+        "record identity",
+        "exact transaction match",
+        "transaction details"
+      ],
+      "termsArabic": [
+        "المعاملات المالية",
+        "رقم المعاملة",
+        "ترقيم صفحات القائمة",
+        "المرشحات المصرح بها",
+        "العملة",
+        "الطلبات المرتبطة",
+        "سجل الدفع",
+        "هوية السجل",
+        "مطابقة رقم المعاملة تماماً",
+        "تفاصيل المعاملة"
+      ]
+    },
+    "records": [
+      {
+        "id": "admin.page.finance.transactions.lookup.page",
+        "kind": "page_definition",
+        "revision": 3,
+        "status": "active",
+        "title": "Finance Transactions",
+        "applicability": {
+          "portal": "admin",
+          "environments": [
+            "local",
+            "debug"
+          ],
+          "pageRefs": [
+            "/financial-payment/transactions"
+          ],
+          "runtimeVerification": "response_shape_verified",
+          "deployedBuildMatch": "unknown"
+        },
+        "sources": [
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/finance.ts",
+            "revision": "sha256:7c91d564496d85ad9b6e244fa8a58efdc947ee7a09a5713ffb38d6e8c1eae831",
+            "locator": "getTransactions; getTransactionDetail; response DTO alternatives",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/TransactionsDetail/index.tsx",
+            "revision": "sha256:3d3823a84f74a9047fe0129d7da829a9656555d5ffc780a15b9d84e404ae69b1",
+            "locator": "transactionNo URL; detail and linked-application selectors",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/Finance/AdminFinanceTransactionsAppService.cs",
+            "revision": "sha256:fb319b3bc0bcdaaf1159544ab3d5d793b05d4fb0f7c2191f9272c210da2baf8b",
+            "locator": "GetTransactionAsync and MapTransactionsAsync",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Finance/AdminFinanceTransactionDtos.cs",
+            "revision": "sha256:8a815d61efddaee32b2e2709c95f538583bb7b14d4f5cd92427f5dc184f6da15",
+            "locator": "List Currency default and detail DTO fields",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Infrastructure/AdminPortalDBContext.cs",
+            "revision": "sha256:b0058bd28c927330d1e613258429e661013535a6520bef2c32243d3a56279adc",
+            "locator": "Payment.Transactions id primary key; distinct WalletTransactions unique index",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "runtime_observation",
+            "reference": "test/runtime/kb-remediation-20260926/page-probes/transactions-list.json",
+            "revision": "sha256:4ed1e453a8c1e3e8c67b9f100cc5fcbcae8eaefd0f5e7259ff0018db40c8b659",
+            "locator": "HTTP 200, /data/items and /data/totalCount",
+            "verification": "response_shape_verified"
+          },
+          {
+            "kind": "runtime_observation",
+            "reference": "test/runtime/kb-remediation-20260926/page-probes/transaction-detail.json",
+            "revision": "sha256:4ea7ad09b18611731d50cee7d6153a81ad9f20d747cb9c8177726ee234c50bc1",
+            "locator": "HTTP 200; /data/transaction matches requested business number",
+            "verification": "response_shape_verified"
+          }
+        ],
+        "payload": {
+          "pageRef": "/financial-payment/transactions",
+          "readOperation": {
+            "operationRef": "GET /api/admin/finance/transactions",
+            "rowsPath": "/data/items",
+            "totalPath": "/data/totalCount"
+          },
+          "sourceBinding": {
+            "operationRef": "GET /api/admin/finance/transactions",
+            "sourcePath": "/data/items"
+          },
+          "pagination": {
+            "rowsPath": "/data/items",
+            "totalPath": "/data/totalCount",
+            "PageIndex": "1-based page request",
+            "PageSize": "requested row limit",
+            "data.totalCount": "Count for the current authorized filtered request, not page length."
+          },
+          "fields": {
+            "id": "Transaction entity key.",
+            "transactionNo": "Business number used to bind the detail URL.",
+            "currency": "The list currency is a returned display currency whose inspected DTO default is AED. It is not proof of provider settlement currency. The observed detail transaction object has no currency field.",
+            "amount": "Signed amount returned for this transaction. Preserve its sign; detail amount is absolute.",
+            "statusId": "Internal current status dictionary key.",
+            "statusObj": "Status dictionary object: id is its internal key and name is the payment status display label."
+          },
+          "recordLookup": "KeyWord is a broad search; verify exact transactionNo equality on returned rows and preserve all request filters.",
+          "routing": {
+            "records": [
+              {
+                "id": "list_transaction",
+                "operationRef": "GET /api/admin/finance/transactions",
+                "sourcePath": "/data/items",
+                "identityField": "transactionNo",
+                "keyFields": [
+                  "id"
+                ],
+                "unique": false
+              }
+            ]
+          },
+          "constraints": [
+            "Do not borrow the WalletTransactions unique index for Payment.Transactions. Use a complete permitted lookup and compare returned id plus transactionNo.",
+            "An applicationNumber belongs to a linked application, not to the transaction entity. Do not treat the two numbers as interchangeable.",
+            "The current detail DTO has transaction and applicationItems. Source code also supports alternate response roots; use only paths actually observed.",
+            "The list currency is a returned display currency whose inspected DTO default is AED. It is not proof of provider settlement currency. The observed detail transaction object has no currency field.",
+            "Keep original sources and permission checks. Knowledge does not authorize financial actions or private account/card disclosure.",
+            "A transaction detail question may use both the authorized list and detail for the same verified transaction id and transactionNo. For an ordinary request for the displayed currency, return the actually observed list currency and identify it as display currency. Absence from the detail object is not absence from the transaction list. It does not establish provider settlement currency. Do not replace a missing observed value with the DTO default. Payment status is the status display name; internal statusId is a verification/dictionary key, not a requested output. Linked application is displayed by applicationNumber; internal application identifiers belong to evidence unless explicitly requested."
+          ],
+          "descriptionArabic": "يمكن لسؤال تفاصيل المعاملة استخدام القائمة والتفاصيل المصرح بهما للمعاملة نفسها بعد التحقق من id وtransactionNo. عند طلب عملة العرض المعتادة تُقرأ قيمة currency المرصودة فعلياً في القائمة وتُوصف بأنها عملة العرض. غيابها من كائن التفاصيل لا يعني غيابها من القائمة ولا يثبت عملة تسوية المزود. لا تُستبدل القيمة المفقودة بالقيمة الافتراضية. حالة الدفع هي اسم الحالة؛ ومعرّفات الحالة والطلب الداخلية مخصّصة للتحقق ولا تُعرض إلا إذا طلبها المستخدم. يُعرض الطلب المرتبط برقمه applicationNumber."
+        }
+      },
+      {
+        "id": "admin.page.finance.transactions.lookup.fields",
+        "kind": "field_semantics",
+        "revision": 3,
+        "status": "active",
+        "title": "Finance transaction list field meanings",
+        "applicability": {
+          "portal": "admin",
+          "environments": [
+            "local",
+            "debug"
+          ],
+          "pageRefs": [
+            "/financial-payment/transactions"
+          ],
+          "runtimeVerification": "response_shape_verified",
+          "deployedBuildMatch": "unknown"
+        },
+        "sources": [
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/finance.ts",
+            "revision": "sha256:7c91d564496d85ad9b6e244fa8a58efdc947ee7a09a5713ffb38d6e8c1eae831",
+            "locator": "getTransactions; getTransactionDetail; response DTO alternatives",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/TransactionsDetail/index.tsx",
+            "revision": "sha256:3d3823a84f74a9047fe0129d7da829a9656555d5ffc780a15b9d84e404ae69b1",
+            "locator": "transactionNo URL; detail and linked-application selectors",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/Finance/AdminFinanceTransactionsAppService.cs",
+            "revision": "sha256:fb319b3bc0bcdaaf1159544ab3d5d793b05d4fb0f7c2191f9272c210da2baf8b",
+            "locator": "GetTransactionAsync and MapTransactionsAsync",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Finance/AdminFinanceTransactionDtos.cs",
+            "revision": "sha256:8a815d61efddaee32b2e2709c95f538583bb7b14d4f5cd92427f5dc184f6da15",
+            "locator": "List Currency default and detail DTO fields",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Infrastructure/AdminPortalDBContext.cs",
+            "revision": "sha256:b0058bd28c927330d1e613258429e661013535a6520bef2c32243d3a56279adc",
+            "locator": "Payment.Transactions id primary key; distinct WalletTransactions unique index",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "runtime_observation",
+            "reference": "test/runtime/kb-remediation-20260926/page-probes/transactions-list.json",
+            "revision": "sha256:4ed1e453a8c1e3e8c67b9f100cc5fcbcae8eaefd0f5e7259ff0018db40c8b659",
+            "locator": "HTTP 200, /data/items and /data/totalCount",
+            "verification": "response_shape_verified"
+          },
+          {
+            "kind": "runtime_observation",
+            "reference": "test/runtime/kb-remediation-20260926/page-probes/transaction-detail.json",
+            "revision": "sha256:4ea7ad09b18611731d50cee7d6153a81ad9f20d747cb9c8177726ee234c50bc1",
+            "locator": "HTTP 200; /data/transaction matches requested business number",
+            "verification": "response_shape_verified"
+          }
+        ],
+        "payload": {
+          "pageRef": "/financial-payment/transactions",
+          "bindings": [
+            {
+              "id": "transaction_object",
+              "kind": "object",
+              "concept": "transaction",
+              "aliases": [
+                "payment transaction",
+                "financial transaction"
+              ],
+              "operationRef": "GET /api/admin/finance/transactions",
+              "sourcePath": "/data/items",
+              "fields": [
+                "id"
+              ],
+              "meaning": "A payment transaction entity, not a linked application."
+            },
+            {
+              "id": "transaction_grain",
+              "kind": "grain",
+              "concept": "transaction",
+              "aliases": [
+                "payment transaction",
+                "financial transaction"
+              ],
+              "operationRef": "GET /api/admin/finance/transactions",
+              "sourcePath": "/data/items",
+              "fields": [
+                "id"
+              ],
+              "meaning": "Transaction entity key is id. Business number is transactionNo."
+            },
+            {
+              "id": "number",
+              "kind": "attribute",
+              "concept": "transaction number",
+              "aliases": [
+                "transactionNo"
+              ],
+              "operationRef": "GET /api/admin/finance/transactions",
+              "sourcePath": "/data/items",
+              "fields": [
+                "transactionNo"
+              ],
+              "meaning": "Business number displayed by this transaction page."
+            },
+            {
+              "id": "amount",
+              "kind": "attribute",
+              "concept": "amount",
+              "aliases": [
+                "payment amount",
+                "transaction amount"
+              ],
+              "operationRef": "GET /api/admin/finance/transactions",
+              "sourcePath": "/data/items",
+              "fields": [
+                "amount"
+              ],
+              "meaning": "Detail source maps Math.Abs(transaction.Amount); list keeps the signed source amount. Do not interchange their sign conventions."
+            },
+            {
+              "id": "status",
+              "kind": "attribute",
+              "concept": "payment status",
+              "aliases": [
+                "status",
+                "transaction status"
+              ],
+              "operationRef": "GET /api/admin/finance/transactions",
+              "sourcePath": "/data/items",
+              "fields": [
+                "statusObj.name"
+              ],
+              "meaning": "Current transaction status dictionary and its display."
+            },
+            {
+              "id": "currency",
+              "kind": "attribute",
+              "concept": "currency",
+              "aliases": [
+                "display currency",
+                "currency code"
+              ],
+              "operationRef": "GET /api/admin/finance/transactions",
+              "sourcePath": "/data/items",
+              "fields": [
+                "currency"
+              ],
+              "meaning": "The list currency is a returned display currency whose inspected DTO default is AED. It is not proof of provider settlement currency. The observed detail transaction object has no currency field."
+            }
+          ],
+          "constraints": [
+            "Do not borrow the WalletTransactions unique index for Payment.Transactions. Use a complete permitted lookup and compare returned id plus transactionNo.",
+            "An applicationNumber belongs to a linked application, not to the transaction entity. Do not treat the two numbers as interchangeable.",
+            "The current detail DTO has transaction and applicationItems. Source code also supports alternate response roots; use only paths actually observed.",
+            "The list currency is a returned display currency whose inspected DTO default is AED. It is not proof of provider settlement currency. The observed detail transaction object has no currency field.",
+            "Keep original sources and permission checks. Knowledge does not authorize financial actions or private account/card disclosure.",
+            "A transaction detail question may use both the authorized list and detail for the same verified transaction id and transactionNo. For an ordinary request for the displayed currency, return the actually observed list currency and identify it as display currency. Absence from the detail object is not absence from the transaction list. It does not establish provider settlement currency. Do not replace a missing observed value with the DTO default. Payment status is the status display name; internal statusId is a verification/dictionary key, not a requested output. Linked application is displayed by applicationNumber; internal application identifiers belong to evidence unless explicitly requested."
+          ],
+          "descriptionArabic": "يمكن لسؤال تفاصيل المعاملة استخدام القائمة والتفاصيل المصرح بهما للمعاملة نفسها بعد التحقق من id وtransactionNo. عند طلب عملة العرض المعتادة تُقرأ قيمة currency المرصودة فعلياً في القائمة وتُوصف بأنها عملة العرض. غيابها من كائن التفاصيل لا يعني غيابها من القائمة ولا يثبت عملة تسوية المزود. لا تُستبدل القيمة المفقودة بالقيمة الافتراضية. حالة الدفع هي اسم الحالة؛ ومعرّفات الحالة والطلب الداخلية مخصّصة للتحقق ولا تُعرض إلا إذا طلبها المستخدم. يُعرض الطلب المرتبط برقمه applicationNumber."
+        }
+      }
+    ]
+  },
+  "candidatePackage": {
+    "schemaVersion": "1.0",
+    "packageStatus": "draft",
+    "bundleId": "admin.finance.transactions.exact-identifier-set.package",
+    "createdAt": "2026-09-28T09:14:39.486099+00:00",
+    "searchMetadata": {
+      "titleEnglish": "Finance Transactions exact transaction and reference number lookup",
+      "titleArabic": "المعاملات المالية: مطابقة أرقام المعاملات والمراجع بدقة",
+      "descriptionEnglish": "Read multiple separately identified financial transaction records by exact returned transaction number or payment reference number; preserve each transaction entity and every requested identifier.",
+      "descriptionArabic": "قراءة سجلات معاملات مالية متعددة بمطابقة رقم المعاملة أو الرقم المرجعي الوارد تماماً، مع إبقاء هوية كل معاملة منفصلة."
+    },
+    "records": [
+      {
+        "id": "admin.finance.transactions.exact-identifier-set",
+        "kind": "field_semantics",
+        "revision": 1,
+        "status": "draft",
+        "title": "Finance Transactions exact transaction and reference number lookup",
+        "applicability": {
+          "portal": "admin",
+          "environments": [
+            "local",
+            "debug"
+          ],
+          "pageRefs": [
+            "/financial-payment/transactions"
+          ],
+          "runtimeVerification": "response_shape_verified",
+          "deployedBuildMatch": "unknown"
+        },
+        "sources": [
+          {
+            "kind": "runtime_observation",
+            "reference": "test/runtime/group17-cross-repair-20260928/record-set-reference-number-field-evidence.json",
+            "revision": "sha256:ef1ee31d70b38f1afa5c8546af48b6f062307f450b74acc58f5144955bab6843",
+            "locator": "Native authorized HTTP 200 list field shape and exact row projections; raw source file hashes retained in this evidence receipt.",
+            "verification": "response_shape_verified"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/finance.ts",
+            "revision": "sha256:7c91d564496d85ad9b6e244fa8a58efdc947ee7a09a5713ffb38d6e8c1eae831",
+            "locator": "Transaction list interface referenceNumber and transactionNo; getTransactions operation.",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/Finance/AdminFinanceTransactionsAppService.cs",
+            "revision": "sha256:fb319b3bc0bcdaaf1159544ab3d5d793b05d4fb0f7c2191f9272c210da2baf8b",
+            "locator": "MapTransactionsAsync and ApplyFiltersAsync; KeyWord uses Contains, exact field comparison remains required. ReferenceNumber may repeat across attempts and may refer to other payment objects.",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Finance/AdminFinanceTransactionDtos.cs",
+            "revision": "sha256:8a815d61efddaee32b2e2709c95f538583bb7b14d4f5cd92427f5dc184f6da15",
+            "locator": "AdminFinanceTransactionListItemDto transactionNo/referenceNumber/id fields.",
+            "verification": "source_inspected"
+          }
+        ],
+        "payload": {
+          "pageRef": "/financial-payment/transactions",
+          "sourceBinding": {
+            "operationRef": "GET /api/admin/finance/transactions",
+            "sourcePath": "/data/items"
+          },
+          "fields": {
+            "id": "Transaction entity key; keep only for verification and distinct entities unless explicitly requested.",
+            "transactionNo": "Public transaction business number; remains the primary detail routing identity.",
+            "referenceNumber": "Public payment reference returned on the same list row. It may be an application, refund or violation number according to the returned transaction data, and may repeat across transaction attempts. It is neither the transaction primary identity nor proof of a cross-module relationship."
+          },
+          "bindings": [
+            {
+              "id": "reference-number",
+              "kind": "attribute",
+              "concept": "reference number",
+              "aliases": [
+                "payment reference number",
+                "referenceNumber",
+                "الرقم المرجعي",
+                "رقم مرجع الدفع"
+              ],
+              "operationRef": "GET /api/admin/finance/transactions",
+              "sourcePath": "/data/items",
+              "fields": [
+                "referenceNumber"
+              ]
+            }
+          ],
+          "recordSetLookups": [
+            {
+              "id": "transaction-or-reference-number",
+              "operationRef": "GET /api/admin/finance/transactions",
+              "sourcePath": "/data/items",
+              "identifierFields": [
+                "transactionNo",
+                "referenceNumber"
+              ],
+              "keyFields": [
+                "id"
+              ]
+            }
+          ],
+          "constraints": [
+            "This optional multi-record lookup augments the existing Finance Transactions page and field definitions; it does not replace transactionNo detail routing or id transaction grain.",
+            "For a user-established transaction business type and an explicit list of literal identifiers, compare exact equality of each literal with transactionNo or referenceNumber on the authorized list. Keep both returned public numbers with each matching transaction entity. Do not concatenate identifiers, use substrings, infer type from a prefix, or silently query only one target.",
+            "KeyWord is broad server search. Its positive rows still require exact comparison; an empty partial keyword response cannot establish absence. Preserve every original scope and filter and validate collection completeness.",
+            "A referenceNumber may match multiple transaction ids. Keep the ambiguity; never choose an arbitrary attempt or count an ambiguous target as fully identified. Do not treat referenceNumber as unique, a child echo, a foreign key or authorization to fetch another module.",
+            "Every requested literal must retain its own verified result. Partial matches are partial results, not success for the complete request. Missing source fields, page binding, complete collection or same-principal observation remain unresolved evidence requirements.",
+            "This knowledge defines only read semantics; native API permissions and current-session provenance remain authoritative. No role label, remembered source, test identifier or derived metadata grants access."
+          ]
+        }
+      }
+    ]
+  },
+  "sources": [
+    {
+      "path": "navigation-knowledge/artifacts/KB/逐例修复-20260927/Finance Transactions-记录定位与分页字段.json",
+      "sha256": "af12489897eb5b09b249a74891ca2d4154eaa8b6b1618ad2bb6a9e007053d65a"
+    },
+    {
+      "path": "test/runtime/group17-cross-repair-20260928/knowledge/Finance Transactions-交易号与参考编号精确集合-20260928-r1-draft.json",
+      "sha256": "909d405e674fe2034a57ce7f2c36b3b162c220d0a389d15d6f518351e7cb0de4"
+    }
+  ],
+  "businessAcceptance": false
+}

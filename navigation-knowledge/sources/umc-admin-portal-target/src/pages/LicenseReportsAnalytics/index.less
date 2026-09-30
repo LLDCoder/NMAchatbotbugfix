@@ -1,0 +1,2421 @@
+@import "@/styles/variables.less";
+
+.reports-analytics-page {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  min-height: 100%;
+  height: 100%;
+  overflow: auto;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.reports-tab-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.reports-export-list {
+  gap: 16px;
+}
+
+.reports-tab-panel {
+  min-width: 0;
+}
+
+.reports-tab-panel-active {
+  display: block;
+}
+
+.reports-tab-panel-hidden {
+  display: none;
+}
+
+.reports-analytics-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+}
+
+.reports-analytics-time-filter-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 200px;
+  height: 48px;
+  padding: 0 14px;
+  background: transparent;
+  border: 1px solid #c3c6cb;
+  border-radius: 8px;
+  color: @text-color;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  cursor: pointer;
+  box-shadow: none;
+  transition: border-color 0.2s ease;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 1279.98px) {
+    height: 40px;
+  }
+}
+
+.reports-analytics-time-filter-trigger-custom {
+  width: auto;
+  min-width: 200px;
+}
+
+.reports-analytics-time-filter-trigger:hover,
+.reports-analytics-time-filter-trigger-open {
+  border-color: @ant-hover-color;
+}
+
+.reports-analytics-time-filter-label {
+  min-width: 0;
+  overflow: visible;
+  text-align: start;
+  white-space: nowrap;
+}
+
+.reports-analytics-time-filter-trigger svg.reports-analytics-time-filter-icon {
+  color: #797e86;
+  width: 12px !important;
+  height: 12px !important;
+  min-width: 12px;
+  min-height: 12px;
+  transition: transform 0.2s ease;
+}
+
+.reports-analytics-time-filter-trigger-open
+  .reports-analytics-time-filter-icon {
+  transform: rotate(180deg);
+}
+
+.reports-analytics-time-filter-dropdown {
+  min-width: 200px;
+}
+
+.reports-analytics-time-filter-panel {
+  width: 200px;
+  padding: 8px 0;
+  background: #ffffff;
+  border: 1px solid #e1e3e5;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(54, 30, 18, 0.08);
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.reports-analytics-time-filter-panel-custom {
+  width: 340px;
+}
+
+.reports-analytics-time-filter-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.reports-analytics-time-filter-option {
+  width: 100%;
+  padding: 12px 18px;
+  background: transparent;
+  border: 0;
+  color: @text-color;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: start;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.reports-analytics-time-filter-option:hover {
+  background: #f9f7ed;
+}
+
+.reports-analytics-time-filter-option-active {
+  background: @primary-color;
+  color: #ffffff;
+}
+
+.reports-analytics-time-filter-option-active:hover {
+  background: @primary-color;
+}
+
+.reports-analytics-time-filter-custom {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px 16px 16px;
+  border-top: 1px solid #f0f0f0;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.reports-analytics-time-filter-range.ant-picker {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.reports-analytics-time-filter-range.ant-picker:hover,
+.reports-analytics-time-filter-range.ant-picker-focused {
+  border-color: @primary-color;
+  box-shadow: none;
+}
+
+.reports-analytics-time-filter-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.reports-analytics-time-filter-action {
+  min-width: 84px;
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  cursor: pointer;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.reports-analytics-time-filter-action:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.reports-analytics-time-filter-action-secondary {
+  background: #ffffff;
+  border: 1px solid #c3c6cb;
+  color: @text-color;
+}
+
+.reports-analytics-time-filter-action-primary {
+  background: @primary-color;
+  border: 1px solid @primary-color;
+  color: #ffffff;
+}
+
+.analytics-card-surface {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: none;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.reports-main-tabs-card {
+  padding: 0 24px;
+  border-radius: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.reports-tabs.ant-tabs {
+  margin-bottom: 0;
+}
+
+.reports-tabs {
+  .ant-tabs-nav {
+    margin-bottom: 0;
+  }
+
+  .ant-tabs-nav-wrap,
+  .ant-tabs-nav-list {
+    min-width: 0;
+  }
+
+  .ant-tabs-tab {
+    padding: 24px 0 22px;
+    color: @text-color;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    white-space: nowrap;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 16px;
+    }
+  }
+
+  .ant-tabs-tab + .ant-tabs-tab {
+    margin-inline-start: 32px;
+    margin-inline-end: 0;
+  }
+
+  .ant-tabs-tab:hover {
+    color: @primary-color;
+  }
+
+  .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: @primary-color;
+  }
+
+  .ant-tabs-ink-bar {
+    height: 2px;
+    background: @primary-color;
+    border-radius: 999px;
+  }
+}
+
+.reports-tabs-primary {
+  .ant-tabs-nav::before {
+    border-bottom: 1px solid #e9e4d8;
+  }
+}
+
+.reports-tabs-secondary {
+  padding: 0 16px;
+
+  .ant-tabs-nav::before {
+    border-bottom: 1px solid #e1e3e5;
+  }
+
+  .ant-tabs-tab {
+    padding: 16px 0 12px;
+    font-size: 16px;
+    line-height: 24px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  .ant-tabs-tab + .ant-tabs-tab {
+    margin-inline-start: 24px;
+    margin-inline-end: 0;
+  }
+
+  .ant-tabs-ink-bar {
+    height: 1.5px;
+  }
+}
+
+.reports-grid {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.reports-grid-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.reports-grid-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.reports-grid-status-activities {
+  grid-template-columns: minmax(300px, 2fr) minmax(400px, 3fr);
+  align-items: stretch;
+}
+
+.reports-grid-revenue {
+  grid-template-columns: minmax(280px, 2fr) minmax(400px, 3fr);
+  align-items: stretch;
+}
+
+/*
+  Service Operations top section is one 12-track grid so its nine cards can regroup
+  across 1280. Card order in the markup: 1 status, 2 activity, 3 service-category,
+  4 type, 5 device, 6 emirate, 7 user-type, 8 csat, 9 satisfaction-trend.
+*/
+.reports-service-grid {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: stretch;
+
+  > * {
+    min-width: 0;
+  }
+
+  /*
+    >= 1280 (Figma "1440" tier): status + activity (1/3 : 2/3), the three type donuts
+    3-up, emirate + user-type, then csat + satisfaction.
+  */
+  > :nth-child(1) {
+    grid-column: span 4;
+  }
+  > :nth-child(2) {
+    grid-column: span 8;
+  }
+  > :nth-child(3) {
+    grid-column: span 4;
+  }
+  > :nth-child(4) {
+    grid-column: span 4;
+  }
+  > :nth-child(5) {
+    grid-column: span 4;
+  }
+  > :nth-child(6) {
+    grid-column: span 6;
+  }
+  > :nth-child(7) {
+    grid-column: span 6;
+  }
+  /* CSAT : Satisfaction Trend = 1:2 (Figma node 44485:62719 annotation) - was 6/6. */
+  > :nth-child(8) {
+    grid-column: span 4;
+  }
+  > :nth-child(9) {
+    grid-column: span 8;
+  }
+
+  /*
+    < 1280 (Figma "1204+1280" tier): status + service-category, activity full width,
+    device + type, user-type full width, emirate + csat, satisfaction full width.
+  */
+  @media (max-width: 1279.98px) {
+    > :nth-child(1) {
+      grid-column: span 6;
+      order: 0;
+    }
+    > :nth-child(3) {
+      grid-column: span 6;
+      order: 1;
+      height: auto;
+    }
+    > :nth-child(2) {
+      grid-column: 1 / -1;
+      order: 2;
+    }
+    > :nth-child(5) {
+      grid-column: span 6;
+      order: 3;
+    }
+    > :nth-child(4) {
+      grid-column: span 6;
+      order: 4;
+    }
+    > :nth-child(7) {
+      grid-column: 1 / -1;
+      order: 5;
+    }
+    > :nth-child(6) {
+      grid-column: span 6;
+      order: 6;
+    }
+    > :nth-child(8) {
+      grid-column: span 6;
+      order: 7;
+    }
+    > :nth-child(9) {
+      grid-column: 1 / -1;
+      order: 8;
+    }
+  }
+}
+
+.reports-revenue-breakdown-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  .ant-tabs-nav {
+    margin-bottom: 12px;
+  }
+
+  .reports-bar-list {
+    flex: 1;
+    overflow-y: auto;
+  }
+}
+
+.reports-bar-row-revenue {
+  grid-template-columns: 30% minmax(0, 1fr);
+}
+
+.reports-bar-name-right {
+  text-align: end;
+}
+
+// Override bar-scale for revenue: bar + external value side by side
+.reports-bar-row-revenue .reports-bar-scale {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .reports-bar-fill-anchor {
+    flex-shrink: 0;
+    position: relative;
+  }
+}
+
+.reports-bar-value-outside {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a2e;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.reports-tabs-revenue {
+  .ant-tabs-tab {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #8f8f8f;
+    padding: 0 0 6px;
+    overflow: visible;
+
+    .ant-tabs-tab-btn {
+      font-size: 16px;
+      line-height: 24px;
+      overflow: visible;
+      text-overflow: clip;
+    }
+
+    &.ant-tabs-tab-active .ant-tabs-tab-btn {
+      color: #1a1a2e;
+      font-weight: 600;
+    }
+  }
+
+  .ant-tabs-tab + .ant-tabs-tab {
+    margin-inline-start: 0;
+  }
+
+  .ant-tabs-ink-bar {
+    background: #c9a427;
+  }
+
+  .ant-tabs-nav-list {
+    gap: 24px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 16px;
+    }
+  }
+}
+
+.reports-grid-csat {
+  /* 1:2 split per the Figma annotation (node 44485:62719) - was effectively 1:1.5. */
+  grid-template-columns: minmax(280px, 1fr) minmax(400px, 2fr);
+  align-items: stretch;
+}
+
+.reports-profile-top-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+  .reports-trend-content {
+    flex: 1;
+    min-height: 0;
+  }
+}
+
+/*
+  License Analytics uses one six-track grid so its four cards can regroup across the
+  1440 breakpoint (they live in separate rows in Figma's 1440 vs 1204/1280 frames).
+  Card order in the markup: 1 status, 2 trend, 3 emirate, 4 user-type.
+*/
+.reports-license-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  align-items: stretch;
+
+  > * {
+    min-width: 0;
+  }
+
+  /* >= 1440 (Figma 1440): status + trend (1/3 : 2/3), then emirate + user-type (1/2 : 1/2). */
+  > :nth-child(1) {
+    grid-column: span 2;
+  }
+  > :nth-child(2) {
+    grid-column: span 4;
+  }
+  > :nth-child(3) {
+    grid-column: span 3;
+  }
+  > :nth-child(4) {
+    grid-column: span 3;
+  }
+
+  /*
+    Below 1440 (Figma 1204/1280): status pairs with emirate on the first row, then the
+    issued-license trend and user-type each take a full-width row below.
+  */
+  @media (max-width: 1439.98px) {
+    > :nth-child(1) {
+      grid-column: span 3;
+      order: 0;
+    }
+    > :nth-child(3) {
+      grid-column: span 3;
+      order: 1;
+    }
+    > :nth-child(2) {
+      grid-column: 1 / -1;
+      order: 2;
+    }
+    > :nth-child(4) {
+      grid-column: 1 / -1;
+      order: 3;
+    }
+  }
+}
+
+.reports-card {
+  padding: 24px;
+  min-width: 0;
+}
+
+.reports-card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  color: @text-color;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 16px;
+  }
+}
+
+.reports-card-title-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  background: #fdf3dc;
+  border-radius: 4px;
+  color: @primary-color;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 16px;
+  }
+}
+
+.reports-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr));
+  gap: 12px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.reports-stat-grid-service {
+  grid-template-columns: minmax(0, 1fr) repeat(3, minmax(0, 1.02fr));
+  align-items: stretch;
+}
+
+.reports-stat-grid-six {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.reports-stat-grid-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.reports-stat-grid-compact {
+  grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.reports-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 62px;
+  padding: 12px 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.reports-stat-card-primary {
+  min-height: 100%;
+  padding: 16px 24px;
+}
+
+.reports-stat-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+  padding: 16px 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 16px;
+  }
+}
+
+.reports-stat-stack-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.reports-stat-card-outlined {
+  min-width: 200px;
+  min-height: 80px;
+  padding: 16px 24px;
+  background: #ffffff;
+  border: 1px solid #e1e3e5;
+  border-radius: 12px;
+}
+
+.reports-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: #f9f7ed;
+  color: @primary-color;
+  font-size: 20px;
+  flex-shrink: 0;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 18px;
+  }
+}
+
+.reports-stat-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.reports-stat-icon-image {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+}
+
+.reports-stat-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.reports-stat-value {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: @text-color;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 16px;
+  }
+}
+
+.reports-stat-value-prefix {
+  color: @text-color;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    line-height: 16px;
+  }
+}
+
+.reports-stat-value-prefix-icon {
+  width: 16px;
+  height: 14px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+.reports-stat-label {
+  color: @gary-color;
+  font-size: 14px;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.reports-donut-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 382px;
+  min-width: 0;
+}
+
+.reports-donut-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.reports-chart-shell {
+  width: 100%;
+  min-width: 0;
+}
+
+.reports-donut-chart-shell {
+  position: relative;
+  height: 220px;
+  padding: 0 0 8px;
+}
+
+.reports-donut-chart-block-service-visual {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  padding-top: 32px;
+  padding-bottom: 24px;
+  overflow: visible;
+}
+
+.reports-donut-chart-shell-service-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+  padding: 0;
+  flex: 0 0 140px;
+  overflow: visible !important;
+}
+
+.reports-donut-chart {
+  width: 100%;
+  height: 100% !important;
+}
+
+.reports-donut-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.reports-donut-total {
+  color: #361e12;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.reports-donut-total-label {
+  color: #797e86;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+.reports-donut-chart-shell-service-visual .reports-donut-center {
+  top: calc(50% + 4px);
+  gap: 4px;
+}
+
+.reports-donut-chart-shell-service-visual .reports-donut-total {
+  color: #361e12;
+  font-size: 20px;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+.reports-donut-chart-shell-service-visual .reports-donut-total-label {
+  color: #5f646d;
+  font-size: 14px;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.reports-donut-tooltip {
+  position: fixed !important;
+  z-index: 2000;
+  padding: 8px 12px !important;
+  border: 1px solid #e1e3e5 !important;
+  border-radius: 8px !important;
+  background: #ffffff !important;
+  box-shadow: 0 8px 20px rgba(54, 30, 18, 0.08) !important;
+  pointer-events: none !important;
+  color: #361e12 !important;
+  font: 400 12px/16px Inter, sans-serif !important;
+}
+
+.reports-donut-tooltip-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap !important;
+}
+
+.reports-donut-tooltip-marker {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.reports-donut-tooltip-text {
+  color: #361e12;
+  font-size: 12px;
+  line-height: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+.reports-trend-tooltip {
+  position: fixed !important;
+  z-index: 2000;
+  padding: 8px 12px !important;
+  border: 1px solid #e1e3e5 !important;
+  border-radius: 8px !important;
+  background: #ffffff !important;
+  box-shadow: 0 8px 20px rgba(54, 30, 18, 0.08) !important;
+  pointer-events: none !important;
+  color: #361e12 !important;
+  font: 400 12px/16px Inter, sans-serif !important;
+}
+
+.reports-trend-tooltip-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 156px;
+}
+
+.reports-trend-tooltip-title {
+  color: #5f646d;
+  font-size: 12px;
+  line-height: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+.reports-trend-tooltip-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.reports-trend-tooltip-series {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.reports-trend-tooltip-marker {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.reports-trend-tooltip-label,
+.reports-trend-tooltip-value {
+  color: #361e12;
+  font-size: 12px;
+  line-height: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+.reports-trend-tooltip-value {
+  font-weight: 500;
+}
+
+.reports-legend-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/*
+  Cards rendered with alignLegendToBottom (e.g. Application Status Overview): pin
+  the legend block itself to the card bottom so the last row sits 24px above the
+  edge at EVERY width (Figma node 44485:62719). The service-card variant handles
+  this via its stretched list; this covers the non-service layout, where the list
+  has no flex growth and stray height pooled under the legend when the grid
+  stretched the card.
+*/
+.reports-legend-list-bottom {
+  margin-top: auto;
+}
+
+.reports-legend-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s ease;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.reports-legend-item:focus-visible {
+  outline: 2px solid fade(@primary-color, 28%);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.reports-legend-item-inactive {
+  opacity: 0.45;
+}
+
+.reports-legend-label,
+.reports-legend-value {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  color: @text-color;
+  /*
+    14px at EVERY width per the Figma annotations (nodes 44485:62719 and
+    44485:65707) - the reference frames are ~1400px-wide viewports, so the
+    usual <1920 rwd-ramp down to 12px must not apply to donut legends.
+  */
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.reports-legend-label {
+  flex: 1;
+}
+
+.reports-legend-dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+}
+
+.reports-legend-dot-inner {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+}
+
+.reports-legend-percentage {
+  color: @gary-color;
+}
+
+.reports-donut-card-chart-service:not(.reports-donut-card-service)
+  .reports-legend-value {
+  justify-content: flex-end;
+  flex-shrink: 0;
+  gap: 12px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 8px;
+    }
+}
+
+.reports-donut-card-chart-service:not(.reports-donut-card-service)
+  .reports-legend-value
+  > span:first-child {
+  min-width: 72px;
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.reports-donut-card-chart-service:not(.reports-donut-card-service)
+  .reports-legend-percentage {
+  width: 58px;
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.reports-donut-content-side {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.reports-donut-chart-shell-side {
+  position: relative;
+  flex: 0 0 220px;
+  width: 220px;
+  height: 220px;
+}
+
+.reports-legend-list-side {
+  flex: 1;
+  min-width: 0;
+}
+
+.reports-donut-card-service {
+  display: flex;
+  flex-direction: column;
+  height: 448px;
+  padding: 24px;
+  border-radius: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.reports-donut-card-service .reports-card-title {
+  margin-bottom: 0;
+  font-size: 20px;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+.reports-donut-content-service {
+  position: relative;
+  flex: 1;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  min-height: 0;
+  overflow: visible;
+}
+
+.reports-donut-chart-block-service {
+  width: 100%;
+  padding-top: 32px;
+  padding-bottom: 24px;
+  overflow: visible;
+}
+
+.reports-donut-chart-shell-service {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+  padding: 0;
+  flex: 0 0 140px;
+  overflow: visible !important;
+}
+
+.reports-donut-card-service,
+.reports-donut-card-service .reports-donut-content,
+.reports-donut-card-service .reports-donut-content-service,
+.reports-donut-card-service .reports-donut-chart-block-service {
+  overflow: visible;
+}
+
+.reports-donut-card-service .reports-donut-center {
+  top: calc(50% + 4px);
+  gap: 4px;
+}
+
+.reports-donut-card-service .reports-donut-total {
+  color: #361e12;
+  font-size: 20px;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+.reports-donut-card-service .reports-donut-total-label {
+  color: #5f646d;
+  font-size: 14px;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.reports-donut-card-service .reports-legend-list {
+  flex: 1;
+  gap: 12px;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 4px;
+  width: 100%;
+  /*
+    Pin the rows to the bottom of the stretched list so the last legend row sits
+    24px (the card padding) above the card edge (Figma node 44485:62719). The
+    list itself stays flex:1 + scrollable for long legends.
+  */
+  justify-content: flex-end;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.reports-donut-card-service .reports-legend-item {
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.reports-donut-card-service .reports-legend-label,
+.reports-donut-card-service .reports-legend-value {
+  /* 14px at every width - same Figma annotations as the generic legend rule. */
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.reports-donut-card-service .reports-legend-label {
+  color: #361e12;
+}
+
+.reports-donut-card-service .reports-legend-label > span:last-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.reports-donut-card-service .reports-legend-value {
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+.reports-donut-card-service .reports-legend-value > span:first-child {
+  color: #361e12;
+  font-weight: 600;
+}
+
+.reports-donut-card-service .reports-legend-dot {
+  display: inline-flex;
+  width: 8px;
+  height: 8px;
+  margin: 2px;
+}
+
+.reports-donut-card-service .reports-legend-percentage {
+  width: 58px;
+  color: #5f646d;
+  text-align: end;
+}
+
+.reports-donut-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e1e3e5;
+  color: @text-color;
+  font-size: 12px;
+  line-height: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+.reports-donut-footer-value {
+  color: #4a9d5c;
+  font-weight: 600;
+}
+
+.reports-bars-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 348px;
+  min-width: 0;
+  padding: 24px;
+  border-radius: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.reports-bars-card .reports-card-title {
+  margin-bottom: 32px;
+  font-size: 20px;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+.reports-bar-list {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.reports-bar-row {
+  display: grid;
+  /*
+    Fixed label column so the bars fill the rest of the card. A 30% label column
+    ballooned to ~350px once these cards go full width (stacked below 1440), pushing the
+    short emirate / user-type labels into the middle and leaving the bars far from the
+    left. Long-label cards widen this locally (see status-activities below).
+  */
+  grid-template-columns: minmax(0, 150px) minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+/* The activity-name bars carry long sentence labels, so give them a wider label column. */
+.reports-grid-status-activities .reports-bar-row {
+  grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+}
+
+.reports-bar-name {
+  color: @text-color;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: end;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.reports-bars-card--dynamic-label-column .reports-bar-list {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-items: center;
+  align-content: space-between;
+}
+
+.reports-bars-card--dynamic-label-column .reports-bar-row {
+  display: contents;
+}
+
+.reports-bar-scale {
+  position: relative;
+  min-width: 0;
+  padding-inline-end: 100px;
+  overflow: visible;
+}
+
+.reports-bar-fill-anchor {
+  position: relative;
+  height: 20px;
+}
+
+.reports-bar-fill {
+  position: absolute;
+  top: 4px;
+  inset-inline-start: 0;
+  width: 100%;
+  height: 12px;
+  border-start-end-radius: 8px;
+  border-end-end-radius: 8px;
+}
+
+.reports-bar-meta {
+  position: absolute;
+  top: 50%;
+  inset-inline-start: calc(100% + 8px);
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  white-space: nowrap;
+  color: @text-color;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.reports-bar-value {
+  color: @text-color;
+}
+
+.reports-bar-percentage {
+  color: @gary-color;
+  font-weight: 500;
+}
+
+.reports-trend-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 410px;
+  min-width: 0;
+  padding: 24px 0;
+  border-radius: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 16px;
+    border-radius: 10px;
+  }
+}
+
+.reports-trend-card-side-legend {
+  gap: 32px;
+  min-height: 356px;
+  padding: 24px;
+}
+
+.reports-trend-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.reports-trend-content-side-legend {
+  flex: 1;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 32px;
+  min-height: 0;
+}
+
+.reports-trend-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 24px;
+  padding: 0 24px;
+}
+
+.reports-trend-card-side-legend .reports-trend-title-wrap {
+  padding: 0;
+}
+
+.reports-trend-title {
+  margin-bottom: 0;
+  font-size: 20px;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+.reports-trend-aed-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+.reports-trend-info-button {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.reports-trend-info-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.reports-trend-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  width: 100%;
+  padding: 0 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 16px;
+  }
+}
+
+.reports-trend-legend-side {
+  order: 2;
+  flex: 0 0 240px;
+  /*
+   * Without this the column ignores its own 240px basis: a flex item defaults to
+   * min-width:auto, and once the labels stopped wrapping (see the label rules
+   * below) their min-content width became the longest series name, pushing the
+   * legend wider than the chart allows. Same guard the chart shell already uses.
+   */
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 8px;
+  padding: 0;
+
+  /*
+   * Keep every entry on one line and ellipsize the overflow. Scoped to the side
+   * layout on purpose — the default row legend spans the whole card width and
+   * wraps, where truncating would hide names that fit fine.
+   */
+  .reports-trend-legend-item {
+    max-width: 100%;
+  }
+
+  .reports-trend-legend-icon {
+    flex: 0 0 16px;
+  }
+
+  .reports-trend-legend-label {
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+.reports-trend-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s ease;
+}
+
+.reports-trend-legend-item:focus-visible {
+  outline: 2px solid fade(@primary-color, 28%);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.reports-trend-legend-item-inactive {
+  opacity: 0.45;
+}
+
+.reports-trend-legend-icon {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  color: var(--legend-color);
+}
+
+.reports-trend-legend-line {
+  position: absolute;
+  top: 50%;
+  left: 1px;
+  right: 1px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transform: translateY(-50%);
+}
+
+.reports-trend-legend-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  background: #ffffff;
+  transform: translate(-50%, -50%);
+}
+
+.reports-trend-legend-label {
+  color: @text-color;
+  font-size: 12px;
+  line-height: 18px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 16px;
+  }
+}
+
+.reports-trend-chart-shell {
+  flex: 1;
+  min-height: 280px;
+}
+
+.reports-trend-chart-shell-side {
+  order: 1;
+  min-width: 0;
+  min-height: 292px;
+}
+
+.reports-trend-chart {
+  width: 100%;
+  height: 100% !important;
+}
+
+.reports-chart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-height: 180px;
+  gap: 8px;
+  color: #9ea2a9;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.reports-trend-card .reports-chart-empty {
+  padding: 0 24px;
+}
+
+.reports-trend-card-side-legend .reports-chart-empty {
+  padding: 0;
+}
+
+.reports-subsection-card {
+  overflow: hidden;
+  width: 100%;
+  min-width: 0;
+  padding: 0 24px 24px;
+  border-radius: 20px;
+
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.reports-subsection-card .reports-tabs-secondary {
+  padding-inline: 0;
+}
+
+.reports-table-section {
+  width: 100%;
+  padding: 12px 0 0;
+  min-width: 0;
+  min-height: 400px;
+}
+
+.reports-table-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.reports-table-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.reports-search-input {
+  width: 360px;
+  height: 48px;
+  border-radius: 8px;
+  border-color: #e1e3e5;
+  box-shadow: none;
+}
+
+.reports-search-input.ant-input-affix-wrapper {
+  padding: 0 14px;
+}
+
+.reports-search-input .ant-input {
+  font-size: 12px;
+  line-height: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+.reports-search-input .ant-input-prefix {
+  margin-inline-end: 8px;
+  color: #9ea2a9;
+}
+
+.reports-select {
+  width: 240px;
+}
+
+.reports-select .ant-select-selection-item,
+.reports-select .ant-select-selection-placeholder {
+  font-size: 14px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+  }
+}
+
+.reports-export-button {
+  min-width: 100px;
+  height: 48px;
+  border-color: @primary-color !important;
+  border-radius: 8px !important;
+  color: @primary-color !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 20px !important;
+  background: #ffffff !important;
+}
+
+.reports-table-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.reports-table-text {
+  color: @text-color;
+  font-size: 14px;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.reports-table-delta {
+  font-size: 12px;
+  line-height: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+.reports-table-delta-positive {
+  color: #4a9d5c;
+}
+
+.reports-table-delta-negative {
+  color: @darger-color;
+}
+
+.reports-table-delta-neutral {
+  color: @gary-color;
+}
+
+.reports-profile-table-card,
+.reports-license-table-card {
+  width: 100%;
+  padding: 24px;
+  min-width: 0;
+}
+
+.reports-license-table-card .reports-table-toolbar,
+.reports-profile-table-card .reports-table-toolbar {
+  margin-bottom: 16px;
+}
+
+.reports-table-section,
+.reports-profile-table-card,
+.reports-license-table-card {
+  overflow: hidden;
+
+  .ant-table-wrapper,
+  .ant-spin-nested-loading,
+  .ant-spin-container {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .reports-table-container {
+    width: 100%;
+    max-width: 100%;
+    overflow-y: hidden;
+  }
+
+  .reports-table-container .ant-empty-image,
+  .reports-table-container .ant-table-cell {
+    overflow: hidden;
+  }
+
+  .reports-table-container * {
+    scrollbar-width: thin;
+  }
+
+  .ant-table {
+    color: @text-color;
+  }
+
+  .ant-table-thead > tr > th {
+    background: @table-header-bgColor;
+    color: @text-color-table-header;
+    /* 16px per the Figma annotation (node 44485:62719) - was 12px. */
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: start;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  .ant-table-tbody > tr > td {
+    height: 72px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    vertical-align: middle;
+  }
+
+  .ant-pagination {
+    margin: 16px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .ant-pagination-total-text {
+    margin-inline-end: 8px;
+  }
+
+  .ant-pagination-item,
+  .ant-pagination-prev,
+  .ant-pagination-next {
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    border-radius: 6px;
+    background: @ant-pagination-color;
+    margin-inline-start: 8px;
+  }
+
+  .ant-pagination-item a {
+    color: @text-color;
+    font-size: 16px;
+    line-height: 40px;
+    padding: 0;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 14px;
+    }
+  }
+
+  .ant-pagination-item-active {
+    background: @ant-pagination-active-color;
+    border: none;
+  }
+
+  .ant-pagination-item-active a,
+  .ant-pagination-item:hover a {
+    color: @text-color;
+  }
+
+  .ant-pagination-prev .ant-pagination-item-link,
+  .ant-pagination-next .ant-pagination-item-link {
+    height: 40px;
+    border: none;
+    border-radius: 6px;
+    background: @ant-pagination-color;
+  }
+
+  .ant-pagination-prev .ant-pagination-item-link,
+  .ant-pagination-next .ant-pagination-item-link,
+  .ant-pagination-prev .ant-pagination-item-link .anticon,
+  .ant-pagination-next .ant-pagination-item-link .anticon {
+    color: @text-color;
+    font-size: 12px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 10px;
+    }
+  }
+
+  .ant-pagination-disabled .ant-pagination-item-link,
+  .ant-pagination-disabled .ant-pagination-item-link .anticon {
+    color: #c6c6c6;
+  }
+
+  .ant-pagination-options {
+    margin-inline-start: 16px;
+  }
+
+  .ant-pagination-options-size-changer.ant-select {
+    min-width: 240px;
+    width: 240px;
+    height: 40px;
+  }
+
+  .ant-pagination-options-size-changer.ant-select.ant-select-single:not(
+      .ant-select-customize-input
+    )
+    .ant-select-selector {
+    height: 40px !important;
+    padding: 0 16px !important;
+    border: none !important;
+    border-radius: 6px !important;
+    background: @ant-pagination-color !important;
+    box-shadow: none !important;
+  }
+
+  .ant-pagination-options-size-changer.ant-select .ant-select-selection-search,
+  .ant-pagination-options-size-changer.ant-select
+    .ant-select-selection-search-input {
+    height: 40px !important;
+  }
+
+  .ant-pagination-options-size-changer.ant-select .ant-select-selection-item,
+  .ant-pagination-options-size-changer.ant-select
+    .ant-select-selection-placeholder {
+    height: 40px;
+    line-height: 40px !important;
+    color: @text-color;
+    font-size: 16px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 14px;
+      }
+  }
+
+  .ant-pagination-options-size-changer.ant-select .ant-select-arrow {
+    inset-inline-end: 12px;
+    color: #bfbfbf;
+    font-size: 12px !important;
+  }
+}
+
+.reports-license-table-card {
+  .reports-license-divider-cell,
+  .reports-license-group-divider-cell,
+  .reports-license-group-divider-header {
+    position: relative;
+  }
+
+  .reports-license-divider-cell::after,
+  .reports-license-group-divider-cell::after,
+  .reports-license-group-divider-header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    inset-inline-end: 0;
+    width: 1px;
+    height: 100%;
+    background: #e1e3e5;
+  }
+
+  .ant-table-thead > tr:first-child > th.reports-license-divider-cell::after,
+  .ant-table-thead
+    > tr:first-child
+    > th.reports-license-group-divider-header::after {
+    height: calc(100% + 1px);
+  }
+
+  .ant-table-cell-fix-left {
+    box-shadow: none;
+    transition: box-shadow 0.3s;
+  }
+
+  .ant-table-ping-left .ant-table-cell-fix-left-last {
+    box-shadow: 8px 0 12px rgba(0, 0, 0, 0.08);
+  }
+
+  [dir="rtl"] .ant-table-ping-right .ant-table-cell-fix-left-last {
+    box-shadow: -8px 0 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .ant-table-thead .ant-table-cell-fix-left {
+    background: @table-header-bgColor;
+  }
+}
+
+// Team Performance Trend Card
+.reports-team-trend-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.reports-team-trend-kpi-row {
+  display: flex;
+  gap: 12px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.reports-team-trend-kpi-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8f9fb;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.reports-team-trend-kpi-icon {
+  /*
+    Pale circular badge around the glyph, matching the metric icons in the Figma
+    reference (node 44485:62719) - the raw 36px image looked off-style.
+  */
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 999px;
+  background: #f9f7ed;
+  box-sizing: border-box;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.reports-team-trend-kpi-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.reports-team-trend-kpi-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1.2;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 16px;
+  }
+}
+
+.reports-team-trend-kpi-label {
+  font-size: 11px;
+  color: #8f8f8f;
+}
+
+.reports-team-trend-legend {
+  display: flex;
+  /* Centred per the Figma annotation (node 44485:62719). */
+  justify-content: center;
+  gap: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.reports-team-trend-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  /* 12px per the Figma annotation (node 44485:62719). */
+  font-size: 12px;
+  color: #3d3d5c;
+  user-select: none;
+
+  &.reports-team-trend-legend-item-inactive {
+    opacity: 0.4;
+  }
+}
+
+.reports-team-trend-legend-line {
+  display: inline-block;
+  width: 20px;
+  height: 0;
+  border-top: 2px solid currentColor;
+
+  &.reports-team-trend-legend-line-dashed {
+    border-top-style: dashed;
+  }
+}
+
+.reports-team-trend-legend-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-inline-start: -14px;
+}
+
+.reports-team-trend-legend-label {
+  color: #3d3d5c;
+}
+
+.reports-team-trend-chart-shell {
+  flex: 1;
+  min-height: 200px;
+}
+
+// CSAT Overview Card
+.reports-csat-overview-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reports-csat-kpi-row {
+  display: flex;
+  gap: 16px;
+}
+
+.reports-csat-kpi-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 16px;
+  background: #f9fafb;
+  border-radius: 20px;
+}
+
+.reports-csat-kpi-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(182, 138, 53, 0.1);
+  color: #f5a623;
+  font-size: 20px;
+}
+
+.reports-csat-kpi-icon-star {
+  background: rgba(182, 138, 53, 0.1);
+  color: #f5c623;
+}
+
+.reports-csat-kpi-icon-image {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.reports-csat-kpi-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.reports-csat-kpi-value {
+  color: #361e12;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.reports-csat-kpi-label {
+  overflow: hidden;
+  color: #5f646d;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.reports-csat-donut-wrap {
+  flex: 1;
+}
+
+.reports-csat-segment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.reports-csat-segment-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.reports-csat-segment-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.reports-csat-segment-name {
+  flex: 1;
+  color: #3d3d5c;
+}
+
+.reports-csat-segment-count {
+  font-weight: 600;
+  color: #1a1a2e;
+  min-width: 48px;
+  text-align: end;
+}
+
+.reports-csat-segment-pct {
+  color: #8f8f8f;
+  min-width: 54px;
+  text-align: end;
+}
+
+/*
+  Column reflow at the Figma tablet breakpoint (1440). At >=1440 the grids follow the
+  1920 desktop frames; below 1440 the rows collapse the way the 1280/1024 frames show:
+  the six stat cards drop to a 3-up row (3 + 3), the three-donut rows pair up 2-up, and
+  every wide split row (donut + wide chart / trend) stacks into a single column.
+*/
+/*
+  Figma labels the wide frame "1440" (applies above 1440) and the narrow frame
+  "1204+1280" (applies 1280-1440). So only the stat row and the revenue split collapse
+  at the 1440 boundary; the donut / bars / side-legend rows keep their wider arrangement
+  down to 1280 and reflow below it.
+*/
+@media (max-width: 1439.98px) {
+  .reports-stat-grid-six {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /*
+    The Service Operations trend pairs each take a full-width row below 1440 (Figma
+    "1440" frame): service + team trend (grid-two) and revenue + breakdown (grid-revenue).
+  */
+  .reports-grid-revenue,
+  .reports-grid-two {
+    grid-template-columns: 1fr;
+  }
+
+  .reports-profile-top-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reports-profile-charts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .reports-profile-charts-grid > .reports-bars-card {
+    grid-column: 1 / -1;
+    order: 1;
+  }
+}
+
+@media (max-width: 1279.98px) {
+  .reports-grid-three {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /*
+    Profile's "by Emirate" bars card shares the three-up row with two donuts. Once the
+    row pairs up it drops below the donut pair at full width rather than being squeezed
+    into a half column.
+  */
+  .reports-grid-three .reports-bars-card {
+    grid-column: 1 / -1;
+    order: 1;
+  }
+
+  /*
+    Profile top row stacks below 1280: the User Type donut uses the side-legend layout
+    (ring left, legend right) so it fills the full page width, and the registration
+    trend sits full width below it.
+  */
+  .reports-profile-top-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*
+  The fixed-ratio split rows (status + activities, CSAT, revenue, profile top, license
+  top) keep their two-column ratio below 1440 instead of stacking. Their left card is a
+  centred-donut / overview card whose ring + legend look stranded when stretched to the
+  full page width, so they stay side by side down to the 1024 minimum.
+*/
+
+/*
+  Figma node 44485:62719: the last legend row sits 24px above the card bottom on
+  the vertical donut cards (Application Status Overview and the service-layout
+  donuts, incl. Applications by Device). The side-legend Applications by User Type
+  card is intentionally excluded. Placed at the end of the file so the
+  padding-bottom survives the <1920 padding ramps declared earlier.
+*/
+.reports-donut-card:not(.reports-donut-card-chart-service),
+.reports-donut-card-service,
+/* Bars cards too (e.g. Profile by Emirate) - Figma node 44485:65556 annotation. */
+.reports-bars-card,
+/* Profile Analytics donuts (Verification Methods / Device Distribution): these are
+   chart-service WITHOUT the service layout class, so none of the rules above hit
+   them (Figma node 44485:65556). The side-legend User Type card lives in the top
+   grid, not this one, so it stays excluded. */
+.reports-profile-charts-grid > .reports-donut-card {
+  padding-bottom: 24px;
+}
+
+/* Pin their legends to the card bottom so the 24px inset is what you actually see. */
+.reports-profile-charts-grid > .reports-donut-card .reports-legend-list {
+  margin-top: auto;
+}
+
+/*
+  Bars cards (Applications by Emirate etc.): 24px inset on every side at every
+  width - the module-wide <1920 ramp squeezed them to 12px.
+*/
+.reports-bars-card {
+  padding: 24px;
+}
+
+/*
+  Fixed label column width so every row shares the same bar start position
+  (Figma "Profiles by Emirate" — labels right-aligned, bars left-aligned).
+  Long-label variants below still override with their own wider tracks.
+*/
+.reports-bar-row {
+  grid-template-columns: 150px minmax(0, 1fr);
+}
+
+/*
+  License Analytics "Licenses by User Type" (the side-legend pie, the only plain
+  donut card in this grid - Licenses by Status carries the chart-service class):
+  content sits 24px from every card edge at every width, per the red edge
+  brackets on Figma node 44485:65707. Beats the .reports-card 16px base and its
+  <1920 12px ramp on specificity.
+*/
+.reports-license-grid > .reports-donut-card:not(.reports-donut-card-chart-service) {
+  padding: 24px;
+}

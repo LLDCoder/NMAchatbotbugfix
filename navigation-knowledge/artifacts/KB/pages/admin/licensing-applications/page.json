@@ -1,0 +1,866 @@
+{
+  "schemaVersion": "1.0",
+  "bundleId": "admin.licensing.applications.page-knowledge",
+  "createdAt": "2026-09-24T05:03:45.613418+00:00",
+  "packageStatus": "draft",
+  "records": [
+    {
+      "id": "admin.licensing.applications",
+      "kind": "page_definition",
+      "revision": 1,
+      "status": "draft",
+      "title": "My Application Tasks — page definition",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local",
+          "debug"
+        ],
+        "pageRefs": [
+          "/licensing/applications"
+        ],
+        "runtimeVerification": "pending",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Applications/index.tsx",
+          "revision": "sha256:be9c81e58706b9071a3c0f4ddd1950df113cf6971e6c1f6efbf90dafff1f89e4",
+          "locator": "234; 701-880; 932-1105; 1231-1285; 1528-1660",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/application.ts",
+          "revision": "sha256:32978ed7cc15c3bfb93d26f4c2c83a75cc3ad33ef2e2e87709c7feb3a50a3908",
+          "locator": "326-353",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ApplicationAppService.cs",
+          "revision": "sha256:22e94773e70c95fab9ce479919b51d0241e046bf085cd0c3f8b5991b9004772e",
+          "locator": "216-319",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ReviewTaskProjection.cs",
+          "revision": "sha256:9df0f7b49cd9c099c78d1ccd2e8967216a477fd533f90a312573f287eef1b797",
+          "locator": "11-51; 88-106",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/MyReviewFilter.cs",
+          "revision": "sha256:e85bf61625c530802e0a177de8eeba436c26ba8ad98952b7908ddfa915073ebb",
+          "locator": "22-99",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Application/ApplicationDto.cs",
+          "revision": "sha256:3efae9b26845ec68130f314cbccfd0861bb76f19a22ab6d083f5ec9435042cdc",
+          "locator": "12-157",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Api/Controllers/ApplicationController.cs",
+          "revision": "sha256:c43e5e7e836b3aa6f2f5070d8456f4378ab205112cddc012fde6949e26a44397",
+          "locator": "30-57",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "page_catalog",
+          "reference": "navigation-knowledge/artifacts/page-catalog.json",
+          "revision": "sha256:f28b1c0d3bde64f2e7a76c415579c9bb968f60099b9b9fec5e5a3dfb70d9e4f2",
+          "locator": "Applications",
+          "verification": "static_extracted"
+        }
+      ],
+      "payload": {
+        "pageIdentity": {
+          "id": "admin.licensing.applications",
+          "portal": "admin",
+          "module": "Licensing",
+          "route": "/licensing/applications",
+          "component": "Applications",
+          "displayName": "My Application Tasks",
+          "purpose": "Personal licensing application workflow work, including To Do and Completed views. This page is not a team queue or issued-license inventory."
+        },
+        "entryConditions": {
+          "session": "authenticated Admin Portal principal",
+          "permissionPath": "/licensing/applications",
+          "scope": "Current user in the Licensing department as enforced by the endpoint and current authorization. Role title alone does not change the page to team scope.",
+          "runtimeGrant": "must_be_checked"
+        },
+        "views": [
+          {
+            "id": "todo",
+            "label": "To Do",
+            "tabKey": "1",
+            "default": true,
+            "scope": "personal",
+            "operationRef": "admin.licensing.applications.read.todo",
+            "rowProjectionKey": [
+              "id",
+              "dispositionCaseId"
+            ],
+            "sourceDefinition": "Exclude completed and superseded instances, then choose the first ordered row per projection key."
+          },
+          {
+            "id": "completed",
+            "label": "Completed",
+            "tabKey": "2",
+            "default": false,
+            "scope": "personal",
+            "operationRef": "admin.licensing.applications.read.completed",
+            "rowProjectionKey": [
+              "id"
+            ],
+            "sourceDefinition": "Select completed current-instance rows and the first ordered row per application identity."
+          }
+        ],
+        "readinessAssertions": [
+          "The route and selected tab match the observed page.",
+          "The required list response succeeded at both transport and business-envelope level.",
+          "Loading has finished with data or an explicit successful empty state.",
+          "Filters, sorting and pagination state are known.",
+          "Default UI zeros during failed loading are not evidence of an empty queue."
+        ],
+        "regions": [
+          {
+            "name": "Summary cards",
+            "data": "statusCount",
+            "meaning": "Pre-filter projection counts across todo/completed populations."
+          },
+          {
+            "name": "Task list",
+            "data": "page.items",
+            "meaning": "Current selected-tab page after filters."
+          },
+          {
+            "name": "Pagination total",
+            "data": "page.total",
+            "meaning": "Filtered selected-tab collection size."
+          }
+        ],
+        "filters": [
+          {
+            "control": "Search",
+            "parameter": "keyword",
+            "meaning": "Case-insensitive substring over application number, service names and Apply For names in inspected source."
+          },
+          {
+            "control": "Type",
+            "parameter": "serviceTypeId",
+            "meaning": "Service type equality; string 1 is the frontend all-types sentinel, not a Licensing department ID."
+          },
+          {
+            "control": "Status",
+            "parameter": "processInstanceStatus",
+            "meaning": "Exact equality against the row status field; options are returned in processInstanceStatus."
+          },
+          {
+            "control": "Date range",
+            "parameters": [
+              "startTime",
+              "endTime"
+            ],
+            "uiLabel": "Submission Time",
+            "actualTimeField": "lastUpdatedTime",
+            "meaning": "Start inclusive from start date; end exclusive at next date in inspected backend. Backend timezone is not established."
+          },
+          {
+            "control": "My Decision",
+            "parameter": "approvalStatus",
+            "view": "completed",
+            "meaning": "Multi-select decisions from myDecisionOptions; matched against MyDecision by inspected completed-view backend."
+          }
+        ],
+        "pagination": {
+          "parameters": [
+            "pageIndex",
+            "pageSize"
+          ],
+          "response": [
+            "page.pageIndex",
+            "page.pageSize",
+            "page.total",
+            "page.items"
+          ],
+          "defaultPageIndex": 1,
+          "defaultPageSize": 10,
+          "defaultSortField": "LastUpdatedTime",
+          "defaultSortDirection": "descending",
+          "tabSwitch": "Resets list, page index and filter form.",
+          "runtimeLimits": "Actual accepted sizes and stable-snapshot support remain unverified."
+        },
+        "navigation": [
+          {
+            "from": "task row",
+            "target": "/licensing/applications/applicationsDetails",
+            "parameters": [
+              "taskId",
+              "activeTab"
+            ],
+            "entityParameter": "taskId"
+          }
+        ],
+        "operationsSummary": {
+          "readOnly": [
+            "Select tab",
+            "Search/filter/reset",
+            "Sort",
+            "Paginate",
+            "Open authorized detail"
+          ],
+          "export": "Requires separate Export permission and uses export filter compatibility rules. It is not automatically identical to list collection under all deployments.",
+          "businessWrites": [
+            "Approve",
+            "Reject",
+            "Request Modification",
+            "Send Back",
+            "External Approval",
+            "Recall"
+          ],
+          "writeBoundary": "Visible business actions are page descriptions, not read permissions or execution authorization."
+        },
+        "knownAmbiguities": [
+          "Submission Time label differs from the inspected time field and date-filter implementation.",
+          "taskStatus meaning changes in the personal Completed compatibility response.",
+          "Source snapshot does not attest target deployment version."
+        ]
+      }
+    },
+    {
+      "id": "admin.licensing.applications.fields",
+      "kind": "field_semantics",
+      "revision": 1,
+      "status": "draft",
+      "title": "My Application Tasks — entities, fields and metric semantics",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local",
+          "debug"
+        ],
+        "pageRefs": [
+          "/licensing/applications"
+        ],
+        "runtimeVerification": "pending",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Applications/index.tsx",
+          "revision": "sha256:be9c81e58706b9071a3c0f4ddd1950df113cf6971e6c1f6efbf90dafff1f89e4",
+          "locator": "234; 701-880; 932-1105; 1231-1285; 1528-1660",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/application.ts",
+          "revision": "sha256:32978ed7cc15c3bfb93d26f4c2c83a75cc3ad33ef2e2e87709c7feb3a50a3908",
+          "locator": "326-353",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ApplicationAppService.cs",
+          "revision": "sha256:22e94773e70c95fab9ce479919b51d0241e046bf085cd0c3f8b5991b9004772e",
+          "locator": "216-319",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ReviewTaskProjection.cs",
+          "revision": "sha256:9df0f7b49cd9c099c78d1ccd2e8967216a477fd533f90a312573f287eef1b797",
+          "locator": "11-51; 88-106",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/MyReviewFilter.cs",
+          "revision": "sha256:e85bf61625c530802e0a177de8eeba436c26ba8ad98952b7908ddfa915073ebb",
+          "locator": "22-99",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Application/ApplicationDto.cs",
+          "revision": "sha256:3efae9b26845ec68130f314cbccfd0861bb76f19a22ab6d083f5ec9435042cdc",
+          "locator": "12-157",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Api/Controllers/ApplicationController.cs",
+          "revision": "sha256:c43e5e7e836b3aa6f2f5070d8456f4378ab205112cddc012fde6949e26a44397",
+          "locator": "30-57",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "page_catalog",
+          "reference": "navigation-knowledge/artifacts/page-catalog.json",
+          "revision": "sha256:f28b1c0d3bde64f2e7a76c415579c9bb968f60099b9b9fec5e5a3dfb70d9e4f2",
+          "locator": "Applications",
+          "verification": "static_extracted"
+        }
+      ],
+      "payload": {
+        "sourceBinding": {
+          "pageRef": "/licensing/applications",
+          "responseRoot": "/data",
+          "views": [
+            "todo",
+            "completed"
+          ]
+        },
+        "fields": [
+          {
+            "id": "application_id",
+            "path": "/page/items/*/id",
+            "type": "integer",
+            "entity": "application",
+            "meaning": "Application identity used by the inspected projection implementation."
+          },
+          {
+            "id": "application_number",
+            "path": "/page/items/*/applicationNumber",
+            "uiLabel": "Application No.",
+            "type": "string",
+            "entity": "application",
+            "meaning": "Business-facing application reference. Display reference and internal identity are distinct fields."
+          },
+          {
+            "id": "task_id",
+            "path": "/page/items/*/taskId",
+            "type": "string",
+            "entity": "workflow_task",
+            "meaning": "Workflow task identity and task detail navigation parameter; not an application identity."
+          },
+          {
+            "id": "disposition_case_id",
+            "path": "/page/items/*/dispositionCaseId",
+            "type": "integer_or_null",
+            "entity": "disposition_case",
+            "meaning": "Additional component of the personal To Do projection key."
+          },
+          {
+            "id": "process_instance_id",
+            "path": "/page/items/*/processInstanceId",
+            "type": "string",
+            "entity": "workflow_instance",
+            "meaning": "Workflow instance represented by the row."
+          },
+          {
+            "id": "canonical_process_instance_id",
+            "path": "/page/items/*/oldProcessInstanceId",
+            "type": "string_or_null",
+            "entity": "workflow_instance",
+            "meaning": "Legacy DTO name for the current canonical ApplicationsExt.ProcessInstanceId, per inspected projection source."
+          },
+          {
+            "id": "application_status",
+            "path": "/page/items/*/status",
+            "uiLabel": "Status",
+            "type": "string",
+            "entity": "application_process",
+            "meaning": "Application/process status displayed in the Status column. Value set comes from the response, not a fixed knowledge enumeration.",
+            "filterParameter": "processInstanceStatus"
+          },
+          {
+            "id": "task_status",
+            "path": "/page/items/*/taskStatus",
+            "type": "string",
+            "meaning": "In To Do, the workflow task/node state. In the personal Completed response, projected to My Decision for legacy clients; interpretation is view-dependent."
+          },
+          {
+            "id": "my_decision",
+            "path": "/page/items/*/myDecision",
+            "type": "string_or_null",
+            "meaning": "Completed-view review decision. The current frontend renders its compatibility projection from taskStatus under My Decision; missing value renders as a dash."
+          },
+          {
+            "id": "service_name",
+            "path": "/page/items/*/serviceNameEn",
+            "uiLabel": "Service Name",
+            "type": "string",
+            "meaning": "Service display name used by the inspected list; language mapping may be applied server-side."
+          },
+          {
+            "id": "service_category",
+            "path": "/page/items/*/serviceCategoryNameEn",
+            "uiLabel": "Service Category",
+            "type": "string",
+            "meaning": "Service category display label."
+          },
+          {
+            "id": "service_type",
+            "path": "/page/items/*/serviceTypeNameEn",
+            "uiLabel": "Type",
+            "type": "string",
+            "meaning": "Application service type label; serviceTypeId is its identifier."
+          },
+          {
+            "id": "sla_display",
+            "path": "/page/items/*/slaDescription",
+            "uiLabel": "SLA",
+            "type": "string",
+            "meaning": "Formatted SLA label. Completed renders On Time/Exceeded based on the numeric SLA sign. Detailed duration/clock rules require separate verification."
+          },
+          {
+            "id": "last_updated",
+            "path": "/page/items/*/lastUpdatedTime",
+            "uiLabel": "Submission Time",
+            "type": "datetime",
+            "meaning": "Despite the current frontend label, this column binds to lastUpdatedTime. The source describes the latest timeline update with fallback timestamps."
+          },
+          {
+            "id": "submission_time",
+            "path": "/page/items/*/submissionTime",
+            "type": "datetime",
+            "meaning": "Separate response timestamp; not the field bound to the currently labelled Submission Time column."
+          },
+          {
+            "id": "page_total",
+            "path": "/page/total",
+            "type": "integer",
+            "unit": "selected_view_projection_rows",
+            "population": "after_list_filters_before_pagination",
+            "meaning": "Total matching rows in the selected view; not current page length."
+          },
+          {
+            "id": "todoCount",
+            "path": "/statusCount/todoCount",
+            "uiLabel": "To Do",
+            "type": "integer",
+            "unit": "projection_rows",
+            "population": "personal_todo_projection",
+            "filterScope": "before_list_filters",
+            "metricRole": "total",
+            "meaning": "Count of the projected personal todo collection.",
+            "missingIsZero": false
+          },
+          {
+            "id": "pendingReviewCount",
+            "path": "/statusCount/pendingReviewCount",
+            "uiLabel": "Pending Review",
+            "type": "integer",
+            "unit": "projection_rows",
+            "population": "personal_todo_projection",
+            "filterScope": "before_list_filters",
+            "metricRole": "category",
+            "meaning": "Rows whose StatusId is neither PendingModification nor ExternalApproval in inspected source. This broad set may include disposition-related states.",
+            "missingIsZero": false
+          },
+          {
+            "id": "pendingModificationCount",
+            "path": "/statusCount/pendingModificationCount",
+            "uiLabel": "Pending Modification",
+            "type": "integer",
+            "unit": "projection_rows",
+            "population": "personal_todo_projection",
+            "filterScope": "before_list_filters",
+            "metricRole": "category",
+            "meaning": "Rows with PendingModification StatusId.",
+            "missingIsZero": false
+          },
+          {
+            "id": "externalApproveCount",
+            "path": "/statusCount/externalApproveCount",
+            "uiLabel": "External Approval",
+            "type": "integer",
+            "unit": "projection_rows",
+            "population": "personal_todo_projection",
+            "filterScope": "before_list_filters",
+            "metricRole": "category",
+            "meaning": "Rows with ExternalApproval StatusId.",
+            "missingIsZero": false
+          },
+          {
+            "id": "pendingDispositionCount",
+            "path": "/statusCount/pendingDispositionCount",
+            "uiLabel": "Pending Disposition",
+            "type": "integer",
+            "unit": "projection_rows",
+            "population": "personal_todo_projection",
+            "filterScope": "before_list_filters",
+            "metricRole": "category",
+            "meaning": "Rows with PendingDisposition StatusId.",
+            "missingIsZero": false
+          },
+          {
+            "id": "dispositionVerificationCount",
+            "path": "/statusCount/dispositionVerificationCount",
+            "uiLabel": "Disposition Verification",
+            "type": "integer",
+            "unit": "projection_rows",
+            "population": "personal_todo_projection",
+            "filterScope": "before_list_filters",
+            "metricRole": "category",
+            "meaning": "Rows with DispositionVerification StatusId.",
+            "missingIsZero": false
+          },
+          {
+            "id": "completedCount",
+            "path": "/statusCount/completedCount",
+            "uiLabel": "Completed",
+            "type": "integer",
+            "unit": "projection_rows",
+            "population": "personal_completed_projection",
+            "filterScope": "before_list_filters",
+            "metricRole": "total",
+            "meaning": "Count of the projected completed collection, a different lifecycle population from todo.",
+            "missingIsZero": false
+          }
+        ],
+        "relationships": [
+          {
+            "id": "personal_projection_identity",
+            "meaning": "Personal To Do projection identity is the pair (id, dispositionCaseId); the application identity is id. Distinct application count and projection row count are different measures."
+          },
+          {
+            "id": "projection_order",
+            "meaning": "Source orders by application id, then descending task creation and approval timestamps before projection selection."
+          },
+          {
+            "id": "process_currentness",
+            "meaning": "If canonical instance is absent, legacy visibility is preserved; otherwise only equal processInstanceId and oldProcessInstanceId survives."
+          },
+          {
+            "id": "state_dimensions",
+            "meaning": "Application/process status, workflow task status, completed review decision and summary-card category are different dimensions."
+          },
+          {
+            "id": "summary_overlap",
+            "meaning": "Pending Review excludes only modification and external approval in inspected formula. It may overlap disposition card categories; the full card set is not established as a partition."
+          },
+          {
+            "id": "filter_scope",
+            "meaning": "Status cards are created before list filters; page.total follows selected-view filters. Counts can differ under filtering."
+          }
+        ],
+        "constraints": [
+          "Definitions are source-backed drafts until target-version binding is verified.",
+          "Status and decision option values are supplied by current responses; no frozen state list is assumed.",
+          "Null/missing fields and failed responses have no numeric-zero meaning.",
+          "No general equality between task/projection identity and application identity is implied.",
+          "No fixed calendar period is implied by summary cards."
+        ]
+      }
+    },
+    {
+      "id": "admin.licensing.applications.read.todo",
+      "kind": "read_operation",
+      "revision": 1,
+      "status": "draft",
+      "title": "My Application Tasks — todo list read definition",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local",
+          "debug"
+        ],
+        "pageRefs": [
+          "/licensing/applications"
+        ],
+        "runtimeVerification": "pending",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Applications/index.tsx",
+          "revision": "sha256:be9c81e58706b9071a3c0f4ddd1950df113cf6971e6c1f6efbf90dafff1f89e4",
+          "locator": "234; 701-880; 932-1105; 1231-1285; 1528-1660",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/application.ts",
+          "revision": "sha256:32978ed7cc15c3bfb93d26f4c2c83a75cc3ad33ef2e2e87709c7feb3a50a3908",
+          "locator": "326-353",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ApplicationAppService.cs",
+          "revision": "sha256:22e94773e70c95fab9ce479919b51d0241e046bf085cd0c3f8b5991b9004772e",
+          "locator": "216-319",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ReviewTaskProjection.cs",
+          "revision": "sha256:9df0f7b49cd9c099c78d1ccd2e8967216a477fd533f90a312573f287eef1b797",
+          "locator": "11-51; 88-106",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/MyReviewFilter.cs",
+          "revision": "sha256:e85bf61625c530802e0a177de8eeba436c26ba8ad98952b7908ddfa915073ebb",
+          "locator": "22-99",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Application/ApplicationDto.cs",
+          "revision": "sha256:3efae9b26845ec68130f314cbccfd0861bb76f19a22ab6d083f5ec9435042cdc",
+          "locator": "12-157",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Api/Controllers/ApplicationController.cs",
+          "revision": "sha256:c43e5e7e836b3aa6f2f5070d8456f4378ab205112cddc012fde6949e26a44397",
+          "locator": "30-57",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "page_catalog",
+          "reference": "navigation-knowledge/artifacts/page-catalog.json",
+          "revision": "sha256:f28b1c0d3bde64f2e7a76c415579c9bb968f60099b9b9fec5e5a3dfb70d9e4f2",
+          "locator": "Applications",
+          "verification": "static_extracted"
+        }
+      ],
+      "payload": {
+        "operationRef": "admin.licensing.applications.read.todo",
+        "pageRef": "/licensing/applications",
+        "view": "todo",
+        "method": "POST",
+        "path": "/api/Application/MyTodoPage",
+        "readOnlyEvidence": {
+          "source": "ApplicationController -> GetMyReviewPageAsync",
+          "classification": "read_query_from_inspected_source",
+          "runtimeVerification": "pending",
+          "serverPermissionSymbol": "AccountPermissionCodes.Workflow.MyTodo.View",
+          "authorization": "Current principal and trusted runtime policy; this document does not authorize a call."
+        },
+        "parameterSchema": {
+          "type": "object",
+          "properties": {
+            "pageIndex": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "pageSize": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "keyword": {
+              "type": "string"
+            },
+            "serviceTypeId": {
+              "type": "string"
+            },
+            "processInstanceStatus": {
+              "type": "string"
+            },
+            "startTime": {
+              "type": "string"
+            },
+            "endTime": {
+              "type": "string"
+            },
+            "sortBy": {
+              "type": "string"
+            },
+            "sortDirection": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "pageIndex",
+            "pageSize"
+          ],
+          "additionalProperties": false
+        },
+        "responseSchema": {
+          "envelope": "data",
+          "rows": "/data/page/items",
+          "total": "/data/page/total",
+          "pageIndex": "/data/page/pageIndex",
+          "pageSize": "/data/page/pageSize",
+          "summary": "/data/statusCount",
+          "statusOptions": "/data/processInstanceStatus",
+          "decisionOptions": "/data/myDecisionOptions"
+        },
+        "preconditions": [
+          "Authenticated principal and current endpoint permission.",
+          "Page/view/filter context has been identified.",
+          "Execution is separately allowed by trusted read-only policy."
+        ],
+        "postconditions": [
+          "Response matches the requested view and query context.",
+          "Success and page metadata are established before interpreting rows or zero.",
+          "Collected rows carry truncation and pagination metadata."
+        ],
+        "verificationStatus": "source_inspected_not_deployment_attested"
+      }
+    },
+    {
+      "id": "admin.licensing.applications.read.completed",
+      "kind": "read_operation",
+      "revision": 1,
+      "status": "draft",
+      "title": "My Application Tasks — completed list read definition",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local",
+          "debug"
+        ],
+        "pageRefs": [
+          "/licensing/applications"
+        ],
+        "runtimeVerification": "pending",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Applications/index.tsx",
+          "revision": "sha256:be9c81e58706b9071a3c0f4ddd1950df113cf6971e6c1f6efbf90dafff1f89e4",
+          "locator": "234; 701-880; 932-1105; 1231-1285; 1528-1660",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/application.ts",
+          "revision": "sha256:32978ed7cc15c3bfb93d26f4c2c83a75cc3ad33ef2e2e87709c7feb3a50a3908",
+          "locator": "326-353",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ApplicationAppService.cs",
+          "revision": "sha256:22e94773e70c95fab9ce479919b51d0241e046bf085cd0c3f8b5991b9004772e",
+          "locator": "216-319",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ReviewTaskProjection.cs",
+          "revision": "sha256:9df0f7b49cd9c099c78d1ccd2e8967216a477fd533f90a312573f287eef1b797",
+          "locator": "11-51; 88-106",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/MyReviewFilter.cs",
+          "revision": "sha256:e85bf61625c530802e0a177de8eeba436c26ba8ad98952b7908ddfa915073ebb",
+          "locator": "22-99",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Application/ApplicationDto.cs",
+          "revision": "sha256:3efae9b26845ec68130f314cbccfd0861bb76f19a22ab6d083f5ec9435042cdc",
+          "locator": "12-157",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Api/Controllers/ApplicationController.cs",
+          "revision": "sha256:c43e5e7e836b3aa6f2f5070d8456f4378ab205112cddc012fde6949e26a44397",
+          "locator": "30-57",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "page_catalog",
+          "reference": "navigation-knowledge/artifacts/page-catalog.json",
+          "revision": "sha256:f28b1c0d3bde64f2e7a76c415579c9bb968f60099b9b9fec5e5a3dfb70d9e4f2",
+          "locator": "Applications",
+          "verification": "static_extracted"
+        }
+      ],
+      "payload": {
+        "operationRef": "admin.licensing.applications.read.completed",
+        "pageRef": "/licensing/applications",
+        "view": "completed",
+        "method": "POST",
+        "path": "/api/Application/MyComplatedPage",
+        "readOnlyEvidence": {
+          "source": "ApplicationController -> GetMyReviewPageAsync",
+          "classification": "read_query_from_inspected_source",
+          "runtimeVerification": "pending",
+          "serverPermissionSymbol": "AccountPermissionCodes.Workflow.MyCompleted.View",
+          "authorization": "Current principal and trusted runtime policy; this document does not authorize a call."
+        },
+        "parameterSchema": {
+          "type": "object",
+          "properties": {
+            "pageIndex": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "pageSize": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "keyword": {
+              "type": "string"
+            },
+            "serviceTypeId": {
+              "type": "string"
+            },
+            "processInstanceStatus": {
+              "type": "string"
+            },
+            "startTime": {
+              "type": "string"
+            },
+            "endTime": {
+              "type": "string"
+            },
+            "sortBy": {
+              "type": "string"
+            },
+            "sortDirection": {
+              "type": "integer"
+            },
+            "approvalStatus": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "pageIndex",
+            "pageSize"
+          ],
+          "additionalProperties": false
+        },
+        "responseSchema": {
+          "envelope": "data",
+          "rows": "/data/page/items",
+          "total": "/data/page/total",
+          "pageIndex": "/data/page/pageIndex",
+          "pageSize": "/data/page/pageSize",
+          "summary": "/data/statusCount",
+          "statusOptions": "/data/processInstanceStatus",
+          "decisionOptions": "/data/myDecisionOptions"
+        },
+        "preconditions": [
+          "Authenticated principal and current endpoint permission.",
+          "Page/view/filter context has been identified.",
+          "Execution is separately allowed by trusted read-only policy."
+        ],
+        "postconditions": [
+          "Response matches the requested view and query context.",
+          "Success and page metadata are established before interpreting rows or zero.",
+          "Collected rows carry truncation and pagination metadata."
+        ],
+        "verificationStatus": "source_inspected_not_deployment_attested"
+      }
+    }
+  ]
+}

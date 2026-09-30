@@ -1,0 +1,125 @@
+.script-pub-container {
+  width: 100%;
+
+  .script-pub-card {
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+
+    .ant-card-head {
+      .ant-card-head-title {
+        font-family: Inter;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        color: #361e12;
+      }
+    }
+  }
+
+  .ant-row {
+    .ant-col {
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .script-pub-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #361e12;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    .script-pub-required {
+      color: #ea4f49;
+      margin-left: 2px;
+    }
+
+    .script-pub-tooltip-icon {
+      color: #8c8c8c;
+      font-size: 14px;
+      margin-left: 4px;
+      cursor: help;
+    }
+  }
+
+  .script-pub-radio-group {
+    height: 48px;
+    display: flex;
+    align-items: center;
+
+    .ant-radio-wrapper {
+      font-size: 14px;
+      color: #333;
+
+      .ant-radio-inner {
+        border-color: #d4a853;
+      }
+
+      .ant-radio-checked .ant-radio-inner {
+        background-color: #d4a853;
+        border-color: #d4a853;
+      }
+    }
+  }
+
+  .script-pub-select {
+    width: 100%;
+  }
+
+  .script-pub-lang-select {
+    width: 100%;
+  }
+
+  .script-pub-section-divider {
+    font-size: 15px;
+    font-weight: 600;
+    color: #361e12;
+    padding: 8px 0 4px;
+    border-bottom: 1px solid #f0e6d8;
+    margin-bottom: 4px;
+  }
+
+  .ant-input {
+    height: 48px;
+    border-radius: 8px;
+  }
+
+  .ant-input-affix-wrapper {
+    height: 48px;
+    border-radius: 8px;
+    padding: 0 12px;
+
+    input {
+      height: 100%;
+    }
+  }
+
+  /* showCount wraps Input in a span, keep height consistent */
+  .ant-input-show-count {
+    .ant-input {
+      height: 48px;
+    }
+  }
+
+  .ant-select {
+    width: 100%;
+
+    .ant-select-selector {
+      height: 48px !important;
+      border-radius: 8px !important;
+      align-items: center;
+      padding: 0 12px !important;
+    }
+
+    &.ant-select-focused .ant-select-selector {
+      border-color: #d4a853 !important;
+      box-shadow: 0 0 0 2px rgba(212, 168, 83, 0.1) !important;
+    }
+  }
+}

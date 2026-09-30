@@ -1,0 +1,36 @@
+.task-breakdown-container {
+  padding: 24px;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 20px;
+
+  .breakdown-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(130px, 100%), 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 24px 0;
+    justify-items: center;
+    align-items: center;
+    margin-top: 24px;
+    .item-name {
+      font-size: 14px;
+      font-family: Inter;
+      font-weight: 500;
+      font-style: Medium;
+      line-height: 20px;
+      letter-spacing: 0px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+    .item-value {
+      text-align: center
+    }
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    padding: 12px;
+    border-radius: 10px;
+  }
+}

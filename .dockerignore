@@ -1,0 +1,15 @@
+**/.git
+**/node_modules
+**/.env*.local
+**/.env.local
+**/.env.debug
+**/.env.deploy
+**/__pycache__
+**/*.bak*
+**/*-workbook-current.py
+**/dist
+test/runtime
+test/releases
+outputs
+recall
+*.tar.gz

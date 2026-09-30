@@ -1,0 +1,202 @@
+.game-distribution-form-container {
+  width: 100%;
+
+  .ant-card {
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+
+    .ant-card-head {
+      .ant-card-head-title {
+        font-family: Inter;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 0px;
+        color: #361e12;
+      }
+    }
+
+    .ant-card-body {
+      // padding: 24px;
+    }
+  }
+
+  .ant-row {
+    .ant-col {
+      margin-bottom: 16px;
+    }
+  }
+
+  .game-form-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #361e12;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    .game-form-required {
+      color: #ea4f49;
+      margin-left: 4px;
+    }
+
+    .game-form-tooltip {
+      color: #8c8c8c;
+      font-size: 14px;
+      margin-left: 4px;
+      cursor: help;
+    }
+  }
+
+  .game-form-readonly {
+    background-color: #f5f5f5 !important;
+
+    .ant-select-selector {
+      background-color: #f5f5f5 !important;
+    }
+
+    &.ant-input {
+      background-color: #f5f5f5 !important;
+    }
+  }
+
+  .game-form-radio {
+    display: flex;
+    gap: 24px;
+
+    .ant-radio-wrapper {
+      margin-right: 0;
+    }
+  }
+
+  .game-form-language {
+    width: 100%;
+  }
+
+  .ant-input {
+    height: 48px;
+    border-radius: 8px;
+  }
+
+  .ant-select {
+    width: 100%;
+
+    .ant-select-selector {
+      height: 48px !important;
+      border-radius: 8px !important;
+      align-items: center;
+      padding: 0 12px !important;
+    }
+
+    &.ant-select-multiple {
+      .ant-select-selector {
+        min-height: 48px !important;
+        height: auto !important;
+        padding: 4px 12px !important;
+      }
+
+      .ant-select-selection-item {
+        height: 32px;
+        line-height: 30px;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  .ant-picker {
+    height: 48px;
+    border-radius: 8px;
+    width: 100%;
+  }
+
+  .ant-picker-range {
+    .ant-picker-input {
+      input {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.game-distribution-multi-select.ant-select-multiple {
+  .ant-checkbox-inner {
+    background-color: #92722a;
+    border-color: #92722a;
+  }
+
+  .ant-select-selection-search {
+    margin-inline-start: 0;
+  }
+
+  .game-distribution-multi-selection-item {
+    display: flex;
+    min-width: 0;
+  }
+
+  .game-distribution-multi-selection-item > * + *,
+  .game-distribution-multi-option > * + * {
+    margin-inline-start: 8px;
+  }
+
+  &.ant-select-disabled {
+    .ant-select-selection-item {
+      border: 0;
+    }
+
+    .ant-checkbox-wrapper {
+      display: none;
+    }
+
+    .game-distribution-multi-selection-item span,
+    .game-distribution-multi-option span {
+      margin-inline-start: 0 !important;
+    }
+  }
+}
+
+.game-distribution-multi-select-dropdown {
+  .ant-select-item-option-state {
+    display: none;
+  }
+
+  .ant-checkbox-inner {
+    background-color: #ffffff;
+    border-color: #c3c6cb !important;
+  }
+
+  .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #92722a;
+    border-color: #92722a !important;
+  }
+
+  .game-distribution-multi-select-all {
+    padding: 4px 8px;
+  }
+
+  .game-distribution-multi-select-all-checkbox.has-selection {
+    .ant-checkbox:not(.ant-checkbox-checked) .ant-checkbox-inner {
+      background-color: #92722a;
+      border-color: #92722a !important;
+
+      &::after {
+      display: block;
+      width: 8px;
+      height: 2px;
+      border: 0;
+      background: #ffffff;
+      opacity: 1;
+      transform: rotate(0deg) scale(1) translate(-50%, -50%);
+      }
+    }
+  }
+
+  .game-distribution-multi-option {
+    display: flex;
+    align-items: center;
+
+    > * + * {
+      margin-inline-start: 8px;
+    }
+  }
+}

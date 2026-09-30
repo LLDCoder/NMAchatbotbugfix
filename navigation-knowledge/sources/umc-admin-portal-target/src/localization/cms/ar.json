@@ -1,0 +1,770 @@
+{
+  "CMS": {
+    "common": {
+      "operationSuccessful": "تمت العملية بنجاح",
+      "search": "بحث",
+      "back": "رجوع",
+      "delete": "حذف",
+      "unpublish": "إلغاء النشر",
+      "duplicate": "تكرار",
+      "publish": "نشر",
+      "contentNotApproved": "المحتوى غير معتمد",
+      "pageModules": "وحدات الصفحة",
+      "updatedBy": "آخر تحديث بواسطة",
+      "updatedTime": "وقت التحديث",
+      "lastUpdated": "آخر تحديث",
+      "english": "الإنجليزية",
+      "preview": "معاينة",
+      "reject": "رفض",
+      "approve": "اعتماد",
+      "saveDraft": "حفظ كمسودة",
+      "saveAndSubmit": "حفظ وإرسال",
+      "notes": "ملاحظات",
+      "requiredField": "هذا الحقل مطلوب.",
+      "contentMaxLength": "يجب ألا يتجاوز المحتوى {{max}} حرفًا.",
+      "quickNote": "ملاحظة سريعة",
+      "quickNotes": "ملاحظات سريعة",
+      "web": "ويب",
+      "tablet": "جهاز لوحي",
+      "mobile": "جوال",
+      "edit": "تعديل",
+      "save": "حفظ",
+      "cancel": "إلغاء",
+      "confirm": "تأكيد",
+      "arabic": "العربية",
+      "placeholders": {
+        "allMembers": "جميع الأعضاء",
+        "allStatuses": "جميع الحالات",
+        "allPortals": "جميع البوابات",
+        "allCategories": "جميع الفئات",
+        "startTime": "تاريخ البداية",
+        "endTime": "تاريخ النهاية",
+        "UpdatedFrom": "تاريخ التحديث من",
+        "UpdatedTo": "تاريخ التحديث إلى",
+        "UpdatedForm": "تاريخ التحديث من",
+        "publishFrom": "تاريخ النشر من",
+        "publishTo": "تاريخ النشر إلى",
+        "StartDate": "تاريخ البدء",
+        "EndDate": "تاريخ الانتهاء"
+      }
+    },
+    "pageManagement": {
+      "tabs": {
+        "published": "منشور",
+        "draft": "مسودة"
+      },
+      "table": {
+        "pageName": "اسم الصفحة",
+        "status": "الحالة",
+        "updatedBy": "آخر تحديث بواسطة",
+        "lastUpdated": "آخر تحديث",
+        "actions": "الإجراءات"
+      }
+    },
+    "pageManagementHome": {
+      "modules": {
+        "heroBanner": "بانر الواجهة",
+        "aboutUs": "من نحن",
+        "partnership": "الشراكات",
+        "footer": "تذييل الصفحة"
+      },
+      "footer": {
+        "contactCard": "بطاقة التواصل",
+        "socialMedia": "وسائل التواصل الاجتماعي"
+      }
+    },
+    "pageManagementAbout": {
+      "header": {
+        "lastUpdated": "آخر تحديث"
+      },
+      "modules": {
+        "aboutUs": "من نحن",
+        "visionMissionValues": "الرؤية والرسالة والقيم",
+        "strategicObjectives": "الأهداف الاستراتيجية",
+        "partners": "الشركاء"
+      }
+    },
+    "pageManagementLeadership": {
+      "modules": {
+        "chairman": "رئيس الهيئة",
+        "boardOfDirectors": "مجلس الإدارة",
+        "managementTeam": "فريق الإدارة",
+        "management": "الإدارة"
+      }
+    },
+    "modals": {
+      "publishPage": {
+        "title": "نشر الصفحة",
+        "content": "هل أنت متأكد من نشر هذه الصفحة؟ يرجى معاينتها للتأكد من صحة المحتوى قبل المتابعة."
+      },
+      "approveReview": {
+        "title": "اعتماد المراجعة",
+        "content": "هل أنت متأكد أنك تريد نشر هذه الصفحة؟ يُرجى معاينة الصفحة للتأكد من صحتها قبل المتابعة.",
+        "contentPop": "هل أنت متأكد أنك تريد اعتماد هذه الصفحة؟ بمجرد اعتمادها، سيتم نشرها فورًا."
+      },
+      "rejectPublish": {
+        "title": "رفض النشر",
+        "reasonPlaceholder": "أدخل سبب الرفض",
+        "quickNotes": {
+          "inaccurateInfo": "المعلومات المقدمة غير دقيقة",
+          "outdatedContent": "المحتوى قديم ويحتاج إلى تحديث",
+          "factualErrors": "المحتوى يحتوي على أخطاء أو معلومات غير صحيحة",
+          "textErrors": "النص يحتوي على أخطاء إملائية أو لغوية"
+        }
+      },
+      "submitForReview": {
+        "title": "إرسال للمراجعة",
+        "content": "هل أنت متأكد من إرسال هذه الصفحة للمراجعة؟ سيتم حفظ التغييرات الحالية تلقائيًا قبل الإرسال."
+      },
+      "publishEvent": {
+        "title": "نشر الفعالية",
+        "content": "هل أنت متأكد من نشر هذه الفعالية؟ يرجى معاينتها للتأكد من صحة المحتوى قبل المتابعة."
+      },
+      "leavePage": {
+        "title": "مغادرة الصفحة؟",
+        "content": "لديك تغييرات غير محفوظة ستُفقد عند المغادرة. هل تريد المتابعة؟",
+        "leave": "مغادرة"
+      }
+    },
+    "forms": {
+      "title": "العنوان",
+      "subTitle": "العنوان الفرعي",
+      "description": "الوصف",
+      "position": "المنصب",
+      "fullName": "الاسم الكامل",
+      "label": "التسمية",
+      "link": "الرابط",
+      "button": "الزر",
+      "primaryButton": "الزر الأساسي",
+      "secondaryButton": "الزر الثانوي",
+      "highlights": "أبرز النقاط",
+      "responsibilities": "المسؤوليات",
+      "images": "الصور",
+      "image": "صورة",
+      "cover": "الغلاف",
+      "logo": "الشعار",
+      "enterNotes": "أدخل الملاحظات",
+      "enterUrl": "أدخل الرابط",
+      "validUrl": "يرجى إدخال رابط صالح",
+      "recommendedImageSize": "المقاس الموصى به: 400 × 260 بكسل. الحد الأقصى: 5 ميجابايت.",
+      "recommendedLogoSize": "المقاس الموصى به: 160 × 120 بكسل. الحد الأقصى: 5 ميجابايت",
+      "recommendedImageSizeHover": "المقاس الموصى به: 300 × 400 بكسل. الحد الأقصى: 5 ميجابايت.",
+      "coverDesktopHint": "سطح المكتب — الموصى به: 2560 × 1440 بكسل. الحد الأقصى: 10 ميجابايت. يدعم صورة / MP4 / GIF.",
+      "coverMobileHint": "الهاتف — الموصى به: 1080 × 1920 بكسل. الحد الأقصى: 10 ميجابايت. يدعم صورة / MP4 / GIF.",
+      "coverDesktopHintUpload": "ارفع صورة أو فيديو أو GIF. الحجم الموصى به: 2560 × 1440 (يدعم 1920 × 1080). الحد الأقصى: 10 ميجابايت.",
+      "coverMobileHintUpload": "ارفع صورة أو فيديو أو GIF. الحجم الموصى به: 1080 × 1920 (عمودي). الحد الأقصى: 10 ميجابايت.",
+      "coverMobile": "الغلاف (الجوال)",
+      "vision": "الرؤية",
+      "mission": "الرسالة",
+      "values": "القيم",
+      "strategies": "الاستراتيجيات",
+      "strategy": "الاستراتيجية",
+      "boardMembers": "أعضاء مجلس الإدارة",
+      "boardMemberItem": "عضو مجلس الإدارة {{number}}",
+      "boardMember": "عضو مجلس الإدارة {{number}}",
+      "partnerItem": "الشريك {{number}}",
+      "positionDescription": "وصف المنصب",
+      "management": "الإدارة",
+      "member": "عضو",
+      "quote": "اقتباس",
+      "profile": "الملف التعريفي",
+      "contact": "التواصل",
+      "businessHours": "ساعات العمل",
+      "phoneNumber": "رقم الهاتف",
+      "whatsApp": "واتساب",
+      "locationLink": "رابط الموقع",
+      "facebook": "فيسبوك",
+      "instagram": "إنستغرام",
+      "youTube": "يوتيوب",
+      "x": "إكس",
+      "linkedIn": "لينكد إن",
+      "titleEnglish": "العنوان بالإنجليزية",
+      "titleArabic": "العنوان بالعربية",
+      "subTitleEnglish": "العنوان الفرعي بالإنجليزية",
+      "subTitleArabic": "العنوان الفرعي بالعربية",
+      "descriptionEnglish": "الوصف بالإنجليزية",
+      "descriptionArabic": "الوصف بالعربية",
+      "labelEnglish": "التسمية بالإنجليزية",
+      "labelArabic": "التسمية بالعربية",
+      "businessHoursEnglish": "ساعات العمل بالإنجليزية",
+      "businessHoursArabic": "ساعات العمل بالعربية",
+      "enterTitleEnglish": "أدخل العنوان بالإنجليزية",
+      "enterTitleArabic": "أدخل العنوان بالعربية",
+      "enterSubTitleEnglish": "أدخل العنوان الفرعي بالإنجليزية",
+      "enterSubTitleArabic": "أدخل العنوان الفرعي بالعربية",
+      "enterDescriptionEnglish": "أدخل الوصف بالإنجليزية",
+      "enterDescriptionArabic": "أدخل الوصف بالعربية",
+      "enterButtonLabelEnglish": "أدخل تسمية الزر بالإنجليزية",
+      "enterButtonLabelArabic": "أدخل تسمية الزر بالعربية",
+      "enterBannerTitleEnglish": "أدخل عنوان البانر بالإنجليزية",
+      "enterBannerTitleArabic": "أدخل عنوان البانر بالعربية",
+      "enterBannerDescriptionEnglish": "أدخل وصف البانر بالإنجليزية",
+      "enterBannerDescriptionArabic": "أدخل وصف البانر بالعربية",
+      "enterBusinessHoursEnglish": "أدخل ساعات العمل بالإنجليزية",
+      "enterBusinessHoursArabic": "أدخل ساعات العمل بالعربية",
+      "enterPhoneNumber": "أدخل رقم الهاتف",
+      "enterWhatsAppNumber": "أدخل رقم الواتساب",
+      "validPhone": "يرجى إدخال رقم هاتف صحيح.",
+      "aboutImageHint": "الحجم الموصى به: 1680 × 660. الحد الأقصى: 5 ميجابايت.",
+      "visionImageHint": "الحجم الموصى به: 830 × 800 بكسل. الحد الأقصى: 5 ميجابايت.",
+      "aboutPartnerLogoHint": "الحجم الموصى به: 280 × 280 بكسل. الحد الأقصى: 5 ميجابايت.",
+      "chairmanImageHint": "الحجم الموصى به: 330 × 380 بكسل. الحد الأقصى: 5 ميجابايت.",
+      "directorImageHint": "الحجم الموصى به: 290 × 330 بكسل. الحد الأقصى: 5 ميجابايت.",
+      "managementImageHint": "الحجم الموصى به: 250 × 280 بكسل. الحد الأقصى: 5 ميجابايت.",
+      "inEnglishSuffix": "بالإنجليزية",
+      "inArabicSuffix": "بالعربية",
+      "enterStrategyEnglish": "أدخل الاستراتيجية بالإنجليزية",
+      "enterStrategyArabic": "أدخل الاستراتيجية بالعربية",
+      "positionEnglish": "المنصب بالإنجليزية",
+      "positionArabic": "المنصب بالعربية",
+      "enterPositionEnglish": "أدخل المنصب بالإنجليزية",
+      "enterPositionArabic": "أدخل المنصب بالعربية",
+      "fullNameEnglish": "الاسم الكامل بالإنجليزية",
+      "fullNameArabic": "الاسم الكامل بالعربية",
+      "enterFullNameEnglish": "أدخل الاسم الكامل بالإنجليزية",
+      "enterFullNameArabic": "أدخل الاسم الكامل بالعربية",
+      "enterBoardMemberFullNameEnglish": "أدخل الاسم الكامل باللغة الإنجليزية",
+      "enterBoardMemberFullNameArabic": "أدخل الاسم الكامل باللغة العربية",
+      "positionDescriptionEnglish": "وصف المنصب بالإنجليزية",
+      "positionDescriptionArabic": "وصف المنصب بالعربية",
+      "enterPositionDescriptionEnglish": "أدخل وصف المنصب بالإنجليزية",
+      "enterPositionDescriptionArabic": "أدخل وصف المنصب بالعربية",
+      "enterBoardMemberPositionDescriptionEnglish": "أدخل وصف المنصب باللغة الإنجليزية",
+      "enterBoardMemberPositionDescriptionArabic": "أدخل وصف المنصب باللغة العربية",
+      "quoteEnglish": "الاقتباس بالإنجليزية",
+      "quoteArabic": "الاقتباس بالعربية",
+      "enterQuoteEnglish": "أدخل الاقتباس بالإنجليزية",
+      "enterQuoteArabic": "أدخل الاقتباس بالعربية",
+      "profileEnglish": "الملف التعريفي بالإنجليزية",
+      "profileArabic": "الملف التعريفي بالعربية",
+      "enterProfileEnglish": "أدخل الملف التعريفي بالإنجليزية",
+      "enterProfileArabic": "أدخل الملف التعريفي بالعربية"
+    },
+    "preview": {
+      "reachUs": "تواصل معنا",
+      "viewLocation": "عرض الموقع",
+      "copyright": "حقوق النشر © 2025 الهيئة الوطنية للإعلام",
+      "device": {
+        "web": "ويب",
+        "tablet": "جهاز لوحي",
+        "mobile": "جوال"
+      },
+      "noData": "لا توجد بيانات للمعاينة. يرجى العودة إلى المحرر والضغط على معاينة مرة أخرى."
+    },
+    "newsManagementDetail": {
+      "labels": {
+        "newsNo": "رقم الخبر",
+        "status": "الحالة",
+        "updatedBy": "آخر تحديث بواسطة",
+        "lastUpdatedTime": "وقت آخر تحديث",
+        "image": "الصورة",
+        "publishMethod": "طريقة النشر",
+        "scheduledTime": "وقت الجدولة",
+        "englishTitle": "العنوان بالإنجليزية",
+        "englishContent": "المحتوى بالإنجليزية",
+        "arabicTitle": "العنوان بالعربية",
+        "arabicContent": "المحتوى بالعربية",
+        "metaTitle": "عنوان الميتا",
+        "metaDescription": "وصف الميتا",
+        "metaKeywords": "كلمات الميتا"
+      },
+      "sections": {
+        "cover": "الغلاف",
+        "timing": "التوقيت",
+        "content": "المحتوى",
+        "seo": "SEO"
+      },
+      "publishNow": "نشر الآن",
+      "scheduled": "مجدول",
+      "rejection": {
+        "contentNotApproved": "المحتوى غير معتمد"
+      }
+    },
+    "jobOpeningsManagement": {
+      "table": {
+        "jobNo": "رقم الوظيفة",
+        "jobTitle": "المسمى الوظيفي",
+        "jobLocation": "موقع الوظيفة",
+        "jobTypes": "نوع الوظيفة",
+        "status": "الحالة",
+        "updatedBy": "آخر تحديث بواسطة",
+        "lastUpdated": "آخر تحديث",
+        "actions": "الإجراءات"
+      },
+      "counts": {
+        "totalNews": "إجمالي الوظائف",
+        "published": "منشور",
+        "pendingReview": "قيد المراجعة",
+        "draft": "مسودة",
+        "rejected": "مرفوض",
+        "unpublished": "غير منشور"
+      },
+      "statuses": {
+        "published": "منشور",
+        "pendingReview": "قيد المراجعة",
+        "draft": "مسودة",
+        "rejected": "مرفوض",
+        "unpublished": "غير منشور"
+      },
+      "actions": {
+        "addNew": "إضافة وظيفة جديدة",
+        "approve": "اعتماد",
+        "reject": "رفض",
+        "delete": "حذف",
+        "unpublish": "إلغاء النشر",
+        "duplicate": "تكرار"
+      },
+      "filters": {
+        "searchPlaceholder": "بحث",
+        "allStatuses": "جميع الحالات"
+      },
+      "messages": {
+        "saveDraftSuccess": "تم حفظ المسودة بنجاح",
+        "operationFailed": "فشلت العملية"
+      },
+      "modals": {
+        "rejectPublish": {
+          "title": "رفض النشر",
+          "rejectionReasons": "أسباب الرفض",
+          "Notes": "ملاحظات",
+          "reasonPlaceholder": "أدخل سبب الرفض",
+          "quickNotes": [
+            "متطلبات الوظيفة لا تطابق الإعلان",
+            "معلومات الموقع أو القسم غير صحيحة",
+            "الموعد النهائي أو نوع التوظيف يحتاج مراجعة",
+            "التفاصيل الداعمة غير مكتملة أو غير واضحة"
+          ],
+          "newQuickNotes": [
+            "المعلومات المقدمة غير دقيقة",
+            "لم يتم تأكيد الموقع",
+            "محتوى الفعالية غير مكتمل",
+            "يحتوي على معلومات حساسة أو مقيدة"
+          ]
+        },
+        "publishJob": {
+          "title": "نشر الوظيفة",
+          "content": "هل أنت متأكد من نشر هذه الوظيفة؟ يرجى معاينتها للتأكد من صحة المحتوى قبل المتابعة."
+        },
+        "deleteJob": {
+          "title": "حذف إعلان الوظيفة",
+          "content": "هل أنت متأكد من حذف إعلان الوظيفة هذا؟ لا يمكن التراجع عن هذا الإجراء."
+        }
+      },
+      "sections": {
+        "basicInformation": "المعلومات الأساسية",
+        "content": "المحتوى"
+      },
+      "jobTypes": {
+        "internship": "تدريب",
+        "fullTime": "دوام كامل"
+      },
+      "preview": {
+        "mapPinAlt": "دبوس الخريطة",
+        "clockAlt": "الساعة"
+      },
+      "content": {
+        "labels": {
+          "englishContent": "المحتوى بالإنجليزية",
+          "englishDescription": "الوصف بالإنجليزية",
+          "arabicContent": "المحتوى بالعربية",
+          "arabicDescription": "الوصف بالعربية"
+        },
+        "placeholders": {
+          "enterEnglishContent": "أدخل المحتوى باللغة الإنجليزية",
+          "enterArabicContent": "أدخل المحتوى باللغة العربية"
+        },
+        "contentLengthError": "يجب ألا يتجاوز المحتوى 50000 حرف."
+      },
+      "basicInformation": {
+        "labels": {
+          "englishJobTitle": "المسمى الوظيفي بالإنجليزية",
+          "arabicJobTitle": "المسمى الوظيفي بالعربية",
+          "jobLocation": "موقع الوظيفة",
+          "jobTypes": "نوع الوظيفة",
+          "applicationDeadline": "آخر موعد للتقديم"
+        },
+        "placeholders": {
+          "enterEnglishJobTitle": "أدخل المسمى الوظيفي بالإنجليزية",
+          "enterArabicJobTitle": "أدخل المسمى الوظيفي بالعربية",
+          "selectJobLocation": "اختر موقع الوظيفة",
+          "selectJobType": "اختر نوع الوظيفة",
+          "selectDeadlineDate": "اختر تاريخ آخر موعد للتقديم"
+        }
+      }
+    },
+    "jobOpeningsManagementDetail": {
+      "header": {
+        "jobNo": "رقم الوظيفة",
+        "status": "الحالة",
+        "updatedBy": "آخر تحديث بواسطة",
+        "lastUpdatedTime": "وقت آخر تحديث"
+      },
+      "rejection": {
+        "contentNotApproved": "المحتوى غير معتمد"
+      },
+      "labels": {
+        "englishDescription": "الوصف بالإنجليزية",
+        "arabicDescription": "الوصف بالعربية"
+      }
+    },
+    "newsManagement": {
+      "table": {
+        "pinned": "مثبّت",
+        "newsNo": "رقم الخبر",
+        "title": "العنوان",
+        "status": "الحالة",
+        "updatedBy": "آخر تحديث بواسطة",
+        "publishTime": "وقت النشر",
+        "lastUpdated": "آخر تحديث",
+        "actions": "الإجراءات"
+      },
+      "labels": {
+        "pinnedWithOrder": "مثبّت {{order}}"
+      },
+      "counts": {
+        "totalNews": "إجمالي الأخبار",
+        "published": "منشور",
+        "pendingReview": "قيد المراجعة",
+        "draft": "مسودة",
+        "rejected": "مرفوض",
+        "unpublished": "غير منشور",
+        "scheduled": "مجدول"
+      },
+      "actions": {
+        "managePinned": "إدارة الأخبار المثبّتة",
+        "addNew": "إضافة خبر جديد",
+        "approve": "اعتماد",
+        "reject": "رفض",
+        "delete": "حذف",
+        "unpublish": "إلغاء النشر",
+        "duplicate": "تكرار"
+      },
+      "messages": {
+        "operationFailed": "فشلت العملية"
+      },
+      "modals": {
+        "rejectPublish": {
+          "title": "رفض النشر",
+          "rejectionReasons": "أسباب الرفض",
+          "quickNotes": {
+            "inaccurateInfo": "المعلومات المقدمة غير دقيقة",
+            "incompleteContent": "محتوى الخبر غير مكتمل",
+            "sensitiveInfo": "يحتوي على معلومات حساسة أو مقيدة",
+            "coverMismatch": "صورة الغلاف لا تتطابق مع المحتوى"
+          }
+        },
+        "managePinnedNews": {
+          "title": "إدارة الأخبار المثبّتة",
+          "tooltip": "يمكن البحث عن الأخبار المنشورة وغير المثبّتة فقط وإضافتها. الحد الأقصى هو 5 أخبار مثبّتة.",
+          "addToPinned": "إضافة إلى المثبّتة",
+          "searchOrSelect": "بحث أو اختيار",
+          "pin": "تثبيت",
+          "remove": "إزالة",
+          "order": "الترتيب",
+          "pinnedNewsTitle": "عنوان الخبر المثبّت",
+          "currentPinnedOrder": "الترتيب الحالي للأخبار المثبّتة"
+        },
+        "deleteNews": {
+          "title": "حذف الخبر",
+          "content": "هل أنت متأكد من حذف هذا الخبر؟ لا يمكن التراجع عن هذا الإجراء."
+        },
+        "scheduledTimeExpired": {
+          "title": "انتهى وقت الجدولة",
+          "content": "لقد انقضى وقت النشر المجدول. سيتم نشر الخبر فورًا عند الاعتماد. هل تريد المتابعة؟"
+        }
+      }
+    },
+    "addEventManagement": {
+      "sections": {
+        "timing": "التوقيت",
+        "eventPeriod": "فترة الفعالية",
+        "location": "الموقع",
+        "registration": "التسجيل",
+        "content": "المحتوى"
+      },
+      "messages": {
+        "saveDraftSuccess": "تم حفظ المسودة بنجاح"
+      },
+      "timing": {
+        "publishMethod": "طريقة النشر",
+        "publishNow": "نشر الآن",
+        "scheduled": "مجدول",
+        "scheduledTime": "وقت الجدولة"
+      },
+      "eventPeriod": {
+        "label": "فترة الفعالية",
+        "startDate": "تاريخ البدء",
+        "endDate": "تاريخ الانتهاء"
+      },
+      "registration": {
+        "onSite": "التسجيل في الموقع",
+        "online": "التسجيل عبر الإنترنت",
+        "onlineLink": "رابط التسجيل عبر الإنترنت",
+        "placeholders": {
+          "onlineLink": "أدخل رابط التسجيل عبر الإنترنت"
+        },
+        "validation": {
+          "invalidUrl": "يرجى إدخال رابط صالح (مثال: https://example.com)"
+        }
+      },
+      "location": {
+        "emirate": "الإمارة",
+        "region": "المنطقة",
+        "area": "الحي",
+        "street": "الشارع",
+        "streetEn": "الشارع بالإنجليزية",
+        "streetAr": "الشارع بالعربية",
+        "placeholders": {
+          "selectEmirate": "اختر الإمارة",
+          "selectRegion": "اختر المنطقة",
+          "selectArea": "اختر الحي",
+          "street": "أدخل عنوان الشارع",
+          "streetAr": "أدخل عنوان الشارع بالعربية"
+        }
+      },
+      "cover": {
+        "title": "الغلاف",
+        "errors": {
+          "fileSizeExceeded": "يرجى رفع ملف بحجم لا يتجاوز 5 ميجابايت.",
+          "loadImageFailed": "تعذر تحميل الصورة للتحقق من الأبعاد"
+        },
+        "viewAlt": "عرض",
+        "deleteAlt": "حذف",
+        "uploadAlt": "رفع",
+        "click": "انقر",
+        "orDrag": " أو اسحب لرفع الصورة",
+        "maxSizeAndTypes": "الحجم الأقصى: 5 ميجابايت، الصيغ: jpg, jpeg, png",
+        "recommendedSize": "المقاس الموصى به: 1400 × 800 بكسل"
+      },
+      "content": {
+        "labels": {
+          "englishTitle": "العنوان بالإنجليزية",
+          "arabicTitle": "العنوان بالعربية",
+          "englishContent": "المحتوى بالإنجليزية",
+          "arabicContent": "المحتوى بالعربية"
+        },
+        "placeholders": {
+          "englishTitle": "أدخل عنوان الفعالية بالإنجليزية",
+          "arabicTitle": "أدخل عنوان الفعالية بالعربية",
+          "englishContent": "أدخل المحتوى باللغة الإنجليزية",
+          "arabicContent": "أدخل المحتوى باللغة العربية"
+        }
+      },
+      "preview": {
+        "shareOn": "مشاركة عبر",
+        "imageAlt": "صورة الفعالية",
+        "noImage": "لا توجد صورة",
+        "registerOnlineEn": "سجل عبر الإنترنت",
+        "registerOnlineAr": "سجل عبر الإنترنت",
+        "onSiteAvailableEn": "التسجيل في الموقع متاح",
+        "onSiteAvailableAr": "التسجيل في الموقع متاح"
+      }
+    },
+    "eventManagement": {
+      "table": {
+        "eventNo": "رقم الفعالية",
+        "title": "العنوان",
+        "status": "الحالة",
+        "eventPeriod": "فترة الفعالية",
+        "registrationTypes": "أنواع التسجيل",
+        "updatedBy": "آخر تحديث بواسطة",
+        "publishTime": "وقت النشر",
+        "lastUpdated": "آخر تحديث",
+        "actions": "الإجراءات"
+      },
+      "counts": {
+        "totalNews": "إجمالي الفعاليات",
+        "published": "منشور",
+        "pendingReview": "قيد المراجعة",
+        "draft": "مسودة",
+        "rejected": "مرفوض",
+        "unpublished": "غير منشور",
+        "scheduled": "مجدول"
+      },
+      "actions": {
+        "addNew": "إضافة فعالية جديدة",
+        "approve": "اعتماد",
+        "reject": "رفض",
+        "delete": "حذف",
+        "unpublish": "إلغاء النشر",
+        "duplicate": "تكرار"
+      },
+      "messages": {
+        "operationFailed": "فشلت العملية"
+      },
+      "filters": {
+        "eventName": "اسم الفعالية",
+        "eventStatus": "حالة الفعالية",
+        "eventPeriod": "فترة الفعالية",
+        "registrationType": "نوع التسجيل",
+        "publishTime": "وقت النشر"
+      },
+      "registrationTypes": {
+        "both": "في الموقع، عبر الإنترنت",
+        "online": "عبر الإنترنت",
+        "onSite": "في الموقع",
+        "none": "بدون تسجيل"
+      },
+      "placeholders": {
+        "allStatuses": "جميع الحالات",
+        "eventstartTime": "تاريخ بداية الفعالية",
+        "eventendTime": "تاريخ نهاية الفعالية",
+        "registrationType": "اختر نوع التسجيل",
+        "startTime": "تاريخ البداية",
+        "endTime": "تاريخ النهاية"
+      },
+      "modals": {
+        "rejectPublish": {
+          "title": "رفض النشر",
+          "rejectionReasons": "أسباب الرفض",
+          "reasonPlaceholder": "أدخل سبب الرفض",
+          "quickNotes": {
+            "inaccurateInfo": "المعلومات المقدمة غير دقيقة",
+            "venueNotConfirmed": "لم يتم تأكيد موقع الفعالية",
+            "scheduleConflict": "جدول الفعالية يتعارض مع فعاليات قائمة",
+            "coverImageQualityLow": "جودة صورة الغلاف منخفضة"
+          }
+        },
+        "managePinnedEvents": {
+          "title": "إدارة الفعاليات المثبّتة",
+          "tooltip": "يمكن البحث عن الفعاليات المنشورة وغير المثبّتة فقط وإضافتها. الحد الأقصى هو 5 فعاليات مثبّتة.",
+          "addToPinned": "إضافة إلى المثبّتة",
+          "searchOrSelect": "بحث أو اختيار",
+          "pin": "تثبيت",
+          "remove": "إزالة",
+          "order": "الترتيب",
+          "pinnedNewsTitle": "عنوان الفعالية المثبّتة",
+          "actions": "الإجراءات",
+          "currentPinnedOrder": "الترتيب الحالي للفعاليات المثبّتة"
+        },
+        "deleteEvent": {
+          "title": "حذف الفعالية",
+          "content": "هل أنت متأكد من حذف هذه الفعالية؟ لا يمكن التراجع عن هذا الإجراء."
+        },
+        "scheduledTimeExpired": {
+          "title": "انتهى وقت الجدولة",
+          "content": "لقد انقضى وقت النشر المجدول. سيتم نشر الفعالية فورًا عند الاعتماد. هل تريد المتابعة؟"
+        }
+      }
+    },
+    "eventManagementDetail": {
+      "labels": {
+        "eventNo": "رقم الفعالية",
+        "status": "الحالة",
+        "updatedBy": "آخر تحديث بواسطة",
+        "lastUpdatedTime": "وقت آخر تحديث",
+        "eventPeriod": "فترة الفعالية",
+        "registrationMethod": "طريقة التسجيل",
+        "onlineRegistrationLink": "رابط التسجيل الإلكتروني",
+        "area": "المنطقة",
+        "englishTitle": "العنوان بالإنجليزية",
+        "englishContent": "المحتوى بالإنجليزية",
+        "arabicTitle": "العنوان بالعربية",
+        "arabicContent": "المحتوى بالعربية"
+      },
+      "sections": {
+        "cover": "الغلاف",
+        "timing": "التوقيت",
+        "eventPeriod": "فترة الفعالية",
+        "location": "الموقع",
+        "registration": "التسجيل",
+        "content": "المحتوى"
+      },
+      "rejection": {
+        "contentNotApproved": "المحتوى غير معتمد"
+      }
+    },
+    "addNewsManagement": {
+      "buttons": {
+        "preview": "معاينة",
+        "saveDraft": "حفظ كمسودة",
+        "saveAndSubmit": "حفظ وإرسال",
+        "cancel": "إلغاء",
+        "confirm": "تأكيد",
+        "leave": "مغادرة"
+      },
+      "messages": {
+        "saveDraftSuccess": "تم حفظ المسودة بنجاح",
+        "operationSuccess": "تمت العملية بنجاح"
+      },
+      "modal": {
+        "submitReviewTitle": "إرسال للمراجعة",
+        "submitReviewContent": "هل أنت متأكد من إرسال هذا الخبر للمراجعة؟ يرجى معاينته للتأكد من صحة المحتوى قبل المتابعة.",
+        "leavePageTitle": "مغادرة الصفحة؟",
+        "leavePageContent": "لديك تغييرات غير محفوظة ستُفقد عند المغادرة. هل تريد المتابعة؟",
+        "publishNewsTitle": "نشر الخبر",
+        "publishNewsContent": "هل أنت متأكد من نشر هذا الخبر؟ يرجى معاينته للتأكد من صحة المحتوى قبل المتابعة."
+      },
+      "validation": {
+        "fieldRequired": "هذا الحقل مطلوب.",
+        "fieldRequiredEnglishContent": "هذا الحقل مطلوب. المحتوى بالإنجليزية",
+        "fieldRequiredArabicTitle": "هذا الحقل مطلوب. العنوان بالعربية"
+      },
+      "timing": {
+        "title": "التوقيت",
+        "publishMethod": "طريقة النشر",
+        "publishNow": "نشر الآن",
+        "scheduled": "مجدول",
+        "scheduledTime": "وقت الجدولة",
+        "placeholder": "DD/MM/YYYY HH:MM",
+        "scheduledTimeError": "يجب أن يكون وقت الجدولة لاحقًا للوقت الحالي."
+      },
+      "content": {
+        "title": "المحتوى",
+        "enterTitleEnglish": "أدخل العنوان بالإنجليزية",
+        "englishTitle": "العنوان بالإنجليزية",
+        "arabicTitle": "العنوان بالعربية",
+        "englishTitlePlaceholder": "أدخل عنوان الخبر بالإنجليزية",
+        "arabicTitleEnglishPlaceholder": "أدخل العنوان بالعربية",
+        "englishContent": "المحتوى بالإنجليزية",
+        "arabicContent": "المحتوى بالعربية",
+        "englishContentPlaceholder": "أدخل المحتوى باللغة الإنجليزية",
+        "arabicContentPlaceholder": "أدخل المحتوى باللغة العربية",
+        "contentLengthError": "يجب ألا يتجاوز المحتوى 50000 حرف."
+      },
+      "seo": {
+        "title": "SEO",
+        "metaTitle": "عنوان الميتا",
+        "metaTitleTooltip": "يظهر عنوان الميتا في صفحات نتائج محركات البحث وعلامات تبويب المتصفح للإشارة إلى موضوع الصفحة.",
+        "metaTitleHelperTooltip": "يظهر عنوان الميتا في صفحات نتائج محركات البحث وعلامات تبويب المتصفح للإشارة إلى موضوع صفحة الويب.",
+        "metaTitleHelperDetailTooltip": "يظهر عنوان الميتا في صفحات نتائج محركات البحث وعلامات تبويب المتصفح للإشارة إلى موضوع صفحة الويب.",
+        "metaTitlePlaceholder": "أدخل عنوان الميتا",
+        "metaDescription": "وصف الميتا",
+        "metaDescriptionTooltip": "وصف الميتا هو ملخص موجز لمحتوى صفحة الويب، يظهر ضمن نتائج محركات البحث.",
+        "metaDescriptionPlaceholder": "أدخل وصف الميتا",
+        "metaKeywords": "كلمات الميتا",
+        "metaKeywordsTooltip": "كلمات الميتا هي كلمات وعبارات تساعد محركات البحث على تصنيف الصفحة وعرضها للمستخدمين.",
+        "metaDescriptionDetailTooltip": "وصف الميتا هو ملخص موجز لمحتوى صفحة الويب، يظهر ضمن نتائج محركات البحث.",
+        "metaKeywordsPlaceholder": "أدخل كلمات الميتا",
+        "metaKeywordsDetailTooltip": "كلمات الميتا هي كلمات وعبارات تساعد محركات البحث على تصنيف الصفحة وعرضها للمستخدمين."
+      },
+      "cover": {
+        "title": "الغلاف",
+        "image": "صورة",
+        "click": "انقر",
+        "dragUpload": "أو اسحب لرفع الصورة",
+        "maxSize": "الحجم الأقصى",
+        "fileTypes": "أنواع الملفات",
+        "recommendedSize": "المقاس الموصى به",
+        "maxSizeAndTypes": "الحجم الأقصى: 5 ميجابايت، أنواع الملفات: jpg و jpeg و png",
+        "recommendedSizeWithValue": "المقاس الموصى به: 1400 × 800 بكسل",
+        "invalidFormat": "الصيغ المدعومة فقط: jpg، jpeg و png.",
+        "fileSizeError": "يرجى رفع ملف بحجم لا يتجاوز 5 ميجابايت.",
+        "loadImageError": "تعذر تحميل الصورة للتحقق من الأبعاد",
+        "viewAlt": "عرض الصورة",
+        "deleteAlt": "حذف الصورة",
+        "uploadAlt": "رفع الصورة"
+      },
+      "preview": {
+        "english": "الإنجليزية",
+        "arabic": "العربية",
+        "share": "مشاركة:",
+        "imageAlt": "صورة الخبر",
+        "noImage": "لا توجد صورة",
+        "facebookAlt": "فيسبوك",
+        "xAlt": "إكس",
+        "instagramAlt": "إنستغرام"
+      }
+    }
+  }
+}

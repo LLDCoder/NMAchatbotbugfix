@@ -1,0 +1,207 @@
+# Service Operations Analytics
+
+Base URL in the source docs:
+- `http://localhost:5246`
+
+## 1. Dashboard Charts
+
+### Endpoint
+- `GET /api/Application/dashboard/statistics`
+
+### Response
+- `totalPublishServices: number`
+- `totalApplications: number`
+- `totalRevenue: number`
+- `totalRefunds: number`
+- `refundApplications: number`
+- `approvalRate: number`
+- `avgSatisfaction: number`
+- `statusStats`
+- `emirateStats[]`
+- `trendStats[]`
+- `deviceStats[]`
+- `categoryStats[]`
+- `typeStats[]`
+- `revenueTrendList[]`
+
+### statusStats
+- `total`
+- `individual`
+- `commercial`
+- `talentAgency`
+- `freeZone`
+- `embassy`
+- `consulate`
+- `culturalClubs`
+- `government`
+
+### emirateStats[]
+- `emirate: string`
+- `count: number`
+- `percentage: number`
+
+### trendStats[]
+- `date: string`
+- `count: number`
+
+### deviceStats[]
+- `deviceType: string`
+- `count: number`
+
+### categoryStats[]
+- `categoryName: string`
+- `count: number`
+- `percentage: number`
+
+### typeStats[]
+- `typeName: string`
+- `count: number`
+- `percentage: number`
+
+Documented examples include:
+- `Renewal`
+- `New`
+- `Amendment`
+- `Cancellation`
+
+### revenueTrendList[]
+- `date: string`
+- `serviceApplicationFees: number`
+- `fines: number`
+- `refunds: number`
+- `revenue: number`
+
+## 2. Service Performance Table
+
+### Endpoint
+- `GET /api/Application/dashboard/service/list`
+
+### Query Params
+- `days`
+- `keyword`
+- `option`
+- `pageIndex`
+- `pageSize`
+- `orderby`
+- `sort`
+
+### option
+- `AllServices`
+- `AllCategories`
+
+### orderby
+- `Applications`
+- `TotalRevenue`
+- `ApprovalRate`
+- `AvgProcessingTime`
+- `AvgSatisfaction`
+- `RefundApplications`
+- `TotalRefunds`
+- `RefundRate`
+
+### sort
+- `desc`
+- `asc`
+
+### Response
+- `pageIndex: number`
+- `pageSize: number`
+- `total: number`
+- `items: ServicePerformanceItem[]`
+
+### ServicePerformanceItem
+- `serviceName: string`
+- `serviceCategory: string`
+- `applications: number`
+- `applicationsChange: number`
+- `totalRevenue: number`
+- `totalRevenueChange: number`
+- `approvalRate: number`
+- `approvalRateChange: number`
+- `avgProcessingTime: number`
+- `avgProcessingTimeChange: number`
+- `avgSatisfaction: number`
+- `avgSatisfactionChange: number`
+- `refundApplications: number`
+- `refundApplicationsChange: number`
+- `totalRefunds: number`
+- `totalRefundsChange: number`
+- `refundRate: number`
+- `refundRateChange: number`
+
+## 3. Service Performance Export
+
+### Endpoint
+- `GET /api/Application/dashboard/service/list/export`
+
+### Query Params
+- `days`
+- `keyword`
+- `option`
+- `orderby`
+- `sort`
+
+## 4. Team Performance Table
+
+### Endpoint
+- `GET /api/Application/dashboard/team/list`
+
+### Query Params
+- `days`
+- `keyword`
+- `pageIndex`
+- `pageSize`
+- `orderby`
+- `sort`
+
+### orderby
+- `ApplicationTasks`
+- `ApprovedApplications`
+- `RejectedApplications`
+- `ApprovalRate`
+- `AvgProcessingTime`
+- `SLA`
+
+### sort
+- `desc`
+- `asc`
+
+### Response
+- `avgSLACompliance: number`
+- `avgProcessingTime: number`
+- `avgApprovalRate: number`
+- `page`
+
+### page
+- `pageIndex: number`
+- `pageSize: number`
+- `total: number`
+- `items: TeamPerformanceItem[]`
+
+### TeamPerformanceItem
+- `teamMember: string`
+- `applicationTasks: number`
+- `applicationTasksChange: number`
+- `approvedApplications: number`
+- `approvedApplicationsChange: number`
+- `rejectedApplications: number`
+- `rejectedApplicationsChange: number`
+- `approvalRate: number`
+- `approvalRateChange: number`
+- `avgProcessingTime: number`
+- `avgProcessingTimeChange: number`
+- `sla: number`
+- `slaChange: number`
+
+## 5. Team Performance Export
+
+### Endpoint
+- `GET /api/Application/dashboard/team/list/export`
+
+### Query Params
+- `days`
+- `keyword`
+- `pageIndex`
+- `pageSize`
+- `orderby`
+- `sort`

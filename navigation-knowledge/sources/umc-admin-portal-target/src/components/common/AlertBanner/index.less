@@ -1,0 +1,117 @@
+@import "@/styles/variables.less";
+
+.alert-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  transition: all 0.3s;
+  margin-bottom: 16px;
+  img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .alert-banner-content {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    font-size: 16px;
+    label {
+      font-size: 16px;
+      color: @text-color;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 14px;
+      }
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 14px;
+    }
+  }
+
+  .alert-banner-icon {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 12px;
+    font-size: 16px;
+    line-height: 1;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 14px;
+    }
+  }
+
+  .alert-banner-text {
+    flex: 1;
+    word-break: break-word;
+  }
+
+  .alert-banner-close {
+    margin-left: 16px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: opacity 0.3s;
+    flex-shrink: 0;
+
+    &:hover {
+      opacity: 0.7;
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 10px;
+    }
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+  }
+}
+
+//  (/)
+.alert-banner-warning {
+  background-color: #fffbeb;
+  border: 1px solid #fffbeb;
+  color: #d67909;
+
+  .alert-banner-icon {
+    color: #faad14;
+  }
+}
+
+//  ()
+.alert-banner-info {
+  background-color: #e6f7ff;
+  border: 1px solid #91d5ff;
+  color: #0050b3;
+
+  .alert-banner-icon {
+    color: #c19453;
+  }
+}
+
+//  ()
+.alert-banner-error {
+  background-color: #fff2f0;
+  border: 1px solid #ffccc7;
+  color: #cf1322;
+
+  .alert-banner-icon {
+    color: #ff4d4f;
+  }
+}
+
+//  ()
+.alert-banner-success {
+  background-color: #f6ffed;
+  border: 1px solid #b7eb8f;
+  color: #389e0d;
+
+  .alert-banner-icon {
+    color: #52c41a;
+  }
+}

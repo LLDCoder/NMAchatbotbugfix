@@ -1,0 +1,171 @@
+.license-transfer-form-container {
+  width: 100%;
+
+  .license-transfer-form-card {
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e8e8e8;
+
+    .ant-card-head {
+      background-color: #fff;
+      border-bottom: none;
+      padding: 20px 24px 0;
+      min-height: auto;
+
+      .ant-card-head-title {
+        font-weight: 600;
+        font-size: 16px;
+        color: #361e12;
+        padding: 0;
+      }
+    }
+
+    .ant-card-body {
+      padding: 20px 24px 24px;
+    }
+  }
+
+  .license-transfer-form-alert {
+    margin-bottom: 24px;
+    border-radius: 8px;
+    background-color: #fff7e6;
+    border: 1px solid #ffd591;
+
+    .ant-alert-icon {
+      color: #faad14;
+    }
+
+    .ant-alert-message {
+      color: #ad6800;
+    }
+  }
+
+  .license-transfer-form-error {
+    margin-bottom: 24px;
+    border-radius: 8px;
+  }
+
+  .ant-row {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .license-transfer-form-field {
+    margin-bottom: 0;
+  }
+
+  .license-transfer-form-label {
+    font-size: 14px;
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    .license-transfer-form-required {
+      color: #ea4f49;
+      margin-left: 2px;
+    }
+  }
+
+  .license-transfer-form-readonly {
+    background-color: #f5f5f5 !important;
+
+    &.ant-input {
+      background-color: #f5f5f5 !important;
+      color: #333;
+      cursor: not-allowed;
+    }
+
+    &.ant-select {
+      .ant-select-selector {
+        background-color: #f5f5f5 !important;
+        color: #333;
+        cursor: not-allowed;
+      }
+    }
+
+    &.ant-picker {
+      background-color: #f5f5f5 !important;
+
+      .ant-picker-input > input {
+        color: #333;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .ant-input {
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid #d9d9d9;
+
+    &:hover:not(:disabled) {
+      border-color: #8b7355;
+    }
+
+    &:focus {
+      border-color: #8b7355;
+      box-shadow: 0 0 0 2px rgba(139, 115, 85, 0.1);
+    }
+  }
+
+  .ant-select {
+    width: 100%;
+
+    .ant-select-selector {
+      height: 48px !important;
+      border-radius: 8px !important;
+      align-items: center;
+      padding: 0 12px !important;
+      border: 1px solid #d9d9d9;
+    }
+
+    &:not(.ant-select-disabled):hover .ant-select-selector {
+      border-color: #8b7355;
+    }
+
+    &.ant-select-focused:not(.ant-select-disabled) .ant-select-selector {
+      border-color: #8b7355;
+      box-shadow: 0 0 0 2px rgba(139, 115, 85, 0.1);
+    }
+  }
+
+  .ant-picker {
+    height: 48px;
+    border-radius: 8px;
+    width: 100%;
+    border: 1px solid #d9d9d9;
+
+    &:hover:not(.ant-picker-disabled) {
+      border-color: #8b7355;
+    }
+
+    &.ant-picker-focused {
+      border-color: #8b7355;
+      box-shadow: 0 0 0 2px rgba(139, 115, 85, 0.1);
+    }
+  }
+
+  .license-transfer-form-expanded {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #e8e8e8;
+  }
+
+  .license-transfer-form-section-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #361e12;
+    margin-bottom: 16px;
+    margin-top: 24px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}

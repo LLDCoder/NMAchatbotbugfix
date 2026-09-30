@@ -1,0 +1,306 @@
+{
+  "schemaVersion": "1.0",
+  "bundleId": "page-supplement.admin.page-docs.licensing.application-detail.routing-evidence",
+  "createdAt": "2026-09-27T18:57:24.671337+00:00",
+  "packageStatus": "active",
+  "records": [
+    {
+      "id": "admin.page-docs.licensing.application-detail.routing-evidence",
+      "kind": "page_definition",
+      "revision": 6,
+      "status": "active",
+      "title": "Application Details",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local"
+        ],
+        "pageRefs": [
+          "/licensing/applications/applicationsDetails"
+        ],
+        "sourceSnapshot": "source-inspected-20260924",
+        "runtimeVerification": "pending",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/ApplicationsDetails/index.tsx",
+          "revision": "a4fa7dd9b78a3b5d3a23ebce16a55575d920c7261639fa3f1c33714f1ad36755",
+          "locator": "taskId query parsing; detail request; formData and timeline rendering",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ApplicationAppService.cs",
+          "revision": "22e94773e70c95fab9ce479919b51d0241e046bf085cd0c3f8b5991b9004772e",
+          "locator": "GetMyReviewDetailAsync; GetReviewListByTaskIdAsync; CanViewWorkflowTaskDetail",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Application/ApplicationDto.cs",
+          "revision": "3efae9b26845ec68130f314cbccfd0861bb76f19a22ab6d083f5ec9435042cdc",
+          "locator": "MyReviewDetailResponse; ApplicationTimeLineResponse; ContentAiEvidenceDto",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationMaterials/ApplicationMaterialStatusService.cs",
+          "revision": "02393670290b376dd377b628a2f6f2d8e26e487ea05e8ef21fb502d43e1b390f",
+          "locator": "GetReviewFormDataAsync; EnsureAllStatusesAssignedAsync",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Domain/Models/ServiceConfig.cs",
+          "revision": "1eb8aa67ac45e740917d0e1c6e6ba1b83af6d9529c886843d83883f29bd33310",
+          "locator": "Id, Version and IsCurrentVersion",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/application.ts",
+          "revision": "32978ed7cc15c3bfb93d26f4c2c83a75cc3ad33ef2e2e87709c7feb3a50a3908",
+          "locator": "applicationMyReviewDetail, lines 349-350",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "manual",
+          "reference": "navigation-knowledge/artifacts/KB/业务知识全量整理-20260926/可上传页面知识/Admin Records-跨部门关联与状态来源.md",
+          "revision": "d40b908baee4e19d53abe7a6c2540ac1d9909afecc9c56e5e3ee665a6f635f30",
+          "locator": "Business meaning and status provenance, lines 53-65",
+          "verification": "static_extracted"
+        },
+        {
+          "kind": "manual",
+          "reference": "navigation-knowledge/artifacts/KB/pages/admin/licensing-application-detail/Application Details-源返回更新时间-20260928-r1.json",
+          "revision": "c14d3825af5dade1fb1916ba04581b447990f5fff33ad9ef25b0a78ea743a5c6",
+          "locator": "lastUpdatedTime and readingBoundaries, lines 72-101",
+          "verification": "static_extracted"
+        }
+      ],
+      "payload": {
+        "pageIdentity": {
+          "catalogId": "a3780c35dd57_da1a77697e11:Page:ea98b3b3ff504cb62c04",
+          "component": "ApplicationsDetails",
+          "route": "/licensing/applications/applicationsDetails",
+          "name": "Application Details"
+        },
+        "entryConditions": [
+          "A permitted current list record supplies taskId, or the current exact authorized detail page supplies its declared taskId only as a navigation hint. Read permission must independently pass on a fresh same-principal detail endpoint response."
+        ],
+        "views": [],
+        "readinessAssertions": [
+          "A current non-null data.detail exists and its applicationNumber and taskId match the requested record and observed mapped task."
+        ],
+        "routing": {
+          "parameters": [
+            {
+              "id": "todo_task",
+              "name": "taskId",
+              "from": "previous_record",
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "sourcePath": "/data/page/items",
+              "identityField": "applicationNumber",
+              "keyFields": [
+                "id"
+              ],
+              "field": "taskId",
+              "unique": false,
+              "required": true
+            },
+            {
+              "id": "completed_task",
+              "name": "taskId",
+              "from": "previous_record",
+              "operationRef": "POST /api/Application/MyComplatedPage",
+              "sourcePath": "/data/page/items",
+              "identityField": "applicationNumber",
+              "keyFields": [
+                "id"
+              ],
+              "field": "taskId",
+              "unique": false,
+              "required": true
+            },
+            {
+              "id": "current_detail_task",
+              "name": "taskId",
+              "from": "current_page",
+              "operationRef": "GET /api/Application/MyReviewDetail/{taskId}",
+              "sourcePath": "/data/detail",
+              "identityField": "applicationNumber",
+              "keyFields": [
+                "id"
+              ],
+              "field": "taskId",
+              "unique": false,
+              "required": true
+            }
+          ],
+          "records": [
+            {
+              "id": "detail_application",
+              "operationRef": "GET /api/Application/MyReviewDetail/{taskId}",
+              "sourcePath": "/data/detail",
+              "identityField": "applicationNumber",
+              "keyFields": [
+                "id"
+              ],
+              "unique": false
+            }
+          ]
+        },
+        "readOperation": {
+          "operationRef": "GET /api/Application/MyReviewDetail/{taskId}",
+          "navigationSource": "/licensing/applications",
+          "responseRoot": "/data",
+          "detailPath": "/data/detail",
+          "timelinePath": "/data/applicationTimeline",
+          "formDataPath": "/data/formData"
+        },
+        "fields": {
+          "detail.id": "Application key.",
+          "detail.applicationNumber": "Business number to compare with the user supplied identity.",
+          "detail.taskId": "Workflow task key used by this endpoint.",
+          "detail.status": "Current application/process state.",
+          "detail.taskStatus": "Current workflow node; not the Completed list decision projection.",
+          "detail.assignee": "Current handler key.",
+          "detail.assignedTo": "Current handler display.",
+          "detail.serviceId": "The application service record ID. ServiceConfig records carry Version and IsCurrentVersion, so this is a service-version lookup anchor; the number alone is not a form version string or proof of the applicable policy.",
+          "detail.serviceCode": "Service code; alone does not identify a historical rule version.",
+          "isCurrentHandler": "Whether the logged-in user is this task assignee.",
+          "formData": "JSON text containing merged form structure and submitted values; it is not a scalar material completeness verdict.",
+          "applicationTimeline": "Application-scoped review history including original and recall process rounds.",
+          "applicationTimeline[].userId": "Recorded historical actor key, different from the current assignee.",
+          "applicationTimeline[].userName": "Historical actor display.",
+          "applicationTimeline[].approvalTime": "Recorded action time.",
+          "applicationTimeline[].approvalResult": "Historical action result, not the current application state.",
+          "applicationTimeline[].reasonEn": "Recorded reason; disclose only under current field permission."
+        },
+        "materialAssessment": {
+          "availableEvidence": "GetReviewFormDataAsync merges the stored form structure and form values for this applicationId/applicationDetailId.",
+          "requiredInputs": [
+            "Applicable service/version form requirements",
+            "Conditional requiredness",
+            "Actual submitted values and authorized attachment metadata",
+            "Current workflow stage"
+          ],
+          "interpretation": "Missing material requires a required applicable item with an absent submitted value. A null form, unavailable file content or unchecked review status is not proof of missing material.",
+          "capabilityBoundary": "Form structure and submitted values need the exact service version and complete applicability/visibility conditions. A missing or unreadable form is not proof that a required material was not submitted."
+        },
+        "ruleSources": {
+          "binding": "Use the application serviceId/serviceCode and applicable workflow/form version to locate authoritative service requirements.",
+          "limits": "The inspected page source is not the published legal standard, escalation matrix, exception approval policy or license restoration policy. No unseen rule text is asserted here."
+        },
+        "constraints": [
+          "Source-inspected definitions; the remote deployed build has not been matched to this snapshot. Validate current authorized response shape and request context before using these definitions.",
+          "This page knowledge does not authorize API access or business writes. A blocked or failed response is not an empty population.",
+          "A bounded page is not a complete population. Counts and grouping require complete collection at the requested entity grain and stable request context.",
+          "No global uniqueness guarantee for applicationNumber was established. Detail object shape alone cannot substitute for verified mapping from the requested business identifier. For a declared current_page entry, a fresh authorized response must match applicationNumber to the requested identity, taskId to the actual observed page parameter, and one consistent nonempty application id. This proves the selected current task only, not global business-number uniqueness.",
+          "If multiple permitted list rows map to different taskId values, task/view disambiguation is required; do not select an arbitrary row.",
+          "Reject bypass requests and business writes under the existing capability boundary; knowledge cannot authorize skipping a workflow check.",
+          "Current-page hints, browser text and historical responses are not live evidence or permission grants. Missing, stale, forbidden, mismatched or ambiguous detail responses cannot establish the record. Read visibility does not grant review actions; use the separately returned isCurrentHandler only for its documented meaning."
+        ],
+        "knowledgeDependencies": [
+          {
+            "purpose": "analysis",
+            "operationRef": "GET /api/Application/MyReviewDetail/{taskId}",
+            "document": "Application Details-属性与表单证据绑定.json"
+          },
+          {
+            "purpose": "analysis",
+            "operationRef": "GET /api/Application/MyReviewDetail/{taskId}",
+            "document": "Application Details-英阿对象名称与范围.json"
+          }
+        ],
+        "readOnlyUserGuidance": {
+          "refresh": {
+            "title": {
+              "en": "Refresh or re-read Application Details",
+              "ar": "تحديث عرض تفاصيل الطلب أو إعادة قراءتها"
+            },
+            "steps": [
+              {
+                "step": 1,
+                "instruction": {
+                  "en": "Reopen the same application/task from a permitted list or entry. If several tasks match, select the intended task first.",
+                  "ar": "من قائمة الطلبات أو مدخل التنقل المصرّح به، أعد فتح تفاصيل الطلب والمهمة نفسيهما. حدّد المهمة المقصودة إذا تعددت المطابقات."
+                }
+              },
+              {
+                "step": 2,
+                "instruction": {
+                  "en": "Wait for the new read to finish. The inspected page requests detail when mounted again. Failure, denial or a mismatch leaves the refresh unconfirmed.",
+                  "ar": "انتظر اكتمال القراءة الجديدة. يطلب التنفيذ المفحوص التفاصيل عند تحميل الصفحة من جديد. الفشل أو رفض الوصول أو عدم المطابقة يجعل إعادة القراءة غير مؤكدة."
+                }
+              },
+              {
+                "step": 3,
+                "instruction": {
+                  "en": "Confirm the application number and task, then read the returned application status, separately from workflow position or historical decisions.",
+                  "ar": "تحقّق من رقم الطلب ومهمة سير العمل المختارة، ثم اقرأ حالة الطلب المعادة حديثًا. افصلها عن موضع سير العمل وعن القرار التاريخي."
+                }
+              },
+              {
+                "step": 4,
+                "instruction": {
+                  "en": "Record the observation time. Keep any source-reported business update time separately, as returned. A later read does not prove a changed record or committed update.",
+                  "ar": "سجّل وقت الملاحظة. احتفظ بوقت التحديث التجاري الوارد من المصدر منفصلًا كما ورد. القراءة الأحدث لا تثبت تغيّر السجل أو حفظ تحديث."
+                }
+              }
+            ],
+            "limits": {
+              "en": "No dedicated Refresh button is asserted. Focusing an already mounted page does not prove a new read. Re-entry does not guarantee cache invalidation or cross-module synchronization; use no business action to refresh.",
+              "ar": "لا يُفترض وجود زر تحديث مخصّص. التركيز على صفحة محمّلة مسبقًا لا يثبت قراءة جديدة. إعادة الدخول لا تضمن إبطال التخزين المؤقت أو المزامنة بين الوحدات؛ ولا تستخدم إجراءً تجاريًا للتحديث."
+            }
+          },
+          "verifyDiscrepancy": {
+            "title": {
+              "en": "Verify a reported status discrepancy",
+              "ar": "التحقّق من اختلاف مُبلّغ عنه في الحالة"
+            },
+            "steps": [
+              {
+                "step": 1,
+                "instruction": {
+                  "en": "Keep both values with page, field, selected object/task, role/view and observation time. Label an unobserved value as reported or unavailable; never invent it.",
+                  "ar": "احتفظ بالقيمتين مع الصفحة والحقل والكيان والمهمة والدور أو العرض ووقت الملاحظة. صنّف القيمة غير المشاهدة كمُبلّغ عنها أو غير متاحة؛ ولا تختلقها."
+                }
+              },
+              {
+                "step": 2,
+                "instruction": {
+                  "en": "Verify the same typed business object and relevant task using the current permitted mapping. Similar references are insufficient. Use the actual second source, which need not be a list.",
+                  "ar": "تحقّق من الكيان التجاري نفسه بنوعه والمهمة المعنية عبر الربط الحالي المصرّح به. تشابه المراجع لا يكفي. استخدم المصدر الثاني الفعلي؛ ولا يلزم أن يكون قائمة."
+                }
+              },
+              {
+                "step": 3,
+                "instruction": {
+                  "en": "Compare the same field meaning: application lifecycle, workflow position, completed-task decision and payment/other-module status are distinct facts.",
+                  "ar": "قارن المعنى نفسه للحقل: حالة دورة حياة الطلب وموضع سير العمل وقرار المهمة المكتملة وحالة الدفع أو وحدة أخرى حقائق مختلفة."
+                }
+              },
+              {
+                "step": 4,
+                "instruction": {
+                  "en": "Re-read the same authorized detail as above; compare scope, applicable version and times. Keep business update time separate from capture time; do not assign a timezone to an offsetless value.",
+                  "ar": "أعد قراءة التفاصيل المصرّح بها نفسها كما سبق؛ وقارن النطاق والإصدار المنطبق والأوقات. افصل وقت التحديث التجاري عن وقت الالتقاط؛ ولا تنسب منطقة زمنية لقيمة بلا إزاحة."
+                }
+              },
+              {
+                "step": 5,
+                "instruction": {
+                  "en": "If disagreement remains without a verified reconciliation rule, retain both findings and the unresolved points. Do not automatically prefer a list, detail, later capture or prior answer; equal readings do not prove a committed update.",
+                  "ar": "إذا استمر الاختلاف دون قاعدة تسوية متحقّق منها، فاحتفظ بالنتيجتين والنقاط غير المحسومة. لا تفضّل تلقائيًا القائمة أو التفاصيل أو القراءة الأحدث أو الإجابة السابقة؛ فتطابق القراءات لا يثبت حفظ تحديث."
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+/*
+  P4 — make over-wide tables scroll instead of spilling.
+
+  Matched by postcss.config.js `MIGRATED`, so px stay literal.
+  Imported after src/layout/index.css; see src/layout/index.tsx.
+
+  ── The defect ────────────────────────────────────────────────────────────────
+  rc-table only injects its inline `overflow: auto hidden` onto .ant-table-content
+  when horizontal scrolling is active, which requires either `scroll.x` or a
+  `fixed` column. Tables with neither keep `table-layout: auto` and no scroll
+  container, so once the natural table width passes the container the whole table
+  spills out of the page instead of scrolling.
+
+  Measured at 1024 with scaling off: 24 routes already scroll (they carry
+  scroll.x or a fixed column), 9 spill. Worst offenders — ContentLibrary and
+  ContentLibrary/Books +422, transactions and its detail +340, licenses +275,
+  Permits +228, mydashboard / newpassword / NewsManagementDetail +107.
+
+  ── The fix ───────────────────────────────────────────────────────────────────
+  Give every table inside the app shell the scroll container it lacks. This is a
+  safety net, not a replacement for the design's sticky action column: adding
+  `fixed: "right"` to a table's action column both satisfies "actions pinned,
+  scroll to view" and makes rc-table switch that table to its own managed
+  horizontal scrolling.
+
+  Tables rc-table already manages are unaffected — their inline style outranks a
+  stylesheet rule, so they keep `overflow: auto hidden` exactly as before.
+
+  Scoped to .layout so the login and other pre-auth screens are left alone.
+*/
+.layout .ant-table-wrapper,
+.layout .ant-table-wrapper .ant-spin-nested-loading,
+.layout .ant-table-wrapper .ant-spin-container,
+.layout .ant-table,
+.layout .ant-table-container,
+.layout .ant-table-content {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.layout .ant-table-content {
+  overflow-x: auto;
+}

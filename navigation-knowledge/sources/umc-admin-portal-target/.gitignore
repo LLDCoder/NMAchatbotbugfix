@@ -1,0 +1,52 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+dist.zip
+src/mocks/_*.bundled_*.cjs
+src/mocks/_*.bundled_*.mjs
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+/dist.rar
+.playwright-cli/
+.tmp/
+.codex-temp/
+tmp/
+output/
+.inspection-docs/
+.dockerignore
+build_docker.sh
+nginx.conf
+.claude/settings.json
+dist20260519.zip
+/exports
+
+# Local AI assistant rules (Chinese content; kept out of commits to satisfy the pre-commit Han-script check)
+CLAUDE.md
+
+# Local-only project docs and generated route/spec output — not pushed to remote
+docs/
+/.claude.md
+BUILD_HISTORY.md
+
+# Local-only AI assistant rules — never commit
+AGENTS.md
+DEVELOPMENT_RULES.md

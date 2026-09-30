@@ -1,0 +1,159 @@
+{
+  "schemaVersion": "1.0",
+  "bundleId": "admin.page-docs.licensing.license-detail.attributes",
+  "packageStatus": "active",
+  "createdAt": "2026-09-25T03:44:01.398762+00:00",
+  "records": [
+    {
+      "id": "admin.page-docs.licensing.license-detail.attributes",
+      "kind": "field_semantics",
+      "revision": 1,
+      "status": "active",
+      "title": "License Details-属性与实体绑定",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local"
+        ],
+        "pageRefs": [
+          "/licensing/license/LicenseDatails"
+        ],
+        "runtimeVerification": "pending",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/License/LicenseDetailDto.cs",
+          "revision": "d343d75c9ec140b2080130c6f8118e8bca20bb89484717cbd3d4a863d24de39a",
+          "locator": "LicenseDetailDto and LicenseHolderDto",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/LicenseDatails/index.tsx",
+          "revision": "d1acba8ac55a0f2ff0d3c0e17c9a083d9f21c55603f8070db1279dd566726e52",
+          "locator": "License number, holder and date rendering",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/licensing/license/LicenseDatails",
+        "bindings": [
+          {
+            "id": "object",
+            "kind": "object",
+            "concept": "license",
+            "aliases": [
+              "licenses",
+              "certificate",
+              "license record"
+            ],
+            "fields": [
+              "id"
+            ],
+            "operationRef": "GET /api/LicenseManagement/{id}",
+            "sourcePath": "/data",
+            "meaning": "The selected license/certificate entity key."
+          },
+          {
+            "id": "grain",
+            "kind": "grain",
+            "concept": "license",
+            "aliases": [
+              "licenses",
+              "certificate",
+              "license record"
+            ],
+            "fields": [
+              "id"
+            ],
+            "operationRef": "GET /api/LicenseManagement/{id}",
+            "sourcePath": "/data",
+            "meaning": "The selected license/certificate entity key."
+          },
+          {
+            "id": "type",
+            "kind": "attribute",
+            "concept": "type",
+            "aliases": [
+              "license type",
+              "service type"
+            ],
+            "fields": [
+              "licenseType"
+            ],
+            "operationRef": "GET /api/LicenseManagement/{id}",
+            "sourcePath": "/data",
+            "meaning": "License/service type."
+          },
+          {
+            "id": "holder",
+            "kind": "attribute",
+            "concept": "holder",
+            "aliases": [
+              "license holder",
+              "holder name"
+            ],
+            "fields": [
+              "holder.nameEn"
+            ],
+            "operationRef": "GET /api/LicenseManagement/{id}",
+            "sourcePath": "/data",
+            "meaning": "Permitted English holder display name; excludes identity documents and contact data."
+          },
+          {
+            "id": "issue_date",
+            "kind": "attribute",
+            "concept": "issue date",
+            "aliases": [
+              "issuance date",
+              "issued date"
+            ],
+            "fields": [
+              "issuanceDate"
+            ],
+            "operationRef": "GET /api/LicenseManagement/{id}",
+            "sourcePath": "/data",
+            "meaning": "Detail issuance date; list issuanceTime is a different field."
+          },
+          {
+            "id": "expiry_date",
+            "kind": "attribute",
+            "concept": "expiry date",
+            "aliases": [
+              "expiration date",
+              "expires on"
+            ],
+            "fields": [
+              "expiryDate"
+            ],
+            "operationRef": "GET /api/LicenseManagement/{id}",
+            "sourcePath": "/data",
+            "meaning": "Detail expiry date; list expirationTime is a different field."
+          }
+        ],
+        "fields": {
+          "id": "Entity key",
+          "licenseType": "License type",
+          "holder.nameEn": "Holder display name",
+          "issuanceDate": "Issue date",
+          "expiryDate": "Expiry date"
+        },
+        "sourceBinding": {
+          "operationRef": "GET /api/LicenseManagement/{id}",
+          "sourcePath": "/data"
+        },
+        "relationships": [
+          "Each definition applies only to its declared operation and data path."
+        ],
+        "constraints": [
+          "Definitions do not grant execution or field access. Use the current authorized response and exact operation/path.",
+          "No application-specific counts, questions or answers are stored.",
+          "Record verification, requested field completeness and output permission are independently checked.",
+          "A missing value is unknown; unavailable priority, workflow rules and source clock behavior are not guessed."
+        ]
+      }
+    }
+  ]
+}

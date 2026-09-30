@@ -1,0 +1,168 @@
+{
+  "schemaVersion": "1.0",
+  "bundleId": "admin.page-docs.content.team.sla-measures",
+  "packageStatus": "active",
+  "createdAt": "2026-09-25T03:44:01.405240+00:00",
+  "records": [
+    {
+      "id": "admin.page-docs.content.team.sla-measures",
+      "kind": "field_semantics",
+      "revision": 2,
+      "status": "active",
+      "title": "Content Team Management-嵌套SLA与指标语义",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local"
+        ],
+        "pageRefs": [
+          "/content/team-management"
+        ],
+        "runtimeVerification": "pending",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/TeamManagement/TeamManagementDtos.cs",
+          "revision": "81ce9486fbec35ff0971fbcd8d7b164c4b64fe9e84d2346282b4f69b313965cc",
+          "locator": "TaskQueryRequest; TaskItemDto; SlaDto declarations",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ContentTeamManagement/ContentTeamManagementAppService.cs",
+          "revision": "da6ed5669b0e535c16fc22ab6aa083c23de7aab17f70efc5e4f8e5c9c05ceaaf",
+          "locator": "QueryTasksV2Async",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/teamManagement.ts",
+          "revision": "d5b960da8ae6422a95ba3807237d9c4ba30cfecc526d6a5730b93bf2f9be79ab",
+          "locator": "buildLicensingTaskQueryPayload; buildContentTaskQueryPayload",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/TeamManagement/components/TeamTasksPanel/utils.ts",
+          "revision": "1495f5802007cfb67030bd9ec006d355896fa105b7621db645f1c7aecda830c5",
+          "locator": "buildTeamTaskRequestPayload",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/TeamManagement/TeamManagementDtos.cs",
+          "revision": "81ce9486fbec35ff0971fbcd8d7b164c4b64fe9e84d2346282b4f69b313965cc",
+          "locator": "TeamManagementSlaDto",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/content/team-management",
+        "bindings": [
+          {
+            "id": "overdue_tasks",
+            "kind": "measure",
+            "concept": "overdue tasks",
+            "aliases": [
+              "overdue task count",
+              "overdue count",
+              "overdue"
+            ],
+            "fields": [
+              "sourceType",
+              "sourceId",
+              "sla.isOverdue"
+            ],
+            "operationRef": "POST /api/content/team-management/tasks/query",
+            "sourcePath": "/data/page/items",
+            "meaning": "Count distinct queue entities for which the returned SLA flag is true; unknown SLA is reported separately.",
+            "operator": "count",
+            "conditions": [
+              {
+                "field": "sla.isOverdue",
+                "predicate": "eq",
+                "value": true
+              }
+            ]
+          },
+          {
+            "id": "pending_tasks",
+            "kind": "measure",
+            "concept": "pending tasks",
+            "aliases": [
+              "pending task count",
+              "pending count",
+              "pending"
+            ],
+            "fields": [
+              "sourceType",
+              "sourceId"
+            ],
+            "operationRef": "POST /api/content/team-management/tasks/query",
+            "sourcePath": "/data/page/items",
+            "meaning": "Count distinct entities from the todo queue after verified request-context filtering.",
+            "operator": "count",
+            "conditions": [],
+            "contextParameters": {
+              "view": "todo",
+              "applicationTaskOnly": true,
+              "category": "applications"
+            }
+          }
+        ],
+        "fields": {
+          "sourceType": "Typed queue source",
+          "sourceId": "Key within source type",
+          "sla.isOverdue": "Returned overdue flag; null/unavailable is unknown",
+          "sla.remainingMinutes": "Returned remaining minutes; sign semantics vary by source",
+          "assignedToUserId": "Officer identity",
+          "assignedTo": "Officer display name"
+        },
+        "sourceBinding": {
+          "operationRef": "POST /api/content/team-management/tasks/query",
+          "sourcePath": "/data/page/items"
+        },
+        "relationships": [
+          "Each definition applies only to its declared operation and data path."
+        ],
+        "constraints": [
+          "Definitions do not grant execution or field access. Use the current authorized response and exact operation/path.",
+          "No application-specific counts, questions or answers are stored.",
+          "Record verification, requested field completeness and output permission are independently checked.",
+          "A missing value is unknown; unavailable priority, workflow rules and source clock behavior are not guessed.",
+          "Before selecting or analyzing this task query, load the same-page all-category/current-state companion definition through the declared analysis dependency. The application-only measure below is retained exactly for its own request context; it must not replace the companion all-category count. This reference loads knowledge, not another business endpoint, and grants no additional page or row access."
+        ],
+        "pagination": {
+          "pageIndex": "1-based request page; nonpositive input falls back to 1 in the inspected V2 implementation.",
+          "pageSize": "Request page size; nonpositive input falls back to 20 in the inspected V2 implementation.",
+          "rowsPath": "/data/page/items",
+          "totalPath": "/data/page/total",
+          "total": "Count of filtered team query rows before paging."
+        },
+        "requestFields": {
+          "view": "todo or completed.",
+          "applicationTaskOnly": "Controls application-only versus mixed-source queue population.",
+          "category": "Category constraint; use the actual serialized request. all and applications are different parameter values even when a toggle narrows effective population.",
+          "memberId": "Optional current assignee filter.",
+          "keyword": "Optional search term.",
+          "status": "Stable source filter code.",
+          "lastUpdatedFrom": "Optional source update lower boundary.",
+          "lastUpdatedTo": "Optional source update upper boundary."
+        },
+        "unresolvedPageSemantics": [
+          "Task identity is not automatically application identity. Application counts require a separately verified application mapping.",
+          "Returned/send-back requires source metadata mapping; priority cannot be inferred from status, urgency or SLA."
+        ],
+        "knowledgeDependencies": [
+          {
+            "purpose": "analysis",
+            "operationRef": "POST /api/content/team-management/tasks/query",
+            "document": "Content Team Management-全部类型待办计数与范围-r3-final.json"
+          }
+        ]
+      }
+    }
+  ]
+}

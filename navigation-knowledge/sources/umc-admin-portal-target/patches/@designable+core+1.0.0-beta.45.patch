@@ -1,0 +1,995 @@
+diff --git a/node_modules/@designable/core/esm/drivers/DragDropDriver.d.ts b/node_modules/@designable/core/esm/drivers/DragDropDriver.d.ts
+index 3e2cc79..4d2aea1 100644
+--- a/node_modules/@designable/core/esm/drivers/DragDropDriver.d.ts
++++ b/node_modules/@designable/core/esm/drivers/DragDropDriver.d.ts
+@@ -1,14 +1,36 @@
+ import { EventDriver } from '@designable/shared';
+ import { Engine } from '../models/Engine';
++interface IDragEventData {
++    clientX: number;
++    clientY: number;
++    pageX: number;
++    pageY: number;
++    target: EventTarget;
++    view: Window;
++}
+ export declare class DragDropDriver extends EventDriver<Engine> {
+     mouseDownTimer: any;
+     startEvent: MouseEvent;
++    isIgnoredTarget: (target: EventTarget) => boolean;
++    clearTouchHoldTimer: () => void;
++    getActiveTouch: (touches: TouchList) => Touch;
++    getTouchEventData: (e: TouchEvent, touch: Touch, resolveTarget?: boolean) => IDragEventData;
++    dispatchDragMove: (data: IDragEventData) => void;
++    startDragging: (data: IDragEventData, mouseDriven?: boolean) => void;
+     onMouseDown: (e: MouseEvent) => boolean;
+     onMouseUp: (e: MouseEvent) => void;
+     onMouseMove: (e: MouseEvent | DragEvent) => void;
+     onContextMenuWhileDragging: (e: MouseEvent) => void;
+     onStartDrag: (e: MouseEvent | DragEvent) => void;
+     onDistanceChange: (e: MouseEvent) => void;
++    removeTouchListeners: () => void;
++    resetTouchState: () => void;
++    cancelTouchDrag: () => void;
++    onTouchStart: (e: TouchEvent) => void;
++    onTouchMove: (e: TouchEvent) => void;
++    onTouchEnd: (e: TouchEvent) => void;
++    onTouchCancel: () => void;
+     attach(): void;
+     detach(): void;
+ }
++export {};
+diff --git a/node_modules/@designable/core/esm/drivers/DragDropDriver.js b/node_modules/@designable/core/esm/drivers/DragDropDriver.js
+index 5b01e3b..10fae5f 100644
+--- a/node_modules/@designable/core/esm/drivers/DragDropDriver.js
++++ b/node_modules/@designable/core/esm/drivers/DragDropDriver.js
+@@ -18,23 +18,94 @@ var GlobalState = {
+     onMouseDownAt: 0,
+     startEvent: null,
+     moveEvent: null,
++    activeTouchId: null,
++    touchHoldTimer: null,
+ };
++var TOUCH_HOLD_DELAY = 300;
++var TOUCH_MOVE_TOLERANCE = 8;
++var TOUCH_MOVE_OPTIONS = { passive: false };
++var TOUCH_START_OPTIONS = { capture: true, passive: true };
+ var DragDropDriver = /** @class */ (function (_super) {
+     __extends(DragDropDriver, _super);
+     function DragDropDriver() {
+         var _this = _super !== null && _super.apply(this, arguments) || this;
+         _this.mouseDownTimer = null;
+-        _this.onMouseDown = function (e) {
++        _this.isIgnoredTarget = function (target) {
++            var _a;
++            var element = target;
++            if ((element === null || element === void 0 ? void 0 : element.isContentEditable) || (element === null || element === void 0 ? void 0 : element.contentEditable) === 'true') {
++                return true;
++            }
++            return !!((_a = element === null || element === void 0 ? void 0 : element.closest) === null || _a === void 0 ? void 0 : _a.call(element, '.monaco-editor'));
++        };
++        _this.clearTouchHoldTimer = function () {
++            if (GlobalState.touchHoldTimer !== null) {
++                clearTimeout(GlobalState.touchHoldTimer);
++                GlobalState.touchHoldTimer = null;
++            }
++        };
++        _this.getActiveTouch = function (touches) {
++            for (var index = 0; index < touches.length; index++) {
++                var touch = touches.item(index);
++                if ((touch === null || touch === void 0 ? void 0 : touch.identifier) === GlobalState.activeTouchId) {
++                    return touch;
++                }
++            }
++        };
++        _this.getTouchEventData = function (e, touch, resolveTarget) {
++            var _a;
++            if (resolveTarget === void 0) { resolveTarget = false; }
++            var view = e.view || _this.contentWindow;
++            var target = resolveTarget
++                ? ((_a = view === null || view === void 0 ? void 0 : view.document) === null || _a === void 0 ? void 0 : _a.elementFromPoint(touch.clientX, touch.clientY)) ||
++                    e.target
++                : e.target;
++            return {
++                clientX: touch.clientX,
++                clientY: touch.clientY,
++                pageX: touch.pageX,
++                pageY: touch.pageY,
++                target: target,
++                view: view,
++            };
++        };
++        _this.dispatchDragMove = function (data) {
+             var _a, _b;
+-            if (e.button !== 0 || e.ctrlKey || e.metaKey) {
++            if (data.clientX === ((_a = GlobalState.moveEvent) === null || _a === void 0 ? void 0 : _a.clientX) &&
++                data.clientY === ((_b = GlobalState.moveEvent) === null || _b === void 0 ? void 0 : _b.clientY))
+                 return;
++            _this.dispatch(new DragMoveEvent(data));
++            GlobalState.moveEvent = data;
++        };
++        _this.startDragging = function (data, mouseDriven) {
++            if (mouseDriven === void 0) { mouseDriven = false; }
++            if (GlobalState.dragging)
++                return;
++            GlobalState.startEvent = GlobalState.startEvent || data;
++            if (mouseDriven) {
++                _this.batchAddEventListener('dragover', _this.onMouseMove);
++                _this.batchAddEventListener('mousemove', _this.onMouseMove);
+             }
+-            if (e.target['isContentEditable'] ||
+-                e.target['contentEditable'] === 'true') {
+-                return true;
+-            }
+-            if ((_b = (_a = e.target) === null || _a === void 0 ? void 0 : _a['closest']) === null || _b === void 0 ? void 0 : _b.call(_a, '.monaco-editor'))
++            _this.batchAddEventListener('contextmenu', _this.onContextMenuWhileDragging, true);
++            _this.dispatch(new DragStartEvent({
++                clientX: GlobalState.startEvent.clientX,
++                clientY: GlobalState.startEvent.clientY,
++                pageX: GlobalState.startEvent.pageX,
++                pageY: GlobalState.startEvent.pageY,
++                target: GlobalState.startEvent.target,
++                view: GlobalState.startEvent.view,
++            }));
++            GlobalState.dragging = true;
++        };
++        _this.onMouseDown = function (e) {
++            if (GlobalState.activeTouchId !== null ||
++                e.button !== 0 ||
++                e.ctrlKey ||
++                e.metaKey) {
+                 return;
++            }
++            if (_this.isIgnoredTarget(e.target))
++                return true;
+             GlobalState.startEvent = e;
+             GlobalState.dragging = false;
+             GlobalState.onMouseDownAt = Date.now();
+@@ -63,39 +134,24 @@ var DragDropDriver = /** @class */ (function (_super) {
+             GlobalState.dragging = false;
+         };
+         _this.onMouseMove = function (e) {
+-            var _a, _b;
+-            if (e.clientX === ((_a = GlobalState.moveEvent) === null || _a === void 0 ? void 0 : _a.clientX) &&
+-                e.clientY === ((_b = GlobalState.moveEvent) === null || _b === void 0 ? void 0 : _b.clientY))
+-                return;
+-            _this.dispatch(new DragMoveEvent({
++            _this.dispatchDragMove({
+                 clientX: e.clientX,
+                 clientY: e.clientY,
+                 pageX: e.pageX,
+                 pageY: e.pageY,
+                 target: e.target,
+                 view: e.view,
+-            }));
+-            GlobalState.moveEvent = e;
++            });
+         };
+         _this.onContextMenuWhileDragging = function (e) {
+             e.preventDefault();
+         };
+         _this.onStartDrag = function (e) {
+-            if (GlobalState.dragging)
++            if (GlobalState.activeTouchId !== null) {
++                e.preventDefault();
+                 return;
+-            GlobalState.startEvent = GlobalState.startEvent || e;
+-            _this.batchAddEventListener('dragover', _this.onMouseMove);
+-            _this.batchAddEventListener('mousemove', _this.onMouseMove);
+-            _this.batchAddEventListener('contextmenu', _this.onContextMenuWhileDragging, true);
+-            _this.dispatch(new DragStartEvent({
+-                clientX: GlobalState.startEvent.clientX,
+-                clientY: GlobalState.startEvent.clientY,
+-                pageX: GlobalState.startEvent.pageX,
+-                pageY: GlobalState.startEvent.pageY,
+-                target: GlobalState.startEvent.target,
+-                view: GlobalState.startEvent.view,
+-            }));
+-            GlobalState.dragging = true;
++            }
++            _this.startDragging(e, true);
+         };
+         _this.onDistanceChange = function (e) {
+             var distance = Math.sqrt(Math.pow(e.pageX - GlobalState.startEvent.pageX, 2) +
+@@ -106,17 +162,115 @@ var DragDropDriver = /** @class */ (function (_super) {
+                 _this.onStartDrag(e);
+             }
+         };
++        _this.removeTouchListeners = function () {
++            _this.batchRemoveEventListener('touchmove', _this.onTouchMove, TOUCH_MOVE_OPTIONS);
++            _this.batchRemoveEventListener('touchend', _this.onTouchEnd);
++            _this.batchRemoveEventListener('touchcancel', _this.onTouchCancel);
++        };
++        _this.resetTouchState = function () {
++            _this.clearTouchHoldTimer();
++            _this.removeTouchListeners();
++            _this.batchRemoveEventListener('contextmenu', _this.onContextMenuWhileDragging, true);
++            GlobalState.dragging = false;
++            GlobalState.activeTouchId = null;
++            GlobalState.startEvent = null;
++            GlobalState.moveEvent = null;
++        };
++        _this.cancelTouchDrag = function () {
++            if (GlobalState.dragging && GlobalState.startEvent) {
++                _this.engine.workbench.eachWorkspace(function (workspace) {
++                    workspace.operation.dragClean();
++                });
++                var data = GlobalState.moveEvent || GlobalState.startEvent;
++                _this.dispatch(new DragStopEvent(data));
++            }
++            _this.resetTouchState();
++        };
++        _this.onTouchStart = function (e) {
++            if (e.touches.length !== 1) {
++                _this.cancelTouchDrag();
++                return;
++            }
++            var touch = e.changedTouches.item(0) || e.touches.item(0);
++            if (!touch)
++                return;
++            if (GlobalState.activeTouchId !== null) {
++                if (GlobalState.activeTouchId !== touch.identifier) {
++                    _this.cancelTouchDrag();
++                }
++                return;
++            }
++            if (_this.isIgnoredTarget(e.target))
++                return;
++            GlobalState.activeTouchId = touch.identifier;
++            GlobalState.dragging = false;
++            GlobalState.moveEvent = null;
++            GlobalState.startEvent = _this.getTouchEventData(e, touch);
++            _this.batchAddEventListener('touchmove', _this.onTouchMove, TOUCH_MOVE_OPTIONS);
++            _this.batchAddEventListener('touchend', _this.onTouchEnd);
++            _this.batchAddEventListener('touchcancel', _this.onTouchCancel);
++            _this.clearTouchHoldTimer();
++            GlobalState.touchHoldTimer = setTimeout(function () {
++                GlobalState.touchHoldTimer = null;
++                if (GlobalState.activeTouchId === touch.identifier &&
++                    GlobalState.startEvent) {
++                    _this.startDragging(GlobalState.startEvent);
++                }
++            }, TOUCH_HOLD_DELAY);
++        };
++        _this.onTouchMove = function (e) {
++            var touch = _this.getActiveTouch(e.touches);
++            if (!touch || !GlobalState.startEvent)
++                return;
++            var data = _this.getTouchEventData(e, touch, true);
++            if (!GlobalState.dragging) {
++                var distance = Math.sqrt(Math.pow(data.pageX - GlobalState.startEvent.pageX, 2) +
++                    Math.pow(data.pageY - GlobalState.startEvent.pageY, 2));
++                if (distance > TOUCH_MOVE_TOLERANCE) {
++                    _this.resetTouchState();
++                }
++                return;
++            }
++            e.preventDefault();
++            _this.dispatchDragMove(data);
++        };
++        _this.onTouchEnd = function (e) {
++            var touch = _this.getActiveTouch(e.changedTouches);
++            if (!touch)
++                return;
++            var data = _this.getTouchEventData(e, touch, true);
++            if (GlobalState.dragging) {
++                e.preventDefault();
++                _this.dispatch(new DragStopEvent(data));
++            }
++            _this.resetTouchState();
++        };
++        _this.onTouchCancel = function () {
++            if (GlobalState.activeTouchId === null)
++                return;
++            _this.cancelTouchDrag();
++        };
+         return _this;
+     }
+     DragDropDriver.prototype.attach = function () {
+         this.batchAddEventListener('mousedown', this.onMouseDown, true);
++        this.batchAddEventListener('touchstart', this.onTouchStart, TOUCH_START_OPTIONS);
+     };
+     DragDropDriver.prototype.detach = function () {
++        if (GlobalState.activeTouchId !== null) {
++            this.cancelTouchDrag();
++        }
++        else {
++            this.clearTouchHoldTimer();
++            this.removeTouchListeners();
++        }
+         GlobalState.dragging = false;
+         GlobalState.moveEvent = null;
+         GlobalState.onMouseDownAt = null;
+         GlobalState.startEvent = null;
++        GlobalState.activeTouchId = null;
+         this.batchRemoveEventListener('mousedown', this.onMouseDown, true);
++        this.batchRemoveEventListener('touchstart', this.onTouchStart, TOUCH_START_OPTIONS);
+         this.batchRemoveEventListener('dragstart', this.onStartDrag);
+         this.batchRemoveEventListener('dragend', this.onMouseUp);
+         this.batchRemoveEventListener('dragover', this.onMouseMove);
+diff --git a/node_modules/@designable/core/esm/effects/useCursorEffect.js b/node_modules/@designable/core/esm/effects/useCursorEffect.js
+index cb96d2e..eb26534 100644
+--- a/node_modules/@designable/core/esm/effects/useCursorEffect.js
++++ b/node_modules/@designable/core/esm/effects/useCursorEffect.js
+@@ -13,8 +13,9 @@ export var useCursorEffect = function (engine) {
+         engine.cursor.setStatus(CursorStatus.DragStart);
+         engine.cursor.setDragStartPosition(event.data);
+     });
+-    engine.subscribeTo(DragMoveEvent, function () {
++    engine.subscribeTo(DragMoveEvent, function (event) {
+         engine.cursor.setStatus(CursorStatus.Dragging);
++        engine.cursor.setPosition(event.data);
+     });
+     engine.subscribeTo(DragStopEvent, function (event) {
+         engine.cursor.setStatus(CursorStatus.DragStop);
+diff --git a/node_modules/@designable/core/lib/drivers/DragDropDriver.d.ts b/node_modules/@designable/core/lib/drivers/DragDropDriver.d.ts
+index 3e2cc79..4d2aea1 100644
+--- a/node_modules/@designable/core/lib/drivers/DragDropDriver.d.ts
++++ b/node_modules/@designable/core/lib/drivers/DragDropDriver.d.ts
+@@ -1,14 +1,36 @@
+ import { EventDriver } from '@designable/shared';
+ import { Engine } from '../models/Engine';
++interface IDragEventData {
++    clientX: number;
++    clientY: number;
++    pageX: number;
++    pageY: number;
++    target: EventTarget;
++    view: Window;
++}
+ export declare class DragDropDriver extends EventDriver<Engine> {
+     mouseDownTimer: any;
+     startEvent: MouseEvent;
++    isIgnoredTarget: (target: EventTarget) => boolean;
++    clearTouchHoldTimer: () => void;
++    getActiveTouch: (touches: TouchList) => Touch;
++    getTouchEventData: (e: TouchEvent, touch: Touch, resolveTarget?: boolean) => IDragEventData;
++    dispatchDragMove: (data: IDragEventData) => void;
++    startDragging: (data: IDragEventData, mouseDriven?: boolean) => void;
+     onMouseDown: (e: MouseEvent) => boolean;
+     onMouseUp: (e: MouseEvent) => void;
+     onMouseMove: (e: MouseEvent | DragEvent) => void;
+     onContextMenuWhileDragging: (e: MouseEvent) => void;
+     onStartDrag: (e: MouseEvent | DragEvent) => void;
+     onDistanceChange: (e: MouseEvent) => void;
++    removeTouchListeners: () => void;
++    resetTouchState: () => void;
++    cancelTouchDrag: () => void;
++    onTouchStart: (e: TouchEvent) => void;
++    onTouchMove: (e: TouchEvent) => void;
++    onTouchEnd: (e: TouchEvent) => void;
++    onTouchCancel: () => void;
+     attach(): void;
+     detach(): void;
+ }
++export {};
+diff --git a/node_modules/@designable/core/lib/drivers/DragDropDriver.js b/node_modules/@designable/core/lib/drivers/DragDropDriver.js
+index 801d057..ae9061d 100644
+--- a/node_modules/@designable/core/lib/drivers/DragDropDriver.js
++++ b/node_modules/@designable/core/lib/drivers/DragDropDriver.js
+@@ -21,23 +21,94 @@ var GlobalState = {
+     onMouseDownAt: 0,
+     startEvent: null,
+     moveEvent: null,
++    activeTouchId: null,
++    touchHoldTimer: null,
+ };
++var TOUCH_HOLD_DELAY = 300;
++var TOUCH_MOVE_TOLERANCE = 8;
++var TOUCH_MOVE_OPTIONS = { passive: false };
++var TOUCH_START_OPTIONS = { capture: true, passive: true };
+ var DragDropDriver = /** @class */ (function (_super) {
+     __extends(DragDropDriver, _super);
+     function DragDropDriver() {
+         var _this = _super !== null && _super.apply(this, arguments) || this;
+         _this.mouseDownTimer = null;
+-        _this.onMouseDown = function (e) {
++        _this.isIgnoredTarget = function (target) {
++            var _a;
++            var element = target;
++            if ((element === null || element === void 0 ? void 0 : element.isContentEditable) || (element === null || element === void 0 ? void 0 : element.contentEditable) === 'true') {
++                return true;
++            }
++            return !!((_a = element === null || element === void 0 ? void 0 : element.closest) === null || _a === void 0 ? void 0 : _a.call(element, '.monaco-editor'));
++        };
++        _this.clearTouchHoldTimer = function () {
++            if (GlobalState.touchHoldTimer !== null) {
++                clearTimeout(GlobalState.touchHoldTimer);
++                GlobalState.touchHoldTimer = null;
++            }
++        };
++        _this.getActiveTouch = function (touches) {
++            for (var index = 0; index < touches.length; index++) {
++                var touch = touches.item(index);
++                if ((touch === null || touch === void 0 ? void 0 : touch.identifier) === GlobalState.activeTouchId) {
++                    return touch;
++                }
++            }
++        };
++        _this.getTouchEventData = function (e, touch, resolveTarget) {
++            var _a;
++            if (resolveTarget === void 0) { resolveTarget = false; }
++            var view = e.view || _this.contentWindow;
++            var target = resolveTarget
++                ? ((_a = view === null || view === void 0 ? void 0 : view.document) === null || _a === void 0 ? void 0 : _a.elementFromPoint(touch.clientX, touch.clientY)) ||
++                    e.target
++                : e.target;
++            return {
++                clientX: touch.clientX,
++                clientY: touch.clientY,
++                pageX: touch.pageX,
++                pageY: touch.pageY,
++                target: target,
++                view: view,
++            };
++        };
++        _this.dispatchDragMove = function (data) {
+             var _a, _b;
+-            if (e.button !== 0 || e.ctrlKey || e.metaKey) {
++            if (data.clientX === ((_a = GlobalState.moveEvent) === null || _a === void 0 ? void 0 : _a.clientX) &&
++                data.clientY === ((_b = GlobalState.moveEvent) === null || _b === void 0 ? void 0 : _b.clientY))
+                 return;
++            _this.dispatch(new events_1.DragMoveEvent(data));
++            GlobalState.moveEvent = data;
++        };
++        _this.startDragging = function (data, mouseDriven) {
++            if (mouseDriven === void 0) { mouseDriven = false; }
++            if (GlobalState.dragging)
++                return;
++            GlobalState.startEvent = GlobalState.startEvent || data;
++            if (mouseDriven) {
++                _this.batchAddEventListener('dragover', _this.onMouseMove);
++                _this.batchAddEventListener('mousemove', _this.onMouseMove);
+             }
+-            if (e.target['isContentEditable'] ||
+-                e.target['contentEditable'] === 'true') {
+-                return true;
+-            }
+-            if ((_b = (_a = e.target) === null || _a === void 0 ? void 0 : _a['closest']) === null || _b === void 0 ? void 0 : _b.call(_a, '.monaco-editor'))
++            _this.batchAddEventListener('contextmenu', _this.onContextMenuWhileDragging, true);
++            _this.dispatch(new events_1.DragStartEvent({
++                clientX: GlobalState.startEvent.clientX,
++                clientY: GlobalState.startEvent.clientY,
++                pageX: GlobalState.startEvent.pageX,
++                pageY: GlobalState.startEvent.pageY,
++                target: GlobalState.startEvent.target,
++                view: GlobalState.startEvent.view,
++            }));
++            GlobalState.dragging = true;
++        };
++        _this.onMouseDown = function (e) {
++            if (GlobalState.activeTouchId !== null ||
++                e.button !== 0 ||
++                e.ctrlKey ||
++                e.metaKey) {
+                 return;
++            }
++            if (_this.isIgnoredTarget(e.target))
++                return true;
+             GlobalState.startEvent = e;
+             GlobalState.dragging = false;
+             GlobalState.onMouseDownAt = Date.now();
+@@ -66,39 +137,24 @@ var DragDropDriver = /** @class */ (function (_super) {
+             GlobalState.dragging = false;
+         };
+         _this.onMouseMove = function (e) {
+-            var _a, _b;
+-            if (e.clientX === ((_a = GlobalState.moveEvent) === null || _a === void 0 ? void 0 : _a.clientX) &&
+-                e.clientY === ((_b = GlobalState.moveEvent) === null || _b === void 0 ? void 0 : _b.clientY))
+-                return;
+-            _this.dispatch(new events_1.DragMoveEvent({
++            _this.dispatchDragMove({
+                 clientX: e.clientX,
+                 clientY: e.clientY,
+                 pageX: e.pageX,
+                 pageY: e.pageY,
+                 target: e.target,
+                 view: e.view,
+-            }));
+-            GlobalState.moveEvent = e;
++            });
+         };
+         _this.onContextMenuWhileDragging = function (e) {
+             e.preventDefault();
+         };
+         _this.onStartDrag = function (e) {
+-            if (GlobalState.dragging)
++            if (GlobalState.activeTouchId !== null) {
++                e.preventDefault();
+                 return;
+-            GlobalState.startEvent = GlobalState.startEvent || e;
+-            _this.batchAddEventListener('dragover', _this.onMouseMove);
+-            _this.batchAddEventListener('mousemove', _this.onMouseMove);
+-            _this.batchAddEventListener('contextmenu', _this.onContextMenuWhileDragging, true);
+-            _this.dispatch(new events_1.DragStartEvent({
+-                clientX: GlobalState.startEvent.clientX,
+-                clientY: GlobalState.startEvent.clientY,
+-                pageX: GlobalState.startEvent.pageX,
+-                pageY: GlobalState.startEvent.pageY,
+-                target: GlobalState.startEvent.target,
+-                view: GlobalState.startEvent.view,
+-            }));
+-            GlobalState.dragging = true;
++            }
++            _this.startDragging(e, true);
+         };
+         _this.onDistanceChange = function (e) {
+             var distance = Math.sqrt(Math.pow(e.pageX - GlobalState.startEvent.pageX, 2) +
+@@ -109,17 +165,115 @@ var DragDropDriver = /** @class */ (function (_super) {
+                 _this.onStartDrag(e);
+             }
+         };
++        _this.removeTouchListeners = function () {
++            _this.batchRemoveEventListener('touchmove', _this.onTouchMove, TOUCH_MOVE_OPTIONS);
++            _this.batchRemoveEventListener('touchend', _this.onTouchEnd);
++            _this.batchRemoveEventListener('touchcancel', _this.onTouchCancel);
++        };
++        _this.resetTouchState = function () {
++            _this.clearTouchHoldTimer();
++            _this.removeTouchListeners();
++            _this.batchRemoveEventListener('contextmenu', _this.onContextMenuWhileDragging, true);
++            GlobalState.dragging = false;
++            GlobalState.activeTouchId = null;
++            GlobalState.startEvent = null;
++            GlobalState.moveEvent = null;
++        };
++        _this.cancelTouchDrag = function () {
++            if (GlobalState.dragging && GlobalState.startEvent) {
++                _this.engine.workbench.eachWorkspace(function (workspace) {
++                    workspace.operation.dragClean();
++                });
++                var data = GlobalState.moveEvent || GlobalState.startEvent;
++                _this.dispatch(new events_1.DragStopEvent(data));
++            }
++            _this.resetTouchState();
++        };
++        _this.onTouchStart = function (e) {
++            if (e.touches.length !== 1) {
++                _this.cancelTouchDrag();
++                return;
++            }
++            var touch = e.changedTouches.item(0) || e.touches.item(0);
++            if (!touch)
++                return;
++            if (GlobalState.activeTouchId !== null) {
++                if (GlobalState.activeTouchId !== touch.identifier) {
++                    _this.cancelTouchDrag();
++                }
++                return;
++            }
++            if (_this.isIgnoredTarget(e.target))
++                return;
++            GlobalState.activeTouchId = touch.identifier;
++            GlobalState.dragging = false;
++            GlobalState.moveEvent = null;
++            GlobalState.startEvent = _this.getTouchEventData(e, touch);
++            _this.batchAddEventListener('touchmove', _this.onTouchMove, TOUCH_MOVE_OPTIONS);
++            _this.batchAddEventListener('touchend', _this.onTouchEnd);
++            _this.batchAddEventListener('touchcancel', _this.onTouchCancel);
++            _this.clearTouchHoldTimer();
++            GlobalState.touchHoldTimer = setTimeout(function () {
++                GlobalState.touchHoldTimer = null;
++                if (GlobalState.activeTouchId === touch.identifier &&
++                    GlobalState.startEvent) {
++                    _this.startDragging(GlobalState.startEvent);
++                }
++            }, TOUCH_HOLD_DELAY);
++        };
++        _this.onTouchMove = function (e) {
++            var touch = _this.getActiveTouch(e.touches);
++            if (!touch || !GlobalState.startEvent)
++                return;
++            var data = _this.getTouchEventData(e, touch, true);
++            if (!GlobalState.dragging) {
++                var distance = Math.sqrt(Math.pow(data.pageX - GlobalState.startEvent.pageX, 2) +
++                    Math.pow(data.pageY - GlobalState.startEvent.pageY, 2));
++                if (distance > TOUCH_MOVE_TOLERANCE) {
++                    _this.resetTouchState();
++                }
++                return;
++            }
++            e.preventDefault();
++            _this.dispatchDragMove(data);
++        };
++        _this.onTouchEnd = function (e) {
++            var touch = _this.getActiveTouch(e.changedTouches);
++            if (!touch)
++                return;
++            var data = _this.getTouchEventData(e, touch, true);
++            if (GlobalState.dragging) {
++                e.preventDefault();
++                _this.dispatch(new events_1.DragStopEvent(data));
++            }
++            _this.resetTouchState();
++        };
++        _this.onTouchCancel = function () {
++            if (GlobalState.activeTouchId === null)
++                return;
++            _this.cancelTouchDrag();
++        };
+         return _this;
+     }
+     DragDropDriver.prototype.attach = function () {
+         this.batchAddEventListener('mousedown', this.onMouseDown, true);
++        this.batchAddEventListener('touchstart', this.onTouchStart, TOUCH_START_OPTIONS);
+     };
+     DragDropDriver.prototype.detach = function () {
++        if (GlobalState.activeTouchId !== null) {
++            this.cancelTouchDrag();
++        }
++        else {
++            this.clearTouchHoldTimer();
++            this.removeTouchListeners();
++        }
+         GlobalState.dragging = false;
+         GlobalState.moveEvent = null;
+         GlobalState.onMouseDownAt = null;
+         GlobalState.startEvent = null;
++        GlobalState.activeTouchId = null;
+         this.batchRemoveEventListener('mousedown', this.onMouseDown, true);
++        this.batchRemoveEventListener('touchstart', this.onTouchStart, TOUCH_START_OPTIONS);
+         this.batchRemoveEventListener('dragstart', this.onStartDrag);
+         this.batchRemoveEventListener('dragend', this.onMouseUp);
+         this.batchRemoveEventListener('dragover', this.onMouseMove);
+diff --git a/node_modules/@designable/core/lib/effects/useCursorEffect.js b/node_modules/@designable/core/lib/effects/useCursorEffect.js
+index f70adf2..8ace0e8 100644
+--- a/node_modules/@designable/core/lib/effects/useCursorEffect.js
++++ b/node_modules/@designable/core/lib/effects/useCursorEffect.js
+@@ -16,8 +16,9 @@ var useCursorEffect = function (engine) {
+         engine.cursor.setStatus(models_1.CursorStatus.DragStart);
+         engine.cursor.setDragStartPosition(event.data);
+     });
+-    engine.subscribeTo(events_1.DragMoveEvent, function () {
++    engine.subscribeTo(events_1.DragMoveEvent, function (event) {
+         engine.cursor.setStatus(models_1.CursorStatus.Dragging);
++        engine.cursor.setPosition(event.data);
+     });
+     engine.subscribeTo(events_1.DragStopEvent, function (event) {
+         engine.cursor.setStatus(models_1.CursorStatus.DragStop);
+diff --git a/node_modules/@designable/core/src/drivers/DragDropDriver.ts b/node_modules/@designable/core/src/drivers/DragDropDriver.ts
+index d16d8bf..1701911 100644
+--- a/node_modules/@designable/core/src/drivers/DragDropDriver.ts
++++ b/node_modules/@designable/core/src/drivers/DragDropDriver.ts
+@@ -7,6 +7,22 @@ const GlobalState = {
+   onMouseDownAt: 0,
+   startEvent: null,
+   moveEvent: null,
++  activeTouchId: null,
++  touchHoldTimer: null,
++}
++
++const TOUCH_HOLD_DELAY = 300
++const TOUCH_MOVE_TOLERANCE = 8
++const TOUCH_MOVE_OPTIONS = { passive: false }
++const TOUCH_START_OPTIONS = { capture: true, passive: true }
++
++interface IDragEventData {
++  clientX: number
++  clientY: number
++  pageX: number
++  pageY: number
++  target: EventTarget
++  view: Window
+ }
+ 
+ export class DragDropDriver extends EventDriver<Engine> {
+@@ -14,17 +30,95 @@ export class DragDropDriver extends EventDriver<Engine> {
+ 
+   startEvent: MouseEvent
+ 
+-  onMouseDown = (e: MouseEvent) => {
+-    if (e.button !== 0 || e.ctrlKey || e.metaKey) {
++  isIgnoredTarget = (target: EventTarget) => {
++    const element = target as HTMLElement
++    if (element?.isContentEditable || element?.contentEditable === 'true') {
++      return true
++    }
++    return !!element?.closest?.('.monaco-editor')
++  }
++
++  clearTouchHoldTimer = () => {
++    if (GlobalState.touchHoldTimer !== null) {
++      clearTimeout(GlobalState.touchHoldTimer)
++      GlobalState.touchHoldTimer = null
++    }
++  }
++
++  getActiveTouch = (touches: TouchList) => {
++    for (let index = 0; index < touches.length; index++) {
++      const touch = touches.item(index)
++      if (touch?.identifier === GlobalState.activeTouchId) {
++        return touch
++      }
++    }
++  }
++
++  getTouchEventData = (
++    e: TouchEvent,
++    touch: Touch,
++    resolveTarget = false
++  ): IDragEventData => {
++    const view = e.view || this.contentWindow
++    const target = resolveTarget
++      ? view?.document?.elementFromPoint(touch.clientX, touch.clientY) ||
++        e.target
++      : e.target
++    return {
++      clientX: touch.clientX,
++      clientY: touch.clientY,
++      pageX: touch.pageX,
++      pageY: touch.pageY,
++      target,
++      view,
++    }
++  }
++
++  dispatchDragMove = (data: IDragEventData) => {
++    if (
++      data.clientX === GlobalState.moveEvent?.clientX &&
++      data.clientY === GlobalState.moveEvent?.clientY
++    )
+       return
++    this.dispatch(new DragMoveEvent(data))
++    GlobalState.moveEvent = data
++  }
++
++  startDragging = (data: IDragEventData, mouseDriven = false) => {
++    if (GlobalState.dragging) return
++    GlobalState.startEvent = GlobalState.startEvent || data
++    if (mouseDriven) {
++      this.batchAddEventListener('dragover', this.onMouseMove)
++      this.batchAddEventListener('mousemove', this.onMouseMove)
+     }
++    this.batchAddEventListener(
++      'contextmenu',
++      this.onContextMenuWhileDragging,
++      true
++    )
++    this.dispatch(
++      new DragStartEvent({
++        clientX: GlobalState.startEvent.clientX,
++        clientY: GlobalState.startEvent.clientY,
++        pageX: GlobalState.startEvent.pageX,
++        pageY: GlobalState.startEvent.pageY,
++        target: GlobalState.startEvent.target,
++        view: GlobalState.startEvent.view,
++      })
++    )
++    GlobalState.dragging = true
++  }
++
++  onMouseDown = (e: MouseEvent) => {
+     if (
+-      e.target['isContentEditable'] ||
+-      e.target['contentEditable'] === 'true'
++      GlobalState.activeTouchId !== null ||
++      e.button !== 0 ||
++      e.ctrlKey ||
++      e.metaKey
+     ) {
+-      return true
++      return
+     }
+-    if (e.target?.['closest']?.('.monaco-editor')) return
++    if (this.isIgnoredTarget(e.target)) return true
+     GlobalState.startEvent = e
+     GlobalState.dragging = false
+     GlobalState.onMouseDownAt = Date.now()
+@@ -61,22 +155,14 @@ export class DragDropDriver extends EventDriver<Engine> {
+   }
+ 
+   onMouseMove = (e: MouseEvent | DragEvent) => {
+-    if (
+-      e.clientX === GlobalState.moveEvent?.clientX &&
+-      e.clientY === GlobalState.moveEvent?.clientY
+-    )
+-      return
+-    this.dispatch(
+-      new DragMoveEvent({
+-        clientX: e.clientX,
+-        clientY: e.clientY,
+-        pageX: e.pageX,
+-        pageY: e.pageY,
+-        target: e.target,
+-        view: e.view,
+-      })
+-    )
+-    GlobalState.moveEvent = e
++    this.dispatchDragMove({
++      clientX: e.clientX,
++      clientY: e.clientY,
++      pageX: e.pageX,
++      pageY: e.pageY,
++      target: e.target,
++      view: e.view,
++    })
+   }
+ 
+   onContextMenuWhileDragging = (e: MouseEvent) => {
+@@ -84,26 +170,11 @@ export class DragDropDriver extends EventDriver<Engine> {
+   }
+ 
+   onStartDrag = (e: MouseEvent | DragEvent) => {
+-    if (GlobalState.dragging) return
+-    GlobalState.startEvent = GlobalState.startEvent || e
+-    this.batchAddEventListener('dragover', this.onMouseMove)
+-    this.batchAddEventListener('mousemove', this.onMouseMove)
+-    this.batchAddEventListener(
+-      'contextmenu',
+-      this.onContextMenuWhileDragging,
+-      true
+-    )
+-    this.dispatch(
+-      new DragStartEvent({
+-        clientX: GlobalState.startEvent.clientX,
+-        clientY: GlobalState.startEvent.clientY,
+-        pageX: GlobalState.startEvent.pageX,
+-        pageY: GlobalState.startEvent.pageY,
+-        target: GlobalState.startEvent.target,
+-        view: GlobalState.startEvent.view,
+-      })
+-    )
+-    GlobalState.dragging = true
++    if (GlobalState.activeTouchId !== null) {
++      e.preventDefault()
++      return
++    }
++    this.startDragging(e, true)
+   }
+ 
+   onDistanceChange = (e: MouseEvent) => {
+@@ -118,16 +189,139 @@ export class DragDropDriver extends EventDriver<Engine> {
+     }
+   }
+ 
++  removeTouchListeners = () => {
++    this.batchRemoveEventListener(
++      'touchmove',
++      this.onTouchMove,
++      TOUCH_MOVE_OPTIONS
++    )
++    this.batchRemoveEventListener('touchend', this.onTouchEnd)
++    this.batchRemoveEventListener('touchcancel', this.onTouchCancel)
++  }
++
++  resetTouchState = () => {
++    this.clearTouchHoldTimer()
++    this.removeTouchListeners()
++    this.batchRemoveEventListener(
++      'contextmenu',
++      this.onContextMenuWhileDragging,
++      true
++    )
++    GlobalState.dragging = false
++    GlobalState.activeTouchId = null
++    GlobalState.startEvent = null
++    GlobalState.moveEvent = null
++  }
++
++  cancelTouchDrag = () => {
++    if (GlobalState.dragging && GlobalState.startEvent) {
++      this.engine.workbench.eachWorkspace((workspace) => {
++        workspace.operation.dragClean()
++      })
++      const data = GlobalState.moveEvent || GlobalState.startEvent
++      this.dispatch(new DragStopEvent(data))
++    }
++    this.resetTouchState()
++  }
++
++  onTouchStart = (e: TouchEvent) => {
++    if (e.touches.length !== 1) {
++      this.cancelTouchDrag()
++      return
++    }
++    const touch = e.changedTouches.item(0) || e.touches.item(0)
++    if (!touch) return
++    if (GlobalState.activeTouchId !== null) {
++      if (GlobalState.activeTouchId !== touch.identifier) {
++        this.cancelTouchDrag()
++      }
++      return
++    }
++    if (this.isIgnoredTarget(e.target)) return
++    GlobalState.activeTouchId = touch.identifier
++    GlobalState.dragging = false
++    GlobalState.moveEvent = null
++    GlobalState.startEvent = this.getTouchEventData(e, touch)
++    this.batchAddEventListener(
++      'touchmove',
++      this.onTouchMove,
++      TOUCH_MOVE_OPTIONS
++    )
++    this.batchAddEventListener('touchend', this.onTouchEnd)
++    this.batchAddEventListener('touchcancel', this.onTouchCancel)
++    this.clearTouchHoldTimer()
++    GlobalState.touchHoldTimer = setTimeout(() => {
++      GlobalState.touchHoldTimer = null
++      if (
++        GlobalState.activeTouchId === touch.identifier &&
++        GlobalState.startEvent
++      ) {
++        this.startDragging(GlobalState.startEvent)
++      }
++    }, TOUCH_HOLD_DELAY)
++  }
++
++  onTouchMove = (e: TouchEvent) => {
++    const touch = this.getActiveTouch(e.touches)
++    if (!touch || !GlobalState.startEvent) return
++    const data = this.getTouchEventData(e, touch, true)
++    if (!GlobalState.dragging) {
++      const distance = Math.sqrt(
++        Math.pow(data.pageX - GlobalState.startEvent.pageX, 2) +
++          Math.pow(data.pageY - GlobalState.startEvent.pageY, 2)
++      )
++      if (distance > TOUCH_MOVE_TOLERANCE) {
++        this.resetTouchState()
++      }
++      return
++    }
++    e.preventDefault()
++    this.dispatchDragMove(data)
++  }
++
++  onTouchEnd = (e: TouchEvent) => {
++    const touch = this.getActiveTouch(e.changedTouches)
++    if (!touch) return
++    const data = this.getTouchEventData(e, touch, true)
++    if (GlobalState.dragging) {
++      e.preventDefault()
++      this.dispatch(new DragStopEvent(data))
++    }
++    this.resetTouchState()
++  }
++
++  onTouchCancel = () => {
++    if (GlobalState.activeTouchId === null) return
++    this.cancelTouchDrag()
++  }
++
+   attach() {
+     this.batchAddEventListener('mousedown', this.onMouseDown, true)
++    this.batchAddEventListener(
++      'touchstart',
++      this.onTouchStart,
++      TOUCH_START_OPTIONS
++    )
+   }
+ 
+   detach() {
++    if (GlobalState.activeTouchId !== null) {
++      this.cancelTouchDrag()
++    } else {
++      this.clearTouchHoldTimer()
++      this.removeTouchListeners()
++    }
+     GlobalState.dragging = false
+     GlobalState.moveEvent = null
+     GlobalState.onMouseDownAt = null
+     GlobalState.startEvent = null
++    GlobalState.activeTouchId = null
+     this.batchRemoveEventListener('mousedown', this.onMouseDown, true)
++    this.batchRemoveEventListener(
++      'touchstart',
++      this.onTouchStart,
++      TOUCH_START_OPTIONS
++    )
+     this.batchRemoveEventListener('dragstart', this.onStartDrag)
+     this.batchRemoveEventListener('dragend', this.onMouseUp)
+     this.batchRemoveEventListener('dragover', this.onMouseMove)
+diff --git a/node_modules/@designable/core/src/effects/useCursorEffect.ts b/node_modules/@designable/core/src/effects/useCursorEffect.ts
+index 817adac..29a31ec 100644
+--- a/node_modules/@designable/core/src/effects/useCursorEffect.ts
++++ b/node_modules/@designable/core/src/effects/useCursorEffect.ts
+@@ -21,8 +21,9 @@ export const useCursorEffect = (engine: Engine) => {
+     engine.cursor.setStatus(CursorStatus.DragStart)
+     engine.cursor.setDragStartPosition(event.data)
+   })
+-  engine.subscribeTo(DragMoveEvent, () => {
++  engine.subscribeTo(DragMoveEvent, (event) => {
+     engine.cursor.setStatus(CursorStatus.Dragging)
++    engine.cursor.setPosition(event.data)
+   })
+   engine.subscribeTo(DragStopEvent, (event) => {
+     engine.cursor.setStatus(CursorStatus.DragStop)

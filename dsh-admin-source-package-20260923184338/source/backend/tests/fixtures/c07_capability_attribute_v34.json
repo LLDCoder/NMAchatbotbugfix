@@ -1,0 +1,173 @@
+{
+  "sourceEvidence": {
+    "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/groups1113-20260928/round25-c07-v34/C-07__ar-v2/result.json": "e58eaa3b22a57a74383f42fa2b2d2eb76e645669faa76d223a47403d1b5a35b6",
+    "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/groups1113-20260928/round25-c07-v34/C-07__ar-v2/account-B-audit-db.json": "a9121fc53cd9f173e7af03028e828760b421d2614890a4745c9d39da9c3e228e",
+    "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/groups1113-20260928/round25-c07-v34/C-07__ar-v2/browser-receipts.json": "e0f0987c5a2731eed01294abd28a96693ff56cd59a72892dfdc881d88d36abdf"
+  },
+  "conversationId": "conv_6251036e1bb84838bb9d",
+  "requestId": "41142b99-0093-46f6-ac62-45ae2b74b698",
+  "question": "مرحبًا، كيف يمكنك مساعدتي في دوري الحالي؟",
+  "normalization": {
+    "stage": "input_normalization",
+    "clauses": [
+      {
+        "english": "Hello, how can you help me in my current role?",
+        "sourceQuote": "مرحبًا، كيف يمكنك مساعدتي في دوري الحالي؟"
+      }
+    ]
+  },
+  "initialTask": {
+    "view": "",
+    "stage": "task",
+    "filters": [],
+    "groupBy": [],
+    "readOnly": true,
+    "timeField": "",
+    "timeRange": "unknown",
+    "outputShape": "overview",
+    "searchQuery": "assistant available assistance capabilities limitations permitted page context current role dashboard",
+    "slotUpdates": [
+      {
+        "field": "businessObject",
+        "value": "assistant capability",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedAttributes",
+        "value": [
+          "available assistance in the signed-in user's permitted page context",
+          "limitations of available assistance"
+        ],
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "outputShape",
+        "value": "overview",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedScope",
+        "value": "unknown",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "businessFocus",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "disclosurePurpose",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedGrain",
+        "value": "unknown",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedMeasures",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "groupBy",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "timeRange",
+        "value": "unknown",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "filters",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "recordIdentity",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "view",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "timeField",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedOrdering",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "groupCompleteness",
+        "value": "observed",
+        "source": "current",
+        "evidence": "parsed current request"
+      }
+    ],
+    "responseMode": "answer",
+    "businessFocus": "",
+    "clarification": null,
+    "needsLiveData": false,
+    "businessObject": "assistant capability",
+    "recordIdentity": "",
+    "requestedGrain": "unknown",
+    "requestedScope": "unknown",
+    "contextRelation": "new",
+    "unresolvedSlots": [],
+    "disclosurePurpose": "",
+    "groupCompleteness": "observed",
+    "requestBoundaries": [],
+    "requestedMeasures": [],
+    "requestedOrdering": [],
+    "requestedAttributes": [
+      "available assistance in the signed-in user's permitted page context",
+      "limitations of available assistance"
+    ],
+    "evidenceExplanations": []
+  },
+  "failure": {
+    "code": "stage_contract_invalid",
+    "stage": "KnowledgeAnswerReview",
+    "reasonLengths": [
+      814,
+      853,
+      828
+    ]
+  },
+  "authDisplaySubset": {
+    "id": "9a54110a-dcfe-4dad-b729-a5cd6ecc0785",
+    "listRoles": [
+      {
+        "id": "HAPPINESS_CENTER_AGENT",
+        "name": "Happiness Center Agent",
+        "nameEn": "موظف مركز سعادة المتعاملين",
+        "nameAr": "موظف مركز سعادة المتعاملين",
+        "departmentId": 8
+      }
+    ]
+  },
+  "authSubsetNote": "Only observed subject and role display fields are retained. Tests provide explicit controlled route permissions and catalog. No token/email/contact/profile fields copied."
+}

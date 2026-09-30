@@ -1,0 +1,182 @@
+.layout .customer-details-page .all-overview-filter-toolbar.responsive-filter-toolbar {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  margin-bottom: 12px;
+}
+
+.layout .customer-details-page .all-overview-filter-toolbar__controls {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.layout
+  .customer-details-page
+  .all-overview-filter-toolbar
+  .all-overview-search
+  .ant-input-prefix {
+  display: inline-flex;
+  flex: 0 0 16px;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  min-width: 16px;
+  height: 16px;
+  margin-inline-end: 8px;
+  overflow: visible;
+}
+
+.layout
+  .customer-details-page
+  .all-overview-filter-toolbar
+  .overview-search-icon {
+  display: block;
+  flex: 0 0 16px;
+  width: 16px;
+  min-width: 16px;
+  height: 16px;
+  color: #797e86;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.layout
+  .customer-details-page
+  .all-overview-tickets-status-select.ant-select-multiple {
+  .ant-select-selector {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .ant-select-selection-overflow {
+    flex-wrap: nowrap;
+    align-items: center;
+    column-gap: 4px;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .ant-select-selection-overflow-item:first-child {
+    flex: 0 1 auto;
+    min-width: 0;
+    max-width: calc(100% - 64px);
+  }
+
+  .ant-select-selection-overflow-item:first-child .ant-select-selection-item {
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    height: 24px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .ant-select-selection-overflow-item-suffix {
+    flex: 0 0 auto;
+    margin-inline-end: 4px;
+  }
+}
+
+.layout
+  .customer-details-page
+  .all-overview-filter-toolbar
+  .all-overview-type-select.ant-select-single
+  .ant-select-selector {
+  display: flex;
+  align-items: center;
+}
+
+.layout
+  .customer-details-page
+  .all-overview-filter-toolbar
+  .all-overview-type-select.ant-select-single
+  .ant-select-selection-item,
+.layout
+  .customer-details-page
+  .all-overview-filter-toolbar
+  .all-overview-type-select.ant-select-single
+  .ant-select-selection-placeholder {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 1919.98px) and (min-width: 1440px) {
+  .layout
+    .customer-details-page
+    .all-overview-filter-toolbar
+    .responsive-filter-toolbar__field--search {
+    flex: 1 1 240px !important;
+    width: auto !important;
+    min-width: 220px !important;
+    max-width: 240px !important;
+  }
+
+  .layout
+    .customer-details-page
+    .all-overview-filter-toolbar
+    .responsive-filter-toolbar__field:not(.responsive-filter-toolbar__field--search) {
+    flex: 1 1 176px !important;
+    width: auto !important;
+    min-width: 160px !important;
+    max-width: 176px !important;
+  }
+
+  .layout
+    .customer-details-page
+    .all-overview-filter-toolbar
+    .all-overview-tickets-status-select.responsive-filter-toolbar__field,
+  .layout
+    .customer-details-page
+    .all-overview-filter-toolbar
+    .all-overview-tickets-date-range.responsive-filter-toolbar__field {
+    flex: 0 0 240px !important;
+    width: 240px !important;
+    min-width: 240px !important;
+    max-width: 240px !important;
+  }
+
+  .layout
+    .customer-details-page
+    .all-overview-filter-toolbar
+    .overview-inline-range.responsive-filter-toolbar__field,
+  .layout
+    .customer-details-page
+    .all-overview-filter-toolbar
+    .est-overview-range.responsive-filter-toolbar__field {
+    flex: 0 0 400px !important;
+    width: 400px !important;
+    min-width: 400px !important;
+    max-width: 400px !important;
+  }
+}
+
+.customer-details-overview-filter-modal__responsive-field {
+  display: none !important;
+}
+
+.layout
+  .customer-details-page
+  .all-overview-filter-toolbar__action--responsive-only {
+  display: none !important;
+}
+
+@media (max-width: 1439.98px) {
+  .customer-details-overview-filter-modal__responsive-field {
+    display: flex !important;
+  }
+
+  .layout
+    .customer-details-page
+    .all-overview-filter-toolbar__action--responsive-only {
+    display: inline-flex !important;
+  }
+}

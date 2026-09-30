@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DSH UMC 测试控制台</title>
+    <script>
+      if (/^\/dsh-audit(?:\/|$)/.test(window.location.pathname)) {
+        window.__DSH_AUDIT_MODE__ = true;
+        document.title = "NMA Audit · Admin Portal";
+        document.documentElement.classList.add("dsh-audit-boot");
+      }
+    </script>
+    <style>
+      html.dsh-audit-boot,
+      html.dsh-audit-boot body { min-height: 100%; margin: 0; background: #f1f0ed; }
+      html.dsh-audit-boot body > * { visibility: hidden !important; }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="styles.css?v=20260915-admin-portal-subtitle3" />
+    <link rel="stylesheet" href="audit-styles.css?v=20260915-admin-portal-subtitle3" />
+  </head>
+  <body>
+    <section id="consoleGate" class="console-gate">
+      <form id="consoleAuthForm" class="console-auth-card">
+        <p class="eyebrow">DSH · PRIVATE TEST CONSOLE</p>
+        <h2>测试控制台</h2>
+        <p class="muted">请输入控制台密码后继续使用对话、Skills、测试和审计功能。</p>
+        <label>控制台密码<input id="consolePassword" type="password" autocomplete="current-password" required autofocus /></label>
+        <button type="submit">进入控制台</button>
+        <div id="consoleAuthStatus" class="notice" role="alert"></div>
+      </form>
+    </section>
+    <main class="shell">
+      <header>
+        <div>
+          <p class="eyebrow">DSH · UMC EXTERNAL SERVICE</p>
+          <h1>测试控制台</h1>
+          <p class="muted console-summary">对话验证、运行配置、业务用例与执行审计。</p>
+        </div>
+        <div class="console-header-actions"><span id="connection" class="pill offline">未连接</span><button id="consoleLogoutBtn" class="secondary" type="button">退出</button></div>
+      </header>
+
+      <nav class="tabs" aria-label="控制台功能">
+        <button class="tab active" data-tab="chatPanel">对话测试</button>
+        <button class="tab" data-tab="configPanel">运行配置</button>
+        <button class="tab" data-tab="testPanel">Reader 回归</button>
+        <button class="tab" data-tab="toolPanel">Tools 配置</button>
+        <button class="tab" data-tab="skillPanel">Skills 配置</button>
+        <button class="tab" data-tab="auditPanel">对话审计</button>
+      </nav>
+
+      <section id="chatPanel" class="tab-panel active">
+      <section class="toolbar card">
+        <label>用户 ID<input id="userId" value="demo-user" /></label>
+        <label>租户 ID<input id="tenantId" value="demo-tenant" /></label>
+        <label>UMC 会话<input id="umcSessionStatus" value="正在自动获取…" readonly /></label>
+        <input id="umcToken" type="hidden" autocomplete="off" />
+        <label>会话 ID<input id="conversationId" placeholder="新建后自动填充" /></label>
+        <button id="createBtn" class="secondary">新建会话</button>
+        <button id="connectBtn">连接 WS</button>
+      </section>
+
+      <section class="attachment-box card" hidden aria-hidden="true">
+        <div class="attachment-head">
+          <div>
+            <h3>附件（可仅提交附件）</h3>
+          <p class="muted">选择 PDF / 图片后会自动通过当前 UMC Portal 上传；上传完成即可发送，问题内容可以留空。</p>
+          </div>
+          <button id="clearAttachmentBtn" type="button" class="secondary">清除附件</button>
+        </div>
+        <div class="attachment-fields">
+          <label>选择附件（自动上传）<input id="attachmentPicker" type="file" accept=".pdf,image/*" /></label>
+          <input id="attachmentRef" type="hidden" />
+          <label>文件名<input id="attachmentName" placeholder="上传后自动填充" readonly /></label>
+          <label>MIME 类型<input id="attachmentMime" placeholder="上传后自动填充" readonly /></label>
+          <label>文件类型<select id="attachmentType"><option value="0">PDF（fileType=0）</option><option value="1">图片（fileType=1）</option></select></label>
+        </div>
+        <div id="attachmentStatus" class="notice"></div>
+      </section>
+
+      <section class="chat card">
+        <div id="events" class="events"><div class="empty">先连接 WS 并创建会话。</div></div>
+        <form id="messageForm" class="composer">
+          <textarea id="message" rows="3" placeholder="输入消息，回车发送（Shift+Enter 换行）"></textarea>
+          <button type="submit">发送</button>
+        </form>
+        <div id="messageLimit" class="muted" role="status">0 / 10000 字</div>
+      </section>
+
+      <section class="diagnostics card">
+        <div><span>runtime</span><code id="runtimeId">-</code></div>
+        <div><span>last seq</span><code id="lastSeq">-</code></div>
+        <div><span>request</span><code id="requestId">-</code></div>
+      </section>
+      </section>
+
+      <section id="configPanel" class="tab-panel">
+        <section class="card panel-head">
+          <div>
+            <h2>内部参数与外部 Tool</h2>
+            <p class="muted">敏感项只显示配置状态；UMC 会话使用服务端配置账号自动获取，不写入配置页或会话事件。链路审计会记录对话、LLM 调用/思考和 DSH Tool 链路，并按留存配置周期清理；Database/Redis URL 修改后需要重启 Docker 容器。</p>
+          </div>
+          <div class="panel-actions"><button id="reloadConfigBtn" class="secondary">重新读取</button><button id="saveConfigBtn">保存配置</button></div>
+        </section>
+        <form id="configForm" class="config-grid"><div class="empty">正在读取配置…</div></form>
+        <div id="configStatus" class="notice"></div>
+      </section>
+
+      <section id="skillPanel" class="tab-panel">
+        <section class="list-command-bar" aria-label="Skills 配置">
+          <div class="panel-actions">
+            <label class="list-search list-search-primary"><span class="sr-only">搜索 Skills</span><input id="skillsSearchInput" type="search" placeholder="搜索名称、ID、业务域或内容" autocomplete="off" /></label>
+            <button id="newSkillBtn" class="compact-action" type="button" title="Skills 只读" disabled>只读</button>
+            <button id="reloadSkillsBtn" class="secondary compact-action" type="button" title="重新读取 Skills">刷新</button>
+          </div>
+        </section>
+        <section id="skillsList" class="skill-list card">
+          <div class="table-scroll">
+            <table id="skillsTable" class="skills-table">
+              <thead><tr><th>Skill ID</th><th>名称</th><th>版本</th><th>来源 / 作用域</th><th>状态</th><th>启用</th><th>操作</th></tr></thead>
+              <tbody><tr><td colspan="7" class="empty">切换到本页后读取 Skills…</td></tr></tbody>
+            </table>
+          </div>
+        </section>
+        <div class="list-footer"><p id="skillsStatus" class="list-status" role="status"></p><div id="skillsPager" class="list-pager" aria-label="Skills 分页"></div></div>
+      </section>
+
+      <section id="toolPanel" class="tab-panel">
+        <section class="list-command-bar" aria-label="Tools 配置">
+          <div class="panel-actions">
+            <label class="list-search list-search-primary"><span class="sr-only">搜索 Tools</span><input id="toolsSearchInput" type="search" placeholder="搜索名称、描述或接口" autocomplete="off" /></label>
+            <button id="newToolBtn" class="compact-action" type="button" title="Tools 只读" disabled>只读</button>
+            <button id="reloadToolsBtn" class="secondary compact-action" type="button" title="重新读取 Tools">刷新</button>
+          </div>
+        </section>
+        <section class="card table-card"><div class="table-scroll"><table id="toolsTable"><thead><tr><th>类型</th><th>Tool</th><th>HTTP 接口</th><th>副作用</th><th>状态</th><th>操作</th></tr></thead><tbody><tr><td colspan="6" class="empty">切换到本页后读取 Tools…</td></tr></tbody></table></div></section>
+        <div class="list-footer"><p id="toolsStatus" class="list-status" role="status"></p><div id="toolsPager" class="list-pager" aria-label="Tools 分页"></div></div>
+      </section>
+
+      <section id="auditPanel" class="tab-panel">
+        <section class="audit-layout">
+          <div class="audit-conversations-column">
+            <aside class="audit-conversations card">
+              <div class="audit-list-head"><div class="audit-list-title"><h3>会话</h3></div><button id="reloadAuditBtn" class="secondary compact-action" type="button" title="刷新会话">刷新</button><div class="audit-list-controls"><label class="list-search audit-search"><span class="sr-only">搜索会话</span><input id="auditConversationSearchInput" type="search" placeholder="搜索问题、会话、账号或租户" autocomplete="off" /></label><div class="audit-list-meta"><span id="auditScope" class="muted">当前账号范围</span><span id="auditConversationCount" class="muted"></span></div></div></div>
+              <div id="auditConversationList" class="audit-conversation-list"><div class="empty">切换到本页后读取会话…</div></div>
+            </aside>
+            <div id="auditConversationPager" class="list-pager audit-pager" aria-label="会话分页"></div>
+          </div>
+          <div class="audit-detail-column">
+            <section class="audit-overview card" id="auditOverview"><div class="empty">选择一个会话查看审计。</div></section>
+            <section class="card audit-records">
+              <div class="audit-records-head">
+                <div><h3>执行链路</h3><p id="auditStatus" class="muted">尚未读取审计。</p></div>
+                <div class="audit-controls"><label class="list-search audit-search"><span>搜索</span><input id="auditRecordSearchInput" type="search" placeholder="事件类型或审计内容" autocomplete="off" /></label><label class="audit-filter">类别<select id="auditCategoryFilter"><option value="">全部</option><option value="conversation">对话</option><option value="dsh">DSH / Tool</option><option value="llm">LLM</option><option value="runtime">运行时</option></select></label></div>
+              </div>
+              <div id="auditRecordList" class="audit-record-list"><div class="empty">暂无审计记录。</div></div>
+              <div id="auditRecordLoadState" class="audit-record-load-state" aria-live="polite"></div>
+            </section>
+          </div>
+        </section>
+      </section>
+
+      <dialog id="skillDialog" class="skill-dialog" aria-labelledby="skillDialogTitle">
+        <form id="skillEditForm">
+          <div class="skill-dialog-head">
+            <div>
+              <p class="eyebrow">SKILL EDITOR</p>
+              <h2 id="skillDialogTitle">编辑 Skill</h2>
+              <small id="skillDialogMeta" class="muted"></small>
+            </div>
+            <button id="closeSkillDialogBtn" type="button" class="dialog-close" aria-label="关闭">×</button>
+          </div>
+          <div class="skill-dialog-fields">
+            <label>Skill ID<input id="skillIdInput" required pattern="[A-Za-z0-9][A-Za-z0-9._-]*" title="只允许字母、数字、点、下划线和短横线，且必须以字母或数字开头" /></label>
+            <label>名称<input id="skillNameInput" required /></label>
+            <label>状态<select id="skillStatusInput"><option value="DRAFT">DRAFT</option><option value="PUBLISHED">PUBLISHED</option><option value="DISABLED">DISABLED</option></select></label>
+            <label class="skill-dialog-toggle">启用<input id="skillEnabledInput" type="checkbox" /></label>
+            <label>业务域<input id="skillDomainInput" placeholder="例如 licenses_permits" /></label>
+            <label>路由别名（逗号分隔）<input id="skillAliasesInput" placeholder="license status, 许可证状态" /></label>
+            <section class="skill-tool-binding wide" aria-labelledby="skillToolBindingTitle">
+              <div class="skill-tool-binding-head">
+                <div>
+                  <span id="skillToolBindingTitle">允许调用的 Tools</span>
+                  <small>仅已启用且已发布的业务 Tool 可新增绑定；系统默认能力由运行配置管理。</small>
+                </div>
+                <strong id="skillToolSelectionCount" class="skill-tool-selection-count">已选 0 个</strong>
+              </div>
+              <div id="skillToolChips" class="skill-tool-chips" aria-live="polite"></div>
+              <label class="skill-tool-search-label" for="skillToolSearchInput">搜索 Tool
+                <input id="skillToolSearchInput" type="search" placeholder="按名称、描述或 API 路径搜索" autocomplete="off" />
+              </label>
+              <div id="skillToolBindingNotice" class="skill-tool-binding-notice" role="status"></div>
+              <div id="skillToolPicker" class="skill-tool-picker" aria-label="可绑定 Tools"></div>
+            </section>
+            <label>依赖条件（逗号分隔）<input id="skillDependenciesInput" /></label>
+            <label>正向示例（逗号分隔）<input id="skillPositiveExamplesInput" placeholder="用户询问自己许可证状态" /></label>
+            <label>反向示例（逗号分隔）<input id="skillNegativeExamplesInput" placeholder="用户询问申请进度" /></label>
+            <label class="wide">Skill 内容 / 行为指令<textarea id="skillContentInput" rows="10"></textarea></label>
+          </div>
+          <div class="dialog-actions"><button id="cancelSkillBtn" type="button" class="secondary">取消</button><button id="saveSkillBtn" type="submit">保存 Skill</button></div>
+        </form>
+      </dialog>
+      <dialog id="toolDialog" class="skill-dialog" aria-labelledby="toolDialogTitle">
+        <form id="toolEditForm">
+          <div class="skill-dialog-head"><div><p class="eyebrow">TOOL REGISTRY</p><h2 id="toolDialogTitle">编辑 Tool</h2><small id="toolDialogMeta" class="muted"></small></div><button id="closeToolDialogBtn" type="button" class="dialog-close" aria-label="关闭">×</button></div>
+          <div class="skill-dialog-fields">
+            <label>Tool Name<input id="toolNameInput" disabled /></label>
+            <label>显示名称<input id="toolDisplayNameInput" required /></label>
+            <label>HTTP 方法<input id="toolMethodInput" disabled /></label>
+            <label>HTTP 路径<input id="toolPathInput" disabled /></label>
+            <label>副作用<select id="toolSideEffectInput"><option value="read">read</option><option value="download">download</option><option value="write">write</option></select></label>
+            <label class="skill-dialog-toggle">需要确认<input id="toolConfirmationInput" type="checkbox" /></label>
+            <label class="skill-dialog-toggle">启用<input id="toolEnabledInput" type="checkbox" /></label>
+            <label class="skill-dialog-toggle">发布<input id="toolPublishedInput" type="checkbox" /></label>
+            <label class="wide">描述<textarea id="toolDescriptionInput" rows="4"></textarea></label>
+            <label class="wide">参数 Schema<textarea id="toolParametersInput" rows="6"></textarea></label>
+            <label class="wide">返回 Schema<textarea id="toolResponseInput" rows="6"></textarea></label>
+            <label class="wide">脱敏策略（maskingPolicy）<input id="toolMaskingPolicyInput" placeholder="default 或 hide:fieldA,fieldB" /></label>
+          </div>
+          <div class="dialog-actions"><button id="cancelToolBtn" type="button" class="secondary">取消</button><button id="saveToolBtn" type="submit">保存 Tool</button></div>
+        </form>
+      </dialog>
+
+      <dialog id="swaggerDialog" class="skill-dialog swagger-dialog" aria-labelledby="swaggerDialogTitle">
+        <form id="swaggerImportForm">
+          <div class="skill-dialog-head">
+            <div><p class="eyebrow">ADD TOOLS</p><h2 id="swaggerDialogTitle">新增 Tool</h2><small class="muted">读取 Swagger 后勾选多个接口，一次注册到 Tool Registry。</small></div>
+            <button id="closeSwaggerDialogBtn" type="button" class="dialog-close" aria-label="关闭">×</button>
+          </div>
+          <div class="toolbar swagger-toolbar">
+            <label class="wide">Swagger/OpenAPI URL<input id="toolSwaggerUrl" value="http://host.docker.internal:5206/swagger/v1/swagger.json" required /></label>
+            <button id="inspectSwaggerBtn" type="button">读取接口</button>
+          </div>
+          <div id="swaggerStatus" class="notice"></div>
+          <div class="table-card"><div class="table-scroll"><table id="swaggerOperationsTable"><thead><tr><th><input id="selectAllSwagger" type="checkbox" aria-label="全选 Swagger 接口" /></th><th>operationId</th><th>方法</th><th>路径</th><th>说明</th></tr></thead><tbody><tr><td colspan="5" class="empty">输入 Swagger URL 后读取接口。</td></tr></tbody></table></div></div>
+          <div class="dialog-actions"><button id="cancelSwaggerBtn" type="button" class="secondary">取消</button><button id="importSelectedToolsBtn" type="submit" disabled>导入选中 Tool</button></div>
+        </form>
+      </dialog>
+
+      <section id="testPanel" class="tab-panel">
+        <section class="card panel-head">
+          <div>
+            <h2>Dashboard / Licensing 回归</h2>
+            <p class="muted">验证权限上下文、Dashboard 数据范围、Licensing 列表与详情、结果状态、只读阻断和审计边界。</p>
+          </div>
+          <div class="panel-actions"><button id="generateTestsBtn">生成测试用例</button><button id="runTestsBtn" class="secondary" disabled>执行已勾选</button></div>
+        </section>
+        <section class="test-options card">
+          <div class="language-option"><span>语言</span><span class="checks"><label class="check"><input id="langEn" type="checkbox" checked /> English</label><label class="check"><input id="langAr" type="checkbox" checked /> العربية</label></span></div>
+          <label>知识库目录 ID<input id="testFolderId" value="34a89aa7b43b473d8326cf6540fc3894" /></label>
+          <label>用例数上限<input id="testLimit" type="number" min="2" max="40" value="40" /></label>
+          <label>单题超时（秒）<input id="testTimeout" type="number" min="10" max="180" value="90" /></label>
+        </section>
+        <section class="test-summary card" id="testSummary"><span>尚未生成测试集</span></section>
+        <section class="card table-card"><div class="table-scroll"><table id="testCasesTable"><thead><tr><th><input id="selectAllTests" type="checkbox" /></th><th>ID</th><th>语言</th><th>场景</th><th>Skill</th><th>问题</th><th>知识证据</th><th>来源</th><th>结果</th><th>评分</th></tr></thead><tbody><tr><td colspan="10" class="empty">点击“生成测试用例”</td></tr></tbody></table></div></section>
+        <pre id="testLog" class="test-log card"></pre>
+      </section>
+    </main>
+    <script src="app.js?v=20260915-admin-portal-subtitle3" type="module"></script>
+  </body>
+</html>

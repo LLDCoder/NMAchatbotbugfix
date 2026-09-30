@@ -1,0 +1,28 @@
+.lang-selector{
+    --lang-selector-size: 56px;
+    cursor: pointer;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font-size: 0;
+    margin-top: -2px;
+}
+
+.lang-selector__label {
+    width: var(--lang-selector-size);
+    height: var(--lang-selector-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border: 2px solid #fff;
+    border-radius: calc(var(--lang-selector-size) / 4);
+    color: #fff;
+    font-size: calc(var(--lang-selector-size) * 0.32);
+    font-weight: 600;
+    line-height: 1;
+}
+.lang-selector:focus-visible .lang-selector__label {
+    outline: 2px solid rgb(255 255 255 / 80%);
+    outline-offset: 2px;
+}

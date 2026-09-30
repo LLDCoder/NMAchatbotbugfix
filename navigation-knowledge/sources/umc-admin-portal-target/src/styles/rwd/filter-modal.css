@@ -1,0 +1,81 @@
+.filter-modal.ant-modal,
+.broadcast-filter-modal.ant-modal,
+.content-applications-filter-modal.ant-modal,
+.appeal-filter-modal.ant-modal,
+.refund-filter-modal.ant-modal,
+.overview-filter-modal.ant-modal,
+.inspection-task-management__filter-modal.ant-modal,
+.inspection-violations__filter-modal.ant-modal,
+.service-configuration-filter-modal.ant-modal,
+.tickets-filter-modal.ant-modal,
+.tickets-application-filter-modal.ant-modal,
+.payments-filter-modal.ant-modal {
+  width: 960px !important;
+  max-width: calc(100vw - 64px) !important;
+}
+
+@media (max-width: 1919.98px) {
+  .filter-modal .filter-modal-content,
+  .filter-modal .filter-box,
+  .broadcast-filter-modal .broadcast-filter-modal__content,
+  .content-applications-filter-modal .filter-box,
+  .appeal-filter-modal .appeal-filter-grid,
+  .refund-filter-modal .refund-filter-grid,
+  .overview-filter-modal .overview-filter-form--two-column,
+  .inspection-violations__filter-modal .inspection-violations__modal-grid,
+  .service-configuration-filter-modal .filter-modal-body,
+  .service-configuration-filter-modal .filter-form-row,
+  .tickets-filter-modal .tickets-filter-form,
+  .tickets-application-filter-modal .filter-box,
+  .payments-filter-modal .payments-filter-form {
+    gap: 16px !important;
+  }
+
+  .filter-modal.ant-modal .ant-modal-footer .ant-btn,
+  .broadcast-filter-modal.ant-modal .ant-modal-footer .ant-btn,
+  .content-applications-filter-modal.ant-modal .ant-modal-footer .ant-btn,
+  .appeal-filter-modal.ant-modal .ant-modal-footer .ant-btn,
+  .refund-filter-modal.ant-modal .ant-modal-footer .ant-btn,
+  .overview-filter-modal.ant-modal .ant-modal-footer .ant-btn,
+  .inspection-task-management__filter-modal.ant-modal .ant-modal-footer .ant-btn,
+  .inspection-violations__filter-modal.ant-modal .ant-modal-footer .ant-btn,
+  .service-configuration-filter-modal.ant-modal .ant-modal-footer .ant-btn,
+  .tickets-filter-modal.ant-modal .ant-modal-footer .ant-btn,
+  .tickets-application-filter-modal.ant-modal .ant-modal-footer .ant-btn,
+  .payments-filter-modal.ant-modal .ant-modal-footer .ant-btn {
+    flex: 0 0 120px !important;
+    width: 120px !important;
+    min-width: 120px !important;
+    max-width: 120px !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+    padding-inline: 16px !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+
+  .filter-modal.ant-modal .ant-modal-footer .custom-button-content,
+  .filter-modal.ant-modal .ant-modal-footer .custom-button-contentWithIcon,
+  .broadcast-filter-modal.ant-modal .ant-modal-footer .custom-button-content,
+  .broadcast-filter-modal.ant-modal .ant-modal-footer .custom-button-contentWithIcon,
+  .content-applications-filter-modal.ant-modal .ant-modal-footer .custom-button-content,
+  .content-applications-filter-modal.ant-modal .ant-modal-footer .custom-button-contentWithIcon,
+  .appeal-filter-modal.ant-modal .ant-modal-footer .custom-button-content,
+  .appeal-filter-modal.ant-modal .ant-modal-footer .custom-button-contentWithIcon,
+  .refund-filter-modal.ant-modal .ant-modal-footer .custom-button-content,
+  .refund-filter-modal.ant-modal .ant-modal-footer .custom-button-contentWithIcon,
+  .overview-filter-modal.ant-modal .ant-modal-footer .custom-button-content,
+  .overview-filter-modal.ant-modal .ant-modal-footer .custom-button-contentWithIcon,
+  .service-configuration-filter-modal.ant-modal .ant-modal-footer .custom-button-content,
+  .service-configuration-filter-modal.ant-modal .ant-modal-footer .custom-button-contentWithIcon,
+  .tickets-filter-modal.ant-modal .ant-modal-footer .custom-button-content,
+  .tickets-filter-modal.ant-modal .ant-modal-footer .custom-button-contentWithIcon,
+  .tickets-application-filter-modal.ant-modal .ant-modal-footer .custom-button-content,
+  .tickets-application-filter-modal.ant-modal .ant-modal-footer .custom-button-contentWithIcon,
+  .payments-filter-modal.ant-modal .ant-modal-footer .custom-button-content,
+  .payments-filter-modal.ant-modal .ant-modal-footer .custom-button-contentWithIcon {
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+}

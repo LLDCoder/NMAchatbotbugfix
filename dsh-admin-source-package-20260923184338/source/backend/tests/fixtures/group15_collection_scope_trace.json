@@ -1,0 +1,259 @@
+{
+  "provenance": {
+    "auditSHA256": "7649f9abef9aa8578b5d9a9f663a4ca3dbdcf1aa482655e4e48384a3bda5f62f",
+    "path": "test/runtime/group15-account-repair-20260928/round10-core-followup-v10/C-08__en/audit.json",
+    "notice": "Sealed source metadata and receipt only. Tests reconstruct the attested empty projection; observation filters in tests are synthetic, not recovered historical gateway observations."
+  },
+  "source": {
+    "kind": "projected_collection",
+    "page": "/licensing/applications",
+    "sourceId": "api_33170c9f32467b1ea7d1",
+    "truncated": false,
+    "capturedAt": "2026-09-28T12:34:41.372559+00:00",
+    "completeness": "complete",
+    "operationRef": "POST /api/Application/MyTodoPage",
+    "verifiedView": "todo",
+    "candidateKind": "business",
+    "fieldEvidence": {
+      "/message": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "e0cc7d31c742c7979bcc99ff6ceb319d8a831f6e604af9097cf9ce44b59346a2"
+      },
+      "/isSuccess": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+      },
+      "/statusCode": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "27badc983df1780b60c2b3fa9d3a19a00e46aac798451f0febdca52920faaddf"
+      },
+      "/data/page/items": {
+        "kind": "array",
+        "status": "complete",
+        "valueHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "/data/page/total": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      "/data/page/pageSize": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5"
+      },
+      "/data/approvalStatus": {
+        "kind": "array",
+        "status": "complete",
+        "valueHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "/data/page/pageIndex": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+      },
+      "/data/serviceOptions": {
+        "kind": "array",
+        "status": "complete",
+        "valueHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "/data/myDecisionOptions": {
+        "kind": "array",
+        "status": "complete",
+        "valueHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "/data/processInstanceStatus": {
+        "kind": "array",
+        "status": "complete",
+        "valueHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "/data/statusCount/todoCount": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      "/data/statusCount/overdueCount": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      "/data/statusCount/completedCount": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      "/data/statusCount/pendingReviewCount": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      "/data/statusCount/externalApproveCount": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      "/data/statusCount/pendingDispositionCount": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      "/data/statusCount/pendingModificationCount": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      "/data/statusCount/dispositionVerificationCount": {
+        "kind": "scalar",
+        "status": "complete",
+        "valueHash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      }
+    },
+    "observationRef": "c5446d7aa132f1bbc838",
+    "documentSchemas": [],
+    "sourceViewProof": {
+      "page": "/licensing/applications",
+      "view": "todo",
+      "authority": "active_page_operation_context",
+      "definitions": [
+        {
+          "view": "todo",
+          "recordId": "admin.page-docs.licensing.applications.todo.collection",
+          "revision": 5,
+          "sourcePath": "/data/page/items",
+          "operationRef": "POST /api/Application/MyTodoPage",
+          "objectBindingId": "admin.page-docs.licensing.applications.todo.collection#application_object",
+          "contextBindingIds": [
+            "admin.page-docs.licensing.applications.todo.collection#assigned_to_current_user",
+            "admin.page-docs.licensing.applications.todo.collection#pending_filter",
+            "admin.page-docs.licensing.applications.todo.collection#pending_population",
+            "admin.page-docs.licensing.applications.todo.collection#personal_scope"
+          ]
+        }
+      ]
+    },
+    "taskFingerprint": "a1a6a16912eaf1a36f63e9461ebd37101052c51c26b28eb7139649da1fcb91be",
+    "buildFingerprint": "unknown",
+    "collectionContext": {
+      "mode": "page_number_two_pass",
+      "contextRef": "8d221aa290fa5756dd03065acb6031ae629989ca18b493347b531ae9f5066a63",
+      "rowSchemas": [
+        {
+          "path": "/data/processInstanceStatus",
+          "fields": [],
+          "sampledRows": 0,
+          "nullableFields": [],
+          "fieldsTruncated": false,
+          "nullableFieldsTruncated": false
+        },
+        {
+          "path": "/data/approvalStatus",
+          "fields": [],
+          "sampledRows": 0,
+          "nullableFields": [],
+          "fieldsTruncated": false,
+          "nullableFieldsTruncated": false
+        },
+        {
+          "path": "/data/myDecisionOptions",
+          "fields": [],
+          "sampledRows": 0,
+          "nullableFields": [],
+          "fieldsTruncated": false,
+          "nullableFieldsTruncated": false
+        },
+        {
+          "path": "/data/serviceOptions",
+          "fields": [],
+          "sampledRows": 0,
+          "nullableFields": [],
+          "fieldsTruncated": false,
+          "nullableFieldsTruncated": false
+        },
+        {
+          "path": "/data/page/items",
+          "fields": [],
+          "sampledRows": 0,
+          "nullableFields": [],
+          "fieldsTruncated": false,
+          "nullableFieldsTruncated": false
+        }
+      ],
+      "requestFields": [
+        "keyword",
+        "startTime",
+        "endTime",
+        "sortBy",
+        "sortDirection",
+        "serviceTypeId",
+        "pageIndex",
+        "pageSize"
+      ],
+      "parameterHashes": {
+        "sortBy": "4b675ba2a21fe8190659d97b8d05c7c6af232357da78904d5ad1abcffeefbcdf",
+        "endTime": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "keyword": "12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+        "pageSize": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5",
+        "pageIndex": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "startTime": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "serviceTypeId": "391552c099c101b131feaf24c5795a6a15bc8ec82015424e0d2b4274a369a0bf",
+        "sortDirection": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+      },
+      "parameterShapeEvidence": {}
+    },
+    "collectionReceipt": {
+      "total": 0,
+      "fields": [
+        "id",
+        "applicationNumber",
+        "serviceNameEn",
+        "serviceCategoryNameEn",
+        "serviceTypeNameEn",
+        "status",
+        "slaDescription",
+        "applyForEn",
+        "lastUpdatedTime",
+        "taskStatus"
+      ],
+      "rowCount": 0,
+      "rowsPath": "/data/page/items",
+      "bytesRead": 856,
+      "pagesRead": 2,
+      "startedAt": "2026-09-28T12:34:33.175402+00:00",
+      "totalPath": "/data/page/total",
+      "comparison": {
+        "equivalent": true,
+        "orderChanged": false,
+        "changedFields": [],
+        "firstRowCount": 0,
+        "secondRowCount": 0,
+        "addedIdentityCount": 0,
+        "changedIdentityCount": 0,
+        "removedIdentityCount": 0
+      },
+      "contextRef": "8d221aa290fa5756dd03065acb6031ae629989ca18b493347b531ae9f5066a63",
+      "finishedAt": "2026-09-28T12:34:41.372559+00:00",
+      "pagination": {
+        "pageSize": 500,
+        "pageField": "pageIndex",
+        "sizeField": "pageSize",
+        "observedPageSize": 10
+      },
+      "consistency": "two_pass_observation",
+      "fieldStatus": {},
+      "completeness": "complete",
+      "operationRef": "POST /api/Application/MyTodoPage",
+      "stablePasses": 2,
+      "schemaVersion": "projected-collection/1",
+      "identityFields": [
+        "id"
+      ],
+      "projectionHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "snapshotIsolation": false
+    },
+    "principalScopeRef": "dea9eeec1453f665ac17",
+    "relatedReadReceipt": {}
+  }
+}

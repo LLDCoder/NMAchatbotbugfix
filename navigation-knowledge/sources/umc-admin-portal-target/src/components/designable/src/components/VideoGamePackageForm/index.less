@@ -1,0 +1,222 @@
+.video-game-package-form-container {
+  .video-game-package-form-date-range-picker{
+    .ant-picker-input{
+      input{
+        text-align: left!important;
+      }
+    }
+  }
+  width: 100%;
+
+  .ant-card {
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+
+    .ant-card-head {
+      .ant-card-head-title {
+        font-family: Inter;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 0px;
+        color: #361e12;
+      }
+    }
+  }
+
+  .ant-row {
+    .ant-col {
+      margin-bottom: 16px;
+    }
+  }
+
+  .game-form-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #361e12;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    .game-form-required {
+      color: #ea4f49;
+      margin-left: 4px;
+    }
+
+    .game-form-tooltip {
+      color: #8c8c8c;
+      font-size: 14px;
+      margin-left: 4px;
+      cursor: help;
+    }
+  }
+
+  .game-form-radio {
+    display: flex;
+    gap: 24px;
+
+    .ant-radio-wrapper {
+      margin-right: 0;
+    }
+  }
+
+  .game-form-language {
+    width: 100%;
+  }
+
+  .ant-input {
+    height: 48px;
+    border-radius: 8px;
+  }
+
+  .ant-select {
+    width: 100%;
+
+    .ant-select-selector {
+      height: 48px !important;
+      border-radius: 8px !important;
+      align-items: center;
+      padding: 0 12px !important;
+    }
+
+    &.ant-select-multiple {
+      .ant-select-selector {
+        min-height: 48px !important;
+        height: auto !important;
+        padding: 4px 12px !important;
+      }
+
+      .ant-select-selection-item {
+        height: 32px;
+        line-height: 30px;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  .ant-picker {
+    height: 48px;
+    border-radius: 8px;
+    width: 100%;
+  }
+
+  .ant-picker-range {
+    .ant-picker-input {
+      input {
+        text-align: center;
+      }
+    }
+  }
+
+  .vgp-permit-section {
+    margin-bottom: 16px;
+    padding: 16px;
+    background: #fafafa;
+    border-radius: 8px;
+    border: 1px solid #f0f0f0;
+
+    .vgp-permit-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #361e12;
+      margin-bottom: 12px;
+    }
+
+    .ant-checkbox-wrapper {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 8px;
+      line-height: 1.5;
+      margin-left: 0!important;
+      .ant-checkbox-checked .ant-checkbox-inner{
+        background-color: #f8f8f8;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.video-game-package-multi-select.ant-select-multiple {
+  .ant-checkbox-inner {
+    background-color: #92722a;
+    border-color: #92722a;
+  }
+
+  .ant-select-selection-search {
+    margin-inline-start: 0;
+  }
+
+  .video-game-package-multi-selection-item {
+    display: flex;
+    min-width: 0;
+  }
+
+  .video-game-package-multi-selection-item > * + *,
+  .video-game-package-multi-option > * + * {
+    margin-inline-start: 8px;
+  }
+
+  &.ant-select-disabled {
+    .ant-select-selection-item {
+      border: 0;
+    }
+
+    .ant-checkbox-wrapper {
+      display: none;
+    }
+
+    .video-game-package-multi-selection-item span,
+    .video-game-package-multi-option span {
+      margin-inline-start: 0 !important;
+    }
+  }
+}
+
+.video-game-package-multi-select-dropdown {
+  .ant-select-item-option-state {
+    display: none;
+  }
+
+  .ant-checkbox-inner {
+    background-color: #ffffff;
+    border-color: #c3c6cb !important;
+  }
+
+  .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #92722a;
+    border-color: #92722a !important;
+  }
+
+  .video-game-package-multi-select-all {
+    padding: 4px 8px;
+  }
+
+  .video-game-package-multi-select-all-checkbox.has-selection {
+    .ant-checkbox:not(.ant-checkbox-checked) .ant-checkbox-inner {
+      background-color: #92722a;
+      border-color: #92722a !important;
+
+      &::after {
+      display: block;
+      width: 8px;
+      height: 2px;
+      border: 0;
+      background: #ffffff;
+      opacity: 1;
+      transform: rotate(0deg) scale(1) translate(-50%, -50%);
+      }
+    }
+  }
+
+  .video-game-package-multi-option {
+    display: flex;
+    align-items: center;
+
+    > * + * {
+      margin-inline-start: 8px;
+    }
+  }
+}

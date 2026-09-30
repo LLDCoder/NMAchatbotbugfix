@@ -1,0 +1,84 @@
+.preview-box{
+    .select-line{
+        display: flex;
+        padding: 16px 40px;
+        .lan {
+            display: flex;
+            padding: 4px;
+            width: 184px;
+            height: 44px;
+            border-radius: 8px;
+            border: 1px solid #c3c6cb;
+            align-items: center;
+            justify-content: space-between;
+            .lanitem {
+                cursor: pointer;
+                font-family: Inter;
+                font-weight: 500;
+                font-style: Medium;
+                font-size: 16px;
+                leading-trim: NONE;
+                line-height: 24px;
+                letter-spacing: 0px;
+                text-align: center;
+                width: 88px;
+                height: 36px;
+                text-align: center;
+                line-height: 40px;
+                border-radius: 6px;
+              /* rwd-ramp */
+              @media (max-width: 1919.98px) {
+                font-size: 14px;
+                line-height: 20px;
+              }
+            }
+            .active {
+                color: #f9f7ed;
+                background: linear-gradient(90deg, #9e7538, #c19453);
+            }
+        }
+        .lan2{
+            width: unset;
+            margin-left: 32px;
+            .lanitem {
+                width: unset;
+                display: flex;
+                align-items: center;
+                padding: 8px 16px;
+                gap: 10px;
+            }
+        }
+    }
+    .preview-content{
+        /*
+          1920px is deliberate here, unlike the other hard widths this migration
+          removed: the modal previews how the public site renders on the 1920
+          board, so shrinking the canvas would preview the wrong thing.
+
+          What has to change is the container. While the file scaled, the canvas
+          shrank with it and always fitted; with literal px it is wider than the
+          modal at every band below 1920, so give the wrapper a scroll instead of
+          letting it push the modal out of shape.
+        */
+        width: 1920px;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 1919.98px) {
+        overflow-x: auto;
+    }
+}
+
+.page-preview-modal{
+    .ant-modal {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        top: 0;
+    }
+
+    .ant-modal-content {
+        height: 100vh;
+        border-radius: 0;
+    }
+}

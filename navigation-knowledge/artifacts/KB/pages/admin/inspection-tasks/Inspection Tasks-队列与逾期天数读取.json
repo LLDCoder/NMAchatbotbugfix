@@ -1,0 +1,719 @@
+{
+  "schemaVersion": "1.0",
+  "packageStatus": "active",
+  "bundleId": "admin.inspection.tasks.lookup-fields.package",
+  "searchMetadata": {
+    "titleEnglish": "Inspection Tasks entity identity and pagination",
+    "titleArabic": "مهام التفتيش: هوية المهمة وقراءة الصفحات",
+    "descriptionEnglish": "Inspection task identity, public label, current page fields, separate task dates and geography, source-specific active SLA and calendar-day sorting.",
+    "descriptionArabic": "هوية مهام التفتيش وحقول الصفحة والتواريخ المنفصلة والمنطقة واتفاقية الخدمة النشطة وحساب أيام التأخير التقويمية."
+  },
+  "records": [
+    {
+      "id": "admin.inspection.tasks.lookup-fields",
+      "kind": "field_semantics",
+      "revision": 6,
+      "status": "active",
+      "title": "Inspection Tasks entity identity and pagination",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local",
+          "debug"
+        ],
+        "pageRefs": [
+          "/inspection/tasks"
+        ],
+        "runtimeVerification": "response_shape_verified",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/inspection.ts",
+          "revision": "sha256:4a841e7f947b4e73a3960cc0d1b6478b8d43c28652c0113c0b9f0fc38035f618",
+          "locator": "mapV5TaskRow, mapTaskListParams and mapTaskScope",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/Inspection/InspectionSlaSummaryBuilder.cs",
+          "revision": "sha256:eff3bf7b2fc910231d9c2ec0e139c2de5f0111396b8438fde4afc34a9a7f0336",
+          "locator": "Build and ResolveCompletedOn",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Domain/Shares/DateTimeHelper.cs",
+          "revision": "sha256:7f405eebfca51883b884784cebdaf92425b0496bfc357e26bf99ca61c36ed4d0",
+          "locator": "Fixed Dubai business clock",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "runtime_observation",
+          "reference": "Authorized current GET /api/admin/inspection/tasks response shape",
+          "revision": "2026-09-28",
+          "locator": "Presence of areaName, dueDateStart, dueDate, SLA and list identity fields; no record values included",
+          "verification": "response_shape_verified"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/InspectionTaskManagement/index.tsx",
+          "revision": "sha256:008b99d961897d43b30384772fed6dd1175e4978e7b84323ab4bc821e4981973",
+          "locator": "permissionTaskTabs, defaultTab, availableTabs and effectiveTaskListTab",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/inspection/tasks",
+        "sourceBinding": {
+          "operationRef": "GET /api/admin/inspection/tasks",
+          "sourcePath": "/data/items"
+        },
+        "fields": {
+          "id": "Inspection task entity key used as taskId on detail route.",
+          "taskNo": "Public task business number; match exactly for record lookup.",
+          "targetName": "Inspection target display; not a stable establishment identity.",
+          "statusCode": "Task workflow status code.",
+          "statusName": "Localized task workflow status.",
+          "priorityName": "Configured task priority display; not inferred from SLA.",
+          "emirateName": "Emirate display.",
+          "areaName": "Geographical area display returned by the currently observed schema. Not the same field as authorityName, regionName or full address.",
+          "dueDate": "Task due date; not creation, assignment or completion time.",
+          "dueDateStart": "Start of the planned due-date window when returned; null does not define a schedule.",
+          "assignedOn": "Assignment timestamp.",
+          "createdOn": "Creation timestamp.",
+          "lastUpdatedOn": "Last update timestamp, not proof of completion.",
+          "inspectorName": "Assigned inspector display, not a stable membership join.",
+          "sla.statusCode": "Remaining, DueToday, Overdue for active-clock cases; OnTime or Exceeded for completed-clock cases.",
+          "sla.dueOn": "Due timestamp used by the SLA builder.",
+          "sla.completedOn": "Resolved completion timestamp used by the SLA builder; null means active clock.",
+          "sla.displayText": "Localized SLA label; never parse for arithmetic.",
+          "overdueDays": "Derived calendar-date difference in the page business timezone; only Overdue rows are currently overdue tasks."
+        },
+        "pagination": {
+          "rowsPath": "/data/items",
+          "totalPath": "/data/totalCount"
+        },
+        "requestFields": {
+          "pageIndex": "One-based page index.",
+          "pageSize": "Requested page size.",
+          "scope": "Authorized task queue: Queued, Todo, Completed or All. Preserve observed scope.",
+          "search": "User-entered task keyword; not proof of exact identity."
+        },
+        "bindings": [
+          {
+            "id": "object",
+            "kind": "object",
+            "concept": "inspection task",
+            "aliases": [
+              "inspection",
+              "task",
+              "مهمة تفتيش"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items",
+            "fields": [
+              "id"
+            ],
+            "meaning": "Inspection task entity.",
+            "displayFields": [
+              "taskNo"
+            ]
+          },
+          {
+            "id": "grain",
+            "kind": "grain",
+            "concept": "inspection task",
+            "aliases": [
+              "inspection",
+              "task",
+              "مهمة تفتيش"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items",
+            "fields": [
+              "id"
+            ],
+            "meaning": "Inspection task entity."
+          },
+          {
+            "id": "number",
+            "kind": "attribute",
+            "concept": "task number",
+            "fields": [
+              "taskNo"
+            ],
+            "aliases": [
+              "task ID",
+              "inspection task number",
+              "رقم المهمة"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items"
+          },
+          {
+            "id": "target",
+            "kind": "attribute",
+            "concept": "inspection target",
+            "fields": [
+              "targetName"
+            ],
+            "aliases": [
+              "target",
+              "هدف التفتيش"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items"
+          },
+          {
+            "id": "status_value",
+            "kind": "attribute",
+            "concept": "status",
+            "fields": [
+              "statusName"
+            ],
+            "aliases": [
+              "task status",
+              "حالة المهمة"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items"
+          },
+          {
+            "id": "priority",
+            "kind": "attribute",
+            "concept": "priority",
+            "fields": [
+              "priorityName"
+            ],
+            "aliases": [
+              "task priority",
+              "الأولوية"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items"
+          },
+          {
+            "id": "emirate",
+            "kind": "attribute",
+            "concept": "emirate",
+            "fields": [
+              "emirateName"
+            ],
+            "aliases": [
+              "الإمارة"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items"
+          },
+          {
+            "id": "area",
+            "kind": "attribute",
+            "concept": "area",
+            "fields": [
+              "areaName"
+            ],
+            "aliases": [
+              "geographical area",
+              "المنطقة"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items"
+          },
+          {
+            "id": "inspector",
+            "kind": "attribute",
+            "concept": "inspector",
+            "fields": [
+              "inspectorName"
+            ],
+            "aliases": [
+              "assigned inspector",
+              "المفتش"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items"
+          },
+          {
+            "id": "due_date",
+            "kind": "attribute",
+            "concept": "due date",
+            "fields": [
+              "dueDate"
+            ],
+            "aliases": [
+              "deadline",
+              "تاريخ الاستحقاق"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items"
+          },
+          {
+            "id": "assigned_time",
+            "kind": "attribute",
+            "concept": "assignment time",
+            "fields": [
+              "assignedOn"
+            ],
+            "aliases": [
+              "assigned time",
+              "وقت التعيين"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items"
+          },
+          {
+            "id": "sla_display",
+            "kind": "attribute",
+            "concept": "SLA",
+            "fields": [
+              "sla.displayText"
+            ],
+            "aliases": [
+              "SLA display",
+              "اتفاقية مستوى الخدمة"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items"
+          },
+          {
+            "id": "overdue_days",
+            "kind": "attribute",
+            "concept": "overdue days",
+            "fields": [
+              "overdueDays"
+            ],
+            "aliases": [
+              "days overdue",
+              "أيام التأخير",
+              "delay days",
+              "SLA overdue days",
+              "number of delay days",
+              "number of overdue days",
+              "عدد أيام التأخير"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items"
+          },
+          {
+            "id": "due_time",
+            "kind": "time",
+            "concept": "due date",
+            "fields": [
+              "dueDate"
+            ],
+            "aliases": [
+              "deadline",
+              "تاريخ الاستحقاق"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items",
+            "sourceTimezone": "Asia/Dubai"
+          },
+          {
+            "id": "assigned_date",
+            "kind": "time",
+            "concept": "assignment time",
+            "fields": [
+              "assignedOn"
+            ],
+            "aliases": [
+              "assigned time",
+              "وقت التعيين"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items",
+            "sourceTimezone": "Asia/Dubai"
+          },
+          {
+            "id": "creation_date",
+            "kind": "time",
+            "concept": "creation time",
+            "fields": [
+              "createdOn"
+            ],
+            "aliases": [
+              "created date",
+              "وقت الإنشاء"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items",
+            "sourceTimezone": "Asia/Dubai"
+          },
+          {
+            "id": "active_overdue_population",
+            "kind": "population",
+            "concept": "overdue",
+            "fields": [
+              "sla.statusCode"
+            ],
+            "aliases": [
+              "over SLA",
+              "past SLA",
+              "متأخرة",
+              "exceeded the service level agreement",
+              "exceeded SLA",
+              "تجاوزت اتفاقية مستوى الخدمة"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items",
+            "conditions": [
+              {
+                "field": "sla.statusCode",
+                "predicate": "eq",
+                "value": "Overdue"
+              }
+            ],
+            "contextParameters": {
+              "scope": "Queued"
+            }
+          },
+          {
+            "id": "active_overdue_filter",
+            "kind": "filter",
+            "concept": "overdue",
+            "fields": [
+              "sla.statusCode"
+            ],
+            "aliases": [
+              "over SLA",
+              "past SLA",
+              "متأخرة",
+              "exceeded the service level agreement",
+              "exceeded SLA",
+              "تجاوزت اتفاقية مستوى الخدمة"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items",
+            "conditions": [
+              {
+                "field": "sla.statusCode",
+                "predicate": "eq",
+                "value": "Overdue"
+              }
+            ]
+          },
+          {
+            "id": "overdue_count",
+            "kind": "measure",
+            "concept": "overdue tasks",
+            "fields": [
+              "id",
+              "sla.statusCode"
+            ],
+            "aliases": [
+              "count of overdue tasks",
+              "over SLA tasks",
+              "عدد المهام المتأخرة"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items",
+            "operator": "count",
+            "conditions": [
+              {
+                "field": "sla.statusCode",
+                "predicate": "eq",
+                "value": "Overdue"
+              }
+            ]
+          },
+          {
+            "id": "overdue_order",
+            "kind": "ordering",
+            "concept": "overdue days",
+            "fields": [
+              "overdueDays"
+            ],
+            "aliases": [
+              "days overdue",
+              "أيام التأخير",
+              "delay days",
+              "SLA overdue days",
+              "overdue days descending",
+              "delay days descending",
+              "أيام التأخير تنازلياً",
+              "number of delay days",
+              "number of overdue days",
+              "عدد أيام التأخير",
+              "number of delay days descending",
+              "number of overdue days descending",
+              "عدد أيام التأخير تنازلياً"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items",
+            "valueField": "overdueDays",
+            "direction": "descending",
+            "valueType": "number"
+          },
+          {
+            "id": "area_order",
+            "kind": "ordering",
+            "concept": "area",
+            "fields": [
+              "areaName"
+            ],
+            "aliases": [
+              "geographical area",
+              "المنطقة"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items",
+            "valueField": "areaName",
+            "direction": "ascending",
+            "valueType": "string"
+          },
+          {
+            "id": "due_order",
+            "kind": "ordering",
+            "concept": "due date",
+            "fields": [
+              "dueDate"
+            ],
+            "aliases": [
+              "deadline",
+              "تاريخ الاستحقاق"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items",
+            "valueField": "dueDate",
+            "direction": "ascending",
+            "valueType": "string"
+          },
+          {
+            "id": "assignment_order",
+            "kind": "ordering",
+            "concept": "assignment time",
+            "fields": [
+              "assignedOn"
+            ],
+            "aliases": [
+              "assigned time",
+              "وقت التعيين"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items",
+            "valueField": "assignedOn",
+            "direction": "ascending",
+            "valueType": "string"
+          },
+          {
+            "id": "creation_order",
+            "kind": "ordering",
+            "concept": "creation time",
+            "fields": [
+              "createdOn"
+            ],
+            "aliases": [
+              "created date",
+              "وقت الإنشاء"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items",
+            "valueField": "createdOn",
+            "direction": "ascending",
+            "valueType": "string"
+          },
+          {
+            "id": "creation_value",
+            "kind": "attribute",
+            "concept": "creation time",
+            "fields": [
+              "createdOn"
+            ],
+            "aliases": [
+              "created date",
+              "وقت الإنشاء"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items"
+          },
+          {
+            "id": "active_overdue_population_todo",
+            "kind": "population",
+            "concept": "overdue",
+            "fields": [
+              "sla.statusCode"
+            ],
+            "aliases": [
+              "over SLA",
+              "past SLA",
+              "متأخرة",
+              "exceeded the service level agreement",
+              "exceeded SLA",
+              "تجاوزت اتفاقية مستوى الخدمة"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items",
+            "conditions": [
+              {
+                "field": "sla.statusCode",
+                "predicate": "eq",
+                "value": "Overdue"
+              }
+            ],
+            "contextParameters": {
+              "scope": "Todo"
+            }
+          },
+          {
+            "id": "active_overdue_population_completed",
+            "kind": "population",
+            "concept": "overdue",
+            "fields": [
+              "sla.statusCode"
+            ],
+            "aliases": [
+              "over SLA",
+              "past SLA",
+              "متأخرة",
+              "exceeded the service level agreement",
+              "exceeded SLA",
+              "تجاوزت اتفاقية مستوى الخدمة"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items",
+            "conditions": [
+              {
+                "field": "sla.statusCode",
+                "predicate": "eq",
+                "value": "Overdue"
+              }
+            ],
+            "contextParameters": {
+              "scope": "Completed"
+            }
+          },
+          {
+            "id": "active_overdue_population_all",
+            "kind": "population",
+            "concept": "overdue",
+            "fields": [
+              "sla.statusCode"
+            ],
+            "aliases": [
+              "over SLA",
+              "past SLA",
+              "متأخرة",
+              "exceeded the service level agreement",
+              "exceeded SLA",
+              "تجاوزت اتفاقية مستوى الخدمة"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks",
+            "sourcePath": "/data/items",
+            "conditions": [
+              {
+                "field": "sla.statusCode",
+                "predicate": "eq",
+                "value": "Overdue"
+              }
+            ],
+            "contextParameters": {
+              "scope": "All"
+            }
+          }
+        ],
+        "routing": {
+          "records": [
+            {
+              "id": "inspection.task.lookup",
+              "operationRef": "GET /api/admin/inspection/tasks",
+              "sourcePath": "/data/items",
+              "identityField": "taskNo",
+              "keyFields": [
+                "id"
+              ],
+              "unique": false
+            }
+          ]
+        },
+        "constraints": [
+          "Pagination must be complete and stable before asserting unique business-number resolution. Preserve all observed request filters and principal.",
+          "For record lookup, project id and taskNo. List analysis may use the separately documented list properties. Detailed address, checklist and record-only properties require the verified detail or related operation.",
+          "Today requires a stated business date field; due today, assigned today and created today are not equivalent. Do not infer a schedule from lastUpdatedOn.",
+          "Area uses current areaName when observed; do not silently substitute authorityName or regionName. A source DTO snapshot with authorityName differs from the current response and is not proof of that live field.",
+          "A queue scope of Todo or All is not proof that tasks are assigned to the signed-in user. Personal scope needs the authorized inspector view and verified assignment filtering. Inspector display name alone is insufficient.",
+          "The clock formula is defined by the source implementation; its conditions and source timezone belong to this page knowledge. The runtime arithmetic executor contains no task status codes.",
+          "The generic display/order term time is not an alias for every timestamp. Ask the page-defined temporal ordering question and resolve the duplicate time display attribute to the chosen timestamp. Keep unrelated attributes, filters, date range and area ordering unchanged.",
+          "Choosing a date field for a today filter does not silently select the display/order timestamp. If both are unspecified, they remain separate clarification slots. This is a reading and ordering choice, not a scheduled appointment or actual visit time.",
+          "Assignment and creation timestamps use their observed ISO values for chronological ascending order; this is not a priority or risk ranking. Missing timestamps remain unknown.",
+          "Delay days refers only to the documented SLA overdueDays value in this task collection. Exceeded the service level agreement uses sla.statusCode=Overdue; it must not include Remaining or Paused tasks. Descending overdue-day ordering is the explicit ordering binding, not an urgency, risk or completion score.",
+          "SLA population binding must match the exact observed scope parameter. Queued, Todo, Completed and All are separate page populations; never combine counts or call Queued a personal Todo list. Select the population binding whose contextParameters matches the current authorized request, and identify that queue scope in the answer.",
+          "These context bindings cover an otherwise unfiltered queue only. Any additional search, date, inspector, area or other population filter needs its own verified context; an absent, null or empty filter is not automatically interchangeable. None of these definitions authorizes switching page scope or using a manager role as proof of team membership."
+        ],
+        "temporalDerivations": [
+          {
+            "field": "overdueDays",
+            "operator": "calendar_days",
+            "startField": "sla.dueOn",
+            "endField": "sla.completedOn",
+            "endNull": "reference_time",
+            "sourceTimezone": "Asia/Dubai",
+            "requiresNonNull": [
+              "sla.dueOn",
+              "sla.statusCode"
+            ],
+            "nullWhen": [],
+            "nullStartValue": null,
+            "description": "Calendar dates in Asia/Dubai, with one recorded reference instant for an active clock. Select sla.statusCode=Overdue for current overdue tasks. Completed OnTime/Exceeded rows are not currently overdue. Null/unknown source values are not zero."
+          }
+        ],
+        "clarificationRules": [
+          {
+            "id": "temporal-display-and-order",
+            "slot": "requestedOrdering",
+            "autoClarify": true,
+            "objects": [
+              "inspection task",
+              "inspection tasks",
+              "task",
+              "tasks"
+            ],
+            "aliases": [
+              "time",
+              "time ascending",
+              "الوقت",
+              "وقت",
+              "الوقت تصاعدياً"
+            ],
+            "resolvesDuplicateAttributes": true,
+            "question": {
+              "en": "Which timestamp should the time column and time ordering use? Any existing date filter and area ordering will be retained.",
+              "ar": "أي وقت ينبغي استخدامه في عمود الوقت وترتيب المهام؟ سيُحتفظ بأي تصفية تاريخية وترتيب حسب المنطقة محددين سابقاً."
+            },
+            "choices": [
+              {
+                "id": "due_time",
+                "value": "due date",
+                "attributeValue": "due date",
+                "label": {
+                  "en": "Due date, earliest first",
+                  "ar": "تاريخ الاستحقاق، الأقدم أولاً"
+                }
+              },
+              {
+                "id": "assigned_time",
+                "value": "assignment time",
+                "attributeValue": "assignment time",
+                "label": {
+                  "en": "Assignment time, earliest first",
+                  "ar": "وقت التعيين، الأقدم أولاً"
+                }
+              },
+              {
+                "id": "created_time",
+                "value": "creation time",
+                "attributeValue": "creation time",
+                "label": {
+                  "en": "Creation time, earliest first",
+                  "ar": "وقت الإنشاء، الأقدم أولاً"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "createdAt": "2026-09-28T04:10:44.504445+00:00"
+}

@@ -1,0 +1,30 @@
+{
+  "source": "Actual B-11 Arabic follow-up, round11; rejected because an attached conjunction was omitted from the source quote.",
+  "rawSha256": "948970592e6164ade360e8e94c7f3a612ca4b18ce1259cd2dfea59825f58d6f0",
+  "question": "أرى حالة مختلفة للطلب نفسه على الصفحة. أعد التحقق من السجل الحالي، ووضح مصدر إجابتك ووقت الملاحظة، وأرشدني إلى كيفية التحديث أو التحقق من هذا الاختلاف. لا تغيّر أي بيانات.",
+  "rejectedCandidate": {
+    "stage": "input_normalization",
+    "clauses": [
+      {
+        "english": "I see a different status for the same request on the page.",
+        "sourceQuote": "أرى حالة مختلفة للطلب نفسه على الصفحة."
+      },
+      {
+        "english": "Re-verify the current record,",
+        "sourceQuote": "أعد التحقق من السجل الحالي،"
+      },
+      {
+        "english": "and clarify the source of your answer and the time of observation,",
+        "sourceQuote": "وضح مصدر إجابتك ووقت الملاحظة،"
+      },
+      {
+        "english": "and guide me on how to update or verify this discrepancy.",
+        "sourceQuote": "وأرشدني إلى كيفية التحديث أو التحقق من هذا الاختلاف."
+      },
+      {
+        "english": "Do not change any data.",
+        "sourceQuote": "لا تغيّر أي بيانات."
+      }
+    ]
+  }
+}

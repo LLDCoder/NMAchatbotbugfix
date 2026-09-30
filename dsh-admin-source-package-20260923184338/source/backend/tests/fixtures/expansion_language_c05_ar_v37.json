@@ -1,0 +1,529 @@
+{
+  "originalQuestion": "اعرض الطلبات الموجودة حاليًا في عرض «قيد الإنجاز» الخاص بي ضمن التراخيص.",
+  "initialTask": {
+    "view": "todo",
+    "stage": "task",
+    "filters": [],
+    "groupBy": [],
+    "readOnly": true,
+    "timeField": "",
+    "timeRange": "unknown",
+    "outputShape": "list",
+    "searchQuery": "licensing applications in progress view my tasks status filter",
+    "slotUpdates": [
+      {
+        "field": "businessObject",
+        "value": "application",
+        "source": "page",
+        "evidence": ""
+      },
+      {
+        "field": "businessFocus",
+        "value": "in progress",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedScope",
+        "value": "personal",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedGrain",
+        "value": "application",
+        "source": "page",
+        "evidence": ""
+      },
+      {
+        "field": "outputShape",
+        "value": "list",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "view",
+        "value": "todo",
+        "source": "page",
+        "evidence": ""
+      },
+      {
+        "field": "timeRange",
+        "value": "unknown",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "disclosurePurpose",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedMeasures",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedAttributes",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "groupBy",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "filters",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "recordIdentity",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "timeField",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedOrdering",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "groupCompleteness",
+        "value": "observed",
+        "source": "current",
+        "evidence": "parsed current request"
+      }
+    ],
+    "responseMode": "answer",
+    "businessFocus": "in progress",
+    "clarification": null,
+    "needsLiveData": true,
+    "businessObject": "application",
+    "recordIdentity": "",
+    "requestedGrain": "application",
+    "requestedScope": "personal",
+    "contextRelation": "new",
+    "unresolvedSlots": [],
+    "disclosurePurpose": "",
+    "groupCompleteness": "observed",
+    "requestBoundaries": [],
+    "requestedMeasures": [],
+    "requestedOrdering": [],
+    "requestedAttributes": [],
+    "evidenceExplanations": []
+  },
+  "firstExpansion": {
+    "stage": "query_expansion",
+    "terms": [
+      {
+        "arabic": "طلب",
+        "english": "application",
+        "sourceText": "application",
+        "alternatives": [],
+        "requirementId": "object"
+      },
+      {
+        "arabic": "طلب",
+        "english": "application",
+        "sourceText": "application",
+        "alternatives": [],
+        "requirementId": "grain"
+      },
+      {
+        "arabic": "الخاص بي",
+        "english": "my own",
+        "sourceText": "personal",
+        "alternatives": [],
+        "requirementId": "scope"
+      },
+      {
+        "arabic": "قيد الإنجاز",
+        "english": "in progress",
+        "sourceText": "in progress",
+        "alternatives": [],
+        "requirementId": "population"
+      },
+      {
+        "arabic": "قائمة",
+        "english": "list",
+        "sourceText": "list",
+        "alternatives": [],
+        "requirementId": "detail"
+      },
+      {
+        "arabic": "عرض «قيد الإنجاز»",
+        "english": "\"قيد الإنجاز\" view",
+        "sourceText": "todo",
+        "alternatives": [],
+        "requirementId": "view"
+      }
+    ],
+    "issues": [
+      {
+        "quote": "في عرض «قيد الإنجاز» الخاص بي",
+        "reason": "The quoted view label «قيد الإنجاز» is not retained in the view slot; the task substitutes the unrelated value 'todo'. The exact original label must be preserved in a main view term (bare or inside quoted navigation syntax), not replaced by a different label."
+      },
+      {
+        "quote": "اعرض الطلبات الموجودة حاليًا في عرض «قيد الإنجاز» الخاص بي ضمن التراخيص.",
+        "reason": "The domain qualifier 'ضمن التراخيص' (within the licenses) is not preserved in any semantic slot; searchQuery alone does not retain it as a task requirement."
+      }
+    ],
+    "intentStatus": "needs_revision"
+  },
+  "revisedTask": {
+    "view": "\"قيد الإنجاز\"",
+    "stage": "task",
+    "filters": [
+      "within the licenses"
+    ],
+    "groupBy": [],
+    "readOnly": true,
+    "timeField": "",
+    "timeRange": "unknown",
+    "outputShape": "list",
+    "searchQuery": "requests in my \"قيد الإنجاز\" view within the licenses",
+    "slotUpdates": [
+      {
+        "field": "businessObject",
+        "value": "request",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "businessFocus",
+        "value": "",
+        "source": "clear",
+        "evidence": ""
+      },
+      {
+        "field": "requestedScope",
+        "value": "personal",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedGrain",
+        "value": "request",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "outputShape",
+        "value": "list",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "view",
+        "value": "\"قيد الإنجاز\"",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "filters",
+        "value": [
+          "within the licenses"
+        ],
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "timeRange",
+        "value": "unknown",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "disclosurePurpose",
+        "value": "",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedMeasures",
+        "value": [],
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedAttributes",
+        "value": [],
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "groupBy",
+        "value": [],
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "recordIdentity",
+        "value": "",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "timeField",
+        "value": "",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedOrdering",
+        "value": [],
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "groupCompleteness",
+        "value": "observed",
+        "source": "current",
+        "evidence": ""
+      }
+    ],
+    "responseMode": "answer",
+    "businessFocus": "",
+    "clarification": null,
+    "needsLiveData": true,
+    "businessObject": "request",
+    "recordIdentity": "",
+    "requestedGrain": "request",
+    "requestedScope": "personal",
+    "contextRelation": "new",
+    "unresolvedSlots": [],
+    "disclosurePurpose": "",
+    "groupCompleteness": "observed",
+    "requestBoundaries": [],
+    "requestedMeasures": [],
+    "requestedOrdering": [],
+    "requestedAttributes": [],
+    "evidenceExplanations": []
+  },
+  "rejected": [
+    {
+      "stage": "QueryExpansion",
+      "attempt": 1,
+      "failure": "{\"code\": \"expansion_english_missing\", \"stage\": \"query_expansion\"}",
+      "candidate": {
+        "stage": "query_expansion",
+        "terms": [
+          {
+            "arabic": "طلب",
+            "english": "request",
+            "sourceText": "request",
+            "alternatives": [
+              "requests",
+              "الطلبات"
+            ],
+            "requirementId": "object"
+          },
+          {
+            "arabic": "طلب",
+            "english": "request",
+            "sourceText": "request",
+            "requirementId": "grain"
+          },
+          {
+            "arabic": "الخاصة بي",
+            "english": "my own",
+            "sourceText": "personal",
+            "alternatives": [
+              "my",
+              "الخاص بي"
+            ],
+            "requirementId": "scope"
+          },
+          {
+            "arabic": "ضمن التراخيص",
+            "english": "within the licenses",
+            "sourceText": "within the licenses",
+            "requirementId": "filter_0"
+          },
+          {
+            "arabic": "قائمة",
+            "english": "list",
+            "sourceText": "list",
+            "requirementId": "detail"
+          },
+          {
+            "arabic": "\"قيد الإنجاز\"",
+            "english": "\"قيد الإنجاز\"",
+            "sourceText": "\"قيد الإنجاز\"",
+            "requirementId": "view"
+          }
+        ],
+        "intentStatus": "consistent"
+      }
+    },
+    {
+      "stage": "QueryExpansion",
+      "attempt": 2,
+      "failure": "{\"code\": \"expansion_english_missing\", \"stage\": \"query_expansion\"}",
+      "candidate": {
+        "stage": "query_expansion",
+        "terms": [
+          {
+            "arabic": "طلب",
+            "english": "request",
+            "sourceText": "request",
+            "alternatives": [
+              "requests",
+              "الطلبات"
+            ],
+            "requirementId": "object"
+          },
+          {
+            "arabic": "طلب",
+            "english": "request",
+            "sourceText": "request",
+            "alternatives": [
+              "requests",
+              "الطلبات"
+            ],
+            "requirementId": "grain"
+          },
+          {
+            "arabic": "الخاصة بي",
+            "english": "my own",
+            "sourceText": "personal",
+            "alternatives": [
+              "my",
+              "الخاص بي"
+            ],
+            "requirementId": "scope"
+          },
+          {
+            "arabic": "ضمن التراخيص",
+            "english": "within the licenses",
+            "sourceText": "within the licenses",
+            "alternatives": [
+              "in the licenses",
+              "داخل التراخيص"
+            ],
+            "requirementId": "filter_0"
+          },
+          {
+            "arabic": "قائمة",
+            "english": "list",
+            "sourceText": "list",
+            "alternatives": [
+              "display list",
+              "عرض قائمة"
+            ],
+            "requirementId": "detail"
+          },
+          {
+            "arabic": "\"قيد الإنجاز\"",
+            "english": "\"قيد الإنجاز\"",
+            "sourceText": "\"قيد الإنجاز\"",
+            "alternatives": [
+              "\"قيد الإنجاز\" view",
+              "عرض \"قيد الإنجاز\""
+            ],
+            "requirementId": "view"
+          }
+        ],
+        "intentStatus": "consistent"
+      }
+    }
+  ],
+  "normalization": {
+    "stage": "input_normalization",
+    "clauses": [
+      {
+        "english": "Display the requests currently in my \"قيد الإنجاز\" view within the licenses.",
+        "sourceQuote": "اعرض الطلبات الموجودة حاليًا في عرض «قيد الإنجاز» الخاص بي ضمن التراخيص."
+      }
+    ]
+  },
+  "contextInput": {
+    "history": {},
+    "currentPage": {
+      "view": "todo",
+      "query": {},
+      "route": "/licensing/applications",
+      "source": "browser_hint",
+      "filters": [
+        {
+          "name": "tableFilters",
+          "value": "{\"contextVersion\":\"table-2:1\",\"filters\":{}}"
+        }
+      ],
+      "capturedAt": "2026-09-28T23:12:10.889Z",
+      "instruction": "Current explicit request wins. For a relative reference to this page, this view or the current workspace, use these exact-route pageCandidates and the selected view to resolve the intended page. Resolving a supplied page reference is not changing the question to fit an available page. Do not ask the user to choose unrelated workspaces merely because the account can access them. Multiple plausible objects within this page may still need clarification. An independently named object, department or record overrides an unrelated browser location. The catalog describes navigation, not personal/team ownership, row populations or live facts; verify those using applicable knowledge and a fresh authorized read. Applied browser filters describe the submitted page context, not live facts. When the question refers to this view, retain its filter requirements and verify their documented meaning and actual source request through an authorized fresh read. Never assume a new browser opens with these filters already applied.",
+      "viewVerified": false,
+      "pageCandidates": [
+        {
+          "id": "a3780c35dd57_da1a77697e11:Page:98e33b0f3104fcf1b812",
+          "name": "Applications",
+          "module": "许可与申请",
+          "description": "许可业务的个人待办与已完成任务。列表提供服务、状态、时间等筛选；从任务行进入申请详情。审批、驳回、补件、外部审批等属于业务写操作。"
+        }
+      ],
+      "recordVerified": false,
+      "browserTimezone": "Asia/Shanghai",
+      "filtersVerified": false,
+      "routeAuthorized": true,
+      "selectedRecordKeys": []
+    },
+    "allowedPages": [
+      "/dashboard",
+      "Common",
+      "/licensing",
+      "/happiness",
+      "/personal-center",
+      "Common.Document",
+      "/licensing/applications",
+      "/licensing/licenses",
+      "/licensing/profile",
+      "/licensing/reports-analytics",
+      "/licensing/applications/applicationsDetails",
+      "/licensing/license/LicenseDatails",
+      "/licensing/Profile/ProfileDetails",
+      "/happiness/tickets",
+      "/happiness/customerManagement",
+      "/happiness/refunds",
+      "/happiness/appeals",
+      "/happiness/tickets/tickets-details",
+      "/happiness/customerManagement/customer-details",
+      "/happiness/customerManagement/customerProfileDetail",
+      "/happiness/refunds/refundsDetails",
+      "/happiness/appeals/appealsDetails",
+      "/changepassword",
+      "/forgotpassword",
+      "/newpassword",
+      "/notifications"
+    ],
+    "referenceTime": {
+      "nowUtc": "2026-09-28T23:12:24.797305+00:00",
+      "source": "server_clock_and_config",
+      "businessNow": "2026-09-29T03:12:24.797305+04:00",
+      "businessDate": "2026-09-29",
+      "businessTimezone": "Asia/Dubai"
+    },
+    "catalogVersion": "923ec44fe50a2342995e281c82aafca24ba1f1db20bf2c2184ec663e33329bf1",
+    "responseLanguage": "ar",
+    "clarificationAnswer": null
+  },
+  "evidence": {
+    "audit": "test/runtime/groups1113-20260928/round28-g15-v37/C-05__ar/audit-db.json",
+    "sha256": "a324a69252ec002cda7e0f3993522b7541797b61e8bd62b54c47d6fbf3836391",
+    "result": "test/runtime/groups1113-20260928/round28-g15-v37/C-05__ar/result.json",
+    "resultSha256": "d405622d4ed156bfb01feaa14377b45cb8567965fb7974124d077ffb21f05e75"
+  }
+}

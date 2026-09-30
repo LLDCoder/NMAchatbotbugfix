@@ -1,0 +1,43 @@
+@import "@/styles/variables.less";
+
+.application-delivery-card {
+  box-sizing: border-box;
+  padding: 24px;
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+.application-delivery-card__title {
+  margin: 0;
+  color: @text-color;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.application-delivery-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 24px 0 0;
+}
+
+.application-delivery-card__item {
+  min-width: 0;
+}
+
+.application-delivery-card__label {
+  color: #5f646d;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.application-delivery-card__value {
+  margin: 6px 0 0;
+  color: @text-color;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  overflow-wrap: anywhere;
+}

@@ -1,0 +1,98 @@
+@import "../ContentApplications/reset.less";
+@import "../ApplicationsDetails/index.less";
+
+.content-applications-details {
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  min-height: 100%;
+  padding-bottom: 0;
+  .detail-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 368px;
+    column-gap: 16px;
+    row-gap: 16px;
+    .center-item {
+      grid-column: 1;
+    }
+    .right-side {
+      grid-column: 2;
+      width: 100%;
+      min-width: 0;
+
+      // `ApplicationsDetails/index.less` defines `.body-right { width: 24%; }`
+      // which breaks this page's grid layout. Override locally.
+      .body-right {
+        width: 100%;
+        min-width: 0;
+      }
+      .right-item{
+        & + .right-item {
+          margin-top: 16px;
+        }
+      }
+    }
+    /*
+      Main content (3 cols) + info sidebar (1 col). Below the breakpoint the
+      sidebar stacks under the main content. Keep this override after the base
+      grid positions so they cannot recreate implicit columns.
+    */
+    @media (max-width: 1279.98px) {
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 16px;
+      .center-item,
+      .right-side {
+        grid-column: 1 / -1;
+      }
+      .center-item {
+        grid-row: 1;
+      }
+      .right-side {
+        grid-row: 2;
+
+        .body-right {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          align-items: start;
+        }
+      }
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      column-gap: 12px;
+      row-gap: 12px;
+    }
+  }
+  .collapse-content {
+    margin-top: 16px;
+  }
+
+  @media (max-width: 1919.98px) {
+    .permit-card,
+    .ai-content-check,
+    .ai-content-check .warning-panel,
+    .ai-content-check .file-display,
+    .application-details .service-fees,
+    .application-overview .application-overview-more-item {
+      padding: 24px;
+    }
+
+    .collapsible-card-header__toggle {
+      gap: 16px;
+      padding: 24px;
+    }
+
+    .collapsible-card-header--with-action
+      .collapsible-card-header__toggle {
+      padding-inline-end: 56px;
+    }
+
+    .collapsible-card-header__action {
+      inset-inline-end: 24px;
+    }
+
+    .timeline-card--sidebar .content-application-timeline__header {
+      padding: 24px;
+    }
+  }
+}

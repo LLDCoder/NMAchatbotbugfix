@@ -1,0 +1,285 @@
+
+
+.tickets-details{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow: visible;
+    padding-bottom: 0;
+    .tickets-details-hender-box{
+        margin-bottom: 16px;
+        background-color: #fff;
+        border-radius: 20px;
+        padding: 24px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        border-radius: 10px;
+        padding: 24px;
+      }
+    }
+    .tickets-details-tag {
+        width: 100%;
+        margin-bottom: 8px;
+        div{
+            display: inline-block;
+            border-radius: 4px;
+            gap: 8px;
+            opacity: 1;
+            padding-top: 2px;
+            padding-right: 6px;
+            padding-bottom: 2px;
+            padding-left: 6px;
+            border-bottom-width: 1px;
+            background-color: #F5F5F6;
+        }
+    }
+    .tickets-details-header-scroll {
+        min-width: 0;
+    }
+    .collapsible-card-header__toggle {
+        @media (max-width: 1919.98px) {
+            padding: 24px;
+        }
+    }
+    .collapsible-card-header--with-action .collapsible-card-header__toggle {
+        @media (max-width: 1919.98px) {
+            padding-inline-end: 56px;
+        }
+    }
+    .collapsible-card-header__action {
+        @media (max-width: 1919.98px) {
+            inset-inline-end: 24px;
+        }
+    }
+    .tickets-details-header{
+        display: flex;
+        .tickets-details-header-item{
+            display: flex;
+            align-items: center;
+            width: 16.66%;
+            .tickets-details-header-icon{
+                font-size: 0;
+                margin-right: 12px;
+                img{
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+            .tickets-details-header-field{
+                font-family: Inter;
+                font-weight: 400;
+                font-size: 14px;
+                color: #361E12;
+              /* rwd-ramp */
+              @media (max-width: 1919.98px) {
+                font-size: 12px;
+              }
+            }
+            .tickets-details-header-value{
+                font-family: Inter;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 24px;
+                color: #361E12;
+                white-space: nowrap;
+
+                /* Status tag inherits header semibold; use regular weight for tag text */
+                .tag_box {
+                    font-weight: 400;
+                }
+              /* rwd-ramp */
+              @media (max-width: 1919.98px) {
+                font-size: 14px;
+                line-height: 20px;
+              }
+            }
+            .tickets-details-header-value--overdue {
+                color: #ea4f49;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .tickets-details-header-item--ticket-number {
+                width: 22%;
+            }
+
+            .tickets-details-header-item--compact {
+                width: 15%;
+            }
+
+            .tickets-details-header-item--status,
+            .tickets-details-header-item--last-updated {
+                width: 20%;
+            }
+        }
+    }
+    @media (max-width: 1919.98px) {
+        .tickets-details-header-scroll {
+            overflow-x: auto;
+            overscroll-behavior-x: contain;
+        }
+        .tickets-details-header {
+            width: max-content;
+        }
+        .tickets-details-header-item {
+            width: 280px;
+            min-width: 280px;
+            flex: 0 0 280px;
+        }
+    }
+    .tickets-details-content{
+        display: flex;
+        /* Stack the sidebar below the main content in the tablet band. */
+        @media (max-width: 1279.98px) {
+          flex-direction: column;
+          gap: 16px;
+        }
+        column-gap: 16px;
+        .tickets-details-content-left{
+            flex: 1;
+            word-break: break-all;
+
+            /* Basic Information / Communication Records (and other left column blocks) share one title style */
+            .tickets-details-section-title {
+                font-family: Inter;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 24px;
+                color: #361E12;
+                margin-bottom: 24px;
+              /* rwd-ramp */
+              @media (max-width: 1919.98px) {
+                font-size: 18px;
+                line-height: 20px;
+              }
+            }
+        }
+        .tickets-details-content-right{
+            flex: 0 0 368px;
+            width: 368px;
+            min-width: 368px;
+            max-width: 368px;
+            @media (max-width: 1279.98px) {
+                flex-basis: auto;
+                width: 100%;
+                min-width: 0;
+                max-width: none;
+
+                .body-right {
+                    display: grid;
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                }
+            }
+        }
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        column-gap: 12px;
+      }
+    }
+    /* Bottom bar: linear gradient (#EEEDEA); no frosted glass; shorter than default CustomFooter */
+    .form-footer {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: linear-gradient(180deg, rgba(238, 237, 234, 0) 0%, #eeedea 50%);
+        height: auto;
+        min-height: 0;
+        padding-top: 16px;
+        padding-bottom: 0;
+        padding-inline: 24px;
+        box-sizing: border-box;
+    }
+
+    .form-footer > :last-child button {
+        margin-left: 0;
+    }
+
+    .tickets-details-right-btn{
+        display: flex;
+        align-items: center;
+        column-gap: 16px;
+
+        .custom-button {
+            width: 128px;
+            min-width: 128px;
+            height: 48px;
+            padding: 0 12px;
+            box-sizing: border-box;
+        }
+
+        /* Between default 1px (too thin) and 2px (too heavy): 1.5px + slightly deeper gold */
+        .tickets-details-send-back-btn.custom-button-outline {
+            border-width: 1.5px;
+            border-color: #7a6524;
+
+            &:hover:not(:disabled),
+            &:focus:not(:disabled) {
+                border-width: 1.5px;
+                border-color: #6b5a20;
+            }
+        }
+
+        .ticket-status-text{
+            font-family: Inter;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            color: #5F646D;
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+        .ticket-status-value{
+            font-family: Inter;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            color: #361E12;
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        column-gap: 12px;
+      }
+    }
+}
+.overview-title {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #361E12;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    b {
+        font-weight: 500;
+    }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+.tickets-details__fullscreen-wrap {
+    min-height: 640px;
+}
+
+.tickets-details__target-overview-fullscreen {
+    width: 100%;
+    min-height: 640px;
+}
+
+.tickets-details__target-overview-fullscreen .customer-details-page.expend-box {
+    width: 100%;
+    min-height: 640px;
+    height: auto;
+    overflow: visible;
+}

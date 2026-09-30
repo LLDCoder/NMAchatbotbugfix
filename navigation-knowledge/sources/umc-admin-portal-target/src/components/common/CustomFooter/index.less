@@ -1,0 +1,48 @@
+@import "@/styles/variables.less";
+
+.custom-footer,
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 84px;
+  align-items: flex-end;
+  padding: 16px 0 0;
+  box-sizing: border-box;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.custom-footer__back-slot {
+  flex: 1;
+  min-width: 0;
+}
+
+.custom-footer__actions,
+.form-footer > :last-child {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  min-width: 0;
+  flex-wrap: wrap;
+
+  button + button {
+    margin-left: 0;
+  }
+
+  ._danger-line {
+    color: @darger-color;
+    border-color: @darger-color;
+  }
+
+  ._danger-line:hover {
+    background-color: @bg-danger-color;
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}

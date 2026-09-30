@@ -1,0 +1,86 @@
+.tickets-details-basic-info {
+  border-radius: 20px;
+  padding: 24px;
+  background-color: #fff;
+  .tickets-details-basic-items {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 16px;
+    row-gap: 20px;
+    .tickets-details-basic-item {
+      width: calc(50% - 8px);
+      .tickets-details-basic-field {
+        font-family: Inter;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        color: #797e86;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 12px;
+          line-height: 16px;
+        }
+      }
+      .tickets-details-basic-value {
+        margin-top: 4px;
+        font-family: Inter;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: #361e12;
+        word-wrap: normal;
+        word-break: keep-all;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+      .tickets-details-basic-field-desc {
+        width: 400px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .tickets-details-basic-field-desc-no-hidden {
+        width: 400px;
+        max-width: 100%;
+        white-space: normal;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+      }
+      .cursor-box{
+        cursor: pointer;
+      }
+      .tickets-details-basic-appnum {
+        color: #92722a;
+      }
+    }
+    .tickets-details-basic-attachments {
+      width: 100%;
+
+      .tickets-details-basic-value {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        & > div {
+          width: calc(50% - 8px);
+        }
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          gap: 12px;
+        }
+      }
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      column-gap: 12px;
+      row-gap: 12px;
+    }
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+    padding: 24px;
+  }
+}

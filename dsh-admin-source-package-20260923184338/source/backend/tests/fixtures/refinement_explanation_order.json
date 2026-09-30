@@ -1,0 +1,1465 @@
+[
+  {
+    "sourcePath": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/groups1113-20260928/round14-i03-corrected/answers/I-03__en-ar.json",
+    "sourceSHA256": "5a9f5f6cc67d6e761e447eff5d22bdc62b283248d01332bb33726f3d65fa8138",
+    "language": "ar",
+    "originalQuestion": "ما الحالة الحالية ومبلغ الاسترداد وعملته وتاريخ آخر تحديث للاسترداد HC-02-2026-0507490؟",
+    "draft": {
+      "view": "",
+      "stage": "task",
+      "filters": [],
+      "groupBy": [],
+      "readOnly": true,
+      "timeField": "",
+      "timeRange": "unknown",
+      "outputShape": "detail",
+      "searchQuery": "refund HC-02-2026-0507490 current status refund amount currency last updated date",
+      "slotUpdates": [
+        {
+          "field": "businessObject",
+          "value": "refund",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "requestedGrain",
+          "value": "refund",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "requestedAttributes",
+          "value": [
+            "status",
+            "refund amount",
+            "currency",
+            "last-updated date"
+          ],
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "outputShape",
+          "value": "detail",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "recordIdentity",
+          "value": "HC-02-2026-0507490",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "businessFocus",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedScope",
+          "value": "unknown",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedMeasures",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupBy",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeRange",
+          "value": "unknown",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "filters",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "view",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeField",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedOrdering",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupCompleteness",
+          "value": "observed",
+          "source": "current",
+          "evidence": "parsed current request"
+        }
+      ],
+      "responseMode": "answer",
+      "businessFocus": "",
+      "clarification": null,
+      "needsLiveData": true,
+      "businessObject": "refund",
+      "recordIdentity": "HC-02-2026-0507490",
+      "requestedGrain": "refund",
+      "requestedScope": "unknown",
+      "contextRelation": "continue",
+      "unresolvedSlots": [],
+      "groupCompleteness": "observed",
+      "requestBoundaries": [],
+      "requestedMeasures": [],
+      "requestedOrdering": [],
+      "requestedAttributes": [
+        "status",
+        "refund amount",
+        "currency",
+        "last-updated date"
+      ],
+      "evidenceExplanations": []
+    },
+    "rejectedCandidates": [
+      {
+        "view": "",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "detail",
+        "searchQuery": "refund HC-02-2026-0507490 current status refund amount currency last updated date",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "refund",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "requestedGrain",
+            "value": "refund",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [
+              "status",
+              "refund amount",
+              "currency",
+              "last-updated date"
+            ],
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "outputShape",
+            "value": "detail",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "recordIdentity",
+            "value": "HC-02-2026-0507490",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "businessFocus",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedScope",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "view",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "current",
+            "evidence": "parsed current request"
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "",
+        "clarification": null,
+        "needsLiveData": true,
+        "businessObject": "refund",
+        "recordIdentity": "HC-02-2026-0507490",
+        "requestedGrain": "refund",
+        "requestedScope": "unknown",
+        "contextRelation": "continue",
+        "unresolvedSlots": [],
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [
+          "status",
+          "refund amount",
+          "currency",
+          "last-updated date"
+        ],
+        "evidenceExplanations": [
+          {
+            "kind": "knowledge_guidance",
+            "attribute": "currency",
+            "questionQuote": "وعملته"
+          },
+          {
+            "kind": "knowledge_guidance",
+            "attribute": "last-updated date",
+            "questionQuote": "وتاريخ آخر تحديث"
+          }
+        ]
+      },
+      {
+        "view": "",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "detail",
+        "searchQuery": "refund HC-02-2026-0507490 current status refund amount currency last updated date",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "refund",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "requestedGrain",
+            "value": "refund",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [
+              "status",
+              "refund amount",
+              "currency",
+              "last-updated date"
+            ],
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "outputShape",
+            "value": "detail",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "recordIdentity",
+            "value": "HC-02-2026-0507490",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "businessFocus",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedScope",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "view",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "current",
+            "evidence": "parsed current request"
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "",
+        "clarification": null,
+        "needsLiveData": true,
+        "businessObject": "refund",
+        "recordIdentity": "HC-02-2026-0507490",
+        "requestedGrain": "refund",
+        "requestedScope": "unknown",
+        "contextRelation": "continue",
+        "unresolvedSlots": [],
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [
+          "status",
+          "refund amount",
+          "currency",
+          "last-updated date"
+        ],
+        "evidenceExplanations": [
+          {
+            "kind": "knowledge_guidance",
+            "attribute": "currency",
+            "questionQuote": "وعملته",
+            "aboutAttribute": ""
+          },
+          {
+            "kind": "knowledge_guidance",
+            "attribute": "last-updated date",
+            "questionQuote": "وتاريخ آخر تحديث",
+            "aboutAttribute": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "sourcePath": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/targeted-g810-20260928/f09-en-v28-diagnostic.json",
+    "sourceSHA256": "064c8207127613b52eda1858d783a0fa9c5e7973a71e92cdb512d6b06c3e9136",
+    "language": "en",
+    "originalQuestion": "",
+    "draft": {
+      "view": "",
+      "stage": "task",
+      "filters": [],
+      "groupBy": [],
+      "readOnly": true,
+      "timeField": "",
+      "timeRange": "unknown",
+      "outputShape": "detail",
+      "searchQuery": "payment status discrepancy portal Paid finance system Pending reconciliation status sync",
+      "slotUpdates": [
+        {
+          "field": "businessObject",
+          "value": "payment transaction",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "businessFocus",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedScope",
+          "value": "unknown",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedGrain",
+          "value": "payment transaction",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedMeasures",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedAttributes",
+          "value": [
+            "portal payment status",
+            "finance system payment status",
+            "reason for status discrepancy between portal and finance system",
+            "portal status timestamp",
+            "finance system status timestamp"
+          ],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupBy",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeRange",
+          "value": "unknown",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "filters",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "outputShape",
+          "value": "detail",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "recordIdentity",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "view",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeField",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedOrdering",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupCompleteness",
+          "value": "observed",
+          "source": "current",
+          "evidence": "parsed current request"
+        }
+      ],
+      "responseMode": "answer",
+      "businessFocus": "",
+      "clarification": null,
+      "needsLiveData": true,
+      "businessObject": "payment transaction",
+      "recordIdentity": "",
+      "requestedGrain": "payment transaction",
+      "requestedScope": "unknown",
+      "contextRelation": "new",
+      "unresolvedSlots": [
+        "recordIdentity"
+      ],
+      "groupCompleteness": "observed",
+      "requestBoundaries": [],
+      "requestedMeasures": [],
+      "requestedOrdering": [],
+      "requestedAttributes": [
+        "portal payment status",
+        "finance system payment status",
+        "reason for status discrepancy between portal and finance system",
+        "portal status timestamp",
+        "finance system status timestamp"
+      ],
+      "evidenceExplanations": []
+    },
+    "rejectedCandidates": [
+      {
+        "view": "",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "detail",
+        "searchQuery": "payment status discrepancy portal Paid finance system Pending reconciliation status sync",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "payment transaction",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "businessFocus",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedScope",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedGrain",
+            "value": "payment transaction",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [
+              "portal payment status",
+              "finance system payment status",
+              "reason for status discrepancy between portal and finance system",
+              "portal status timestamp",
+              "finance system status timestamp"
+            ],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "outputShape",
+            "value": "detail",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "recordIdentity",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "view",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "current",
+            "evidence": "parsed current request"
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "",
+        "clarification": {
+          "options": [],
+          "question": "Which payment transaction should I investigate for the Paid vs Pending discrepancy?",
+          "missingSlots": [
+            "recordIdentity"
+          ]
+        },
+        "needsLiveData": true,
+        "businessObject": "payment transaction",
+        "recordIdentity": "",
+        "requestedGrain": "payment transaction",
+        "requestedScope": "unknown",
+        "contextRelation": "new",
+        "unresolvedSlots": [
+          "recordIdentity"
+        ],
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [
+          "portal payment status",
+          "finance system payment status",
+          "reason for status discrepancy between portal and finance system",
+          "portal status timestamp",
+          "finance system status timestamp"
+        ],
+        "evidenceExplanations": [
+          {
+            "kind": "source",
+            "attribute": "portal payment status",
+            "questionQuote": "Why does the portal show Paid",
+            "aboutAttribute": "portal payment status"
+          },
+          {
+            "kind": "source",
+            "attribute": "finance system payment status",
+            "questionQuote": "while the finance system shows Pending?",
+            "aboutAttribute": "finance system payment status"
+          },
+          {
+            "kind": "knowledge_guidance",
+            "attribute": "reason for status discrepancy between portal and finance system",
+            "questionQuote": "Why does the portal show Paid while the finance system shows Pending?"
+          }
+        ]
+      },
+      {
+        "view": "",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "detail",
+        "searchQuery": "payment status discrepancy portal Paid finance system Pending reconciliation status sync",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "payment transaction",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "businessFocus",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedScope",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedGrain",
+            "value": "payment transaction",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [
+              "portal payment status",
+              "finance system payment status",
+              "reason for status discrepancy between portal and finance system",
+              "portal status timestamp",
+              "finance system status timestamp"
+            ],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "outputShape",
+            "value": "detail",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "recordIdentity",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "view",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "current",
+            "evidence": "parsed current request"
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "",
+        "clarification": null,
+        "needsLiveData": true,
+        "businessObject": "payment transaction",
+        "recordIdentity": "",
+        "requestedGrain": "payment transaction",
+        "requestedScope": "unknown",
+        "contextRelation": "new",
+        "unresolvedSlots": [
+          "recordIdentity"
+        ],
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [
+          "portal payment status",
+          "finance system payment status",
+          "reason for status discrepancy between portal and finance system",
+          "portal status timestamp",
+          "finance system status timestamp"
+        ],
+        "evidenceExplanations": [
+          {
+            "kind": "source",
+            "attribute": "portal payment status",
+            "questionQuote": "Why does the portal show Paid",
+            "aboutAttribute": "portal status timestamp"
+          },
+          {
+            "kind": "source",
+            "attribute": "finance system payment status",
+            "questionQuote": "while the finance system shows Pending?",
+            "aboutAttribute": "finance system status timestamp"
+          },
+          {
+            "kind": "knowledge_guidance",
+            "attribute": "reason for status discrepancy between portal and finance system",
+            "questionQuote": "Why does the portal show Paid while the finance system shows Pending?"
+          }
+        ]
+      },
+      {
+        "view": "",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "detail",
+        "searchQuery": "payment status discrepancy portal Paid finance system Pending reconciliation status sync",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "payment transaction",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "businessFocus",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedScope",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedGrain",
+            "value": "payment transaction",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [
+              "portal payment status",
+              "finance system payment status",
+              "reason for status discrepancy between portal and finance system",
+              "portal status timestamp",
+              "finance system status timestamp"
+            ],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "outputShape",
+            "value": "detail",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "recordIdentity",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "view",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "current",
+            "evidence": "parsed current request"
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "",
+        "clarification": null,
+        "needsLiveData": true,
+        "businessObject": "payment transaction",
+        "recordIdentity": "",
+        "requestedGrain": "payment transaction",
+        "requestedScope": "unknown",
+        "contextRelation": "new",
+        "unresolvedSlots": [
+          "recordIdentity"
+        ],
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [
+          "portal payment status",
+          "finance system payment status",
+          "reason for status discrepancy between portal and finance system",
+          "portal status timestamp",
+          "finance system status timestamp"
+        ],
+        "evidenceExplanations": [
+          {
+            "kind": "source",
+            "attribute": "portal payment status",
+            "questionQuote": "Why does the portal show Paid",
+            "aboutAttribute": "portal status timestamp"
+          },
+          {
+            "kind": "source",
+            "attribute": "finance system payment status",
+            "questionQuote": "while the finance system shows Pending",
+            "aboutAttribute": "finance system status timestamp"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "sourcePath": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/targeted-g810-20260928/f09-ar-v28-diagnostic.json",
+    "sourceSHA256": "52d326b3583b6fb0adb45e760881b1192265bb3386ebda985e8f6805d4cb85e9",
+    "language": "ar",
+    "originalQuestion": "لماذا تعرض البوابة حالة مدفوع بينما يعرض النظام المالي حالة قيد الانتظار؟",
+    "draft": {
+      "view": "",
+      "stage": "task",
+      "filters": [],
+      "groupBy": [],
+      "readOnly": true,
+      "timeField": "",
+      "timeRange": "unknown",
+      "outputShape": "detail",
+      "searchQuery": "payment transaction status discrepancy portal paid financial system pending reconciliation",
+      "slotUpdates": [
+        {
+          "field": "businessObject",
+          "value": "payment transaction",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "businessFocus",
+          "value": "status discrepancy between portal and financial system",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedAttributes",
+          "value": [
+            "portal-reported status",
+            "financial system-reported status",
+            "portal status timestamp",
+            "financial system status timestamp",
+            "reason for status discrepancy"
+          ],
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "outputShape",
+          "value": "detail",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedScope",
+          "value": "unknown",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedGrain",
+          "value": "payment transaction",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedMeasures",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupBy",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeRange",
+          "value": "unknown",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "filters",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "recordIdentity",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "view",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeField",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedOrdering",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupCompleteness",
+          "value": "observed",
+          "source": "current",
+          "evidence": "parsed current request"
+        }
+      ],
+      "responseMode": "answer",
+      "businessFocus": "status discrepancy between portal and financial system",
+      "clarification": null,
+      "needsLiveData": true,
+      "businessObject": "payment transaction",
+      "recordIdentity": "",
+      "requestedGrain": "payment transaction",
+      "requestedScope": "unknown",
+      "contextRelation": "new",
+      "unresolvedSlots": [],
+      "groupCompleteness": "observed",
+      "requestBoundaries": [],
+      "requestedMeasures": [],
+      "requestedOrdering": [],
+      "requestedAttributes": [
+        "portal-reported status",
+        "financial system-reported status",
+        "portal status timestamp",
+        "financial system status timestamp",
+        "reason for status discrepancy"
+      ],
+      "evidenceExplanations": []
+    },
+    "rejectedCandidates": [
+      {
+        "view": "",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "detail",
+        "searchQuery": "payment transaction status discrepancy portal paid financial system pending reconciliation",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "payment transaction",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "businessFocus",
+            "value": "status discrepancy between portal and financial system",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [
+              "portal-reported status",
+              "financial system-reported status",
+              "portal status timestamp",
+              "financial system status timestamp",
+              "reason for status discrepancy"
+            ],
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "outputShape",
+            "value": "detail",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedScope",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedGrain",
+            "value": "payment transaction",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "recordIdentity",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "view",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "current",
+            "evidence": "parsed current request"
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "status discrepancy between portal and financial system",
+        "clarification": null,
+        "needsLiveData": true,
+        "businessObject": "payment transaction",
+        "recordIdentity": "",
+        "requestedGrain": "payment transaction",
+        "requestedScope": "unknown",
+        "contextRelation": "new",
+        "unresolvedSlots": [],
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [
+          "portal-reported status",
+          "financial system-reported status",
+          "portal status timestamp",
+          "financial system status timestamp",
+          "reason for status discrepancy"
+        ],
+        "evidenceExplanations": [
+          {
+            "kind": "source",
+            "attribute": "portal-reported status",
+            "questionQuote": "تعرض البوابة حالة مدفوع",
+            "aboutAttribute": "portal-reported status"
+          },
+          {
+            "kind": "source",
+            "attribute": "financial system-reported status",
+            "questionQuote": "يعرض النظام المالي حالة قيد الانتظار",
+            "aboutAttribute": "financial system-reported status"
+          },
+          {
+            "kind": "knowledge_guidance",
+            "attribute": "reason for status discrepancy",
+            "questionQuote": "لماذا تعرض البوابة حالة مدفوع بينما يعرض النظام المالي حالة قيد الانتظار؟"
+          }
+        ]
+      },
+      {
+        "view": "",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "detail",
+        "searchQuery": "payment transaction status discrepancy portal paid financial system pending reconciliation",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "payment transaction",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "businessFocus",
+            "value": "status discrepancy between portal and financial system",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [
+              "portal-reported status",
+              "financial system-reported status",
+              "portal status timestamp",
+              "financial system status timestamp",
+              "reason for status discrepancy"
+            ],
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "outputShape",
+            "value": "detail",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedScope",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedGrain",
+            "value": "payment transaction",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "recordIdentity",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "view",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "current",
+            "evidence": "parsed current request"
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "status discrepancy between portal and financial system",
+        "clarification": null,
+        "needsLiveData": true,
+        "businessObject": "payment transaction",
+        "recordIdentity": "",
+        "requestedGrain": "payment transaction",
+        "requestedScope": "unknown",
+        "contextRelation": "new",
+        "unresolvedSlots": [],
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [
+          "portal-reported status",
+          "financial system-reported status",
+          "portal status timestamp",
+          "financial system status timestamp",
+          "reason for status discrepancy"
+        ],
+        "evidenceExplanations": [
+          {
+            "kind": "source",
+            "attribute": "portal-reported status",
+            "questionQuote": "تعرض البوابة حالة مدفوع",
+            "aboutAttribute": "portal-reported status"
+          },
+          {
+            "kind": "source",
+            "attribute": "financial system-reported status",
+            "questionQuote": "بينما يعرض النظام المالي حالة قيد الانتظار",
+            "aboutAttribute": "financial system-reported status"
+          },
+          {
+            "kind": "observation_time",
+            "attribute": "portal status timestamp",
+            "questionQuote": "تعرض البوابة حالة مدفوع",
+            "aboutAttribute": "portal-reported status"
+          },
+          {
+            "kind": "observation_time",
+            "attribute": "financial system status timestamp",
+            "questionQuote": "بينما يعرض النظام المالي حالة قيد الانتظار",
+            "aboutAttribute": "financial system-reported status"
+          },
+          {
+            "kind": "knowledge_guidance",
+            "attribute": "reason for status discrepancy",
+            "questionQuote": "لماذا تعرض البوابة حالة مدفوع بينما يعرض النظام المالي حالة قيد الانتظار؟"
+          }
+        ]
+      }
+    ]
+  }
+]

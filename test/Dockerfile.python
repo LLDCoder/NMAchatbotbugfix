@@ -1,0 +1,8 @@
+FROM python:3.12-slim
+ARG COMPONENT
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
+WORKDIR /app
+COPY dsh-admin-source-package-20260923184338/source/${COMPONENT}/requirements.txt /app/requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+RUN if [ "$COMPONENT" = "platform-gateway" ]; then playwright install --with-deps chromium; fi
+COPY dsh-admin-source-package-20260923184338/source/${COMPONENT}/ /app/

@@ -1,0 +1,464 @@
+{
+  "schemaVersion": "1.0",
+  "bundleId": "admin.content.team-management.all-types-and-handler.package",
+  "createdAt": "2026-09-27T13:38:36.812823+00:00",
+  "packageStatus": "active",
+  "records": [
+    {
+      "id": "admin.content.team-management.all-types-and-handler",
+      "kind": "field_semantics",
+      "revision": 3,
+      "status": "active",
+      "title": "Content Team Management all-category To Do queue and current handler",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local",
+          "debug"
+        ],
+        "pageRefs": [
+          "/content/team-management"
+        ],
+        "sourceSnapshot": "source-inspected-20260924",
+        "runtimeVerification": "response_shape_verified",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/TeamManagement/TeamManagementDtos.cs",
+          "revision": "81ce9486fbec35ff0971fbcd8d7b164c4b64fe9e84d2346282b4f69b313965cc",
+          "locator": "TaskQueryRequest; TaskItemDto; SlaDto declarations",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ContentTeamManagement/ContentTeamManagementAppService.cs",
+          "revision": "da6ed5669b0e535c16fc22ab6aa083c23de7aab17f70efc5e4f8e5c9c05ceaaf",
+          "locator": "QueryTasksV2Async",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/teamManagement.ts",
+          "revision": "d5b960da8ae6422a95ba3807237d9c4ba30cfecc526d6a5730b93bf2f9be79ab",
+          "locator": "buildLicensingTaskQueryPayload; buildContentTaskQueryPayload",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/TeamManagement/components/TeamTasksPanel/utils.ts",
+          "revision": "1495f5802007cfb67030bd9ec006d355896fa105b7621db645f1c7aecda830c5",
+          "locator": "buildTeamTaskRequestPayload",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "runtime_observation",
+          "reference": "test/runtime/sequential-repair-batch4-20260927/baselines/content-team-all-pages.json",
+          "revision": "sha256:a0a8be58335a710f4486bbfd202932806dc40b5cc6e705a99e719c4165fea96a",
+          "locator": "Complete authenticated all-category To Do response shape and request context; no sample values included",
+          "verification": "response_shape_verified"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ContentTeamManagement/ContentTeamManagementAppService.cs",
+          "revision": "sha256:da6ed5669b0e535c16fc22ab6aa083c23de7aab17f70efc5e4f8e5c9c05ceaaf",
+          "locator": "QueryTasksV2Async lines 463-485: BuildContentTaskQuery then CountAsync; typed SourceType/SourceId projection",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ContentTeamManagement/ContentTeamManagementTaskQuery.cs",
+          "revision": "sha256:63af349a67abeeb9d2172573bc9b5f83c3ed9cdf8c368a2acb8e1524c43559bf",
+          "locator": "BuildApplication query: To Do StatusCode is processStatusCode; StatusFilterCode uses taskStatusCode",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/TeamManagement/TeamManagementDtos.cs",
+          "revision": "sha256:81ce9486fbec35ff0971fbcd8d7b164c4b64fe9e84d2346282b4f69b313965cc",
+          "locator": "TeamManagementTaskItemDto.StatusId string property",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "verified_document",
+          "reference": "test/runtime/groups05-07-repair-20260928/baselines/team-current-state.json",
+          "revision": "sha256:4be7e8d359b51fa45706072aff9958150842ccddd6391d1120bc502696422fe3",
+          "locator": "Read-only live 100-row sample and metadata: current state differs from task-node filter code; no full-population count asserted",
+          "verification": "live_read_verified"
+        }
+      ],
+      "payload": {
+        "pageRef": "/content/team-management",
+        "view": "todo",
+        "bindings": [
+          {
+            "id": "task_object",
+            "kind": "object",
+            "concept": "task",
+            "aliases": [
+              "tasks",
+              "team tasks",
+              "team application tasks"
+            ],
+            "operationRef": "POST /api/content/team-management/tasks/query",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "sourceType",
+              "sourceId"
+            ],
+            "meaning": "Typed team queue item; sourceId is interpreted within sourceType."
+          },
+          {
+            "id": "task_grain",
+            "kind": "grain",
+            "concept": "task",
+            "aliases": [
+              "tasks",
+              "team task"
+            ],
+            "operationRef": "POST /api/content/team-management/tasks/query",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "sourceType",
+              "sourceId"
+            ],
+            "meaning": "Composite queue identity is (sourceType, sourceId); taskNo is a display/business identifier."
+          },
+          {
+            "id": "team_scope",
+            "kind": "scope",
+            "concept": "team",
+            "aliases": [
+              "managed team",
+              "my team"
+            ],
+            "operationRef": "POST /api/content/team-management/tasks/query",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "sourceType",
+              "sourceId"
+            ],
+            "meaning": "All-category Content team workspace To Do queue returned under the current authenticated service authorization. This is not the personal queue and not a proved direct-report employment hierarchy.",
+            "contextParameters": {
+              "view": "todo",
+              "applicationTaskOnly": false,
+              "category": "all"
+            }
+          },
+          {
+            "id": "population",
+            "kind": "population",
+            "concept": "pending",
+            "aliases": [
+              "pending tasks",
+              "to do",
+              "outstanding"
+            ],
+            "operationRef": "POST /api/content/team-management/tasks/query",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "sourceType",
+              "sourceId"
+            ],
+            "meaning": "Queue lifecycle follows the view parameter; returned/send-back status remains a distinct dimension.",
+            "contextParameters": {
+              "view": "todo",
+              "applicationTaskOnly": false,
+              "category": "all"
+            }
+          },
+          {
+            "id": "handler",
+            "kind": "attribute",
+            "concept": "current handler",
+            "aliases": [
+              "handler",
+              "handlers",
+              "assigned to",
+              "assignee",
+              "المسؤول الحالي"
+            ],
+            "fields": [
+              "assignedTo"
+            ],
+            "operationRef": "POST /api/content/team-management/tasks/query",
+            "sourcePath": "/data/page/items",
+            "meaning": "Returned public display for the current task. Empty display is unavailable, not proof of a named handler or an unassigned state."
+          },
+          {
+            "id": "task_reference",
+            "kind": "attribute",
+            "concept": "task number",
+            "aliases": [
+              "task reference",
+              "task identifier",
+              "task",
+              "رقم المهمة"
+            ],
+            "fields": [
+              "taskNo"
+            ],
+            "operationRef": "POST /api/content/team-management/tasks/query",
+            "sourcePath": "/data/page/items",
+            "meaning": "Returned public display for the current task. Empty display is unavailable, not proof of a named handler or an unassigned state."
+          },
+          {
+            "id": "status_attribute",
+            "kind": "attribute",
+            "concept": "status",
+            "aliases": [
+              "current status",
+              "حالة المهمة"
+            ],
+            "fields": [
+              "statusDisplay"
+            ],
+            "operationRef": "POST /api/content/team-management/tasks/query",
+            "sourcePath": "/data/page/items",
+            "meaning": "Returned public display for the current task. Empty display is unavailable, not proof of a named handler or an unassigned state."
+          },
+          {
+            "id": "category_attribute",
+            "kind": "attribute",
+            "concept": "category",
+            "aliases": [
+              "task category",
+              "نوع المهمة"
+            ],
+            "fields": [
+              "taskCategoryDisplay"
+            ],
+            "operationRef": "POST /api/content/team-management/tasks/query",
+            "sourcePath": "/data/page/items",
+            "meaning": "Returned public display for the current task. Empty display is unavailable, not proof of a named handler or an unassigned state."
+          },
+          {
+            "id": "owner_group",
+            "kind": "group",
+            "concept": "member",
+            "aliases": [
+              "team member",
+              "officer",
+              "employee",
+              "handler",
+              "staff",
+              "الموظف",
+              "عضو الفريق"
+            ],
+            "operationRef": "POST /api/content/team-management/tasks/query",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "assignedToUserId"
+            ],
+            "meaning": "Current task assignment key, joined to the current authorized workspace member list; missing or unmatched keys remain unconfirmed and are not excluded from totals.",
+            "groupDomain": {
+              "operationRef": "GET /api/content/team-management/members",
+              "sourcePath": "/data/members",
+              "keyField": "userId",
+              "labelField": "userName",
+              "contextParameters": {
+                "applicationTaskOnly": false
+              }
+            }
+          },
+          {
+            "id": "all_category_pending_count",
+            "kind": "measure",
+            "concept": "pending tasks",
+            "aliases": [
+              "pending task count",
+              "pending count",
+              "pending",
+              "count of pending tasks",
+              "عدد المهام المعلقة",
+              "المهام المعلقة"
+            ],
+            "fields": [
+              "sourceType",
+              "sourceId"
+            ],
+            "operationRef": "POST /api/content/team-management/tasks/query",
+            "sourcePath": "/data/page/items",
+            "meaning": "Count distinct typed queue entities in the complete current authorized all-category To Do workspace. Preserve the composite (sourceType, sourceId) identity. This is the all-category counterpart of the application-only measure; it does not prove any direct-report relationship or expand the authenticated managed scope. Additional requested filters require separate verified bindings.",
+            "operator": "count",
+            "conditions": [],
+            "contextParameters": {
+              "view": "todo",
+              "applicationTaskOnly": false,
+              "category": "all"
+            }
+          },
+          {
+            "id": "current_pending_modification_count",
+            "kind": "measure",
+            "concept": "current Pending Modification tasks",
+            "aliases": [
+              "count of current Pending Modification tasks",
+              "currently pending modification tasks",
+              "current pending modification task count",
+              "مهام تنتظر التعديل حالياً"
+            ],
+            "operationRef": "POST /api/content/team-management/tasks/query",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "sourceType",
+              "sourceId",
+              "statusId"
+            ],
+            "operator": "count",
+            "conditions": [
+              {
+                "field": "sourceType",
+                "predicate": "eq",
+                "value": "application"
+              },
+              {
+                "field": "statusId",
+                "predicate": "eq",
+                "value": "13"
+              }
+            ],
+            "contextParameters": {
+              "view": "todo",
+              "applicationTaskOnly": false,
+              "category": "all"
+            },
+            "meaning": "Count typed application queue rows whose currently projected process state is Pending Modification. This does not count Send Back history/events, distinct applications, or prior approvals. The statusId type is string. statusCode is the task-node filter code and can disagree with the displayed current state; never substitute it."
+          }
+        ],
+        "sourceBinding": {
+          "operationRef": "POST /api/content/team-management/tasks/query",
+          "sourcePath": "/data/page/items"
+        },
+        "fields": {
+          "sourceType": "Entity/source discriminator.",
+          "sourceId": "Identifier within the source type.",
+          "taskNo": "Display task/application number; no uniqueness guarantee across source types.",
+          "taskCategoryCode": "Category code.",
+          "assignedToUserId": "Current handler identifier.",
+          "assignedTo": "Current handler display name.",
+          "statusCode": "Stable filter code.",
+          "status": "Localized status display.",
+          "statusDisplay": "Localized status display.",
+          "statusId": "For application rows on the To Do view, string-valued projected current process state (processStatusCode), not the task-node filter code. Pending Modification is the string 13 in the ApprovalNodeOrder state domain. Other source types have their own status domains.",
+          "lastUpdatedOn": "Latest source update timestamp.",
+          "isUrgent": "Business urgency flag returned by the query.",
+          "canReassign": "UI operation capability; it does not authorize the Reader to write.",
+          "sla": "Nested object; null means hidden/unavailable SLA, not zero. Contains remainingMinutes, displayText, isOverdue and dueOn.",
+          "detailTarget": "Returned navigation hint; validate against the existing page catalog and permitted parameter mappings before entering."
+        },
+        "pagination": {
+          "pageIndex": "1-based request page; nonpositive input falls back to 1 in the inspected V2 implementation.",
+          "pageSize": "Request page size; nonpositive input falls back to 20 in the inspected V2 implementation.",
+          "rowsPath": "/data/page/items",
+          "totalPath": "/data/page/total",
+          "total": "Count of filtered team query rows before paging."
+        },
+        "requestFields": {
+          "view": "todo or completed.",
+          "applicationTaskOnly": "Controls application-only versus mixed-source queue population.",
+          "category": "Category constraint; use the actual serialized request. all and applications are different parameter values even when a toggle narrows effective population.",
+          "memberId": "Optional current assignee filter.",
+          "keyword": "Optional search term.",
+          "status": "Stable source filter code.",
+          "lastUpdatedFrom": "Optional source update lower boundary.",
+          "lastUpdatedTo": "Optional source update upper boundary."
+        },
+        "routing": {
+          "views": [
+            {
+              "id": "todo",
+              "label": "To Do",
+              "aliases": [
+                "1",
+                "to do",
+                "pending queue"
+              ]
+            },
+            {
+              "id": "completed",
+              "label": "Completed",
+              "aliases": [
+                "2",
+                "completed queue"
+              ]
+            }
+          ],
+          "records": [
+            {
+              "id": "todo_business_number",
+              "operationRef": "POST /api/content/team-management/tasks/query",
+              "sourcePath": "/data/page/items",
+              "identityField": "taskNo",
+              "keyFields": [
+                "sourceType",
+                "sourceId"
+              ],
+              "unique": false
+            }
+          ]
+        },
+        "relationships": [
+          "One queue can contain different business source types; a task count is not automatically an application count.",
+          "Per-officer grouping uses assignedToUserId with its permitted display name. Null/unassigned rows remain separate; do not silently discard them.",
+          "Source status codes, task lifecycle view, urgency and overdue are independent dimensions. A returned status requires verified metadata mapping, not substring guessing.",
+          "All tasks means all enabled source categories in this workspace: do not silently switch applicationTaskOnly to true or category to applications. The application-only queue is a distinct subset.",
+          "The source implementation builds the Content department task workspace; it does not accept a manager identity to compute employment reporting lines. A separate request for direct reports needs authoritative member hierarchy evidence.",
+          "The all-category task table preserves null handler displays. assignedToUserId is for identity and grouping only, not a customer-facing column."
+        ],
+        "constraints": [
+          "This page knowledge does not authorize API access or business writes. A blocked or failed response is not an empty population.",
+          "A bounded page is not a complete population. Counts and grouping require complete collection at the requested entity grain and stable request context.",
+          "sla.isOverdue is a nested returned boolean. A null or unavailable SLA flag is unknown; do not replace it with an inferred remaining-minutes sign convention.",
+          "Content V2 computes remainingMinutes as now-minus-due and uses positive values for isOverdue; hidden SLA is null. Use the returned boolean and verify the deployed version.",
+          "A manager job title does not prove access to all team records or hidden staff notes.",
+          "The supplied contextParameters intentionally cover only one exact filter context. An additional date, member or status filter requires corresponding verified scope semantics.",
+          "The independent all-category request was read completely using the test manager session. The binding applies only when current page controls and captured request context agree; it never grants an API permission.",
+          "The complete current member list supplies zero-activity members and public display names; member cards with time windows do not replace complete current queue rows.",
+          "Keep missing assignment keys and assignments outside the verified member list separate and unconfirmed. Do not filter such tasks out of totals, infer a direct-report relationship, or turn an unknown member into zero.",
+          "The all-category pending count and all-category workspace scope use the same observed request context (todo, applicationTaskOnly=false, category=all). Do not toggle back to application-only to satisfy a measure defined for a narrower population. Keep the existing application-only measure available only with its own exact context. Neither count grants wider team authorization or makes an empty managed-member list equal to the entire department.",
+          "Verified live rows demonstrate both current statusId=\"13\" with statusCode=\"applicationWorkflow:2\" and statusId=\"2\" with statusCode=\"applicationWorkflow:13\". Current Pending Modification must therefore use sourceType=\"application\" AND statusId=\"13\", retaining the string type; matching statusCode suffix 13 counts the wrong population. Metadata display labels are filter options, not equivalent row encodings. This current-state measure requires full projection of statusId; a missing projected field is not null or zero."
+        ],
+        "pageReads": [
+          {
+            "operationKey": "GET /api/content/team-management/members",
+            "requiredScope": "team",
+            "requiredObjects": [
+              "task",
+              "tasks",
+              "team tasks",
+              "ticket",
+              "tickets",
+              "complaint and enquiry",
+              "complaints and enquiries",
+              "مهام",
+              "تذاكر",
+              "شكوى واستفسار"
+            ],
+            "requiredFor": [
+              "member",
+              "members",
+              "each member",
+              "officer",
+              "handler",
+              "employee",
+              "staff",
+              "الموظف",
+              "عضو الفريق"
+            ],
+            "parameters": {
+              "applicationTaskOnly": false
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "searchMetadata": {
+    "titleEnglish": "Content Team Management all current tasks and handlers",
+    "titleArabic": "إدارة فريق المحتوى: جميع المهام الحالية والمسؤولون عنها",
+    "descriptionEnglish": "All-category To Do task population, typed entity identity, handler display and missing handler semantics; applications-only is a different population.",
+    "descriptionArabic": "مهام قائمة العمل لجميع الفئات وهوية المهمة واسم المسؤول الحالي. قائمة الطلبات فقط نطاق مختلف، والاسم الفارغ لا يثبت المسؤول."
+  }
+}

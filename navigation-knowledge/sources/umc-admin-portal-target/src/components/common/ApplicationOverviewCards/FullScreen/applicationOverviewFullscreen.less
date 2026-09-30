@@ -1,0 +1,604 @@
+@import "@/styles/variables.less";
+
+/**
+ * Shell styles for ApplicationOverview FullScreen.
+ * Previously these only existed under `.applications-details .expend-box`, so pages
+ * without that ancestor (e.g. license details) lost layout and card chrome.
+ */
+.application-overview-fullscreen {
+  width: 100%;
+  padding: 24px;
+  border-radius: 20px;
+  background-color: #fff;
+  box-sizing: border-box;
+
+  .title-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0;
+
+    .card-title {
+      color: @text-color;
+      font-weight: 500;
+      font-size: 20px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 18px;
+      }
+    }
+
+    .vip_text {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 500;
+      margin-right: 8px;
+
+      &.vip {
+        background-color: #fef5ee;
+        color: #eb5f24;
+      }
+
+      &.standard {
+        background-color: #e1e3e5;
+        color: #5f646d;
+      }
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+      }
+    }
+
+    .profile_status {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 500;
+
+      &.status_id_default {
+        background-color: #f3faf4;
+        color: #4a9d5c;
+      }
+
+      &.status_id_Approved {
+        background-color: #f3faf4;
+        color: #4a9d5c;
+      }
+
+      &.status_id_Suspended {
+        background-color: #fef2f2;
+        color: #ea4f49;
+      }
+
+      &.status_id_Expired {
+        background-color: #fef2f2;
+        color: #ea4f49;
+      }
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+      }
+    }
+
+    img {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+  }
+
+  .border-card2 {
+    border-radius: 12px;
+    margin-top: 24px;
+  }
+
+  .border-card {
+    border: 1px solid #e1e3e5;
+    padding: 24px;
+    border-radius: 12px;
+    margin-top: 24px;
+
+    .border-card-title {
+      font-weight: 500;
+      font-size: 18px;
+      color: @text-color;
+      margin-bottom: 24px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 16px;
+      }
+    }
+
+    .feild-item {
+      .feild-label {
+        font-size: 14px;
+        color: #797e86;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 12px;
+        }
+      }
+
+      .feild-value {
+        font-size: 16px;
+        color: @text-color;
+        margin-top: 6px;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 14px;
+        }
+      }
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      padding: 12px;
+    }
+  }
+
+  .ReviewPersonalInformation-section {
+    .section-content {
+      padding: 0;
+
+      .info-block {
+        border: 1px solid #e1e3e5;
+        padding: 24px;
+        border-radius: 12px;
+        margin-top: 24px;
+
+        &:first-child {
+          margin-top: 24px;
+        }
+
+        .block-title {
+          font-weight: 500;
+          font-size: 18px;
+          color: @text-color;
+          margin-bottom: 24px;
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            font-size: 16px;
+          }
+        }
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          padding: 12px;
+        }
+      }
+    }
+  }
+
+  .feild-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 16px;
+    }
+  }
+
+  .first-feild-list {
+    .feild-item:first-child {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .detail-partner-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+
+    .partner-item {
+      border-radius: 10px;
+      padding: 24px;
+      background-color: @primary-bgColor;
+
+      .partner-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 32px;
+
+        ._info {
+          .h3-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+          }
+
+          .info-item {
+            display: flex;
+            align-items: center;
+
+            img {
+              width: 16px;
+              height: 16px;
+              margin-right: 8px;
+            }
+
+            span {
+              font-weight: 400;
+              font-size: 16px;
+              color: @text-color;
+              /* rwd-ramp */
+              @media (max-width: 1919.98px) {
+                font-size: 14px;
+              }
+            }
+          }
+
+          .info-item:first-child {
+            margin-bottom: 12px;
+          }
+        }
+      }
+
+      ._profile {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #b68a351a;
+      }
+
+      .details-btn {
+        width: 140px;
+      }
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        padding: 12px;
+      }
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 12px;
+    }
+  }
+
+  .customer-details-tabs {
+    .ant-tabs-nav {
+      margin-bottom: 24px;
+    }
+
+    .ant-tabs-tab {
+      font-size: 16px;
+      font-weight: 500;
+      padding: 12px 0;
+      margin-right: 0;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 14px;
+      }
+    }
+
+    .ant-tabs-tab-active {
+      .ant-tabs-tab-btn {
+        color: @primary-color;
+      }
+    }
+
+    .ant-tabs-ink-bar {
+      background: @primary-color;
+    }
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    padding: 12px;
+    border-radius: 10px;
+  }
+}
+
+.application-overview-fullscreen__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0;
+}
+
+.application-overview-fullscreen__title-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.application-overview-fullscreen__title {
+  color: @text-color;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 18px;
+  }
+}
+
+.application-overview-fullscreen__tier-badge,
+.application-overview-fullscreen__status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 26px;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.application-overview-fullscreen__tier-badge--vip {
+  background-color: #fef5ee;
+  color: #eb5f24;
+}
+
+.application-overview-fullscreen__tier-badge--standard {
+  background-color: #f5f5f6;
+  color: #5f646d;
+}
+
+.application-overview-fullscreen__status-badge {
+  background-color: #f3faf4;
+  color: #4a9d5c;
+}
+
+.application-overview-fullscreen__status-badge--Suspended,
+.application-overview-fullscreen__status-badge--Expired,
+.application-overview-fullscreen__status-badge--Rejected,
+.application-overview-fullscreen__status-badge--Cancelled {
+  background-color: #fef2f2;
+  color: #ea4f49;
+}
+
+.application-overview-fullscreen__collapse-button {
+  display: inline-flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.application-overview-fullscreen__collapse-button img {
+  width: 30px;
+  height: 30px;
+}
+
+.application-overview-fullscreen--figma-overview {
+  padding: 24px 24px 32px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: none;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.application-overview-fullscreen--figma-overview .application-overview-fullscreen__header {
+  min-height: 24px;
+  padding: 0;
+}
+
+.application-overview-fullscreen--figma-overview .application-overview-fullscreen__title-content {
+  gap: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.application-overview-fullscreen--figma-overview .application-overview-fullscreen__title {
+  color: #361e12;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+.application-overview-fullscreen--figma-overview .application-overview-fullscreen__tier-badge,
+.application-overview-fullscreen--figma-overview .application-overview-fullscreen__status-badge {
+  height: 26px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.application-overview-fullscreen--figma-overview .application-overview-fullscreen__collapse-button {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+}
+
+.application-overview-fullscreen--figma-overview .application-overview-fullscreen__collapse-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.application-overview-fullscreen--figma-overview .customer-details-tabs .ant-tabs-nav {
+  margin: 8px 0 24px;
+  border-bottom: 1px solid #e1e3e5;
+}
+
+.application-overview-fullscreen--figma-overview .customer-details-tabs .ant-tabs-nav::before {
+  border-bottom: 0;
+}
+
+.application-overview-fullscreen--figma-overview .customer-details-tabs .ant-tabs-nav-list {
+  gap: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 16px;
+  }
+}
+
+.application-overview-fullscreen--figma-overview .customer-details-tabs .ant-tabs-tab {
+  margin: 0;
+  padding: 16px 0;
+  color: #361e12;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.application-overview-fullscreen--figma-overview .customer-details-tabs .ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #92722a;
+}
+
+.application-overview-fullscreen--figma-overview .customer-details-tabs .ant-tabs-ink-bar {
+  height: 2px;
+  background: #92722a;
+}
+
+.application-overview-fullscreen--figma-overview .border-card,
+.application-overview-fullscreen--figma-overview .ReviewPersonalInformation-section .section-content .info-block {
+  margin-top: 24px;
+  padding: 24px;
+  border: 1px solid #e1e3e5;
+  border-radius: 12px;
+  background: #fff;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    padding: 12px;
+  }
+}
+
+.application-overview-fullscreen--figma-overview .border-card .border-card-title,
+.application-overview-fullscreen--figma-overview .ReviewPersonalInformation-section .section-content .info-block .block-title {
+  margin-bottom: 20px;
+  color: #361e12;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 16px;
+  }
+}
+
+.application-overview-fullscreen--figma-overview .feild-list,
+.application-overview-fullscreen--figma-overview .ReviewPersonalInformation-section .section-content .info-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 16px;
+  row-gap: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    column-gap: 12px;
+    row-gap: 16px;
+  }
+}
+
+.application-overview-fullscreen--figma-overview .feild-item .feild-label,
+.application-overview-fullscreen--figma-overview .ReviewPersonalInformation-section .section-content .info-label {
+  color: #797e86;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.application-overview-fullscreen--figma-overview .feild-item .feild-value,
+.application-overview-fullscreen--figma-overview .ReviewPersonalInformation-section .section-content .info-value {
+  margin-top: 4px;
+  color: #361e12;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.application-overview-fullscreen--figma-overview .detail-partner-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.application-overview-fullscreen--figma-overview .detail-partner-list .partner-item {
+  border: 1px solid #e1e3e5;
+  border-radius: 12px;
+  background: #fff;
+}
+
+/*
+  Figma annotation (design 18662-39135): 24px between the inner tab bar and the
+  tab content. The fullscreen root carries .customer-details-page, which is a
+  flex column whose gap already separates the tab bar from the content - but
+  that gap ramps to 16px below 1920 AND the nav added its own margin-bottom:
+  24px on top of it (40px total). Make the flex gap the single 24px separator:
+  pin it at 24px at every width and zero the nav's own bottom margin. The extra
+  class on the root outranks both the page-level ramp and the nav margins
+  declared earlier in this file / in CustomerDetails/index.less.
+*/
+.customer-details-page.application-overview-fullscreen {
+  gap: 24px;
+}
+
+.application-overview-fullscreen.customer-details-page .customer-details-tabs .ant-tabs-nav {
+  margin-bottom: 0;
+}
+
+/*
+  And the first block of a tab body must not add its own top margin on top of
+  the flex gap.
+*/
+.application-overview-fullscreen .ReviewEstablishmentInformation > .border-card:first-child {
+  margin-top: 0;
+}
+
+.application-overview-fullscreen .ReviewPersonalInformation-section .section-content > .info-block:first-child {
+  margin-top: 0;
+}
+
+.application-overview-fullscreen .all-overview-body > :first-child {
+  margin-top: 0;
+}
+
+/*
+  Stat cards under the Applications / Tickets / Refunds / Appeal tabs: the two
+  wrapped rows used to size independently (a wrapped value line made one row
+  taller). Fixed 80px per the Figma annotation keeps every card equal.
+*/
+.application-overview-fullscreen .all-overview-stat-card {
+  height: 80px;
+  box-sizing: border-box;
+}

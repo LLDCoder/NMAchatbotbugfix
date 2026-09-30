@@ -1,0 +1,816 @@
+@import "@/styles/variables.less";
+
+/* license container */
+// .license-container{
+//   height: 100%
+// }
+/*
+    table-box
+  */
+.license-container {
+  height: 100%;
+  overflow: auto;
+  /* button */
+  /* status */
+
+  .text-danger {
+    color: @danger-color;
+  }
+
+  .license-applicant-cell__icon {
+    margin-inline-end: 0.5rem;
+  }
+
+  ._active {
+    font-size: 14px;
+    color: @success-color;
+    background-color: @bg-success-color;
+    padding: 2px 6px;
+    border-radius: 4px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+    }
+  }
+  ._bg-active {
+    background-color: #f9f7ed;
+  }
+  ._cancelled {
+    font-size: 14px;
+    color: @gary-color;
+    background-color: @bg-gary-color;
+    padding: 2px 6px;
+    border-radius: 4px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+    }
+  }
+  ._bg-cancelled {
+    background-color: @bg-gary-color;
+  }
+  ._expired {
+    font-size: 14px;
+    color: @danger-color;
+    background-color: @bg-danger-color;
+    padding: 2px 6px;
+    border-radius: 4px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+    }
+  }
+  ._bg-expired {
+    background-color: @bg-danger-color;
+  }
+  ._disabled {
+    font-size: 14px;
+    color: @warning-color;
+    background-color: @bg-warning-color;
+    padding: 2px 6px;
+    border-radius: 4px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+    }
+  }
+  ._bg-disabled {
+    background-color: @bg-warning-color;
+  }
+  .table-card {
+    border-radius: 20px;
+    // padding: 24px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      border-radius: 10px;
+    }
+  }
+  .filters {
+    display: flex;
+    width: 100%;
+    .ant-form {
+      flex: 1;
+    }
+    .ant-row {
+      gap: 12px;
+      flex: 1;
+      justify-content: space-between;
+
+      .filters-container {
+        display: flex;
+      }
+    }
+
+    .table-header-btn {
+      width: 131px;
+      // position: absolute;
+      // right: 24px;
+    }
+  }
+
+  .licenses-filter-toolbar__filter-button,
+  .licenses-filter-toolbar__reset-button {
+    display: none;
+  }
+
+  .licenses-filter-toolbar__field--search {
+    flex: 0 0 320px;
+    width: 320px;
+    max-width: 320px;
+  }
+
+  .licenses-filter-toolbar__field--select {
+    flex: 0 0 240px;
+    width: 240px;
+    max-width: 240px;
+  }
+
+  .licenses-filter-toolbar__field--range {
+    flex: 0 0 300px;
+    width: 300px;
+    max-width: 300px;
+  }
+
+  .licenses-filter-toolbar__field .ant-input-affix-wrapper,
+  .licenses-filter-toolbar__field .ant-picker,
+  .licenses-filter-toolbar__field .ant-select,
+  .licenses-filter-toolbar__field .ant-select-selector {
+    height: 48px;
+    min-height: 48px;
+    max-height: 48px;
+  }
+
+  .licenses-filter-toolbar__field--range .ant-picker-range {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .licenses-filter-toolbar__field--range .ant-picker-input {
+    flex: 1 1 0;
+    width: 0;
+    min-width: 0;
+  }
+
+  .licenses-filter-toolbar__field--range .ant-picker-input > input {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .licenses-filter-toolbar__field--range .ant-picker-range-separator,
+  .licenses-filter-toolbar__field--range .ant-picker-suffix,
+  .licenses-filter-toolbar__field--range .ant-picker-clear {
+    flex: 0 0 auto;
+  }
+
+  .licenses-filter-toolbar__field .ant-select-selection-item,
+  .licenses-filter-toolbar__field .ant-select-selection-placeholder {
+    line-height: 46px;
+  }
+
+  .licenses-filter-toolbar__reset-button,
+  .licenses-filter-toolbar__action .table-header-btn {
+    height: 48px;
+    min-height: 48px;
+  }
+
+  @media (min-width: 1920px) {
+    .filters {
+      .ant-row .filters-container {
+        gap: 12px;
+      }
+
+      .ant-select {
+        width: 240px;
+      }
+    }
+
+    .ant-form {
+      .ant-form-item {
+        .ant-select {
+          .ant-select-selector {
+            height: 48px;
+          }
+
+          .ant-select-selection-item {
+            line-height: 48px;
+          }
+        }
+        .search-input {
+          height: 48px;
+          width: 320px;
+        }
+        .ant-picker {
+          height: 48px;
+          width: 240px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1919.98px) {
+    .licenses-filter-toolbar__field--search,
+    .licenses-filter-toolbar__field--select {
+      flex: 0 0 240px;
+      width: 240px;
+      min-width: 240px;
+      max-width: 240px;
+    }
+
+    .licenses-filter-toolbar__field--range {
+      flex: 0 0 300px;
+      width: 300px;
+      min-width: 300px;
+      max-width: 300px;
+    }
+
+    .licenses-filter-toolbar__field .ant-input-affix-wrapper,
+    .licenses-filter-toolbar__field .ant-picker,
+    .licenses-filter-toolbar__field .ant-select,
+    .licenses-filter-toolbar__field .ant-select-selector {
+      height: 40px;
+      min-height: 40px;
+      max-height: 40px;
+    }
+
+    .licenses-filter-toolbar__field .ant-select-selection-item,
+    .licenses-filter-toolbar__field .ant-select-selection-placeholder {
+      line-height: 38px;
+    }
+
+    .licenses-filter-toolbar__reset-button,
+    .licenses-filter-toolbar__action .table-header-btn {
+      height: 40px;
+      min-height: 40px;
+    }
+  }
+
+  @media (max-width: 1439.98px) {
+    .licenses-filter-toolbar__field--secondary {
+      display: none;
+    }
+
+    .licenses-filter-toolbar__filter-button,
+    .licenses-filter-toolbar__reset-button {
+      display: inline-flex;
+    }
+  }
+
+  /* Stat Cards */
+  .stat-cards-grid {
+    display: grid;
+    /*
+      >=1440 uses six cards per row; <1440 uses three cards per row for the Figma 1440/1024 bands.
+    */
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+    @media (max-width: 1919.98px) {
+      gap: 12px;
+    }
+    @media (max-width: 1439.98px) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .stat-card {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      border-radius: 10px;
+    }
+  }
+
+  .stat-card .ant-card-body {
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .stat-icon {
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      display: block;
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+  }
+
+  .license-stat-card__icon--expire-soon {
+    background-color: #fef5ee;
+  }
+
+  .license-stat-card__icon--expired,
+  .license-stat-card__icon--suspended {
+    background-color: #fef2f2;
+  }
+
+  .stat-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .stat-value {
+    font-size: 18px;
+    font-weight: 600;
+    color: @text-color;
+    line-height: 22px;
+  }
+
+  .stat-label {
+    font-size: 14px;
+    color: #5f646d;
+    margin-top: 6px;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .admin-table {
+    .ant-table-thead {
+      font-size: 14px;
+      color: #797e86;
+      tr > th {
+        /* No horizontal padding here: the global .admin-table rules in App.less
+           are more specific for td, so any value set here only moves the header
+           and breaks alignment. Both sides follow that 16px -> 12px ramp. */
+        padding-top: 12px;
+        padding-bottom: 12px;
+        white-space: nowrap;
+        &:first-child {
+          border-radius: 8px 0 0 8px;
+        }
+
+        &:last-child {
+          border-radius: 0 8px 8px 0;
+        }
+      }
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+      }
+    }
+    .ant-table-tbody {
+      tr > td {
+        padding-top: 12px;
+        padding-bottom: 12px;
+      }
+    }
+    ._actions {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+
+      .ant-btn {
+        flex: 0 0 auto;
+        padding: 0;
+        white-space: nowrap;
+      }
+
+      a {
+        flex: 0 0 auto;
+        color: @primary-color;
+        margin-right: 12px;
+        white-space: nowrap;
+      }
+
+      a:hover,
+      a:focus,
+      a:active {
+        color: @ant-hover-color;
+      }
+    }
+  }
+
+  /* confirm */
+  .ant-modal-footer {
+    padding: 24px 40px;
+
+    .ant-btn {
+      height: 48px;
+      // padding: 12px 20px;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 600;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+
+    .ant-btn-primary {
+      border-color: @primary-color;
+      background: @primary-color;
+    }
+
+    .ant-btn-default {
+      color: @primary-color;
+      border-color: @primary-color;
+    }
+
+    .ant-btn-danger {
+      color: @danger-color;
+      border-color: @danger-color;
+      background-color: #fff;
+    }
+
+    .ant-btn-primary[disabled],
+    .ant-btn-primary[disabled]:hover,
+    .ant-btn-primary[disabled]:focus,
+    .ant-btn-primary[disabled]:active {
+      border-color: #d9d9d9;
+      background-color: #f5f5f5;
+    }
+  }
+  .ant-modal-confirm-btns {
+    .ant-btn-default {
+      height: 48px;
+      // padding: 12px 20px;
+      color: @primary-color;
+      border-color: @primary-color;
+    }
+
+    .ant-btn-primary {
+      height: 48px;
+      // padding: 12px 20px;
+      background-color: @primary-color;
+      border-color: @primary-color;
+    }
+  }
+}
+
+/* Licenses owns its compact toolbar widths and spacing. */
+.layout
+  .license-container--scoped-toolbar
+  .licenses-filter-toolbar.responsive-filter-toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  column-gap: 16px;
+  row-gap: 12px;
+  width: 100%;
+}
+
+.layout
+  .license-container--scoped-toolbar
+  .licenses-filter-toolbar__controls {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+}
+
+.layout
+  .license-container--scoped-toolbar
+  .licenses-filter-toolbar__field--search.responsive-filter-toolbar__field {
+  flex: 0 0 320px !important;
+  width: 320px !important;
+  min-width: 320px !important;
+  max-width: 320px !important;
+}
+
+.layout
+  .license-container--scoped-toolbar
+  .licenses-filter-toolbar__field--search
+  .ant-input-affix-wrapper {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+.layout
+  .license-container--scoped-toolbar
+  .licenses-filter-toolbar__filter-button,
+.layout
+  .license-container--scoped-toolbar
+  .licenses-filter-toolbar__reset-button {
+  flex: none;
+}
+
+.layout
+  .license-container--scoped-toolbar
+  .licenses-filter-toolbar__action {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+  margin-inline-start: 0;
+}
+
+@media (max-width: 1919.98px) {
+  .layout
+    .license-container--scoped-toolbar
+    .licenses-filter-toolbar.responsive-filter-toolbar {
+    column-gap: 24px;
+  }
+}
+
+/* FilePassword */
+.file-password {
+  .file-down_title {
+    ._tips {
+      color: #5f646d;
+      font-size: 16px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 14px;
+      }
+    }
+  }
+  .ant-modal-body {
+    width: 640px;
+    padding: 32px 40px 96px;
+    .ant-input-password {
+      height: 56px;
+      padding: 14px 16px;
+      background-color: #f8f7f4;
+      .ant-input {
+        background-color: #f8f7f4;
+      }
+    }
+  }
+  .ant-modal-footer {
+    padding: 24px 40px;
+
+    .ant-btn {
+      height: 48px;
+      // padding: 12px 20px;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 600;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+
+    .ant-btn-primary {
+      border-color: @primary-color;
+      background: @primary-color;
+    }
+
+    .ant-btn-default {
+      color: @primary-color;
+      border-color: @primary-color;
+    }
+
+    .ant-btn-danger {
+      color: @danger-color;
+      border-color: @danger-color;
+      background-color: #fff;
+    }
+
+    .ant-btn-primary[disabled],
+    .ant-btn-primary[disabled]:hover,
+    .ant-btn-primary[disabled]:focus,
+    .ant-btn-primary[disabled]:active {
+      border-color: #d9d9d9;
+      background-color: #f5f5f5;
+    }
+  }
+
+  .ant-modal-confirm-btns {
+    .ant-btn-default {
+      height: 48px;
+      // padding: 12px 20px;
+      color: @primary-color;
+      border-color: @primary-color;
+    }
+
+    .ant-btn-primary {
+      height: 48px;
+      // padding: 12px 20px;
+      background-color: @primary-color;
+      border-color: @primary-color;
+    }
+  }
+}
+
+/* disable-license */
+.disable-license {
+  .ant-modal-body {
+    width: 640px;
+    padding: 32px 40px;
+    .ant-select {
+      .ant-select-selector {
+        height: 48px;
+      }
+
+      .ant-select-selection-item {
+        line-height: 48px;
+      }
+    }
+    .ant-input {
+      height: 100px;
+      resize: none;
+    }
+  }
+  .ant-modal-footer {
+    padding: 24px 40px;
+
+    .ant-btn {
+      height: 48px;
+      // padding: 12px 20px;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 600;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+
+    .ant-btn-primary {
+      border-color: @primary-color;
+      background: @primary-color;
+      color: #fff;
+    }
+
+    .ant-btn-default:not(.custom-button-primary) {
+      color: @primary-color;
+      border-color: @primary-color;
+    }
+
+    .custom-button-primary,
+    .custom-button-primary:hover,
+    .custom-button-primary:focus,
+    .custom-button-primary:active {
+      color: #fff;
+      background: linear-gradient(to right, #9e7538, #c19453);
+      border: none;
+    }
+
+    .custom-button-primary[disabled],
+    .custom-button-primary[disabled]:hover,
+    .custom-button-primary[disabled]:focus,
+    .custom-button-primary[disabled]:active {
+      color: #9ea2a9;
+      background: #e1e3e5;
+      border: none;
+    }
+
+    .ant-btn-danger {
+      color: @danger-color;
+      border-color: @danger-color;
+      background-color: #fff;
+    }
+
+    .ant-btn-primary[disabled],
+    .ant-btn-primary[disabled]:hover,
+    .ant-btn-primary[disabled]:focus,
+    .ant-btn-primary[disabled]:active {
+      border-color: #d9d9d9;
+      background-color: #f5f5f5;
+    }
+  }
+
+  .ant-modal-confirm-btns {
+    .ant-btn-default {
+      height: 48px;
+      // padding: 12px 20px;
+      color: @primary-color;
+      border-color: @primary-color;
+    }
+
+    .ant-btn-primary {
+      height: 48px;
+      // padding: 12px 20px;
+      background-color: @primary-color;
+      border-color: @primary-color;
+    }
+  }
+}
+.enable-license {
+  .ant-modal-confirm-btns {
+    .ant-btn-primary {
+      background-color: @primary-color;
+      border: 1px solid @primary-color;
+    }
+    .ant-btn-default {
+      border: 1px solid @primary-color;
+      color: @primary-color;
+    }
+  }
+}
+.document-down {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 70px;
+  padding-left: 80px;
+  padding-right: 80px;
+  ._down-icon {
+    width: 94px;
+    height: 94px;
+    color: @primary-color;
+    font-size: 50px;
+    border-radius: 50%;
+    background-color: @primary-bgColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  ._down-title {
+    font-size: 40px;
+    font-weight: 700;
+    margin-top: 48px;
+  }
+  ._down-tips {
+    color: #5f646d;
+    font-size: 20px;
+    font-weight: 500;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 18px;
+    }
+  }
+  ._down-password {
+    width: 100%;
+    margin-top: 24px;
+    ._label {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 14px;
+      }
+    }
+    .ant-input {
+      // height: 48px;
+    }
+  }
+  ._down-note {
+    display: flex;
+    justify-content: flex-start;
+    background-color: #f9fafb;
+    border: 1px solid #e1e3e5;
+    border-radius: 12px;
+    margin-top: 24px;
+    padding: 16px;
+    ._icon {
+      color: @warning-color;
+      width: 20px;
+      height: 20px;
+      font-size: 16px;
+      margin-right: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 14px;
+      }
+    }
+    ._note {
+      flex: 1;
+      ._title {
+        font-size: 14px;
+        font-weight: 600;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 12px;
+        }
+      }
+      ._text {
+        font-size: 14px;
+        color: #5f646d;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 12px;
+        }
+      }
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      padding: 12px;
+    }
+  }
+  ._down-btn {
+    height: 48px;
+    margin-top: 48px;
+    margin-bottom: 48px;
+  }
+}

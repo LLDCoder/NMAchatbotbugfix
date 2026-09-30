@@ -1,0 +1,186 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Page documentation maintenance list",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "page",
+    "status",
+    "items",
+    "sourceRefs",
+    "containsLiveBusinessValues"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "page-maintenance/1.0"
+    },
+    "page": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "portal",
+        "route"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "portal": {
+          "type": "string"
+        },
+        "route": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "status": {
+      "const": "pending"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "section",
+          "missing"
+        ],
+        "properties": {
+          "section": {
+            "type": "string"
+          },
+          "missing": {
+            "type": "string"
+          },
+          "requiredDefinitions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "observedUnverifiedNames": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sourceVerifiedFieldNames": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "observedBlockedPaths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "verificationStatus": {
+            "type": "string"
+          },
+          "requiresCodePolicyReview": {
+            "type": "boolean"
+          },
+          "canBeResolvedByKnowledgeImport": {
+            "type": "boolean"
+          },
+          "resolution": {
+            "type": "object",
+            "required": [
+              "state",
+              "description",
+              "uploadFiles",
+              "remainingWorkIds"
+            ],
+            "properties": {
+              "state": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "uploadFiles": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "remainingWorkIds": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    "observedGaps": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_]{0,100}$"
+      }
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "containsLiveBusinessValues": {
+      "const": false
+    },
+    "observedGapsAreHistorical": {
+      "type": "boolean"
+    },
+    "resolvedRuntimeIssues": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "completion": {
+      "type": "object",
+      "required": [
+        "sourceDocumentation",
+        "uploadFiles",
+        "runtimeVerification",
+        "deployedBuildMatch"
+      ],
+      "properties": {
+        "sourceDocumentation": {
+          "type": "string"
+        },
+        "uploadFiles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "runtimeVerification": {
+          "type": "string"
+        },
+        "deployedBuildMatch": {
+          "type": "string"
+        },
+        "remainingWorkFile": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

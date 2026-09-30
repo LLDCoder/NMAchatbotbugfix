@@ -1,0 +1,84 @@
+@import "@/styles/variables.less";
+
+.ReviewEstablishmentInformation {
+  .border-card {
+    border: 1px solid #e1e3e5;
+    padding: 24px;
+    border-radius: 12px;
+    margin-top: 24px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    .border-card-title {
+      font-weight: 500;
+      font-size: 18px;
+      color: @text-color;
+      margin-bottom: 24px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 16px;
+      }
+    }
+
+    .feild-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+
+      &.first-feild-list {
+        .feild-item:first-child {
+          grid-column: 1;
+        }
+      }
+
+      .feild-item {
+        min-width: 0;
+
+        .feild-label {
+          font-size: 14px;
+          color: #797e86;
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            font-size: 12px;
+          }
+        }
+
+        .feild-value {
+          font-size: 16px;
+          color: @text-color;
+          margin-top: 6px;
+          min-width: 0;
+
+          &.arabic-text {
+            direction: rtl;
+            text-align: right;
+          }
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            font-size: 14px;
+          }
+        }
+      }
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        gap: 16px;
+      }
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      padding: 12px;
+    }
+  }
+
+  .border-card2 {
+    margin-top: 24px;
+
+    .detail-section {
+      border: 1px solid #e1e3e5;
+    }
+  }
+}
+
+

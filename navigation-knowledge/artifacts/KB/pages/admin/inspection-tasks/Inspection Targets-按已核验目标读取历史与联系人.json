@@ -1,0 +1,107 @@
+{
+  "schemaVersion": "1.0",
+  "packageStatus": "active",
+  "bundleId": "admin.inspection.target.history-contract.package",
+  "createdAt": "2026-09-28T02:59:57.135946+00:00",
+  "searchMetadata": {
+    "titleEnglish": "Inspection target history via verified task or establishment identity, complete scoped reads and contact minimization",
+    "titleArabic": "سجل هدف التفتيش عبر هوية المهمة أو المنشأة الموثقة وقراءة السجل المحدد وتقليل بيانات الاتصال",
+    "descriptionEnglish": "Inspection target history via verified task or establishment identity, complete scoped reads and contact minimization",
+    "descriptionArabic": "سجل هدف التفتيش عبر هوية المهمة أو المنشأة الموثقة وقراءة السجل المحدد وتقليل بيانات الاتصال"
+  },
+  "records": [
+    {
+      "id": "admin.inspection.target.history-contract",
+      "kind": "page_definition",
+      "revision": 1,
+      "status": "active",
+      "title": "Inspection target history via verified task or establishment identity, complete scoped reads and contact minimization",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local",
+          "debug"
+        ],
+        "pageRefs": [
+          "/inspection/tasks/detail",
+          "/inspection/tasks",
+          "/inspection/violations"
+        ],
+        "sourceSnapshot": "source-inspected-20260928",
+        "runtimeVerification": "not_a_live_execution",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/InspectionTasks/InspectionTaskAppService.cs",
+          "revision": "sha256:a68f2bc0ce96ca363f0384ca86982dd989ed8838929749b11c28a3c6950196aa",
+          "locator": "GetByTargetAsync, ResolveTaskByTargetRequestAsync, BuildTaskByTargetQuery and ValidateTaskTargetScope",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Inspection/InspectionTaskBoundaryDtos.cs",
+          "revision": "sha256:f18a55171789b25d670a3c19a58e27732df7a112c64d7ca1a2c1ee2b0f252737",
+          "locator": "InspectionTaskByTargetRequestDto and InspectionTaskByTargetResponseDto",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/InspectionViolations/InspectionViolationAppService.cs",
+          "revision": "sha256:be67e0321eba606160880e95c87e77859a1e675396c5f731e4e34e1081737e0f",
+          "locator": "GetUserViolationsAsync and ApplyTargetViolationFilter",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Inspection/InspectionViolationBoundaryDtos.cs",
+          "revision": "sha256:59808c2f4e58e0351187c767e9ed688adc7e4ae0f291ca76c557e4f326ca0cb5",
+          "locator": "InspectionUserViolationListRequestDto and response",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/inspection.ts",
+          "revision": "sha256:4a841e7f947b4e73a3960cc0d1b6478b8d43c28652c0113c0b9f0fc38035f618",
+          "locator": "Task target overview, by-target reads and contact person operations",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/inspection/tasks/detail",
+        "pageMeaning": "Inspection target history via verified task or establishment identity, complete scoped reads and contact minimization",
+        "sections": [
+          {
+            "topic": "Resolving the target",
+            "facts": [
+              "An exact verified task detail identifies its target type and establishmentId or individualId. The target-overview read supplies the associated profile and target display. A task number and target id are not interchangeable. A name-only request needs a unique authorized target match before reading history.",
+              "GET /api/admin/inspection/tasks/by-target accepts taskId or exactly one of establishmentId and individualId. The inspected service resolves a supplied taskId to its target and applies target filtering in addition to ordinary task data scope. Do not keep a task-number search filter when requesting the entire target history.",
+              "GET /api/admin/inspection/violations/by-target accepts resolved taskId or establishmentId/individualId and its own optional date/type/status filters. This response is separate from the ordinary unfiltered violations list. Knowledge explains the relationship; runtime must execute the exact authorized request and prove its parameters.",
+              "رقم المهمة يحدد سجلاً مرجعياً ولا يساوي هوية المنشأة. يجب إثبات الهدف ثم قراءة سجله عبر طلب محدد بالهدف. لا تُستبدل النتائج الفارغة بسجلات منشآت أخرى."
+            ]
+          },
+          {
+            "topic": "Completeness and penalty semantics",
+            "facts": [
+              "Task history uses items, pageIndex, pageSize and totalCount; collect all authorized pages with stable target/scope filters. Violation by-target history uses items and total; verify the returned item count before claiming all history.",
+              "A task status count, target-overview violationCount or ordinary list total does not prove complete task or penalty history. A violation fineAmount is a returned monetary field; it is not proof of approved, paid or final penalty without the separate decision/payment facts.",
+              "An authorized target-scoped empty result means no matching accessible rows for that query. It never licenses using unrelated establishments, a global count or a broader queue as replacement. Unknown identity, denied access, request failure and successful empty results are distinct."
+            ]
+          },
+          {
+            "topic": "Contacts and runtime capability",
+            "facts": [
+              "Current authorized task contactPersons and the report contactPerson belong to that task/report. They are not a complete establishment-wide contact directory or proof of all historical contacts. Show only necessary authorized contact fields and preserve actual null/empty data.",
+              "The current generic related-record executor requires a verified response key for a related single-record proof. A by-target collection lacking that response key needs a separately supported request-bound collection relation, complete pagination and scope receipts. Describing its endpoint does not create that execution capability. Report that precise capability gap if the relationship cannot be verified; never relax matching or fabricate records."
+            ]
+          }
+        ],
+        "constraints": [
+          "These are source-defined conditions, not current-record eligibility or a permission grant. Verify current authorized record, available actions and applicable deployment before a business decision.",
+          "No write is executed by reading or explaining these documents. Do not invent missing operations, formal policy owners or approval rules."
+        ]
+      }
+    }
+  ]
+}

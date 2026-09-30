@@ -1,0 +1,603 @@
+.change-status-modal {
+  max-width: calc(100vw - 48px);
+
+  &.change-status-modal--simple {
+    width: 640px !important;
+  }
+
+  &.change-status-modal--complex {
+    width: 800px !important;
+  }
+
+  .ant-modal-content {
+    overflow: hidden;
+    border-radius: 20px;
+    background: #fff;
+  }
+
+  .ant-modal-header {
+    box-sizing: border-box;
+    min-height: 100px;
+    margin: 0;
+    padding: 32px 40px;
+    border-bottom: 1px solid #e1e3e5;
+    border-radius: 20px 20px 0 0;
+    background: #fff;
+  }
+
+  .ant-modal-title {
+    color: #361e12;
+    font-family: Inter, sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+
+  .ant-modal-body {
+    box-sizing: border-box;
+    min-height: 400px;
+    max-height: calc(100vh - 196px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 32px 40px 40px;
+  }
+
+  .ant-modal-footer {
+    margin: 0;
+    padding: 24px 40px;
+    border-top: 1px solid #e1e3e5;
+    border-radius: 0 0 20px 20px;
+    direction: ltr;
+  }
+
+  .change-status-modal-footer-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+
+    .custom-button {
+      min-width: 140px;
+      height: 48px;
+      font-weight: 600;
+    }
+
+    .ant-btn + .ant-btn {
+      margin-left: 0;
+    }
+  }
+
+  .change-status-modal-form,
+  .change-status-modal-wrapper {
+    min-height: 100%;
+  }
+
+  .change-status-modal-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .change-status-modal-wrapper--complex {
+    gap: 24px;
+  }
+
+  .change-status-modal-left {
+    min-width: 0;
+  }
+
+  .change-status-modal-wrapper--simple .change-status-modal-left {
+    width: 100%;
+  }
+
+  .change-status-modal-wrapper--complex .change-status-modal-left {
+    flex: 0 0 216px;
+    width: 216px;
+    border-right: 1px solid #e1e3e5;
+  }
+
+  .change-status-modal-right {
+    flex: 1 1 480px;
+    min-width: 0;
+  }
+
+  .change-status-modal-right > :last-child {
+    margin-bottom: 0;
+  }
+
+  .ant-form-item-label {
+    padding: 0 0 8px;
+
+    > label {
+      height: 20px;
+      color: #361e12;
+      font-family: Inter, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+    }
+
+    > label.ant-form-item-required::before {
+      display: none;
+    }
+
+    > label.ant-form-item-required::after {
+      display: inline-block;
+      margin-left: 4px;
+      color: #e60000;
+      font-size: 14px;
+      line-height: 1;
+      content: "*";
+    }
+  }
+
+  .change-status-modal-left .ant-form-item {
+    margin-bottom: 0;
+  }
+
+  .change-status-modal-status-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 0;
+  }
+
+  .ant-radio-wrapper {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    margin-right: 0;
+    color: #361e12;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  .ant-radio-wrapper + .ant-radio-wrapper {
+    margin-left: 0;
+  }
+
+  .ant-radio {
+    top: 0;
+  }
+
+  .ant-radio-inner {
+    width: 16px;
+    height: 16px;
+    border-color: #c3c6cb;
+  }
+
+  .ant-radio-checked .ant-radio-inner {
+    border-color: #92722a;
+  }
+
+  .ant-radio-inner::after {
+    background-color: #cba344;
+  }
+
+  .ant-select,
+  .ant-picker {
+    width: 100%;
+  }
+
+  .ant-select:not(.ant-select-customize-input) .ant-select-selector,
+  .ant-picker,
+  .ant-input,
+  textarea.ant-input {
+    border-color: #e1e3e5;
+    border-radius: 8px;
+    box-shadow: none;
+  }
+
+  .ant-select-single:not(.ant-select-customize-input) .ant-select-selector,
+  .ant-picker {
+    height: 48px;
+    min-height: 48px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .ant-select-single .ant-select-selector .ant-select-selection-item,
+  .ant-select-single .ant-select-selector .ant-select-selection-placeholder {
+    color: #361e12;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 46px;
+  }
+
+  .ant-select-single .ant-select-selector .ant-select-selection-placeholder {
+    color: #797e86;
+  }
+
+  .transfer-notes {
+    padding: 14px 16px;
+  }
+
+  .deadline-picker {
+    width: 100%;
+
+    .ant-picker-input {
+      position: static;
+    }
+
+    .ant-picker-suffix,
+    .ant-picker-clear {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .ant-picker-suffix {
+      inset-inline-end: 12px;
+      font-size: 12px;
+      z-index: 1;
+      opacity: 1;
+      pointer-events: none;
+    }
+    .ant-picker-clear {
+      inset-inline-end: 4px;
+      z-index: 2;
+      opacity: 0;
+      width: 34px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      padding: 0;
+    }
+    &:hover,
+    &.ant-picker-focused {
+      .ant-picker-clear {
+        opacity: 1;
+      }
+    }
+  }
+
+  .deadline-form-item {
+    .sla-deadline-warning {
+      color: #e60000;
+      font-family: Inter;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+    }
+  }
+
+  .cs-transfer-notes-wrapper {
+    position: relative;
+    padding-bottom: 18px;
+  }
+
+  .cs-transfer-notes {
+    margin-bottom: 0;
+
+    .ant-form-item-explain {
+      position: absolute;
+    }
+  }
+
+  .notes-num {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #797e86;
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: right;
+  }
+
+  .ant-select-arrow,
+  .ant-select-suffix {
+    right: 12px;
+    left: auto;
+  }
+
+  .change-status-deadline-picker-root {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .change-status-modal.change-status-modal--simple,
+  .change-status-modal.change-status-modal--complex {
+    width: calc(100vw - 32px) !important;
+
+    .ant-modal-header,
+    .ant-modal-body,
+    .ant-modal-footer {
+      padding-right: 24px;
+      padding-left: 24px;
+    }
+
+  
+    .change-status-modal-wrapper--complex {
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .change-status-modal-wrapper--complex .change-status-modal-left {
+      flex-basis: auto;
+      width: 100%;
+      padding-bottom: 24px;
+      border-right: 0;
+      border-bottom: 1px solid #e1e3e5;
+    }
+
+    .change-status-modal-footer-actions .custom-button {
+      flex: 1;
+      min-width: 0;
+    }
+  }
+}
+
+html[dir="rtl"],
+body[dir="rtl"] {
+  .change-status-modal {
+    .ant-modal-title {
+      text-align: right;
+    }
+
+    .ant-modal-footer {
+      direction: rtl;
+    }
+
+    &.change-status-modal--rtl {
+      .ant-modal-footer {
+        text-align: left;
+      }
+
+      .change-status-modal-footer-actions {
+        direction: rtl;
+        justify-content: flex-end;
+
+        .ant-btn + .ant-btn {
+          margin-left: 0;
+        }
+      }
+    }
+
+    .ant-select-arrow,
+    .ant-select-suffix {
+      right: auto;
+      left: 12px;
+    }
+  }
+
+  .change-status-modal-wrapper--complex {
+    .change-status-modal-left {
+      border-right: 0;
+      border-left: 1px solid #e1e3e5;
+    }
+  }
+
+  .deadline-picker {
+    direction: rtl;
+
+    .ant-picker-input > input {
+      direction: rtl;
+      text-align: right;
+    }
+
+    .ant-picker-suffix {
+      right: auto !important;
+      left: 12px !important;
+      inset-inline-end: auto !important;
+      inset-inline-start: auto !important;
+    }
+
+    .ant-picker-clear {
+      right: auto !important;
+      left: 4px !important;
+      inset-inline-end: auto !important;
+      inset-inline-start: auto !important;
+      width: 34px;
+      background: #fff;
+    }
+  }
+  .change-status-deadline-picker-root {
+    direction: rtl;
+  }
+
+  .notes-num {
+    right: auto;
+    left: 0;
+  }
+
+  @media (max-width: 767.98px) {
+
+    .change-status-modal-wrapper--complex .change-status-modal-left {
+      border-left: 0;
+      border-bottom: 1px solid #e1e3e5;
+    }
+  }
+}
+.change-status-deadline-picker-dropdown.ant-picker-dropdown-rtl,
+.change-status-deadline-picker-dropdown,
+.change-status-deadline-picker-dropdown .ant-picker-panel-container,
+.change-status-deadline-picker-dropdown .ant-picker-panels,
+.change-status-deadline-picker-dropdown .ant-picker-panel,
+.change-status-deadline-picker-dropdown .ant-picker-datetime-panel,
+.change-status-deadline-picker-dropdown .ant-picker-header,
+.change-status-deadline-picker-dropdown .ant-picker-header-view,
+.change-status-deadline-picker-dropdown .ant-picker-date-panel,
+.change-status-deadline-picker-dropdown .ant-picker-time-panel,
+.change-status-deadline-picker-dropdown .ant-picker-content,
+.change-status-deadline-picker-dropdown .ant-picker-content thead,
+.change-status-deadline-picker-dropdown .ant-picker-content tbody,
+.change-status-deadline-picker-dropdown .ant-picker-content tr,
+.change-status-deadline-picker-dropdown .ant-picker-content th,
+.change-status-deadline-picker-dropdown .ant-picker-content td,
+.change-status-deadline-picker-dropdown .ant-picker-panel-rtl {
+  direction: ltr !important;
+}
+
+.change-status-modal__department-select-dropdown {
+  .change-status-modal__department-group-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    .change-status-span {
+      font-family: Inter;
+      font-weight: 500;
+      font-style: Medium;
+      font-size: 14px;
+      color: #5f646d;
+      line-height: 20px;
+      letter-spacing: 0px;
+      vertical-align: middle;
+    }
+  }
+
+  .change-status-modal__department-group-icon {
+    display: block;
+    flex: 0 0 18px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.change-status-deadline-picker-dropdown {
+  .ant-picker-datetime-panel {
+    flex-direction: row !important;
+  }
+
+  .ant-picker-date-panel {
+    order: 0;
+  }
+
+  .ant-picker-time-panel {
+    order: 1;
+  }
+
+  .ant-picker-time-panel .ant-picker-content {
+    flex-direction: row !important;
+  }
+
+  .ant-picker-time-panel .ant-picker-header {
+    justify-content: center;
+  }
+
+  .ant-picker-time-panel .ant-picker-header-view {
+    width: 100%;
+    text-align: center !important;
+  }
+
+  .ant-picker-time-panel-column {
+    width: 56px;
+    text-align: left !important;
+  }
+
+  .ant-picker-time-panel-column
+    > li.ant-picker-time-panel-cell
+    .ant-picker-time-panel-cell-inner {
+    padding: 0 0 0 14px !important;
+    text-align: left !important;
+  }
+
+  .ant-picker-date-panel .ant-picker-cell {
+    text-align: center !important;
+  }
+
+  .ant-picker-date-panel .ant-picker-cell .ant-picker-cell-inner {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center !important;
+  }
+
+  .ant-picker-date-panel .ant-picker-header {
+    display: grid !important;
+    grid-template-columns: 22px 22px 1fr 22px 22px;
+    align-items: center;
+    min-height: 40px;
+  }
+
+  .ant-picker-date-panel .ant-picker-header-view {
+    grid-column: 3;
+    width: 100%;
+    transform: none;
+    text-align: center;
+  }
+
+  .ant-picker-date-panel .ant-picker-header-super-prev-btn {
+    grid-column: 1;
+  }
+
+  .ant-picker-date-panel .ant-picker-header-prev-btn {
+    grid-column: 2;
+  }
+
+  .ant-picker-date-panel .ant-picker-header-next-btn {
+    grid-column: 4;
+  }
+
+  .ant-picker-date-panel .ant-picker-header-super-next-btn {
+    grid-column: 5;
+  }
+
+  &.ant-picker-dropdown-rtl {
+    .ant-picker-ranges {
+      text-align: left;
+    }
+
+    .ant-picker-ranges .ant-picker-ok {
+      float: right;
+      margin-right: 0;
+      margin-left: 8px;
+    }
+  }
+
+  .ant-picker-panel-rtl {
+    .ant-picker-header-view button:not(:first-child) {
+      margin-right: 0;
+      margin-left: 8px;
+    }
+
+    .ant-picker-prev-icon,
+    .ant-picker-super-prev-icon {
+      transform: rotate(-45deg);
+    }
+
+    .ant-picker-next-icon,
+    .ant-picker-super-next-icon {
+      transform: rotate(135deg);
+    }
+  }
+}
+
+html[dir="rtl"]
+  .change-status-modal
+  .deadline-picker.ant-picker
+  .ant-picker-suffix,
+body[dir="rtl"]
+  .change-status-modal
+  .deadline-picker.ant-picker
+  .ant-picker-suffix {
+  right: auto !important;
+  left: 12px !important;
+  inset-inline-start: auto !important;
+  inset-inline-end: auto !important;
+}
+
+html[dir="rtl"]
+  .change-status-modal
+  .deadline-picker.ant-picker
+  .ant-picker-clear,
+body[dir="rtl"]
+  .change-status-modal
+  .deadline-picker.ant-picker
+  .ant-picker-clear {
+  right: auto !important;
+  left: 4px !important;
+  inset-inline-start: auto !important;
+  inset-inline-end: auto !important;
+  width: 34px;
+  background: #fff;
+}

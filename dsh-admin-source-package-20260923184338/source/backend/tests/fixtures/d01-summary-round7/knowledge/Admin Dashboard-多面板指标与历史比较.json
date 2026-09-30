@@ -1,0 +1,1192 @@
+{
+  "schemaVersion": "1.0",
+  "bundleId": "admin.dashboard.license-metrics-and-history",
+  "packageStatus": "active",
+  "createdAt": "2026-09-28T09:01:24.683290+00:00",
+  "records": [
+    {
+      "id": "admin.dashboard.license-summary.serviceApplicationCard",
+      "kind": "field_semantics",
+      "revision": 2,
+      "status": "active",
+      "title": "Service Application Dashboard card fields",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local"
+        ],
+        "pageRefs": [
+          "/dashboard"
+        ],
+        "runtimeVerification": "pending",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/licenseDashboard.ts",
+          "revision": "sha256:7ed99b6783c36f5849e1d21584a68630bcb8e48f64e9ec2c4fef470759b5cf8b",
+          "locator": "getScope; createTaskHubDonutCard; createPerformanceTiles; createDistributionStatusCard; createTrendCard; getLicenseDashboardData",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/LicenseDashboard/LicenseDashboardAppService.cs",
+          "revision": "sha256:a3a0bd755cf7ac404d6388b6b03021880de5a0cf0bd3035725b95a6d4dba0890",
+          "locator": "GetTaskTabCountsAsync; GetPriorityCardsAsync; BuildServiceApplicationCardAsync; BuildProfileVerificationCardAsync; GetPerformanceMetricsAsync; GetPerformanceTrendAsync; ResolveRoleScopeAsync",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/dashboardApiShared.ts",
+          "revision": "sha256:3c31d383c4781bb437c3aedf348f9e50fde1f7e8e390f4ad396bba30d4718760",
+          "locator": "resolveDashboardDateRange; resolveDashboardTrendDateRange; formatPercent",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Dashboard/index.tsx",
+          "revision": "sha256:7c9a862100b8cb2ed0300767b555a354dd402c7ca1fa7584f2ffb1ce5d032485",
+          "locator": "applied department, roleVariant and timeFilter reader attributes; cancel stale requests on context changes",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/dashboard",
+        "sourceBinding": {
+          "operationRef": "GET /api/license/dashboard/overview",
+          "sourcePath": "/data/serviceApplicationCard"
+        },
+        "fields": {
+          "totalCount": "Returned center count in Service Application. Service Application uses To Do; Profile Verification is its returned pending profile population. Do not assume these are the same entity or status scope.",
+          "totalTasks": "Returned Total Tasks in Service Application. Service Application combines selected-period todo and completed tasks. Profile Verification follows its own profile query; the label alone does not prove all historical profiles.",
+          "doneToday": "Returned Done Today in Service Application. Service Application computes this independently of the selected date range. Profile Verification counts today-updated records within the returned pending-profile set; do not relabel this as all approved/rejected profiles.",
+          "overdueTasks": "Returned Overdue Tasks for Service Application, a count separate from SLA percentage. Preserve a returned zero as the panel value; it does not certify another queue has no overdue records."
+        },
+        "bindings": [
+          {
+            "operationRef": "GET /api/license/dashboard/overview",
+            "sourcePath": "/data/serviceApplicationCard",
+            "fields": [
+              "totalCount",
+              "totalTasks",
+              "doneToday",
+              "overdueTasks"
+            ],
+            "contextParameters": {
+              "priorityCardCount": "10"
+            },
+            "id": "object",
+            "kind": "object",
+            "concept": "dashboard",
+            "aliases": [
+              "current dashboard",
+              "dashboard snapshot",
+              "لوحة المعلومات"
+            ],
+            "meaning": "The observed License Dashboard panel response in its current authenticated context.",
+            "entityContextAlternatives": {
+              "scope": [
+                "0",
+                "1"
+              ],
+              "taskCategory": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            "contextRequestBindings": {
+              "startDate": {
+                "format": "date"
+              },
+              "endDate": {
+                "format": "date"
+              }
+            }
+          },
+          {
+            "operationRef": "GET /api/license/dashboard/overview",
+            "sourcePath": "/data/serviceApplicationCard",
+            "fields": [
+              "totalCount",
+              "totalTasks",
+              "doneToday",
+              "overdueTasks"
+            ],
+            "contextParameters": {
+              "priorityCardCount": "10"
+            },
+            "id": "grain",
+            "kind": "grain",
+            "concept": "dashboard",
+            "aliases": [
+              "dashboard snapshot",
+              "dashboard metric",
+              "لوحة المعلومات"
+            ],
+            "observationShape": "singleton_object",
+            "meaning": "One current panel response; metric values are scalar observations, not entity identifiers or record counts calculated from rows.",
+            "entityContextAlternatives": {
+              "scope": [
+                "0",
+                "1"
+              ],
+              "taskCategory": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            "contextRequestBindings": {
+              "startDate": {
+                "format": "date"
+              },
+              "endDate": {
+                "format": "date"
+              }
+            }
+          },
+          {
+            "id": "totalCount",
+            "kind": "attribute",
+            "concept": "Service Application count",
+            "aliases": [],
+            "operationRef": "GET /api/license/dashboard/overview",
+            "sourcePath": "/data/serviceApplicationCard",
+            "fields": [
+              "totalCount"
+            ],
+            "meaning": "Returned center count in Service Application. Service Application uses To Do; Profile Verification is its returned pending profile population. Do not assume these are the same entity or status scope."
+          },
+          {
+            "id": "totalTasks",
+            "kind": "attribute",
+            "concept": "Service Application total tasks",
+            "aliases": [],
+            "operationRef": "GET /api/license/dashboard/overview",
+            "sourcePath": "/data/serviceApplicationCard",
+            "fields": [
+              "totalTasks"
+            ],
+            "meaning": "Returned Total Tasks in Service Application. Service Application combines selected-period todo and completed tasks. Profile Verification follows its own profile query; the label alone does not prove all historical profiles."
+          },
+          {
+            "id": "doneToday",
+            "kind": "attribute",
+            "concept": "Service Application done today",
+            "aliases": [],
+            "operationRef": "GET /api/license/dashboard/overview",
+            "sourcePath": "/data/serviceApplicationCard",
+            "fields": [
+              "doneToday"
+            ],
+            "meaning": "Returned Done Today in Service Application. Service Application computes this independently of the selected date range. Profile Verification counts today-updated records within the returned pending-profile set; do not relabel this as all approved/rejected profiles."
+          },
+          {
+            "id": "overdueTasks",
+            "kind": "attribute",
+            "concept": "Service Application overdue tasks",
+            "aliases": [],
+            "operationRef": "GET /api/license/dashboard/overview",
+            "sourcePath": "/data/serviceApplicationCard",
+            "fields": [
+              "overdueTasks"
+            ],
+            "meaning": "Returned Overdue Tasks for Service Application, a count separate from SLA percentage. Preserve a returned zero as the panel value; it does not certify another queue has no overdue records."
+          },
+          {
+            "id": "summary_metrics",
+            "kind": "attribute",
+            "concept": "Service Application summary metrics",
+            "aliases": [
+              "Service Application summary",
+              "Service Application card"
+            ],
+            "operationRef": "GET /api/license/dashboard/overview",
+            "sourcePath": "/data/serviceApplicationCard",
+            "fields": [
+              "totalCount",
+              "totalTasks",
+              "doneToday",
+              "overdueTasks"
+            ],
+            "meaning": "The four numeric values displayed on this particular summary card. Retain this panel name and its distinct population in the output."
+          }
+        ],
+        "constraints": [
+          "This source snapshot defines field meanings, not current values or access grants. Verify the native response and current authenticated scope. A missing field is unavailable, not zero.",
+          "The current Dashboard is a selected UI context, not automatically personal scope. Preserve observed department, roleVariant and applied timeFilter. The same route can display another department or period.",
+          "The backend ResolveRoleScopeAsync uses the authenticated role context. A manually supplied scope query parameter cannot grant or independently establish personal, department or managed-team access.",
+          "Each panel has its own population and time basis. Do not turn an overview response, attention list or performance summary into a common record collection, and do not add counts from different panels.",
+          "A summary of current Dashboard key metrics covers the visible task tabs, Service Application and Profile Verification summary cards, License Distribution, and My/Team Performance where observed. Keep panel names with their values; unavailable panels stay explicitly unavailable. It is not just one SLA percentage.",
+          "A requested individual indicator uses only its matching property. A full Dashboard overview must not silently substitute an attention-table row list for all key metrics.",
+          "The License My Tasks tab counts and priority cards are personal tasks even for a manager. Service Application summary instead follows the backend role scope; their totals are not automatically comparable.",
+          "Service Application selected-period statistics use the review LastUpdatedTime pipeline. The Profile Verification summary currently selects pending profiles by CreatedOn, while the profile tab/list uses UpdateOn. Confirm actual deployment before diagnosing a specific mismatch."
+        ]
+      }
+    },
+    {
+      "id": "admin.dashboard.license-summary.profileVerificationCard",
+      "kind": "field_semantics",
+      "revision": 2,
+      "status": "active",
+      "title": "Profile Verification Dashboard card fields",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local"
+        ],
+        "pageRefs": [
+          "/dashboard"
+        ],
+        "runtimeVerification": "pending",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/licenseDashboard.ts",
+          "revision": "sha256:7ed99b6783c36f5849e1d21584a68630bcb8e48f64e9ec2c4fef470759b5cf8b",
+          "locator": "getScope; createTaskHubDonutCard; createPerformanceTiles; createDistributionStatusCard; createTrendCard; getLicenseDashboardData",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/LicenseDashboard/LicenseDashboardAppService.cs",
+          "revision": "sha256:a3a0bd755cf7ac404d6388b6b03021880de5a0cf0bd3035725b95a6d4dba0890",
+          "locator": "GetTaskTabCountsAsync; GetPriorityCardsAsync; BuildServiceApplicationCardAsync; BuildProfileVerificationCardAsync; GetPerformanceMetricsAsync; GetPerformanceTrendAsync; ResolveRoleScopeAsync",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/dashboardApiShared.ts",
+          "revision": "sha256:3c31d383c4781bb437c3aedf348f9e50fde1f7e8e390f4ad396bba30d4718760",
+          "locator": "resolveDashboardDateRange; resolveDashboardTrendDateRange; formatPercent",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Dashboard/index.tsx",
+          "revision": "sha256:7c9a862100b8cb2ed0300767b555a354dd402c7ca1fa7584f2ffb1ce5d032485",
+          "locator": "applied department, roleVariant and timeFilter reader attributes; cancel stale requests on context changes",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/dashboard",
+        "sourceBinding": {
+          "operationRef": "GET /api/license/dashboard/overview",
+          "sourcePath": "/data/profileVerificationCard"
+        },
+        "fields": {
+          "totalCount": "Returned center count in Profile Verification. Service Application uses To Do; Profile Verification is its returned pending profile population. Do not assume these are the same entity or status scope.",
+          "totalTasks": "Returned Total Tasks in Profile Verification. Service Application combines selected-period todo and completed tasks. Profile Verification follows its own profile query; the label alone does not prove all historical profiles.",
+          "doneToday": "Returned Done Today in Profile Verification. Service Application computes this independently of the selected date range. Profile Verification counts today-updated records within the returned pending-profile set; do not relabel this as all approved/rejected profiles.",
+          "overdueTasks": "Returned Overdue Tasks for Profile Verification, a count separate from SLA percentage. Preserve a returned zero as the panel value; it does not certify another queue has no overdue records."
+        },
+        "bindings": [
+          {
+            "operationRef": "GET /api/license/dashboard/overview",
+            "sourcePath": "/data/profileVerificationCard",
+            "fields": [
+              "totalCount",
+              "totalTasks",
+              "doneToday",
+              "overdueTasks"
+            ],
+            "contextParameters": {
+              "priorityCardCount": "10"
+            },
+            "id": "object",
+            "kind": "object",
+            "concept": "dashboard",
+            "aliases": [
+              "current dashboard",
+              "dashboard snapshot",
+              "لوحة المعلومات"
+            ],
+            "meaning": "The observed License Dashboard panel response in its current authenticated context.",
+            "entityContextAlternatives": {
+              "scope": [
+                "0",
+                "1"
+              ],
+              "taskCategory": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            "contextRequestBindings": {
+              "startDate": {
+                "format": "date"
+              },
+              "endDate": {
+                "format": "date"
+              }
+            }
+          },
+          {
+            "operationRef": "GET /api/license/dashboard/overview",
+            "sourcePath": "/data/profileVerificationCard",
+            "fields": [
+              "totalCount",
+              "totalTasks",
+              "doneToday",
+              "overdueTasks"
+            ],
+            "contextParameters": {
+              "priorityCardCount": "10"
+            },
+            "id": "grain",
+            "kind": "grain",
+            "concept": "dashboard",
+            "aliases": [
+              "dashboard snapshot",
+              "dashboard metric",
+              "لوحة المعلومات"
+            ],
+            "observationShape": "singleton_object",
+            "meaning": "One current panel response; metric values are scalar observations, not entity identifiers or record counts calculated from rows.",
+            "entityContextAlternatives": {
+              "scope": [
+                "0",
+                "1"
+              ],
+              "taskCategory": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            "contextRequestBindings": {
+              "startDate": {
+                "format": "date"
+              },
+              "endDate": {
+                "format": "date"
+              }
+            }
+          },
+          {
+            "id": "totalCount",
+            "kind": "attribute",
+            "concept": "Profile Verification count",
+            "aliases": [],
+            "operationRef": "GET /api/license/dashboard/overview",
+            "sourcePath": "/data/profileVerificationCard",
+            "fields": [
+              "totalCount"
+            ],
+            "meaning": "Returned center count in Profile Verification. Service Application uses To Do; Profile Verification is its returned pending profile population. Do not assume these are the same entity or status scope."
+          },
+          {
+            "id": "totalTasks",
+            "kind": "attribute",
+            "concept": "Profile Verification total tasks",
+            "aliases": [],
+            "operationRef": "GET /api/license/dashboard/overview",
+            "sourcePath": "/data/profileVerificationCard",
+            "fields": [
+              "totalTasks"
+            ],
+            "meaning": "Returned Total Tasks in Profile Verification. Service Application combines selected-period todo and completed tasks. Profile Verification follows its own profile query; the label alone does not prove all historical profiles."
+          },
+          {
+            "id": "doneToday",
+            "kind": "attribute",
+            "concept": "Profile Verification done today",
+            "aliases": [],
+            "operationRef": "GET /api/license/dashboard/overview",
+            "sourcePath": "/data/profileVerificationCard",
+            "fields": [
+              "doneToday"
+            ],
+            "meaning": "Returned Done Today in Profile Verification. Service Application computes this independently of the selected date range. Profile Verification counts today-updated records within the returned pending-profile set; do not relabel this as all approved/rejected profiles."
+          },
+          {
+            "id": "overdueTasks",
+            "kind": "attribute",
+            "concept": "Profile Verification overdue tasks",
+            "aliases": [],
+            "operationRef": "GET /api/license/dashboard/overview",
+            "sourcePath": "/data/profileVerificationCard",
+            "fields": [
+              "overdueTasks"
+            ],
+            "meaning": "Returned Overdue Tasks for Profile Verification, a count separate from SLA percentage. Preserve a returned zero as the panel value; it does not certify another queue has no overdue records."
+          },
+          {
+            "id": "summary_metrics",
+            "kind": "attribute",
+            "concept": "Profile Verification summary metrics",
+            "aliases": [
+              "Profile Verification summary",
+              "Profile Verification card"
+            ],
+            "operationRef": "GET /api/license/dashboard/overview",
+            "sourcePath": "/data/profileVerificationCard",
+            "fields": [
+              "totalCount",
+              "totalTasks",
+              "doneToday",
+              "overdueTasks"
+            ],
+            "meaning": "The four numeric values displayed on this particular summary card. Retain this panel name and its distinct population in the output."
+          }
+        ],
+        "constraints": [
+          "This source snapshot defines field meanings, not current values or access grants. Verify the native response and current authenticated scope. A missing field is unavailable, not zero.",
+          "The current Dashboard is a selected UI context, not automatically personal scope. Preserve observed department, roleVariant and applied timeFilter. The same route can display another department or period.",
+          "The backend ResolveRoleScopeAsync uses the authenticated role context. A manually supplied scope query parameter cannot grant or independently establish personal, department or managed-team access.",
+          "Each panel has its own population and time basis. Do not turn an overview response, attention list or performance summary into a common record collection, and do not add counts from different panels.",
+          "A summary of current Dashboard key metrics covers the visible task tabs, Service Application and Profile Verification summary cards, License Distribution, and My/Team Performance where observed. Keep panel names with their values; unavailable panels stay explicitly unavailable. It is not just one SLA percentage.",
+          "A requested individual indicator uses only its matching property. A full Dashboard overview must not silently substitute an attention-table row list for all key metrics.",
+          "The License My Tasks tab counts and priority cards are personal tasks even for a manager. Service Application summary instead follows the backend role scope; their totals are not automatically comparable.",
+          "Service Application selected-period statistics use the review LastUpdatedTime pipeline. The Profile Verification summary currently selects pending profiles by CreatedOn, while the profile tab/list uses UpdateOn. Confirm actual deployment before diagnosing a specific mismatch."
+        ]
+      }
+    },
+    {
+      "id": "admin.dashboard.license-task-tabs",
+      "kind": "field_semantics",
+      "revision": 2,
+      "status": "active",
+      "title": "License Dashboard My Tasks category counts",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local"
+        ],
+        "pageRefs": [
+          "/dashboard"
+        ],
+        "runtimeVerification": "pending",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/licenseDashboard.ts",
+          "revision": "sha256:7ed99b6783c36f5849e1d21584a68630bcb8e48f64e9ec2c4fef470759b5cf8b",
+          "locator": "getScope; createTaskHubDonutCard; createPerformanceTiles; createDistributionStatusCard; createTrendCard; getLicenseDashboardData",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/LicenseDashboard/LicenseDashboardAppService.cs",
+          "revision": "sha256:a3a0bd755cf7ac404d6388b6b03021880de5a0cf0bd3035725b95a6d4dba0890",
+          "locator": "GetTaskTabCountsAsync; GetPriorityCardsAsync; BuildServiceApplicationCardAsync; BuildProfileVerificationCardAsync; GetPerformanceMetricsAsync; GetPerformanceTrendAsync; ResolveRoleScopeAsync",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/dashboardApiShared.ts",
+          "revision": "sha256:3c31d383c4781bb437c3aedf348f9e50fde1f7e8e390f4ad396bba30d4718760",
+          "locator": "resolveDashboardDateRange; resolveDashboardTrendDateRange; formatPercent",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Dashboard/index.tsx",
+          "revision": "sha256:7c9a862100b8cb2ed0300767b555a354dd402c7ca1fa7584f2ffb1ce5d032485",
+          "locator": "applied department, roleVariant and timeFilter reader attributes; cancel stale requests on context changes",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/dashboard",
+        "sourceBinding": {
+          "operationRef": "GET /api/license/dashboard/overview",
+          "sourcePath": "/data/taskTabCounts"
+        },
+        "fields": {
+          "ServiceApplication": "Current returned My Tasks count for ServiceApplication",
+          "ProfileVerification": "Current returned My Tasks count for ProfileVerification",
+          "Enquiries": "Current returned My Tasks count for Enquiries",
+          "Refunds": "Current returned My Tasks count for Refunds",
+          "Appeals": "Current returned My Tasks count for Appeals"
+        },
+        "bindings": [
+          {
+            "operationRef": "GET /api/license/dashboard/overview",
+            "sourcePath": "/data/taskTabCounts",
+            "fields": [
+              "ServiceApplication",
+              "ProfileVerification",
+              "Enquiries",
+              "Refunds",
+              "Appeals"
+            ],
+            "contextParameters": {
+              "priorityCardCount": "10"
+            },
+            "id": "object",
+            "kind": "object",
+            "concept": "dashboard",
+            "aliases": [
+              "current dashboard",
+              "dashboard snapshot",
+              "لوحة المعلومات"
+            ],
+            "meaning": "The observed License Dashboard panel response in its current authenticated context.",
+            "entityContextAlternatives": {
+              "scope": [
+                "0",
+                "1"
+              ],
+              "taskCategory": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            "contextRequestBindings": {
+              "startDate": {
+                "format": "date"
+              },
+              "endDate": {
+                "format": "date"
+              }
+            }
+          },
+          {
+            "operationRef": "GET /api/license/dashboard/overview",
+            "sourcePath": "/data/taskTabCounts",
+            "fields": [
+              "ServiceApplication",
+              "ProfileVerification",
+              "Enquiries",
+              "Refunds",
+              "Appeals"
+            ],
+            "contextParameters": {
+              "priorityCardCount": "10"
+            },
+            "id": "grain",
+            "kind": "grain",
+            "concept": "dashboard",
+            "aliases": [
+              "dashboard snapshot",
+              "dashboard metric",
+              "لوحة المعلومات"
+            ],
+            "observationShape": "singleton_object",
+            "meaning": "One current panel response; metric values are scalar observations, not entity identifiers or record counts calculated from rows.",
+            "entityContextAlternatives": {
+              "scope": [
+                "0",
+                "1"
+              ],
+              "taskCategory": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            "contextRequestBindings": {
+              "startDate": {
+                "format": "date"
+              },
+              "endDate": {
+                "format": "date"
+              }
+            }
+          },
+          {
+            "id": "task_tab_counts",
+            "kind": "attribute",
+            "concept": "my task counts",
+            "aliases": [
+              "My Tasks",
+              "task tab counts",
+              "مهامي",
+              "عدد المهام"
+            ],
+            "operationRef": "GET /api/license/dashboard/overview",
+            "sourcePath": "/data/taskTabCounts",
+            "fields": [
+              "ServiceApplication",
+              "ProfileVerification",
+              "Enquiries",
+              "Refunds",
+              "Appeals"
+            ],
+            "meaning": "The five task tab counts in My Tasks. They are category-specific counts and not the total of a single homogeneous queue. Manager role does not make these tabs department-wide."
+          }
+        ],
+        "constraints": [
+          "This source snapshot defines field meanings, not current values or access grants. Verify the native response and current authenticated scope. A missing field is unavailable, not zero.",
+          "The current Dashboard is a selected UI context, not automatically personal scope. Preserve observed department, roleVariant and applied timeFilter. The same route can display another department or period.",
+          "The backend ResolveRoleScopeAsync uses the authenticated role context. A manually supplied scope query parameter cannot grant or independently establish personal, department or managed-team access.",
+          "Each panel has its own population and time basis. Do not turn an overview response, attention list or performance summary into a common record collection, and do not add counts from different panels.",
+          "A summary of current Dashboard key metrics covers the visible task tabs, Service Application and Profile Verification summary cards, License Distribution, and My/Team Performance where observed. Keep panel names with their values; unavailable panels stay explicitly unavailable. It is not just one SLA percentage.",
+          "A requested individual indicator uses only its matching property. A full Dashboard overview must not silently substitute an attention-table row list for all key metrics."
+        ]
+      }
+    },
+    {
+      "id": "admin.dashboard.license-distribution",
+      "kind": "field_semantics",
+      "revision": 3,
+      "status": "active",
+      "title": "License Dashboard license distribution total",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local"
+        ],
+        "pageRefs": [
+          "/dashboard"
+        ],
+        "runtimeVerification": "pending",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/licenseDashboard.ts",
+          "revision": "sha256:7ed99b6783c36f5849e1d21584a68630bcb8e48f64e9ec2c4fef470759b5cf8b",
+          "locator": "getScope; createTaskHubDonutCard; createPerformanceTiles; createDistributionStatusCard; createTrendCard; getLicenseDashboardData",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/LicenseDashboard/LicenseDashboardAppService.cs",
+          "revision": "sha256:a3a0bd755cf7ac404d6388b6b03021880de5a0cf0bd3035725b95a6d4dba0890",
+          "locator": "GetTaskTabCountsAsync; GetPriorityCardsAsync; BuildServiceApplicationCardAsync; BuildProfileVerificationCardAsync; GetPerformanceMetricsAsync; GetPerformanceTrendAsync; ResolveRoleScopeAsync",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/dashboardApiShared.ts",
+          "revision": "sha256:3c31d383c4781bb437c3aedf348f9e50fde1f7e8e390f4ad396bba30d4718760",
+          "locator": "resolveDashboardDateRange; resolveDashboardTrendDateRange; formatPercent",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Dashboard/index.tsx",
+          "revision": "sha256:7c9a862100b8cb2ed0300767b555a354dd402c7ca1fa7584f2ffb1ce5d032485",
+          "locator": "applied department, roleVariant and timeFilter reader attributes; cancel stale requests on context changes",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/dashboard",
+        "sourceBinding": {
+          "operationRef": "GET /api/license/dashboard/license-distribution",
+          "sourcePath": "/data"
+        },
+        "fields": {
+          "totalCount": "Returned license distribution total.",
+          "statusDistribution": "Dynamic returned status/count map displayed by the page; read actual keys, never invent states.",
+          "startDate": "Echoed beginning of issuance-date filter.",
+          "endDate": "Echoed end of issuance-date filter."
+        },
+        "bindings": [
+          {
+            "operationRef": "GET /api/license/dashboard/license-distribution",
+            "sourcePath": "/data",
+            "fields": [
+              "totalCount"
+            ],
+            "contextParameters": {},
+            "id": "object",
+            "kind": "object",
+            "concept": "dashboard",
+            "aliases": [
+              "current dashboard",
+              "dashboard snapshot",
+              "لوحة المعلومات"
+            ],
+            "meaning": "The observed License Dashboard panel response in its current authenticated context.",
+            "contextResponseBindings": {
+              "startDate": {
+                "path": "/data/startDate",
+                "format": "date"
+              },
+              "endDate": {
+                "path": "/data/endDate",
+                "format": "date"
+              }
+            }
+          },
+          {
+            "operationRef": "GET /api/license/dashboard/license-distribution",
+            "sourcePath": "/data",
+            "fields": [
+              "totalCount"
+            ],
+            "contextParameters": {},
+            "id": "grain",
+            "kind": "grain",
+            "concept": "dashboard",
+            "aliases": [
+              "dashboard snapshot",
+              "dashboard metric",
+              "لوحة المعلومات"
+            ],
+            "observationShape": "singleton_object",
+            "meaning": "One current panel response; metric values are scalar observations, not entity identifiers or record counts calculated from rows.",
+            "contextResponseBindings": {
+              "startDate": {
+                "path": "/data/startDate",
+                "format": "date"
+              },
+              "endDate": {
+                "path": "/data/endDate",
+                "format": "date"
+              }
+            }
+          },
+          {
+            "id": "license_total",
+            "kind": "attribute",
+            "concept": "license distribution total",
+            "aliases": [
+              "License Distribution total",
+              "إجمالي توزيع التراخيص"
+            ],
+            "operationRef": "GET /api/license/dashboard/license-distribution",
+            "sourcePath": "/data",
+            "fields": [
+              "totalCount"
+            ],
+            "meaning": "Current returned sum of license-status buckets, filtered by issuance date. The inspected backend allows buckets to overlap, so this displayed total is not a certified count of distinct licenses. It is never a task or application count."
+          },
+          {
+            "id": "summary_metrics",
+            "kind": "attribute",
+            "concept": "dashboard key metrics",
+            "aliases": [
+              "key metrics",
+              "key indicators",
+              "dashboard key metrics",
+              "dashboard key indicators",
+              "المؤشرات الرئيسية",
+              "المؤشرات الأساسية",
+              "key metrics displayed on the current Dashboard",
+              "key indicators displayed on the current Dashboard",
+              "المؤشرات الرئيسية المعروضة في لوحة المعلومات الحالية",
+              "المؤشرات الأساسية المعروضة في لوحة المعلومات الحالية"
+            ],
+            "operationRef": "GET /api/license/dashboard/license-distribution",
+            "sourcePath": "/data",
+            "fields": [
+              "totalCount",
+              "statusDistribution.Active",
+              "statusDistribution.Expired",
+              "statusDistribution.ExpiringSoon",
+              "statusDistribution.Canceled",
+              "statusDistribution.Suspended"
+            ],
+            "meaning": "This observed License Distribution panel contributes these six labeled values to the current Dashboard key-metric summary. It does not replace the other visible panels or establish a distinct-license population.",
+            "summaryComponent": {
+              "group": "admin.dashboard.license-key-metrics",
+              "component": "distribution",
+              "requiredComponents": [
+                "overview",
+                "performance",
+                "distribution"
+              ]
+            }
+          }
+        ],
+        "constraints": [
+          "This source snapshot defines field meanings, not current values or access grants. Verify the native response and current authenticated scope. A missing field is unavailable, not zero.",
+          "The current Dashboard is a selected UI context, not automatically personal scope. Preserve observed department, roleVariant and applied timeFilter. The same route can display another department or period.",
+          "The backend ResolveRoleScopeAsync uses the authenticated role context. A manually supplied scope query parameter cannot grant or independently establish personal, department or managed-team access.",
+          "Each panel has its own population and time basis. Do not turn an overview response, attention list or performance summary into a common record collection, and do not add counts from different panels.",
+          "A summary of current Dashboard key metrics covers the visible task tabs, Service Application and Profile Verification summary cards, License Distribution, and My/Team Performance where observed. Keep panel names with their values; unavailable panels stay explicitly unavailable. It is not just one SLA percentage.",
+          "A requested individual indicator uses only its matching property. A full Dashboard overview must not silently substitute an attention-table row list for all key metrics.",
+          "This endpoint has no scope query parameter. Its inspected implementation uses the department-wide license view and checks the current native identity. Do not inherit personal scope from another endpoint or treat this definition as a grant of access.",
+          "Active, Expired, ExpiringSoon, Canceled and Suspended are independent LicenseManagement status queries; the backend permits overlap and sums their counts for the displayed total. Do not present that sum as a deduplicated license population.",
+          "Preserve each observed status label and count from statusDistribution. Null/missing distribution means unavailable; it is not an empty category with zero.",
+          "For the key-metric overview, read totalCount and the five observed statusDistribution fields together. This panel is one component; include the overview task/cards and performance panel separately when observed. Historical completed-task buckets are for a separately requested comparison, not a replacement for visible current panels."
+        ]
+      }
+    },
+    {
+      "id": "admin.dashboard.license-historical-series",
+      "kind": "field_semantics",
+      "revision": 1,
+      "status": "active",
+      "title": "License Dashboard historical series and comparison boundaries",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local"
+        ],
+        "pageRefs": [
+          "/dashboard"
+        ],
+        "runtimeVerification": "pending",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/licenseDashboard.ts",
+          "revision": "sha256:7ed99b6783c36f5849e1d21584a68630bcb8e48f64e9ec2c4fef470759b5cf8b",
+          "locator": "getScope; createTaskHubDonutCard; createPerformanceTiles; createDistributionStatusCard; createTrendCard; getLicenseDashboardData",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/LicenseDashboard/LicenseDashboardAppService.cs",
+          "revision": "sha256:a3a0bd755cf7ac404d6388b6b03021880de5a0cf0bd3035725b95a6d4dba0890",
+          "locator": "GetTaskTabCountsAsync; GetPriorityCardsAsync; BuildServiceApplicationCardAsync; BuildProfileVerificationCardAsync; GetPerformanceMetricsAsync; GetPerformanceTrendAsync; ResolveRoleScopeAsync",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/dashboardApiShared.ts",
+          "revision": "sha256:3c31d383c4781bb437c3aedf348f9e50fde1f7e8e390f4ad396bba30d4718760",
+          "locator": "resolveDashboardDateRange; resolveDashboardTrendDateRange; formatPercent",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Dashboard/index.tsx",
+          "revision": "sha256:7c9a862100b8cb2ed0300767b555a354dd402c7ca1fa7584f2ffb1ce5d032485",
+          "locator": "applied department, roleVariant and timeFilter reader attributes; cancel stale requests on context changes",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/dashboard",
+        "sourceBinding": {
+          "operationRef": "GET /api/license/dashboard/performance-trend",
+          "sourcePath": "/data/dataPoints"
+        },
+        "fields": {
+          "bucketDate": "Time bucket start.",
+          "label": "Actual bucket label.",
+          "totalCount": "Completed tasks across returned task types.",
+          "taskCounts": "Per-type completed count map.",
+          "/data/bucketType": "Returned aggregation unit.",
+          "/data/startDate": "Normalized response range start.",
+          "/data/endDate": "Normalized response range end."
+        },
+        "bindings": [
+          {
+            "id": "object",
+            "kind": "object",
+            "concept": "dashboard trend",
+            "operationRef": "GET /api/license/dashboard/performance-trend",
+            "sourcePath": "/data/dataPoints",
+            "fields": [
+              "bucketDate"
+            ],
+            "meaning": "Historical completed-task count series, not application/complaint/inspection arrivals."
+          },
+          {
+            "id": "grain",
+            "kind": "grain",
+            "concept": "time bucket",
+            "operationRef": "GET /api/license/dashboard/performance-trend",
+            "sourcePath": "/data/dataPoints",
+            "fields": [
+              "bucketDate"
+            ],
+            "entityKeyFields": [
+              "bucketDate"
+            ],
+            "meaning": "One returned time bucket at the reported bucketType; not automatically one day or a calendar week."
+          },
+          {
+            "id": "bucket_label",
+            "kind": "attribute",
+            "concept": "period",
+            "aliases": [],
+            "operationRef": "GET /api/license/dashboard/performance-trend",
+            "sourcePath": "/data/dataPoints",
+            "fields": [
+              "label",
+              "bucketDate"
+            ],
+            "meaning": "Exact returned bucket label and starting date; report the parent response range and bucketType."
+          },
+          {
+            "id": "completed_count",
+            "kind": "attribute",
+            "concept": "completed task count",
+            "aliases": [
+              "historical completed tasks"
+            ],
+            "operationRef": "GET /api/license/dashboard/performance-trend",
+            "sourcePath": "/data/dataPoints",
+            "fields": [
+              "totalCount"
+            ],
+            "meaning": "Completed task total in the returned bucket, not newly received volume."
+          }
+        ],
+        "constraints": [
+          "This source snapshot defines field meanings, not current values or access grants. Verify the native response and current authenticated scope. A missing field is unavailable, not zero.",
+          "The current Dashboard is a selected UI context, not automatically personal scope. Preserve observed department, roleVariant and applied timeFilter. The same route can display another department or period.",
+          "The backend ResolveRoleScopeAsync uses the authenticated role context. A manually supplied scope query parameter cannot grant or independently establish personal, department or managed-team access.",
+          "Each panel has its own population and time basis. Do not turn an overview response, attention list or performance summary into a common record collection, and do not add counts from different panels.",
+          "A summary of current Dashboard key metrics covers the visible task tabs, Service Application and Profile Verification summary cards, License Distribution, and My/Team Performance where observed. Keep panel names with their values; unavailable panels stay explicitly unavailable. It is not just one SLA percentage.",
+          "A requested individual indicator uses only its matching property. A full Dashboard overview must not silently substitute an attention-table row list for all key metrics.",
+          "The service sums repository TasksCompleted. An older chart tooltip referring to SLA Compliance and Average Processing Time does not change these fields into those metrics.",
+          "Yesterday/last-week comparisons require the same metric, population, period length, time basis and timezone. A current KPI and a historical completed-task series are not the same measure.",
+          "If matching historical evidence is not available for the requested indicator, say which comparison cannot be made. This limitation is a valid factual result; never fabricate a delta or call missing data zero.",
+          "No forecast operation is established by these Dashboard APIs. Current totals and completed-task trends do not support a precise forecast of next-month arrivals. Explain what is missing without inventing a prediction.",
+          "Check series values align with dataPoints and preserve actual bucketType. Do not force weekly/monthly buckets into yesterday values."
+        ]
+      }
+    },
+    {
+      "id": "admin.dashboard.license-overview-panels",
+      "kind": "field_semantics",
+      "revision": 2,
+      "status": "active",
+      "title": "License Dashboard overview response panel projection",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local"
+        ],
+        "pageRefs": [
+          "/dashboard"
+        ],
+        "runtimeVerification": "pending",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/licenseDashboard.ts",
+          "revision": "sha256:7ed99b6783c36f5849e1d21584a68630bcb8e48f64e9ec2c4fef470759b5cf8b",
+          "locator": "getScope; createTaskHubDonutCard; createPerformanceTiles; createDistributionStatusCard; createTrendCard; getLicenseDashboardData",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/LicenseDashboard/LicenseDashboardAppService.cs",
+          "revision": "sha256:a3a0bd755cf7ac404d6388b6b03021880de5a0cf0bd3035725b95a6d4dba0890",
+          "locator": "GetTaskTabCountsAsync; GetPriorityCardsAsync; BuildServiceApplicationCardAsync; BuildProfileVerificationCardAsync; GetPerformanceMetricsAsync; GetPerformanceTrendAsync; ResolveRoleScopeAsync",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/dashboardApiShared.ts",
+          "revision": "sha256:3c31d383c4781bb437c3aedf348f9e50fde1f7e8e390f4ad396bba30d4718760",
+          "locator": "resolveDashboardDateRange; resolveDashboardTrendDateRange; formatPercent",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Dashboard/index.tsx",
+          "revision": "sha256:7c9a862100b8cb2ed0300767b555a354dd402c7ca1fa7584f2ffb1ce5d032485",
+          "locator": "applied department, roleVariant and timeFilter reader attributes; cancel stale requests on context changes",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/dashboard",
+        "sourceBinding": {
+          "operationRef": "GET /api/license/dashboard/overview",
+          "sourcePath": "/data"
+        },
+        "bindings": [
+          {
+            "operationRef": "GET /api/license/dashboard/overview",
+            "sourcePath": "/data",
+            "fields": [
+              "taskTabCounts.ServiceApplication",
+              "taskTabCounts.ProfileVerification",
+              "taskTabCounts.Enquiries",
+              "taskTabCounts.Refunds",
+              "taskTabCounts.Appeals",
+              "serviceApplicationCard.totalCount",
+              "serviceApplicationCard.totalTasks",
+              "serviceApplicationCard.doneToday",
+              "serviceApplicationCard.overdueTasks",
+              "profileVerificationCard.totalCount",
+              "profileVerificationCard.totalTasks",
+              "profileVerificationCard.doneToday",
+              "profileVerificationCard.overdueTasks",
+              "serviceApplicationCard.slaDistribution.pendingReview",
+              "serviceApplicationCard.slaDistribution.pendingModification",
+              "serviceApplicationCard.slaDistribution.externalApproval",
+              "profileVerificationCard.statusBreakdown.pendingReview",
+              "profileVerificationCard.statusBreakdown.approved",
+              "profileVerificationCard.statusBreakdown.rejected"
+            ],
+            "id": "object",
+            "kind": "object",
+            "concept": "dashboard",
+            "aliases": [
+              "current dashboard",
+              "dashboard snapshot",
+              "لوحة المعلومات"
+            ],
+            "contextParameters": {
+              "priorityCardCount": "10"
+            },
+            "entityContextAlternatives": {
+              "scope": [
+                "0",
+                "1"
+              ],
+              "taskCategory": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            "contextRequestBindings": {
+              "startDate": {
+                "format": "date"
+              },
+              "endDate": {
+                "format": "date"
+              }
+            },
+            "meaning": "Current authenticated overview response, whose nested panels retain different populations and date bases."
+          },
+          {
+            "operationRef": "GET /api/license/dashboard/overview",
+            "sourcePath": "/data",
+            "fields": [
+              "taskTabCounts.ServiceApplication",
+              "taskTabCounts.ProfileVerification",
+              "taskTabCounts.Enquiries",
+              "taskTabCounts.Refunds",
+              "taskTabCounts.Appeals",
+              "serviceApplicationCard.totalCount",
+              "serviceApplicationCard.totalTasks",
+              "serviceApplicationCard.doneToday",
+              "serviceApplicationCard.overdueTasks",
+              "profileVerificationCard.totalCount",
+              "profileVerificationCard.totalTasks",
+              "profileVerificationCard.doneToday",
+              "profileVerificationCard.overdueTasks",
+              "serviceApplicationCard.slaDistribution.pendingReview",
+              "serviceApplicationCard.slaDistribution.pendingModification",
+              "serviceApplicationCard.slaDistribution.externalApproval",
+              "profileVerificationCard.statusBreakdown.pendingReview",
+              "profileVerificationCard.statusBreakdown.approved",
+              "profileVerificationCard.statusBreakdown.rejected"
+            ],
+            "id": "grain",
+            "kind": "grain",
+            "concept": "dashboard",
+            "aliases": [
+              "current dashboard",
+              "dashboard snapshot",
+              "لوحة المعلومات"
+            ],
+            "observationShape": "singleton_object",
+            "contextParameters": {
+              "priorityCardCount": "10"
+            },
+            "entityContextAlternatives": {
+              "scope": [
+                "0",
+                "1"
+              ],
+              "taskCategory": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            "contextRequestBindings": {
+              "startDate": {
+                "format": "date"
+              },
+              "endDate": {
+                "format": "date"
+              }
+            },
+            "meaning": "One captured response object with scalar panel values. These values are not entity keys and may not be counted as records."
+          },
+          {
+            "operationRef": "GET /api/license/dashboard/overview",
+            "sourcePath": "/data",
+            "fields": [
+              "taskTabCounts.ServiceApplication",
+              "taskTabCounts.ProfileVerification",
+              "taskTabCounts.Enquiries",
+              "taskTabCounts.Refunds",
+              "taskTabCounts.Appeals",
+              "serviceApplicationCard.totalCount",
+              "serviceApplicationCard.totalTasks",
+              "serviceApplicationCard.doneToday",
+              "serviceApplicationCard.overdueTasks",
+              "profileVerificationCard.totalCount",
+              "profileVerificationCard.totalTasks",
+              "profileVerificationCard.doneToday",
+              "profileVerificationCard.overdueTasks",
+              "serviceApplicationCard.slaDistribution.pendingReview",
+              "serviceApplicationCard.slaDistribution.pendingModification",
+              "serviceApplicationCard.slaDistribution.externalApproval",
+              "profileVerificationCard.statusBreakdown.pendingReview",
+              "profileVerificationCard.statusBreakdown.approved",
+              "profileVerificationCard.statusBreakdown.rejected"
+            ],
+            "id": "key_metrics",
+            "kind": "attribute",
+            "concept": "dashboard key metrics",
+            "aliases": [
+              "key metrics",
+              "key indicators",
+              "dashboard key metrics",
+              "dashboard key indicators",
+              "المؤشرات الرئيسية",
+              "المؤشرات الأساسية",
+              "key metrics displayed on the current Dashboard",
+              "key indicators displayed on the current Dashboard",
+              "المؤشرات الرئيسية المعروضة في لوحة المعلومات الحالية",
+              "المؤشرات الأساسية المعروضة في لوحة المعلومات الحالية"
+            ],
+            "meaning": "The five My Tasks category counts, Service Application and Profile Verification summary values and their visible status breakdowns. Keep every nested panel label and do not sum them. These are the overview-response component of a Dashboard summary; performance and license distribution are separately observed components.",
+            "summaryComponent": {
+              "group": "admin.dashboard.license-key-metrics",
+              "component": "overview",
+              "requiredComponents": [
+                "overview",
+                "performance",
+                "distribution"
+              ]
+            }
+          }
+        ],
+        "constraints": [
+          "This source snapshot defines field meanings, not current values or access grants. Verify the native response and current authenticated scope. A missing field is unavailable, not zero.",
+          "The current Dashboard is a selected UI context, not automatically personal scope. Preserve observed department, roleVariant and applied timeFilter. The same route can display another department or period.",
+          "The backend ResolveRoleScopeAsync uses the authenticated role context. A manually supplied scope query parameter cannot grant or independently establish personal, department or managed-team access.",
+          "Each panel has its own population and time basis. Do not turn an overview response, attention list or performance summary into a common record collection, and do not add counts from different panels.",
+          "A summary of current Dashboard key metrics covers the visible task tabs, Service Application and Profile Verification summary cards, License Distribution, and My/Team Performance where observed. Keep panel names with their values; unavailable panels stay explicitly unavailable. It is not just one SLA percentage.",
+          "A requested individual indicator uses only its matching property. A full Dashboard overview must not silently substitute an attention-table row list for all key metrics.",
+          "The License My Tasks tab counts and priority cards are personal tasks even for a manager. Service Application summary instead follows the backend role scope; their totals are not automatically comparable.",
+          "Service Application selected-period statistics use the review LastUpdatedTime pipeline. The Profile Verification summary currently selects pending profiles by CreatedOn, while the profile tab/list uses UpdateOn. Confirm actual deployment before diagnosing a specific mismatch.",
+          "The scope and taskCategory request choices do not rename or merge these panel identities: getTaskTabCounts remains personal, while Service Application follows server-resolved role scope. priorityCardCount affects separate priority rows.",
+          "The overview response does not echo its date parameters. Only gateway-attested ISO-date parameter shape and matching request hashes can bind this snapshot context; this does not satisfy a user-specified date range or permit values from a different page capture.",
+          "Read the exact 19 scalar paths under /data for this combined overview projection. Do not bind a /data projection using a different /data/card child path. Do not read or expose member leave reasons, identities or unrelated topServices totals."
+        ]
+      }
+    }
+  ]
+}

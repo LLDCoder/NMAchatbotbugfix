@@ -1,0 +1,235 @@
+{
+  "schemaVersion": "1.0",
+  "bundleId": "admin.page-docs.content.application-detail.attributes",
+  "packageStatus": "active",
+  "createdAt": "2026-09-25T03:44:01.401865+00:00",
+  "records": [
+    {
+      "id": "admin.page-docs.content.application-detail.attributes",
+      "kind": "field_semantics",
+      "revision": 1,
+      "status": "active",
+      "title": "Content Application Details-属性与表单证据绑定",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local"
+        ],
+        "pageRefs": [
+          "/content/ContentApplications/ContentApplicationsDetails"
+        ],
+        "runtimeVerification": "pending",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Application/ApplicationDto.cs",
+          "revision": "3efae9b26845ec68130f314cbccfd0861bb76f19a22ab6d083f5ec9435042cdc",
+          "locator": "MyReviewPageResponse",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ApplicationAppService.cs",
+          "revision": "22e94773e70c95fab9ce479919b51d0241e046bf085cd0c3f8b5991b9004772e",
+          "locator": "GetMyReviewDetailAsync and ApplyForEn projection",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationMaterials/ApplicationMaterialStatusService.cs",
+          "revision": "02393670290b376dd377b628a2f6f2d8e26e487ea05e8ef21fb502d43e1b390f",
+          "locator": "GetReviewFormDataAsync and MergeFormData",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/components/common/FormliyView/index.tsx",
+          "revision": "21bd4c20ae22d1730472855697ef5da782d3de41bb780b145f49c2941680a762",
+          "locator": "schema/formValues and upload rendering",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/components/common/FormilyReviewList/stepVisibility.ts",
+          "revision": "dfc05b211a08c83ec181ae04053030c357dd6cacfdb57d7cfb528e07e715ffaa",
+          "locator": "conditional step visibility",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/content/ContentApplications/ContentApplicationsDetails",
+        "bindings": [
+          {
+            "id": "object",
+            "kind": "object",
+            "concept": "application",
+            "aliases": [
+              "content application",
+              "content applications",
+              "content record"
+            ],
+            "fields": [
+              "id"
+            ],
+            "operationRef": "GET /api/Content/MyReviewDetail/{taskId}",
+            "sourcePath": "/data/detail",
+            "meaning": "Application entity identified by id; taskId identifies the workflow task."
+          },
+          {
+            "id": "grain",
+            "kind": "grain",
+            "concept": "application",
+            "aliases": [
+              "content application",
+              "content applications",
+              "content record"
+            ],
+            "fields": [
+              "id"
+            ],
+            "operationRef": "GET /api/Content/MyReviewDetail/{taskId}",
+            "sourcePath": "/data/detail",
+            "meaning": "Application entity identified by id; taskId identifies the workflow task."
+          },
+          {
+            "id": "status",
+            "kind": "attribute",
+            "concept": "status",
+            "aliases": [
+              "current status",
+              "application status"
+            ],
+            "fields": [
+              "status"
+            ],
+            "operationRef": "GET /api/Content/MyReviewDetail/{taskId}",
+            "sourcePath": "/data/detail",
+            "meaning": "Current application/process state."
+          },
+          {
+            "id": "handler",
+            "kind": "attribute",
+            "concept": "handler",
+            "aliases": [
+              "current handler",
+              "officer",
+              "assigned officer",
+              "who is handling it"
+            ],
+            "fields": [
+              "assignedTo"
+            ],
+            "operationRef": "GET /api/Content/MyReviewDetail/{taskId}",
+            "sourcePath": "/data/detail",
+            "meaning": "Current assignee display; not historical reviewer."
+          },
+          {
+            "id": "service_type",
+            "kind": "attribute",
+            "concept": "type",
+            "aliases": [
+              "application type",
+              "service type"
+            ],
+            "fields": [
+              "serviceTypeNameEn"
+            ],
+            "operationRef": "GET /api/Content/MyReviewDetail/{taskId}",
+            "sourcePath": "/data/detail",
+            "meaning": "Service type display; does not assert publication material type."
+          },
+          {
+            "id": "applicant",
+            "kind": "attribute",
+            "concept": "applicant",
+            "aliases": [
+              "applying establishment",
+              "applicant name"
+            ],
+            "fields": [
+              "applyForEn"
+            ],
+            "operationRef": "GET /api/Content/MyReviewDetail/{taskId}",
+            "sourcePath": "/data/detail",
+            "meaning": "Applying establishment name; does not establish the submitting user."
+          },
+          {
+            "id": "submitted_at",
+            "kind": "attribute",
+            "concept": "submission time",
+            "aliases": [
+              "submission date"
+            ],
+            "fields": [
+              "submissionTime"
+            ],
+            "operationRef": "GET /api/Content/MyReviewDetail/{taskId}",
+            "sourcePath": "/data/detail",
+            "meaning": "Submission timestamp."
+          },
+          {
+            "id": "materials",
+            "kind": "attribute",
+            "concept": "missing materials",
+            "aliases": [
+              "missing documents",
+              "required materials",
+              "material requirements"
+            ],
+            "fields": [
+              "id"
+            ],
+            "operationRef": "GET /api/Content/MyReviewDetail/{taskId}",
+            "sourcePath": "/data/detail",
+            "meaning": "Compare stored form schema and submitted values only after version and applicability are verified. serviceId identifies the service, not a verified form version; external conditional visibility rules are incomplete.",
+            "formDefinition": {
+              "format": "schema_values/1",
+              "recordPath": "/data/detail",
+              "versionPath": null,
+              "documentPath": "/data/formData",
+              "containerPath": "/formData",
+              "schemaPath": "/schema",
+              "valuesPath": "/formValues",
+              "componentKey": "x-component",
+              "materialComponents": [
+                "Upload",
+                "BookListUpload",
+                "FileUploadGrid"
+              ],
+              "applicabilityComplete": false
+            }
+          }
+        ],
+        "fields": {
+          "id": "Application entity key",
+          "status": "Application process state",
+          "assignedTo": "Current handler",
+          "serviceTypeNameEn": "Service type",
+          "applyForEn": "Applying establishment",
+          "submissionTime": "Submission timestamp"
+        },
+        "sourceBinding": {
+          "operationRef": "GET /api/Content/MyReviewDetail/{taskId}",
+          "sourcePath": "/data/detail"
+        },
+        "relationships": [
+          "Each definition applies only to its declared operation and data path."
+        ],
+        "constraints": [
+          "Definitions do not grant execution or field access. Use the current authorized response and exact operation/path.",
+          "No application-specific counts, questions or answers are stored.",
+          "Record verification, requested field completeness and output permission are independently checked.",
+          "A missing value is unknown; unavailable priority, workflow rules and source clock behavior are not guessed."
+        ],
+        "unresolvedPageSemantics": [
+          "Actual submitting user differs from applicant establishment and is not established by this response mapping.",
+          "Next-step decisions require service/version/workflow rules; taskStatus is the current node, not a complete next-step recommendation.",
+          "Form applicability rules outside the stored schema require versioned definitions before missing materials can be confirmed.",
+          "serviceId is not a form version; versionPath remains unverified until the actual version field is established."
+        ]
+      }
+    }
+  ]
+}

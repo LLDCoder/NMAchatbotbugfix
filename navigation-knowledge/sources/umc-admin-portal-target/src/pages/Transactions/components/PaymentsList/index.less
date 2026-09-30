@@ -1,0 +1,537 @@
+.payments-list{
+    padding: 24px;
+    background-color: #fff;
+    border-radius: 20px;
+    .filter{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+        .payments-list-form{
+            display: flex;
+            column-gap: 12px;
+            .ant-form-item{
+                margin-bottom: 0;
+            }
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            column-gap: 8px;
+          }
+        }
+    }
+    .table{
+        .amount-success{ 
+            color: #4A9D5C;
+            &::before{
+                content: '+';
+            }
+        }
+        .amount-error{
+            color: #EA4F49;
+            // &::before{
+            //     content: '-';
+            // }
+        }
+        .table-amount{
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            white-space: nowrap;
+        }
+        .table-amount-icon{
+            width: 26px;
+            height: 20px;
+            flex: 0 0 auto;
+            display: block;
+        }
+        .todo-tabpanel-custormer{
+            display: flex;
+            align-items: center;
+            column-gap: 6px;
+            .todo-tabpanel-custormer-icon{
+                width: 18px;
+            }
+        }
+    }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.payments-list .transactions-filter-toolbar__field--search {
+    flex: 0 0 320px;
+    width: 320px;
+    max-width: 320px;
+}
+
+.payments-list .transactions-filter-toolbar__field--secondary {
+    flex: 0 0 240px;
+    width: 240px;
+    max-width: 240px;
+}
+
+.payments-list .transactions-filter-toolbar__field .ant-input-affix-wrapper,
+.payments-list .transactions-filter-toolbar__field .ant-select {
+    width: 100%;
+}
+
+body .payments-list__select-dropdown {
+    box-shadow: 0 8px 20px rgba(54, 30, 18, 0.12) !important;
+}
+
+.payments-statistics-chart-tooltip {
+    position: fixed !important;
+    z-index: 2000;
+    padding: 8px 12px !important;
+    border: 1px solid #e1e3e5 !important;
+    border-radius: 8px !important;
+    background: #ffffff !important;
+    box-shadow: 0 8px 20px rgba(54, 30, 18, 0.08) !important;
+    pointer-events: none !important;
+    color: #361e12 !important;
+    font: 400 12px/16px Inter, sans-serif !important;
+}
+
+.payments-statistics-chart-tooltip-content {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap !important;
+}
+
+.payments-statistics-chart-tooltip-marker {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    flex-shrink: 0;
+}
+
+.payments-statistics-chart-tooltip-text {
+    color: #361e12;
+    font-size: 12px;
+    line-height: 16px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+        font-size: 10px;
+        line-height: 14px;
+    }
+}
+
+@media (max-width: 1919.98px) {
+    .payments-list .transactions-filter-toolbar__field--search,
+    .payments-list .transactions-filter-toolbar__field--secondary {
+        flex: 0 0 240px;
+        width: 240px;
+        min-width: 240px;
+        max-width: 240px;
+    }
+
+    .payments-list .transactions-filter-toolbar__field .ant-input-affix-wrapper,
+    .payments-list .transactions-filter-toolbar__field .ant-select,
+    .payments-list .transactions-filter-toolbar__field .ant-select-selector,
+    .payments-list .responsive-filter-toolbar__button,
+    .payments-list .responsive-filter-toolbar__action .custom-button {
+        height: 40px !important;
+        min-height: 40px !important;
+        max-height: 40px !important;
+    }
+
+    .payments-list .transactions-filter-toolbar__field .ant-select-selection-item,
+    .payments-list .transactions-filter-toolbar__field .ant-select-selection-placeholder {
+        line-height: 38px !important;
+    }
+}
+
+@media (max-width: 1439.98px) {
+    .payments-list .transactions-filter-toolbar__field--secondary {
+        display: none;
+    }
+}
+
+.payments-statistics{
+    display: flex;
+    column-gap: 16px;
+    margin-bottom: 16px;
+    & > div{
+        width: calc(33.33% - 11px);
+    }
+    /* Below 1204 the two main cards (payments distribution + revenue breakdown) sit
+       two-up on the first row, and the info column drops to a full-width second row where
+       its two short balance cards line up side by side (info flips to a row below). */
+    @media (max-width: 1203.98px) {
+        flex-wrap: wrap;
+        row-gap: 16px;
+        & > .payments-statistics-card {
+            width: calc(50% - 8px);
+        }
+        & > .payments-statistics-info {
+            width: 100%;
+        }
+    }
+    .payments-statistics-pie{
+        width: 160px;
+    }
+    .payments-statistics-bar{
+        width: 160px;
+    }
+    .payments-statistics-card{
+        background-color: #fff;
+        padding: 24px;
+        border-radius: 20px;
+        .payments-statistics-title{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            font-family: Inter;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 22px;
+            color: #361E12;
+            img{
+                width: 16px;
+                height: 16px;
+                margin-left: 8px;
+            }
+            .payments-statistics-title-text{
+                display: flex;
+                align-items: center;
+                .payments-statistics-info-trigger{
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex: 0 0 16px;
+                    width: 16px;
+                    height: 16px;
+                    margin-inline-start: 8px;
+                    cursor: default;
+
+                    img{
+                        width: 16px;
+                        height: 16px;
+                        margin: 0;
+                    }
+                }
+                .payments-statistics-revenue-currency{
+                    width: 24px;
+                    height: 24px;
+                    margin-inline-start: 4px;
+                    flex: 0 0 auto;
+                }
+            }
+            .payments-statistics-revenue-aed-icon{
+                width: 24px;
+                height: 20px;
+                margin-left: 8px;
+                flex: 0 0 auto;
+            }
+            .payments-statistics-last7{
+                font-family: Inter;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+                color: #361E12;
+                display: flex;
+                align-items: center;
+                svg{
+                    font-size: 16px;
+                    color: #F47A75;
+                  /* rwd-ramp */
+                  @media (max-width: 1919.98px) {
+                    font-size: 14px;
+                  }
+                }
+                .amount-rise{
+                    color: #4A9D5C;
+                    transform: rotate(180deg);
+                }
+              /* rwd-ramp */
+              @media (max-width: 1919.98px) {
+                font-size: 12px;
+                line-height: 16px;
+              }
+            }
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            font-size: 16px;
+          }
+        }
+        .payments-statistics-title-mb{
+            margin-bottom: 53px;
+        }
+        .payments-statistics-revenue-item{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .payments-statistics-revenue-item-name{
+                display: flex;
+                font-family: Inter;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 20px;
+                color: #361E12;
+                .payments-statistics-info-trigger{
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex: 0 0 16px;
+                    width: 16px;
+                    height: 16px;
+                    margin-inline-start: 4px;
+                    cursor: default;
+
+                    img{
+                        width: 16px;
+                        height: 16px;
+                        margin: 0;
+                    }
+                }
+                img{
+                    margin-left: 4px;
+                    width: 16px;
+                    height: 16px;
+                }
+              /* rwd-ramp */
+              @media (max-width: 1919.98px) {
+                font-size: 12px;
+                line-height: 16px;
+              }
+            }
+        }
+        .payments-statistics-revenue-main{
+            .payments-statistics-revenue-bars{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                row-gap: 12px;
+                margin-top: 12px;
+                .payments-statistics-revenue-graduation-mark{
+                    position: absolute;
+                    height: 145px;
+                    border-left: 1px dashed #C3C6CB;
+                    left: 50%;
+                    bottom: 26px;
+                }
+                .payments-statistics-revenue-item{
+                    position: relative;
+                    .payments-statistics-revenue-limit{
+                        font-family: Inter;
+                        font-weight: 400;
+                        font-size: 12px;
+                        line-height: 16px;
+                        color: #797E86;
+                      /* rwd-ramp */
+                      @media (max-width: 1919.98px) {
+                        font-size: 10px;
+                        line-height: 14px;
+                      }
+                    }
+                    .payments-statistics-revenue-item-zero{
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                    .payments-statistics-revenue-item-bar{
+                        width: 100%;
+                        display: flex;
+                        column-gap: 3px;
+                        .payments-statistics-revenue-item-bar-left{
+                            width: 50%;
+                            transform: rotate(180deg);
+                            margin-top: 2px;
+                        }
+                        .payments-statistics-revenue-item-bar-right{
+                            width: 50%;
+                        }
+                    }
+                }
+              /* rwd-ramp */
+              @media (max-width: 1919.98px) {
+                row-gap: 8px;
+              }
+            }
+        }
+        .divider{
+            border-top: 1px dashed #E1E3E5;
+            margin: 24px 0;
+        }
+        .seven-days{
+            display: flex;
+            justify-content: space-between;
+            font-family: Inter;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 20px;
+            color: #361E12;
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            font-size: 12px;
+            line-height: 16px;
+          }
+        }
+        .payments-statistics-main{
+            display: flex;
+        }
+        .payments-statistics-items{
+            flex: 1;
+            margin-left: 30px;
+            row-gap: 16px;
+            display: flex;
+            flex-direction: column;
+            margin-top: 34px;
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            row-gap: 12px;
+          }
+        }
+        .payments-statistics-item{
+            font-family: Inter;
+            font-weight: 500;
+            font-size: 14px;
+            color: #1B1D21;
+            width: 100%;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            text-align: start;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            &--inactive{
+                opacity: 0.45;
+            }
+            &:focus-visible{
+                outline: 2px solid #A67C2E;
+                outline-offset: 2px;
+                border-radius: 2px;
+            }
+            .payments-statistics-item-left{
+                display: flex;
+                align-items: center;
+                .green-dot{
+                    border-radius: 50%;
+                    width: 8px;
+                    height: 8px;
+                    margin-right: 8px;
+                    background-color: #A0D5AB;
+                }
+                .red-dot{ 
+                    border-radius: 50%;
+                    width: 8px;
+                    height: 8px;
+                    margin-right: 8px;
+                    background-color: #FAAAA7;
+                }
+                .yellow-dot{
+                    border-radius: 50%;
+                    width: 8px;
+                    height: 8px;
+                    margin-right: 8px;
+                    background-color: #FAD44F;
+                }
+            }
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            font-size: 12px;
+          }
+        }
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        padding: 24px;
+        border-radius: 10px;
+      }
+    }
+    .payments-statistics-info{
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        row-gap: 12px;
+      }
+      /* Below 1204 the balance cards use the full row to preserve each statistic's width. */
+      @media (max-width: 1203.98px) {
+        flex-direction: column;
+      }
+    }
+    .payments-statistics-balance{
+        background-color: #fff;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        column-gap: 24px;
+        padding: 24px;
+        border-radius: 20px;
+        .balance-item{
+            display: flex;
+            align-items: center;
+            flex: 1 1 0;
+            min-width: 0;
+            .balance-icon{
+                margin-inline-end: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                flex: 0 0 40px;
+            }
+            .balance-icon.balance-icon--wallet,
+            .balance-icon.balance-icon--credit-card{
+                background-color: #F9F7ED;
+            }
+            .balance-icon.balance-icon--failed{
+                background-color: #FEF2F2;
+            }
+            .balance-icon.balance-icon--failed-refund{
+                background-color: #FEF5EE;
+            }
+            .balance-value{
+                font-family: Inter;
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 22px;
+                color: #361E12;
+              /* rwd-ramp */
+              @media (max-width: 1919.98px) {
+                font-size: 16px;
+                }
+            }
+            .balance-text{
+                min-width: 0;
+                flex: 1;
+            }
+            .balance-title{
+                overflow: hidden;
+                color: #5F646D;
+                font-family: Inter;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 20px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .balance-icon{
+                img{
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        border-radius: 10px;
+      }
+    }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    column-gap: 12px;
+  }
+}
+
+.payments-statistics-tooltip.ant-popover-placement-top{
+    padding-bottom: 4px;
+}

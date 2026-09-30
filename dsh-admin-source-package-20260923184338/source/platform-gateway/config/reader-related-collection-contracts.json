@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "notice": "Reviewed parent-to-collection identity contracts only. This registry never grants page, API or field permission; all ordinary read policy and current native authorization checks remain mandatory.",
+  "contracts": [
+    {
+      "relationshipRef": "admin.enquiry.timeline",
+      "operationKey": "GET /api/Enquiry/Management/{enquiryId}/Timeline",
+      "parentOperationKey": "GET /api/Enquiry/Management/{enquiryId}/EnquiryInfo",
+      "parentPath": "/data",
+      "parentField": "id",
+      "parameter": "enquiryId",
+      "collectionPath": "/data",
+      "allowedFields": [
+        "changeStatusObj.nameEn",
+        "changeStatusObj.statusName",
+        "departmentName",
+        "changeOnTime"
+      ],
+      "sources": [
+        {
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/TicketsDetails/components/TicketTimeline/index.tsx",
+          "sha256": "ae21f708f6cf104f41d3769711e787677f31cc3a4b65a74a2bfe1adcf2f40176"
+        },
+        {
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/EnquiryApp/EnquiryAppService.cs",
+          "sha256": "693bbed263aff3b567409dc654fe221d835351077272abc6df9ef2fc35cd31a2"
+        },
+        {
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.API/Controllers/EnquiryController.cs",
+          "sha256": "aee90d03eea602911e84f04871018a0c7cdf32c67d964e3f9502f537d2e44521"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+/* Standalone new-window homepage preview (no admin layout shell). */
+.home-preview-page {
+  min-height: 100vh;
+  background: #f0f1f3;
+
+  .preview-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding: 12px 24px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+    .toolbar-group {
+      display: flex;
+      background: #f2f2f2;
+      border-radius: 8px;
+      padding: 3px;
+
+      .toolbar-item {
+        padding: 5px 18px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #5f646d;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &.active {
+          background: linear-gradient(90deg, #9e7538 0%, #c19453 100%);
+          color: #fff;
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        }
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 12px;
+        }
+      }
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 16px;
+    }
+  }
+
+  .preview-stage {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0 48px;
+
+    .preview-canvas {
+      background: #fff;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      /* The zoom factor (device width / canvas base width) is set inline. */
+    }
+  }
+
+  .preview-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 16px;
+    color: #5f646d;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 14px;
+    }
+  }
+
+  /* Neutralize editor-oriented constraints of the embedded preview:
+     full natural height, page-level scrolling, default cursor and no
+     modal zoom (the page scales via the canvas zoom instead). */
+  .prview-container {
+    cursor: default;
+    max-height: none;
+    overflow-y: visible;
+    padding-bottom: 0;
+  }
+  .preview-max > * {
+    zoom: 1;
+  }
+}

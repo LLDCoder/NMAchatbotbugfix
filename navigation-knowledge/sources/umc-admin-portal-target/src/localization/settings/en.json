@@ -1,0 +1,754 @@
+{
+  "Settings": {
+    "userManagement": {
+      "rootOrganization": "National Media Authority",
+      "filters": {
+        "search": "Search user name or email",
+        "allRoles": "All Roles",
+        "allStatus": "All Status",
+        "allAccounts": "All Linked Accounts"
+      },
+      "table": {
+        "username": "Username",
+        "department": "Department",
+        "role": "Role",
+        "linkedAccounts": "Linked Accounts",
+        "email": "Email",
+        "status": "Status",
+        "actions": "Actions"
+      },
+      "actions": {
+        "edit": "Edit",
+        "delete": "Delete",
+        "addUser": "Add User",
+        "addDepartment": "Add Department",
+        "resetPassword": "Reset Password",
+        "setLeader": "Set Leader",
+        "leaderTitle": "Set as Department Leader",
+        "leaderContent": "Are you sure you want to set this user as the departmentleader?"
+      },
+      "departmentMenu": {
+        "addDepartment": "Add Department",
+        "editDepartment": "Edit Department",
+        "deleteDepartment": "Delete Department",
+        "delete": "Delete"
+      },
+      "empty": {
+        "noDepartments": "No departments yet",
+        "noUsers": "No users yet",
+        "addDepartment": "Add Department",
+        "noRoles": "No roles have been assigned to this department yet",
+        "addRole": "Add Role"
+      },
+      "pagination": {
+        "showTotal": "Total {{total}} {{currentPage}}/{{totalPages}}"
+      },
+      "messages": {
+        "departmentAdded": "Department added successfully",
+        "departmentUpdated": "Department updated successfully",
+        "departmentDeleted": "Department deleted successfully",
+        "departmentSaveFailed": "Unable to save the department. Please try again.",
+        "userAdded": "User added successfully",
+        "userUpdated": "User updated successfully",
+        "userSaveFailed": "Unable to save the user. Please try again.",
+        "defaultPasswordResent": "Default password has been resent successfully",
+        "rolesLoadFailed": "Unable to load roles. Please try again."
+      },
+      "modals": {
+        "addUser": {
+          "title": "Add New User"
+        },
+        "editUser": {
+          "title": "Edit User"
+        },
+        "addDepartment": {
+          "title": "Add New Department"
+        },
+        "editDepartment": {
+          "title": "Edit Departments"
+        },
+        "changeDepartment": {
+          "title": "Change Department"
+        },
+        "changeRole": {
+          "title": "Change Role"
+        }
+      },
+      "buttons": {
+        "cancel": "Cancel",
+        "confirm": "Confirm",
+        "delete": "Delete",
+        "close": "Close"
+      },
+      "sections": {
+        "personal": "Personal Information",
+        "organization": "Organization & Role",
+        "address": "Address Information",
+        "login": "Login Settings"
+      },
+      "labels": {
+        "personalPhoto": "Personal Photo",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "email": "Email",
+        "gender": "Gender",
+        "dateOfBirth": "Date of Birth",
+        "emiratesId": "Emirates ID",
+        "mobileNumber": "Mobile Number",
+        "occupation": "Occupation",
+        "department": "Departments",
+        "assignRoles": "Assign Roles",
+        "emirate": "Emirate",
+        "region": "Region",
+        "area": "Area",
+        "street": "Street",
+        "status": "Status",
+        "password": "Password",
+        "departmentNameEn": "Department Name in English",
+        "departmentNameAr": "Department Name in Arabic"
+      },
+      "placeholders": {
+        "enter": "Enter",
+        "select": "Select",
+        "selectEmirate": "Select emirate",
+        "selectRegion": "Select region",
+        "selectArea": "Select area",
+        "enterStreet": "Enter Street",
+        "allStatus": "All Status",
+        "dateFormat": "DD/MM/YYYY",
+        "departmentNameEn": "Enter department name",
+        "departmentNameAr": "أدخل اسم القسم",
+        "selectDepartment": "Select Department",
+        "emiratesId": "784-XXXX-XXXXXXX-X"
+      },
+      "gender": {
+        "male": "Male",
+        "female": "Female"
+      },
+      "countryDial": {
+        "uae": "(+971) UAE",
+        "usa": "(+1) USA",
+        "uk": "(+44) UK",
+        "ksa": "(+966) KSA"
+      },
+      "validation": {
+        "textLength": "{{field}} must contain between {{min}} and {{max}} characters after trimming.",
+        "textLetter": "{{field}} must contain at least one letter, not only numbers, symbols or elongation marks.",
+        "nameCharacters": "Enter a name without line breaks or unsupported invisible characters.",
+        "departmentEnCharacters": "Use English letters, numbers, spaces and hyphens only.",
+        "departmentArCharacters": "Use Arabic characters, numbers and spaces only.",
+        "genderInvalid": "Select Male or Female.",
+        "required": "This field is required",
+        "pleaseEnter": "Please enter {{field}}",
+        "correctFormat": "Please enter the correct format.",
+        "emailInvalid": "Please enter a valid email address",
+        "mobileInvalid": "Please enter a valid mobile number: 9 digits starting with 5.",
+        "selectDepartment": "Please select department",
+        "selectRole": "Please select role",
+        "emiratesIdInvalid": "Enter a valid Emirates ID (784-XXXX-XXXXXXX-X)."
+      },
+      "confirm": {
+        "deleteDepartment": {
+          "title": "Delete Department",
+          "content": "Are you sure you want to delete this Department? This action can not be undone."
+        },
+        "deleteDepartmentFailed": {
+          "title": "Unable to Delete Department",
+          "content": "The department you selected has users assigned to it. Please reassign all users to another department before deleting."
+        },
+        "deleteUserFailed": {
+          "title": "Unable to Delete User",
+          "content": "This account is still active and cannot be deleted. Please change the account status to deactivated before performing a deletion."
+        },
+        "deleteUser": {
+          "title": "Delete User",
+          "content": "Are you sure you want to delete this user? This action cannot be undone."
+        },
+        "deactivate": {
+          "title": "Confirm Deactivation",
+          "intro": "Are you sure you want to deactivate the selected users? After deactivation:",
+          "bullet1": "Users will be logged out and unable to log in",
+          "bullet2": "Accounts can be reactivated or deleted"
+        }
+      },
+      "avatar": {
+        "maxFileSize": "Max file size: 5MB.",
+        "invalidFileType": "Invalid file type."
+      }
+    },
+    "roleManagement": {
+      "filters": {
+        "searchPlaceholder": "Enter keywords",
+        "allStatus": "All Status"
+      },
+      "table": {
+        "role": "Role",
+        "associatedDepartment": "Associated Department",
+        "description": "Description",
+        "status": "Status",
+        "actions": "Actions"
+      },
+      "actions": {
+        "edit": "Edit",
+        "delete": "Delete",
+        "addRole": "Add Role"
+      },
+      "empty": {
+        "noData": "No Data Available"
+      },
+      "buttons": {
+        "cancel": "Cancel",
+        "delete": "Delete",
+        "close": "Close"
+      },
+      "confirm": {
+        "deleteRole": {
+          "title": "Delete Role",
+          "content": "Are you sure you want to delete this role? This action cannot be undone."
+        },
+        "deleteFailed": {
+          "title": "Unable to Delete Role",
+          "content": "The role you selected has users assigned to it. Please reassign all users to another role before deleting."
+        }
+      }
+    },
+    "roleDetails": {
+      "pageTitle": {
+        "add": "Add Role",
+        "edit": "Edit Role"
+      },
+      "labels": {
+        "nameEn": "Role Name in English",
+        "nameAr": "Role Name in Arabic",
+        "departmentId": "Associated Department",
+        "descEn": "Description in English",
+        "descAr": "Description in Arabic",
+        "status": "Status"
+      },
+      "placeholders": {
+        "enter": "Enter",
+        "enterAr": "أدخل",
+        "selectDepartment": "Select department"
+      },
+      "validation": {
+        "required": "This field is required.",
+        "roleNameFormat": "Only letters, numbers, spaces, and hyphens (-) are allowed."
+      },
+      "permissionsTable": {
+        "permissionName": "Permission Name",
+        "description": "Description",
+        "permissionType": "type",
+        "permissionTypeM": "Route",
+        "permissionTypeB": "Button",
+        "permissionTypeA": "Api"
+      },
+      "buttons": {
+        "save": "Save",
+        "cancel": "Cancel",
+        "leave": "Leave"
+      },
+      "confirm": {
+        "unsavedLeave": {
+          "title": "Leaving the Page?",
+          "content": "You have unsaved changes that will be lost if you leave. Do you want to continue?"
+        }
+      }
+    },
+    "messageTemplates": {
+      "filters": {
+        "search": "Search",
+        "startTime": "Start Time",
+        "endTime": "End Time",
+        "allPortals": "All Portals",
+        "allChannels": "All Channels"
+      },
+      "table": {
+        "templateNo": "Template No.",
+        "templateName": "Template Name",
+        "modifiedBy": "Modified By",
+        "portal": "Portal",
+        "channels": "Channels",
+        "lastUpdateTime": "Last Updated Time",
+        "action": "Action"
+      },
+      "actions": {
+        "edit": "Edit"
+      },
+      "channels": {
+        "email": "Email",
+        "sms": "SMS",
+        "push": "Push"
+      },
+      "pagination": {
+        "pageOf": "{{current}}/{{pages}}"
+      }
+    },
+    "editTemplate": {
+      "sections": {
+        "templateProperties": "Template Properties",
+        "basicInformation": "Basic Information",
+        "channelsContent": "Channels & Content"
+      },
+      "labels": {
+        "templateId": "Template ID",
+        "templateNo": "Template No.",
+        "lastUpdatedTime": "Last Updated Time",
+        "modifiedBy": "Modified By",
+        "templateName": "Template Name",
+        "portalType": "Portal Type",
+        "description": "Description",
+        "emailSubjectEn": "Email Subject in English",
+        "emailBodyEn": "Email Body in English",
+        "emailSubjectAr": "Email Subject in Arabic",
+        "emailBodyAr": "Email Body in Arabic",
+        "smsMessageEn": "Message in English",
+        "smsMessageAr": "Message in Arabic",
+        "inAppTitleEn": "Title in English",
+        "inAppTitleAr": "Title in Arabic",
+        "inAppMessageEn": "Message in English",
+        "inAppMessageAr": "Message in Arabic"
+      },
+      "channels": {
+        "email": "Email",
+        "sms": "SMS",
+        "inPortal": "In-Portal"
+      },
+      "placeholders": {
+        "emailSubjectEn": "Enter email subject in English",
+        "emailSubjectAr": "Enter email subject in Arabic",
+        "inAppTitleEn": "Enter title in English",
+        "inAppTitleAr": "Enter title in Arabic"
+      },
+      "validation": {
+        "emailSubjectEnRequired": "This field is required.",
+        "emailSubjectArRequired": "Email Subject in Arabic is required",
+        "emailBodyEnRequired": "Email Body in English is required",
+        "emailBodyArRequired": "Email Body in Arabic is required",
+        "smsMessageEnRequired": "Message in English is required",
+        "smsMessageArRequired": "Message in Arabic is required",
+        "inAppTitleEnRequired": "Title in English is required",
+        "inAppTitleArRequired": "Title in Arabic is required",
+        "inAppMessageEnRequired": "Message in English is required",
+        "inAppMessageArRequired": "Message in Arabic is required"
+      },
+      "buttons": {
+        "test": "Test",
+        "save": "Save",
+        "cancel": "Cancel",
+        "confirm": "Confirm",
+        "leave": "Leave"
+      },
+      "confirm": {
+        "unsavedLeave": {
+          "title": "Leaving the Page?",
+          "content": "You have unsaved changes that will be lost if you leave. Do you want to continue?"
+        },
+        "test": {
+          "title": "Confirm Test",
+          "description": "You're about to test this message template on a test account:",
+          "account": "test001@nma.gov",
+          "note": "After testing, this message template will be sent to the test account for verification. The current live template will not be affected until you save your changes."
+        }
+      },
+      "messages": {
+        "testSuccess": "Testing completed successfully",
+        "operationSuccess": "Operation successful",
+        "operationFailed": "Operation failed"
+      }
+    },
+    "broadcast": {
+      "list": {
+        "filters": {
+          "search": "Search",
+          "allRecipients": "All Recipients",
+          "allStatus": "All Status",
+          "startTime": "Start Time",
+          "endTime": "End Time"
+        },
+        "recipientsTree": {
+          "customerPortal": "Customer Portal",
+          "adminPortal": "Admin Portal",
+          "loading": "Loading recipients...",
+          "loadFailed": "Unable to load recipients",
+          "noData": "No recipients available"
+        },
+        "table": {
+          "broadcastNo": "Broadcast No.",
+          "broadcastTitle": "Broadcast Title",
+          "portal": "Portal",
+          "recipients": "Recipients",
+          "allDepartments": "All Departments",
+          "allUserTypes": "All User Types",
+          "status": "Status",
+          "publishedBy": "Published By",
+          "publishTime": "Publish Time",
+          "channel": "Channel",
+          "actions": "Actions"
+        },
+        "channels": {
+          "email": "Email",
+          "sms": "SMS",
+          "inPortal": "Pop-up"
+        },
+        "actions": {
+          "duplicate": "Duplicate",
+          "unpublish": "Unpublish",
+          "edit": "Edit",
+          "addNew": "Add New"
+        },
+        "confirm": {
+          "unpublish": {
+            "title": "Unpublish Broadcast",
+            "content": "Are you sure you want to unpublish this broadcast? It will no longer be visible to users."
+          }
+        },
+        "buttons": {
+          "cancel": "Cancel",
+          "confirm": "Confirm"
+        },
+        "messages": {
+          "operationSuccess": "Operation successful.",
+          "unpublishFailed": "Unable to unpublish the broadcast. Please try again."
+        },
+        "empty": "No data",
+        "pagination": {
+          "pageOf": "{{current}}/{{pages}}"
+        }
+      },
+      "edit": {
+        "sections": {
+          "recipients": "Recipients",
+          "timing": "Timing",
+          "content": "Content",
+          "channelsContent": "Channels & Content"
+        },
+        "labels": {
+          "receivingPortal": "Receiving Portal",
+          "userTypes": "User Types",
+          "departments": "Departments",
+          "publishTime": "Publish Time",
+          "expiryTime": "Expiry Time",
+          "displayPeriod": "Display Period",
+          "titleEn": "Title in English",
+          "titleAr": "Title in Arabic",
+          "contentEn": "Content in English",
+          "contentAr": "Content in Arabic",
+          "emailSubjectEn": "Email Subject in English",
+          "emailSubjectAr": "Email Subject in Arabic",
+          "emailBodyEn": "Email Body in English",
+          "emailBodyAr": "Email Body in Arabic",
+          "smsMessageEn": "Message in English",
+          "smsMessageAr": "Message in Arabic",
+          "inAppTitleEn": "Title in English",
+          "inAppTitleAr": "Title in Arabic",
+          "inAppMessageEn": "Message in English",
+          "inAppMessageAr": "Message in Arabic"
+        },
+        "channels": {
+          "email": "Email",
+          "sms": "SMS",
+          "PopUp": "Pop-up"
+        },
+        "portals": {
+          "customer": "Customer Portal",
+          "admin": "Admin Portal"
+        },
+        "publishTypes": {
+          "now": "Publish Now",
+          "scheduled": "Scheduled"
+        },
+        "placeholders": {
+          "selectDate": "Select a date",
+          "selectTime": "Select time",
+          "emailSubjectEn": "Enter email subject in English",
+          "emailSubjectAr": "Enter email subject in Arabic",
+          "emailBodyEn": "Please enter email body in English",
+          "emailBodyAr": "Please enter email body in Arabic",
+          "selectUserTypes": "Select user types",
+          "selectDepartments": "Select departments",
+          "titleEn": "Enter broadcast title in English",
+          "titleAr": "Enter broadcast title in Arabic",
+          "rangeStart": "Start time",
+          "rangeEnd": "End time",
+          "smsMessageEn": "Please enter message in English",
+          "smsMessageAr": "Please enter message in Arabic",
+          "inAppTitleEn": "Enter message title in English",
+          "inAppTitleAr": "Enter message title in Arabic",
+          "inAppMessageEn": "Please enter message in English",
+          "inAppMessageAr": "Please enter message in Arabic"
+        },
+        "validation": {
+          "receivingPortalRequired": "Please select receiving portal",
+          "publishTimeRequired": "Please select publish time",
+          "expiryTimeRequired": "Please select expiry time",
+          "displayPeriodRequired": "Please select display period",
+          "userTypesRequired": "Please select user types",
+          "departmentsRequired": "Please select departments",
+          "titleEnRequired": "Please enter title in English",
+          "titleArRequired": "Please enter title in Arabic",
+          "titleMax": "Title cannot exceed 200 characters",
+          "contentEnRequired": "Content in English is required",
+          "contentArRequired": "Content in Arabic is required",
+          "contentMax": "Content cannot exceed 1000 characters",
+          "channelRequired": "Please select at least one channel",
+          "emailSubjectEnRequired": "Email Subject in English is required",
+          "emailSubjectArRequired": "Email Subject in Arabic is required",
+          "emailBodyEnRequired": "Email Body in English is required",
+          "emailBodyArRequired": "Email Body in Arabic is required",
+          "smsMessageEnRequired": "Message in English is required",
+          "smsMessageArRequired": "Message in Arabic is required",
+          "inAppTitleEnRequired": "Title in English is required",
+          "inAppTitleArRequired": "Title in Arabic is required",
+          "inAppMessageEnRequired": "Message in English is required",
+          "inAppMessageArRequired": "Message in Arabic is required",
+          "emailSubjectOneRequired": "Enter an email subject in English or Arabic",
+          "emailBodyOneRequired": "Enter an email body in English or Arabic",
+          "inAppTitleOneRequired": "Enter an In-Portal title in English or Arabic",
+          "inAppMessageOneRequired": "Enter an In-Portal message in English or Arabic"
+        },
+        "buttons": {
+          "publish": "Publish",
+          "test": "Test",
+          "saveAndTest": "Save & Test",
+          "save": "Save",
+          "cancel": "Cancel",
+          "disable": "Disable",
+          "leave": "Leave"
+        },
+        "confirm": {
+          "disableChannel": {
+            "title": "Disable Channel",
+            "content": "Are you sure you want to disable this channel? It will stop sending messages."
+          },
+          "unsavedLeave": {
+            "title": "Leave the page?",
+            "content": "You have unsaved changes that will be lost if you leave. Do you want to continue?"
+          }
+        },
+        "messages": {
+          "saveSuccess": "Submitted successfully and entered the delivery process",
+          "saveFailed": "Submission failed. Check the content or try again later",
+          "smsRecipientMobileMissing": "The SMS could not be submitted because a recipient's customer profile does not have a mobile number.",
+          "saveAndTestSuccess": "Draft saved and test sent successfully",
+          "saveAndTestFailed": "Could not save the draft or send the test. Check the content or try again later",
+          "publishSuccess": "Broadcast published successfully",
+          "publishFailed": "Broadcast publishing failed. Check the content or try again later",
+          "testSuccess": "Testing completed successfully",
+          "testFailed": "Testing failed. Check the content or try again later",
+          "testRequiresSavedTemplate": "Save the broadcast before testing it",
+          "expiryTimeTooSoon": "Expiry time must be at least 1 minute later than now",
+          "displayPeriodInvalid": "Display period must be valid and end at least 1 minute later than now"
+        }
+      },
+      "view": {
+        "sections": {
+          "basicInformation": "Basic Information",
+          "recipients": "Recipients",
+          "timing": "Timing",
+          "content": "Content"
+        },
+        "labels": {
+          "broadcastNo": "Broadcast No.",
+          "publishedBy": "Published By",
+          "status": "Status",
+          "receivingPortal": "Receiving Portal",
+          "userTypes": "User Types",
+          "departments": "Departments",
+          "publishTime": "Publish Time",
+          "expiryTime": "Expiry Time",
+          "titleEn": "Title in English",
+          "titleAr": "Title in Arabic",
+          "contentEn": "Content in English",
+          "contentAr": "Content in Arabic"
+        }
+      }
+    },
+    "adminPortalLogs": {
+      "tabs": {
+        "userActivity": "User Activity",
+        "systemOperations": "System Operations",
+        "securityLogs": "Security Logs",
+        "userSecurityLogs": "User Security Logs",
+        "adminSecurityLogs": "Admin Security Logs"
+      },
+      "filters": {
+        "search": "Search",
+      "source": "Source",
+      "environment": "Environment",
+      "allEnvironments": "All environments",
+        "allSources": "All Sources",
+        "eventType": "Event Type",
+        "allEventTypes": "All Event Types",
+        "allStatuses": "All Statuses",
+        "result": "Result",
+        "allResults": "All Results",
+        "date": "Date",
+        "startDate": "Start Date",
+        "endDate": "End Date"
+      },
+      "table": {
+        "logId": "Log ID",
+        "portal": "Portal",
+        "accountHolder": "Account Holder",
+        "adminUser": "Admin User",
+        "userId": "User ID",
+        "userRole": "User Role",
+        "logType": "Log Type",
+        "accountEvent": "Account Event",
+        "actionEvent": "Action / Event",
+        "securityEvent": "Security Event",
+        "ipAddress": "IP Address",
+        "status": "Status",
+        "httpMethod": "HTTP Method",
+        "elapsedMs": "Elapsed (ms)",
+        "device": "Device",
+        "timestamp": "Timestamp"
+      },
+      "buttons": {
+        "export": "Export"
+      },
+      "options": {
+        "success": "Success",
+        "failed": "Failed",
+        "true": "Yes",
+        "false": "No",
+        "source": {
+          "UMC": "UMC",
+          "AdminPortalService": "Admin Portal Service",
+          "CustomerPortalService": "Customer Portal Service"
+        },
+        "environment": {
+          "UMC": "UMC"
+        },
+        "eventType": {
+          "Application.ApproveV2": "Application Approve V2"
+        }
+      },
+      "messages": {
+        "loadFailed": "Unable to load logs. Please try again.",
+        "exportFailed": "Unable to export logs. Please try again.",
+        "optionsLoadFailed": "Unable to load log filter options. Retrying automatically.",
+        "detailLoadFailed": "Unable to refresh log details. Cached list data is shown when available."
+      },
+      "pagination": {
+        "pageOf": "{{current}}/{{pages}}"
+      }
+    },
+    "adminPortalLogsDetail": {
+      "detail": {
+        "header": "{{id}}"
+      },
+      "summary": {
+        "logType": "Log Type",
+        "portal": "Portal",
+        "status": "Status",
+        "timestamp": "Timestamp"
+      },
+      "sections": {
+        "userInformation": "User Information",
+        "activityInformation": "Activity Information",
+        "operationInformation": "Operation Information",
+        "securityEventInformation": "Security Event Information",
+        "requestInformation": "Request Information",
+        "networkDeviceInformation": "Network & Device Information",
+        "operationResult": "Operation Result",
+        "requestParameters": "Request Parameters",
+        "userAgentString": "User Agent String"
+      },
+      "userInfo": {
+        "id": "ID",
+        "fullName": "Full Name",
+        "userRole": "User Role",
+        "department": "Department",
+        "actorType": "Actor Type"
+      },
+      "requestInfo": {
+        "actionEvent": "Action / Event",
+        "controllerName": "Controller Name",
+        "actionName": "Action Name",
+        "httpMethod": "HTTP Method",
+        "requestUrl": "Request URL",
+        "executionTime": "Execution Time",
+        "traceId": "Trace ID",
+        "requestMethod": "Request Method",
+        "requestPath": "Request Path"
+      },
+      "securityInfo": {
+        "eventType": "Event Type",
+        "eventDescription": "Event Description",
+        "result": "Result",
+        "suspicious": "Suspicious",
+        "failureReason": "Failure Reason",
+        "responseStatusCode": "Response Status Code"
+      },
+      "networkInfo": {
+        "ipAddress": "IP Address",
+        "location": "Location",
+        "browser": "Browser",
+        "operatingSystem": "Operating System",
+        "deviceType": "Device Type"
+      },
+      "fields": {
+        "id": "Log ID",
+        "ualId": "UAL ID",
+        "source": "Source",
+        "environment": "Environment",
+        "userId": "User ID",
+        "userName": "Account Holder",
+        "tenantId": "Tenant ID",
+        "eventType": "Event Type",
+        "eventDescription": "Event Description",
+        "businessEvent": "Action / Event",
+        "controllerName": "Controller Name",
+        "actionName": "Action Name",
+        "message": "Message",
+        "requestUrl": "Request URL",
+        "httpMethod": "HTTP Method",
+        "requestMethod": "Request Method",
+        "requestPath": "Request Path",
+        "requestParam": "Request Parameters",
+        "requestParameters": "Security Request Parameters",
+        "responseStatusCode": "Response Status Code",
+        "status": "Status",
+        "isSuccess": "Successful",
+        "isSuspicious": "Suspicious",
+        "failureReason": "Failure Reason",
+        "returnResult": "Return Result",
+        "exception": "Exception",
+        "remoteIp": "Remote IP",
+        "ipAddress": "IP Address",
+        "browser": "Browser",
+        "os": "Operating System",
+        "device": "Device",
+        "userAgent": "User Agent",
+        "location": "Location",
+        "longitude": "Longitude",
+        "latitude": "Latitude",
+        "elapsed": "Elapsed (ms)",
+        "logLevel": "Log Level",
+        "traceId": "Trace ID",
+        "correlationId": "Correlation ID",
+        "eventId": "Event ID",
+        "threadId": "Thread ID",
+        "createTime": "Event Time",
+        "eventTimestamp": "Event Timestamp",
+        "createdAt": "Persisted At",
+        "createdTime": "Created Time",
+        "updatedTime": "Updated Time"
+      },
+      "empty": {
+        "noData": "No log detail data was provided."
+      },
+      "options": {
+        "actorType": {
+          "adminUser": "Admin User",
+          "anonymous": "Anonymous"
+        }
+      },
+      "actions": {
+        "back": "Back",
+        "openInKibana": "Open in Kibana"
+      }
+    }
+  }
+}

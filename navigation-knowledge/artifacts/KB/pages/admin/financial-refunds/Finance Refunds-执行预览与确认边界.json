@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "1.0",
+  "packageStatus": "active",
+  "bundleId": "admin.finance.refund.confirmation-boundary.package",
+  "createdAt": "2026-09-28T03:05:21.164087+00:00",
+  "searchMetadata": {
+    "titleEnglish": "Finance refund approval execution preview confirmation amount recipient impact",
+    "titleArabic": "الاسترداد المالي: الموافقة والتنفيذ والمعاينة والتأكيد والمبلغ والمستفيد والأثر"
+  },
+  "records": [
+    {
+      "id": "admin.finance.refund.confirmation-boundary",
+      "kind": "page_definition",
+      "revision": 1,
+      "status": "active",
+      "title": "Finance Refunds execution preview and explicit confirmation",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local",
+          "debug"
+        ],
+        "pageRefs": [
+          "/financial-payment/refunds",
+          "/financial-payment/refunds/refundsDetails"
+        ],
+        "runtimeVerification": "source_inspected",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/FinancialRefunds/index.tsx",
+          "revision": "sha256:8b3020f7343ac57caee921de0842d16fc9d6f45ba08099acf6b0a7c3189dd47b",
+          "locator": "handleOpenRefundModal; handleExecuteRefund; live detail refresh and expectedLastUpdatedOn",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/FinancialRefunds/components/RefundConfirmModal.tsx",
+          "revision": "sha256:a4207843a14d0cc0719eac94922b5b9a4214c0629a6737855d0e71777b85e1fc",
+          "locator": "preview rows, non-reversible warning, Cancel/Confirm and disabled loading state",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/localization/finance/en.json",
+          "revision": "sha256:41a0b1dd7d4d42c03457213265ee97903f8228f723629ea0e6a1a42e2dfa600c",
+          "locator": "financialRefunds.confirmModal.warning",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.API/Controllers/AdminPaymentsRefundsController.cs",
+          "revision": "sha256:349ca1cef07115ec1ec07bdf2d80aa16aabeacce16362c396bb66963999dfe9b",
+          "locator": "Separate Finance.Refund.View and Finance.Refund.Execute permission guards",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/financial-payment/refunds",
+        "sections": [
+          {
+            "title": "Read-only assistance and current authority / المساعدة للقراءة فقط والصلاحيات الحالية",
+            "textEnglish": "The assistant can read authorized refund information and explain the procedure but cannot approve, execute, or confirm a refund. No refund is changed by this explanation. A display name containing Admin is not an assigned role. Refund viewing and refund execution have separate server permission guards. An observed canExecuteRefund value describes record capability and does not give the assistant an execution tool.",
+            "textArabic": "يستطيع المساعد قراءة معلومات الاسترداد المصرح بها وشرح الإجراء، لكنه لا يوافق على الاسترداد ولا ينفذه ولا يؤكده. لا يغيّر هذا الشرح أي استرداد. وجود كلمة Admin في الاسم المعروض لا يثبت الدور المعيّن. صلاحية عرض الاسترداد منفصلة عن صلاحية تنفيذه، وقيمة إمكانية التنفيذ في السجل لا تمنح المساعد أداة تنفيذ."
+          },
+          {
+            "title": "Documented preview before confirmation / المعاينة الموثقة قبل التأكيد",
+            "textEnglish": "In Finance Refunds, an available Refund action first opens a confirmation preview and reloads the selected refund detail. It retains the selected refund number and current last-updated version. The preview displays the original transaction number, refund amount and currency, and the destination appropriate to the payment method: wallet account holder/account, or formatted card information. Check that these belong to the intended refund and recipient. Do not invent a recipient or amount when the live preview is missing. Display only the authorized masked destination needed for confirmation; this is not a bulk disclosure workflow.",
+            "textArabic": "في صفحة الاستردادات المالية يفتح إجراء الاسترداد المتاح معاينة تأكيد ويعيد تحميل تفاصيل السجل المحدد. تحتفظ المعاينة برقم الاسترداد ونسخة آخر تحديث، وتعرض رقم المعاملة الأصلية ومبلغ الاسترداد وعملته ووجهة الدفع بحسب الطريقة: صاحب حساب المحفظة وحسابه، أو معلومات البطاقة المنسقة. تُراجع مطابقة المعاملة والمبلغ والوجهة للسجل المقصود. لا يجوز اختلاق المبلغ أو المستفيد عند غياب المعاينة الحالية، ولا تُعرض إلا معلومات الوجهة المسموح بها والمخفية جزئياً اللازمة للتأكيد."
+          },
+          {
+            "title": "Explicit confirmation and result verification / التأكيد الصريح والتحقق من النتيجة",
+            "textEnglish": "The portal warning says the action cannot be undone. Cancel closes the preview without execution. Confirm is disabled while the detail loads or when there is no preview. Only the authorized human operator deciding to proceed with the verified target should use Confirm in the portal. The execution request includes the current record version; failures such as a changed record, exceeded amount, already-completed refund or gateway failure are not successful refunds. After confirmation, verify the actual returned result and refreshed refund status; a click or submitted request alone is not completed payout. The assistant does not press Confirm or ask for confirmation of an action it cannot perform.",
+            "textArabic": "توضح البوابة أن الإجراء لا يمكن التراجع عنه. يغلق الإلغاء المعاينة دون تنفيذ، ويُعطّل التأكيد أثناء تحميل التفاصيل أو عند غياب المعاينة. يقرر الموظف المخوّل وحده التأكيد داخل البوابة بعد مراجعة السجل والوجهة والأثر. يتضمن الطلب نسخة السجل الحالية، ولا يعد تغير السجل أو تجاوز المبلغ أو اكتمال الاسترداد سابقاً أو فشل بوابة الدفع نجاحاً. بعد التأكيد تُراجع النتيجة الفعلية والحالة المحدثة؛ الإرسال وحده لا يثبت اكتمال الصرف. لا يضغط المساعد التأكيد ولا يطلب تأكيداً لتنفيذ لا يملكه."
+          },
+          {
+            "title": "Approval versus execution / الموافقة مقابل التنفيذ",
+            "textEnglish": "The financial execution queue and a department refund approval workflow are different business stages. A Finance execution preview does not prove that this reader can approve the originating request or change its workflow state. Explain the applicable stage and preserve unknown approval authority. When execution is unavailable, use the returned unsupported reason or actual failure and retain the record for authorized review; do not promise payout, change roles or bypass controls.",
+            "textArabic": "طابور التنفيذ المالي ومسار موافقة القسم على طلب الاسترداد مرحلتان مختلفتان. لا تثبت معاينة التنفيذ صلاحية الموافقة على الطلب الأصلي أو تغيير مساره. يجب توضيح المرحلة والإبقاء على صلاحية الموافقة غير المؤكدة. عند تعذر التنفيذ يُذكر السبب الموثق أو الفشل الفعلي ويُحال السجل للمراجعة المخوّلة دون ضمان الصرف أو تغيير الأدوار أو تجاوز الضوابط."
+          }
+        ],
+        "constraints": [
+          "This describes inspected portal code, not a new refund policy, live eligibility, administrator grant or assistant execution capability.",
+          "Actual refund values, stage, permissions and deployed UI require current authorized evidence. Do not embed sample record values in knowledge."
+        ]
+      }
+    }
+  ]
+}

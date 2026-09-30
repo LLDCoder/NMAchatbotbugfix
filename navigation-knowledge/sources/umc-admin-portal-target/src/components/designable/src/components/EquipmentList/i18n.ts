@@ -1,0 +1,40 @@
+import type { TFunction } from "i18next";
+
+export const createEquipmentListTextMap = (
+  t: TFunction,
+): Record<string, string> => ({
+  equipment_list: t("DataList.sourceSetter.dataSources.equipmentList"),
+  user_list: t("DataList.sourceSetter.dataSources.userList"),
+  product_list: t("DataList.sourceSetter.dataSources.productList"),
+  "Equipment List": t("DataList.sourceSetter.dataSources.equipmentList"),
+  "User List": t("DataList.sourceSetter.dataSources.userList"),
+  "Product List": t("DataList.sourceSetter.dataSources.productList"),
+  Equipment: t("DataList.sourceSetter.fieldLabels.equipment"),
+  Number: t("DataList.sourceSetter.fieldLabels.number"),
+  "Serial Number": t("DataList.sourceSetter.fieldLabels.serialNumber"),
+  Status: t("DataList.sourceSetter.fieldLabels.status"),
+  Username: t("DataList.sourceSetter.fieldLabels.username"),
+  Email: t("DataList.sourceSetter.fieldLabels.email"),
+  "Product Name": t("DataList.sourceSetter.fieldLabels.productName"),
+  Price: t("DataList.sourceSetter.fieldLabels.price"),
+  "Select equipment": t("DataList.sourceSetter.placeholders.selectEquipment"),
+  "Enter number": t("DataList.sourceSetter.placeholders.enterNumber"),
+  "Enter serial number": t(
+    "DataList.sourceSetter.placeholders.enterSerialNumber",
+  ),
+  "Select status": t("DataList.sourceSetter.placeholders.selectStatus"),
+  "Enter username": t("DataList.sourceSetter.placeholders.enterUsername"),
+  "Enter email": t("DataList.sourceSetter.placeholders.enterEmail"),
+  "Enter product name": t(
+    "DataList.sourceSetter.placeholders.enterProductName",
+  ),
+  "Enter price": t("DataList.sourceSetter.placeholders.enterPrice"),
+  "Text Input": t("DataList.sourceSetter.displayType.textInput"),
+  Dropdown: t("DataList.sourceSetter.displayType.dropdown"),
+  Camera: t("EquipmentList.options.camera"),
+  Monopod: t("EquipmentList.options.monopod"),
+  "Photographic filter": t("EquipmentList.options.filter"),
+  Available: t("EquipmentList.options.available"),
+  "In Use": t("EquipmentList.options.inUse"),
+  Maintenance: t("EquipmentList.options.maintenance"),
+});

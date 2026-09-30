@@ -1,0 +1,259 @@
+@import "@/styles/variables.less";
+.add-ticket-modal{
+    .ant-modal-content {
+        overflow: hidden;
+        border-radius: 20px;
+    }
+
+    .ant-modal-body{
+        padding: 34px 40px;
+    }
+
+    .ant-modal-footer{
+        margin: 0;
+        padding: 24px 40px;
+        border-top: 1px solid #e1e3e5;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .add-ticket-modal__form{
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 24px;
+    }
+
+    .ant-form-item{
+        width: 428px;
+    }
+
+    .ant-radio-group{
+        height: 48px;
+    }
+
+    .add-ticket-modal__footer {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 16px;
+    }
+
+    .add-ticket-modal__footer-button {
+        width: 140px;
+        min-width: 140px;
+        height: 48px;
+        font-weight: 600;
+    }
+
+    .add-ticket-modal__footer .ant-btn + .ant-btn {
+        margin-left: 0;
+    }
+
+    .add-ticket-modal__mobile-number {
+        width: 428px;
+    }
+
+    .add-ticket-modal__mobile-number .mobile-number-input__country-picker,
+    .add-ticket-modal__mobile-number .mobile-number-input__control .ant-input-group-addon {
+        width: 124px;
+    }
+
+    .add-ticket-title{
+        margin-bottom: 24px;
+        line-height: 25px;
+        color: rgba(16,16,16,1);
+        font-size: 18px;
+        font-weight: bold;
+        width: 100%;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 16px;
+      }
+    }
+    .add-tickets-desc,.user-type-form-item{
+        width: 100%;
+    }
+    .custorm-form .ant-input::placeholder,
+    .custorm-form .ant-input-affix-wrapper .ant-input::placeholder{
+        color: @text-color-table-header !important;
+        font-family: Inter !important;
+        font-size: 16px !important;
+        font-weight: 400;
+        line-height: 20px;
+        opacity: 1;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        line-height: 16px;
+      }
+    }
+    .custorm-form .ant-form-item-control-input-content > textarea.ant-input{
+        padding: 14px 16px;
+
+    }
+    .custorm-form .ant-form-item-control-input-content > textarea.ant-input::placeholder{
+        color: @text-color-table-header !important;
+        font-family: Inter !important;
+        font-size: 16px !important;
+        font-weight: 400;
+        line-height: 20px;
+        opacity: 1;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        line-height: 16px;
+      }
+    }
+    .add-tickets-attachments{
+        margin-bottom: 0;
+    }
+    .add-ticket-description{
+        position: relative;
+        width: 100%;
+    }
+    .description-num{
+        font-family: Inter;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        color: #797E86;
+        text-align: right;
+        position: absolute;
+        bottom: 10px;
+        right: 0;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 10px;
+        line-height: 14px;
+      }
+    }
+}
+
+.add-ticket-modal.add-ticket-modal--rtl {
+    .ant-modal-footer {
+        text-align: left;
+
+        .ant-btn + .ant-btn {
+            margin-left: 0;
+        }
+    }
+
+    .add-ticket-modal__footer {
+        direction: rtl;
+    }
+
+    .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+        padding-left: 30px !important;
+        padding-right: 11px !important;
+    }
+
+    .ant-select-arrow {
+        left: 20px;
+        right: auto;
+    }
+}
+
+.add-ticket-modal__application-select-dropdown {
+    padding: 0;
+    overflow: hidden;
+}
+
+.add-ticket-modal__application-dropdown-panel {
+    display: flex;
+    flex-direction: column;
+    height: 320px;
+    background: #fff;
+}
+
+.add-ticket-modal__application-dropdown-panel--empty {
+    height: 224px;
+}
+
+.add-ticket-modal__application-dropdown-search {
+    display: flex;
+    flex: 0 0 48px;
+    align-items: center;
+    gap: 8px;
+    height: 48px;
+    padding: 12px 16px;
+    border-bottom: 1px solid #e1e3e5;
+    background: #fff;
+}
+
+.add-ticket-modal__application-dropdown-search--active {
+    border-bottom-color: #b68a35;
+}
+
+.add-ticket-modal__application-dropdown-search-icon {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 auto;
+}
+
+.add-ticket-modal__application-dropdown-search-input {
+    flex: 1;
+    min-width: 0;
+    height: 24px;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #361e12;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.add-ticket-modal__application-dropdown-search-input::placeholder {
+    color: #797e86;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.add-ticket-modal__application-dropdown-clear {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.add-ticket-modal__application-dropdown-clear img {
+    width: 16px;
+    height: 16px;
+}
+
+.add-ticket-modal__application-dropdown-menu {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+.add-ticket-modal__application-dropdown-menu::-webkit-scrollbar,
+.add-ticket-modal__application-select-dropdown .rc-virtual-list-holder::-webkit-scrollbar {
+    width: 4px;
+}
+
+.add-ticket-modal__application-dropdown-menu::-webkit-scrollbar-thumb,
+.add-ticket-modal__application-select-dropdown .rc-virtual-list-holder::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: rgba(225, 227, 229, 0.75);
+}
+
+.add-ticket-modal__application-select-dropdown .rc-virtual-list-holder {
+    max-height: none !important;
+}
+
+.add-ticket-modal__application-select-dropdown .ant-select-item {
+    min-height: 40px;
+    padding: 10px 16px;
+    color: #361e12;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.add-ticket-modal__application-select-dropdown .ant-select-item-option-state {
+    display: none;
+}

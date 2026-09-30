@@ -1,0 +1,655 @@
+[
+  {
+    "permissionName": "Dashboard",
+    "frontendRoute": "/dashboard",
+    "children": []
+  },
+  {
+    "permissionName": "Licensing",
+    "frontendRoute": "/licensing",
+    "children": [
+      {
+        "Applications": {
+          "permissionName": "",
+          "frontendRoute": "/licensing/applications",
+          "children": [
+            {
+              "ApplicationDetails": {
+                "permissionName": "",
+                "frontendRoute": "/licensing/applications/applicationsDetails",
+                "children": []
+              }
+            }
+          ]
+        },
+        "Profile": {
+          "permissionName": "",
+          "frontendRoute": "/licensing/profile",
+          "children": [
+            {
+              "ProfileDetails": {
+                "permissionName": "",
+                "frontendRoute": "/licensing/profile/profiledetails",
+                "children": []
+              }
+            }
+          ]
+        },
+        "TeamManagement": {
+          "permissionName": "",
+          "frontendRoute": "/licensing/team-management",
+          "children": [
+            {
+              "Applications Details": {
+                "permissionName": "",
+                "frontendRoute": "/licensing/team-management/applicationsDetails",
+                "children": []
+              },
+              "Profile Details": {
+                "permissionName": "",
+                "frontendRoute": "/licensing/team-management/profileDetails",
+                "children": []
+              },
+              "Tickets Details": {
+                "permissionName": "",
+                "frontendRoute": "/licensing/team-management/ticketsDetails",
+                "children": []
+              },
+              "Refunds Details": {
+                "permissionName": "",
+                "frontendRoute": "/licensing/team-management/refundsDetails",
+                "children": []
+              },
+              "Appeals Details": {
+                "permissionName": "",
+                "frontendRoute": "/licensing/team-management/appealsDetails",
+                "children": []
+              }
+            }
+          ]
+        },
+        "licenses": {
+          "permissionName": "",
+          "frontendRoute": "/licensing/licenses",
+          "children": [
+            {
+              "LicenseDatails": {
+                "permissionName": "",
+                "frontendRoute": "/licensing/license/LicenseDatails",
+                "children": []
+              }
+            }
+          ]
+        },
+        "LicenseReportsAnalytics": {
+          "permissionName": "",
+          "frontendRoute": "/licensing/reports-analytics",
+          "children": []
+        }
+      }
+    ]
+  },
+  {
+    "permissionName": "Content",
+    "frontendRoute": "/content",
+    "children": [
+      {
+        "Applications": {
+          "permissionName": "",
+          "frontendRoute": "/content/ContentApplications",
+          "children": [
+            {
+              "ApplicationsDetails": {
+                "permissionName": "",
+                "frontendRoute": "/content/ContentApplications/ContentApplicationsDetails",
+                "children": []
+              }
+            }
+          ]
+        },
+        "TeamManagement": {
+          "permissionName": "",
+          "frontendRoute": "/content/team-management",
+          "children": [
+            {
+              "Applications Details": {
+                "permissionName": "",
+                "frontendRoute": "/content/team-management/applicationsDetails",
+                "children": []
+              },
+              "Tickets Details": {
+                "permissionName": "",
+                "frontendRoute": "/content/team-management/ticketsDetails",
+                "children": []
+              },
+              "Refunds Details": {
+                "permissionName": "",
+                "frontendRoute": "/content/team-management/refundsDetails",
+                "children": []
+              },
+              "Appeals Details": {
+                "permissionName": "",
+                "frontendRoute": "/content/team-management/appealsDetails",
+                "children": []
+              },
+              "Violations Details": {
+                "permissionName": "",
+                "frontendRoute": "/content/team-management/violationsDetails",
+                "children": []
+              }
+            }
+          ]
+        },
+        "Content Library": {
+          "permissionName": "",
+          "frontendRoute": "/content/ContentLibrary",
+          "children": [
+            {
+              "Books": {
+                "permissionName": "",
+                "frontendRoute": "/content/ContentLibrary/Books",
+                "children": []
+              },
+              "NewsPapers": {
+                "permissionName": "",
+                "frontendRoute": "/content/ContentLibrary/Newspapers",
+                "children": []
+              },
+              "Movies": {
+                "permissionName": "",
+                "frontendRoute": "/content/ContentLibrary/Movies",
+                "children": []
+              },
+              "VideoGames": {
+                "permissionName": "",
+                "frontendRoute": "/content/ContentLibrary/videoGames",
+                "children": []
+              }
+            }
+          ]
+        },
+        "Permits": {
+          "permissionName": "",
+          "frontendRoute": "/content/Permits",
+          "children": [
+            {
+              "PermitsDetails ": {
+                "permissionName": "",
+                "frontendRoute": "/content/Permits/PermitsDetails",
+                "children": []
+              }
+            }
+          ]
+        },
+        "ReportsAnalytics": {
+          "permissionName": "",
+          "frontendRoute": "/content/reports-analytics",
+          "children": []
+        }
+      }
+    ]
+  },
+  {
+    "permissionName": "Inspection",
+    "frontendRoute": "/inspection",
+    "children": [
+      {
+        "Task Management": {
+          "permissionName": "",
+          "frontendRoute": "/inspection/tasks",
+          "children": [
+            {
+              "Task Details": {
+                "permissionName": "",
+                "frontendRoute": "/inspection/tasks/detail",
+                "children": []
+              },
+              "Task Execution": {
+                "permissionName": "",
+                "frontendRoute": "/inspection/tasks/execution",
+                "children": []
+              },
+              "Inspection Report": {
+                "permissionName": "",
+                "frontendRoute": "/inspection/tasks/report",
+                "children": []
+              },
+              "Violation Details": {
+                "permissionName": "",
+                "frontendRoute": "/inspection/tasks/violationsDetails",
+                "children": []
+              },
+              "Appeals Details": {
+                "permissionName": "",
+                "frontendRoute": "/inspection/tasks/appealsDetails",
+                "children": []
+              },
+              "Refunds Details": {
+                "permissionName": "",
+                "frontendRoute": "/inspection/tasks/refundsDetails",
+                "children": []
+              },
+              "Tickets Details": {
+                "permissionName": "",
+                "frontendRoute": "/inspection/tasks/ticketsDetails",
+                "children": []
+              }
+            }
+          ]
+        },
+        "Violation Management": {
+          "permissionName": "",
+          "frontendRoute": "/inspection/violations",
+          "children": [
+            {
+              "Violation Details": {
+                "permissionName": "",
+                "frontendRoute": "/inspection/violations/detail",
+                "children": []
+              }
+            }
+          ]
+        },
+        "Reports & Analytics": {
+          "permissionName": "",
+          "frontendRoute": "/inspection/reports-analytics",
+          "children": []
+        }
+      }
+    ]
+  },
+  {
+    "permissionName": "Customer Module",
+    "frontendRoute": "/happiness",
+    "children": [
+      {
+        "Tickets": {
+          "permissionName": "",
+          "frontendRoute": "/happiness/tickets",
+          "children": [
+            {
+              "TicketsDetails ": {
+                "permissionName": "",
+                "frontendRoute": "/happiness/tickets/tickets-details",
+                "children": []
+              }
+            }
+          ]
+        },
+        "Refunds": {
+          "permissionName": "",
+          "frontendRoute": "/happiness/refunds",
+          "children": [
+            {
+              "Refunds Details": {
+                "permissionName": "",
+                "frontendRoute": "/happiness/refunds/refundsDetails",
+                "children": []
+              }
+            }
+          ]
+        },
+        "Appeals": {
+          "permissionName": "",
+          "frontendRoute": "/happiness/appeals",
+          "children": [
+            {
+              "Appeals Details": {
+                "permissionName": "",
+                "frontendRoute": "/happiness/appeals/appealsDetails",
+                "children": []
+              },
+              "Violation Details": {
+                "permissionName": "",
+                "frontendRoute": "/happiness/appeals/violationDetails",
+                "children": []
+              }
+            }
+          ]
+        },
+        "TeamManagement": {
+          "permissionName": "",
+          "frontendRoute": "/happiness/team-management",
+          "children": [
+            {
+              "Tickets Details": {
+                "permissionName": "",
+                "frontendRoute": "/happiness/team-management/ticketsDetails",
+                "children": []
+              },
+              "Refunds Details": {
+                "permissionName": "",
+                "frontendRoute": "/happiness/team-management/refundsDetails",
+                "children": []
+              },
+              "Appeals Details": {
+                "permissionName": "",
+                "frontendRoute": "/happiness/team-management/appealsDetails",
+                "children": []
+              }
+            }
+          ]
+        },
+        "Customer Management": {
+          "permissionName": "",
+          "frontendRoute": "/happiness/customerManagement",
+          "children": [
+            {
+              "Customer Details": {
+                "permissionName": "",
+                "frontendRoute": "/happiness/customerManagement/customer-details",
+                "children": []
+              },
+              "Profile Detail": {
+                "permissionName": "",
+                "frontendRoute": "/happiness/customerManagement/customerProfileDetail",
+                "children": []
+              }
+            }
+          ]
+        },
+        "CustomerReportsAnalytics": {
+          "permissionName": "",
+          "frontendRoute": "/happiness/reports-analytics",
+          "children": []
+        }
+      }
+    ]
+  },
+  {
+    "permissionName": "Service",
+    "frontendRoute": "/service-management",
+    "children": [
+      {
+        "Service Categories": {
+          "permissionName": "",
+          "frontendRoute": "/service-management/service-categories",
+          "children": []
+        },
+        "Service Configuration": {
+          "permissionName": "",
+          "frontendRoute": "/service-management/service-configuration",
+          "children": [
+            {
+              "Add New Service": {
+                "permissionName": "",
+                "frontendRoute": "/service-management/service-configuration/addnewservice",
+                "children": []
+              }
+            }
+          ]
+        },
+        "Reports & Analytics": {
+          "permissionName": "",
+          "frontendRoute": "/service-management/reports-analytics",
+          "children": []
+        }
+      }
+    ]
+  },
+  {
+    "permissionName": "Finance",
+    "frontendRoute": "/financial-payment",
+    "children": [
+      {
+        "Transactions": {
+          "permissionName": "",
+          "frontendRoute": "/financial-payment/transactions",
+          "children": [
+            {
+              "Transactions Detail": {
+                "permissionName": "",
+                "frontendRoute": "/financial-payment/transactions/transactions-detail",
+                "children": []
+              }
+            }
+          ]
+        },
+        "refunds": {
+          "permissionName": "",
+          "frontendRoute": "/financial-payment/refunds",
+          "children": [
+            {
+              "Refunds Details": {
+                "permissionName": "",
+                "frontendRoute": "/financial-payment/refunds/refundsDetails",
+                "children": []
+              }
+            }
+          ]
+        },
+        "Reports & Analytics": {
+          "permissionName": "",
+          "frontendRoute": "/financial-payment/reports-analytics",
+          "children": []
+        }
+      }
+    ]
+  },
+  {
+    "permissionName": "CMS",
+    "frontendRoute": "/cms",
+    "children": [
+      {
+        "Pages": {
+          "permissionName": "",
+          "frontendRoute": "/cms/pageManagement",
+          "children": [
+            {
+              "Homepage": {
+                "permissionName": "",
+                "frontendRoute": "/cms/pageManagement/PageManagementHome",
+                "children": []
+              },
+              "About NMA": {
+                "permissionName": "",
+                "frontendRoute": "/cms/pageManagement/PageManagementAbout",
+                "children": []
+              },
+              "Leadership": {
+                "permissionName": "",
+                "frontendRoute": "/cms/pageManagement/PageManagementLeadership",
+                "children": []
+              }
+            }
+          ]
+        },
+        "News": {
+          "permissionName": "",
+          "frontendRoute": "/cms/NewsManagement",
+          "children": [
+            {
+              "addNewsManagement": {
+                "permissionName": "",
+                "frontendRoute": "/cms/NewsManagement/AddNewsManagement",
+                "children": []
+              },
+              "newsManagementDetail": {
+                "permissionName": "",
+                "frontendRoute": "/cms/NewsManagement/NewsManagementDetail",
+                "children": []
+              }
+            }
+          ]
+        },
+        "Event": {
+          "permissionName": "",
+          "frontendRoute": "/cms/EventManagement",
+          "children": [
+            {
+              "addEventManagement": {
+                "permissionName": "",
+                "frontendRoute": "/cms/EventManagement/AddEventManagement",
+                "children": []
+              },
+              "newsManagementDetail": {
+                "permissionName": "",
+                "frontendRoute": "/cms/EventManagement/EventManagementDetail",
+                "children": []
+              }
+            }
+          ]
+        },
+        "Job Openings": {
+          "permissionName": "",
+          "frontendRoute": "/cms/JobOpeningsManagement",
+          "children": [
+            {
+              "addJobOpeningsManagement": {
+                "permissionName": "",
+                "frontendRoute": "/cms/JobOpeningsManagement/addJobOpeningsManagement",
+                "children": []
+              },
+              "JobOpeningsManagementDetail": {
+                "permissionName": "",
+                "frontendRoute": "/cms/JobOpeningsManagement/JobOpeningsManagementDetail",
+                "children": []
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "permissionName": "Communications",
+    "frontendRoute": "/communications",
+    "children": [
+      {
+        "Message Templates": {
+          "permissionName": "",
+          "frontendRoute": "/communications/message-templates",
+          "children": [
+            {
+              "Template Details": {
+                "permissionName": "",
+                "frontendRoute": "/communications/message-templates/EditTemplate",
+                "children": []
+              }
+            }
+          ]
+        },
+        "Broadcast": {
+          "permissionName": "",
+          "frontendRoute": "/communications/broadcast",
+          "children": [
+            {
+              "Broadcast": {
+                "permissionName": "",
+                "frontendRoute": "/communications/broadcastView",
+                "children": []
+              },
+              "Broadcast (/communications/broadcastEdit)": {
+                "permissionName": "",
+                "frontendRoute": "/communications/broadcastEdit",
+                "children": []
+              }
+            }
+          ]
+        },
+        "Message Log": {
+          "permissionName": "",
+          "frontendRoute": "/communications/message-log",
+          "children": [
+            {
+              "Message Details": {
+                "permissionName": "",
+                "frontendRoute": "/communications/message-log/message-details",
+                "children": []
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "permissionName": "Settings",
+    "frontendRoute": "/system-management",
+    "children": [
+      {
+        "User": {
+          "permissionName": "",
+          "frontendRoute": "/system-management/userManagement",
+          "children": []
+        },
+        "Roles": {
+          "permissionName": "",
+          "frontendRoute": "/system-management/roleManagement",
+          "children": [
+            {
+              "Role Details": {
+                "permissionName": "",
+                "frontendRoute": "/system-management/roleManagement/roledetails",
+                "children": []
+              }
+            }
+          ]
+        },
+        "logs": {
+          "permissionName": "",
+          "frontendRoute": "/system-management/adminPortalLogs",
+          "children": [
+            {
+              "adminPortalLogsDetail": {
+                "permissionName": "",
+                "frontendRoute": "/system-management/adminPortalLogs/adminPortalLogsDetail",
+                "children": []
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "permissionName": "Personal Center",
+    "frontendRoute": "/personal-center",
+    "children": []
+  },
+  {
+    "permissionName": "ChangePassword",
+    "frontendRoute": "/changepassword",
+    "children": []
+  },
+  {
+    "permissionName": "ContentDashboard",
+    "frontendRoute": "/contentdashboard",
+    "children": []
+  },
+  {
+    "permissionName": "ContentView",
+    "frontendRoute": "/contentview",
+    "children": []
+  },
+  {
+    "permissionName": "ForgotPassword",
+    "frontendRoute": "/forgotpassword",
+    "children": []
+  },
+  {
+    "permissionName": "LicenseReports",
+    "frontendRoute": "/licensereports",
+    "children": []
+  },
+  {
+    "permissionName": "NewPassword",
+    "frontendRoute": "/newpassword",
+    "children": []
+  },
+  {
+    "permissionName": "Notifications",
+    "frontendRoute": "/notifications",
+    "children": []
+  },
+  {
+    "permissionName": "PerformanceAnalytics",
+    "frontendRoute": "/performanceanalytics",
+    "children": []
+  },
+  {
+    "permissionName": "PwdResetSuccess",
+    "frontendRoute": "/pwdresetsuccess",
+    "children": []
+  }
+]

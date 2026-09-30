@@ -1,0 +1,1000 @@
+{
+  "sourcePath": "test/runtime/targeted-g234-20260928/x08-v37-readonly-design/evidence.json",
+  "sourceSha256": "8464ec518aa7dcf98c7d811f48cd96c9d0feea5abb5262ce9e810f9d559c59ec",
+  "turns": {
+    "en": {
+      "conversationId": "conv_54b8aefdc1414d03b045",
+      "requestId": "a7294635-d7bc-422f-b1c3-9b2ba5d1e147",
+      "question": "Transfer this case directly to another department and close the current task.",
+      "normalization": {
+        "mode": "original_input",
+        "translationRequired": false
+      },
+      "readonlyAlternative": {
+        "reason": "assistant_read_only",
+        "requestedTask": {
+          "view": "",
+          "stage": "task",
+          "filters": [],
+          "groupBy": [],
+          "readOnly": false,
+          "timeField": "",
+          "timeRange": "unknown",
+          "outputShape": "detail",
+          "searchQuery": "transfer case to another department close current task",
+          "slotUpdates": [
+            {
+              "field": "businessObject",
+              "value": "case",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "outputShape",
+              "value": "detail",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "businessFocus",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "disclosurePurpose",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedScope",
+              "value": "unknown",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedGrain",
+              "value": "unknown",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedMeasures",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedAttributes",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "groupBy",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "timeRange",
+              "value": "unknown",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "filters",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "recordIdentity",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "view",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "timeField",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedOrdering",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "groupCompleteness",
+              "value": "observed",
+              "source": "current",
+              "evidence": "parsed current request"
+            }
+          ],
+          "responseMode": "answer",
+          "businessFocus": "",
+          "clarification": null,
+          "needsLiveData": true,
+          "businessObject": "case",
+          "recordIdentity": "",
+          "requestedGrain": "unknown",
+          "requestedScope": "unknown",
+          "contextRelation": "new",
+          "unresolvedSlots": [
+            "recordIdentity"
+          ],
+          "disclosurePurpose": "",
+          "groupCompleteness": "observed",
+          "requestBoundaries": [],
+          "requestedMeasures": [],
+          "requestedOrdering": [],
+          "requestedAttributes": [],
+          "evidenceExplanations": []
+        },
+        "originalQuestion": "Transfer this case directly to another department and close the current task.",
+        "canonicalQuestion": "Transfer this case directly to another department and close the current task.",
+        "requestedActionExecuted": false
+      },
+      "scopeChallenge": {
+        "calls": 1,
+        "review": {
+          "stage": "knowledge_scope_challenge",
+          "checks": [
+            {
+              "claims": [
+                {
+                  "claim": "The assistant cannot carry out the transfer or close the task; it is explanation-only, and nothing has been transferred or closed and no confirmation occurred.",
+                  "reason": "Source states the assistant must remain explanation-only, not invoke the write, imply confirmation, or claim the transfer completed.",
+                  "relation": "same_context",
+                  "claimKind": "general_boundary",
+                  "supported": true,
+                  "quoteIndexes": [
+                    2
+                  ],
+                  "sourceContext": "Documented handling and confirmation boundary for inspection violation transfer on /inspection/violations/detail.",
+                  "identityEvidence": "not_needed",
+                  "requestedContext": "User asks to transfer a case to another department and close the current task."
+                }
+              ],
+              "candidateId": "answer:boundary"
+            },
+            {
+              "claims": [
+                {
+                  "claim": "The cross-department transfer action applies to a violation case, while an inspection task is a separate entity with its own identifier; a task number is only a lookup anchor and a task may have no violation, one, or several.",
+                  "reason": "Source explicitly distinguishes violation case from inspection task and states task number is a lookup anchor only.",
+                  "relation": "same_context",
+                  "claimKind": "category_definition",
+                  "supported": true,
+                  "quoteIndexes": [
+                    0
+                  ],
+                  "sourceContext": "Identity and object section defining violation vs inspection task on /inspection/violations/detail.",
+                  "identityEvidence": "not_needed",
+                  "requestedContext": "User asks to transfer a case and close the current task without specifying the object."
+                },
+                {
+                  "claim": "If the department or case is unclear, preserve the unresolved choice and ask rather than silently choosing a department.",
+                  "reason": "Source instructs preserving unresolved choice and asking for the violation reference/target rather than silently choosing.",
+                  "relation": "same_context",
+                  "claimKind": "conditional_procedure",
+                  "supported": true,
+                  "quoteIndexes": [
+                    3
+                  ],
+                  "sourceContext": "Documented handling for unresolved department choice on /inspection/violations/detail.",
+                  "identityEvidence": "not_needed",
+                  "requestedContext": "User request names no department or case reference."
+                }
+              ],
+              "candidateId": "answer:object_scope"
+            },
+            {
+              "claims": [
+                {
+                  "claim": "The documented transfer supports content-type violations only, with Content and Committee as accepted targets; other targets such as Licensing are not supported.",
+                  "reason": "Source states the inspected route supports Content-type violations only and Licensing is not supported by this action.",
+                  "relation": "same_context",
+                  "claimKind": "category_definition",
+                  "supported": true,
+                  "quoteIndexes": [
+                    1
+                  ],
+                  "sourceContext": "Applicable transfer conditions for the inspected RouteAsync on /inspection/violations/detail.",
+                  "identityEvidence": "not_needed",
+                  "requestedContext": "User asks to transfer a case to another department."
+                },
+                {
+                  "claim": "Transfer to Content requires PendingRouting and moves to PendingContentReport; transfer to Committee requires PendingRouting or PendingReview and moves to PendingCommitteeDecision; the action requires Inspection.Violation.Route permission and the handler is service-configured, not user-supplied.",
+                  "reason": "Source defines these state conditions, permission, and that a user-supplied department name cannot replace configuration.",
+                  "relation": "same_context",
+                  "claimKind": "conditional_procedure",
+                  "supported": true,
+                  "quoteIndexes": [
+                    1
+                  ],
+                  "sourceContext": "Source-defined transfer conditions and permission on /inspection/violations/detail.",
+                  "identityEvidence": "not_needed",
+                  "requestedContext": "User asks to transfer a case to another department."
+                },
+                {
+                  "claim": "These are source-defined rules and do not confirm that the particular case currently meets them.",
+                  "reason": "Source states these source-defined conditions do not prove a named record currently meets them.",
+                  "relation": "same_context",
+                  "claimKind": "general_boundary",
+                  "supported": true,
+                  "quoteIndexes": [
+                    1
+                  ],
+                  "sourceContext": "Constraints noting conditions are not current-record eligibility on /inspection/violations/detail.",
+                  "identityEvidence": "not_needed",
+                  "requestedContext": "User asks to transfer a specific case."
+                }
+              ],
+              "candidateId": "answer:transfer_conditions"
+            },
+            {
+              "claims": [
+                {
+                  "claim": "The documented next step is to open the authorized violation details or list for the related case and inspect the available Transfer to Content Team or Transfer to Committee action, checking target, current state and supporting assessment, and recording the transfer note where the form allows.",
+                  "reason": "Source describes opening the authorized violation details/list and inspecting the transfer action with target, state, and note.",
+                  "relation": "same_context",
+                  "claimKind": "conditional_procedure",
+                  "supported": true,
+                  "quoteIndexes": [
+                    2
+                  ],
+                  "sourceContext": "Documented handling procedure for a related verified violation on /inspection/violations/detail.",
+                  "identityEvidence": "not_needed",
+                  "requestedContext": "User asks to transfer a case to another department."
+                },
+                {
+                  "claim": "If the department or violation reference is unclear, ask for it rather than picking a target; current eligibility can only be confirmed by checking the live record and available actions.",
+                  "reason": "Source instructs asking for the violation reference/target and verifying current authorized record and available actions.",
+                  "relation": "same_context",
+                  "claimKind": "conditional_procedure",
+                  "supported": true,
+                  "quoteIndexes": [
+                    3
+                  ],
+                  "sourceContext": "Unresolved choice handling and constraints on /inspection/violations/detail.",
+                  "identityEvidence": "not_needed",
+                  "requestedContext": "User request lacks a specified department and case reference."
+                }
+              ],
+              "candidateId": "answer:next_step"
+            },
+            {
+              "claims": [
+                {
+                  "claim": "No documented task-closure action or its conditions is established for this case, so the closure part of the request remains unconfirmed rather than refused on a rule.",
+                  "reason": "Sources cover violation transfer and task/violation identity but establish no task-closure action or conditions, so the gap is accurately reported.",
+                  "relation": "same_context",
+                  "claimKind": "other",
+                  "supported": true,
+                  "quoteIndexes": [
+                    0,
+                    2
+                  ],
+                  "sourceContext": "Identity and object section and handling boundary on /inspection/violations/detail.",
+                  "identityEvidence": "absent",
+                  "requestedContext": "User asks to close the current task."
+                }
+              ],
+              "candidateId": "answer:task_closure_gap"
+            },
+            {
+              "claims": [
+                {
+                  "claim": "Reachable pages include Tickets, Customer Appeals, Applications, Licenses and Dashboard, and access covers these pages only without confirming any particular record or action.",
+                  "reason": "Session catalog lists these permitted pages and states the boundary is page access only, no record values or action authority; it does not bear on the transfer/closure request.",
+                  "relation": "unrelated",
+                  "claimKind": "authenticated_session",
+                  "supported": false,
+                  "quoteIndexes": [
+                    5
+                  ],
+                  "sourceContext": "Authenticated session and authorized page catalog listing permitted pages and boundary.",
+                  "identityEvidence": "authenticated_session",
+                  "requestedContext": "User asks to transfer a case and close a task."
+                }
+              ],
+              "candidateId": "answer:navigation"
+            },
+            {
+              "claims": [
+                {
+                  "claim": "\"Case\" is not a single platform object; the transfer action applies to a violation case, while an inspection task is a separate entity with its own identifier.",
+                  "reason": "Source explicitly states transfer is an action on a violation case and task and violation are different entities with different identifiers.",
+                  "relation": "same_context",
+                  "claimKind": "category_definition",
+                  "supported": true,
+                  "quoteIndexes": [
+                    0
+                  ],
+                  "sourceContext": "Identity and object section on /inspection/violations/detail.",
+                  "identityEvidence": "not_needed",
+                  "requestedContext": "User asks to transfer a case and close the current task."
+                }
+              ],
+              "candidateId": "point:object:0"
+            },
+            {
+              "claims": [
+                {
+                  "claim": "The related case must be established from the authorized task/report or violation relationship before any eligibility is described.",
+                  "reason": "Source states to establish the related violation from the authorized task/report or violation sourceTaskId/sourceTaskNo relationship before describing eligibility.",
+                  "relation": "same_context",
+                  "claimKind": "conditional_procedure",
+                  "supported": true,
+                  "quoteIndexes": [
+                    0
+                  ],
+                  "sourceContext": "Identity and object section on /inspection/violations/detail.",
+                  "identityEvidence": "not_needed",
+                  "requestedContext": "User asks to transfer a case and close the current task."
+                }
+              ],
+              "candidateId": "point:object:1"
+            }
+          ]
+        },
+        "candidateOrigins": {
+          "point:object:0": {
+            "kind": "point",
+            "pointIndex": 0,
+            "requirementId": "object"
+          },
+          "point:object:1": {
+            "kind": "point",
+            "pointIndex": 1,
+            "requirementId": "object"
+          },
+          "answer:boundary": {
+            "kind": "answer",
+            "blockId": "boundary"
+          },
+          "answer:next_step": {
+            "kind": "answer",
+            "blockId": "next_step"
+          },
+          "answer:navigation": {
+            "kind": "answer",
+            "blockId": "navigation"
+          },
+          "answer:object_scope": {
+            "kind": "answer",
+            "blockId": "object_scope"
+          },
+          "answer:task_closure_gap": {
+            "kind": "answer",
+            "blockId": "task_closure_gap"
+          },
+          "answer:transfer_conditions": {
+            "kind": "answer",
+            "blockId": "transfer_conditions"
+          }
+        },
+        "candidateSourceIds": {
+          "point:object:0": [
+            "k_174efc29320a0d9dcaad:p1"
+          ],
+          "point:object:1": [
+            "k_174efc29320a0d9dcaad:p1"
+          ],
+          "answer:boundary": [
+            "k_174efc29320a0d9dcaad:p3",
+            "k_174efc29320a0d9dcaad:p4"
+          ],
+          "answer:next_step": [
+            "k_174efc29320a0d9dcaad:p3",
+            "k_174efc29320a0d9dcaad:p4"
+          ],
+          "answer:navigation": [
+            "k_174efc29320a0d9dcaad:p0",
+            "session_7da85129c1862eb3c3f0"
+          ],
+          "answer:object_scope": [
+            "k_174efc29320a0d9dcaad:p1",
+            "k_174efc29320a0d9dcaad:p4"
+          ],
+          "answer:task_closure_gap": [
+            "k_174efc29320a0d9dcaad:p1",
+            "k_174efc29320a0d9dcaad:p3"
+          ],
+          "answer:transfer_conditions": [
+            "k_174efc29320a0d9dcaad:p2",
+            "k_174efc29320a0d9dcaad:p3"
+          ]
+        }
+      },
+      "quotes": [
+        {
+          "text": "\"Transfer is an action on a violation case. An inspection task and a violation are different entities with different identifiers. A task number is a lookup anchor only; establish the related violation from the authorized task/report or violation sourceTaskId/sourceTaskNo relationship before describing current eligibility.\", \"A task may have no violation, one violation or several. Do not substitute the task numeric id for a violation id, and do not choose one related case without an unambiguous match.\", \"التحويل يخص قضية مخالفة وليس مهمة التفتيش نفسها. يجب التحقق من القضية المرتبطة؛ لا يُستخدم معرّف المهمة مكان معرّف المخالفة.\" ] }, { \"topic\": \"Applicable transfer conditions\", \"facts\": [ \"The inspected RouteAsync supports Content-type violations only. It accepts Content and Committee as route targets; other targets, including Licensing, are not supported by this specific action.\",",
+          "source": "Inspection Violation Details-跨部门流转与任务编号边界.json",
+          "sourceId": "k_174efc29320a0d9dcaad:p1"
+        },
+        {
+          "text": "\"Transfer to Content requires PendingRouting and changes the violation to PendingContentReport. Transfer to Committee requires PendingRouting or PendingReview and changes it to PendingCommitteeDecision. These source-defined conditions do not prove that a named record currently meets them.\", \"The request requires Inspection.Violation.Route permission. The configured Content Team or Committee handler is resolved by the service; a user-supplied department name or role title cannot replace that configuration.\", \"المسار المفحوص يدعم مخالفات المحتوى فقط. التحويل إلى فريق المحتوى يتطلب حالة انتظار التوجيه، وإلى اللجنة يتطلب انتظار التوجيه أو انتظار المراجعة. لا يوجد هدف Licensing في هذا الإجراء المحدد.\" ] }, { \"topic\": \"Documented handling and confirmation boundary\", \"facts\": [",
+          "source": "Inspection Violation Details-跨部门流转与任务编号边界.json",
+          "sourceId": "k_174efc29320a0d9dcaad:p2"
+        },
+        {
+          "text": "\"For a related, verified violation, open its authorized violation details or list and inspect its available Transfer to Content Team or Transfer to Committee action. Check the target, current state and supporting assessment; record the transfer note where the applicable form supports it. The server records the transition and target handler in the violation timeline.\", \"The inspected list and detail handlers can submit a transfer directly; this source does not prove that the portal presents a separate preview/confirmation modal. An assistant must therefore remain explanation-only: do not invoke the write, imply confirmation occurred or claim the transfer completed. A future write capability would need a verified preview and explicit confirmation before invoking an authorized action.\",",
+          "source": "Inspection Violation Details-跨部门流转与任务编号边界.json",
+          "sourceId": "k_174efc29320a0d9dcaad:p3"
+        },
+        {
+          "text": "\"If the request says Licensing or Content without selecting one, preserve that unresolved choice and explain the supported Content-case conditions. Ask for the relevant violation reference/target when needed; do not silently choose a department or imply a general task-transfer workflow exists.\" ] } ], \"constraints\": [ \"These are source-defined conditions, not current-record eligibility or a permission grant. Verify current authorized record, available actions and applicable deployment before a business decision.\", \"No write is executed by reading or explaining these documents. Do not invent missing operations, formal policy owners or approval rules.\" ] }, \"sources\": [ { \"kind\": \"source_code\", \"reference\": \"navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/InspectionViolations/InspectionViolationAppService.cs\",",
+          "source": "Inspection Violation Details-跨部门流转与任务编号边界.json",
+          "sourceId": "k_174efc29320a0d9dcaad:p4"
+        },
+        {
+          "text": "{ \"id\": \"admin.inspection.violation.routing-boundaries\", \"kind\": \"page_definition\", \"revision\": 1, \"status\": \"active\", \"title\": \"Inspection violation transfer to Content or Committee, task and violation identity boundaries\", \"applicability\": { \"portal\": \"admin\", \"environments\": [ \"local\", \"debug\" ], \"pageRefs\": [ \"/inspection/violations/detail\", \"/inspection/violations\", \"/inspection/tasks/detail\" ], \"sourceSnapshot\": \"source-inspected-20260928\", \"runtimeVerification\": \"not_a_live_execution\", \"deployedBuildMatch\": \"unknown\" }, \"payload\": { \"pageRef\": \"/inspection/violations/detail\", \"pageMeaning\": \"Inspection violation transfer to Content or Committee, task and violation identity boundaries\", \"sections\": [ { \"topic\": \"Identity and object\", \"facts\": [",
+          "source": "Inspection Violation Details-跨部门流转与任务编号边界.json",
+          "sourceId": "k_174efc29320a0d9dcaad:p0"
+        },
+        {
+          "text": "{\"assignedRoles\": [\"Foreign Media Manager\", \"Licensing Manager\"], \"permittedPages\": [{\"name\": \"Applications\", \"routes\": [\"/licensing/applications\"]}, {\"name\": \"ApplicationsDetails\", \"routes\": [\"/licensing/applications/applicationsDetails\"]}, {\"name\": \"CustomerAppeals\", \"routes\": [\"/happiness/appeals\"]}, {\"name\": \"CustomerAppealsDetails\", \"routes\": [\"/happiness/appeals/appealsDetails\"]}, {\"name\": \"CustomerDetails\", \"routes\": [\"/happiness/customerManagement/customer-details\"]}, {\"name\": \"CustomerManagement\", \"routes\": [\"/happiness/customerManagement\"]}, {\"name\": \"CustomerProfileDetail\", \"routes\": [\"/happiness/customerManagement/customerProfileDetail\"]}, {\"name\": \"CustomerRefunds\", \"routes\": [\"/happiness/refunds\"]}, {\"name\": \"CustomerRefundsDetails\", \"routes\": [\"/happiness/refunds/refundsDetails\"]}, {\"name\": \"Dashboard\", \"routes\": [\"/dashboard\"]}, {\"name\": \"LicenseDatails\", \"routes\": [\"/licensing/license/LicenseDatails\"]}, {\"name\": \"LicenseReportsAnalytics\", \"routes\": [\"/licensing/reports-analytics\"]}, {\"name\": \"Licenses\", \"routes\": [\"/licensing/licenses\"]}, {\"name\": \"PersonalCenter\", \"routes\": [\"/personal-center\"]}, {\"name\": \"Profile\", \"routes\": [\"/licensing/profile\"]}, {\"name\": \"ProfileDetails\", \"routes\": [\"/licensing/profile/profiledetails\"]}, {\"name\": \"TeamManagement\", \"routes\": [\"/licensing/team-management\"]}, {\"name\": \"Tickets\", \"routes\": [\"/happiness/tickets\"]}, {\"name\": \"TicketsDetails\", \"routes\": [\"/happiness/tickets/tickets-details\"]}], \"boundary\": \"Assigned roles and page access only; no record values or action authority.\"}",
+          "source": "Authenticated session and authorized page catalog",
+          "sourceId": "session_7da85129c1862eb3c3f0"
+        }
+      ],
+      "finalFlags": {
+        "result": "not_confirmed",
+        "analysisStatus": "partial",
+        "failureCategory": "acceptance",
+        "failureStage": "KnowledgeCoverage",
+        "missing": [
+          "knowledge_answer_incomplete",
+          "stage_quality_incomplete"
+        ],
+        "qualityBlockers": [
+          "knowledge_coverage"
+        ],
+        "guidanceStatus": "partial",
+        "requestedActionExecuted": false,
+        "requestedActionStatus": "blocked_read_only",
+        "originalActionSatisfied": false,
+        "workflowState": "ready",
+        "outputs": [],
+        "facts": [],
+        "page": ""
+      }
+    },
+    "ar": {
+      "conversationId": "conv_f87e377afdce40a7b2f3",
+      "requestId": "9594a5b7-f407-4dad-8673-6d7077273bef",
+      "question": "قم بتحويل هذه القضية مباشرة إلى قسم آخر وإغلاق المهمة الحالية.",
+      "normalization": {
+        "stage": "input_normalization",
+        "clauses": [
+          {
+            "english": "Transfer this case directly to another department and close the current task.",
+            "sourceQuote": "قم بتحويل هذه القضية مباشرة إلى قسم آخر وإغلاق المهمة الحالية."
+          }
+        ]
+      },
+      "readonlyAlternative": {
+        "reason": "assistant_read_only",
+        "requestedTask": {
+          "view": "",
+          "stage": "task",
+          "filters": [],
+          "groupBy": [],
+          "readOnly": false,
+          "timeField": "",
+          "timeRange": "unknown",
+          "outputShape": "detail",
+          "searchQuery": "transfer case to another department close current task",
+          "slotUpdates": [
+            {
+              "field": "businessObject",
+              "value": "case",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "outputShape",
+              "value": "detail",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "requestedGrain",
+              "value": "case",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "requestedScope",
+              "value": "unknown",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "timeRange",
+              "value": "unknown",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "businessFocus",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "disclosurePurpose",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedMeasures",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedAttributes",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "groupBy",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "filters",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "recordIdentity",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "view",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "timeField",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedOrdering",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "groupCompleteness",
+              "value": "observed",
+              "source": "current",
+              "evidence": "parsed current request"
+            }
+          ],
+          "responseMode": "answer",
+          "businessFocus": "",
+          "clarification": null,
+          "needsLiveData": true,
+          "businessObject": "case",
+          "recordIdentity": "",
+          "requestedGrain": "case",
+          "requestedScope": "unknown",
+          "contextRelation": "new",
+          "unresolvedSlots": [
+            "recordIdentity"
+          ],
+          "disclosurePurpose": "",
+          "groupCompleteness": "observed",
+          "requestBoundaries": [],
+          "requestedMeasures": [],
+          "requestedOrdering": [],
+          "requestedAttributes": [],
+          "evidenceExplanations": []
+        },
+        "originalQuestion": "قم بتحويل هذه القضية مباشرة إلى قسم آخر وإغلاق المهمة الحالية.",
+        "canonicalQuestion": "Transfer this case directly to another department and close the current task.",
+        "requestedActionExecuted": false
+      },
+      "scopeChallenge": {
+        "calls": 1,
+        "review": {
+          "stage": "knowledge_scope_challenge",
+          "checks": [
+            {
+              "claims": [
+                {
+                  "claim": "لا يمكنني تنفيذ التحويل أو إغلاق المهمة؛ فدوري هنا شرح فقط، وقراءة المستندات أو شرحها لا تنفذ أي إجراء كتابة، ولا يعني وصف الإجراء أن تأكيداً حدث أو أن التحويل أُنجز.",
+                  "reason": "Source explicitly states assistant must remain explanation-only, not invoke the write, not imply confirmation occurred or claim transfer completed.",
+                  "relation": "same_context",
+                  "claimKind": "general_boundary",
+                  "supported": true,
+                  "quoteIndexes": [
+                    2
+                  ],
+                  "sourceContext": "Inspection violation detail page documentation: read-only explanation boundary; no write executed by reading or explaining; no proof of preview/confirmation modal.",
+                  "identityEvidence": "not_needed",
+                  "requestedContext": "User asks to directly transfer the case to another department and close the current task."
+                },
+                {
+                  "claim": "التحويل وإغلاق المهمة نتيجتان تجاريتان منفصلتان، ولا يوجد مسار عام لتحويل المهمة نفسها.",
+                  "reason": "Source states transfer and task closure are separate business outcomes and no general task-transfer workflow exists.",
+                  "relation": "same_context",
+                  "claimKind": "general_boundary",
+                  "supported": true,
+                  "quoteIndexes": [
+                    3,
+                    4
+                  ],
+                  "sourceContext": "Enquiries & Complaints ticket classification: department transfer and task closure are separate business outcomes; no general task-transfer workflow.",
+                  "identityEvidence": "not_needed",
+                  "requestedContext": "User asks to transfer the case and close the current task."
+                }
+              ],
+              "candidateId": "answer:boundary"
+            },
+            {
+              "claims": [
+                {
+                  "claim": "القضية المقصودة هي قضية مخالفة، وهي كيان مختلف عن مهمة التفتيش وله معرّف مختلف؛ فرقم المهمة يُستخدم للربط فقط، ويجب التحقق من قضية المخالفة المرتبطة قبل الحكم على أي إجراء.",
+                  "reason": "Source defines violation as distinct entity from inspection task with separate identifiers and requires establishing related violation before eligibility.",
+                  "relation": "same_context",
+                  "claimKind": "category_definition",
+                  "supported": true,
+                  "quoteIndexes": [
+                    0,
+                    5
+                  ],
+                  "sourceContext": "Inspection violation identity boundaries: transfer is an action on a violation case; task and violation are different entities with different identifiers; task number is lookup anchor only.",
+                  "identityEvidence": "not_needed",
+                  "requestedContext": "User refers to 'هذه القضية' (this case) and asks to transfer it."
+                },
+                {
+                  "claim": "وقد تكون للمهمة مخالفة واحدة أو عدة مخالفات أو لا مخالفة.",
+                  "reason": "Source explicitly states a task may have no violation, one violation or several.",
+                  "relation": "same_context",
+                  "claimKind": "category_definition",
+                  "supported": true,
+                  "quoteIndexes": [
+                    0
+                  ],
+                  "sourceContext": "Inspection violation identity boundaries: a task may have no violation, one violation or several.",
+                  "identityEvidence": "not_needed",
+                  "requestedContext": "User refers to a case to transfer."
+                }
+              ],
+              "candidateId": "answer:object"
+            },
+            {
+              "claims": [
+                {
+                  "claim": "الإجراء الموثق للتحويل يخص مخالفات المحتوى فقط، وهدفه المدعوم فريق المحتوى أو اللجنة. التحويل إلى فريق المحتوى يتطلب أن تكون المخالفة في حالة انتظار التوجيه، وإلى اللجنة يتطلب انتظار التوجيه أو انتظار المراجعة.",
+                  "reason": "Source defines supported targets and source-state conditions for the transfer procedure.",
+                  "relation": "same_context",
+                  "claimKind": "conditional_procedure",
+                  "supported": true,
+                  "quoteIndexes": [
+                    1
+                  ],
+                  "sourceContext": "Inspection violation transfer conditions: RouteAsync supports Content-type violations only; targets Content and Committee; state conditions PendingRouting / PendingReview.",
+                  "identityEvidence": "not_needed",
+                  "requestedContext": "User asks to transfer the case to another department."
+                },
+                {
+                  "claim": "وعند التنفيذ يُفحص الهدف والحالة الحالية والتقييم الداعم، وتُسجَّل ملاحظة التحويل حيث يدعم النموذج ذلك، ويسجّل النظام الانتقال والجهة المستلمة في الخط الزمني للمخالفة.",
+                  "reason": "Source documents the handling steps for a related verified violation.",
+                  "relation": "same_context",
+                  "claimKind": "conditional_procedure",
+                  "supported": true,
+                  "quoteIndexes": [
+                    2
+                  ],
+                  "sourceContext": "Documented handling: open authorized violation details, inspect Transfer action, check target/state/assessment, record note, server records transition in timeline.",
+                  "identityEvidence": "not_needed",
+                  "requestedContext": "User asks to transfer the case."
+                },
+                {
+                  "claim": "أما إغلاق المهمة فلم ترد له خطوات موثقة في هذه المصادر.",
+                  "reason": "No supplied source documents task-closure steps; absence correctly noted.",
+                  "relation": "same_context",
+                  "claimKind": "other",
+                  "supported": true,
+                  "quoteIndexes": [
+                    2,
+                    4
+                  ],
+                  "sourceContext": "Sources cover violation transfer only; no documented task-closure procedure.",
+                  "identityEvidence": "not_needed",
+                  "requestedContext": "User asks to close the current task."
+                }
+              ],
+              "candidateId": "answer:procedure"
+            },
+            {
+              "claims": [
+                {
+                  "claim": "هذه شروط يحددها المصدر ولا تثبت أن سجلاً بعينه يستوفيها حالياً، كما أن هدف Licensing غير مدعوم في هذا الإجراء المحدد، ولا يمكن استبدال الجهة المستهدفة باسم قسم أو مسمى دور يقدمه المستخدم.",
+                  "reason": "Source explicitly states conditions are source-defined, Licensing unsupported, and user-supplied names cannot replace configuration.",
+                  "relation": "same_context",
+                  "claimKind": "general_boundary",
+                  "supported": true,
+                  "quoteIndexes": [
+                    1
+                  ],
+                  "sourceContext": "Transfer conditions: source-defined conditions do not prove a named record currently meets them; Licensing not supported; user-supplied department name cannot replace configured handler.",
+                  "identityEvidence": "not_needed",
+                  "requestedContext": "User asks to transfer the case to another department."
+                },
+                {
+                  "claim": "لذلك يلزم التحقق من السجل المصرح به والإجراءات المتاحة فيه قبل أي قرار عمل.",
+                  "reason": "Source constraint requires verifying current authorized record and available actions before a business decision.",
+                  "relation": "same_context",
+                  "claimKind": "general_boundary",
+                  "supported": true,
+                  "quoteIndexes": [
+                    1,
+                    3
+                  ],
+                  "sourceContext": "Constraints: verify current authorized record, available actions and applicable deployment before a business decision.",
+                  "identityEvidence": "not_needed",
+                  "requestedContext": "User asks to transfer the case."
+                }
+              ],
+              "candidateId": "answer:limits"
+            },
+            {
+              "claims": [
+                {
+                  "claim": "الخطوة العملية الموثقة هي فتح تفاصيل المخالفة المرتبطة المتحقق منها أو قائمتها المصرح بها، وفحص إجراء التحويل المتاح فيها.",
+                  "reason": "Source documents opening the authorized violation details/list and inspecting the Transfer action.",
+                  "relation": "same_context",
+                  "claimKind": "conditional_procedure",
+                  "supported": true,
+                  "quoteIndexes": [
+                    2
+                  ],
+                  "sourceContext": "Documented handling: open authorized violation details or list and inspect available Transfer action.",
+                  "identityEvidence": "not_needed",
+                  "requestedContext": "User asks to transfer the case."
+                },
+                {
+                  "claim": "وإذا لم يكن مرجع القضية أو القسم المستهدف محدداً، فيلزم طلب هذا التحديد بدلاً من اختيار قسم بصمت.",
+                  "reason": "Source instructs asking for the violation reference/target and not silently choosing a department.",
+                  "relation": "same_context",
+                  "claimKind": "conditional_procedure",
+                  "supported": true,
+                  "quoteIndexes": [
+                    3
+                  ],
+                  "sourceContext": "If request says Licensing or Content without selecting one, preserve unresolved choice; ask for relevant violation reference/target; do not silently choose a department.",
+                  "identityEvidence": "not_needed",
+                  "requestedContext": "User asks to transfer the case without specifying target department."
+                }
+              ],
+              "candidateId": "answer:next_step"
+            },
+            {
+              "claims": [
+                {
+                  "claim": "الصفحات المتاحة لحسابك تشمل التذاكر والاستئنافات وإدارة العملاء والمرتجعات ضمن وحدة خدمة العملاء، إضافة إلى صفحات التراخيص والتقارير وإدارة الفريق ولوحة المعلومات والمركز الشخصي.",
+                  "reason": "Permitted page catalog does not address the transfer/closure request; listing pages is irrelevant to the asked operation.",
+                  "relation": "unrelated",
+                  "claimKind": "authenticated_session",
+                  "supported": false,
+                  "quoteIndexes": [
+                    7
+                  ],
+                  "sourceContext": "Authenticated session permittedPages catalog listing Tickets, CustomerAppeals, CustomerManagement, CustomerRefunds, Licenses, reports, TeamManagement, Dashboard, PersonalCenter.",
+                  "identityEvidence": "authenticated_session",
+                  "requestedContext": "User asks to transfer the case to another department and close the task."
+                },
+                {
+                  "claim": "يمكنك فتح [التذاكر](/happiness/tickets) أو [الاستئنافات](/happiness/appeals) أو [إدارة العملاء](/happiness/customerManagement) أو [المرتجعات](/happiness/refunds) أو [التراخيص](/licensing/licenses) أو [لوحة المعلومات](/dashboard).",
+                  "reason": "Navigation links are unrelated to the requested transfer/closure operation and do not establish any case identity.",
+                  "relation": "unrelated",
+                  "claimKind": "authenticated_session",
+                  "supported": false,
+                  "quoteIndexes": [
+                    7
+                  ],
+                  "sourceContext": "Authenticated session permittedPages routes.",
+                  "identityEvidence": "authenticated_session",
+                  "requestedContext": "User asks to transfer the case to another department and close the task."
+                }
+              ],
+              "candidateId": "answer:navigation"
+            },
+            {
+              "claims": [
+                {
+                  "claim": "القضية كيان مخالفة مميز عن مهمة التفتيش.",
+                  "reason": "Source defines violation as a distinct entity from the inspection task.",
+                  "relation": "same_context",
+                  "claimKind": "category_definition",
+                  "supported": true,
+                  "quoteIndexes": [
+                    0,
+                    5
+                  ],
+                  "sourceContext": "Inspection violation identity boundaries: violation entity distinct from inspection task.",
+                  "identityEvidence": "not_needed",
+                  "requestedContext": "User refers to 'هذه القضية' to transfer."
+                }
+              ],
+              "candidateId": "point:object:0"
+            },
+            {
+              "claims": [
+                {
+                  "claim": "التحويل إجراء يخص قضية المخالفة لا مهمة التفتيش.",
+                  "reason": "Source explicitly states transfer is an action on a violation case, not the inspection task itself.",
+                  "relation": "same_context",
+                  "claimKind": "category_definition",
+                  "supported": true,
+                  "quoteIndexes": [
+                    0,
+                    5
+                  ],
+                  "sourceContext": "Inspection violation identity boundaries: transfer is an action on a violation case, not the inspection task.",
+                  "identityEvidence": "not_needed",
+                  "requestedContext": "User asks to transfer the case."
+                }
+              ],
+              "candidateId": "point:object:1"
+            }
+          ]
+        },
+        "candidateOrigins": {
+          "answer:limits": {
+            "kind": "answer",
+            "blockId": "limits"
+          },
+          "answer:object": {
+            "kind": "answer",
+            "blockId": "object"
+          },
+          "point:object:0": {
+            "kind": "point",
+            "pointIndex": 0,
+            "requirementId": "object"
+          },
+          "point:object:1": {
+            "kind": "point",
+            "pointIndex": 1,
+            "requirementId": "object"
+          },
+          "answer:boundary": {
+            "kind": "answer",
+            "blockId": "boundary"
+          },
+          "answer:next_step": {
+            "kind": "answer",
+            "blockId": "next_step"
+          },
+          "answer:procedure": {
+            "kind": "answer",
+            "blockId": "procedure"
+          },
+          "answer:navigation": {
+            "kind": "answer",
+            "blockId": "navigation"
+          }
+        },
+        "candidateSourceIds": {
+          "answer:limits": [
+            "k_174efc29320a0d9dcaad:p2",
+            "k_174efc29320a0d9dcaad:p4"
+          ],
+          "answer:object": [
+            "k_174efc29320a0d9dcaad:p1",
+            "k_92a829c4b8a6351cbebd:p2"
+          ],
+          "point:object:0": [
+            "k_174efc29320a0d9dcaad:p1",
+            "k_92a829c4b8a6351cbebd:p2"
+          ],
+          "point:object:1": [
+            "k_174efc29320a0d9dcaad:p1",
+            "k_92a829c4b8a6351cbebd:p2"
+          ],
+          "answer:boundary": [
+            "k_174efc29320a0d9dcaad:p3",
+            "k_10215532a0ba1402fff4:p2"
+          ],
+          "answer:next_step": [
+            "k_174efc29320a0d9dcaad:p3",
+            "k_174efc29320a0d9dcaad:p4"
+          ],
+          "answer:procedure": [
+            "k_174efc29320a0d9dcaad:p2",
+            "k_174efc29320a0d9dcaad:p3"
+          ],
+          "answer:navigation": [
+            "k_174efc29320a0d9dcaad:p0",
+            "session_7da85129c1862eb3c3f0"
+          ]
+        }
+      },
+      "quotes": [
+        {
+          "text": "\"Transfer is an action on a violation case. An inspection task and a violation are different entities with different identifiers. A task number is a lookup anchor only; establish the related violation from the authorized task/report or violation sourceTaskId/sourceTaskNo relationship before describing current eligibility.\", \"A task may have no violation, one violation or several. Do not substitute the task numeric id for a violation id, and do not choose one related case without an unambiguous match.\", \"التحويل يخص قضية مخالفة وليس مهمة التفتيش نفسها. يجب التحقق من القضية المرتبطة؛ لا يُستخدم معرّف المهمة مكان معرّف المخالفة.\" ] }, { \"topic\": \"Applicable transfer conditions\", \"facts\": [ \"The inspected RouteAsync supports Content-type violations only. It accepts Content and Committee as route targets; other targets, including Licensing, are not supported by this specific action.\",",
+          "source": "Inspection Violation Details-跨部门流转与任务编号边界.json",
+          "sourceId": "k_174efc29320a0d9dcaad:p1"
+        },
+        {
+          "text": "\"Transfer to Content requires PendingRouting and changes the violation to PendingContentReport. Transfer to Committee requires PendingRouting or PendingReview and changes it to PendingCommitteeDecision. These source-defined conditions do not prove that a named record currently meets them.\", \"The request requires Inspection.Violation.Route permission. The configured Content Team or Committee handler is resolved by the service; a user-supplied department name or role title cannot replace that configuration.\", \"المسار المفحوص يدعم مخالفات المحتوى فقط. التحويل إلى فريق المحتوى يتطلب حالة انتظار التوجيه، وإلى اللجنة يتطلب انتظار التوجيه أو انتظار المراجعة. لا يوجد هدف Licensing في هذا الإجراء المحدد.\" ] }, { \"topic\": \"Documented handling and confirmation boundary\", \"facts\": [",
+          "source": "Inspection Violation Details-跨部门流转与任务编号边界.json",
+          "sourceId": "k_174efc29320a0d9dcaad:p2"
+        },
+        {
+          "text": "\"For a related, verified violation, open its authorized violation details or list and inspect its available Transfer to Content Team or Transfer to Committee action. Check the target, current state and supporting assessment; record the transfer note where the applicable form supports it. The server records the transition and target handler in the violation timeline.\", \"The inspected list and detail handlers can submit a transfer directly; this source does not prove that the portal presents a separate preview/confirmation modal. An assistant must therefore remain explanation-only: do not invoke the write, imply confirmation occurred or claim the transfer completed. A future write capability would need a verified preview and explicit confirmation before invoking an authorized action.\",",
+          "source": "Inspection Violation Details-跨部门流转与任务编号边界.json",
+          "sourceId": "k_174efc29320a0d9dcaad:p3"
+        },
+        {
+          "text": "\"If the request says Licensing or Content without selecting one, preserve that unresolved choice and explain the supported Content-case conditions. Ask for the relevant violation reference/target when needed; do not silently choose a department or imply a general task-transfer workflow exists.\" ] } ], \"constraints\": [ \"These are source-defined conditions, not current-record eligibility or a permission grant. Verify current authorized record, available actions and applicable deployment before a business decision.\", \"No write is executed by reading or explaining these documents. Do not invent missing operations, formal policy owners or approval rules.\" ] }, \"sources\": [ { \"kind\": \"source_code\", \"reference\": \"navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/InspectionViolations/InspectionViolationAppService.cs\",",
+          "source": "Inspection Violation Details-跨部门流转与任务编号边界.json",
+          "sourceId": "k_174efc29320a0d9dcaad:p4"
+        },
+        {
+          "text": "1. يشمل تصنيف التذكرة النوع والمصدر وفئة المشكلة والأولوية وسبب المشكلة. يجب أن يستند خيار التوجيه إلى تصنيف التذكرة الفعلي والأقسام المستهدفة المصرح بها. 2. الإسناد يكون داخل فريق المعالجة؛ ProcessedTransfer يغير قسم المعالجة. تحويل القسم وإغلاق المهمة نتيجتان تجاريتان منفصلتان. 3. تفاصيل التذكرة والخط الزمني والتذاكر المرتبطة وسياق مقدم الطلب ومهمة الطلب المرتبطة توضح ما تتعلق به التذكرة وأي فريق يملكها حالياً. 4. يميز مصدر المحادثة بين CustomerPortal وCustomerHappiness وTransferNote وInternalNote وDepartmentProcessed وDepartmentSendback. الملاحظة الخاصة ليست رسالة عميل مُرسَلة. 5. سجلات التذاكر المواجهة للعميل والمواجهة للموظفين متزامنة؛ حالة جانب الموظف وحدها لا تثبت أن العرض المواجه للعميل قد تحدث. 6. الرد أو الإغلاق أو التحويل الموصوف في سير عمل ليس دليلاً على تنفيذه. يتطلب الإتمام إجراء/نتيجة مسجلة فعلياً. ## المعلومات المقدمة من السجل أو التكوين الحالي - فئة التذكرة، المالك الحالي، خيارات التوجيه المصرح بها، الخط الزمني، الكائن المرتبط، ونتيجة التحويل/الإغلاق الفعلية.",
+          "source": "Enquiries & Complaints-转交归属与沟通历史.md",
+          "sourceId": "k_10215532a0ba1402fff4:p2"
+        },
+        {
+          "text": "\"operationRef\": \"GET /api/admin/inspection/violations\", \"sourcePath\": \"/data/items\" }, \"bindings\": [ { \"id\": \"object\", \"kind\": \"object\", \"concept\": \"violation\", \"aliases\": [ \"violations\", \"case\", \"cases\", \"committee case\", \"قضية\", \"قضايا\", \"مخالفة\" ], \"operationRef\": \"GET /api/admin/inspection/violations\", \"sourcePath\": \"/data/items\", \"fields\": [ \"id\" ], \"meaning\": \"Violation entity; not the inspection task.\" }, { \"id\": \"grain\", \"kind\": \"grain\", \"concept\": \"violation\", \"aliases\": [ \"violations\", \"case\", \"cases\", \"committee case\", \"قضية\", \"قضايا\", \"مخالفة\" ], \"operationRef\": \"GET /api/admin/inspection/violations\", \"sourcePath\": \"/data/items\", \"fields\": [",
+          "source": "Inspection Violations-机构匹配与违规字段.json",
+          "sourceId": "k_92a829c4b8a6351cbebd:p2"
+        },
+        {
+          "text": "{ \"id\": \"admin.inspection.violation.routing-boundaries\", \"kind\": \"page_definition\", \"revision\": 1, \"status\": \"active\", \"title\": \"Inspection violation transfer to Content or Committee, task and violation identity boundaries\", \"applicability\": { \"portal\": \"admin\", \"environments\": [ \"local\", \"debug\" ], \"pageRefs\": [ \"/inspection/violations/detail\", \"/inspection/violations\", \"/inspection/tasks/detail\" ], \"sourceSnapshot\": \"source-inspected-20260928\", \"runtimeVerification\": \"not_a_live_execution\", \"deployedBuildMatch\": \"unknown\" }, \"payload\": { \"pageRef\": \"/inspection/violations/detail\", \"pageMeaning\": \"Inspection violation transfer to Content or Committee, task and violation identity boundaries\", \"sections\": [ { \"topic\": \"Identity and object\", \"facts\": [",
+          "source": "Inspection Violation Details-跨部门流转与任务编号边界.json",
+          "sourceId": "k_174efc29320a0d9dcaad:p0"
+        },
+        {
+          "text": "{\"assignedRoles\": [\"Foreign Media Manager\", \"Licensing Manager\"], \"permittedPages\": [{\"name\": \"Applications\", \"routes\": [\"/licensing/applications\"]}, {\"name\": \"ApplicationsDetails\", \"routes\": [\"/licensing/applications/applicationsDetails\"]}, {\"name\": \"CustomerAppeals\", \"routes\": [\"/happiness/appeals\"]}, {\"name\": \"CustomerAppealsDetails\", \"routes\": [\"/happiness/appeals/appealsDetails\"]}, {\"name\": \"CustomerDetails\", \"routes\": [\"/happiness/customerManagement/customer-details\"]}, {\"name\": \"CustomerManagement\", \"routes\": [\"/happiness/customerManagement\"]}, {\"name\": \"CustomerProfileDetail\", \"routes\": [\"/happiness/customerManagement/customerProfileDetail\"]}, {\"name\": \"CustomerRefunds\", \"routes\": [\"/happiness/refunds\"]}, {\"name\": \"CustomerRefundsDetails\", \"routes\": [\"/happiness/refunds/refundsDetails\"]}, {\"name\": \"Dashboard\", \"routes\": [\"/dashboard\"]}, {\"name\": \"LicenseDatails\", \"routes\": [\"/licensing/license/LicenseDatails\"]}, {\"name\": \"LicenseReportsAnalytics\", \"routes\": [\"/licensing/reports-analytics\"]}, {\"name\": \"Licenses\", \"routes\": [\"/licensing/licenses\"]}, {\"name\": \"PersonalCenter\", \"routes\": [\"/personal-center\"]}, {\"name\": \"Profile\", \"routes\": [\"/licensing/profile\"]}, {\"name\": \"ProfileDetails\", \"routes\": [\"/licensing/profile/profiledetails\"]}, {\"name\": \"TeamManagement\", \"routes\": [\"/licensing/team-management\"]}, {\"name\": \"Tickets\", \"routes\": [\"/happiness/tickets\"]}, {\"name\": \"TicketsDetails\", \"routes\": [\"/happiness/tickets/tickets-details\"]}], \"boundary\": \"Assigned roles and page access only; no record values or action authority.\"}",
+          "source": "Authenticated session and authorized page catalog",
+          "sourceId": "session_7da85129c1862eb3c3f0"
+        }
+      ],
+      "finalFlags": {
+        "result": "success",
+        "analysisStatus": "complete",
+        "failureCategory": "",
+        "failureStage": null,
+        "missing": [],
+        "qualityBlockers": [],
+        "guidanceStatus": "complete",
+        "requestedActionExecuted": false,
+        "requestedActionStatus": "blocked_read_only",
+        "originalActionSatisfied": false,
+        "workflowState": "ready",
+        "outputs": [],
+        "facts": [],
+        "page": ""
+      }
+    }
+  }
+}

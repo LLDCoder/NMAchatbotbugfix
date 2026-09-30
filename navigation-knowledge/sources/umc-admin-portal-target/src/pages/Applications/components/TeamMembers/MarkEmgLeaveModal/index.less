@@ -1,0 +1,58 @@
+@import "@/styles/variables.less";
+
+.mark-emg-leave-modal {
+  .ant-form-item-label
+    > label.ant-form-item-required:not(
+      .ant-form-item-required-mark-optional
+    )::before {
+    display: none;
+  }
+
+  .ant-form-item-label
+    > label.ant-form-item-required:not(
+      .ant-form-item-required-mark-optional
+    )::after {
+    display: inline-block;
+    margin-left: 4px;
+    color: #e60000;
+    font-size: 14px;
+    font-family: SimSun, sans-serif;
+    line-height: 1;
+    content: "*";
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+      }
+  }
+
+  .ant-modal-body {
+    .ant-picker {
+      width: 100%;
+      min-height: 48px;
+    }
+  }
+  /* className is on the wrapper when showCount is set; target inner textarea */
+  .brief-description {
+    min-height: 96px;
+
+    textarea.ant-input {
+      &::placeholder {
+        color: #797e86;
+      }
+      &::-webkit-input-placeholder {
+        color: #797e86;
+      }
+    }
+  }
+  .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-left: 64px;
+    padding-top: 32px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 8px;
+    }
+  }
+}

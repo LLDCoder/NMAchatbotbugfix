@@ -1,0 +1,1344 @@
+{
+  "Customer": {
+    "customerManagement": {
+    "tabs": {
+      "accounts": "Accounts",
+      "profiles": "Profiles"
+    }
+  },
+  "applications": {
+    "details": {
+      "applicationNumber": "Application Number",
+      "serviceCategory": "Service Category",
+      "type": "Type",
+      "sla": "SLA",
+      "exceeded": "Exceeded",
+      "onTime": "On Time",
+      "status": "Status",
+      "myDecision": "My Decision",
+      "fromWeb": "From Web",
+      "applicationTimeline": "Application Timeline",
+      "duration": "Duration",
+      "reviewResult": "Review Result",
+      "suggestion": "Suggestion",
+      "attachments": "Attachments",
+      "applicationSubmitted": "Application Submitted",
+      "supervisorReport": "Supervisor Report"
+    },
+    "buttons": {
+      "reject": "Reject",
+      "requestModification": "Request Modification",
+      "sendBack": "Send Back",
+      "approve": "Approve"
+    }
+  },
+  "tickets": {
+      "tabs": { 
+        "todo": "To Do", 
+        "completed": "Completed",
+        "myTasks": "My Tasks",
+        "teamMembers": "Team Members",
+        "teamTasks": "Team Tasks"
+      },
+      "labels": { "reopen": "Reopened" },
+      "table": {
+        "ticketNo": "Ticket No.",
+        "type": "Type",
+        "applicationNo": "Application No.",
+        "serviceName": "Service Name",
+        "customer": "Customer",
+        "source": "Source",
+        "agent": "Agent",
+        "issueCategory": "Issue Category",
+        "sla": "SLA",
+        "currentHandler": "Current Handler",
+        "status": "Status",
+        "submissionTime": "Submission Time",
+        "lastUpdated": "Last Updated",
+        "actions": "Actions",
+        "Priority": "Priority"
+      },
+      "actions": {
+        "message": "Message",
+        "changeStatus": "Change Status",
+        "transfer": "Transfer",
+        "addNew": "Add New",
+        "reassign": "Reassign",
+        "process": "Process",
+        "sendBack": "Send Back"
+      },
+      "placeholders": {
+        "allStatuses": "All Statuses",
+        "allTypes": "All Types",
+        "allIssueCategory": "All Issue Categories",
+        "startDate": "Start Date",
+        "endDate": "End Date",
+        "startTime": "Start Time",
+        "endTime": "End Time",
+        "teamMembers": "Team Members",
+        "allSource": "All Enquiry Source"
+      },
+      "messages": {
+        "failedToMarkEmergencyLeave": "Failed to mark emergency leave",
+        "failedToResumeEmployee": "Failed to resume employee",
+        "reassignTaskSuccess": "Reassign task user successfully",
+        "failedToReassignTaskUser": "Failed to reassign task user",
+        "failedToGetTeamMembers": "Failed to get team members",
+        "failedToGetTeamMembersTasks": "Failed to get team members tasks",
+        "failedToGetUrgentCount": "Failed to get urgent count",
+        "operationSuccess": "Operation successful."
+      },
+      "common": { 
+        "notes": "Notes", 
+        "enterNotes": "Enter notes",
+        "pleaseEnterNotes": "Please enter notes"
+      },
+      "addModal": {
+        "addNew": "Add New Ticket",
+        "ticketInfo": "Ticket Information",
+        "customerInformation": "Customer Information",
+        "enquiryType": "Enquiry Type",
+        "selectEnquiryType": "Select enquiry type",
+        "enquirySource": "Enquiry Source",
+        "selectEnquirySource": "Select enquiry source",
+        "hasApplicationNumber": "Do you have Application Number?",
+        "noRecordsFound": "No records found",
+        "selectApplicationNumber": "Select application number",
+        "selectIssueCategory": "Select issue category",
+        "attachments": "Attachments",
+        "problemDescription": "Problem Description",
+        "enterProblemDescription": "Enter problem description",
+        "userType": "User Type",
+        "individual": "Individual",
+        "establishmentSubTypes": "Establishment Sub-types",
+        "selectEstablishmentSubTypes": "Select establishment sub-types",
+        "fullName": "Full Name",
+        "enterName": "Enter name",
+        "enterNameInEnglish": "Enter full name",
+        "email": "Email",
+        "enterEmail": "Enter email",
+        "mobileNumber": "Mobile Number",
+        "enterMobileNumber": "Enter mobile phone",
+        "nooptionsfound": "No options found",
+        "priority": "Priority",
+        "selectPriority": "Select Priority",
+        "applicationNumber": "Application Number"
+      },
+      "reassign": {
+        "selectAssignPerson": "Please select an assign person",
+        "selectAssignPersonPlaceholder": "Select assign person"
+      },
+      "markEmgLeave": {
+        "leaveType": "Leave Type",
+        "selectLeaveType": "Please select a leave type",
+        "selectLeaveTypePlaceholder": "Select leave type",
+        "expectedReturnDate": "Expected Return Date",
+        "selectDate": "Please select a date",
+        "datePlaceholder": "DD/MM/YYYY  HH:MM:SS",
+        "briefDescription": "Brief Description",
+        "enterBriefDescription": "Enter a brief description"
+      },
+      "teamMembers": {
+        "emergencyLeave": "Emergency Leave",
+        "reason": "Reason",
+        "returnTime": "Return Time",
+        "tasks": "Tasks",
+        "workload": "WorkLoad",
+        "avgTaskDuration": "Average task duration",
+        "overdue": "Overdue"
+      },
+      "processModal": {
+        "title": "Process",
+        "problemCause": "Problem Cause",
+        "selectProblemCause": "Select problem cause",
+        "pleaseSelectProblemCause": "Please select problem cause",
+        "resolutionDescription": "Resolution Description",
+        "enterResolutionDescription": "Enter resolution description",
+        "processSuccess": "Process success",
+        "processFailed": "Process failed",
+        "pleaseEnterResolutionDescription": "Please enter resolution description"
+      },
+      "sendBackModal": {
+        "sendBackSuccess": "Send back success",
+        "sendBackFailed": "Send back failed"
+      },
+      "filterModal": {
+        "priority": "Priority",
+        "allPriority": "All Priorities",
+        "source": "Source",
+        "allSource": "All Source"
+      },
+      "filterModal1": {
+        "title": "Filter",
+        "cancel": "Cancel",
+        "search": "Search",
+        "approvalResults": "Approval Results",
+        "allResults": "All Results",
+        "submissionTime": "Submission Time",
+        "results": {
+          "approved": "Approved",
+          "rejected": "Rejected",
+          "requestModification": "Request Modification",
+          "externalApproval": "External Approval",
+          "sendBack": "Send Back"
+        }
+      },
+      "changeStatusModal": {
+        "selectNewStatus": "Select New Status",
+        "assignedDepartment": "Assigned Department/Role",
+        "selectDepartment": "Select a department/role",
+        "responseDeadline": "Response Deadline",
+        "deadlinePlaceholder": "DD/MM/YYYY HH/MM",
+        "slaDeadlineWarning": "Setting a response deadline later than the ticket SLA deadline may cause the ticket to breach its SLA.",
+        "type": "Type",
+        "selectType": "Select Type",
+        "priority": "Priority",
+        "selectPriority": "Select Priority"
+      },
+      "statusOptions": {
+        "open": "Open",
+        "pendingCustomer": "Pending Customer",
+        "departmentProcessing": "Department Processing",
+        "resolved": "Resolved"
+      },
+      "upload": {
+        "tip": "Maximum size: 5MB. File types: jpg, jpeg, png, pdf."
+      },
+      "priority": {
+        "high": "High",
+        "medium": "Medium",
+        "low": "Low"
+      }
+    },
+    "ticketsDetails": {
+      "errors": {
+        "applicationUnavailableTitle": "Application unavailable",
+        "applicationUnavailableDescription": "The selected application details cannot be opened.",
+        "unsupportedDepartmentTitle": "Application unavailable",
+        "unsupportedDepartmentDescription": "The selected application department is not supported."
+      },
+      "header": {
+        "ticketNumber": "Ticket Number",
+        "type": "Type",
+        "issueCategory": "Issue Category",
+        "sla": "SLA",
+        "status": "Status",
+        "submissionTime": "Submission Time",
+        "priority": "Priority",
+        "fromPlatform": "From {{platform}}"
+      },
+      "basicInfo": {
+        "title": "Basic Information",
+        "enquirySource": "Enquiry Source",
+        "applicationNumber": "Application Number",
+        "serviceName": "Service Name",
+        "problemDescription": "Problem Description",
+        "attachments": "Attachments"
+      },
+      "applicantInformation": {
+        "title": "Applicant Information",
+        "fullName": "Full Name",
+        "email": "Email",
+        "mobileNumber": "Mobile Number",
+        "emiratesId": "Emirates ID",
+        "nationality": "Nationality",
+        "documents": "Documents",
+        "more": "More"
+      },
+      "applicationOverview": {
+        "title": "Application Overview",
+        "tickets": "Tickets",
+        "historicalApplications": "Historical Applications",
+        "historicalTickets": "Historical Tickets",
+        "historicalTicketsEnquiry": "Historical Enquiries & Complaints",
+        "relatedApplications": "Related Applications",
+        "TicketsEnquiry": "Related Enquiries & Complaints",
+        "ProblemDescription": "Problem Description",
+        "serviceName": "Service Name",
+        "appliedFor": "Applied For",
+        "submissionTime": "Submission Time",
+        "relatedTickets": "Related Tickets",
+        "relatedRefund": "Related Refund",
+        "relatedAppeal": "Related Appeal",
+        "refund": "Refund",
+        "appeal": "Appeal"
+      },
+      "ticketStatus": "Ticket Status",
+      "ticketTimeline": {
+        "title": "Ticket Timeline",
+        "currentHandler": "Current Handler",
+        "submittedBy": "Submitted by",
+        "createdBy": "Created by",
+        "problemCause": "Problem Cause",
+        "attachments": "Attachments",
+        "resolved": "Resolved",
+        "pendingcustomer": "Pending Customer",
+        "changedStatusTo": "{{actorName}} changed the status to <status>{{statusLabel}}</status>",
+        "changedStatusDes": "changed the status to",
+        "automaticallyopen": "Ticket automatically assigned to {{actorName}} ",
+        "automaticallyopendes": "Ticket automatically assigned to",
+        "completed": "The ticket process has been completed",
+        "cancelled": "The customer has cancelled the application",
+        "transferredTo": "and transferred the ticket to",
+        "autoTransferredTo": "Ticket was automatically transferred to",
+        "departmentProcessing": "Department Processing",
+        "departmentProcessingTransferred": "{{actorName}} changed the status to <status>{{statusLabel}}</status> and transferred the ticket to {{transferTarget}}",
+        "departmentProcessedTransferred": "{{actorName}} sent back the application, and it was automatically transferred to {{transferTarget}}",
+        "ProcessedDes": "sent back the application, and it was automatically transferred to",
+        "ProcessingDes": " changed the status to Department Processing and transferred the ticket to "
+      },
+      "communication": {
+        "title": "Communication Records",
+        "transferDepartment": "Ticket was automatically transferred to ",
+        "showMoreMessages": "Show more messages",
+        "collapseHistory": "Collapse history",
+        "noMessagesYet": "No messages yet.",
+        "invalidFileFormat": "Invalid file format. Please upload a JPG, JPEG, PNG, or PDF file.",
+        "maxFilesError": "You can only upload 3 files.",
+        "maxFileSizeError": "File size exceeds 5 MB",
+        "fileUploaded": "File uploaded successfully",
+        "sendSuccessful": "Send successful",
+        "replyToCustomer": "Reply to Customer",
+        "internalNote": "Internal Note",
+        "internalNotePlaceholder": "Enter note visible only to internal department",
+        "customerHappiness": "Customer Happiness",
+        "customer": "Customer",
+        "transferredTo": "Transferred to",
+        "responseDeadline": "Response Deadline",
+        "ticketProcessed": "Ticket was processed by ",
+        "ticketSentBack": "Ticket was sent back by ",
+        "changeStatus": "Ticket was transferred to ",
+        "byCustomerHappiness": " by Customer Happiness",
+        "problemCause": "Problem Cause"
+      },
+      "establishment": {
+        "title": "Establishment Overview",
+        "warningsViolations": "Warnings & Violations",
+        "unpaidFines": "Unpaid Fines",
+        "establishmentName": "Establishment Name",
+        "commercialLicenseNumber": "Commercial License Number",
+        "emirate": "Emirate",
+        "documents": "Documents",
+        "partners": "Partners",
+        "establishmentInformation": "Establishment Information",
+        "establishmentDocuments": "Establishment Documents",
+        "addressInformation": "Address Information",
+        "partnerList": "Partner List",
+        "establishmentSubTypes": "Establishment Sub-types",
+        "workEmail": "Work Email",
+        "licenseExpiryDate": "License Expiry Date",
+        "establishmentNameInArabic": "Establishment Name in Arabic",
+        "establishmentNameInEnglish": "Establishment Name in English",
+        "licensingAuthority": "Licensing Authority",
+        "phoneNumber": "Phone Number",
+        "tenancyContractEndDate": "Tenancy Contract End Date",
+        "commercialLicense": "Commercial License",
+        "tenancyContract": "Tenancy Contract",
+        "memorandumOfAssociation": "Memorandum of Association",
+        "powerOfAttorney": "Power Of Attorney",
+        "region": "Region",
+        "area": "Area",
+        "street": "Street"
+      }
+    },
+    "accounts": {
+      "table": {
+        "accountId": "Account ID",
+        "fullName": "Full Name",
+        "email": "Email",
+        "mobileNumber": "Mobile Number",
+        "loginMethod": "Login Method",
+        "profiles": "Profiles",
+        "status": "Status",
+        "registerTime": "Register Time",
+        "actions": "Actions"
+      },
+      "labels": {
+        "profilesCount": "{{count}} Profiles",
+        "loginMethod": "Login Methods"
+      },
+      "actions": {
+        "suspend": "Suspend",
+        "activate": "Activate",
+        "externalSms": "External SMS",
+        "sendSms": "Send SMS",
+        "sendEmail": "Send Email",
+        "loginToAccount": "Login to Account",
+        "moreActions": "More actions"
+      },
+      "messages": {
+        "failedToLoadCustomerData": "Failed to load customer data",
+        "emailSent": "Email sent successfully",
+        "emailFailed": "Failed to send email",
+        "impersonateFailed": "Failed to log in to the customer account",
+        "customerPortalNotConfigured": "Customer Portal URL is not configured",
+        "smsSubmitted": "SMS has been submitted successfully.",
+        "smsFailed": "Failed to submit SMS"
+      },
+      "stats": {
+        "totalAccounts": "Total Accounts",
+        "active": "Active",
+        "suspended": "Suspended",
+        "multiProfileAccounts": "Multi-Profile Accounts",
+        "newInLast7Days": "New in Last 7 Days"
+      },
+      "placeholders": {
+        "allStatuses": "All Statuses",
+        "allLoginMethods": "All Login Methods",
+        "startTime": "Start Time",
+        "endTime": "End Time"
+      },
+      "modals": {
+        "suspendCustomer": "Suspend Account",
+        "suspendCustomerConfirm": "Are you sure you want to suspend this account? Once suspended, all associated profiles will be suspended and the customer will be unable to log in to the system.",
+        "notes": "Notes",
+        "enterNotes": "Enter notes",
+        "quickNotes": "Quick Notes",
+        "quickNote1": "Customer requested account suspension.",
+        "quickNote2": "Suspended due to policy violation.",
+        "quickNote3": "Suspended due to suspected fraudulent activity.",
+        "quickNote4": "Suspended pending verification.",
+        "activateAccount": "Activate Account",
+        "activateAccountConfirm": "Are you sure you want to activate this customer? All associated profiles will be restored to their previous status."
+      },
+      "emailModal": {
+        "title": "Send Email",
+        "subject": "Subject",
+        "subjectPlaceholder": "Enter subject",
+        "bodyPlaceholder": "Input text",
+        "subjectRequired": "Please enter a subject.",
+        "bodyRequired": "Please enter an email body.",
+        "subjectTooLong": "Subject must not exceed 200 characters.",
+        "bodyTooLarge": "Email body must not exceed 100 KB."
+      },
+      "sendMessageModal": {
+        "externalSmsTitle": "Send External SMS",
+        "mobileNumberLabel": "Mobile Number",
+        "mobilePlaceholder": "Enter mobile phone",
+        "messageLabel": "Message",
+        "messagePlaceholder": "Input text",
+        "messageRequiredText": "Please enter a message."
+      },
+      "impersonateModal": {
+        "title": "Login to Account",
+        "content": "You are about to log in as this customer account. Do you want to continue?",
+        "continue": "Continue"
+      }
+    },
+    "profiles": {
+      "table": {
+        "profileNo": "Media File No.",
+        "accountId": "Account ID",
+        "profileType": "Profile Type",
+        "profileName": "Profile Name",
+        "accountHolder": "Account Holder",
+        "status": "Status",
+        "lastUpdated": "Last updated",
+        "submissionUpdated": "Submission updated",
+        "actions": "Actions"
+      },
+      "chart": {
+        "profileType": "Profile Type",
+        "profileStatus": "Profile Status",
+        "profileTier": "Profile Tier",
+        "individual": "Individual",
+        "commercial": "Commercial",
+        "freeZone": "Free Zone",
+        "talentAgency": "Talent Agency",
+        "government": "Government",
+        "embassy": "Embassy",
+        "consulate": "Consulate",
+        "culturalClubs": "Cultural Clubs",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "pendingReview": "Pending Review",
+        "expired": "Expired",
+        "suspended": "Suspended",
+        "vip": "VIP",
+        "selfMonitor": "Self-Monitor",
+        "standard": "Standard",
+        "total": "Total"
+      },
+      "placeholders": {
+        "allStatuses": "All Statuses",
+        "allProfileType": "All Profile Types",
+        "allProfileTiers": "All Profile Tiers"
+      },
+      "filterModal": {
+        "status": "Status",
+        "dateRange": "Date Range",
+        "submissionTime": "Submission Time"
+      },
+      "modals": {
+        "activate": "Activate",
+        "suspend": "Suspend",
+        "suspendProfile": "Suspend Profile",
+        "suspendProfileAlert": "Are you sure you want to suspend this profile? Once suspended, the account will not be able to switch to this profile.",
+        "notes": "Notes",
+        "enterNotes": "Enter notes",
+        "fieldRequired": "This field is required.",
+        "quickNotes": "Quick Notes",
+        "quickNote1": "Previous violations or compliance issues on record",
+        "quickNote2": "Customer request",
+        "quickNote3": "Failure to comply with regulatory requirements",
+        "quickNote4": "Terms of service violation",
+        "activateProfile": "Activate Profile",
+        "activateProfileConfirm": "Are you sure you want to activate this profile? This profile will be restored to its previous status.",
+        "setAsVip": "Set as VIP"
+      }
+    },
+    "profileDetail": {
+      "actions": {
+        "activateProfile": "Activate Profile",
+        "suspendProfile": "Suspend Profile",
+        "removeVip": "Remove VIP",
+        "setAsVip": "Set as VIP"
+      },
+      "messages": {
+        "suspendSuccess": "Suspend successfully",
+        "activateSuccess": "Activate successfully",
+        "setVipSuccess": "Set as VIP successfully",
+        "removeVipSuccess": "Remove VIP successfully"
+      },
+      "modals": {
+        "suspendProfile": "Suspend Profile",
+        "notes": "Notes",
+        "enterNotes": "Enter notes",
+        "quickNotes": "Quick Notes",
+        "activateProfile": "Activate Profile",
+        "activateProfileConfirm": "Are you sure you want to activate this profile? This profile will be restored to its previous status.",
+        "setAsVip": "Set as VIP",
+        "setAsVipConfirm": "Are you sure you want to set this profile as VIP? VIP profiles will receive priority service.",
+        "removeVipStatus": "Remove VIP Status",
+        "removeVipStatusConfirm": "Are you sure you want to remove VIP status from this profile? This profile will be downgraded to Standard.",
+        "suspendProfileAlert": "Are you sure you want to suspend this profile? Once suspended, the account will not be able to switch to this profile."
+      }
+    },
+    "customerProfileDetail": {
+      "personal": {
+        "fullNameInEnglish": "Full Name in English",
+        "fullNameInArabic": "Full Name in Arabic",
+        "gender": "Gender",
+        "occupation": "Occupation",
+        "dateOfBirth": "Date of Birth",
+        "expiryDate": "Expiry Date"
+      },
+      "documents": {
+        "personalPhoto": "Personal Photo",
+        "emiratesIdCopy": "Emirates ID Copy",
+        "passportCopy": "Passport Copy",
+        "acquaintanceForm": "Acquaintance Form"
+      }
+    },
+    "customerDetails": {
+      "accountInformation": "Account Information",
+      "accountInfo": {
+        "fullName": "Full Name",
+        "email": "Email",
+        "mobileNumber": "Mobile Number",
+        "emiratesId": "Emirates ID",
+        "nationality": "Nationality",
+        "walletBalance": "Wallet Balance",
+        "totalSpending": "Total Spending",
+        "totalRefunds": "Total Refunds",
+        "totalRecharge": "Total Recharge",
+        "loginMethod": "Login Method",
+        "mobileUsage": "Mobile Usage",
+        "webUsage": "Web Usage",
+        "tabletUsage": "Tablet Usage"
+      },
+      "messages": {
+        "invalidCustomerIdentifier": "Invalid customer identifier.",
+        "operationFailed": "Operation failed"
+      },
+      "profilesList": {
+        "title": "Profiles List"
+      },
+      "profileCards": {
+        "allProfiles": "All Profiles",
+        "combinedView": "Combined view",
+        "individual": "Individual",
+        "establishment": "Establishment",
+        "stats": {
+          "apps": "Apps",
+          "tickets": "Tickets",
+          "refund": "Refunds",
+          "appeal": "Appeals",
+          "violations": "Violations",
+          "fines": "Fines"
+        }
+      },
+      "profileOverview": {
+        "pageTitle": {
+          "individual": "Individual Overview",
+          "default": "Profile Overview"
+        },
+        "tabs": {
+          "basicInformation": "Basic Information"
+        },
+        "sections": {
+          "personalInformation": "Personal Information",
+          "addressInformation": "Address Information",
+          "personalDocuments": "Personal Documents"
+        },
+        "empty": {
+          "noPersonalInformation": "No personal information",
+          "noAddressInformation": "No address information",
+          "noDocuments": "No documents"
+        },
+        "documentUploadTip": "Maximum size: 5MB. File types: jpg, jpeg, and png."
+      },
+      "commercialProfileOverview": {
+        "title": "Establishment Overview",
+        "empty": {
+          "noPartners": "No partners"
+        }
+      },
+      "addressInfo": {
+        "emirate": "Emirate",
+        "region": "Region",
+        "area": "Area",
+        "street": "Street"
+      },
+      "personalInfo": {
+        "fullNameEn": "Full Name in English",
+        "fullNameAr": "Full Name in Arabic",
+        "emiratesId": "Emirates ID",
+        "uid": "UID",
+        "passportNumber": "Passport Number",
+        "nationality": "Nationality",
+        "gender": "Gender",
+        "occupation": "Occupation",
+        "dateOfBirth": "Date of Birth",
+        "expiryDate": "Expiry Date"
+      },
+      "documents": {
+        "personalPhoto": "Personal Photo",
+        "emiratesId": "Emirates ID",
+        "passport": "Passport",
+        "acquaintanceForm": "Acquaintance Form",
+        "tradeLicense": "Trade License",
+        "licenseCopy": "License Copy",
+        "tenancyContract": "Tenancy Contract",
+        "memorandumOfAssociation": "Memorandum of Association",
+        "powerOfAttorney": "Power of Attorney"
+      },
+      "establishmentInfo": {
+        "nameEn": "Establishment Name (EN)",
+        "nameAr": "Establishment Name (AR)",
+        "licenseNumber": "License Number",
+        "workEmail": "Work Email",
+        "workMobile": "Work Mobile Number",
+        "legalPerson": "Legal Person"
+      },
+      "allProfilesOverview": {
+        "defaultTitle": "All Profiles Overview",
+        "tabs": {
+          "applications": "Applications",
+          "payments": "Payments",
+          "licenses": "Licenses & Permits",
+          "tickets": "Tickets",
+          "enquiriesComplaints": "Enquiries & Complaints",
+          "inspection": "Inspection",
+          "violationsFines": "Violations & Fines",
+          "refunds": "Refunds",
+          "appeal": "Appeals"
+        },
+        "stats": {
+          "total": "Total",
+          "licenses": "Licenses",
+          "content": "Content",
+          "processing": "Processing",
+          "completed": "Completed",
+          "rejected": "Rejected",
+          "totalSpending": "Total Spending",
+          "serviceApplicationFees": "Service Application Fees",
+          "totalFinesPaid": "Total Fines Paid",
+          "totalRefunds": "Total Refunds",
+          "totalRecharge": "Total Recharge",
+          "warningIssued": "Warning Issued",
+          "reviewInProgress": "Review in Progress",
+          "pendingPayment": "Pending Payment",
+          "active": "Active",
+          "expired": "Expired",
+          "cancelled": "Cancelled",
+          "disabled": "Disabled",
+          "suspended": "Suspended",
+          "open": "Open",
+          "pendingCustomer": "Pending Customer",
+          "departmentProcessing": "Department Processing",
+          "departmentProcessed": "Department Processed",
+          "resolved": "Resolved",
+          "reopened": "Reopened",
+          "underAppeal": "Under Appeal",
+          "appealRejected": "Appeal Rejected",
+          "appealApproved": "Appeal Approved",
+          "paid": "Paid",
+          "underReview": "Under Review",
+          "pendingRefund": "Pending Refund",
+          "refunded": "Refunded",
+          "approved": "Approved",
+          "pendingReview": "Pending Review"
+        },
+        "ticketFilters": {
+          "allPriorities": "All Priorities",
+          "types": {
+            "enquiry": "Enquiry",
+            "suggestion": "Suggestion",
+            "complaint": "Complaint"
+          }
+        },
+        "inspectionNoFullScan": {
+          "columns": {
+            "taskNo": "Task No.",
+            "ticketNo": "Ticket No.",
+            "inspectionTarget": "Inspection Target",
+            "inspectionReason": "Inspection Reason",
+            "priority": "Priority",
+            "dueDate": "Due Date",
+            "status": "Status",
+            "assignedTime": "Assigned Time",
+            "inspector": "Inspector"
+          },
+          "filters": {
+            "search": "Search",
+            "allReasons": "All reasons",
+            "allStatuses": "All statuses",
+            "filter": "Filter",
+            "reset": "Reset"
+          },
+          "empty": {
+            "noData": "No data"
+          },
+          "modal": {
+            "cancel": "Cancel",
+            "apply": "Apply",
+            "priority": "Priority",
+            "dueDate": "Due Date",
+            "assignedTime": "Assigned Time",
+            "inspector": "Inspector",
+            "allPriorities": "All priorities",
+            "allInspectors": "All Inspectors",
+            "startDate": "Start date",
+            "endDate": "End date"
+          }
+        }
+      },
+      "common": {
+        "search": "Search",
+        "filter": "Filter",
+        "reset": "Reset",
+        "allTypes": "All Types",
+        "allStatuses": "All Statuses",
+        "allCategories": "All Categories",
+        "noData": "No data",
+        "startTime": "Start Time",
+        "endTime": "End Time",
+        "startDate": "Start Date",
+        "endDate": "End Date",
+        "failedToLoadLicenses": "Failed to load licenses.",
+        "failedToLoadPayments": "Failed to load payments.",
+        "failedToLoadBasicInformation": "Failed to load basic information.",
+        "failedToLoadEstablishmentInformation": "Failed to load establishment information."
+      },
+      "tabs": {
+        "applications": {
+          "applicationNo": "Application No.",
+          "serviceName": "Service Name",
+          "serviceCategory": "Service Category",
+          "type": "Type",
+          "sla": "SLA",
+          "status": "Status",
+          "submissionTime": "Submission Time",
+          "lastUpdated": "Last Updated",
+          "applyFor": "Apply for"
+        },
+        "payments": {
+          "transactionNo": "Transaction No.",
+          "transactionType": "Transaction Type",
+          "type": "Type",
+          "serviceApplication": "Service Application",
+          "fines": "Fines",
+          "fine": "Fine",
+          "refund": "Refund",
+          "amount": "Amount",
+          "paymentMethod": "Payment Method",
+          "allPaymentMethod": "All Payment Method",
+          "wallet": "Wallet",
+          "creditDebitCard": "Credit / Debit Card",
+          "status": "Status",
+          "transactionTime": "Transaction Time",
+          "submissionTime": "Submission Time",
+          "applyFor": "Apply For"
+        },
+        "licenses": {
+          "licenseNo": "Licenses & Permits No.",
+          "applicationNo": "Application No.",
+          "license": "Licenses & Permits",
+          "mediaActivity": "Media Activity",
+          "status": "Status",
+          "effectiveDate": "Effective Date",
+          "expirationDate": "Expiry Date",
+          "effectiveStartDate": "Effective Start Date",
+          "effectiveEndDate": "Effective End Date",
+          "applyFor": "Apply for"
+        },
+        "tickets": {
+          "applyFor": "Apply for"
+        },
+        "refunds": {
+          "refundNo": "Refund No.",
+          "applicationNo": "Application No.",
+          "amount": "Amount",
+          "refundCategory": "Refund Category",
+          "referenceNo": "Reference No.",
+          "status": "Status",
+          "submissionTime": "Submission Time",
+          "lastUpdated": "Last Updated",
+          "applyFor": "Apply For",
+          "transactionTime": "Transaction Time",
+          "recharge": "Recharge",
+          "serviceApplication": "Service Application",
+          "fines": "Fines",
+          "refund": "Refund",
+          "completed": "Completed",
+          "failedRefund": "Failed Refund",
+          "failed": "Failed",
+          "refunded": "Refunded"
+        },
+        "appeals": {
+          "appealNo": "Appeal No.",
+          "fineNo": "Fine No.",
+          "appealCategory": "Appeal Category",
+          "status": "Status",
+          "requestDate": "Request Date",
+          "applyFor": "Apply for"
+        },
+        "violations": {
+          "licensingViolation": "Licensing Violation",
+          "contentViolation": "Content Violation",
+          "violationNo": "Violation No.",
+          "fineNo": "Fine No.",
+          "inspectionNo": "Inspection No.",
+          "violationType": "Violation Type",
+          "violator": "Violator",
+          "fineAmount": "Fine Amount",
+          "status": "Status",
+          "sourceTask": "Source Task",
+          "reportedBy": "Reported By",
+          "creationTime": "Creation Time",
+          "paymentTime": "Payment Time",
+          "issueDate": "Issue Date",
+          "paymentDate": "Payment Date",
+          "violationDate": "Violation Date",
+          "applyFor": "Apply for"
+        }
+      }
+    },
+    "customerRefunds": {
+      "common": {
+        "customer": "Customer"
+      },
+      "tabs": {
+        "todo": "To Do",
+        "completed": "Completed"
+      },
+      "summary": {
+        "total": "Total",
+        "departmentProcessing": "Department Processing",
+        "departmentProcessed": "Department Processed",
+        "pendingCustomer": "Pending Customer",
+        "pendingRefund": "Pending Refund",
+        "refunded": "Refunded",
+        "rejected": "Rejected",
+        "cancelled": "Cancelled"
+      },
+      "table": {
+        "applicationNo": "Application No.",
+        "refundCategory": "Refund Category",
+        "referenceNo": "Reference No.",
+        "applyFor": "Apply For",
+        "amount": "Amount",
+        "sla": "SLA",
+        "currentHandler": "Current Handler",
+        "status": "Status",
+        "lastUpdated": "Last Updated",
+        "actions": "Actions",
+        "refundSource": "Refund Source",
+        "source": "Source"
+      },
+      "toolbar": {
+        "search": "Search",
+        "allCategories": "All Categories",
+        "allStatuses": "All Statuses",
+        "allSources": "All Sources"
+      },
+      "actions": {
+        "message": "Message",
+        "changeStatus": "Change Status",
+        "process": "Process",
+        "sendBack": "Send Back",
+        "more": "More actions",
+        "filter": "Filter",
+        "reset": "Reset",
+        "export": "Export",
+        "uploadFile": "Upload File"
+      },
+      "statuses": {
+        "departmentProcessing": "Department Processing",
+        "pendingCustomer": "Pending Customer",
+        "pendingRefund": "Pending Refund",
+        "rejected": "Rejected"
+      },
+      "sla": {
+        "overdue": "Overdue",
+        "remaining": "Remaining",
+        "exceeded": "Exceeded",
+        "onTime": "On Time"
+      },
+      "messages": {
+        "relatedApplicationNotFound": "Related application order was not found.",
+        "statusMappingUnavailable": "Status mapping is unavailable.",
+        "operationSuccessful": "Operation successful.",
+        "invalidUploadFormat": "Invalid file format. Please upload a JPG, JPEG, PNG, or PDF file.",
+        "fileSizeExceeds": "File size exceeds 5 MB",
+        "uploadLimit": "You can only upload 5 files.",
+        "uploadFailed": "Upload failed.",
+        "fileUnavailable": "File is unavailable.",
+        "fieldRequired": "This field is required.",
+        "scheduleTimeInvalid": "The scheduled time must be later than the current time.",
+        "statusChangeUnavailable": "Change Status is unavailable until the department feedback is returned."
+      },
+      "filterModal": {
+        "title": "Filter",
+        "apply": "Apply",
+        "allHandlers": "All Handlers",
+        "startDate": "Start Date",
+        "endDate": "End Date",
+        "clearCurrentHandler": "Clear current handler",
+        "noMatchingHandlers": "No matching handlers"
+      },
+      "statusModal": {
+        "title": "Change Status",
+        "selectNewStatus": "Select New Status",
+        "assignedDepartment": "Assigned Department/Role",
+        "selectDepartment": "Select a department/role",
+        "responseDeadline": "Response Deadline",
+        "dateTimePlaceholder": "DD/MM/YYYY HH/MM",
+        "attachments": "Attachments",
+        "uploadTip": "Upload JPG, JPEG, PNG, or PDF. Up to 5 files, 5 MB each.",
+        "pendingRefundAlert": "Please confirm that all application details and department feedback are correct. After confirmation, the application will proceed to the Finance Department for refund processing.",
+        "rejectedAlert": "Please carefully review the application details and department feedback. If the case qualifies for a partial fine refund, please advise the customer to submit a violation appeal.",
+        "quickNotes": {
+          "pendingRefund1": "We agree to refund the fine due to a duplicate payment.",
+          "pendingRefund2": "Thank you for your patience.",
+          "pendingRefund3": "The application fee has been confirmed eligible for refund.",
+          "rejected1": "Please submit an appeal to request a partial refund.",
+          "rejected2": "A full refund is not applicable in this case.",
+          "rejected3": "We are unable to satisfy your request for a fine refund."
+        }
+      },
+      "departmentModal": {
+        "processTitle": "Process",
+        "sendBackTitle": "Send Back",
+        "decision": "Decision",
+        "approve": "Approve",
+        "reject": "Reject",
+        "attachments": "Attachments",
+        "uploadTip": "Upload JPG, JPEG, PNG, or PDF. Up to 5 files, 5 MB each.",
+        "quickNotes": {
+          "approve1": "Recommend full refund",
+          "approve2": "Recommend partial refund due to valid supporting evidence.",
+          "approve3": "All required documents were verified and approved.",
+          "reject1": "No valid grounds for refund identified",
+          "reject2": "Please advise customer to submit an appeal for partial refund",
+          "reject3": "The submitted documents do not satisfy refund requirements."
+        }
+      }
+    },
+    "customerAppeals": {
+      "common": {
+        "customer": "Customer",
+        "system": "System"
+      },
+      "tabs": {
+        "todo": "To Do",
+        "completed": "Completed"
+      },
+      "summary": {
+        "total": "Total",
+        "departmentProcessing": "Department Processing",
+        "departmentProcessed": "Department Processed",
+        "pendingCustomer": "Pending Customer",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "cancelled": "Cancelled"
+      },
+      "table": {
+        "appealNo": "Appeal No.",
+        "appealReason": "Appeal Reason",
+        "violationNo": "Violation No.",
+        "applyFor": "Apply For",
+        "sla": "SLA",
+        "currentHandler": "Current Handler",
+        "status": "Status",
+        "submissionTime": "Submission Time",
+        "lastUpdated": "Last Updated",
+        "actions": "Actions"
+      },
+      "toolbar": {
+        "search": "Search",
+        "allReasons": "All Reasons",
+        "allStatuses": "All Statuses",
+        "filter": "Filter",
+        "reset": "Reset",
+        "export": "Export"
+      },
+      "actions": {
+        "message": "Message",
+        "changeStatus": "Change Status",
+        "process": "Process",
+        "sendBack": "Send Back",
+        "more": "More actions",
+        "uploadFile": "Upload File"
+      },
+      "statuses": {
+        "pending": "Pending",
+        "resolved": "Resolved",
+        "departmentProcessing": "Department Processing",
+        "departmentProcessed": "Department Processed",
+        "pendingCustomer": "Pending Customer",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "cancelled": "Cancelled",
+        "appealSubmitted": "Appeal Submitted"
+      },
+      "reasons": {
+        "proceduralError": "Procedural Error",
+        "firstTimeViolation": "First-time Violation",
+        "evidenceDispute": "Evidence Dispute",
+        "permitApplicationInProgress": "Permit Application in Progress",
+        "other": "Other"
+      },
+      "departments": {
+        "customerHappiness": "Customer Happiness",
+        "contentDepartment": "Content Department",
+        "inspectionDepartment": "Inspection Department",
+        "licensingDepartment": "Licensing Department",
+        "customer": "Customer",
+        "handlers": "Handlers"
+      },
+      "sla": {
+        "overdue": "Overdue",
+        "remaining": "Remaining",
+        "exceeded": "Exceeded",
+        "onTime": "On Time"
+      },
+      "messages": {
+        "noAccessibleWorkbench": "No accessible appeal workbench.",
+        "violationRouteUnavailable": "Violation detail route is not available in this module.",
+        "relatedApplicationNotFound": "Related application order was not found.",
+        "operationSuccessful": "Operation successful.",
+        "statusChangeUnavailable": "Change Status is unavailable until the department feedback is returned.",
+        "invalidUploadFormat": "Only jpg, jpeg, png, and pdf files are supported.",
+        "fileSizeExceeds": "Maximum upload size is 5MB.",
+        "uploadLimit": "You can upload up to 5 attachments.",
+        "uploadFailed": "Upload failed.",
+        "fieldRequired": "This field is required.",
+        "noRolesAvailable": "No roles available",
+        "scheduleTimeInvalid": "The scheduled time must be later than the current time.",
+        "slaDeadlineInvalid": "The scheduled time must not exceed the SLA deadline."
+      },
+      "filterModal": {
+        "title": "Filter",
+        "apply": "Apply",
+        "currentHandler": "Current Handler",
+        "allHandlers": "All Handlers",
+        "search": "Search",
+        "lastUpdated": "Last Updated",
+        "startDate": "Start Date",
+        "endDate": "End Date",
+        "noData": "No data"
+      },
+      "statusModal": {
+        "title": "Change Status",
+        "selectNewStatus": "Select New Status",
+        "assignedDepartment": "Assigned Department/Role",
+        "selectDepartment": "Select a department/role",
+        "slaDeadlineWarning": "Setting a response deadline later than the ticket SLA deadline may cause the ticket to breach its SLA.",
+        "responseDeadline": "Response Deadline",
+        "dateTimePlaceholder": "DD/MM/YYYY HH/MM",
+        "attachments": "Attachments",
+        "uploadTip": "Maximum size: 5MB; File types: jpg, jpeg, png, and pdf.",
+        "approvedAlert": "Please confirm the department's feedback. This will cancel or modify the related violation(s) or warning. This action cannot be undone.",
+        "rejectedAlert": "Please confirm the department's feedback. This will keep the original violation(s) or warning in effect. This action cannot be undone.",
+        "notes": "Notes",
+        "enterNotes": "Enter notes"
+      },
+      "departmentModal": {
+        "processTitle": "Process",
+        "sendBackTitle": "Send Back",
+        "reviewDecideTitle": "Review & Decide",
+        "reviewDecideSubtitle": "Please review the violation details and select the appropriate decision based on the supporting materials.",
+        "modifyTitle": "Modify Violation",
+        "decision": "Decision",
+        "recommendation": "Recommendation",
+        "approve": "Approve",
+        "reject": "Reject",
+        "modifyViolation": "Modify Violation",
+        "cancelViolation": "Cancel Violation",
+        "confirmViolation": "Confirm Violation",
+        "saveModification": "Save Modification",
+        "reset": "Reset",
+        "paidCancelAlert": "Are you sure you want to cancel this violation? By confirming this decision, the paid fine will be refunded. A refund request will be initiated and processed in accordance with the applicable financial procedures.",
+        "unpaidCancelAlert": "Are you sure you want to cancel this violation? This action cannot be undone.",
+        "modifyAlert": "Please review the violation details and select the appropriate decision based on the supported materials.",
+        "degreeStatus": "Degree {{degree}}: AED {{amount}}",
+        "degreeStatusLabel": "Degree {{degree}}:",
+        "degree1": "First Degree",
+        "degree2": "Second Degree",
+        "degree3": "Third Degree",
+        "degree4": "Fourth Degree",
+        "warning1": "1st Warning",
+        "warning2": "2nd Warning",
+        "warning3": "3rd Warning",
+        "warning4": "4th Warning",
+        "warningStatusLabel": "{{count}} Warning",
+        "selectDegree": "Select Degree",
+        "loadingStandards": "Loading violation standards...",
+        "noViolationItems": "No violation items available.",
+        "fineStandardUnavailable": "Fine standard unavailable.",
+        "fineStandardModificationUnavailable": "No fine standard is available, so this item cannot be modified.",
+        "cancelBackendUnavailable": "Cancel Violation requires a backend API before submission.",
+        "adjustedViolationDataUnavailable": "Adjusted violation data is incomplete. Please refresh and try again.",
+        "attachments": "Attachments",
+        "uploadTip": "Maximum size: 5MB; File types: jpg, jpeg, png, and pdf.",
+        "note": "Note",
+        "notes": "Notes",
+        "enterNote": "Enter note",
+        "enterNotes": "Enter notes"
+      },
+      "dynamic": {
+        "fineAndStatusChange": "Fine and status change",
+        "fineChange": "Fine {{oldAmount}} to {{newAmount}}",
+        "fineAdjustment": "Fine adjustment",
+        "statusChange": "Status {{oldStatus}} to {{newStatus}}",
+        "violationStatusChange": "Violation status change"
+      }
+    },
+    "customerAppealsDetails": {
+      "top": {
+        "appealNumber": "Appeal Number",
+        "status": "Status",
+        "sla": "SLA",
+        "lastUpdated": "Last Updated"
+      },
+      "sections": {
+        "appealInformation": "Appeal Information",
+        "violationNumber": "Violation Number",
+        "openViolationAria": "Open violation {{violationNumber}}",
+        "appealReason": "Appeal Reason",
+        "notes": "Notes",
+        "attachments": "Attachments",
+        "communicationRecords": "Communication Records"
+      },
+      "communication": {
+        "replyToCustomer": "Reply to Customer",
+        "internalNote": "Internal Note",
+        "internalNotePlaceholder": "Enter internal note visible only to internal department",
+        "departmentInternalNotePlaceholder": "Enter note visible only to internal department",
+        "departmentViewInternalNotePlaceholder": "Enter note visible only to internal departments",
+        "responseDeadline": "Response Deadline",
+        "departmentRecommendation": "Department Recommendation",
+        "recommendedAction": "Recommended Action",
+        "attach": "Attach",
+        "send": "Send",
+        "noRecords": "No communication records"
+      },
+      "side": {
+        "applicantOverview": "Applicant Overview",
+        "accountInfo": "Account Info",
+        "profileOverview": "Profile Overview",
+        "applicationOverview": "Application Overview",
+        "applyFor": "Apply For",
+        "relatedViolation": "Related Violation",
+        "violationNo": "Violation No.",
+        "appealTimeline": "Appeal Timeline"
+      },
+      "timeline": {
+        "title": "Appeal Timeline",
+        "noTimeline": "No timeline",
+        "attachments": "Attachments",
+        "currentHandler": "Current Handler",
+        "submittedBy": "Submitted by",
+        "refundNo": "Refund No.",
+        "openRefundAria": "Open refund {{refundNo}}",
+        "departmentRecommendationPrefix": "Department Recommendation: ",
+        "problemCausePrefix": "Problem Cause: ",
+        "appealAssignedTo": "Appeal assigned to {{targetName}}.",
+        "appealAutoTransferredTo": "Appeal was automatically transferred to {{targetName}}.",
+        "appealSentBackTransferredTo": "Appeal was sent back and automatically transferred to {{targetName}}.",
+        "appealProcessedTransferredTo": "Appeal was processed and automatically transferred to {{targetName}}.",
+        "statusChangedTo": "Status changed to ",
+        "approvedDescription": "After review, we have approved your appeal application.",
+        "rejectedNoDecisionWithinDeadline": "No decision was made within 15 days."
+      },
+      "overview": {
+        "fullName": "Full Name",
+        "email": "Email",
+        "mobileNumber": "Mobile Number",
+        "relatedViolation": "Related Violation",
+        "violationType": "Violation Type",
+        "violationDate": "Violation Date",
+        "relatedApplication": "Related Application",
+        "establishmentName": "Establishment Name",
+        "commercialLicenseNumber": "Commercial License Number",
+        "emirate": "Emirate",
+        "nationality": "Nationality",
+        "passportNumber": "Passport Number",
+        "documents": "Documents",
+        "partners": "Partners",
+        "warningsViolations": "Warnings & Violations",
+        "unpaidFines": "Unpaid Fines"
+      },
+      "application": {
+        "historicalApplications": "Historical Applications",
+        "historicalTickets": "Historical Tickets",
+        "historicalTicketsEnquiry": "Historical Enquiries & Complaints",
+        "refund": "Refund",
+        "appeal": "Appeal",
+        "serviceName": "Service Name",
+        "appliedFor": "Applied For",
+        "submissionTime": "Submission Time"
+      },
+      "attachmentList": {
+        "title": "Attachments",
+        "attachmentLabel": "Attachment {{index}}",
+        "noAttachments": "No attachments"
+      },
+      "footer": {
+        "back": "Back",
+        "currentStatus": "Current Status",
+        "changeStatus": "Change Status",
+        "sendBack": "Send Back",
+        "process": "Process"
+      },
+      "messages": {
+        "noAppealDetail": "No appeal detail"
+      },
+      "dynamic": {
+        "statusUpdate": "Status Update"
+      }
+    },
+    "customerRefundsDetails": {
+      "common": {
+        "attachments": "Attachments"
+      },
+      "messages": {
+        "unableToSendWithoutRefundId": "Unable to send message without refund id.",
+        "sendSuccessful": "Send successful",
+        "recordNotFound": "Refund record not found."
+      },
+      "top": {
+        "refundNumber": "Refund Number",
+        "refundCategory": "Refund Category",
+        "sla": "SLA",
+        "status": "Status",
+        "lastUpdated": "Last Updated",
+        "applyFor": "Apply For"
+      },
+      "sections": {
+        "refundApplicationInformation": "Refund Application Information",
+        "refundReason": "Refund Reason",
+        "refundAmount": "Refund Amount",
+        "relatedPaymentInformation": "Related Payment Information",
+        "transactionNumber": "Transaction Number",
+        "transactionType": "Transaction Type",
+        "lastUpdatedTime": "Last Updated Time",
+        "paymentMethod": "Payment Method",
+        "cardInformation": "Card Information",
+        "amountCharged": "Amount Charged",
+        "description": "Description",
+        "communicationRecords": "Communication Records",
+        "fineNumber": "Fine Number",
+        "applicationNumber": "Application Number"
+      },
+      "communication": {
+        "replyToCustomer": "Reply to Customer",
+        "internalNote": "Internal Note",
+        "internalNotePlaceholder": "Enter note visible only to internal departments",
+        "responseDeadline": "Response Deadline",
+        "recommendedAction": "Recommended Action",
+        "send": "Send",
+        "noRecords": "No communication records."
+      },
+      "side": {
+        "applicantOverview": "Applicant Overview",
+        "profileOverview": "Profile Overview",
+        "applicationOverview": "Application Overview",
+        "refundTimeline": "Refund Timeline"
+      },
+      "overview": {
+        "fullName": "Full Name",
+        "email": "Email",
+        "mobileNumber": "Mobile Number",
+        "relatedViolation": "Related Violation",
+        "violationType": "Violation Type",
+        "violationDate": "Violation Date",
+        "relatedApplication": "Related Application",
+        "establishmentName": "Establishment Name",
+        "commercialLicenseNumber": "Commercial License Number",
+        "emirate": "Emirate",
+        "nationality": "Nationality",
+        "passportNumber": "Passport Number",
+        "documents": "Documents",
+        "partners": "Partners",
+        "warningsViolations": "Warnings & Violations",
+        "unpaidFines": "Unpaid Fines"
+      },
+      "application": {
+        "historicalApplications": "Historical Applications",
+        "historicalTickets": "Historical Tickets",
+        "refund": "Refund",
+        "appeal": "Appeal",
+        "serviceName": "Service Name",
+        "appliedFor": "Applied For",
+        "submissionTime": "Submission Time"
+      },
+      "timeline": {
+        "noTimeline": "No refund timeline."
+      },
+      "attachmentList": {
+        "title": "Attachment List",
+        "attachmentLabel": "Attachment {{index}}",
+        "noAttachments": "No attachments"
+      },
+      "footer": {
+        "currentStatus": "Current Status"
+      },
+      "dynamic": {
+        "fromWeb": "From Web",
+        "fromMobile": "From Mobile",
+        "fromTablet": "From Tablet",
+        "customerHappiness": "Customer Happiness",
+        "statusChangedBy": "{{actorName}} changed the status to {{statusLabel}}.",
+        "submittedBy": "Submitted by: {{handlerName}}",
+        "currentHandlerBy": "Current Handler: {{handlerName}}",
+        "refundAutoAssignedTo": "Refund was automatically assigned to {{departmentLabel}}.",
+        "refundAutoAssigned": "Refund was automatically assigned.",
+        "refundAutoTransferredTo": "Refund was automatically transferred to {{transferTarget}}.",
+        "refundAutoTransferred": "Refund was automatically transferred.",
+        "refundTransferredBy": "Refund was transferred to {{transferTarget}} by {{actorName}}.",
+        "refundTransferredTo": "Refund was transferred to {{transferTarget}}.",
+        "departmentProcessedTransferred": "{{actorName}} changed the status to Department Processed, and the application was automatically transferred to {{transferTarget}}.",
+        "pendingRefundGeneratedBy": "{{actorName}} changed the status to Pending Refund. A refund request has been automatically generated and submitted for refund processing.",
+        "pendingRefundGenerated": "A refund request has been automatically generated and submitted for refund processing.",
+        "refundCompleted": "The refund process has been completed.",
+        "customerCancelled": "The customer has cancelled the application.",
+        "statusUpdate": "Status Update",
+        "departmentRecommendationPrefix": "Department Recommendation: ",
+        "completed": "Completed"
+      }
+    }
+  }
+}

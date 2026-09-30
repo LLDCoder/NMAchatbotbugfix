@@ -1,0 +1,843 @@
+{
+  "en": {
+    "sourcePath": "round2-evidence-1a9c0692-9d2d-44a9-a4e7-67491d24cb04.json",
+    "sourceSHA256": "043fae017720695405e4de759908bf3162db8a4abb622b81d43d1aa3d4240bb7",
+    "intentStages": [
+      {
+        "task": {
+          "view": "",
+          "stage": "task",
+          "filters": [
+            "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]"
+          ],
+          "groupBy": [],
+          "readOnly": true,
+          "timeField": "",
+          "timeRange": "unknown",
+          "outputShape": "list",
+          "searchQuery": "application application find records ML-2-804-9226243 ML-2-804-0460740 separate records lookup",
+          "slotUpdates": [
+            {
+              "field": "businessObject",
+              "value": "application",
+              "source": "current",
+              "evidence": "clarification choice application"
+            },
+            {
+              "field": "requestedGrain",
+              "value": "application",
+              "source": "current",
+              "evidence": "clarification choice application"
+            },
+            {
+              "field": "filters",
+              "value": [
+                "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]"
+              ],
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "outputShape",
+              "value": "list",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "requestedScope",
+              "value": "unknown",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "timeRange",
+              "value": "unknown",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "businessFocus",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedMeasures",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedAttributes",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "groupBy",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "recordIdentity",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "view",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "timeField",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedOrdering",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "groupCompleteness",
+              "value": "observed",
+              "source": "current",
+              "evidence": "parsed current request"
+            }
+          ],
+          "responseMode": "answer",
+          "businessFocus": "",
+          "clarification": null,
+          "needsLiveData": true,
+          "businessObject": "application",
+          "recordIdentity": "",
+          "requestedGrain": "application",
+          "requestedScope": "unknown",
+          "contextRelation": "clarify",
+          "unresolvedSlots": [],
+          "groupCompleteness": "observed",
+          "requestBoundaries": [],
+          "requestedMeasures": [],
+          "requestedOrdering": [],
+          "requestedAttributes": [],
+          "evidenceExplanations": []
+        },
+        "phase": "initial"
+      },
+      {
+        "task": {
+          "view": "",
+          "stage": "task",
+          "filters": [
+            "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]"
+          ],
+          "groupBy": [],
+          "readOnly": true,
+          "timeField": "",
+          "timeRange": "unknown",
+          "outputShape": "list",
+          "searchQuery": "application application find records ML-2-804-9226243 ML-2-804-0460740 separate records lookup",
+          "slotUpdates": [
+            {
+              "field": "businessObject",
+              "value": "application",
+              "source": "current",
+              "evidence": "clarification choice application"
+            },
+            {
+              "field": "requestedGrain",
+              "value": "application",
+              "source": "current",
+              "evidence": "clarification choice application"
+            },
+            {
+              "field": "filters",
+              "value": [
+                "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]"
+              ],
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "outputShape",
+              "value": "list",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "requestedScope",
+              "value": "unknown",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "timeRange",
+              "value": "unknown",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "businessFocus",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedMeasures",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedAttributes",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "groupBy",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "recordIdentity",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "view",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "timeField",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedOrdering",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "groupCompleteness",
+              "value": "observed",
+              "source": "current",
+              "evidence": "parsed current request"
+            }
+          ],
+          "responseMode": "answer",
+          "businessFocus": "",
+          "clarification": null,
+          "needsLiveData": true,
+          "businessObject": "application",
+          "recordIdentity": "",
+          "requestedGrain": "application",
+          "requestedScope": "unknown",
+          "contextRelation": "clarify",
+          "unresolvedSlots": [],
+          "groupCompleteness": "observed",
+          "requestBoundaries": [],
+          "requestedMeasures": [],
+          "requestedOrdering": [],
+          "requestedAttributes": [],
+          "evidenceExplanations": []
+        },
+        "phase": "knowledge_refinement"
+      }
+    ],
+    "TaskSpec": {
+      "view": "",
+      "stage": "task",
+      "filters": [
+        "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]"
+      ],
+      "groupBy": [],
+      "readOnly": true,
+      "timeField": "",
+      "timeRange": "unknown",
+      "outputShape": "list",
+      "searchQuery": "application find records ML-2-804-9226243 ML-2-804-0460740 separate records lookup",
+      "slotUpdates": [
+        {
+          "field": "businessObject",
+          "value": "application",
+          "source": "current",
+          "evidence": "clarification choice application"
+        },
+        {
+          "field": "requestedGrain",
+          "value": "application",
+          "source": "current",
+          "evidence": "clarification choice application"
+        },
+        {
+          "field": "filters",
+          "value": [
+            "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]"
+          ],
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "outputShape",
+          "value": "list",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "requestedScope",
+          "value": "unknown",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "timeRange",
+          "value": "unknown",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "businessFocus",
+          "value": "",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "requestedMeasures",
+          "value": [],
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "requestedAttributes",
+          "value": [],
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "groupBy",
+          "value": [],
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "recordIdentity",
+          "value": "",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "view",
+          "value": "",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "timeField",
+          "value": "",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "requestedOrdering",
+          "value": [],
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "groupCompleteness",
+          "value": "observed",
+          "source": "previous",
+          "evidence": ""
+        }
+      ],
+      "responseMode": "answer",
+      "businessFocus": "",
+      "clarification": null,
+      "needsLiveData": true,
+      "businessObject": "application",
+      "recordIdentity": "",
+      "requestedGrain": "application",
+      "requestedScope": "unknown",
+      "contextRelation": "continue",
+      "unresolvedSlots": [],
+      "groupCompleteness": "observed",
+      "requestBoundaries": [],
+      "requestedMeasures": [],
+      "requestedOrdering": [],
+      "requestedAttributes": [],
+      "evidenceExplanations": []
+    },
+    "QueryExpansion": {
+      "stage": "query_expansion",
+      "terms": [
+        {
+          "arabic": "طلب",
+          "english": "application",
+          "sourceText": "application",
+          "alternatives": [],
+          "requirementId": "object"
+        },
+        {
+          "arabic": "طلب",
+          "english": "application",
+          "sourceText": "application",
+          "alternatives": [],
+          "requirementId": "grain"
+        },
+        {
+          "arabic": "معرفات السجلات في [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]",
+          "english": "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]",
+          "sourceText": "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]",
+          "alternatives": [],
+          "requirementId": "filter_0"
+        },
+        {
+          "arabic": "قائمة",
+          "english": "list",
+          "sourceText": "list",
+          "alternatives": [],
+          "requirementId": "detail"
+        }
+      ],
+      "issues": [],
+      "intentStatus": "consistent"
+    }
+  },
+  "ar": {
+    "sourcePath": "round2-evidence-c544da0a-48ed-44b9-9152-142cb4d88d0f.json",
+    "sourceSHA256": "31972986842147e4d6e5aa5b1fc6386da17118ebdbb3a01977eb7bb4a675afe4",
+    "intentStages": [
+      {
+        "task": {
+          "view": "",
+          "stage": "task",
+          "filters": [
+            "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]"
+          ],
+          "groupBy": [],
+          "readOnly": true,
+          "timeField": "",
+          "timeRange": "unknown",
+          "outputShape": "list",
+          "searchQuery": "application lookup two records ML-2-804-9226243 ML-2-804-0460740 separate results",
+          "slotUpdates": [
+            {
+              "field": "businessObject",
+              "value": "application",
+              "source": "previous",
+              "evidence": "clarification choice application"
+            },
+            {
+              "field": "requestedGrain",
+              "value": "application",
+              "source": "previous",
+              "evidence": "clarification choice application"
+            },
+            {
+              "field": "filters",
+              "value": [
+                "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]"
+              ],
+              "source": "current",
+              "evidence": "ابحث عن ML-2-804-9226243 و ML-2-804-0460740"
+            },
+            {
+              "field": "outputShape",
+              "value": "list",
+              "source": "current",
+              "evidence": "احتفظ بالسجلين منفصلين"
+            },
+            {
+              "field": "requestedScope",
+              "value": "unknown",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "timeRange",
+              "value": "unknown",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "businessFocus",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedMeasures",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedAttributes",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "groupBy",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "recordIdentity",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "view",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "timeField",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedOrdering",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "groupCompleteness",
+              "value": "observed",
+              "source": "current",
+              "evidence": "parsed current request"
+            }
+          ],
+          "responseMode": "answer",
+          "businessFocus": "",
+          "clarification": null,
+          "needsLiveData": true,
+          "businessObject": "application",
+          "recordIdentity": "",
+          "requestedGrain": "application",
+          "requestedScope": "unknown",
+          "contextRelation": "continue",
+          "unresolvedSlots": [],
+          "groupCompleteness": "observed",
+          "requestBoundaries": [],
+          "requestedMeasures": [],
+          "requestedOrdering": [],
+          "requestedAttributes": [],
+          "evidenceExplanations": []
+        },
+        "phase": "initial"
+      },
+      {
+        "task": {
+          "view": "",
+          "stage": "task",
+          "filters": [
+            "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]"
+          ],
+          "groupBy": [],
+          "readOnly": true,
+          "timeField": "",
+          "timeRange": "unknown",
+          "outputShape": "list",
+          "searchQuery": "application lookup two records ML-2-804-9226243 ML-2-804-0460740 separate results",
+          "slotUpdates": [
+            {
+              "field": "businessObject",
+              "value": "application",
+              "source": "previous",
+              "evidence": "clarification choice application"
+            },
+            {
+              "field": "requestedGrain",
+              "value": "application",
+              "source": "previous",
+              "evidence": "clarification choice application"
+            },
+            {
+              "field": "filters",
+              "value": [
+                "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]"
+              ],
+              "source": "current",
+              "evidence": "ابحث عن ML-2-804-9226243 و ML-2-804-0460740"
+            },
+            {
+              "field": "outputShape",
+              "value": "list",
+              "source": "current",
+              "evidence": "احتفظ بالسجلين منفصلين"
+            },
+            {
+              "field": "requestedScope",
+              "value": "unknown",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "timeRange",
+              "value": "unknown",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "businessFocus",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedMeasures",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedAttributes",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "groupBy",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "recordIdentity",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "view",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "timeField",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedOrdering",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "groupCompleteness",
+              "value": "observed",
+              "source": "current",
+              "evidence": "parsed current request"
+            }
+          ],
+          "responseMode": "answer",
+          "businessFocus": "",
+          "clarification": null,
+          "needsLiveData": true,
+          "businessObject": "application",
+          "recordIdentity": "",
+          "requestedGrain": "application",
+          "requestedScope": "unknown",
+          "contextRelation": "continue",
+          "unresolvedSlots": [],
+          "groupCompleteness": "observed",
+          "requestBoundaries": [],
+          "requestedMeasures": [],
+          "requestedOrdering": [],
+          "requestedAttributes": [],
+          "evidenceExplanations": []
+        },
+        "phase": "knowledge_refinement"
+      }
+    ],
+    "TaskSpec": {
+      "view": "",
+      "stage": "task",
+      "filters": [
+        "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]"
+      ],
+      "groupBy": [],
+      "readOnly": true,
+      "timeField": "",
+      "timeRange": "unknown",
+      "outputShape": "list",
+      "searchQuery": "application lookup two records ML-2-804-9226243 ML-2-804-0460740 separate results",
+      "slotUpdates": [
+        {
+          "field": "businessObject",
+          "value": "application",
+          "source": "previous",
+          "evidence": "clarification choice application"
+        },
+        {
+          "field": "requestedGrain",
+          "value": "application",
+          "source": "previous",
+          "evidence": "clarification choice application"
+        },
+        {
+          "field": "filters",
+          "value": [
+            "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]"
+          ],
+          "source": "current",
+          "evidence": "ابحث عن ML-2-804-9226243 و ML-2-804-0460740"
+        },
+        {
+          "field": "outputShape",
+          "value": "list",
+          "source": "current",
+          "evidence": "احتفظ بالسجلين منفصلين"
+        },
+        {
+          "field": "requestedScope",
+          "value": "unknown",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "timeRange",
+          "value": "unknown",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "businessFocus",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedMeasures",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedAttributes",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupBy",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "recordIdentity",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "view",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeField",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedOrdering",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupCompleteness",
+          "value": "observed",
+          "source": "current",
+          "evidence": "parsed current request"
+        }
+      ],
+      "responseMode": "answer",
+      "businessFocus": "",
+      "clarification": null,
+      "needsLiveData": true,
+      "businessObject": "application",
+      "recordIdentity": "",
+      "requestedGrain": "application",
+      "requestedScope": "unknown",
+      "contextRelation": "continue",
+      "unresolvedSlots": [],
+      "groupCompleteness": "observed",
+      "requestBoundaries": [],
+      "requestedMeasures": [],
+      "requestedOrdering": [],
+      "requestedAttributes": [],
+      "evidenceExplanations": []
+    },
+    "QueryExpansion": {
+      "stage": "query_expansion",
+      "terms": [
+        {
+          "arabic": "طلب",
+          "english": "application",
+          "sourceText": "application",
+          "alternatives": [
+            "applications",
+            "الطلبات"
+          ],
+          "requirementId": "object"
+        },
+        {
+          "arabic": "طلب",
+          "english": "application",
+          "sourceText": "application",
+          "alternatives": [
+            "applications",
+            "الطلبات"
+          ],
+          "requirementId": "grain"
+        },
+        {
+          "arabic": "معرّفات السجلات في [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]",
+          "english": "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]",
+          "sourceText": "record identifiers in [\"ML-2-804-9226243\", \"ML-2-804-0460740\"]",
+          "alternatives": [],
+          "requirementId": "filter_0"
+        },
+        {
+          "arabic": "قائمة",
+          "english": "list",
+          "sourceText": "list",
+          "alternatives": [
+            "separate list",
+            "قائمة منفصلة"
+          ],
+          "requirementId": "detail"
+        }
+      ],
+      "issues": [],
+      "intentStatus": "consistent"
+    }
+  }
+}

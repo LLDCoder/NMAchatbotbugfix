@@ -1,0 +1,27 @@
+{
+  "sourceEvidence": {
+    "path": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/groups1113-20260928/round26-g15-v35/C-05__ar/audit-db.json",
+    "sha256": "59712afb4e8fb9e7b20f5e1db9d039cc1967d87884e210bb1813b0aab03e0a39",
+    "conversationId": "conv_2baab27ff3f4464da890",
+    "requestId": "9a46b181-9c3e-40a8-9fcc-00842f5539e2"
+  },
+  "originalQuestion": "اعرض الطلبات الموجودة حاليًا في عرض «قيد الإنجاز» الخاص بي ضمن التراخيص.",
+  "inputNormalization": {
+    "stage": "input_normalization",
+    "clauses": [
+      {
+        "english": "Display the requests currently in my \"In Progress\" view within the licenses.",
+        "sourceQuote": "اعرض الطلبات الموجودة حاليًا في عرض «قيد الإنجاز» الخاص بي ضمن التراخيص."
+      }
+    ]
+  },
+  "faithfulLiteralNormalization": {
+    "stage": "input_normalization",
+    "clauses": [
+      {
+        "sourceQuote": "اعرض الطلبات الموجودة حاليًا في عرض «قيد الإنجاز» الخاص بي ضمن التراخيص.",
+        "english": "Display the requests currently in my view «قيد الإنجاز» within the licenses."
+      }
+    ]
+  }
+}

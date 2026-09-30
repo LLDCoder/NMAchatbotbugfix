@@ -1,0 +1,382 @@
+{
+  "schemaVersion": "1.0",
+  "bundleId": "admin-application-page-field-bindings",
+  "createdAt": "2026-09-24T06:42:24.934787+00:00",
+  "packageStatus": "active",
+  "records": [
+    {
+      "id": "admin.licensing.applications.bindings.todo",
+      "kind": "field_semantics",
+      "revision": 1,
+      "status": "active",
+      "title": "Application page todo field bindings",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local",
+          "debug"
+        ],
+        "pageRefs": [
+          "/licensing/applications"
+        ],
+        "runtimeVerification": "pending",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Applications/index.tsx",
+          "revision": "sha256:be9c81e58706b9071a3c0f4ddd1950df113cf6971e6c1f6efbf90dafff1f89e4",
+          "locator": "234; 701-880; 932-1105; 1231-1285; 1528-1660",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/application.ts",
+          "revision": "sha256:32978ed7cc15c3bfb93d26f4c2c83a75cc3ad33ef2e2e87709c7feb3a50a3908",
+          "locator": "326-353",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ApplicationAppService.cs",
+          "revision": "sha256:22e94773e70c95fab9ce479919b51d0241e046bf085cd0c3f8b5991b9004772e",
+          "locator": "216-319",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ReviewTaskProjection.cs",
+          "revision": "sha256:9df0f7b49cd9c099c78d1ccd2e8967216a477fd533f90a312573f287eef1b797",
+          "locator": "11-51; 88-106",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/MyReviewFilter.cs",
+          "revision": "sha256:e85bf61625c530802e0a177de8eeba436c26ba8ad98952b7908ddfa915073ebb",
+          "locator": "22-99",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Application/ApplicationDto.cs",
+          "revision": "sha256:3efae9b26845ec68130f314cbccfd0861bb76f19a22ab6d083f5ec9435042cdc",
+          "locator": "12-157",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Api/Controllers/ApplicationController.cs",
+          "revision": "sha256:c43e5e7e836b3aa6f2f5070d8456f4378ab205112cddc012fde6949e26a44397",
+          "locator": "30-57",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "page_catalog",
+          "reference": "navigation-knowledge/artifacts/page-catalog.json",
+          "revision": "sha256:f28b1c0d3bde64f2e7a76c415579c9bb968f60099b9b9fec5e5a3dfb70d9e4f2",
+          "locator": "Applications",
+          "verification": "static_extracted"
+        }
+      ],
+      "payload": {
+        "pageRef": "/licensing/applications",
+        "bindings": [
+          {
+            "id": "application_entity",
+            "kind": "object",
+            "concept": "application",
+            "aliases": [
+              "applications",
+              "申请"
+            ],
+            "operationRef": "POST /api/Application/MyTodoPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "id"
+            ],
+            "meaning": "The id field identifies the application represented by a row. Service types are not implicitly restricted to a department."
+          },
+          {
+            "id": "application_identity",
+            "kind": "grain",
+            "concept": "application",
+            "aliases": [
+              "applications",
+              "申请"
+            ],
+            "operationRef": "POST /api/Application/MyTodoPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "id"
+            ],
+            "meaning": "Application identity is id. Projection row identity and taskId are different units. Conflicting application field values require a separately verified resolution rule."
+          },
+          {
+            "id": "personal_queue",
+            "kind": "scope",
+            "concept": "personal",
+            "aliases": [
+              "my",
+              "own",
+              "个人"
+            ],
+            "operationRef": "POST /api/Application/MyTodoPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "id"
+            ],
+            "meaning": "This personal view uses the authenticated account. A Manager role does not change it to a team queue."
+          },
+          {
+            "id": "application_status",
+            "kind": "group",
+            "concept": "status",
+            "aliases": [
+              "application status",
+              "process status",
+              "状态"
+            ],
+            "operationRef": "POST /api/Application/MyTodoPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "status"
+            ],
+            "meaning": "The displayed Status dimension binds status. taskStatus and card categories have different meanings."
+          },
+          {
+            "id": "service_category",
+            "kind": "group",
+            "concept": "service category",
+            "aliases": [
+              "服务分类"
+            ],
+            "operationRef": "POST /api/Application/MyTodoPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "serviceCategoryNameEn"
+            ],
+            "meaning": "The Service Category field is serviceCategoryNameEn."
+          },
+          {
+            "id": "workflow_task_status",
+            "kind": "group",
+            "concept": "task status",
+            "aliases": [
+              "workflow task status"
+            ],
+            "operationRef": "POST /api/Application/MyTodoPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "taskStatus"
+            ],
+            "meaning": "In this view taskStatus describes the workflow task/node."
+          }
+        ],
+        "sourceBinding": {
+          "pageRef": "/licensing/applications",
+          "responseRoot": "/data",
+          "views": [
+            "todo"
+          ]
+        },
+        "fields": [],
+        "relationships": [],
+        "constraints": [
+          "Target deployment field and entity semantics have not yet been verified.",
+          "Define whether license application means all applications in this page or a service-restricted subset; do not infer this from serviceTypeId=1.",
+          "Define pending/outstanding population terminology from the view and active filters before adding aliases.",
+          "Scope/population contextParameters require verified default values for every data-affecting request parameter; those values are not established in this file."
+        ]
+      }
+    },
+    {
+      "id": "admin.licensing.applications.bindings.completed",
+      "kind": "field_semantics",
+      "revision": 1,
+      "status": "active",
+      "title": "Application page completed field bindings",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local",
+          "debug"
+        ],
+        "pageRefs": [
+          "/licensing/applications"
+        ],
+        "runtimeVerification": "pending",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Applications/index.tsx",
+          "revision": "sha256:be9c81e58706b9071a3c0f4ddd1950df113cf6971e6c1f6efbf90dafff1f89e4",
+          "locator": "234; 701-880; 932-1105; 1231-1285; 1528-1660",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/application.ts",
+          "revision": "sha256:32978ed7cc15c3bfb93d26f4c2c83a75cc3ad33ef2e2e87709c7feb3a50a3908",
+          "locator": "326-353",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ApplicationAppService.cs",
+          "revision": "sha256:22e94773e70c95fab9ce479919b51d0241e046bf085cd0c3f8b5991b9004772e",
+          "locator": "216-319",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ReviewTaskProjection.cs",
+          "revision": "sha256:9df0f7b49cd9c099c78d1ccd2e8967216a477fd533f90a312573f287eef1b797",
+          "locator": "11-51; 88-106",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/MyReviewFilter.cs",
+          "revision": "sha256:e85bf61625c530802e0a177de8eeba436c26ba8ad98952b7908ddfa915073ebb",
+          "locator": "22-99",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Application/ApplicationDto.cs",
+          "revision": "sha256:3efae9b26845ec68130f314cbccfd0861bb76f19a22ab6d083f5ec9435042cdc",
+          "locator": "12-157",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Api/Controllers/ApplicationController.cs",
+          "revision": "sha256:c43e5e7e836b3aa6f2f5070d8456f4378ab205112cddc012fde6949e26a44397",
+          "locator": "30-57",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "page_catalog",
+          "reference": "navigation-knowledge/artifacts/page-catalog.json",
+          "revision": "sha256:f28b1c0d3bde64f2e7a76c415579c9bb968f60099b9b9fec5e5a3dfb70d9e4f2",
+          "locator": "Applications",
+          "verification": "static_extracted"
+        }
+      ],
+      "payload": {
+        "pageRef": "/licensing/applications",
+        "bindings": [
+          {
+            "id": "application_entity",
+            "kind": "object",
+            "concept": "application",
+            "aliases": [
+              "applications",
+              "申请"
+            ],
+            "operationRef": "POST /api/Application/MyComplatedPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "id"
+            ],
+            "meaning": "The id field identifies the application represented by a row. Service types are not implicitly restricted to a department."
+          },
+          {
+            "id": "application_identity",
+            "kind": "grain",
+            "concept": "application",
+            "aliases": [
+              "applications",
+              "申请"
+            ],
+            "operationRef": "POST /api/Application/MyComplatedPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "id"
+            ],
+            "meaning": "Application identity is id. Projection row identity and taskId are different units. Conflicting application field values require a separately verified resolution rule."
+          },
+          {
+            "id": "personal_queue",
+            "kind": "scope",
+            "concept": "personal",
+            "aliases": [
+              "my",
+              "own",
+              "个人"
+            ],
+            "operationRef": "POST /api/Application/MyComplatedPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "id"
+            ],
+            "meaning": "This personal view uses the authenticated account. A Manager role does not change it to a team queue."
+          },
+          {
+            "id": "application_status",
+            "kind": "group",
+            "concept": "status",
+            "aliases": [
+              "application status",
+              "process status",
+              "状态"
+            ],
+            "operationRef": "POST /api/Application/MyComplatedPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "status"
+            ],
+            "meaning": "The displayed Status dimension binds status. taskStatus and card categories have different meanings."
+          },
+          {
+            "id": "service_category",
+            "kind": "group",
+            "concept": "service category",
+            "aliases": [
+              "服务分类"
+            ],
+            "operationRef": "POST /api/Application/MyComplatedPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "serviceCategoryNameEn"
+            ],
+            "meaning": "The Service Category field is serviceCategoryNameEn."
+          },
+          {
+            "id": "review_decision",
+            "kind": "group",
+            "concept": "review decision",
+            "aliases": [
+              "my decision"
+            ],
+            "operationRef": "POST /api/Application/MyComplatedPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "taskStatus"
+            ],
+            "meaning": "In this view the My Decision column uses the taskStatus compatibility projection."
+          }
+        ],
+        "sourceBinding": {
+          "pageRef": "/licensing/applications",
+          "responseRoot": "/data",
+          "views": [
+            "completed"
+          ]
+        },
+        "fields": [],
+        "relationships": [],
+        "constraints": [
+          "Target deployment field and entity semantics have not yet been verified.",
+          "Define whether license application means all applications in this page or a service-restricted subset; do not infer this from serviceTypeId=1.",
+          "Define pending/outstanding population terminology from the view and active filters before adding aliases.",
+          "Scope/population contextParameters require verified default values for every data-affecting request parameter; those values are not established in this file."
+        ]
+      }
+    }
+  ]
+}

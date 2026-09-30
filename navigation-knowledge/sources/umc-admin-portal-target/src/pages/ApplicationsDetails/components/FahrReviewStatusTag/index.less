@@ -1,0 +1,121 @@
+.fahr-review-status-tag-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.fahr-review-status-tag__permit {
+  box-sizing: border-box;
+  display: inline-flex;
+  height: 26px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 0;
+  margin: 0;
+  padding: 3px 6px;
+  border: 0;
+  border-radius: 4px;
+  background: #f8f7f4 !important;
+  background-color: #f8f7f4 !important;
+  color: #b68a35 !important;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 20px;
+  white-space: nowrap;
+  cursor: pointer;
+
+  .fahr-review-status-tag__permit-icon {
+    display: inline-flex;
+    width: 15px;
+    height: 15px;
+    flex: 0 0 15px;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-90deg) scaleY(-1);
+
+    svg {
+      display: block;
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  > span:last-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background: #f3f0e8 !important;
+    background-color: #f3f0e8 !important;
+    outline: none;
+  }
+}
+
+.fahr-review-status-tag {
+  align-items: center;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  gap: 6px;
+  height: 26px;
+  letter-spacing: 0;
+  line-height: 20px;
+  margin: 0;
+  padding: 3px 6px;
+  white-space: nowrap;
+  &.fahr-review-status-tag--pending[type="button"] {
+    background: #fffbeb !important;
+    background-color: #fffbeb !important;
+    color: #f29f0e !important;
+  }
+  &.fahr-review-status-tag--approved[type="button"] {
+    background: #f3faf4 !important;
+    background-color: #f3faf4 !important;
+    color: #4a9d5c !important;
+  }
+  &.fahr-review-status-tag--rejected[type="button"] {
+    background: #fef2f2 !important;
+    background-color: #fef2f2 !important;
+    color: #ea4f49 !important;
+  }
+  &.fahr-review-status-tag--neutral[type="button"] {
+    background: #f3f4f6 !important;
+    background-color: #f3f4f6 !important;
+    color: #596579 !important;
+  }
+  &:hover {
+    filter: brightness(0.96);
+  }
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+  .fahr-review-status-tag__label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .fahr-review-status-tag__arrow {
+    align-items: center;
+    display: inline-flex;
+    height: 12px;
+    justify-content: center;
+    width: 12px;
+    svg {
+      color: currentColor;
+    }
+  }
+}
+[dir="rtl"] .fahr-review-status-tag__arrow {
+  transform: scaleX(-1);
+}

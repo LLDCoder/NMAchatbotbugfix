@@ -1,0 +1,125 @@
+.acq-form-container {
+  .acq-form-card {
+    border-radius: 12px;
+  }
+
+  .acq-form-section {
+    margin-top: 16px;
+    border-radius: 12px;
+  }
+
+  .acq-form-label {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .acq-form-actions {
+    margin-top: 12px;
+  }
+
+  .acq-form-list-block {
+    margin-top: 12px;
+  }
+
+  .acq-form-list {
+    margin-top: 12px;
+  }
+
+  .acq-form-list-item {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .acq-form-declaration {
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: #9fd3f2;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+}
+.formItem-required {
+  color: #ff4d4f;
+}
+
+.acquaintance-multi-select.ant-select-multiple {
+  .ant-checkbox-inner {
+    background-color: #92722a;
+    border-color: #92722a;
+  }
+
+  .ant-select-selection-search {
+    margin-inline-start: 0;
+  }
+
+  .acquaintance-multi-selection-item {
+    display: flex;
+    min-width: 0;
+  }
+
+  .acquaintance-multi-selection-item > * + *,
+  .acquaintance-multi-option > * + * {
+    margin-inline-start: 8px;
+  }
+
+  &.ant-select-disabled {
+    .ant-select-selection-item {
+      border: 0;
+    }
+
+    .ant-checkbox-wrapper {
+      display: none;
+    }
+
+    .acquaintance-multi-selection-item span,
+    .acquaintance-multi-option span {
+      margin-inline-start: 0 !important;
+    }
+  }
+}
+
+.acquaintance-multi-select-dropdown {
+  .ant-select-item-option-state {
+    display: none;
+  }
+
+  .ant-checkbox-inner {
+    background-color: #ffffff;
+    border-color: #c3c6cb !important;
+  }
+
+  .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #92722a;
+    border-color: #92722a !important;
+  }
+
+  .acquaintance-multi-select-all {
+    padding: 4px 8px;
+  }
+
+  .acquaintance-multi-select-all-checkbox.has-selection {
+    .ant-checkbox:not(.ant-checkbox-checked) .ant-checkbox-inner {
+      background-color: #92722a;
+      border-color: #92722a !important;
+
+      &::after {
+      display: block;
+      width: 8px;
+      height: 2px;
+      border: 0;
+      background: #ffffff;
+      opacity: 1;
+      transform: rotate(0deg) scale(1) translate(-50%, -50%);
+      }
+    }
+  }
+
+  .acquaintance-multi-option {
+    display: flex;
+    align-items: center;
+
+    > * + * {
+      margin-inline-start: 8px;
+    }
+  }
+}

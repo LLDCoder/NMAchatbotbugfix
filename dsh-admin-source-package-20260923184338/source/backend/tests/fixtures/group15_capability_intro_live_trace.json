@@ -1,0 +1,69 @@
+{
+  "source": "test/runtime/group15-account-repair-20260928/round6-isolated-ui/ACC-013-foreign__en/audit.json",
+  "sourceSHA256": "548600458b8b9da07523a2b66ed92d5ad54be418eefff8bf657b9a96314813b3",
+  "conversationId": "conv_9a913fe1bdc140ef850f",
+  "requestId": "da6e9771-c973-4901-b1fd-b0470dfa3556",
+  "question": "Hello, what can you help me do in my current role?",
+  "language": "en",
+  "task": {
+    "view": "",
+    "stage": "task",
+    "filters": [],
+    "groupBy": [],
+    "readOnly": true,
+    "timeField": "",
+    "timeRange": "unknown",
+    "outputShape": "overview",
+    "searchQuery": "assistant capabilities available assistance current role limitations permitted actions",
+    "slotUpdates": [
+      {
+        "field": "businessObject",
+        "value": "assistant capability",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedScope",
+        "value": "personal",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedAttributes",
+        "value": [
+          "available assistance in current role",
+          "limitations of available assistance"
+        ],
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "outputShape",
+        "value": "overview",
+        "source": "current",
+        "evidence": ""
+      }
+    ],
+    "responseMode": "answer",
+    "businessFocus": "",
+    "clarification": null,
+    "needsLiveData": false,
+    "businessObject": "assistant capability",
+    "recordIdentity": "",
+    "requestedGrain": "unknown",
+    "requestedScope": "personal",
+    "contextRelation": "new",
+    "unresolvedSlots": [],
+    "groupCompleteness": "observed",
+    "requestBoundaries": [],
+    "requestedMeasures": [],
+    "requestedOrdering": [],
+    "requestedAttributes": [
+      "available assistance in current role",
+      "limitations of available assistance"
+    ]
+  },
+  "beforeResult": "load_failed",
+  "blockedOperation": "knowledge.get",
+  "productionAttempts": 1
+}

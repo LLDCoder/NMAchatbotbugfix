@@ -1,0 +1,44 @@
+.reject-btn{
+  background-color: transparent;
+  border-color: rgba(234, 79, 73, 1);
+  color: rgba(234, 79, 73, 1);
+  &:hover:not(:disabled) {
+    border-color: rgba(234, 79, 73, 1);
+    color: rgba(234, 79, 73, 1);
+    background-color: rgba(234, 79, 73, 0.2);
+  }
+  &:focus:not(:disabled) {
+    background-color: transparent;
+    border-color: rgba(234, 79, 73, 1);
+    color: rgba(234, 79, 73, 1);
+  }
+  &:active:not(:disabled) {
+    background-color: rgba(234, 79, 73, 0.2);
+    border-color: rgba(234, 79, 73, 1);
+    color: rgba(234, 79, 73, 1);
+  }
+}
+.more-btn {
+  height: 48px;
+  vertical-align: middle;
+  background-color: transparent;
+  border: 1px solid rgba(146, 114, 42, 1);
+  color: rgba(146, 114, 42, 1);
+
+  &:hover,
+  &:focus {
+    border-color: rgba(146, 114, 42, 1);
+    color: rgba(146, 114, 42, 1);
+  }
+
+  // external styles
+  &:hover:not(:disabled) {
+    background-color: #bd94371a;
+    border-color: #cba344;
+    color: #cba344;
+  }
+
+  &:active:not(:disabled) {
+    background-color: #f2eccf;
+  }
+}

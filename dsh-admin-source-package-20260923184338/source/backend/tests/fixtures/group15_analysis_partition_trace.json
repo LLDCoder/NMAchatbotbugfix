@@ -1,0 +1,984 @@
+{
+  "source": "Actual ACC012 EN UI turn conv_3bbbda65b63b47998d29; captured 2026-09-28T08:18:14Z. No synthetic success.",
+  "originalQuestion": "Do you know my currently signed-in department, role and data scope?",
+  "originalTask": {
+    "view": "",
+    "stage": "task",
+    "filters": [],
+    "groupBy": [],
+    "readOnly": true,
+    "timeField": "",
+    "timeRange": "unknown",
+    "outputShape": "detail",
+    "searchQuery": "signed-in user department role data scope personal profile account information",
+    "slotUpdates": [
+      {
+        "field": "businessObject",
+        "value": "signed-in user profile",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedScope",
+        "value": "personal",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedGrain",
+        "value": "user",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedAttributes",
+        "value": [
+          "department",
+          "role",
+          "data scope"
+        ],
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "outputShape",
+        "value": "detail",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "timeRange",
+        "value": "unknown",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "businessFocus",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedMeasures",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "groupBy",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "filters",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "recordIdentity",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "view",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "timeField",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedOrdering",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "groupCompleteness",
+        "value": "observed",
+        "source": "current",
+        "evidence": "parsed current request"
+      }
+    ],
+    "responseMode": "answer",
+    "businessFocus": "",
+    "clarification": null,
+    "needsLiveData": true,
+    "businessObject": "signed-in user profile",
+    "recordIdentity": "",
+    "requestedGrain": "user",
+    "requestedScope": "personal",
+    "contextRelation": "new",
+    "unresolvedSlots": [],
+    "groupCompleteness": "observed",
+    "requestBoundaries": [],
+    "requestedMeasures": [],
+    "requestedOrdering": [],
+    "requestedAttributes": [
+      "department",
+      "role",
+      "data scope"
+    ]
+  },
+  "remainingTask": {
+    "view": "",
+    "stage": "task",
+    "filters": [],
+    "groupBy": [],
+    "readOnly": true,
+    "timeField": "",
+    "timeRange": "unknown",
+    "outputShape": "detail",
+    "searchQuery": "signed-in user profile current department assigned roles data scope personal center",
+    "slotUpdates": [
+      {
+        "field": "businessObject",
+        "value": "signed-in user profile",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedScope",
+        "value": "personal",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedGrain",
+        "value": "user",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedAttributes",
+        "value": [
+          "department",
+          "role"
+        ],
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "outputShape",
+        "value": "detail",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "timeRange",
+        "value": "unknown",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "businessFocus",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedMeasures",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "groupBy",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "filters",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "recordIdentity",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "view",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "timeField",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedOrdering",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "groupCompleteness",
+        "value": "observed",
+        "source": "current",
+        "evidence": "parsed current request"
+      }
+    ],
+    "responseMode": "answer",
+    "businessFocus": "",
+    "clarification": null,
+    "needsLiveData": true,
+    "businessObject": "signed-in user profile",
+    "recordIdentity": "",
+    "requestedGrain": "user",
+    "requestedScope": "personal",
+    "contextRelation": "new",
+    "unresolvedSlots": [],
+    "groupCompleteness": "observed",
+    "requestBoundaries": [],
+    "requestedMeasures": [],
+    "requestedOrdering": [],
+    "requestedAttributes": [
+      "department",
+      "role"
+    ]
+  },
+  "permission": {
+    "fingerprint": "1b16793f6261d88886f7bb2f9148f24664b5b746a2aecb51fa0532c7d29b3707",
+    "observedAt": "2026-09-28T08:17:05.873112+00:00"
+  },
+  "projection": {
+    "mode": "supplement",
+    "roles": [
+      "Happiness Center Agent"
+    ],
+    "requested": [
+      "scope"
+    ],
+    "observedAt": "2026-09-28T08:17:05.873112+00:00",
+    "provenance": "refreshed_authenticated_session",
+    "departments": [],
+    "schemaVersion": "authenticated-session-summary/1",
+    "permittedPages": [
+      "Broadcast",
+      "Communications",
+      "Appeals",
+      "Customer Management",
+      "Refunds",
+      "CustomerReportsAnalytics",
+      "Dashboard",
+      "Message Log",
+      "Message Templates",
+      "Tickets"
+    ],
+    "recordValuesRead": false,
+    "rowScopeVerified": false,
+    "pageListTruncated": false,
+    "roleListTruncated": false,
+    "unavailableAttributes": [],
+    "actionAuthorityInferred": false,
+    "departmentListTruncated": false
+  },
+  "partition": {
+    "remainingExpansion": {
+      "stage": "query_expansion",
+      "terms": [
+        {
+          "arabic": "ملف المستخدم المسجَّل الدخول",
+          "english": "signed-in user profile",
+          "sourceText": "signed-in user profile",
+          "alternatives": [
+            "profile of the signed-in user",
+            "ملف المستخدم الحالي"
+          ],
+          "requirementId": "object"
+        },
+        {
+          "arabic": "مستخدم",
+          "english": "user",
+          "sourceText": "user",
+          "alternatives": [
+            "per user",
+            "لكل مستخدم"
+          ],
+          "requirementId": "grain"
+        },
+        {
+          "arabic": "شخصي",
+          "english": "personal",
+          "sourceText": "personal",
+          "alternatives": [
+            "own",
+            "الخاص بالمستخدم نفسه"
+          ],
+          "requirementId": "scope"
+        },
+        {
+          "arabic": "القسم",
+          "english": "department",
+          "sourceText": "department",
+          "alternatives": [
+            "department name",
+            "اسم القسم"
+          ],
+          "requirementId": "attribute_0"
+        },
+        {
+          "arabic": "الدور",
+          "english": "role",
+          "sourceText": "role",
+          "alternatives": [
+            "role name",
+            "اسم الدور"
+          ],
+          "requirementId": "attribute_1"
+        },
+        {
+          "arabic": "تفصيلي",
+          "english": "detail",
+          "sourceText": "detail",
+          "alternatives": [
+            "detailed view",
+            "عرض تفصيلي"
+          ],
+          "requirementId": "detail"
+        }
+      ],
+      "issues": [],
+      "intentStatus": "consistent"
+    },
+    "sessionRequirements": [
+      "scope"
+    ],
+    "reviewedOriginalTask": {
+      "view": "",
+      "stage": "task",
+      "filters": [],
+      "groupBy": [],
+      "readOnly": true,
+      "timeField": "",
+      "timeRange": "unknown",
+      "outputShape": "detail",
+      "searchQuery": "signed-in user department role data scope personal profile account information",
+      "slotUpdates": [
+        {
+          "field": "businessObject",
+          "value": "signed-in user profile",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedScope",
+          "value": "personal",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedGrain",
+          "value": "user",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedAttributes",
+          "value": [
+            "department",
+            "role",
+            "data scope"
+          ],
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "outputShape",
+          "value": "detail",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "timeRange",
+          "value": "unknown",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "businessFocus",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedMeasures",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupBy",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "filters",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "recordIdentity",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "view",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeField",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedOrdering",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupCompleteness",
+          "value": "observed",
+          "source": "current",
+          "evidence": "parsed current request"
+        }
+      ],
+      "responseMode": "answer",
+      "businessFocus": "",
+      "clarification": null,
+      "needsLiveData": true,
+      "businessObject": "signed-in user profile",
+      "recordIdentity": "",
+      "requestedGrain": "user",
+      "requestedScope": "personal",
+      "contextRelation": "new",
+      "unresolvedSlots": [],
+      "groupCompleteness": "observed",
+      "requestBoundaries": [],
+      "requestedMeasures": [],
+      "requestedOrdering": [],
+      "requestedAttributes": [
+        "department",
+        "role",
+        "data scope"
+      ]
+    },
+    "remainingRequirements": [
+      {
+        "id": "object",
+        "kind": "object",
+        "value": "signed-in user profile"
+      },
+      {
+        "id": "grain",
+        "kind": "grain",
+        "value": "user"
+      },
+      {
+        "id": "scope",
+        "kind": "scope",
+        "value": "personal"
+      },
+      {
+        "id": "attribute_0",
+        "kind": "attribute",
+        "value": "department"
+      },
+      {
+        "id": "attribute_1",
+        "kind": "attribute",
+        "value": "role"
+      },
+      {
+        "id": "detail",
+        "kind": "detail",
+        "value": "detail"
+      }
+    ]
+  },
+  "analysisPlan": {
+    "stage": "analysis",
+    "steps": [
+      {
+        "id": "read_profile",
+        "op": "read_rows",
+        "path": "/data",
+        "role": "observation",
+        "field": "",
+        "label": "Signed-in staff profile",
+        "limit": null,
+        "expose": false,
+        "fields": [
+          "userId"
+        ],
+        "inputs": [],
+        "operand": null,
+        "evidence": [
+          {
+            "sourceId": "k_8eadf20d8e64652fc5bf:p1"
+          }
+        ],
+        "sourceId": "api_faa1b21f1715ee3203b2",
+        "predicate": "eq",
+        "totalPath": "",
+        "contextKey": "",
+        "descending": false,
+        "fieldLabels": {},
+        "unknownPolicy": "report",
+        "includeZeroGroups": false,
+        "knowledgeBindingId": ""
+      },
+      {
+        "id": "read_departments",
+        "op": "read_rows",
+        "path": "/data/departmentsInfo",
+        "role": "detail",
+        "field": "",
+        "label": "Departments",
+        "limit": null,
+        "expose": true,
+        "fields": [
+          "name"
+        ],
+        "inputs": [],
+        "operand": null,
+        "evidence": [
+          {
+            "sourceId": "k_8eadf20d8e64652fc5bf:p5"
+          }
+        ],
+        "sourceId": "api_faa1b21f1715ee3203b2",
+        "predicate": "eq",
+        "totalPath": "",
+        "contextKey": "",
+        "descending": false,
+        "fieldLabels": {
+          "name": "Department"
+        },
+        "unknownPolicy": "report",
+        "includeZeroGroups": false,
+        "knowledgeBindingId": ""
+      },
+      {
+        "id": "read_roles",
+        "op": "read_rows",
+        "path": "/data/assignRolesIdsInfo",
+        "role": "detail",
+        "field": "",
+        "label": "Assigned Roles",
+        "limit": null,
+        "expose": true,
+        "fields": [
+          "name"
+        ],
+        "inputs": [],
+        "operand": null,
+        "evidence": [
+          {
+            "sourceId": "k_8eadf20d8e64652fc5bf:p5"
+          }
+        ],
+        "sourceId": "api_faa1b21f1715ee3203b2",
+        "predicate": "eq",
+        "totalPath": "",
+        "contextKey": "",
+        "descending": false,
+        "fieldLabels": {
+          "name": "Assigned Role"
+        },
+        "unknownPolicy": "report",
+        "includeZeroGroups": false,
+        "knowledgeBindingId": ""
+      }
+    ],
+    "context": {
+      "time": {
+        "value": "No time-period filter applies to this profile read.",
+        "evidence": [
+          {
+            "sourceId": "k_8eadf20d8e64652fc5bf:p4"
+          }
+        ]
+      },
+      "grain": {
+        "value": "One authenticated staff user profile; multiple department and role entries are properties of that same user, not extra users.",
+        "evidence": [
+          {
+            "sourceId": "k_8eadf20d8e64652fc5bf:p2"
+          }
+        ]
+      },
+      "scope": "personal",
+      "caveats": [
+        {
+          "value": "The profile response provides department and assigned role names, but no universal row-level data-scope value; only currently authorized pages and records can be queried, and a role title does not by itself establish organization-wide access or managed-team membership.",
+          "evidence": [
+            {
+              "sourceId": "k_8eadf20d8e64652fc5bf:p7"
+            }
+          ]
+        },
+        {
+          "value": "Assigned role names are read-only profile properties and do not independently establish page, action or record permissions.",
+          "evidence": [
+            {
+              "sourceId": "k_8eadf20d8e64652fc5bf:p6"
+            }
+          ]
+        }
+      ],
+      "population": {
+        "value": "The profile of the current authenticated subject only.",
+        "evidence": [
+          {
+            "sourceId": "k_8eadf20d8e64652fc5bf:p4"
+          }
+        ]
+      },
+      "filterScope": {
+        "value": "No user-entered narrowing filter; the read is bound to the signed-in subject's userId.",
+        "evidence": [
+          {
+            "sourceId": "k_8eadf20d8e64652fc5bf:p3"
+          }
+        ]
+      },
+      "scopeEvidence": [
+        {
+          "sourceId": "k_8eadf20d8e64652fc5bf:p3"
+        }
+      ]
+    },
+    "missing": [
+      "data_scope_value"
+    ],
+    "metricCoverage": [],
+    "requirementBindings": [
+      {
+        "fields": [
+          "userId"
+        ],
+        "reason": "The single staff profile identified by userId; nested department and role names describe this parent user.",
+        "stepIds": [
+          "read_departments",
+          "read_roles"
+        ],
+        "evidence": [
+          {
+            "quote": "",
+            "sourceId": "k_8eadf20d8e64652fc5bf:p0"
+          }
+        ],
+        "sourceId": "api_faa1b21f1715ee3203b2",
+        "sourcePath": "/data",
+        "requirementId": "object",
+        "knowledgeBindingId": "admin.personal-center.profile.bindings#profile_object"
+      },
+      {
+        "fields": [
+          "userId"
+        ],
+        "reason": "One authenticated staff user profile; multiple department/role entries are properties of that same user.",
+        "stepIds": [
+          "read_departments",
+          "read_roles"
+        ],
+        "evidence": [
+          {
+            "quote": "",
+            "sourceId": "k_8eadf20d8e64652fc5bf:p0"
+          }
+        ],
+        "sourceId": "api_faa1b21f1715ee3203b2",
+        "sourcePath": "/data",
+        "requirementId": "grain",
+        "knowledgeBindingId": "admin.personal-center.profile.bindings#profile_grain"
+      },
+      {
+        "fields": [
+          "userId"
+        ],
+        "reason": "Requested and observed userId must both equal the verified signed-in subject; no expansion to another user or team.",
+        "stepIds": [
+          "read_departments",
+          "read_roles"
+        ],
+        "evidence": [
+          {
+            "quote": "",
+            "sourceId": "k_8eadf20d8e64652fc5bf:p0"
+          }
+        ],
+        "sourceId": "api_faa1b21f1715ee3203b2",
+        "sourcePath": "/data",
+        "requirementId": "scope",
+        "knowledgeBindingId": "admin.personal-center.profile.bindings#profile_scope"
+      },
+      {
+        "fields": [
+          "name"
+        ],
+        "reason": "All nonempty names in departmentsInfo are displayed under Departments; multiple departments preserved.",
+        "stepIds": [
+          "read_departments"
+        ],
+        "evidence": [
+          {
+            "quote": "",
+            "sourceId": "k_8eadf20d8e64652fc5bf:p0"
+          }
+        ],
+        "sourceId": "api_faa1b21f1715ee3203b2",
+        "sourcePath": "/data/departmentsInfo",
+        "requirementId": "attribute_0",
+        "knowledgeBindingId": "admin.personal-center.profile.bindings#departments"
+      },
+      {
+        "fields": [
+          "name"
+        ],
+        "reason": "All nonempty names in assignRolesIdsInfo are displayed as assigned business roles; multiple roles retained.",
+        "stepIds": [
+          "read_roles"
+        ],
+        "evidence": [
+          {
+            "quote": "",
+            "sourceId": "k_8eadf20d8e64652fc5bf:p0"
+          }
+        ],
+        "sourceId": "api_faa1b21f1715ee3203b2",
+        "sourcePath": "/data/assignRolesIdsInfo",
+        "requirementId": "attribute_1",
+        "knowledgeBindingId": "admin.personal-center.profile.bindings#roles"
+      }
+    ]
+  },
+  "actualResult": {
+    "result": "not_confirmed",
+    "analysisStatus": "partial",
+    "missing": [
+      "data_scope_value",
+      "stage_quality_incomplete"
+    ],
+    "requirementsSatisfied": false,
+    "requirementCoverage": [
+      {
+        "id": "object",
+        "kind": "object",
+        "value": "signed-in user profile",
+        "fields": [
+          "userId"
+        ],
+        "reason": "",
+        "status": "satisfied",
+        "stepIds": [
+          "read_departments",
+          "read_roles"
+        ],
+        "evidence": [
+          {
+            "quote": "",
+            "sourceId": "k_8eadf20d8e64652fc5bf:p0"
+          }
+        ],
+        "sourceId": "api_faa1b21f1715ee3203b2",
+        "outputIds": [
+          "read_departments",
+          "read_roles"
+        ],
+        "sourcePath": "/data",
+        "outputStepIds": {
+          "read_roles": [
+            "read_roles"
+          ],
+          "read_departments": [
+            "read_departments"
+          ]
+        }
+      },
+      {
+        "id": "grain",
+        "kind": "grain",
+        "value": "user",
+        "fields": [
+          "userId"
+        ],
+        "reason": "",
+        "status": "satisfied",
+        "stepIds": [
+          "read_departments",
+          "read_roles"
+        ],
+        "evidence": [
+          {
+            "quote": "",
+            "sourceId": "k_8eadf20d8e64652fc5bf:p0"
+          }
+        ],
+        "sourceId": "api_faa1b21f1715ee3203b2",
+        "outputIds": [
+          "read_departments",
+          "read_roles"
+        ],
+        "sourcePath": "/data",
+        "outputStepIds": {
+          "read_roles": [
+            "read_roles"
+          ],
+          "read_departments": [
+            "read_departments"
+          ]
+        }
+      },
+      {
+        "id": "scope",
+        "kind": "scope",
+        "value": "personal",
+        "fields": [
+          "userId"
+        ],
+        "reason": "",
+        "status": "satisfied",
+        "stepIds": [
+          "read_departments",
+          "read_roles"
+        ],
+        "evidence": [
+          {
+            "quote": "",
+            "sourceId": "k_8eadf20d8e64652fc5bf:p0"
+          }
+        ],
+        "sourceId": "api_faa1b21f1715ee3203b2",
+        "outputIds": [
+          "read_departments",
+          "read_roles"
+        ],
+        "sourcePath": "/data",
+        "outputStepIds": {
+          "read_roles": [
+            "read_roles"
+          ],
+          "read_departments": [
+            "read_departments"
+          ]
+        }
+      },
+      {
+        "id": "attribute_0",
+        "kind": "attribute",
+        "value": "department",
+        "fields": [
+          "name"
+        ],
+        "reason": "",
+        "status": "satisfied",
+        "stepIds": [
+          "read_departments"
+        ],
+        "evidence": [
+          {
+            "quote": "",
+            "sourceId": "k_8eadf20d8e64652fc5bf:p0"
+          }
+        ],
+        "sourceId": "api_faa1b21f1715ee3203b2",
+        "outputIds": [
+          "read_departments"
+        ],
+        "sourcePath": "/data/departmentsInfo",
+        "outputStepIds": {
+          "read_departments": [
+            "read_departments"
+          ]
+        }
+      },
+      {
+        "id": "attribute_1",
+        "kind": "attribute",
+        "value": "role",
+        "fields": [
+          "name"
+        ],
+        "reason": "",
+        "status": "satisfied",
+        "stepIds": [
+          "read_roles"
+        ],
+        "evidence": [
+          {
+            "quote": "",
+            "sourceId": "k_8eadf20d8e64652fc5bf:p0"
+          }
+        ],
+        "sourceId": "api_faa1b21f1715ee3203b2",
+        "outputIds": [
+          "read_roles"
+        ],
+        "sourcePath": "/data/assignRolesIdsInfo",
+        "outputStepIds": {
+          "read_roles": [
+            "read_roles"
+          ]
+        }
+      },
+      {
+        "id": "detail",
+        "kind": "detail",
+        "value": "detail",
+        "reason": "",
+        "status": "satisfied",
+        "stepIds": [
+          "read_departments",
+          "read_roles"
+        ],
+        "outputIds": [
+          "read_departments",
+          "read_roles"
+        ],
+        "outputStepIds": {
+          "read_roles": [
+            "read_roles"
+          ],
+          "read_departments": [
+            "read_departments"
+          ]
+        }
+      },
+      {
+        "id": "session_scope",
+        "kind": "authenticated_session_metadata",
+        "value": "current authorized page availability and record-access boundary",
+        "reason": "Authorized page availability is verified; row membership remains decided by each actual request.",
+        "source": "refreshed_authenticated_session",
+        "status": "satisfied",
+        "stepIds": [],
+        "outputIds": [],
+        "observedAt": "2026-09-28T08:17:05.873112+00:00",
+        "rowScopeVerified": false
+      }
+    ]
+  }
+}

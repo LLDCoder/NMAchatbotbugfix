@@ -1,0 +1,192 @@
+{
+  "schemaVersion": "1.0",
+  "bundleId": "admin.licensing.team-management.all-types-queue",
+  "createdAt": "2026-09-28T05:16:01.661048+00:00",
+  "packageStatus": "active",
+  "records": [
+    {
+      "id": "admin.licensing.team-management.all-types-queue",
+      "kind": "field_semantics",
+      "revision": 1,
+      "status": "active",
+      "title": "Licensing team pending queue and count across all task types",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local"
+        ],
+        "pageRefs": [
+          "/licensing/team-management"
+        ],
+        "runtimeVerification": "pending",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/LicensingTeamManagement/LicensingTeamManagementTaskQuery.cs",
+          "revision": "ccfc4a766001a3e998f4113a9e5c4147f2e565c1e588411bf6d0fd4637bcb030",
+          "locator": "Build; BuildFromTable; BuildLegacy; ApplicationTaskOnly; ApplyFilters",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/LicensingTeamManagement/LicensingTeamManagementAppService.cs",
+          "revision": "9e96ade01af09bbb7c963093ee30c8bee68b7423cf78f81bd1bc4b4c4905151f",
+          "locator": "QueryTasksV2Async: typed rows, total before paging, current source read path",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/teamManagement.ts",
+          "revision": "d5b960da8ae6422a95ba3807237d9c4ba30cfecc526d6a5730b93bf2f9be79ab",
+          "locator": "LICENSING_TEAM_MANAGEMENT_CAPABILITIES; buildLicensingTaskQueryPayload",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/TeamManagement/components/TeamTasksPanel/utils.ts",
+          "revision": "1495f5802007cfb67030bd9ec006d355896fa105b7621db645f1c7aecda830c5",
+          "locator": "buildTeamTaskRequestPayload: effective category and actual application-only toggle",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/licensing/team-management",
+        "view": "todo",
+        "sourceBinding": {
+          "operationRef": "POST /api/licensing/team-management/tasks/query",
+          "sourcePath": "/data/page/items"
+        },
+        "bindings": [
+          {
+            "operationRef": "POST /api/licensing/team-management/tasks/query",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "sourceType",
+              "sourceId"
+            ],
+            "contextParameters": {
+              "view": "todo",
+              "applicationTaskOnly": false,
+              "category": "all"
+            },
+            "id": "team_scope_all_types",
+            "kind": "scope",
+            "concept": "team",
+            "aliases": [
+              "team queue",
+              "all task types",
+              "all categories",
+              "جميع أنواع المهام",
+              "كل الفئات"
+            ],
+            "meaning": "Authorized Licensing department queue with application-only disabled and category all. This source scope does not by itself establish the authenticated manager membership set."
+          },
+          {
+            "operationRef": "POST /api/licensing/team-management/tasks/query",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "sourceType",
+              "sourceId"
+            ],
+            "contextParameters": {
+              "view": "todo",
+              "applicationTaskOnly": false,
+              "category": "all"
+            },
+            "id": "pending_all_types",
+            "kind": "population",
+            "concept": "pending",
+            "aliases": [
+              "pending tasks",
+              "to do",
+              "outstanding",
+              "المهام المعلقة",
+              "المهام قيد الإنجاز"
+            ],
+            "meaning": "Rows returned by the todo view of the mixed-source team queue under these exact request parameters. Pending is this queue view, not an invented common status code across different source entities."
+          },
+          {
+            "operationRef": "POST /api/licensing/team-management/tasks/query",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "sourceType",
+              "sourceId"
+            ],
+            "contextParameters": {
+              "view": "todo",
+              "applicationTaskOnly": false,
+              "category": "all"
+            },
+            "id": "pending_task_count_all_types",
+            "kind": "measure",
+            "concept": "pending tasks",
+            "aliases": [
+              "pending task count",
+              "pending count",
+              "pending",
+              "عدد المهام المعلقة",
+              "عدد المهام قيد الإنجاز"
+            ],
+            "operator": "count",
+            "conditions": [],
+            "meaning": "Count distinct typed (sourceType, sourceId) rows after actual request filtering and any requested verified managed-membership predicate. Read every page before counting or use a total proven to describe that same filtered population; a department total cannot substitute for a subsequently filtered managed-team count."
+          }
+        ],
+        "fields": {
+          "sourceType": "Source/entity discriminator.",
+          "sourceId": "Stable key within sourceType.",
+          "assignedToUserId": "Current handler stable key for the separately verified membership join.",
+          "assignedTo": "Display name, not a join key."
+        },
+        "pagination": {
+          "rowsPath": "/data/page/items",
+          "totalPath": "/data/page/total",
+          "total": "Server count after request filters but before client-side managed-membership filtering and pagination."
+        },
+        "relationships": [
+          "With applicationTaskOnly=false and category=all, the current query can combine application, profile-verification, enquiry, refund and appeal sources. Actual availability is determined by the authorized deployed response, not this list alone.",
+          "With applicationTaskOnly=true, or a specific category constraint, use the independently documented narrower binding. The UI default for Licensing is application-only enabled; observe the current request and controls.",
+          "My managed team is a separate predicate: join current task assignedToUserId to the live MyTeamMembers userId set under the same authenticated session, excluding synthetic isSelfMonitor=true entries. Display names, assigned role labels and the department member endpoint do not replace that relation.",
+          "The same display task number can appear under different source types. Preserve sourceType and sourceId as typed identity. Unknown assignment remains unknown; no page route, role name or knowledge record grants additional access."
+        ],
+        "constraints": [
+          "This is an additional all-type definition, not a replacement for existing application-only definitions. Choose it only when the requested and observed query scope matches all three context parameters.",
+          "Do not silently change an explicitly selected category or switch to a personal queue. A broad question does not itself prove which UI toggle is active; preserve known page context or clarify a material ambiguity.",
+          "Complete paging, source-specific status meanings and any requested date/SLA predicates remain required. Do not borrow a pending count from another source, filter state or observation.",
+          "Knowledge defines query meaning only; current page, operation and record permissions remain enforced. No export, reassignment, role change or other write operation is authorized."
+        ],
+        "pageReads": [
+          {
+            "operationKey": "GET /api/Team/MyTeamMembers",
+            "parameters": {
+              "isLeave": false
+            },
+            "requiredScope": "team",
+            "requiredObjects": [
+              "task",
+              "tasks",
+              "team tasks"
+            ],
+            "requiredFor": [
+              "managed team",
+              "my team",
+              "team I manage",
+              "officer",
+              "assigned officer",
+              "handler"
+            ]
+          }
+        ],
+        "knowledgeDependencies": [
+          {
+            "purpose": "analysis",
+            "operationRef": "POST /api/licensing/team-management/tasks/query",
+            "document": "Licensing Team Management-本人管理成员与统计范围.json"
+          }
+        ]
+      }
+    }
+  ]
+}

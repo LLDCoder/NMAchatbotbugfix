@@ -1,0 +1,116 @@
+.FormliyView, .playgroundcontainer  {
+.dn-composite-panel-tabs-body{
+  border-radius: 0 0 16px 16px;
+}
+.duration-input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 48px;
+  padding: 14px 16px;
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+
+  &--framed {
+    border: 1px solid #e1e3e5;
+    border-radius: 8px;
+
+    &:hover {
+      border: 1px solid #CBA344;
+
+    }
+
+    &:focus-within {
+      border: 1px solid #CBA344;
+      box-shadow: none;
+      
+    }
+
+    .ant-input {
+
+      height: 20px;
+      padding: 0;
+      color: #797e86;
+      font-family: Inter, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      text-align: center;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      &:focus,
+      &:hover {
+        border: none;
+        box-shadow: none;
+        color:#361E12;
+      }
+    }
+  }
+
+  &__segment {
+    flex: 1 1 0;
+    min-width: 0;
+
+    .ant-input {
+      height: 20px;
+      padding: 0;
+      color: #797e86;
+      font-family: Inter, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      text-align: center;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+
+      &::placeholder {
+        color: #797e86;
+      }
+
+      &:focus,
+      &:hover {
+        border: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  &__separator {
+    flex: 0 0 16px;
+    width: 16px;
+    color: #b8bcc5;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+  }
+
+  &--readonly {
+    background: #fafafa;
+
+    .duration-input__segment {
+      .ant-input {
+        color: #797e86;
+      }
+    }
+
+    .duration-input__separator {
+      color: rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &--borderless {
+    min-height: 48px;
+    padding: 0;
+    background: transparent;
+
+    .duration-input__segment {
+      .ant-input {
+        background: transparent;
+      }
+    }
+  }
+}
+}

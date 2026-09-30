@@ -1,0 +1,290 @@
+{
+  "evidenceKind": "actual_v38_readonly_audit_extract",
+  "auditPath": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/groups1113-20260928/round29-g15-v38/C-05__ar/audit-db.json",
+  "auditSHA256": "e3f872932a3393ea7c55b2645a0e4cae274c30f610bc503bc221a53c12a7a219",
+  "conversationId": "conv_45b829b581a445a18358",
+  "requestId": "681554d1-a990-4a3a-b39d-3ce9a0366532",
+  "question": "اعرض الطلبات الموجودة حاليًا في عرض «قيد الإنجاز» الخاص بي ضمن التراخيص.",
+  "normalization": {
+    "stage": "input_normalization",
+    "clauses": [
+      {
+        "english": "Show the requests currently present in my \"قيد الإنجاز\" view within the licenses.",
+        "sourceQuote": "اعرض الطلبات الموجودة حاليًا في عرض «قيد الإنجاز» الخاص بي ضمن التراخيص."
+      }
+    ]
+  },
+  "acceptedTask": {
+    "view": "قيد الإنجاز",
+    "stage": "task",
+    "filters": [],
+    "groupBy": [],
+    "readOnly": true,
+    "timeField": "",
+    "timeRange": "unknown",
+    "outputShape": "list",
+    "searchQuery": "licensing applications in progress view personal todo requests list",
+    "slotUpdates": [
+      {
+        "field": "businessObject",
+        "value": "application",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "businessFocus",
+        "value": "in progress",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedScope",
+        "value": "personal",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedGrain",
+        "value": "application",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "outputShape",
+        "value": "list",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "view",
+        "value": "قيد الإنجاز",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "timeRange",
+        "value": "unknown",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "disclosurePurpose",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedMeasures",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedAttributes",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "groupBy",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "filters",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "recordIdentity",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "timeField",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedOrdering",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "groupCompleteness",
+        "value": "observed",
+        "source": "current",
+        "evidence": "parsed current request"
+      }
+    ],
+    "responseMode": "answer",
+    "businessFocus": "in progress",
+    "clarification": null,
+    "needsLiveData": true,
+    "businessObject": "application",
+    "recordIdentity": "",
+    "requestedGrain": "application",
+    "requestedScope": "personal",
+    "contextRelation": "new",
+    "unresolvedSlots": [],
+    "disclosurePurpose": "",
+    "groupCompleteness": "observed",
+    "requestBoundaries": [],
+    "requestedMeasures": [],
+    "requestedOrdering": [],
+    "requestedAttributes": [],
+    "evidenceExplanations": []
+  },
+  "rejectedPlans": [
+    {
+      "stage": "QueryExpansion",
+      "attempt": 1,
+      "failure": "{\"code\": \"expansion_named_view_phrase_changed\", \"stage\": \"query_expansion\", \"requirementId\": \"view\", \"populationRequirementId\": \"population\", \"originalNamedViewSpan\": {\"start\": 32, \"end\": 49}, \"taskFingerprint\": \"a7c2db1279429200dc0926f44d570e7d0ad082702a752022ba37b66e45dae57f\", \"correction\": \"Preserve the exact original quoted view/tab label in a main view translation, bare or in a complete quoted navigation expression. When a retained population translation repeats that label, preserve its whole same-language phrase in the view translation, also bare or quoted; unquoted navigation wrappers lose that provenance. Correct only this representation. Keep TaskSpec, every sourceText, all requirements and other terms, including all independent conditions, unchanged. This does not prove a business alias, population, permission or page. Do not guess those meanings.\"}",
+      "candidate": {
+        "stage": "query_expansion",
+        "terms": [
+          {
+            "arabic": "طلب",
+            "english": "application",
+            "sourceText": "application",
+            "alternatives": [
+              "applications",
+              "الطلبات"
+            ],
+            "requirementId": "object"
+          },
+          {
+            "arabic": "طلب",
+            "english": "application",
+            "sourceText": "application",
+            "alternatives": [
+              "applications",
+              "الطلبات"
+            ],
+            "requirementId": "grain"
+          },
+          {
+            "arabic": "الخاصة بي",
+            "english": "my own",
+            "sourceText": "personal",
+            "alternatives": [
+              "my",
+              "الخاص بي"
+            ],
+            "requirementId": "scope"
+          },
+          {
+            "arabic": "قيد الإنجاز",
+            "english": "in progress",
+            "sourceText": "in progress",
+            "alternatives": [
+              "in-progress",
+              "قيد التنفيذ"
+            ],
+            "requirementId": "population"
+          },
+          {
+            "arabic": "قائمة",
+            "english": "list",
+            "sourceText": "list",
+            "alternatives": [
+              "display list",
+              "عرض قائمة"
+            ],
+            "requirementId": "detail"
+          },
+          {
+            "arabic": "عرض \"قيد الإنجاز\"",
+            "english": "view \"قيد الإنجاز\"",
+            "sourceText": "قيد الإنجاز",
+            "alternatives": [
+              "\"قيد الإنجاز\" view",
+              "عرض قيد الإنجاز"
+            ],
+            "requirementId": "view"
+          }
+        ],
+        "intentStatus": "consistent"
+      }
+    },
+    {
+      "stage": "QueryExpansion",
+      "attempt": 2,
+      "failure": "{\"code\": \"expansion_named_view_phrase_changed\", \"stage\": \"query_expansion\", \"requirementId\": \"view\", \"populationRequirementId\": \"population\", \"originalNamedViewSpan\": {\"start\": 32, \"end\": 49}, \"taskFingerprint\": \"a7c2db1279429200dc0926f44d570e7d0ad082702a752022ba37b66e45dae57f\", \"correction\": \"Preserve the exact original quoted view/tab label in a main view translation, bare or in a complete quoted navigation expression. When a retained population translation repeats that label, preserve its whole same-language phrase in the view translation, also bare or quoted; unquoted navigation wrappers lose that provenance. Correct only this representation. Keep TaskSpec, every sourceText, all requirements and other terms, including all independent conditions, unchanged. This does not prove a business alias, population, permission or page. Do not guess those meanings.\"}",
+      "candidate": {
+        "stage": "query_expansion",
+        "terms": [
+          {
+            "arabic": "طلب",
+            "english": "application",
+            "sourceText": "application",
+            "alternatives": [
+              "applications",
+              "الطلبات"
+            ],
+            "requirementId": "object"
+          },
+          {
+            "arabic": "طلب",
+            "english": "application",
+            "sourceText": "application",
+            "alternatives": [
+              "applications",
+              "الطلبات"
+            ],
+            "requirementId": "grain"
+          },
+          {
+            "arabic": "الخاص بي",
+            "english": "my own",
+            "sourceText": "personal",
+            "alternatives": [
+              "my",
+              "الخاصة بي"
+            ],
+            "requirementId": "scope"
+          },
+          {
+            "arabic": "قيد الإنجاز",
+            "english": "in progress",
+            "sourceText": "in progress",
+            "alternatives": [
+              "in-progress",
+              "قيد الإنجاز"
+            ],
+            "requirementId": "population"
+          },
+          {
+            "arabic": "قائمة",
+            "english": "list",
+            "sourceText": "list",
+            "alternatives": [
+              "list view",
+              "عرض قائمة"
+            ],
+            "requirementId": "detail"
+          },
+          {
+            "arabic": "عرض \"قيد الإنجاز\"",
+            "english": "view \"قيد الإنجاز\"",
+            "sourceText": "قيد الإنجاز",
+            "alternatives": [
+              "\"قيد الإنجاز\" view",
+              "عرض «قيد الإنجاز»"
+            ],
+            "requirementId": "view"
+          }
+        ],
+        "intentStatus": "consistent"
+      }
+    }
+  ],
+  "missing": [
+    "expansion_named_view_phrase_changed"
+  ]
+}

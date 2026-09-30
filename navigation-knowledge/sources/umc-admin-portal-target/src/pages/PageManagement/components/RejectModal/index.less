@@ -1,0 +1,48 @@
+.custom-quick-note{
+  .note-title {
+    margin: 8px 0;
+    color: rgba(95, 100, 109, 1);
+    font-family: Inter;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+  .note-item {
+    color: rgba(95, 100, 109, 1);
+    cursor: pointer;
+    & + .note-item {
+      margin-top: 8px;
+      border-radius: 4px;
+    }
+  }
+}
+
+.ant-form-item-label
+  > label.ant-form-item-required:not(
+    .ant-form-item-required-mark-optional
+  )::after {
+  display: inline-block;
+  margin-left: 4px;
+  color: #e60000;
+  font-size: 14px;
+  font-family: SimSun, sans-serif;
+  line-height: 1;
+  content: "*";
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+    }
+}
+.ant-form-item-label
+  > label.ant-form-item-required:not(
+    .ant-form-item-required-mark-optional
+  )::before {
+    display: none;
+}

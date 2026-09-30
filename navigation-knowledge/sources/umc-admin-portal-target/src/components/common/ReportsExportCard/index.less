@@ -1,0 +1,90 @@
+.reports-export-card {
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 20px;
+}
+.reports-export-card__title {
+  margin: 0 0 24px;
+  color: #361e12;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+.reports-export-card__fields {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 240px), 1fr)
+  );
+  gap: 24px;
+}
+.reports-export-card__fields--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.reports-export-card__fields--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.reports-export-card__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  color: #361e12;
+  font-size: 14px;
+  line-height: 20px;
+}
+.reports-export-card__field .ant-picker,
+.reports-export-card__field .ant-select-selector {
+  min-height: 48px !important;
+  border-color: #e1e3e5 !important;
+  border-radius: 8px !important;
+}
+.reports-export-card__field .ant-picker {
+  width: 100%;
+}
+.reports-export-card__field .ant-select {
+  width: 100%;
+}
+.reports-export-card__field .ant-select-selection-item,
+.reports-export-card__field .ant-select-selection-placeholder {
+  line-height: 46px !important;
+}
+.reports-export-card__actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 16px;
+  margin-top: 24px;
+}
+.reports-export-card__actions .ant-btn {
+  min-width: 100px;
+  height: 48px;
+  border-radius: 8px;
+}
+@media (max-width: 1919.98px) {
+  .reports-export-card__fields--4 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 1200px) {
+  .reports-export-card__fields--3,
+  .reports-export-card__fields--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 960px) {
+  .reports-export-card__fields--3,
+  .reports-export-card__fields--4 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 576px) {
+  .reports-export-card {
+    padding: 20px;
+  }
+  .reports-export-card__actions {
+    justify-content: stretch;
+  }
+  .reports-export-card__actions .ant-btn {
+    flex: 1;
+  }
+}

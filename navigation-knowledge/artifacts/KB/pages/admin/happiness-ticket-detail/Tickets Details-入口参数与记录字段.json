@@ -1,0 +1,664 @@
+{
+  "schemaVersion": "1.0",
+  "bundleId": "admin.page.tickets.detail.page.package",
+  "createdAt": "2026-09-26T08:21:41.380497+00:00",
+  "packageStatus": "active",
+  "searchMetadata": {
+    "purpose": "page discovery metadata; records remain the source of structured definitions",
+    "titleEnglish": "Tickets Details",
+    "titleArabic": "تفاصيل التذاكر",
+    "descriptionEnglish": "Ticket details: verified record identity, actual transactional ticket subtypes, current state, handler and SLA. Complaint, inquiry and suggestion require their own observed type condition; available transfer destinations are not routing recommendations.",
+    "descriptionArabic": "تفاصيل التذكرة وهوية السجل ونوعه الفعلي وحالته والمسؤول واتفاقية الخدمة. الشكوى والاستفسار والاقتراح أنواع منفصلة؛ قائمة أقسام التحويل ليست توصية تلقائية.",
+    "termsEnglish": [
+      "ticket details",
+      "ticket number",
+      "internal identifier",
+      "detail navigation",
+      "current handler",
+      "SLA deadline",
+      "overdue",
+      "status",
+      "enquiry",
+      "complaint"
+    ],
+    "termsArabic": [
+      "تفاصيل التذكرة",
+      "رقم التذكرة",
+      "المعرف الداخلي",
+      "فتح صفحة التفاصيل",
+      "المسؤول الحالي",
+      "الموعد النهائي لاتفاقية مستوى الخدمة",
+      "متأخر",
+      "الحالة",
+      "استفسار",
+      "شكوى"
+    ]
+  },
+  "records": [
+    {
+      "id": "admin.page.tickets.detail.page",
+      "kind": "page_definition",
+      "revision": 2,
+      "status": "active",
+      "title": "Tickets Details",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local",
+          "debug"
+        ],
+        "pageRefs": [
+          "/happiness/tickets/tickets-details"
+        ],
+        "runtimeVerification": "response_shape_verified",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/tickets.ts",
+          "revision": "sha256:f7187f3a26a387e67704abf368aa8fff61b2cf47bfbadf44dd742df23aa7f974",
+          "locator": "IEnquiryListResponse; IEnquiryInfoResponse; getEnquiryList; getEnquiryInfo",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/TicketsDetails/index.tsx",
+          "revision": "sha256:12468bf8adf1fa7c48d4c661ec5bb1da100b07760e6819b41931dfb5601965da",
+          "locator": "URL id parsing and getEnquiryInfo(id)",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/EnquiryApp/EnquiryAppService.cs",
+          "revision": "sha256:693bbed263aff3b567409dc654fe221d835351077272abc6df9ef2fc35cd31a2",
+          "locator": "GetEnquiriesAsync personal scope; detail projection and SLA branches",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "runtime_observation",
+          "reference": "test/runtime/kb-remediation-20260926/page-probes/tickets-list.json",
+          "revision": "sha256:85f68c9a76bd411a420456dba9be389322e4f2b633c9ff23dd2973fa42820114",
+          "locator": "Exact business-number query and /data/items shape",
+          "verification": "response_shape_verified"
+        },
+        {
+          "kind": "runtime_observation",
+          "reference": "test/runtime/kb-remediation-20260926/page-probes/tickets-detail.json",
+          "revision": "sha256:e41b8cccbb696da3d32696ed5a755bd01e5d1b49dd233feb4902dde0746758fc",
+          "locator": "HTTP 200; id and enquiryNumber agree with list",
+          "verification": "response_shape_verified"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Tickets/index.tsx",
+          "revision": "sha256:89125408a0b3eaa94685c0b2d44dfa8bd9861d167e69dd214d52d0ebddb54a23",
+          "locator": "UserInfo.isLeader selects TeamTasks; otherwise TicketsTable",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Tickets/components/TeamTasks/index.tsx",
+          "revision": "sha256:c8cd604684f7b164a0252e1a6aaf8bfdb50fa997e2f1c88a0006683ff8696d8c",
+          "locator": "TeamTask List and detail id navigation",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "runtime_observation",
+          "reference": "test/runtime/kb-remediation-20260926/page-probes/tickets-team-list.json",
+          "revision": "sha256:5a1d4f97359f99daa8c4e5d6edc37c46dee34764e4d492c985286f3bf8b30f4f",
+          "locator": "Team list maps the same business number to the same id; UserInfo.isLeader=true",
+          "verification": "response_shape_verified"
+        }
+      ],
+      "payload": {
+        "pageRef": "/happiness/tickets/tickets-details",
+        "entryConditions": [
+          "A verified permitted list record maps the user business number to the internal id."
+        ],
+        "routing": {
+          "parameters": [
+            {
+              "id": "ticket_id",
+              "name": "id",
+              "from": "previous_record",
+              "operationRef": "GET /api/Enquiry/Management/List",
+              "sourcePath": "/data/items",
+              "identityField": "enquiryNumber",
+              "keyFields": [
+                "id"
+              ],
+              "field": "id",
+              "unique": false,
+              "required": true,
+              "lookupEquivalence": "admin.enquiry.entity-id"
+            },
+            {
+              "id": "ticket_id_team",
+              "name": "id",
+              "from": "previous_record",
+              "operationRef": "GET /api/Enquiry/Management/TeamTask/List",
+              "sourcePath": "/data/items",
+              "identityField": "enquiryNumber",
+              "keyFields": [
+                "id"
+              ],
+              "field": "id",
+              "unique": false,
+              "required": true,
+              "lookupEquivalence": "admin.enquiry.entity-id"
+            }
+          ],
+          "records": [
+            {
+              "id": "detail_ticket",
+              "operationRef": "GET /api/Enquiry/Management/{enquiryId}/EnquiryInfo",
+              "sourcePath": "/data",
+              "identityField": "enquiryNumber",
+              "keyFields": [
+                "id"
+              ],
+              "unique": false
+            }
+          ]
+        },
+        "readOperation": {
+          "operationRef": "GET /api/Enquiry/Management/{enquiryId}/EnquiryInfo",
+          "navigationSource": "/happiness/tickets",
+          "responseRoot": "/data"
+        },
+        "fields": {
+          "id": "Internal ticket entity key; this is the URL id, not enquiryNumber.",
+          "enquiryNumber": "Displayed business ticket number. No database uniqueness guarantee was established.",
+          "description": "Submitted customer request text, not a review decision or current handler.",
+          "enquiryStatusId": "Current ticket status dictionary identifier.",
+          "enquiryStatusObj.nameEn": "Current status display in English.",
+          "enquiryStatusObj.nameAr": "Current status display in Arabic.",
+          "currentHander": "Current handler display. For PendingCustomer the source may display the customer; null/empty is unavailable, not proof of no assignment.",
+          "agnetname": "Happiness handling owner derived from ManangerUserId. It is not interchangeable with the current department handler.",
+          "slaEndTime": "Overall ticket SLA deadline returned by this DTO. This is not automatically the department deadline.",
+          "sla": "Role and state dependent SLA display text. Do not parse this as a universal numeric duration.",
+          "isOverDue": "Overdue indicator under the source role/state rules; a null value means no applicable boolean was supplied.",
+          "enquiryTypeId": "Ticket type dictionary identifier; complaints and enquiries remain distinct subtypes.",
+          "priorityId": "Configured priority identifier. It does not define business severity."
+        },
+        "identityEquivalence": "The personal and team endpoints return the same Enquiry id identity domain and both navigate to this detail with row.id. Equivalence authorizes only business-number-to-id lookup over permitted observed sources; queue populations, scope, date filters and aggregates remain distinct.",
+        "constraints": [
+          "Knowledge never grants page/API authority. Recheck identity, permission and observed response shape.",
+          "Compare exact enquiryNumber and internal id after navigation. If permitted lookup rows map to multiple ids, clarify instead of choosing the first.",
+          "Field names alone do not prove a deployment matches the source snapshot. Nullable displays remain unknown.",
+          "Only project fields needed for the current question; private applicant/contact fields are not needed for this page description."
+        ]
+      }
+    },
+    {
+      "id": "admin.page.tickets.detail.fields",
+      "kind": "field_semantics",
+      "revision": 5,
+      "status": "active",
+      "title": "Ticket detail field meanings",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local",
+          "debug"
+        ],
+        "pageRefs": [
+          "/happiness/tickets/tickets-details"
+        ],
+        "runtimeVerification": "response_shape_verified",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/tickets.ts",
+          "revision": "sha256:f7187f3a26a387e67704abf368aa8fff61b2cf47bfbadf44dd742df23aa7f974",
+          "locator": "IEnquiryListResponse; IEnquiryInfoResponse; getEnquiryList; getEnquiryInfo",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/TicketsDetails/index.tsx",
+          "revision": "sha256:12468bf8adf1fa7c48d4c661ec5bb1da100b07760e6819b41931dfb5601965da",
+          "locator": "URL id parsing and getEnquiryInfo(id)",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/EnquiryApp/EnquiryAppService.cs",
+          "revision": "sha256:693bbed263aff3b567409dc654fe221d835351077272abc6df9ef2fc35cd31a2",
+          "locator": "GetEnquiriesAsync personal scope; detail projection and SLA branches",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "runtime_observation",
+          "reference": "test/runtime/kb-remediation-20260926/page-probes/tickets-list.json",
+          "revision": "sha256:85f68c9a76bd411a420456dba9be389322e4f2b633c9ff23dd2973fa42820114",
+          "locator": "Exact business-number query and /data/items shape",
+          "verification": "response_shape_verified"
+        },
+        {
+          "kind": "runtime_observation",
+          "reference": "test/runtime/kb-remediation-20260926/page-probes/tickets-detail.json",
+          "revision": "sha256:e41b8cccbb696da3d32696ed5a755bd01e5d1b49dd233feb4902dde0746758fc",
+          "locator": "HTTP 200; id and enquiryNumber agree with list",
+          "verification": "response_shape_verified"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Tickets/index.tsx",
+          "revision": "sha256:89125408a0b3eaa94685c0b2d44dfa8bd9861d167e69dd214d52d0ebddb54a23",
+          "locator": "UserInfo.isLeader selects TeamTasks; otherwise TicketsTable",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Tickets/components/TeamTasks/index.tsx",
+          "revision": "sha256:c8cd604684f7b164a0252e1a6aaf8bfdb50fa997e2f1c88a0006683ff8696d8c",
+          "locator": "TeamTask List and detail id navigation",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "runtime_observation",
+          "reference": "test/runtime/kb-remediation-20260926/page-probes/tickets-team-list.json",
+          "revision": "sha256:5a1d4f97359f99daa8c4e5d6edc37c46dee34764e4d492c985286f3bf8b30f4f",
+          "locator": "Team list maps the same business number to the same id; UserInfo.isLeader=true",
+          "verification": "response_shape_verified"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Domain/Shares/Enums/EnquiryEnum.cs",
+          "revision": "sha256:52ef6d929e9dbd154601fca4ff6bee37eb555e787b90b1184f6c9a3a3956c72b",
+          "locator": "EnquiryTypeEnum and EnquiryTypeCodes: transactional ticket enum, not analytics constants",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "runtime_observation",
+          "reference": "test/runtime/sequential-repair-batch5-20260927/baselines/happiness-types.json",
+          "revision": "sha256:c3466cde44685379cb0f83e9f718c69680354d41af99754ed9d03d3af309890f",
+          "locator": "Authorized current dictionary: Inquiry 1, Complaint 2, Suggestion 4; mapping only, no user records",
+          "verification": "response_shape_verified"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Tickets/components/TicketsTable/index.tsx",
+          "revision": "sha256:6eb01fe088efae25fd02a8f52b2c745abb79fc57c54b3004212761e6a3290067",
+          "locator": "getCurrentHandlerName; status 2 returns Customer; statuses 1/4 use agnetname; status 3 uses currentHander",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/happiness/tickets/tickets-details",
+        "bindings": [
+          {
+            "id": "ticket_object",
+            "kind": "object",
+            "concept": "ticket",
+            "aliases": [
+              "customer ticket"
+            ],
+            "operationRef": "GET /api/Enquiry/Management/{enquiryId}/EnquiryInfo",
+            "sourcePath": "/data",
+            "fields": [
+              "id"
+            ],
+            "meaning": "One returned entity is a ticket, distinct from an application or workflow task. Complaint and enquiry are subtypes; subtype questions require the documented type dictionary and filter.",
+            "displayFields": [
+              "enquiryNumber"
+            ]
+          },
+          {
+            "id": "ticket_grain",
+            "kind": "grain",
+            "concept": "ticket",
+            "aliases": [
+              "customer ticket"
+            ],
+            "operationRef": "GET /api/Enquiry/Management/{enquiryId}/EnquiryInfo",
+            "sourcePath": "/data",
+            "fields": [
+              "id"
+            ],
+            "meaning": "Deduplicate ticket entities by id. This does not restrict the population to a ticket subtype."
+          },
+          {
+            "id": "business_number",
+            "kind": "attribute",
+            "concept": "ticket number",
+            "aliases": [
+              "enquiry number",
+              "complaint number"
+            ],
+            "operationRef": "GET /api/Enquiry/Management/{enquiryId}/EnquiryInfo",
+            "sourcePath": "/data",
+            "fields": [
+              "enquiryNumber"
+            ],
+            "meaning": "Displayed business ticket number. No database uniqueness guarantee was established."
+          },
+          {
+            "id": "request",
+            "kind": "attribute",
+            "concept": "customer request",
+            "aliases": [
+              "request description",
+              "description",
+              "request text"
+            ],
+            "operationRef": "GET /api/Enquiry/Management/{enquiryId}/EnquiryInfo",
+            "sourcePath": "/data",
+            "fields": [
+              "description"
+            ],
+            "meaning": "Submitted customer request text, not a review decision or current handler."
+          },
+          {
+            "id": "status",
+            "kind": "attribute",
+            "concept": "status",
+            "aliases": [
+              "ticket status",
+              "current status"
+            ],
+            "operationRef": "GET /api/Enquiry/Management/{enquiryId}/EnquiryInfo",
+            "sourcePath": "/data",
+            "fields": [
+              "enquiryStatusId",
+              "enquiryStatusObj.nameEn",
+              "enquiryStatusObj.nameAr"
+            ],
+            "meaning": "Current ticket status dictionary identifier. Current status display in English. Current status display in Arabic."
+          },
+          {
+            "id": "handler",
+            "kind": "attribute",
+            "concept": "handler",
+            "aliases": [
+              "current handler",
+              "assigned handler"
+            ],
+            "operationRef": "GET /api/Enquiry/Management/{enquiryId}/EnquiryInfo",
+            "sourcePath": "/data",
+            "fields": [
+              "currentHander",
+              "enquiryStatusId"
+            ],
+            "meaning": "Current handling display, interpreted with the verified ticket status. The ticket list displays Customer for Pending Customer (2), agnetname for states 1/4, and currentHander for Department Processing (3). For this detail operation, use a verified Pending Customer status to describe the customer-response stage even when the detail handler display is empty. This is not the identity of an assigned staff member; never substitute the applicant name or imply that the task is unassigned.",
+            "interpretationRules": [
+              {
+                "conditions": [
+                  {
+                    "field": "enquiryStatusId",
+                    "predicate": "eq",
+                    "value": 2
+                  },
+                  {
+                    "field": "currentHander",
+                    "predicate": "eq",
+                    "value": null
+                  }
+                ],
+                "message": {
+                  "en": "Current handling stage: Customer — awaiting the customer response. This identifies the current workflow actor, not a named staff assignee.",
+                  "ar": "جهة المعالجة الحالية: العميل — بانتظار رد العميل. يوضح ذلك الطرف الحالي في مسار العمل، وليس اسم موظف مكلّف."
+                },
+                "hideFields": [
+                  "currentHander",
+                  "enquiryStatusId"
+                ]
+              },
+              {
+                "conditions": [
+                  {
+                    "field": "enquiryStatusId",
+                    "predicate": "eq",
+                    "value": 2
+                  },
+                  {
+                    "field": "currentHander",
+                    "predicate": "eq",
+                    "value": ""
+                  }
+                ],
+                "message": {
+                  "en": "Current handling stage: Customer — awaiting the customer response. This identifies the current workflow actor, not a named staff assignee.",
+                  "ar": "جهة المعالجة الحالية: العميل — بانتظار رد العميل. يوضح ذلك الطرف الحالي في مسار العمل، وليس اسم موظف مكلّف."
+                },
+                "hideFields": [
+                  "currentHander",
+                  "enquiryStatusId"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "owner",
+            "kind": "attribute",
+            "concept": "handling owner",
+            "aliases": [
+              "Happiness handler",
+              "Happiness owner"
+            ],
+            "operationRef": "GET /api/Enquiry/Management/{enquiryId}/EnquiryInfo",
+            "sourcePath": "/data",
+            "fields": [
+              "agnetname"
+            ],
+            "meaning": "Happiness handling owner derived from ManangerUserId. It is not interchangeable with the current department handler."
+          },
+          {
+            "id": "deadline",
+            "kind": "attribute",
+            "concept": "deadline",
+            "aliases": [
+              "SLA deadline",
+              "due date"
+            ],
+            "operationRef": "GET /api/Enquiry/Management/{enquiryId}/EnquiryInfo",
+            "sourcePath": "/data",
+            "fields": [
+              "slaEndTime"
+            ],
+            "meaning": "Overall ticket SLA deadline returned by this DTO. This is not automatically the department deadline."
+          },
+          {
+            "id": "overdue",
+            "kind": "attribute",
+            "concept": "overdue",
+            "aliases": [
+              "SLA overdue"
+            ],
+            "operationRef": "GET /api/Enquiry/Management/{enquiryId}/EnquiryInfo",
+            "sourcePath": "/data",
+            "fields": [
+              "isOverDue"
+            ],
+            "meaning": "Overdue indicator under the source role/state rules; a null value means no applicable boolean was supplied."
+          },
+          {
+            "id": "sla",
+            "kind": "attribute",
+            "concept": "SLA status",
+            "aliases": [
+              "SLA display",
+              "SLA grouping"
+            ],
+            "operationRef": "GET /api/Enquiry/Management/{enquiryId}/EnquiryInfo",
+            "sourcePath": "/data",
+            "fields": [
+              "sla",
+              "isOverDue",
+              "slaEndTime"
+            ],
+            "meaning": "Role and state dependent SLA display text. Do not parse this as a universal numeric duration. Overdue indicator under the source role/state rules; a null value means no applicable boolean was supplied. Overall ticket SLA deadline returned by this DTO. This is not automatically the department deadline."
+          },
+          {
+            "id": "complaint_object",
+            "kind": "object",
+            "concept": "complaint",
+            "aliases": [
+              "complaints",
+              "شكوى",
+              "شكاوى",
+              "ملاحظة"
+            ],
+            "operationRef": "GET /api/Enquiry/Management/{enquiryId}/EnquiryInfo",
+            "sourcePath": "/data",
+            "fields": [
+              "id",
+              "enquiryTypeId"
+            ],
+            "meaning": "Ticket subtype complaint; resolve and check the actual record type. The business number or user wording does not establish this subtype.",
+            "conditions": [
+              {
+                "field": "enquiryTypeId",
+                "predicate": "eq",
+                "value": 2
+              }
+            ],
+            "displayFields": [
+              "enquiryNumber"
+            ]
+          },
+          {
+            "id": "complaint_grain",
+            "kind": "grain",
+            "concept": "complaint",
+            "aliases": [
+              "complaints",
+              "شكوى",
+              "شكاوى",
+              "ملاحظة"
+            ],
+            "operationRef": "GET /api/Enquiry/Management/{enquiryId}/EnquiryInfo",
+            "sourcePath": "/data",
+            "fields": [
+              "id"
+            ],
+            "meaning": "Ticket subtype complaint; resolve and check the actual record type. The business number or user wording does not establish this subtype."
+          },
+          {
+            "id": "inquiry_object",
+            "kind": "object",
+            "concept": "inquiry",
+            "aliases": [
+              "enquiry",
+              "inquiries",
+              "enquiries",
+              "استفسار",
+              "استفسارات"
+            ],
+            "operationRef": "GET /api/Enquiry/Management/{enquiryId}/EnquiryInfo",
+            "sourcePath": "/data",
+            "fields": [
+              "id",
+              "enquiryTypeId"
+            ],
+            "meaning": "Ticket subtype inquiry; resolve and check the actual record type. The business number or user wording does not establish this subtype.",
+            "conditions": [
+              {
+                "field": "enquiryTypeId",
+                "predicate": "eq",
+                "value": 1
+              }
+            ],
+            "displayFields": [
+              "enquiryNumber"
+            ]
+          },
+          {
+            "id": "inquiry_grain",
+            "kind": "grain",
+            "concept": "inquiry",
+            "aliases": [
+              "enquiry",
+              "inquiries",
+              "enquiries",
+              "استفسار",
+              "استفسارات"
+            ],
+            "operationRef": "GET /api/Enquiry/Management/{enquiryId}/EnquiryInfo",
+            "sourcePath": "/data",
+            "fields": [
+              "id"
+            ],
+            "meaning": "Ticket subtype inquiry; resolve and check the actual record type. The business number or user wording does not establish this subtype."
+          },
+          {
+            "id": "suggestion_object",
+            "kind": "object",
+            "concept": "suggestion",
+            "aliases": [
+              "suggestions",
+              "اقتراح",
+              "اقتراحات"
+            ],
+            "operationRef": "GET /api/Enquiry/Management/{enquiryId}/EnquiryInfo",
+            "sourcePath": "/data",
+            "fields": [
+              "id",
+              "enquiryTypeId"
+            ],
+            "meaning": "Ticket subtype suggestion; resolve and check the actual record type. The business number or user wording does not establish this subtype.",
+            "conditions": [
+              {
+                "field": "enquiryTypeId",
+                "predicate": "eq",
+                "value": 4
+              }
+            ],
+            "displayFields": [
+              "enquiryNumber"
+            ]
+          },
+          {
+            "id": "suggestion_grain",
+            "kind": "grain",
+            "concept": "suggestion",
+            "aliases": [
+              "suggestions",
+              "اقتراح",
+              "اقتراحات"
+            ],
+            "operationRef": "GET /api/Enquiry/Management/{enquiryId}/EnquiryInfo",
+            "sourcePath": "/data",
+            "fields": [
+              "id"
+            ],
+            "meaning": "Ticket subtype suggestion; resolve and check the actual record type. The business number or user wording does not establish this subtype."
+          },
+          {
+            "id": "ticket_type",
+            "kind": "attribute",
+            "concept": "ticket type",
+            "aliases": [
+              "record type",
+              "enquiry type",
+              "complaint type",
+              "نوع التذكرة",
+              "نوع السجل"
+            ],
+            "fields": [
+              "enquiryTypeId",
+              "enquiryTypeObj.nameEn",
+              "enquiryTypeObj.nameAr"
+            ],
+            "operationRef": "GET /api/Enquiry/Management/{enquiryId}/EnquiryInfo",
+            "sourcePath": "/data",
+            "meaning": "Actual transactional record subtype and localized dictionary labels. Arabic labels are supplied by the configured dictionary and may differ from a literal translation."
+          }
+        ],
+        "constraints": [
+          "Knowledge never grants page/API authority. Recheck identity, permission and observed response shape.",
+          "Compare exact enquiryNumber and internal id after navigation. If permitted lookup rows map to multiple ids, clarify instead of choosing the first.",
+          "Field names alone do not prove a deployment matches the source snapshot. Nullable displays remain unknown.",
+          "Only project fields needed for the current question; private applicant/contact fields are not needed for this page description.",
+          "If the user calls a business-number record a complaint but the observed enquiryTypeId identifies another subtype, disclose the returned type and request confirmation before applying subtype-specific recommendations. Never rewrite the row type or treat all ticket subtypes as synonyms.",
+          "These subtype values apply to the transactional Enquiry detail and authorized type dictionary. CustomerHappinessAnalyticsConstants contains a conflicting complaint constant; do not transfer its values to this detail operation or analytics calculations without separate source verification.",
+          "Transfer destination availability is not an automatic classification-to-department recommendation. Current department, past transfer history and a recommended destination are distinct facts. No complete approved recommendation matrix is established by this definition."
+        ]
+      }
+    }
+  ]
+}

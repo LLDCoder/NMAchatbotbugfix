@@ -1,0 +1,698 @@
+{
+  "evidenceKind": "actual terminal database audit, narrow offline projection; no model replay or new read",
+  "source": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/groups1113-20260928/round24-g15-v33/C-05__ar/audit-db.json",
+  "sourceSHA256": "a1119f329c0d58437c95eecafc860f5d3bb12a973b0018b1b1377d6b9cfeeb84",
+  "requestId": "6004eea1-4fa9-4dd8-9995-d42b3626a234",
+  "conversationId": "conv_4192ae1b10a84d50ae34",
+  "question": "يرجى سرد نطاق البيانات والقيود المستخدمة لهذا الاستعلام.",
+  "canonicalQuestion": "Please list the data scope and the constraints used for this query.",
+  "draft": {
+    "view": "",
+    "stage": "task",
+    "filters": [],
+    "groupBy": [],
+    "readOnly": true,
+    "timeField": "",
+    "timeRange": "unknown",
+    "outputShape": "detail",
+    "searchQuery": "previous query data scope constraints presentation explanation",
+    "slotUpdates": [
+      {
+        "field": "businessObject",
+        "value": "previous answer",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "businessFocus",
+        "value": "",
+        "source": "clear",
+        "evidence": ""
+      },
+      {
+        "field": "requestedScope",
+        "value": "unknown",
+        "source": "clear",
+        "evidence": ""
+      },
+      {
+        "field": "requestedGrain",
+        "value": "previous answer",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "outputShape",
+        "value": "detail",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "view",
+        "value": "",
+        "source": "clear",
+        "evidence": ""
+      },
+      {
+        "field": "disclosurePurpose",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedMeasures",
+        "value": [],
+        "source": "clear",
+        "evidence": ""
+      },
+      {
+        "field": "requestedAttributes",
+        "value": [
+          "data scope used for the previous query",
+          "constraints used for the previous query"
+        ],
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "groupBy",
+        "value": [],
+        "source": "clear",
+        "evidence": ""
+      },
+      {
+        "field": "timeRange",
+        "value": "unknown",
+        "source": "clear",
+        "evidence": ""
+      },
+      {
+        "field": "filters",
+        "value": [],
+        "source": "clear",
+        "evidence": ""
+      },
+      {
+        "field": "recordIdentity",
+        "value": "",
+        "source": "clear",
+        "evidence": ""
+      },
+      {
+        "field": "timeField",
+        "value": "",
+        "source": "clear",
+        "evidence": ""
+      },
+      {
+        "field": "requestedOrdering",
+        "value": [],
+        "source": "clear",
+        "evidence": ""
+      },
+      {
+        "field": "groupCompleteness",
+        "value": "observed",
+        "source": "clear",
+        "evidence": ""
+      }
+    ],
+    "responseMode": "answer",
+    "businessFocus": "",
+    "clarification": null,
+    "needsLiveData": false,
+    "businessObject": "previous answer",
+    "recordIdentity": "",
+    "requestedGrain": "previous answer",
+    "requestedScope": "unknown",
+    "contextRelation": "refine",
+    "unresolvedSlots": [],
+    "disclosurePurpose": "",
+    "groupCompleteness": "observed",
+    "requestBoundaries": [],
+    "requestedMeasures": [],
+    "requestedOrdering": [],
+    "requestedAttributes": [
+      "data scope used for the previous query",
+      "constraints used for the previous query"
+    ],
+    "evidenceExplanations": []
+  },
+  "rejectedPlans": [
+    {
+      "stage": "TaskSpec",
+      "attempt": 1,
+      "failure": "{\"code\": \"intent_refinement_invalid\"}",
+      "candidate": {
+        "view": "todo",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "detail",
+        "searchQuery": "license applications in progress view personal scope constraints used for previous query",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "license application",
+            "source": "previous",
+            "evidence": "previousIntent.businessObject"
+          },
+          {
+            "field": "businessFocus",
+            "value": "in progress",
+            "source": "previous",
+            "evidence": "previousIntent.businessFocus"
+          },
+          {
+            "field": "requestedScope",
+            "value": "personal",
+            "source": "previous",
+            "evidence": "previousIntent.requestedScope"
+          },
+          {
+            "field": "requestedGrain",
+            "value": "license application",
+            "source": "previous",
+            "evidence": "previousIntent.requestedGrain"
+          },
+          {
+            "field": "outputShape",
+            "value": "detail",
+            "source": "current",
+            "evidence": "يرجى سرد"
+          },
+          {
+            "field": "view",
+            "value": "todo",
+            "source": "previous",
+            "evidence": "previousIntent.view"
+          },
+          {
+            "field": "disclosurePurpose",
+            "value": "",
+            "source": "clear",
+            "evidence": ""
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "clear",
+            "evidence": ""
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [
+              "data scope used for the previous query",
+              "constraints used for the previous query"
+            ],
+            "source": "current",
+            "evidence": "يرجى سرد نطاق البيانات والقيود المستخدمة لهذا الاستعلام"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "clear",
+            "evidence": ""
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "clear",
+            "evidence": ""
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "clear",
+            "evidence": ""
+          },
+          {
+            "field": "recordIdentity",
+            "value": "",
+            "source": "clear",
+            "evidence": ""
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "clear",
+            "evidence": ""
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "clear",
+            "evidence": ""
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "clear",
+            "evidence": ""
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "in progress",
+        "clarification": null,
+        "needsLiveData": false,
+        "businessObject": "license application",
+        "recordIdentity": "",
+        "requestedGrain": "license application",
+        "requestedScope": "personal",
+        "contextRelation": "refine",
+        "unresolvedSlots": [],
+        "disclosurePurpose": "",
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [
+          "data scope used for the previous query",
+          "constraints used for the previous query"
+        ],
+        "evidenceExplanations": []
+      }
+    },
+    {
+      "stage": "TaskSpec",
+      "attempt": 2,
+      "failure": "{\"code\": \"intent_refinement_invalid\"}",
+      "candidate": {
+        "view": "todo",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "detail",
+        "searchQuery": "license applications in progress view personal scope constraints used for previous query",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "license application",
+            "source": "previous",
+            "evidence": "previousIntent.businessObject"
+          },
+          {
+            "field": "businessFocus",
+            "value": "in progress",
+            "source": "previous",
+            "evidence": "previousIntent.businessFocus"
+          },
+          {
+            "field": "requestedScope",
+            "value": "personal",
+            "source": "previous",
+            "evidence": "previousIntent.requestedScope"
+          },
+          {
+            "field": "requestedGrain",
+            "value": "license application",
+            "source": "previous",
+            "evidence": "previousIntent.requestedGrain"
+          },
+          {
+            "field": "outputShape",
+            "value": "detail",
+            "source": "current",
+            "evidence": "يرجى سرد"
+          },
+          {
+            "field": "view",
+            "value": "todo",
+            "source": "previous",
+            "evidence": "previousIntent.view"
+          },
+          {
+            "field": "disclosurePurpose",
+            "value": "",
+            "source": "clear",
+            "evidence": ""
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "clear",
+            "evidence": ""
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [
+              "data scope used for the previous query",
+              "constraints used for the previous query"
+            ],
+            "source": "current",
+            "evidence": "يرجى سرد نطاق البيانات والقيود المستخدمة لهذا الاستعلام"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "clear",
+            "evidence": ""
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "clear",
+            "evidence": ""
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "clear",
+            "evidence": ""
+          },
+          {
+            "field": "recordIdentity",
+            "value": "",
+            "source": "clear",
+            "evidence": ""
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "clear",
+            "evidence": ""
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "clear",
+            "evidence": ""
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "clear",
+            "evidence": ""
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "in progress",
+        "clarification": null,
+        "needsLiveData": false,
+        "businessObject": "license application",
+        "recordIdentity": "",
+        "requestedGrain": "license application",
+        "requestedScope": "personal",
+        "contextRelation": "refine",
+        "unresolvedSlots": [],
+        "disclosurePurpose": "",
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [
+          "data scope used for the previous query",
+          "constraints used for the previous query"
+        ],
+        "evidenceExplanations": []
+      }
+    }
+  ],
+  "history": {
+    "previousIntent": {
+      "task": {
+        "view": "In Progress",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "list",
+        "searchQuery": "license applications in my To Do view personal queue",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "license application",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "businessFocus",
+            "value": "in progress",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedScope",
+            "value": "personal",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedGrain",
+            "value": "license application",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "outputShape",
+            "value": "list",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "view",
+            "value": "In Progress",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "disclosurePurpose",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "recordIdentity",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "current",
+            "evidence": "parsed current request"
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "in progress",
+        "clarification": null,
+        "needsLiveData": true,
+        "businessObject": "license application",
+        "recordIdentity": "",
+        "requestedGrain": "license application",
+        "requestedScope": "personal",
+        "contextRelation": "new",
+        "unresolvedSlots": [],
+        "disclosurePurpose": "",
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [],
+        "evidenceExplanations": []
+      },
+      "view": "In Progress",
+      "filters": [],
+      "groupBy": [],
+      "lastRead": {
+        "page": "/licensing/applications",
+        "section": "Applications"
+      },
+      "question": "اعرض الطلبات الموجودة حاليًا في عرض «قيد الإنجاز» الخاص بي ضمن التراخيص.",
+      "requestId": "5788eb68-275c-43f0-8da2-b2e312d9fd57",
+      "timeField": "",
+      "timeRange": "unknown",
+      "slotStates": [
+        {
+          "field": "businessObject",
+          "value": "license application",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "businessFocus",
+          "value": "in progress",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedScope",
+          "value": "personal",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedGrain",
+          "value": "license application",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "outputShape",
+          "value": "list",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "view",
+          "value": "In Progress",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "disclosurePurpose",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedMeasures",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedAttributes",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupBy",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeRange",
+          "value": "unknown",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "filters",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "recordIdentity",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeField",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedOrdering",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupCompleteness",
+          "value": "observed",
+          "source": "current",
+          "evidence": "parsed current request"
+        }
+      ],
+      "outputShape": "list",
+      "taskRevision": 1,
+      "businessFocus": "in progress",
+      "referenceTime": {
+        "nowUtc": "2026-09-28T19:10:15.391074+00:00",
+        "source": "server_clock_and_config",
+        "businessNow": "2026-09-28T23:10:15.391074+04:00",
+        "businessDate": "2026-09-28",
+        "businessTimezone": "Asia/Dubai"
+      },
+      "browserContext": {
+        "view": "todo",
+        "query": {},
+        "route": "/licensing/applications",
+        "filters": [
+          {
+            "name": "tableFilters",
+            "value": "{\"contextVersion\":\"table-2:1\",\"filters\":{}}"
+          }
+        ]
+      },
+      "businessObject": "license application",
+      "catalogVersion": "923ec44fe50a2342995e281c82aafca24ba1f1db20bf2c2184ec663e33329bf1",
+      "recordIdentity": "",
+      "requestedGrain": "license application",
+      "requestedScope": "personal",
+      "taskFingerprint": "6ca6e2f28a0b8817dd3770265b148491ec0f082935bf231b82f8679a33eec57e",
+      "knowledgeVersion": "06fc42954aba64dbaf75",
+      "originalQuestion": "اعرض الطلبات الموجودة حاليًا في عرض «قيد الإنجاز» الخاص بي ضمن التراخيص.",
+      "disclosurePurpose": "",
+      "groupCompleteness": "observed",
+      "lastClarification": null,
+      "requestedMeasures": [],
+      "requestedOrdering": [],
+      "clarificationRounds": 0,
+      "requestedAttributes": [],
+      "principalFingerprint": "dea9eeec1453f665ac17"
+    }
+  },
+  "previousResult": {
+    "result": "success",
+    "completeness": "complete",
+    "requirementsSatisfied": true
+  }
+}

@@ -1,0 +1,175 @@
+.team-members-panel {
+  display: flex;
+  align-self: flex-start;
+  flex: 0 0 auto;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+  width: 100%;
+  padding: 24px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(31, 25, 19, 0.04);
+
+  .ant-spin-nested-loading,
+  .ant-spin-container {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  &--fill-height {
+    align-self: stretch;
+    flex: 1 1 auto;
+
+    .ant-spin-nested-loading,
+    .ant-spin-container {
+      flex: 1 1 auto;
+    }
+  }
+
+  &__filters {
+    display: grid;
+    grid-template-columns: 250px 360px;
+    column-gap: 12px;
+    row-gap: 12px;
+    align-items: center;
+    max-width: 100%;
+    margin-bottom: 20px;
+
+    .ant-input-affix-wrapper,
+    .ant-picker,
+    .ant-select {
+      width: 100%;
+      min-width: 0;
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      column-gap: 8px;
+      row-gap: 8px;
+    }
+  }
+
+  &__range {
+    width: 100%;
+    min-width: 0;
+
+    &.localized-date-picker.ant-picker-range {
+      padding-inline-end: 44px;
+
+      .ant-picker-suffix,
+      .ant-picker-clear {
+        position: absolute;
+        top: 50%;
+        width: 16px;
+        height: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(-50%);
+      }
+
+      .ant-picker-suffix {
+        right: 12px;
+        left: auto;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .ant-picker-clear {
+        right: 12px;
+        left: auto;
+        z-index: 2;
+        background: #fff;
+      }
+
+      &.localized-date-picker-rtl {
+        padding-inline-start: 52px;
+
+        .ant-picker-suffix {
+          right: auto !important;
+          left: 12px;
+        }
+
+        .ant-picker-clear {
+          right: auto !important;
+          left: 12px;
+        }
+      }
+    }
+  }
+
+  &__member-select {
+    width: 100%;
+    min-width: 0;
+
+    &.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+      padding-inline-end: 44px;
+    }
+
+    .ant-select-arrow,
+    .ant-select-clear {
+      right: auto;
+      left: auto;
+      inset-inline-end: 16px;
+    }
+
+    .ant-select-clear {
+      inset-inline-end: 16px;
+      background: #fff;
+    }
+  }
+
+  &__content {
+    flex: 0 0 auto;
+    min-height: auto;
+    min-width: 0;
+
+    &.is-empty {
+      display: flex;
+      flex: 1 1 auto;
+      min-height: 420px;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__loading-placeholder {
+    width: 100%;
+    flex: 1 1 auto;
+    min-height: 420px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    align-items: start;
+
+    > * {
+      min-width: 0;
+    }
+    /*
+      Member cards stay two-up at 1440 (Figma 1440 frame) and drop to a single column
+      at 1280 and below (Figma 1280/1024 frame) so each card keeps room for its inner
+      2x2 stat grid.
+    */
+    @media (max-width: 1279.98px) {
+      grid-template-columns: 1fr;
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 12px;
+    }
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.team-management-empty {
+  width: 100%;
+  min-height: 100%;
+}

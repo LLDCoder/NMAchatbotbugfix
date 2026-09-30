@@ -1,0 +1,22 @@
+@import "../../common.less";
+
+.summary-container {
+  background-color: rgba(255, 255, 255, 1);
+  padding: 24px;
+  border-radius: 20px;
+  .summary-content {
+    .item-divider{
+      .mg(12px);
+    }
+    .summary-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    padding: 12px;
+    border-radius: 10px;
+  }
+}

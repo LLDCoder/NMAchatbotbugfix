@@ -1,0 +1,180 @@
+@import "@/styles/variables.less";
+
+.DocumentDown {
+  max-width: calc(100vw - 32px);
+
+  .ant-modal-close {
+    top: 35.5px;
+    right: auto;
+    inset-inline-end: 40px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .ant-modal-close-x {
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    line-height: 24px;
+  }
+
+  ._down-tips {
+    line-height: 1.5;
+    text-align: center;
+    word-break: break-word;
+  }
+
+  ._down-note {
+    width: 100%;
+
+    ._icon {
+      margin-right: 0;
+      margin-inline-end: 8px;
+    }
+
+    ._note {
+      min-width: 0;
+    }
+  }
+
+  ._down-btn {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .DocumentDown {
+    .ant-modal-body {
+      padding: 24px 20px;
+    }
+
+    .ant-modal-close {
+      top: 20px;
+      inset-inline-end: 20px;
+    }
+
+    .document-down {
+      padding: 48px 0 0;
+    }
+
+    ._down-icon {
+      width: 72px;
+      height: 72px;
+      font-size: 36px;
+    }
+
+    ._down-title {
+      margin-top: 32px;
+      font-size: 30px;
+      line-height: 1.3;
+      text-align: center;
+    }
+
+    ._down-tips {
+      font-size: 16px;
+    }
+
+    ._down-password ._label,
+    ._down-note ._note ._title,
+    ._down-note ._note ._text {
+      font-size: 14px;
+    }
+
+    ._down-note {
+      padding: 16px;
+    }
+
+    ._down-btn {
+      width: 100%;
+      height: 48px;
+      margin-top: 32px;
+      margin-bottom: 24px;
+
+      button {
+        width: 100%;
+        height: 48px;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+
+/* Disable License" */
+.disable-license{
+  // .ant-form-item-required
+  :global{
+    label{
+      .ant-form-item-required::after{
+        content: '*';
+        color: @danger-color;
+      }
+    }
+  }
+
+  /*
+    Confirm button color, matching the Licenses page's Disable License modal
+    (src/pages/Licenses/index.less): white text on the gold gradient while
+    enabled, #9EA2A9 on #E1E3E5 while disabled (required reason not chosen
+    yet). `.custom-button-primary` (not antd's own `.ant-btn-primary`, which
+    CustomButton never applies) needs restating here because nothing else on
+    this page scopes it, so it was falling back to inconsistent defaults in
+    both states.
+  */
+  .custom-button-primary,
+  .custom-button-primary *,
+  .custom-button-primary:hover,
+  .custom-button-primary:focus,
+  .custom-button-primary:active {
+    color: #fff !important;
+    background: linear-gradient(to right, #9e7538, #c19453);
+    border: none;
+  }
+
+  .custom-button-primary[disabled],
+  .custom-button-primary[disabled] *,
+  .custom-button-primary[disabled]:hover,
+  .custom-button-primary[disabled]:focus,
+  .custom-button-primary[disabled]:active {
+    color: #9EA2A9 !important;
+    background: #E1E3E5;
+    border: none;
+  }
+}
+
+.disable-license--rtl {
+  .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+    padding-left: 30px !important;
+    padding-right: 11px !important;
+  }
+
+  .ant-select-arrow {
+    left: 20px;
+    right: auto;
+  }
+
+  /* BUG-23: Arabic keeps the TextArea character counter on the left */
+  .ant-input-textarea-show-count::after {
+    float: left;
+    text-align: left;
+  }
+}
+
+.note-length-tip{
+  margin-top: 4px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #797E86;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+.custorm-form .notes-form-item{
+  margin-bottom: 0;
+}

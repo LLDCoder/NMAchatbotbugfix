@@ -1,0 +1,287 @@
+{
+  "source": "test/runtime/groups1113-20260928/round22-b11-v31/answers/B-11__ar.json",
+  "conversationId": "conv_43cd8113e8ba4d19b97f",
+  "requestId": "ade9e32c-a326-4e9b-83c7-be3fb4edcdaf",
+  "question": "أرى حالة مختلفة للطلب نفسه على الصفحة. أعد التحقق من السجل الحالي، ووضح مصدر إجابتك ووقت الملاحظة، وأرشدني إلى كيفية التحديث أو التحقق من هذا الاختلاف. لا تغيّر أي بيانات.",
+  "rejectedCandidates": [
+    {
+      "view": "",
+      "stage": "task",
+      "filters": [],
+      "groupBy": [],
+      "readOnly": true,
+      "timeField": "",
+      "timeRange": "unknown",
+      "outputShape": "detail",
+      "searchQuery": "re-verify current request status ML-1-7-6577159 status discrepancy source observation time verification update procedure",
+      "slotUpdates": [
+        {
+          "field": "requestedAttributes",
+          "value": [
+            "status",
+            "source of the answer",
+            "time of observation",
+            "documented procedure to verify or update a status discrepancy"
+          ],
+          "source": "current",
+          "evidence": "أعد التحقق من السجل الحالي، ووضح مصدر إجابتك ووقت الملاحظة، وأرشدني إلى كيفية التحديث أو التحقق من هذا الاختلاف"
+        },
+        {
+          "field": "contextRelation",
+          "value": "continue",
+          "source": "current",
+          "evidence": "same request ML-1-7-6577159"
+        }
+      ],
+      "responseMode": "answer",
+      "businessFocus": "",
+      "clarification": null,
+      "needsLiveData": true,
+      "businessObject": "request",
+      "recordIdentity": "ML-1-7-6577159",
+      "requestedGrain": "request",
+      "requestedScope": "unknown",
+      "contextRelation": "continue",
+      "unresolvedSlots": [],
+      "disclosurePurpose": "",
+      "groupCompleteness": "observed",
+      "requestBoundaries": [],
+      "requestedMeasures": [],
+      "requestedOrdering": [],
+      "requestedAttributes": [
+        "status",
+        "source of the answer",
+        "time of observation",
+        "documented procedure to verify or update a status discrepancy"
+      ],
+      "evidenceExplanations": [
+        {
+          "kind": "source",
+          "attribute": "source of the answer",
+          "questionQuote": "وضح مصدر إجابتك",
+          "aboutAttribute": "status"
+        },
+        {
+          "kind": "observation_time",
+          "attribute": "time of observation",
+          "questionQuote": "ووقت الملاحظة",
+          "aboutAttribute": "status"
+        },
+        {
+          "kind": "knowledge_guidance",
+          "attribute": "documented procedure to verify or update a status discrepancy",
+          "questionQuote": "وأرشدني إلى كيفية التحديث أو التحقق من هذا الاختلاف"
+        }
+      ]
+    },
+    {
+      "view": "",
+      "stage": "task",
+      "filters": [],
+      "groupBy": [],
+      "readOnly": true,
+      "timeField": "",
+      "timeRange": "unknown",
+      "outputShape": "detail",
+      "searchQuery": "re-verify current request status ML-1-7-6577159 discrepancy between page and answer source observation time documented verification update procedure",
+      "slotUpdates": [
+        {
+          "field": "businessObject",
+          "value": "request",
+          "source": "previous"
+        },
+        {
+          "field": "recordIdentity",
+          "value": "ML-1-7-6577159",
+          "source": "previous"
+        },
+        {
+          "field": "requestedAttributes",
+          "value": [
+            "status",
+            "source of the answer",
+            "observation time",
+            "documented procedure to verify or update a status discrepancy"
+          ],
+          "source": "current",
+          "evidence": "أعد التحقق من السجل الحالي، ووضح مصدر إجابتك ووقت الملاحظة، وأرشدني إلى كيفية التحديث أو التحقق من هذا الاختلاف"
+        },
+        {
+          "field": "outputShape",
+          "value": "detail",
+          "source": "previous"
+        },
+        {
+          "field": "requestedGrain",
+          "value": "request",
+          "source": "previous"
+        },
+        {
+          "field": "requestedScope",
+          "value": "unknown",
+          "source": "previous"
+        },
+        {
+          "field": "timeRange",
+          "value": "unknown",
+          "source": "previous"
+        },
+        {
+          "field": "businessFocus",
+          "value": "",
+          "source": "previous"
+        },
+        {
+          "field": "disclosurePurpose",
+          "value": "",
+          "source": "previous"
+        },
+        {
+          "field": "requestedMeasures",
+          "value": [],
+          "source": "previous"
+        },
+        {
+          "field": "groupBy",
+          "value": [],
+          "source": "previous"
+        },
+        {
+          "field": "filters",
+          "value": [],
+          "source": "previous"
+        },
+        {
+          "field": "view",
+          "value": "",
+          "source": "previous"
+        },
+        {
+          "field": "timeField",
+          "value": "",
+          "source": "previous"
+        },
+        {
+          "field": "requestedOrdering",
+          "value": [],
+          "source": "previous"
+        },
+        {
+          "field": "groupCompleteness",
+          "value": "observed",
+          "source": "previous"
+        }
+      ],
+      "responseMode": "answer",
+      "businessFocus": "",
+      "clarification": null,
+      "needsLiveData": true,
+      "businessObject": "request",
+      "recordIdentity": "ML-1-7-6577159",
+      "requestedGrain": "request",
+      "requestedScope": "unknown",
+      "contextRelation": "continue",
+      "unresolvedSlots": [],
+      "disclosurePurpose": "",
+      "groupCompleteness": "observed",
+      "requestBoundaries": [],
+      "requestedMeasures": [],
+      "requestedOrdering": [],
+      "requestedAttributes": [
+        "status",
+        "source of the answer",
+        "observation time",
+        "documented procedure to verify or update a status discrepancy"
+      ],
+      "evidenceExplanations": [
+        {
+          "kind": "source",
+          "attribute": "source of the answer",
+          "questionQuote": "وضح مصدر إجابتك",
+          "aboutAttribute": "status"
+        },
+        {
+          "kind": "observation_time",
+          "attribute": "observation time",
+          "questionQuote": "ووقت الملاحظة",
+          "aboutAttribute": "status"
+        },
+        {
+          "kind": "knowledge_guidance",
+          "attribute": "documented procedure to verify or update a status discrepancy",
+          "questionQuote": "وأرشدني إلى كيفية التحديث أو التحقق من هذا الاختلاف"
+        }
+      ]
+    },
+    {
+      "view": "",
+      "stage": "task",
+      "filters": [],
+      "groupBy": [],
+      "readOnly": true,
+      "timeField": "",
+      "timeRange": "unknown",
+      "outputShape": "detail",
+      "searchQuery": "request status discrepancy verification update procedure source of answer observation time",
+      "slotUpdates": [
+        {
+          "field": "requestedAttributes",
+          "value": [
+            "status",
+            "source of the answer",
+            "observation time",
+            "documented procedure to verify or update a status discrepancy"
+          ],
+          "source": "current",
+          "evidence": "أعد التحقق من السجل الحالي، ووضح مصدر إجابتك ووقت الملاحظة، وأرشدني إلى كيفية التحديث أو التحقق من هذا الاختلاف"
+        },
+        {
+          "field": "outputShape",
+          "value": "detail",
+          "source": "previous",
+          "evidence": ""
+        }
+      ],
+      "responseMode": "answer",
+      "businessFocus": "",
+      "clarification": null,
+      "needsLiveData": true,
+      "businessObject": "request",
+      "recordIdentity": "ML-1-7-6577159",
+      "requestedGrain": "request",
+      "requestedScope": "unknown",
+      "contextRelation": "continue",
+      "unresolvedSlots": [],
+      "disclosurePurpose": "",
+      "groupCompleteness": "observed",
+      "requestBoundaries": [],
+      "requestedMeasures": [],
+      "requestedOrdering": [],
+      "requestedAttributes": [
+        "status",
+        "source of the answer",
+        "observation time",
+        "documented procedure to verify or update a status discrepancy"
+      ],
+      "evidenceExplanations": [
+        {
+          "kind": "source",
+          "attribute": "source of the answer",
+          "questionQuote": "ووضح مصدر إجابتك",
+          "aboutAttribute": "status"
+        },
+        {
+          "kind": "observation_time",
+          "attribute": "observation time",
+          "questionQuote": "ووقت الملاحظة",
+          "aboutAttribute": "status"
+        },
+        {
+          "kind": "knowledge_guidance",
+          "attribute": "documented procedure to verify or update a status discrepancy",
+          "questionQuote": "وأرشدني إلى كيفية التحديث أو التحقق من هذا الاختلاف"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+# Profile Analytics
+
+Base URL in the source docs:
+- `http://localhost:5246`
+
+## 1. Dashboard Charts
+
+### Endpoint
+- `GET /api/UserManagement/dashboard/profile/statistics`
+
+### Query Params
+- `days`
+
+### Response
+- `statusStats`
+- `emirateStats[]`
+- `trendStats[]`
+- `verificationStats[]`
+- `deviceStats[]`
+
+### statusStats
+- `total`
+- `individual`
+- `commercial`
+- `talentAgency`
+- `freeZone`
+- `embassy`
+- `consulate`
+- `culturalClubs`
+- `government`
+
+### emirateStats[]
+- `emirate: string`
+- `count: number`
+- `percentage: number`
+
+Documented emirates include `Foreign` in addition to the UAE emirates.
+
+### trendStats[]
+- `date: string`
+- `count: number`
+
+### verificationStats[]
+- `verificationMethod: string`
+- `count: number`
+
+Documented examples:
+- `Emirates ID`
+- `UAE Unified Number`
+- `Passport`
+
+### deviceStats[]
+- `deviceType: string`
+- `count: number`
+
+Documented examples:
+- `Web`
+- `Mobile`
+- `Tablet`
+
+## 2. Bottom Table
+
+### Endpoint
+- `GET /api/UserManagement/dashboard/list`
+
+### Query Params
+- `days`
+- `keyword`
+- `pageIndex`
+- `pageSize`
+- `orderby`
+- `sort`
+
+### orderby
+- `applicationtasks`
+- `approvedapplications`
+- `rejectedapplications`
+- `approvalrate`
+
+### sort
+- `desc`
+- `asc`
+
+### Response
+- `pageIndex: number`
+- `pageSize: number`
+- `total: number`
+- `items: ProfileDashboardItem[]`
+
+### ProfileDashboardItem
+- `teamMember: string`
+- `applicationTasks: number`
+- `applicationTasksChange: number`
+- `approvedApplications: number`
+- `approvedApplicationsChange: number`
+- `rejectedApplications: number`
+- `rejectedApplicationsChange: number`
+- `approvalRate: number`
+- `approvalRateChange: number`
+
+## 3. Export
+
+### Endpoint
+- `GET /api/UserManagement/dashboard/list/export`
+
+### Query Params
+- `days`
+- `keyword`
+- `pageIndex`
+- `pageSize`

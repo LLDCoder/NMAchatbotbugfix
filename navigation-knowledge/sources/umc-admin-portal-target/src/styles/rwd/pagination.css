@@ -1,0 +1,47 @@
+/*
+  P4 — pagination M size.
+
+  Matched by postcss.config.js `MIGRATED`, so px stay literal.
+  Imported after src/layout/index.css; see src/layout/index.tsx.
+
+  Design annotation, repeated three times across List_Tablet:
+  "pagination gains an M size, height 32px".
+
+  src/App.less sizes every pagination control at 40px (item, prev, next, and
+  the page-size select). Below 1920 that block is one of the taller rows on a
+  page whose vertical budget is already tight -- iPad mini in landscape leaves
+  roughly 570px of usable height in a browser.
+
+  Only the box metrics change. Colours, radius and spacing stay as authored in
+  App.less, so the control keeps its identity at both sizes.
+*/
+@media (max-width: 1919.98px) {
+  .layout .admin-table .ant-pagination .ant-pagination-item,
+  .layout .admin-table .ant-pagination .ant-pagination-prev,
+  .layout .admin-table .ant-pagination .ant-pagination-next {
+    /* width: 32px;
+    min-width: 32px;
+    height: 32px;
+    line-height: 32px; */
+  }
+
+  .layout .admin-table .ant-pagination .ant-pagination-item a {
+    font-size: 14px;
+  }
+
+  .layout .admin-table .ant-pagination .ant-select-selector,
+  .layout .admin-table .ant-pagination .ant-select-selection-item {
+    height: 32px;
+    line-height: 32px;
+  }
+
+  .layout .admin-table .ant-pagination .ant-pagination-total-text {
+    font-size: 14px;
+  }
+
+  /* Jump-to-page input follows the same box height. */
+  .layout .admin-table .ant-pagination .ant-pagination-options-quick-jumper input {
+    height: 32px;
+    line-height: 32px;
+  }
+}

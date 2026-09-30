@@ -1,0 +1,54 @@
+{
+  "rows": [
+    {
+      "id": 2753,
+      "transactionNo": "202609031716432762",
+      "referenceNumber": "ML-2-804-9226243"
+    },
+    {
+      "id": 2829,
+      "transactionNo": "202609091523077753",
+      "referenceNumber": "ML-2-804-0460740"
+    }
+  ],
+  "source": "previous authorized native Finance exact-keyword receipts",
+  "businessAcceptance": false,
+  "sources": [
+    {
+      "path": "test/runtime/group17-cross-repair-20260928/baselines/finance-2026-09-28T07-22-56-468Z/transactions-ML-2-804-0460740.json",
+      "sha256": "c55dfef1f22975322db6c36212e7e92a3b01e567558a4668eab9a206d34096c5",
+      "capturedStart": "2026-09-28T07:23:19.150Z",
+      "capturedEnd": "2026-09-28T07:23:24.162Z",
+      "fields": [
+        "id",
+        "transactionNo",
+        "referenceNumber"
+      ],
+      "rows": [
+        {
+          "id": 2829,
+          "transactionNo": "202609091523077753",
+          "referenceNumber": "ML-2-804-0460740"
+        }
+      ]
+    },
+    {
+      "path": "test/runtime/group17-cross-repair-20260928/baselines/finance-2026-09-28T07-22-56-468Z/transactions-ML-2-804-9226243.json",
+      "sha256": "434339299c12da2a2faafe231e332b132a9dfaf23975721a6d430fab639d3316",
+      "capturedStart": "2026-09-28T07:23:08.993Z",
+      "capturedEnd": "2026-09-28T07:23:14.093Z",
+      "fields": [
+        "id",
+        "transactionNo",
+        "referenceNumber"
+      ],
+      "rows": [
+        {
+          "id": 2753,
+          "transactionNo": "202609031716432762",
+          "referenceNumber": "ML-2-804-9226243"
+        }
+      ]
+    }
+  ]
+}

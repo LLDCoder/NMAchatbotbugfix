@@ -1,0 +1,770 @@
+{
+  "CMS": {
+    "common": {
+      "operationSuccessful": "Operation successful.",
+      "search": "Search",
+      "back": "Back",
+      "delete": "Delete",
+      "unpublish": "Unpublish",
+      "duplicate": "Duplicate",
+      "publish": "Publish",
+      "contentNotApproved": "Content Not Approved",
+      "pageModules": "Page Modules",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "lastUpdated": "Last Updated",
+      "english": "English",
+      "preview": "Preview",
+      "reject": "Reject",
+      "approve": "Approve",
+      "saveDraft": "Save Draft",
+      "saveAndSubmit": "Save & Submit",
+      "notes": "Notes",
+      "requiredField": "This field is required.",
+      "contentMaxLength": "Content must not exceed {{max}} characters.",
+      "quickNote": "Quick Note",
+      "quickNotes": "Quick Notes",
+      "web": "Web",
+      "tablet": "Tablet",
+      "mobile": "Mobile",
+      "edit": "Edit",
+      "save": "Save",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "arabic": "Arabic",
+      "placeholders": {
+        "allMembers": "All Members",
+        "allStatuses": "All Statuses",
+        "allPortals": "All Portals",
+        "allCategories": "All Categories",
+        "startTime": "Start Date",
+        "endTime": "End Date",
+        "UpdatedFrom": "Updated From",
+        "UpdatedTo": "Updated To",
+        "UpdatedForm": "Updated From",
+        "publishFrom": "Publish From",
+        "publishTo": "Publish To",
+        "StartDate": "Start Date",
+        "EndDate": "End Date"
+      }
+    },
+    "pageManagement": {
+      "tabs": {
+        "published": "Published",
+        "draft": "Draft"
+      },
+      "table": {
+        "pageName": "Page Name",
+        "status": "Status",
+        "updatedBy": "Updated By",
+        "lastUpdated": "Last Updated",
+        "actions": "Actions"
+      }
+    },
+    "pageManagementHome": {
+      "modules": {
+        "heroBanner": "Hero Banner",
+        "aboutUs": "About Us",
+        "partnership": "Partnership",
+        "footer": "Footer"
+      },
+      "footer": {
+        "contactCard": "Contact Card",
+        "socialMedia": "Social Media"
+      }
+    },
+    "pageManagementAbout": {
+      "header": {
+        "lastUpdated": "Last Updated"
+      },
+      "modules": {
+        "aboutUs": "About Us",
+        "visionMissionValues": "Vision, Mission & Values",
+        "strategicObjectives": "Strategic Objectives",
+        "partners": "Partners"
+      }
+    },
+    "pageManagementLeadership": {
+      "modules": {
+        "chairman": "Chairman",
+        "boardOfDirectors": "Board of Directors",
+        "managementTeam": "Management Team",
+        "management": "Management"
+      }
+    },
+    "modals": {
+      "publishPage": {
+        "title": "Publish Page",
+        "content": "Are you sure you want to publish this page? Please preview the page to ensure it is correct before proceeding."
+      },
+      "approveReview": {
+        "title": "Approve Review",
+        "content": "Are you sure you want to publish this page? Please preview the page to ensure it is correct before proceeding.",
+        "contentPop": "Are you sure you want to approve this page? Once approved, it will be published immediately."
+      },
+      "rejectPublish": {
+        "title": "Reject Publish",
+        "reasonPlaceholder": "Enter rejection reason",
+        "quickNotes": {
+          "inaccurateInfo": "Inaccurate information provided",
+          "outdatedContent": "Content is outdated and needs to be updated",
+          "factualErrors": "Content contains factual errors or inaccuracies",
+          "textErrors": "Text contains spelling or grammatical errors"
+        }
+      },
+      "submitForReview": {
+        "title": "Submit for Review",
+        "content": "Are you sure you want to submit this page for review? Your current changes will be saved automatically before submission."
+      },
+      "publishEvent": {
+        "title": "Publish Event",
+        "content": "Are you sure you want to publish this event? Please preview the event to ensure it is correct before proceeding."
+      },
+      "leavePage": {
+        "title": "Leaving the Page?",
+        "content": "You have unsaved changes that will be lost if you leave. Do you want to continue?",
+        "leave": "Leave"
+      }
+    },
+    "forms": {
+      "title": "Title",
+      "subTitle": "Sub-title",
+      "description": "Description",
+      "position": "Position",
+      "fullName": "Full Name",
+      "label": "Label",
+      "link": "Link",
+      "button": "Button",
+      "primaryButton": "Primary Button",
+      "secondaryButton": "Secondary Button",
+      "highlights": "Highlights",
+      "responsibilities": "Responsibilities",
+      "images": "Images",
+      "image": "Image",
+      "cover": "Cover",
+      "logo": "Logo",
+      "enterNotes": "Enter notes",
+      "enterUrl": "Enter URL",
+      "validUrl": "Please enter a valid URL",
+      "recommendedImageSize": "Recommended size:400 x 260 px. Max: 5 MB.",
+      "recommendedLogoSize": "Recommended size: 160 x 120 px. Max: 5 MB",
+      "recommendedImageSizeHover": "Recommended size:300 x 400 px. Max: 5 MB.",
+      "coverDesktopHint": "Desktop — Recommended: 2560 x 1440 px. Max: 10 MB. Supports image / MP4 / GIF.",
+      "coverMobileHint": "Mobile — Recommended: 1080 x 1920 px. Max: 10 MB. Supports image / MP4 / GIF.",
+      "coverDesktopHintUpload": "Upload an image, video, or GlF. Recommended size: 2560x1440 (1920x1080 supported). Max: 10 MB.",
+      "coverMobileHintUpload": "Upload an image, video, or GIF. Recommended size:1080 x 1920(vertical).Max:10 MB.",
+      "coverMobile": "Cover (Mobile)",
+      "vision": "Vision",
+      "mission": "Mission",
+      "values": "Values",
+      "strategies": "Strategies",
+      "strategy": "Strategy",
+      "boardMembers": "Board Members",
+      "boardMemberItem": "Board Member {{number}}",
+      "boardMember": "Member {{number}}",
+      "partnerItem": "Partner {{number}}",
+      "positionDescription": "Position Description",
+      "management": "Management",
+      "member": "Member",
+      "quote": "Quote",
+      "profile": "Profile",
+      "contact": "Contact",
+      "businessHours": "Business Hours",
+      "phoneNumber": "Phone Number",
+      "whatsApp": "WhatsApp",
+      "locationLink": "Location Link",
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "youTube": "YouTube",
+      "x": "X",
+      "linkedIn": "LinkedIn",
+      "titleEnglish": "Title in English",
+      "titleArabic": "Title in Arabic",
+      "subTitleEnglish": "Sub-title in English",
+      "subTitleArabic": "Sub-title in Arabic",
+      "descriptionEnglish": "Description in English",
+      "descriptionArabic": "Description in Arabic",
+      "labelEnglish": "Label in English",
+      "labelArabic": "Label in Arabic",
+      "businessHoursEnglish": "Business Hours in English",
+      "businessHoursArabic": "Business Hours in Arabic",
+      "enterTitleEnglish": "Enter title in English",
+      "enterTitleArabic": "Enter title in Arabic",
+      "enterSubTitleEnglish": "Enter sub-title in English",
+      "enterSubTitleArabic": "Enter sub-title in Arabic",
+      "enterDescriptionEnglish": "Enter description in English",
+      "enterDescriptionArabic": "Enter description in Arabic",
+      "enterButtonLabelEnglish": "Enter button label in English",
+      "enterButtonLabelArabic": "Enter button label in Arabic",
+      "enterBannerTitleEnglish": "Enter banner title in English",
+      "enterBannerTitleArabic": "Enter banner title in Arabic",
+      "enterBannerDescriptionEnglish": "Enter banner description in English",
+      "enterBannerDescriptionArabic": "Enter banner description in Arabic",
+      "enterBusinessHoursEnglish": "Enter business hours in English",
+      "enterBusinessHoursArabic": "Enter business hours in Arabic",
+      "enterPhoneNumber": "Enter phone number",
+      "enterWhatsAppNumber": "Enter WhatsApp number",
+      "validPhone": "Please enter a valid phone number.",
+      "aboutImageHint": "Recommended size: 1680 x 660. Max: 5 MB.",
+      "visionImageHint": "Recommended size: 830 x 800 px. Max: 5 MB.",
+      "aboutPartnerLogoHint": "Recommended size: 280 x 280 px. Max: 5 MB.",
+      "chairmanImageHint": "Recommended size: 330 x 380 px. Max: 5 MB.",
+      "directorImageHint": "Recommended size: 290 x 330 px. Max: 5 MB.",
+      "managementImageHint": "Recommended size: 250 x 280 px. Max: 5 MB.",
+      "inEnglishSuffix": "in English",
+      "inArabicSuffix": "in Arabic",
+      "enterStrategyEnglish": "Enter strategy in English",
+      "enterStrategyArabic": "Enter strategy in Arabic",
+      "positionEnglish": "Position in English",
+      "positionArabic": "Position in Arabic",
+      "enterPositionEnglish": "Enter position in English",
+      "enterPositionArabic": "Enter position in Arabic",
+      "fullNameEnglish": "Full Name in English",
+      "fullNameArabic": "Full Name in Arabic",
+      "enterFullNameEnglish": "Enter full name in English",
+      "enterFullNameArabic": "Enter full name in Arabic",
+      "enterBoardMemberFullNameEnglish": "Enter English full name",
+      "enterBoardMemberFullNameArabic": "Enter Arabic full name",
+      "positionDescriptionEnglish": "Position Description in English",
+      "positionDescriptionArabic": "Position Description in Arabic",
+      "enterPositionDescriptionEnglish": "Enter position description in English",
+      "enterPositionDescriptionArabic": "Enter position description in Arabic",
+      "enterBoardMemberPositionDescriptionEnglish": "Enter English position description",
+      "enterBoardMemberPositionDescriptionArabic": "Enter Arabic position description",
+      "quoteEnglish": "Quote in English",
+      "quoteArabic": "Quote in Arabic",
+      "enterQuoteEnglish": "Enter quote in English",
+      "enterQuoteArabic": "Enter quote in Arabic",
+      "profileEnglish": "Profile in English",
+      "profileArabic": "Profile in Arabic",
+      "enterProfileEnglish": "Enter profile in English",
+      "enterProfileArabic": "Enter profile in Arabic"
+    },
+    "preview": {
+      "reachUs": "Reach Us",
+      "viewLocation": "View Location",
+      "copyright": "Copyright © 2025 UAE Media Council",
+      "device": {
+        "web": "Web",
+        "tablet": "Tablet",
+        "mobile": "Mobile"
+      },
+      "noData": "No preview data available. Please go back to the editor and click Preview again."
+    },
+    "newsManagementDetail": {
+      "labels": {
+        "newsNo": "News No.",
+        "status": "Status",
+        "updatedBy": "Updated By",
+        "lastUpdatedTime": "Last Updated Time",
+        "image": "Image",
+        "publishMethod": "Publish Method",
+        "scheduledTime": "Scheduled Time",
+        "englishTitle": "English Title",
+        "englishContent": "English Content",
+        "arabicTitle": "Arabic Title",
+        "arabicContent": "Arabic Content",
+        "metaTitle": "Meta Title",
+        "metaDescription": "Meta Description",
+        "metaKeywords": "Meta Keywords"
+      },
+      "sections": {
+        "cover": "Cover",
+        "timing": "Timing",
+        "content": "Content",
+        "seo": "SEO"
+      },
+      "publishNow": "Publish Now",
+      "scheduled": "Scheduled",
+      "rejection": {
+        "contentNotApproved": "Content Not Approved"
+      }
+    },
+    "jobOpeningsManagement": {
+      "table": {
+        "jobNo": "Job No.",
+        "jobTitle": "Job Title",
+        "jobLocation": "Job Location",
+        "jobTypes": "Job Types",
+        "status": "Status",
+        "updatedBy": "Updated By",
+        "lastUpdated": "Last Updated",
+        "actions": "Actions"
+      },
+      "counts": {
+        "totalNews": "Total Jobs",
+        "published": "Published",
+        "pendingReview": "Pending Review",
+        "draft": "Draft",
+        "rejected": "Rejected",
+        "unpublished": "Unpublished"
+      },
+      "statuses": {
+        "published": "Published",
+        "pendingReview": "Pending Review",
+        "draft": "Draft",
+        "rejected": "Rejected",
+        "unpublished": "Unpublished"
+      },
+      "actions": {
+        "addNew": "Add New",
+        "approve": "Approve",
+        "reject": "Reject",
+        "delete": "Delete",
+        "unpublish": "Unpublish",
+        "duplicate": "Duplicate"
+      },
+      "filters": {
+        "searchPlaceholder": "Search",
+        "allStatuses": "All Statuses"
+      },
+      "messages": {
+        "saveDraftSuccess": "Save Draft successfully",
+        "operationFailed": "Operation failed"
+      },
+      "modals": {
+        "rejectPublish": {
+          "title": "Reject Publish",
+          "rejectionReasons": "Rejection Reasons",
+          "Notes": "Notes",
+          "reasonPlaceholder": "Enter the rejection reason",
+          "quickNotes": [
+            "Job requirements do not match the posting",
+            "Location or department information is incorrect",
+            "Deadline or employment type needs revision",
+            "Supporting details are incomplete or unclear"
+          ],
+          "newQuickNotes": [
+            "Inaccurate information provided",
+            "Venue has not been confirmed",
+            "Incomplete event content",
+            "Contains sensitive or restricted information"
+          ]
+        },
+        "publishJob": {
+          "title": "Publish Job",
+          "content": "Are you sure you want to publish this job? Please preview the job to ensure it is correct before proceeding."
+        },
+        "deleteJob": {
+          "title": "Delete Job Posting",
+          "content": "Are you sure you want to delete this job posting? This action cannot be undone."
+        }
+      },
+      "sections": {
+        "basicInformation": "Basic Information",
+        "content": "Content"
+      },
+      "jobTypes": {
+        "internship": "Internship",
+        "fullTime": "Full-time"
+      },
+      "preview": {
+        "mapPinAlt": "Map Pin",
+        "clockAlt": "Clock"
+      },
+      "content": {
+        "labels": {
+          "englishContent": "English Content",
+          "englishDescription": "English Description",
+          "arabicContent": "Arabic Content",
+          "arabicDescription": "Arabic Description"
+        },
+        "placeholders": {
+          "enterEnglishContent": "Please enter content in English",
+          "enterArabicContent": "Please enter content in Arabic"
+        },
+        "contentLengthError": "Content must not exceed 50000 characters."
+      },
+      "basicInformation": {
+        "labels": {
+          "englishJobTitle": "English Job Title",
+          "arabicJobTitle": "Arabic Job Title",
+          "jobLocation": "Job Location",
+          "jobTypes": "Job Types",
+          "applicationDeadline": "Application Deadline"
+        },
+        "placeholders": {
+          "enterEnglishJobTitle": "Enter job title in English",
+          "enterArabicJobTitle": "Enter job title in Arabic",
+          "selectJobLocation": "Select job location",
+          "selectJobType": "Select job type",
+          "selectDeadlineDate": "Select deadline date"
+        }
+      }
+    },
+    "jobOpeningsManagementDetail": {
+      "header": {
+        "jobNo": "Job No.",
+        "status": "Status",
+        "updatedBy": "Updated By",
+        "lastUpdatedTime": "Last Updated Time"
+      },
+      "rejection": {
+        "contentNotApproved": "Content Not Approved"
+      },
+      "labels": {
+        "englishDescription": "English Description",
+        "arabicDescription": "Arabic Description"
+      }
+    },
+    "newsManagement": {
+      "table": {
+        "pinned": "Pinned",
+        "newsNo": "News No.",
+        "title": "Title",
+        "status": "Status",
+        "updatedBy": "Updated By",
+        "publishTime": "Publish Time",
+        "lastUpdated": "Last Updated",
+        "actions": "Actions"
+      },
+      "labels": {
+        "pinnedWithOrder": "Pinned {{order}}"
+      },
+      "counts": {
+        "totalNews": "Total News",
+        "published": "Published",
+        "pendingReview": "Pending Review",
+        "draft": "Draft",
+        "rejected": "Rejected",
+        "unpublished": "Unpublished",
+        "scheduled": "Scheduled"
+      },
+      "actions": {
+        "managePinned": "Manage Pinned",
+        "addNew": "Add New",
+        "approve": "Approve",
+        "reject": "Reject",
+        "delete": "Delete",
+        "unpublish": "Unpublish",
+        "duplicate": "Duplicate"
+      },
+      "messages": {
+        "operationFailed": "Operation failed"
+      },
+      "modals": {
+        "rejectPublish": {
+          "title": "Reject Publish",
+          "rejectionReasons": "Rejection Reasons",
+          "quickNotes": {
+            "inaccurateInfo": "Inaccurate information provided",
+            "incompleteContent": "Incomplete news content",
+            "sensitiveInfo": "Contains sensitive or restricted information",
+            "coverMismatch": "Cover image does not match content"
+          }
+        },
+        "managePinnedNews": {
+          "title": "Manage Pinned News",
+          "tooltip": "Only published and unpinned news can be searched and added. A maximum of 5 pinned news items is allowed.",
+          "addToPinned": "Add to Pinned",
+          "searchOrSelect": "Search or Select",
+          "pin": "Pin",
+          "remove": "Remove",
+          "order": "Order",
+          "pinnedNewsTitle": "Pinned News Title",
+          "currentPinnedOrder": "Current Pinned Order"
+        },
+        "deleteNews": {
+          "title": "Delete News",
+          "content": "Are you sure you want to delete this news? This action cannot be undone."
+        },
+        "scheduledTimeExpired": {
+          "title": "Scheduled Time Expired",
+          "content": "The scheduled publish time has already passed. The news will be published immediately upon approval. Continue?"
+        }
+      }
+    },
+    "addEventManagement": {
+      "sections": {
+        "timing": "Timing",
+        "eventPeriod": "Event Period",
+        "location": "Location",
+        "registration": "Registration",
+        "content": "Content"
+      },
+      "messages": {
+        "saveDraftSuccess": "Save Draft successfully"
+      },
+      "timing": {
+        "publishMethod": "Publish Method",
+        "publishNow": "Publish Now",
+        "scheduled": "Scheduled",
+        "scheduledTime": "Scheduled Time"
+      },
+      "eventPeriod": {
+        "label": "Event Period",
+        "startDate": "Start Date",
+        "endDate": "End Date"
+      },
+      "registration": {
+        "onSite": "On-site Registration",
+        "online": "Online Registration",
+        "onlineLink": "Online Registration Link",
+        "placeholders": {
+          "onlineLink": "Enter online registration link"
+        },
+        "validation": {
+          "invalidUrl": "Please enter a valid URL format (e.g., https://example.com)"
+        }
+      },
+      "location": {
+        "emirate": "Emirate",
+        "region": "Region",
+        "area": "Area",
+        "street": "Street",
+        "streetEn": "Street in English",
+        "streetAr": "Street in Arabic",
+        "placeholders": {
+          "selectEmirate": "Select emirate",
+          "selectRegion": "Select region",
+          "selectArea": "Select area",
+          "street": "Enter street address",
+          "streetAr": "Enter street address in Arabic"
+        }
+      },
+      "cover": {
+        "title": "Cover",
+        "errors": {
+          "fileSizeExceeded": "Please upload a file within 5 MB.",
+          "loadImageFailed": "Failed to load image for dimension check"
+        },
+        "viewAlt": "view",
+        "deleteAlt": "delete",
+        "uploadAlt": "upload",
+        "click": "Click",
+        "orDrag": " or drag to upload an image",
+        "maxSizeAndTypes": "Maximum size: 5MB, File types: jpg, jpeg and png",
+        "recommendedSize": "Recommended size: 1400 × 800 px"
+      },
+      "content": {
+        "labels": {
+          "englishTitle": "English Title",
+          "arabicTitle": "Arabic Title",
+          "englishContent": "English Content",
+          "arabicContent": "Arabic Content"
+        },
+        "placeholders": {
+          "englishTitle": "Enter event title in English",
+          "arabicTitle": "Enter event title in Arabic",
+          "englishContent": "Please enter content in English",
+          "arabicContent": "Please enter content in Arabic"
+        }
+      },
+      "preview": {
+        "shareOn": "Share on",
+        "imageAlt": "Event image",
+        "noImage": "No Image",
+        "registerOnlineEn": "Register Online",
+        "registerOnlineAr": "Register Online",
+        "onSiteAvailableEn": "On Site Registration Available",
+        "onSiteAvailableAr": "On Site Registration Available"
+      }
+    },
+    "eventManagement": {
+      "table": {
+        "eventNo": "Event No.",
+        "title": "Title",
+        "status": "Status",
+        "eventPeriod": "Event Period",
+        "registrationTypes": "Registration Types",
+        "updatedBy": "Updated By",
+        "publishTime": "Publish Time",
+        "lastUpdated": "Last Updated",
+        "actions": "Actions"
+      },
+      "counts": {
+        "totalNews": "Total Events",
+        "published": "Published",
+        "pendingReview": "Pending Review",
+        "draft": "Draft",
+        "rejected": "Rejected",
+        "unpublished": "Unpublished",
+        "scheduled": "Scheduled"
+      },
+      "actions": {
+        "addNew": "Add New",
+        "approve": "Approve",
+        "reject": "Reject",
+        "delete": "Delete",
+        "unpublish": "Unpublish",
+        "duplicate": "Duplicate"
+      },
+      "messages": {
+        "operationFailed": "Operation failed"
+      },
+      "filters": {
+        "eventName": "Event Name",
+        "eventStatus": "Event Status",
+        "eventPeriod": "Event Period",
+        "registrationType": "Registration Type",
+        "publishTime": "Publish Time"
+      },
+      "registrationTypes": {
+        "both": "On-site, Online",
+        "online": "Online",
+        "onSite": "On-site",
+        "none": "No Registration"
+      },
+      "placeholders": {
+        "allStatuses": "All Statuses",
+        "eventstartTime": "Event Start Date",
+        "eventendTime": "Event End Date",
+        "registrationType": "Select Registration Type",
+        "startTime": "Start Date",
+        "endTime": "End Date"
+      },
+      "modals": {
+        "rejectPublish": {
+          "title": "Reject Publish",
+          "rejectionReasons": "Rejection Reasons",
+          "reasonPlaceholder": "Enter the rejection reason",
+          "quickNotes": {
+            "inaccurateInfo": "Inaccurate information provided",
+            "venueNotConfirmed": "Venue has not been confirmed",
+            "scheduleConflict": "Event schedule conflicts with existing events",
+            "coverImageQualityLow": "Cover image quality is too low"
+          }
+        },
+        "managePinnedEvents": {
+          "title": "Manage Pinned Events",
+          "tooltip": "Only published and unpinned events can be searched and added. A maximum of 5 pinned events is allowed.",
+          "addToPinned": "Add to Pinned",
+          "searchOrSelect": "Search or Select",
+          "pin": "Pin",
+          "remove": "Remove",
+          "order": "Order",
+          "pinnedNewsTitle": "Pinned Event Title",
+          "actions": "Actions",
+          "currentPinnedOrder": "Current Pinned Order"
+        },
+        "deleteEvent": {
+          "title": "Delete Event",
+          "content": "Are you sure you want to delete this event? This action cannot be undone."
+        },
+        "scheduledTimeExpired": {
+          "title": "Scheduled Time Expired",
+          "content": "The scheduled publish time has already passed. The event will be published immediately upon approval. Continue?"
+        }
+      }
+    },
+    "eventManagementDetail": {
+      "labels": {
+        "eventNo": "Event No.",
+        "status": "Status",
+        "updatedBy": "Updated By",
+        "lastUpdatedTime": "Last Updated Time",
+        "eventPeriod": "Event Period",
+        "registrationMethod": "Registration Method",
+        "onlineRegistrationLink": "Online Registration Link",
+        "area": "Area",
+        "englishTitle": "English Title",
+        "englishContent": "English Content",
+        "arabicTitle": "Arabic Title",
+        "arabicContent": "Arabic Content"
+      },
+      "sections": {
+        "cover": "Cover",
+        "timing": "Timing",
+        "eventPeriod": "Event Period",
+        "location": "Location",
+        "registration": "Registration",
+        "content": "Content"
+      },
+      "rejection": {
+        "contentNotApproved": "Content Not Approved"
+      }
+    },
+    "addNewsManagement": {
+      "buttons": {
+        "preview": "Preview",
+        "saveDraft": "Save Draft",
+        "saveAndSubmit": "Save & Submit",
+        "cancel": "Cancel",
+        "confirm": "Confirm",
+        "leave": "Leave"
+      },
+      "messages": {
+        "saveDraftSuccess": "Save Draft successfully",
+        "operationSuccess": "Operation successful."
+      },
+      "modal": {
+        "submitReviewTitle": "Publish News",
+        "submitReviewContent": "Are you sure you want to publish this news? Please preview the news to ensure it is correct before proceeding.",
+        "leavePageTitle": "Leaving the Page?",
+        "leavePageContent": "You have unsaved changes that will be lost if you leave. Do you want to continue?",
+        "publishNewsTitle": "Publish News",
+        "publishNewsContent": "Are you sure you want to publish this news? Please preview the news to ensure it is correct before proceeding."
+      },
+      "validation": {
+        "fieldRequired": "This field is required.",
+        "fieldRequiredArabicTitle": "This field is required. Arabic Title",
+        "fieldRequiredEnglishContent": "This field is required. English Content"
+      },
+      "timing": {
+        "title": "Timing",
+        "publishMethod": "Publish Method",
+        "publishNow": "Publish Now",
+        "scheduled": "Scheduled",
+        "scheduledTime": "Scheduled Time",
+        "placeholder": "DD/MM/YYYY HH:MM",
+        "scheduledTimeError": "The scheduled time must be later than the current time."
+      },
+      "content": {
+        "title": "Content",
+        "enterTitleEnglish": "Enter title in English",
+        "englishTitle": "English Title",
+        "arabicTitle": "Arabic Title",
+        "englishTitlePlaceholder": "Enter news title in English",
+        "arabicTitleEnglishPlaceholder": "Enter title in Arabic",
+        "englishContent": "English Content",
+        "arabicContent": "Arabic Content",
+        "englishContentPlaceholder": "Please enter content in English",
+        "arabicContentPlaceholder": "Please enter content in Arabic",
+        "contentLengthError": "Content must not exceed 50000 characters."
+      },
+      "seo": {
+        "title": "SEO",
+        "metaTitle": "Meta Title",
+        "metaTitleTooltip": "Meta title is displayed on search engine result pages and browser tabs to indicate the topic of a webpage.",
+        "metaTitleHelperTooltip": "Meta title is displayed on search engine result pages and browser tabs to indicate the topic of a webpage.",
+        "metaTitleHelperDetailTooltip": "Meta title is displayed on search engine result pages and browser tabs to indicate the topic of a webpage.",
+        "metaTitlePlaceholder": "Enter meta title",
+        "metaDescription": "Meta Description",
+        "metaDescriptionTooltip": "Meta description is a brief summary of a webpage’s content and is displayed as part of the search snippet in a search engine results page.",
+        "metaDescriptionPlaceholder": "Enter meta description",
+        "metaKeywords": "Meta Keywords",
+        "metaKeywordsTooltip": "Meta Keywords are words and phrases in your web content that help people find your website through search engines.",
+        "metaDescriptionDetailTooltip": "Meta description is a brief summary of a webpage’s content and is displayed as part of the search snippet in a search engine results page.",
+        "metaKeywordsPlaceholder": "Enter meta keywords",
+        "metaKeywordsDetailTooltip": "Meta Keywords are words and phrases in your web content that help people find your website through search engines."
+      },
+      "cover": {
+        "title": "Cover",
+        "image": "Image",
+        "click": "Click",
+        "dragUpload": "or drag to upload an image",
+        "maxSize": "Maximum size",
+        "fileTypes": "File types",
+        "recommendedSize": "Recommended size",
+        "maxSizeAndTypes": "Maximum size: 5MB, File types: jpg, jpeg and png",
+        "recommendedSizeWithValue": "Recommended size: 1400 × 800 px",
+        "invalidFormat": "Only jpg, jpeg and png formats are supported.",
+        "fileSizeError": "Please upload a file within 5 MB.",
+        "loadImageError": "Failed to load image for dimension check",
+        "viewAlt": "View image",
+        "deleteAlt": "Delete image",
+        "uploadAlt": "Upload image"
+      },
+      "preview": {
+        "english": "English",
+        "arabic": "عربي",
+        "share": "Share:",
+        "imageAlt": "News image",
+        "noImage": "No Image",
+        "facebookAlt": "Facebook",
+        "xAlt": "X",
+        "instagramAlt": "Instagram"
+      }
+    }
+  }
+}

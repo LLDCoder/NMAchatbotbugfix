@@ -1,0 +1,202 @@
+.warning-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.application-action-modal {
+  width: 640px !important;
+  max-width: calc(100vw - 48px);
+
+  .ant-modal-content {
+    overflow: hidden;
+    border-radius: 20px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      border-radius: 10px;
+    }
+  }
+
+  .ant-modal-header {
+    min-height: 95px;
+    padding: 32px 40px;
+    border-bottom: 1px solid #e1e3e5;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .ant-modal-title {
+    color: #361e12;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .custom-tips {
+    min-height: 72px;
+    padding: 16px 40px;
+    border-radius: 0 0 12px 12px;
+    background: #fffbeb;
+
+    .warning-icon {
+      flex: 0 0 20px;
+      color: #f29f01;
+    }
+
+    .tips-text {
+      margin-left: 12px;
+      color: #d67909 !important;
+      font-size: 14px;
+      font-weight: 400 !important;
+      line-height: 20px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+  }
+
+  .custom-form {
+    min-height: 360px;
+    padding: 32px 40px 20px;
+
+    .ant-form-item-label {
+      padding-bottom: 8px;
+
+      > label {
+        height: 20px;
+        color: #361e12;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 12px;
+          line-height: 16px;
+        }
+      }
+    }
+
+    .ant-form-item-control {
+      .ant-input,
+      .ant-select-selector {
+        border-color: #e1e3e5;
+        border-radius: 8px;
+        font-size: 14px;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 12px;
+        }
+      }
+
+      .ant-input::placeholder,
+      .ant-select-selection-placeholder {
+        color: #8c8c8c;
+        font-size: 14px;
+        font-weight: 500;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 12px;
+        }
+      }
+
+      .ant-select-selection-item,
+      .ant-select-selection-placeholder {
+        line-height: 46px;
+      }
+    }
+
+    .custom-textarea {
+      .ant-input {
+        min-height: 110px;
+        padding: 14px 16px 6px;
+      }
+
+      &.ant-input-textarea-show-count::after,
+      &.ant-input-textarea-show-count.ant-input-textarea-in-form-item::after {
+        display: block;
+        width: 100%;
+        margin-top: 4px;
+        color: #797e86;
+        font-size: 12px;
+        line-height: 16px;
+        text-align: right;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 10px;
+          line-height: 14px;
+        }
+      }
+    }
+  }
+
+  .custom-quick-note {
+    padding: 0 40px 32px;
+
+    .note-title {
+      margin: 0 0 8px;
+      color: #5f646d;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+
+    .notes-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: baseline;
+    }
+
+    .note-item {
+      height: 26px;
+      margin: 0;
+      padding: 2px 6px;
+      border: 0;
+      border-radius: 4px;
+      background: #f5f5f6 !important;
+      color: #5f646d;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      cursor: pointer;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+  }
+
+  .ant-modal-footer {
+    padding: 24px 40px;
+    border-top: 1px solid #e1e3e5;
+
+    > div {
+      display: flex;
+      justify-content: flex-end;
+      gap: 16px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        gap: 12px;
+      }
+    }
+
+    .custom-button {
+      min-width: 140px;
+      font-weight: 600;
+    }
+  }
+
+  .ant-upload {
+    width: 100%;
+  }
+
+  .ant-upload.ant-upload-select {
+    display: block;
+  }
+}

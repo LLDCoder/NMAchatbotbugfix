@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Cache-Control" content="no-cache, max-age=0, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-arabic-title="مساحة العمل - الهيئة الوطنية للإعلام">Workspace - National Media Authority</title>
+    <script id="initial-title">
+      (function () {
+        var title = document.querySelector("title");
+        if (!title) {
+          return;
+        }
+
+        try {
+          var savedLanguage = window.localStorage.getItem("language");
+          if (String(savedLanguage || "").toLowerCase().startsWith("ar")) {
+            document.title = title.dataset.arabicTitle || document.title;
+          }
+        } catch (error) {
+          // Storage access can be blocked by browser privacy settings.
+        }
+      })();
+    </script>
+    <script>
+      (function () {
+        var reloadParam = "__app_reload";
+        var lastReloadFromUrl = 0;
+        var staleAssetPattern =
+          /(Failed to fetch dynamically imported module|Importing a module script failed|error loading dynamically imported module|Loading chunk [A-Za-z0-9_-]+ failed|ChunkLoadError|Unable to preload CSS)/i;
+
+        // Once the React app has mounted (window.__ADMIN_PORTAL_APP_MOUNTED__),
+        // lazyWithRetry owns stale-asset recovery: it retries the import in
+        // place (keeping the route loading state) before deciding to reload.
+        // Post-mount, this inline layer steps back from the vite:preloadError
+        // and resource-error signals (which duplicate failures lazyWithRetry
+        // already handles) but keeps the unhandledrejection and error-message
+        // listeners active as a global backstop for bare dynamic imports that
+        // no retry wrapper catches.
+        function isRecoveryOwnedByApp() {
+          return Boolean(window.__ADMIN_PORTAL_APP_MOUNTED__);
+        }
+
+        function normalizeUrlForHistory(url) {
+          return url.pathname + url.search + url.hash;
+        }
+
+        function cleanupReloadParam() {
+          var currentUrl = new URL(window.location.href);
+          if (!currentUrl.searchParams.has(reloadParam)) {
+            return;
+          }
+
+          lastReloadFromUrl = Number(currentUrl.searchParams.get(reloadParam) || 0);
+          window.__ADMIN_PORTAL_ASSET_RELOAD_AT__ = lastReloadFromUrl;
+          currentUrl.searchParams.delete(reloadParam);
+          window.history.replaceState(null, "", normalizeUrlForHistory(currentUrl));
+        }
+
+        function isAssetRequestUrl(url) {
+          return /\/assets\/.+\.(?:js|css)(?:$|\?)/i.test(String(url || ""));
+        }
+
+        function normalizeRecoveryResource(reason) {
+          var value = String(reason || "");
+          var match = value.match(/https?:\/\/[^\s'")]+/i);
+          return match ? match[0] : value;
+        }
+
+        function getRecoveryKey(reason) {
+          var moduleScript = document.querySelector('script[type="module"][src]');
+          var buildFingerprint = moduleScript ? moduleScript.src : "unknown";
+          return (
+            "admin-portal:asset-recovery:" +
+            buildFingerprint +
+            ":" +
+            normalizeRecoveryResource(reason)
+          );
+        }
+
+        // Rate-limit instead of a permanent one-shot: an old marker must not
+        // leave the user stuck on the error page when the same stale pairing
+        // comes back later (rollbacks, mixed replicas). Keep in sync with
+        // RECOVERY_RETRY_COOLDOWN_MS in src/utils/routeRecoveryPolicy.js.
+        var recoveryRetryCooldownMs = 60000;
+
+        function isWithinRecoveryCooldown(lastAttemptAt) {
+          var timestamp = Number(lastAttemptAt || 0);
+          return Boolean(timestamp) && Date.now() - timestamp < recoveryRetryCooldownMs;
+        }
+
+        function hasRecovered(reason) {
+          try {
+            return isWithinRecoveryCooldown(
+              sessionStorage.getItem(getRecoveryKey(reason))
+            );
+          } catch {
+            return isWithinRecoveryCooldown(lastReloadFromUrl);
+          }
+        }
+
+        function markRecovered(reason, now) {
+          lastReloadFromUrl = now;
+          try {
+            sessionStorage.setItem(getRecoveryKey(reason), String(now));
+          } catch {
+            // Storage access can be blocked by browser privacy settings.
+          }
+        }
+
+        function triggerReload(reason, event) {
+          var now = Date.now();
+          if (hasRecovered(reason)) {
+            return;
+          }
+
+          if (event && typeof event.preventDefault === "function") {
+            event.preventDefault();
+          }
+
+          markRecovered(reason, now);
+          // Expose when the recovery reload was triggered so the app can keep
+          // showing its loading state while the navigation commits.
+          window.__ADMIN_PORTAL_ASSET_RELOAD_AT__ = now;
+
+          if (window.console && typeof window.console.warn === "function") {
+            window.console.warn("[asset-reload]", reason);
+          }
+
+          var nextUrl = new URL(window.location.href);
+          nextUrl.searchParams.set(reloadParam, String(now));
+          window.location.replace(nextUrl.toString());
+        }
+
+        function handleDynamicImportFailure(message, event) {
+          if (!message) {
+            return;
+          }
+
+          if (staleAssetPattern.test(message)) {
+            triggerReload(message, event);
+          }
+        }
+
+        cleanupReloadParam();
+
+        window.addEventListener("vite:preloadError", function (event) {
+          if (isRecoveryOwnedByApp()) {
+            // Let the error reject the pending import so lazyWithRetry can
+            // retry in place instead of tearing the whole page down.
+            return;
+          }
+
+          var message =
+            String(
+              (event && event.payload && event.payload.message) ||
+                (event && event.reason && event.reason.message) ||
+                (event && event.message) ||
+                "vite:preloadError"
+            );
+          triggerReload(message, event);
+        });
+
+        window.addEventListener(
+          "error",
+          function (event) {
+            var target = event && event.target;
+            if (target && target !== window) {
+              if (isRecoveryOwnedByApp()) {
+                return;
+              }
+
+              var assetUrl = target.src || target.href || "";
+              if (isAssetRequestUrl(assetUrl)) {
+                triggerReload(assetUrl, event);
+                return;
+              }
+            }
+
+            var message = String(
+              (event && event.message) || (event && event.error && event.error.message) || ""
+            );
+            handleDynamicImportFailure(message, event);
+          },
+          true
+        );
+
+        window.addEventListener("unhandledrejection", function (event) {
+          var reason = event && event.reason;
+          var message = "";
+
+          if (typeof reason === "string") {
+            message = reason;
+          } else if (reason && typeof reason.message === "string") {
+            message = reason.message;
+          } else if (reason && typeof reason.stack === "string") {
+            message = reason.stack;
+          }
+
+          handleDynamicImportFailure(String(message || ""), event);
+        });
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

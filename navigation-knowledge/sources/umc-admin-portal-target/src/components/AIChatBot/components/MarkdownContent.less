@@ -1,0 +1,214 @@
+.ai-chatbot__markdown-content {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.ai-chatbot__markdown-content > :first-child {
+  margin-top: 0;
+}
+
+.ai-chatbot__markdown-content > :last-child {
+  margin-bottom: 0;
+}
+
+.ai-chatbot__markdown-content p {
+  margin: 0 0 9px;
+}
+
+.ai-chatbot__markdown-content h1,
+.ai-chatbot__markdown-content h2,
+.ai-chatbot__markdown-content h3,
+.ai-chatbot__markdown-content h4,
+.ai-chatbot__markdown-content h5,
+.ai-chatbot__markdown-content h6 {
+  margin: 15px 0 7px;
+  color: var(--nma-ink);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.ai-chatbot__markdown-content h1 { font-size: 18px; }
+.ai-chatbot__markdown-content h2 { font-size: 16px; }
+.ai-chatbot__markdown-content h3 { font-size: 14px; }
+.ai-chatbot__markdown-content h4 { font-size: 13px; }
+.ai-chatbot__markdown-content h5,
+.ai-chatbot__markdown-content h6 { font-size: 12px; }
+
+.ai-chatbot__markdown-content strong {
+  color: var(--nma-ink);
+  font-weight: 700;
+}
+
+.ai-chatbot__markdown-content em {
+  color: var(--nma-text-2);
+}
+
+.ai-chatbot__markdown-content del {
+  color: var(--nma-text-3);
+}
+
+.ai-chatbot__markdown-content a {
+  color: var(--nma-gold-deep);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(142, 103, 9, 0.4);
+  text-underline-offset: 2px;
+}
+
+.ai-chatbot__markdown-content a:hover {
+  color: #6f4e00;
+  text-decoration-color: currentColor;
+}
+
+.ai-chatbot__markdown-content :not(pre) > code {
+  unicode-bidi: isolate;
+  padding: 2px 5px;
+  color: #7a4e0b;
+  background: #f6edda;
+  border: 1px solid #ead9b5;
+  border-radius: 4px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.9em;
+  white-space: break-spaces;
+}
+
+.ai-chatbot__markdown-content ul,
+.ai-chatbot__markdown-content ol {
+  margin: 6px 0 10px;
+  padding-inline-start: 22px;
+}
+
+.ai-chatbot__markdown-content li {
+  margin: 3px 0;
+  padding-inline-start: 2px;
+}
+
+.ai-chatbot__markdown-content li::marker {
+  color: var(--nma-gold-deep);
+  font-weight: 700;
+}
+
+.ai-chatbot__markdown-task-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  margin-inline-start: -18px !important;
+  list-style: none;
+}
+
+.ai-chatbot__markdown-task-item input {
+  width: 13px;
+  height: 13px;
+  flex: 0 0 13px;
+  margin: 4px 0 0;
+  accent-color: var(--nma-gold-deep);
+  pointer-events: none;
+}
+
+.ai-chatbot__markdown-content blockquote {
+  margin: 9px 0 11px;
+  padding: 8px 11px;
+  color: var(--nma-text-2);
+  background: rgba(243, 230, 196, 0.34);
+  border-inline-start: 3px solid var(--nma-gold);
+  border-radius: 0 6px 6px 0;
+}
+
+.ai-chatbot__markdown-content blockquote p {
+  margin: 0;
+}
+
+.ai-chatbot__markdown-content hr {
+  height: 1px;
+  margin: 14px 0;
+  background: var(--nma-border);
+  border: 0;
+}
+
+.ai-chatbot__markdown-code-block {
+  position: relative;
+  margin: 10px 0 12px;
+  overflow: hidden;
+  color: #f8f4ea;
+  background: #25221c;
+  border: 1px solid #3b372e;
+  border-radius: 7px;
+}
+
+.ai-chatbot__markdown-code-language {
+  padding: 5px 9px;
+  color: #d8cda9;
+  background: #302c24;
+  border-bottom: 1px solid #454035;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 9px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.ai-chatbot__markdown-code-block pre {
+  margin: 0;
+  padding: 10px 11px;
+  overflow-x: auto;
+  color: inherit;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 11px;
+  line-height: 1.55;
+  text-align: start;
+  tab-size: 2;
+  white-space: pre;
+}
+
+.ai-chatbot__markdown-code-block pre code {
+  color: inherit;
+  font: inherit;
+}
+
+.ai-chatbot__markdown-table-wrap {
+  width: 100%;
+  margin: 10px 0 12px;
+  overflow-x: auto;
+  border: 1px solid var(--nma-border);
+  border-radius: 7px;
+}
+
+.ai-chatbot__markdown-table-wrap table {
+  width: 100%;
+  min-width: 320px;
+  border-collapse: collapse;
+  font-size: 11px;
+  white-space: normal;
+}
+
+.ai-chatbot__markdown-table-wrap th,
+.ai-chatbot__markdown-table-wrap td {
+  min-width: 88px;
+  padding: 7px 9px;
+  vertical-align: top;
+  border-inline-end: 1px solid var(--nma-border-soft);
+  border-bottom: 1px solid var(--nma-border-soft);
+}
+
+.ai-chatbot__markdown-table-wrap th:last-child,
+.ai-chatbot__markdown-table-wrap td:last-child {
+  border-inline-end: 0;
+}
+
+.ai-chatbot__markdown-table-wrap tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.ai-chatbot__markdown-table-wrap th {
+  color: var(--nma-gold-deep);
+  background: var(--nma-gold-soft);
+  font-weight: 700;
+}
+
+.ai-chatbot__markdown-table-wrap tbody tr:nth-child(even) {
+  background: #fbfaf6;
+}
+
+.ai-chatbot__markdown-align-start { text-align: start; }
+.ai-chatbot__markdown-align-center { text-align: center; }
+.ai-chatbot__markdown-align-end { text-align: end; }

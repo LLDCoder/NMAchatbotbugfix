@@ -1,0 +1,350 @@
+.editor-wrapper {
+  .button-container {
+    button {
+      line-height: 1;
+    }
+  }
+
+  border-radius: 12px;
+  overflow: visible;
+  border: 1px solid #f0ede5;
+  background-color: #f8f4e8;
+
+  video {
+    width: 100%;
+  }
+
+  .w-e-hover-bar {
+    display: none;
+  }
+
+  /* No z-index here on purpose: a stacking context would trap the select panels
+     below the sticky CustomFooter (z-index 20). `position: relative` without one
+     lets `.w-e-select-list` raise itself out of the toolbar. */
+  .w-e-toolbar {
+    position: relative;
+    overflow: visible;
+    gap: 16px;
+    padding: 12px 16px;
+    background-color: #f9fafb;
+    border-bottom: 1px solid #e1e3e5;
+  }
+
+  .w-e-bar-item {
+    height: 20px;
+    padding: 0;
+  }
+
+  .w-e-bar-item button {
+    min-width: 20px;
+    height: 20px;
+    padding: 0;
+  }
+
+  .w-e-bar-item button[data-menu-key="bold"],
+  .w-e-bar-item button[data-menu-key="italic"],
+  .w-e-bar-item button[data-menu-key="underline"],
+  .w-e-bar-item button[data-menu-key="justifyLeft"],
+  .w-e-bar-item button[data-menu-key="justifyCenter"],
+  .w-e-bar-item button[data-menu-key="justifyRight"],
+  .w-e-bar-item button[data-menu-key="textCase"],
+  .w-e-bar-item button[data-menu-key="insertLink"] {
+    width: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .w-e-bar-item button[data-menu-key="bold"] {
+    background-image: url("../../../assets/images/rich-text-editor/bold.svg");
+    background-size: 10.625px 13.125px;
+  }
+
+  .w-e-bar-item button[data-menu-key="italic"] {
+    background-image: url("../../../assets/images/rich-text-editor/italic.svg");
+    background-size: 11.25px 12.5px;
+  }
+
+  .w-e-bar-item button[data-menu-key="underline"] {
+    background-image: url("../../../assets/images/rich-text-editor/underline.svg");
+    background-size: 11.25px 14.375px;
+  }
+
+  .w-e-bar-item button[data-menu-key="justifyLeft"] {
+    background-image: url("../../../assets/images/rich-text-editor/align-left.svg");
+    background-size: 15px 10.625px;
+  }
+
+  .w-e-bar-item button[data-menu-key="justifyCenter"] {
+    background-image: url("../../../assets/images/rich-text-editor/align-center.svg");
+    background-size: 15px 10.625px;
+  }
+
+  .w-e-bar-item button[data-menu-key="justifyRight"] {
+    background-image: url("../../../assets/images/rich-text-editor/align-right.svg");
+    background-size: 15px 10.625px;
+  }
+
+  .w-e-bar-item button[data-menu-key="textCase"] {
+    background-image: url("../../../assets/images/TextCase.svg");
+    background-size: 18.1257px 11.9055px;
+  }
+
+  .w-e-bar-item button[data-menu-key="insertLink"] {
+    background-image: url("../../../assets/images/paperclip.png");
+    background-size: 20px 20px;
+  }
+
+  .w-e-bar-item button[data-menu-key="bold"] > svg,
+  .w-e-bar-item button[data-menu-key="italic"] > svg,
+  .w-e-bar-item button[data-menu-key="underline"] > svg,
+  .w-e-bar-item button[data-menu-key="justifyLeft"] > svg,
+  .w-e-bar-item button[data-menu-key="justifyCenter"] > svg,
+  .w-e-bar-item button[data-menu-key="justifyRight"] > svg,
+  .w-e-bar-item button[data-menu-key="textCase"] > svg,
+  .w-e-bar-item button[data-menu-key="insertLink"] > svg {
+    visibility: hidden;
+  }
+
+  .w-e-bar-item button[data-menu-key="fontSize"] {
+    width: 32px !important;
+    min-width: 32px;
+    background-image:
+      url("../../../assets/images/rich-text-editor/font-size-text-main.svg"),
+      url("../../../assets/images/rich-text-editor/font-size-text-underline.svg"),
+      url("../../../assets/images/rich-text-editor/caret-down.svg");
+    background-position:
+      3.2915px 2.5px,
+      5.5415px 16.083px,
+      20px center;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size:
+      13.4167px 14.9167px,
+      8.9167px 1.4167px,
+      12px 12px;
+    font-size: 0;
+  }
+
+  .w-e-bar-item
+    button[data-menu-key="fontSize"].w-e-menu-tooltip-v5::before {
+    font-size: 10.5px;
+  }
+
+  .w-e-bar-item button[data-menu-key="fontSize"] > svg {
+    display: none;
+  }
+
+  /* Glyph and caret are background layers rather than a `::before` box: wangEditor
+     renders its tooltip into `::before` / `::after`, and a positioned button would
+     let its own `overflow: hidden` clip the bubble. */
+  .w-e-bar-item button[data-menu-key="lineHeightCustom"] {
+    width: auto !important;
+    min-width: 41px;
+    justify-content: flex-start;
+    padding-left: 22px;
+    padding-right: 11px;
+    color: #361e12;
+    background-image:
+      url("../../../assets/images/rich-text-editor/line-height-top-bottom.svg"),
+      url("../../../assets/images/rich-text-editor/line-height-top-bottom.svg"),
+      url("../../../assets/images/rich-text-editor/line-height-arrows.svg"),
+      url("../../../assets/images/rich-text-editor/line-height-caret.svg");
+    background-position:
+      3.333px 2.5px,
+      3.333px 16.083px,
+      7px 3.728px,
+      right center;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-size:
+      13.333px 1.417px,
+      13.333px 1.417px,
+      6.002px 12.543px,
+      7px 4px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  /* wangEditor derives the tooltip size from the button (`font-size: .75em`); the
+     rest of the type has to be reset to match the fontSize tooltip. */
+  .w-e-bar-item
+    button[data-menu-key="lineHeightCustom"].w-e-menu-tooltip-v5::before {
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  /* wangEditor leaves the bubble and its arrow at their static position, which
+     `justify-content: flex-start` on these two selects pushes to the left edge.
+     Pin both to the middle of the bar item instead. */
+  .w-e-bar-item button[data-menu-key="fontSize"].w-e-menu-tooltip-v5::before,
+  .w-e-bar-item button[data-menu-key="fontSize"].w-e-menu-tooltip-v5::after,
+  .w-e-bar-item
+    button[data-menu-key="lineHeightCustom"].w-e-menu-tooltip-v5::before,
+  .w-e-bar-item
+    button[data-menu-key="lineHeightCustom"].w-e-menu-tooltip-v5::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .w-e-bar-item button[data-menu-key="lineHeightCustom"] > svg {
+    display: none;
+  }
+
+  .w-e-bar-item button.disabled {
+    opacity: 0.35;
+  }
+
+  /* Above the sticky CustomFooter (z-index 20) and its blurred gradient. */
+  .w-e-select-list {
+    margin-top: 32px;
+    z-index: 1000;
+  }
+
+  .w-e-text-placeholder {
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 14px;
+    color: #797e86;
+    line-height: 20px;
+    letter-spacing: 0px;
+    font-style: normal;
+    width: 100%;
+    left: 10px;
+    right: 10px;
+    top: 17px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  // .w-e-modal {
+  //   position: relative;
+  //   margin-top: -80px;
+  //   margin-left: 140px;
+  // }
+  .w-e-text-container {
+    min-height: 220px;
+
+    p {
+      margin: 15px 0;
+    }
+  }
+
+  .w-e-scroll {
+    min-height: 220px;
+
+    div {
+      min-height: 220px;
+    }
+  }
+}
+
+.editor-wrapper--font-size-selected {
+  .w-e-bar-item button[data-menu-key="fontSize"] {
+    width: auto !important;
+    min-width: 44px;
+    justify-content: flex-start;
+    padding-right: 12px;
+    color: #361e12;
+    background-image: url("../../../assets/images/rich-text-editor/caret-down.svg");
+    background-position: right center;
+    background-size: 12px 12px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    text-transform: uppercase;
+  }
+
+  .w-e-bar-item
+    button[data-menu-key="fontSize"].w-e-menu-tooltip-v5::before {
+    text-transform: none;
+  }
+}
+
+/* Arabic (rtl): mirror the fontSize / lineHeight selects so the caret sits on the left.
+   Covers both rtl signals in use: the `dir` prop and the legacy `.ar` className. */
+.editor-wrapper[dir="rtl"],
+.editor-wrapper.ar {
+  .w-e-bar-item button[data-menu-key="fontSize"] {
+    background-position:
+      right 3.2915px top 2.5px,
+      right 5.5415px top 16.083px,
+      left center;
+  }
+
+  .w-e-bar-item button[data-menu-key="lineHeightCustom"] {
+    padding-right: 22px;
+    padding-left: 11px;
+    background-position:
+      right 3.333px top 2.5px,
+      right 3.333px top 16.083px,
+      right 7px top 3.728px,
+      left center;
+  }
+}
+
+.editor-wrapper.editor-wrapper--font-size-selected[dir="rtl"],
+.editor-wrapper.editor-wrapper--font-size-selected.ar {
+  .w-e-bar-item button[data-menu-key="fontSize"] {
+    padding-right: 0;
+    padding-left: 12px;
+    background-position: left center;
+  }
+}
+
+.arab {
+  .w-e-text-container {
+    direction: rtl;
+  }
+}
+
+.ant-form-item-has-error {
+  .editor-wrapper {
+    border: 1px solid #ff4d4f;
+  }
+}
+
+.char-count-bar {
+  clear: both;
+  width: 100%;
+  margin-top: 8px;
+  padding-right: 2px;
+  box-sizing: border-box;
+  font-family: Inter;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  color: #797e86;
+  line-height: 16px;
+  letter-spacing: 0px;
+  text-align: right;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+.char-count-bar--rtl {
+  direction: ltr;
+  padding-right: 0;
+  padding-left: 2px;
+  text-align: left;
+}
+
+.w-e-text-container,
+.w-e-text-container * {
+  word-wrap: break-word !important;
+  word-break: break-all !important;
+  overflow-wrap: break-word !important;
+  white-space: pre-wrap !important;
+  max-width: 100% !important;
+}
+
+.w-e-scroll,
+.w-e-scroll * {
+  word-wrap: break-word !important;
+  word-break: break-all !important;
+  overflow-wrap: break-word !important;
+}

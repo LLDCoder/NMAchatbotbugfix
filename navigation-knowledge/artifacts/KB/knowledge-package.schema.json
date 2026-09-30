@@ -1,0 +1,309 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NMA page knowledge exchange envelope v1",
+  "description": "Declarative page identity, views, entities, fields, metric semantics, operations and verification requirements. No question-matching templates or fixed answers. Structure validation does not authorize execution.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "bundleId",
+    "createdAt",
+    "packageStatus",
+    "records"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "bundleId": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "packageStatus": {
+      "enum": [
+        "draft",
+        "active",
+        "retired"
+      ]
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "kind",
+          "revision",
+          "status",
+          "title",
+          "applicability",
+          "sources",
+          "payload"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "page_definition",
+              "read_operation",
+              "field_semantics",
+              "output_policy",
+              "knowledge_gap"
+            ]
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "status": {
+            "enum": [
+              "draft",
+              "active",
+              "retired"
+            ]
+          },
+          "title": {
+            "type": "string"
+          },
+          "applicability": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "portal",
+              "environments",
+              "runtimeVerification",
+              "deployedBuildMatch"
+            ],
+            "properties": {
+              "portal": {
+                "type": "string"
+              },
+              "environments": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "pageRefs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "sourceSnapshot": {
+                "type": "string"
+              },
+              "frontendRevision": {
+                "type": "string"
+              },
+              "backendRevision": {
+                "type": "string"
+              },
+              "runtimeVerification": {
+                "enum": [
+                  "pending",
+                  "observed",
+                  "verified",
+                  "failed"
+                ]
+              },
+              "deployedBuildMatch": {
+                "enum": [
+                  "unknown",
+                  "matched",
+                  "mismatched"
+                ]
+              }
+            }
+          },
+          "sources": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "kind",
+                "reference",
+                "revision",
+                "verification"
+              ],
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "source_code",
+                    "manual",
+                    "page_catalog",
+                    "runtime_observation"
+                  ]
+                },
+                "reference": {
+                  "type": "string"
+                },
+                "revision": {
+                  "type": "string"
+                },
+                "locator": {
+                  "type": "string"
+                },
+                "verification": {
+                  "enum": [
+                    "source_inspected",
+                    "static_extracted",
+                    "runtime_observed",
+                    "unverified"
+                  ]
+                }
+              }
+            }
+          },
+          "payload": {
+            "type": "object"
+          },
+          "supersedes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "page_definition"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "payload": {
+                  "required": [
+                    "pageIdentity",
+                    "entryConditions",
+                    "views",
+                    "readinessAssertions"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "read_operation"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "payload": {
+                  "required": [
+                    "operationRef",
+                    "readOnlyEvidence",
+                    "parameterSchema",
+                    "responseSchema",
+                    "preconditions",
+                    "postconditions"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "field_semantics"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "payload": {
+                  "required": [
+                    "sourceBinding",
+                    "fields",
+                    "relationships",
+                    "constraints"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "output_policy"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "payload": {
+                  "required": [
+                    "fieldClassifications",
+                    "audience",
+                    "redactionRules"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "knowledge_gap"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "payload": {
+                  "required": [
+                    "detectedAtStage",
+                    "reasonCode",
+                    "userHint",
+                    "safeTask",
+                    "affectedKnowledgeRefs",
+                    "requiredInformation",
+                    "suggestedChanges",
+                    "blocks",
+                    "currentFallback"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "knowledge_gap"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "status": {
+                  "const": "draft"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

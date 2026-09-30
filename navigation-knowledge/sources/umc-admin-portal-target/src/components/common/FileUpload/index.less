@@ -1,0 +1,195 @@
+@import "@/styles/variables.less";
+
+.file-upload-wrapper {
+  width: 100%;
+.common-upload{
+   .ant-input:disabled{
+    background-color: transparent !important;
+   }
+}
+  .ant-upload {
+    width: 100%;
+  }
+
+  .upload-input-wrapper {
+    position: relative;
+    width: 100%;
+    .ant-input{
+      background-color: transparent;
+    }
+    .upload-input {
+      height: 48px;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #8c8c8c;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+      background-color: transparent;
+
+      img {
+        width: 32px;
+        height: 32px;
+        margin-right: 8px;
+      }
+
+      &:hover {
+        border-color: @primary-color;
+      }
+
+      &:focus {
+        border-color: @primary-color;
+        box-shadow: 0 0 0 2px rgba(201, 169, 97, 0.1);
+      }
+
+      &.ant-input-disabled {
+        cursor: not-allowed;
+        background-color: #f5f5f5;
+      }
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+      }
+    }
+
+    .upload-progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      z-index: 0;
+      box-sizing: border-box;
+
+      .upload-progress-bar {
+        height: 100%;
+        border-radius: 8px;
+        background: linear-gradient(90deg, rgba(250, 212, 79, 0) 20%, rgba(250, 212, 79, 0.1) 50%, rgba(250, 212, 79, 0.15) 91.48%, rgba(250, 212, 79, 0.35) 100%);
+        transition: width 0.3s ease;
+        min-width: 1%;
+        box-sizing: border-box;
+      }
+    }
+  }
+
+  .file-single {
+    .file-item {
+      width: 100%;
+      height: 48px;
+      padding: 16px 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(
+        90deg,
+        #f7f6f3 0%,
+        #f6f6f5 56.25%,
+        #f7f2eb 100%
+      );
+
+      img {
+        width: 32px;
+        height: 32px;
+      }
+
+      .file-name {
+        flex: 1;
+        font-size: 16px;
+        margin: 0 16px;
+        color: @text-color-secondary;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 14px;
+        }
+      }
+
+      .delete-icon {
+        font-size: 20px;
+        color: @primary-color;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+          color: darken(@primary-color, 10%);
+          transform: scale(1.1);
+        }
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  .file-list {
+    margin-top: 8px;
+
+    .file-item {
+      width: 100%;
+      height: 48px;
+      padding: 16px 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      margin-top: 8px;
+      background: linear-gradient(
+        90deg,
+        #f7f6f3 0%,
+        #f6f6f5 56.25%,
+        #f7f2eb 100%
+      );
+
+      img {
+        width: 32px;
+        height: 32px;
+      }
+
+      .file-name {
+        flex: 1;
+        font-size: 16px;
+        margin: 0 16px;
+        color: @text-color-secondary;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 14px;
+        }
+      }
+
+      .delete-icon {
+        font-size: 20px;
+        color: @primary-color;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+          color: darken(@primary-color, 10%);
+          transform: scale(1.1);
+        }
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  .upload-tip {
+    font-size: 12px;
+    font-weight: 400;
+    color: @text-color-table-header;
+    margin-top: 8px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 10px;
+    }
+  }
+
+
+}

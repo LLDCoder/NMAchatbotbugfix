@@ -1,0 +1,390 @@
+@import "@/styles/variables.less";
+
+.content-team-tasks {
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  // .team-tasks-table__cell {
+  //   vertical-align: top;
+  // }
+
+  .team-tasks-table__ticket-number-cell {
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .team-tasks-table__ticket-number-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .team-tasks-table__ticket-number-text {
+    min-width: 0;
+    line-height: 1.35;
+    text-align: start;
+    word-break: break-word;
+  }
+
+  .team-tasks-table__service-name {
+    display: block;
+    min-width: 0;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .team-tasks-table__customer-name {
+    display: block;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .team-tasks-table__tooltip-trigger {
+    display: block;
+    min-width: 0;
+  }
+
+  .team-tasks-table__text--two-lines {
+    display: -webkit-box;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+    line-height: 1.35;
+    word-break: break-word;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .team-tasks-table__customer-cell {
+    width: 200px;
+    max-width: 200px;
+    overflow: hidden;
+  }
+
+  .todo-tabpanel-appno{
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #92722A;
+    cursor: pointer;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+  .ant-card-body {
+    padding: 8px 24px 24px;
+  }
+  .search-input {
+    .filter-facade();
+    .ant-input {
+      border-radius: 8px;
+    }
+
+    &:hover,
+    &:focus-within {
+      .ant-input {
+        border-color: @primary-color;
+      }
+    }
+  }
+  .export-add{
+    display: flex;
+    column-gap: 8px;
+  }
+  .filter-table.custom-table {
+    .header {
+      .header-extra-btn {
+        flex: 1;
+        .filter-area {
+          display: flex;
+          justify-content: space-between;
+          margin-left: 12px;
+        }
+      }
+    }
+    .team-tasks-table__actions {
+      display: inline-flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 12px;
+      white-space: nowrap;
+
+      > * {
+        flex: 0 0 auto;
+      }
+
+      .team-tasks-table__message {
+        position: relative;
+        display: inline-flex;
+        flex: 0 0 auto;
+      }
+
+      .team-tasks-table__notification-badge {
+        position: absolute;
+        top: 8px;
+        right: -4px;
+        z-index: 1;
+        box-sizing: border-box;
+        width: 6px;
+        height: 6px;
+        border: none;
+        border-radius: 50%;
+        background-color: #d83731;
+        pointer-events: none;
+      }
+
+      .ant-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex: 0 0 auto;
+        min-width: 0;
+        padding: 0;
+        white-space: nowrap;
+      }
+
+      .custom-button-text,
+      .ant-btn-text {
+        &:hover:not(:disabled),
+        &:focus:not(:disabled),
+        &:active:not(:disabled) {
+          border-color: transparent !important;
+          background: transparent !important;
+          background-color: transparent !important;
+          color: #92722a !important;
+        }
+      }
+
+      .team-tasks-table__more-button.ant-btn {
+        padding: 4px;
+      }
+
+      @media (max-width: 1919.98px) {
+        gap: 8px;
+      }
+    }
+    .ant-select-selector{
+      min-height: 48px;
+      border-radius: 8px;
+    }
+  }
+  .filter-table.custom-table.filter-table--responsive-toolbar
+    .header-filter
+    > .tickets-toolbar-date-range-picker.filter-table__filter-field--range {
+    flex: 0 0 300px;
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+  }
+  .filter-table.custom-table.filter-table--responsive-toolbar
+    .header-filter
+    > .select-style.filter-table__filter-field--select {
+    flex: 0 0 270px;
+    width: 270px;
+    min-width: 270px;
+    max-width: 270px;
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.filter-facade {
+  border-radius: 8px;
+  width: 360px;
+  min-height: 48px;
+}
+
+.select-style {
+  .filter-facade();
+  width: 240px;
+}
+
+.select-style.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  border-radius: 8px;
+}
+
+.range-picker.ant-picker-range {
+  border-radius: 8px;
+}
+
+.range-picker {
+  .filter-facade();
+  .ant-picker-input input[size="12"] {
+    font-size: 16px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.app-number {
+  border-radius: 4px;
+}
+
+.selection-tip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background-color: rgba(249, 247, 237, 1);
+  margin: 16px 0;
+  color: @primary-color;
+}
+.filter-box{
+  .ant-select-selector{
+    min-height: 48px;
+  }
+}
+
+.todo-tabpanel-reopen-times{
+  width: fit-content;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background-color: #E1E3E580;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #5F646D;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+
+.tickets-table-date-range-dropdown,
+.tickets-table-date-range-dropdown.ant-picker-dropdown-rtl,
+.tickets-table-date-range-dropdown .ant-picker-panel-container,
+.tickets-table-date-range-dropdown .ant-picker-panels,
+.tickets-table-date-range-dropdown .ant-picker-panel,
+.tickets-table-date-range-dropdown .ant-picker-header,
+.tickets-table-date-range-dropdown .ant-picker-header-view,
+.tickets-table-date-range-dropdown .ant-picker-date-panel,
+.tickets-table-date-range-dropdown .ant-picker-content,
+.tickets-table-date-range-dropdown .ant-picker-content thead,
+.tickets-table-date-range-dropdown .ant-picker-content tbody,
+.tickets-table-date-range-dropdown .ant-picker-content tr,
+.tickets-table-date-range-dropdown .ant-picker-content th,
+.tickets-table-date-range-dropdown .ant-picker-content td,
+.tickets-table-date-range-dropdown .ant-picker-panel-rtl {
+    direction: ltr !important;
+}
+
+.tickets-table-date-range-dropdown {
+    .ant-picker-panels {
+        flex-direction: row !important;
+    }
+
+    .ant-picker-panel {
+        order: initial !important;
+    }
+
+    .ant-picker-cell {
+        text-align: center !important;
+    }
+
+    .ant-picker-cell .ant-picker-cell-inner {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center !important;
+    }
+
+    .ant-picker-date-panel .ant-picker-header {
+        display: grid !important;
+        grid-template-columns: 22px 22px 1fr 22px 22px;
+        align-items: center;
+        min-height: 40px;
+    }
+
+    .ant-picker-date-panel .ant-picker-header > button {
+        width: 22px;
+        min-width: 22px;
+        justify-self: center;
+    }
+
+    .ant-picker-date-panel .ant-picker-header-view {
+        grid-column: 3;
+        width: 100%;
+        justify-self: center;
+        transform: none;
+        text-align: center !important;
+    }
+
+    .ant-picker-date-panel .ant-picker-header-view button {
+        font-family: Inter;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 28px;
+        // color: #2b2f36;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+      }
+    }
+
+    .ant-picker-date-panel .ant-picker-header-super-prev-btn {
+        grid-column: 1;
+    }
+
+    .ant-picker-date-panel .ant-picker-header-prev-btn {
+        grid-column: 2;
+    }
+
+    .ant-picker-date-panel .ant-picker-header-next-btn {
+        grid-column: 4;
+    }
+
+    .ant-picker-date-panel .ant-picker-header-super-next-btn {
+        grid-column: 5;
+    }
+
+    .ant-picker-panel-rtl {
+        .ant-picker-header-view button:not(:first-child) {
+            margin-right: 0;
+            margin-left: 8px;
+        }
+
+        .ant-picker-prev-icon,
+        .ant-picker-super-prev-icon {
+            transform: rotate(-45deg);
+        }
+
+        .ant-picker-next-icon,
+        .ant-picker-super-next-icon {
+            transform: rotate(135deg);
+        }
+    }
+}
+
+.tickets-table-date-range-dropdown.ant-picker-dropdown-rtl {
+    .ant-picker-panels > .ant-picker-panel:first-child {
+        order: 2 !important;
+    }
+
+    .ant-picker-panels > .ant-picker-panel:nth-child(2) {
+        order: 1 !important;
+    }
+}

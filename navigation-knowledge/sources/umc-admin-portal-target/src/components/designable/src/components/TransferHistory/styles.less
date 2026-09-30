@@ -1,0 +1,94 @@
+.transfer-history-container {
+  width: 100%;
+
+  .transfer-history-card {
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e8e8e8;
+
+    .ant-card-head {
+      background-color: #fff;
+      border-bottom: none;
+      padding: 20px 24px 0;
+      min-height: auto;
+
+      .ant-card-head-title {
+        font-weight: 600;
+        font-size: 16px;
+        color: #361e12;
+        padding: 0;
+      }
+    }
+
+    .ant-card-body {
+      padding: 16px 24px 24px;
+    }
+  }
+
+  .transfer-history-table {
+    .ant-table-thead > tr > th {
+      background-color: #eaf0fb;
+      color: #333;
+      font-weight: 500;
+      font-size: 14px;
+      border-bottom: none;
+      padding: 12px 16px;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    .ant-table-tbody > tr > td {
+      color: #333;
+      font-size: 14px;
+      padding: 12px 16px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .ant-table-tbody > tr:last-child > td {
+      border-bottom: none;
+    }
+
+    .ant-table-tbody > tr:hover > td {
+      background-color: #fafafa;
+    }
+  }
+
+  .transfer-history-empty {
+    padding: 48px 0;
+
+    .empty-text {
+      color: #666;
+      font-size: 14px;
+    }
+  }
+
+  .transfer-history-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    .ant-pagination-item-active {
+      border-color: #d4a853;
+
+      a {
+        color: #d4a853;
+      }
+    }
+
+    .ant-pagination-item:hover {
+      border-color: #d4a853;
+
+      a {
+        color: #d4a853;
+      }
+    }
+
+    .ant-pagination-prev:hover .ant-pagination-item-link,
+    .ant-pagination-next:hover .ant-pagination-item-link {
+      color: #d4a853;
+      border-color: #d4a853;
+    }
+  }
+}

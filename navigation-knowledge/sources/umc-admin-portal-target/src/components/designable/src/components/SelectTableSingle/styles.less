@@ -1,0 +1,191 @@
+@import "@/styles/variables.less";
+
+.dn-select-table {
+  .formtitle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 8px;
+    font-weight: 500;
+
+    .formtitle-tooltip {
+      color: #999;
+      cursor: help;
+      font-size: 14px;
+      margin-left: 4px;
+
+      &:hover {
+        color: #8b7355;
+      }
+    }
+  }
+
+  .table-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    align-items: center;
+    padding: 16px;
+    background: #ffffff;
+    border-top: 1px solid #e8e8e8;
+
+    .total-label {
+      font-size: 16px;
+      font-weight: 600;
+      color: @text-color;
+    }
+
+    .total-amount {
+      font-size: 18px;
+      font-weight: 700;
+      color: @primary-color;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      img {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+  width: 100%;
+  .ServiceFeesCard {
+    margin-top: 20px;
+  }
+  .ant-select,
+  .select-table-tree {
+    width: 100%;
+  }
+
+  .ant-table,
+  .tabletitle {
+    // margin-top: 16px;
+  }
+
+  // TreeSelect dropdown row layout (match screenshot: label left, fee/count right)
+  .select-table-node {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 12px;
+  }
+  .select-table-node-label {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .select-table-node-right {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .select-table-node-fee {
+    color: #361e12;
+    font-weight: 600;
+  }
+  .select-table-node-count {
+    color: #5f646d;
+    background: #f1f2f4;
+    border-radius: 8px;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  // Input style a bit closer to screenshot
+  .select-table-tree .ant-select-selector {
+    min-height: 44px;
+    border-radius: 10px;
+    padding: 6px 10px !important;
+  }
+  .select-table-tree
+    .ant-select-selection-overflow-item
+    .ant-select-selection-item {
+    border-radius: 8px;
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+  }
+}
+.servicefees {
+  // margin: 0 -20px;
+  background-color: #f9fafb;
+  color: #21252e;
+  font-weight: 600;
+  height: 48px;
+  border-radius: 16px 16px 0 0;
+  padding: 0 20px;
+  line-height: 48px;
+}
+.formtable {
+  .moneybox {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .aedicon {
+    width: 20px;
+    height: 15px;
+  }
+}
+
+// Droppable container styles for Designable
+.dn-select-table-wrapper {
+  width: 100%;
+}
+
+.select-table-drop-container {
+  min-height: 100px;
+  margin: 16px 0;
+  padding: 16px;
+  border: 2px dashed #d9d9d9;
+  border-radius: 8px;
+  background-color: #fafafa;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    border-color: #8b7355;
+    background-color: #fff7e6;
+  }
+}
+
+.select-table-drop-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 14px;
+  user-select: none;
+}
+
+.select-table-children-container {
+  margin: 16px 0;
+  padding: 8px;
+  // border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  // background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  .ant-formily-item{
+    flex-direction: column;
+    justify-content: flex-start;
+    .ant-formily-item-label{
+      justify-content: flex-start;
+    }
+  }
+}
+
+// Runtime custom container
+.select-table-custom-container {
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

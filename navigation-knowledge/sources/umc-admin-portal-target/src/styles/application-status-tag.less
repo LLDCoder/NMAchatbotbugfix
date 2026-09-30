@@ -1,0 +1,56 @@
+.status-tag,
+.approval-result {
+  display: inline-block;
+  padding: 3px 6px;
+  border-radius: 4px;
+  background-color: #fffbeb;
+  color: #f29f0e;
+  font-size: 14px;
+  white-space: nowrap;
+
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+  }
+}
+
+.ExternalApproval,
+.PendingModification,
+.PendingDisposition,
+.DispositionVerification,
+.UnderVerification {
+  background-color: #fffbeb;
+  color: #f29f0e;
+}
+
+.Completed,
+.Approval {
+  background-color: #f3faf4;
+  color: #4a9d5c;
+}
+
+.FinalApproval,
+.InitialApproval,
+.Initial,
+.Secondary,
+.Tertiary,
+.Senior,
+.Executive {
+  background-color: #fef5ee;
+  color: #eb5f24;
+}
+
+.Cancelled {
+  background-color: rgba(225, 227, 229, 0.5);
+  color: #5f646d;
+}
+
+.Rejected {
+  background-color: #fef2f2;
+  color: #ea4f49;
+}
+
+.status-tag.PendingPayment {
+  background-color: #e7f5ff;
+  color: #286cff;
+}

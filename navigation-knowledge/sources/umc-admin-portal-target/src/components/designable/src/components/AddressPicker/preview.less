@@ -1,0 +1,51 @@
+.address-picker-preview {
+  width: 100%;
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 24px;
+  }
+
+  .field-wrapper {
+    .field-label {
+      margin-bottom: 8px;
+      
+      .label-text {
+        color: #000000;
+      }
+      
+      .required-mark {
+        color: #ff4d4f;
+      }
+    }
+    
+    .field-select {
+      width: 100%;
+    }
+  }
+
+  .field-full-width {
+    grid-column: 1 / -1;
+  }
+
+  .field-textarea {
+    width: 100%;
+    resize: none;
+  }
+
+  // Static illustration only — the designer canvas must never mount a real map:
+  // blocking pointer events would not stop the Maps SDK from loading and geocoding.
+  // The asset is a @2x export of the 808x320 design frame, so height stays automatic
+  // to preserve its 2.525 aspect ratio at any canvas width.
+  .map-placeholder {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 24px;
+    border-radius: 8px;
+    user-select: none;
+    pointer-events: none;
+  }
+}
+

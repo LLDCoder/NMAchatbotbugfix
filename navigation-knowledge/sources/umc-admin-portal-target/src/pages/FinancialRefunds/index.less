@@ -1,0 +1,597 @@
+.financial-refunds {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.financial-refunds__header {
+  display: grid;
+  /* Three summary cards; wrap to one column on a phone rather than only thinning. */
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.financial-refunds__pending-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 226px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.financial-refunds__pending-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 105px;
+  padding: 16px 24px;
+  background: #fff;
+  border-radius: 20px;
+
+  img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+    border-radius: 10px;
+  }
+}
+
+/* Below 1204 the two donut summary cards sit two-up on the first row and the two short
+   pending cards (previously stacked in the right-hand column) line up side by side on a
+   second, full-width row. */
+@media (max-width: 1203.98px) {
+  .financial-refunds__header {
+    grid-template-columns: 1fr 1fr;
+  }
+  .financial-refunds__pending-cards {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    height: auto;
+  }
+  .financial-refunds__pending-card {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}
+
+.financial-refunds__pending-card-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.financial-refunds__pending-card-title {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: #361e12;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+
+  img {
+    width: 15px;
+    height: 14px;
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 16px;
+  }
+}
+
+.financial-refunds__pending-card-value {
+  color: #797e86;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.financial-refunds__stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 226px;
+  padding: 24px;
+  background: #fff;
+  border-radius: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 16px;
+    padding: 24px;
+    border-radius: 10px;
+  }
+}
+
+.financial-refunds__stat-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.financial-refunds__stat-card-title {
+  color: #361e12;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 16px;
+  }
+}
+
+.financial-refunds__stat-card-info-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+
+  img {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.financial-refunds__stat-card-aed-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.financial-refunds__stat-card-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+.financial-refunds__stat-card-chart-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 132px;
+}
+
+.financial-refunds__stat-card-chart-shell {
+  position: relative;
+  width: 132px;
+  height: 132px;
+}
+
+.financial-refunds__stat-card-chart {
+  width: 132px !important;
+  height: 132px !important;
+
+  > div {
+    width: 132px !important;
+    height: 132px !important;
+
+    > canvas {
+      width: 132px !important;
+      height: 132px !important;
+    }
+  }
+}
+
+.financial-refunds__stat-card-center {
+  position: absolute;
+  top: calc(50% + 4px);
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.financial-refunds__stat-card-total {
+  color: #361e12;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 16px;
+  }
+}
+
+.financial-refunds__stat-card-total-label {
+  color: #5f646d;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.financial-refunds__stat-card-legend {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  min-width: 0;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.financial-refunds__stat-card-legend-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.financial-refunds__stat-card-legend-item--inactive {
+  opacity: 0.45;
+}
+
+.financial-refunds__stat-card-legend-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  color: #361e12;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    // font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.financial-refunds__stat-card-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.financial-refunds__stat-card-legend-value {
+  color: #361e12;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: right;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 1439.98px) {
+  .financial-refunds__header {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .financial-refunds__stat-card {
+    gap: 24px;
+    height: 334px;
+    padding: 24px;
+    border-radius: 20px;
+  }
+
+  .financial-refunds__stat-card-title {
+    font-size: 18px;
+  }
+
+  .financial-refunds__stat-card-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .financial-refunds__stat-card-total {
+    font-size: 18px;
+  }
+
+  .financial-refunds__stat-card-total-label {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .financial-refunds__stat-card-legend {
+    flex: none;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .financial-refunds__stat-card-legend-item {
+    gap: 12px;
+  }
+
+  .financial-refunds__stat-card-legend-label {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .financial-refunds__stat-card-legend-value {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .financial-refunds__pending-cards {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    gap: 16px;
+    height: 80px;
+  }
+
+  .financial-refunds__pending-card {
+    flex: 1 1 0;
+    gap: 12px;
+    min-width: 200px;
+    height: 80px;
+    padding: 16px 24px;
+    border-radius: 20px;
+  }
+
+  .financial-refunds__pending-card-detail {
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .financial-refunds__pending-card-title {
+    font-size: 18px;
+
+    img {
+      width: 16px;
+    }
+  }
+
+  .financial-refunds__pending-card-value {
+    overflow: hidden;
+    color: #5f646d;
+    font-size: 14px;
+    line-height: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.financial-refunds__table {
+  padding: 24px;
+  background: #fff;
+  border-radius: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.financial-refunds__filter-table {
+  &.filter-table.filter-table--responsive-toolbar
+    .header-filter
+    > .filter-table__filter-field--range {
+    flex: 0 0 300px;
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+  }
+
+  .ant-table-thead > tr > th {
+    color: #797e86;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    background: #f9fafb;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 10px;
+      line-height: 16px;
+    }
+  }
+
+  .ant-table-tbody > tr > td {
+    color: #361e12;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    vertical-align: top;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  .ant-table-tbody > tr:hover > td {
+    background: #f9fafb;
+  }
+
+  @media (max-width: 1439.98px) {
+    .filter-table-responsive-item > .filter-table__filter-field--select.ant-select,
+    .filter-table-responsive-item
+      > .filter-table__filter-field--select.ant-select
+      .ant-select-selector,
+    .filter-table-responsive-item > .filter-table__filter-field--range.ant-picker {
+      height: 40px !important;
+      min-height: 40px !important;
+      max-height: 40px !important;
+    }
+  }
+}
+
+.financial-refunds__column-number {
+  word-break: break-word;
+}
+
+.financial-refunds__apply-for {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.financial-refunds__type-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.financial-refunds__type-text {
+  color: #361e12;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.financial-refunds__scope-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 22px;
+  padding: 0 6px;
+  color: #797e86;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  background: #f3f4f6;
+  border-radius: 4px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 16px;
+  }
+}
+
+.financial-refunds__currency-icon {
+  margin: 0 2px;
+  vertical-align: middle;
+}
+
+.financial-refunds__amount-negative {
+  color: #ff5b51;
+  white-space: nowrap;
+}
+
+.financial-refunds__status-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 26px;
+  padding: 0 6px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  white-space: nowrap;
+  border-radius: 4px;
+
+  &.is-pending {
+    color: #eb5f24;
+    background: #fef5ee;
+  }
+
+  &.is-success {
+    color: #4a9d5c;
+    background: #f3faf4;
+  }
+
+  &.is-danger {
+    color: #ea4f49;
+    background: #fef2f2;
+  }
+
+  &.is-neutral {
+    color: #5f646d;
+    background: #f3f4f6;
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.financial-refunds__action-button {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  color: #92722a;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: inherit;
+  line-height: 24px;
+  white-space: nowrap;
+  background: transparent;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+
+  &.is-disabled {
+    color: #b5bac1;
+    cursor: not-allowed;
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.financial-refunds__action-placeholder {
+  color: #361e12;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.financial-refunds__action-anchor {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+}

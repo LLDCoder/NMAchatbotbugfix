@@ -1,0 +1,645 @@
+{
+  "en": {
+    "requestId": "aebc1cb2-1448-4e59-882e-4efba78233ad",
+    "originalQuestion": "What can I do in my current role?",
+    "canonicalQuestion": "What can I do in my current role?",
+    "initialTask": {
+      "view": "",
+      "stage": "task",
+      "filters": [],
+      "groupBy": [],
+      "readOnly": true,
+      "timeField": "",
+      "timeRange": "unknown",
+      "outputShape": "overview",
+      "searchQuery": "current role available actions permissions limitations capabilities",
+      "slotUpdates": [
+        {
+          "field": "businessObject",
+          "value": "role capability",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedScope",
+          "value": "personal",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedAttributes",
+          "value": [
+            "available actions in current role",
+            "limitations of current role"
+          ],
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "outputShape",
+          "value": "overview",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "businessFocus",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "disclosurePurpose",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedGrain",
+          "value": "unknown",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedMeasures",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupBy",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeRange",
+          "value": "unknown",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "filters",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "recordIdentity",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "view",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeField",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedOrdering",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupCompleteness",
+          "value": "observed",
+          "source": "current",
+          "evidence": "parsed current request"
+        }
+      ],
+      "responseMode": "answer",
+      "businessFocus": "",
+      "clarification": null,
+      "needsLiveData": false,
+      "businessObject": "role capability",
+      "recordIdentity": "",
+      "requestedGrain": "unknown",
+      "requestedScope": "personal",
+      "contextRelation": "new",
+      "unresolvedSlots": [],
+      "disclosurePurpose": "",
+      "groupCompleteness": "observed",
+      "requestBoundaries": [],
+      "requestedMeasures": [],
+      "requestedOrdering": [],
+      "requestedAttributes": [
+        "available actions in current role",
+        "limitations of current role"
+      ],
+      "evidenceExplanations": []
+    },
+    "refinedTask": {
+      "view": "",
+      "stage": "task",
+      "filters": [],
+      "groupBy": [],
+      "readOnly": true,
+      "timeField": "",
+      "timeRange": "unknown",
+      "outputShape": "overview",
+      "searchQuery": "current role available actions permissions limitations capabilities",
+      "slotUpdates": [
+        {
+          "field": "businessObject",
+          "value": "role capability",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedScope",
+          "value": "personal",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedAttributes",
+          "value": [
+            "available actions in current role",
+            "limitations of current role"
+          ],
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "outputShape",
+          "value": "overview",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "businessFocus",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "disclosurePurpose",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedGrain",
+          "value": "unknown",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedMeasures",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupBy",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeRange",
+          "value": "unknown",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "filters",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "recordIdentity",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "view",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeField",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedOrdering",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupCompleteness",
+          "value": "observed",
+          "source": "current",
+          "evidence": "parsed current request"
+        }
+      ],
+      "responseMode": "answer",
+      "businessFocus": "",
+      "clarification": null,
+      "needsLiveData": false,
+      "businessObject": "role capability",
+      "recordIdentity": "",
+      "requestedGrain": "unknown",
+      "requestedScope": "personal",
+      "contextRelation": "new",
+      "unresolvedSlots": [],
+      "disclosurePurpose": "",
+      "groupCompleteness": "observed",
+      "requestBoundaries": [],
+      "requestedMeasures": [],
+      "requestedOrdering": [],
+      "requestedAttributes": [
+        "available actions in current role",
+        "limitations of current role"
+      ],
+      "evidenceExplanations": []
+    },
+    "queryExpansions": [
+      {
+        "stage": "query_expansion",
+        "terms": [
+          {
+            "arabic": "قدرات الدور",
+            "english": "role capability",
+            "sourceText": "role capability",
+            "alternatives": [],
+            "requirementId": "object"
+          },
+          {
+            "arabic": "قدرات الدور",
+            "english": "role capability",
+            "sourceText": "role capability",
+            "alternatives": [],
+            "requirementId": "grain"
+          },
+          {
+            "arabic": "شخصي",
+            "english": "personal",
+            "sourceText": "personal",
+            "alternatives": [],
+            "requirementId": "scope"
+          },
+          {
+            "arabic": "الإجراءات المتاحة في الدور الحالي",
+            "english": "available actions in current role",
+            "sourceText": "available actions in current role",
+            "alternatives": [],
+            "requirementId": "attribute_0"
+          },
+          {
+            "arabic": "قيود الدور الحالي",
+            "english": "limitations of current role",
+            "sourceText": "limitations of current role",
+            "alternatives": [],
+            "requirementId": "attribute_1"
+          }
+        ],
+        "issues": [],
+        "attempt": 1,
+        "intentStatus": "consistent",
+        "taskFingerprint": "f9d0ef4a6e64af2f9d4c51be6252af9c9c869887b3afecd45978ebfe0c42fec0"
+      }
+    ],
+    "originalEvidencePath": "test/runtime/groups1113-20260928/round27-i04-v36/answers/I-04__en.json",
+    "originalEvidenceSha256": "344d1e0e2188e920124d27d277cbe00913e1f3fd188de72935c61f45d9acd4ec"
+  },
+  "ar": {
+    "requestId": "86d9eef3-a126-4714-b4b6-afdf9a71ff08",
+    "originalQuestion": "ما الذي يمكنني فعله ضمن دوري الحالي؟",
+    "canonicalQuestion": "What can I do within my current role?",
+    "initialTask": {
+      "view": "",
+      "stage": "task",
+      "filters": [],
+      "groupBy": [],
+      "readOnly": true,
+      "timeField": "",
+      "timeRange": "unknown",
+      "outputShape": "overview",
+      "searchQuery": "available assistance current role permissions limitations capabilities",
+      "slotUpdates": [
+        {
+          "field": "businessObject",
+          "value": "available assistance",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedScope",
+          "value": "personal",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedAttributes",
+          "value": [
+            "available assistance within current role",
+            "limitations of available assistance"
+          ],
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "outputShape",
+          "value": "overview",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "businessFocus",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "disclosurePurpose",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedGrain",
+          "value": "unknown",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedMeasures",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupBy",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeRange",
+          "value": "unknown",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "filters",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "recordIdentity",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "view",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeField",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedOrdering",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupCompleteness",
+          "value": "observed",
+          "source": "current",
+          "evidence": "parsed current request"
+        }
+      ],
+      "responseMode": "answer",
+      "businessFocus": "",
+      "clarification": null,
+      "needsLiveData": false,
+      "businessObject": "available assistance",
+      "recordIdentity": "",
+      "requestedGrain": "unknown",
+      "requestedScope": "personal",
+      "contextRelation": "new",
+      "unresolvedSlots": [],
+      "disclosurePurpose": "",
+      "groupCompleteness": "observed",
+      "requestBoundaries": [],
+      "requestedMeasures": [],
+      "requestedOrdering": [],
+      "requestedAttributes": [
+        "available assistance within current role",
+        "limitations of available assistance"
+      ],
+      "evidenceExplanations": []
+    },
+    "refinedTask": {
+      "view": "",
+      "stage": "task",
+      "filters": [],
+      "groupBy": [],
+      "readOnly": true,
+      "timeField": "",
+      "timeRange": "unknown",
+      "outputShape": "overview",
+      "searchQuery": "available assistance current role permissions limitations capabilities",
+      "slotUpdates": [
+        {
+          "field": "businessObject",
+          "value": "available assistance",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedScope",
+          "value": "personal",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedAttributes",
+          "value": [
+            "available assistance within current role",
+            "limitations of available assistance"
+          ],
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "outputShape",
+          "value": "overview",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "businessFocus",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "disclosurePurpose",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedGrain",
+          "value": "unknown",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedMeasures",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupBy",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeRange",
+          "value": "unknown",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "filters",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "recordIdentity",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "view",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeField",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedOrdering",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupCompleteness",
+          "value": "observed",
+          "source": "current",
+          "evidence": "parsed current request"
+        }
+      ],
+      "responseMode": "answer",
+      "businessFocus": "",
+      "clarification": null,
+      "needsLiveData": false,
+      "businessObject": "available assistance",
+      "recordIdentity": "",
+      "requestedGrain": "unknown",
+      "requestedScope": "personal",
+      "contextRelation": "new",
+      "unresolvedSlots": [],
+      "disclosurePurpose": "",
+      "groupCompleteness": "observed",
+      "requestBoundaries": [],
+      "requestedMeasures": [],
+      "requestedOrdering": [],
+      "requestedAttributes": [
+        "available assistance within current role",
+        "limitations of available assistance"
+      ],
+      "evidenceExplanations": []
+    },
+    "queryExpansions": [
+      {
+        "stage": "query_expansion",
+        "terms": [
+          {
+            "arabic": "المساعدة المتاحة",
+            "english": "available assistance",
+            "sourceText": "available assistance",
+            "alternatives": [
+              "available support",
+              "الدعم المتاح"
+            ],
+            "requirementId": "object"
+          },
+          {
+            "arabic": "المساعدة المتاحة",
+            "english": "available assistance",
+            "sourceText": "available assistance",
+            "alternatives": [],
+            "requirementId": "grain"
+          },
+          {
+            "arabic": "شخصي",
+            "english": "personal",
+            "sourceText": "personal",
+            "alternatives": [],
+            "requirementId": "scope"
+          },
+          {
+            "arabic": "المساعدة المتاحة ضمن الدور الحالي",
+            "english": "available assistance within current role",
+            "sourceText": "available assistance within current role",
+            "alternatives": [
+              "available assistance within my current role",
+              "المساعدة المتاحة ضمن دوري الحالي"
+            ],
+            "requirementId": "attribute_0"
+          },
+          {
+            "arabic": "قيود المساعدة المتاحة",
+            "english": "limitations of available assistance",
+            "sourceText": "limitations of available assistance",
+            "alternatives": [
+              "restrictions of available assistance",
+              "حدود المساعدة المتاحة"
+            ],
+            "requirementId": "attribute_1"
+          }
+        ],
+        "issues": [],
+        "attempt": 1,
+        "intentStatus": "consistent",
+        "taskFingerprint": "89cf91a162a7ae42d392cd443936c9f460aa8780cee3ec5a7fa75f7bab85d90d"
+      }
+    ],
+    "originalEvidencePath": "test/runtime/groups1113-20260928/round27-i04-v36/answers/I-04__ar.json",
+    "originalEvidenceSha256": "e6c59f08227e7f8960180161292235cba960922b2b5ef428dddccc4570684604"
+  }
+}

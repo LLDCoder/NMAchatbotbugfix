@@ -1,0 +1,167 @@
+@import './InspectionViolationModalShared.less';
+
+.inspection-violation-details__submit-report-modal {
+  width: var(--inspection-modal-width-submit-report) !important;
+  max-width: calc(100vw - 64px);
+}
+
+.inspection-violation-details__modal.inspection-violation-details__submit-report-modal
+  .ant-modal-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 591px;
+  max-height: 80vh;
+  border-radius: 20px;
+  background: #fff;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      border-radius: 10px;
+    }
+}
+
+.inspection-violation-details__modal.inspection-violation-details__submit-report-modal
+  .ant-modal-header {
+  flex: 0 0 auto;
+  min-height: 100px;
+  padding: 32px 40px;
+  border-bottom: 1px solid #e1e3e5;
+}
+
+.inspection-violation-details__modal.inspection-violation-details__submit-report-modal
+  .ant-modal-title {
+  color: #361e12;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.inspection-violation-details__modal.inspection-violation-details__submit-report-modal
+  .ant-modal-body {
+  flex: 1 1 auto;
+  min-height: 400px;
+  padding: 32px 40px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.inspection-violation-details__modal.inspection-violation-details__submit-report-modal
+  .ant-modal-footer {
+  flex: 0 0 auto;
+  min-height: 95px;
+  padding: 24px 40px;
+  border-top: 1px solid #e1e3e5;
+}
+
+.inspection-violation-details__submit-report-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 16px;
+  }
+}
+
+.inspection-violation-details__submit-report-form .ant-form-item {
+  margin-bottom: 0;
+}
+
+.inspection-violation-details__submit-report-form .ant-form-item-label {
+  padding-bottom: 8px;
+}
+
+.inspection-violation-details__submit-report-form .ant-form-item-label > label {
+  height: 20px;
+}
+
+.inspection-violation-details__submit-report-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #361e12;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.inspection-violation-details__submit-report-required {
+  color: #ea4f49;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+.inspection-violation-details__submit-report-field--upload {
+  width: 100%;
+}
+
+.inspection-violation-details__submit-report-field--upload
+  .inspection-common-attachment-upload {
+  width: 100%;
+}
+
+.inspection-violation-details__submit-report-field--upload
+  .inspection-common-attachment-upload__wrapper {
+  width: 428px;
+  max-width: 100%;
+  display: block;
+}
+
+.inspection-violation-details__submit-report-field--upload
+  .inspection-common-attachment-upload__wrapper
+  .ant-upload {
+  width: 100%;
+}
+
+.inspection-violation-details__submit-report-field--upload
+  .inspection-common-attachment-upload__trigger {
+  min-height: 48px;
+  background: #fff;
+}
+
+.inspection-violation-details__submit-report-field--upload
+  .inspection-common-attachment-upload__attachment-grid {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.inspection-violation-details__submit-report-field--summary
+  .ant-input-textarea {
+  display: block;
+}
+
+.inspection-violation-details__submit-report-field--summary
+  .ant-input-textarea-show-count::after {
+  margin-top: 4px;
+  color: #797e86;
+  font-size: 12px;
+  line-height: 16px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 10px;
+      line-height: 14px;
+    }
+}
+
+.inspection-violation-details__submit-report-modal
+  .inspection-violation-details__textarea.ant-input {
+  min-height: 110px;
+  padding: 14px 16px 6px;
+  font-weight: 500;
+  overflow-y: auto !important;
+}
+
+.inspection-violation-details__submit-report-modal
+  .inspection-violation-details__textarea.ant-input::placeholder {
+  color: #797e86;
+}

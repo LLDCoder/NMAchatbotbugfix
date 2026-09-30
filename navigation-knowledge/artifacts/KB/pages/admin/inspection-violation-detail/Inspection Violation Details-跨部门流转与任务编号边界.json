@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "1.0",
+  "packageStatus": "active",
+  "bundleId": "admin.inspection.violation.routing-boundaries.package",
+  "createdAt": "2026-09-28T02:59:57.134136+00:00",
+  "searchMetadata": {
+    "titleEnglish": "Inspection violation transfer to Content or Committee, task and violation identity boundaries",
+    "titleArabic": "تحويل مخالفة التفتيش إلى المحتوى أو اللجنة والتمييز بين رقم المهمة ورقم المخالفة",
+    "descriptionEnglish": "Inspection violation transfer to Content or Committee, task and violation identity boundaries",
+    "descriptionArabic": "تحويل مخالفة التفتيش إلى المحتوى أو اللجنة والتمييز بين رقم المهمة ورقم المخالفة"
+  },
+  "records": [
+    {
+      "id": "admin.inspection.violation.routing-boundaries",
+      "kind": "page_definition",
+      "revision": 1,
+      "status": "active",
+      "title": "Inspection violation transfer to Content or Committee, task and violation identity boundaries",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local",
+          "debug"
+        ],
+        "pageRefs": [
+          "/inspection/violations/detail",
+          "/inspection/violations",
+          "/inspection/tasks/detail"
+        ],
+        "sourceSnapshot": "source-inspected-20260928",
+        "runtimeVerification": "not_a_live_execution",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/InspectionViolations/InspectionViolationAppService.cs",
+          "revision": "sha256:be67e0321eba606160880e95c87e77859a1e675396c5f731e4e34e1081737e0f",
+          "locator": "RouteAsync: content-only target/status conditions, configured handler resolution and timeline",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.API/Controllers/InspectionViolationController.cs",
+          "revision": "sha256:3f36b3f979e11d23d4966cdd72c27766d415fca863302adf3c97e2a29b61c93a",
+          "locator": "RouteAsync uses violation id and Inspection.Violation.Route permission",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/InspectionViolations/index.tsx",
+          "revision": "sha256:d7991afbd51b1fb69a535ec776e4e2e745ea76b758628f1c89d96cab4ae0a05a",
+          "locator": "transferRouteTargetByAction and runViolationAction",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/InspectionViolationDetails/index.tsx",
+          "revision": "sha256:d8c867a8146a1c82951221e74d2233ed8b84301a6783cec0bb5187dbcdcec3cb",
+          "locator": "handleFooterAction transfer_content and transfer_committee",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/inspection/violations/detail",
+        "pageMeaning": "Inspection violation transfer to Content or Committee, task and violation identity boundaries",
+        "sections": [
+          {
+            "topic": "Identity and object",
+            "facts": [
+              "Transfer is an action on a violation case. An inspection task and a violation are different entities with different identifiers. A task number is a lookup anchor only; establish the related violation from the authorized task/report or violation sourceTaskId/sourceTaskNo relationship before describing current eligibility.",
+              "A task may have no violation, one violation or several. Do not substitute the task numeric id for a violation id, and do not choose one related case without an unambiguous match.",
+              "التحويل يخص قضية مخالفة وليس مهمة التفتيش نفسها. يجب التحقق من القضية المرتبطة؛ لا يُستخدم معرّف المهمة مكان معرّف المخالفة."
+            ]
+          },
+          {
+            "topic": "Applicable transfer conditions",
+            "facts": [
+              "The inspected RouteAsync supports Content-type violations only. It accepts Content and Committee as route targets; other targets, including Licensing, are not supported by this specific action.",
+              "Transfer to Content requires PendingRouting and changes the violation to PendingContentReport. Transfer to Committee requires PendingRouting or PendingReview and changes it to PendingCommitteeDecision. These source-defined conditions do not prove that a named record currently meets them.",
+              "The request requires Inspection.Violation.Route permission. The configured Content Team or Committee handler is resolved by the service; a user-supplied department name or role title cannot replace that configuration.",
+              "المسار المفحوص يدعم مخالفات المحتوى فقط. التحويل إلى فريق المحتوى يتطلب حالة انتظار التوجيه، وإلى اللجنة يتطلب انتظار التوجيه أو انتظار المراجعة. لا يوجد هدف Licensing في هذا الإجراء المحدد."
+            ]
+          },
+          {
+            "topic": "Documented handling and confirmation boundary",
+            "facts": [
+              "For a related, verified violation, open its authorized violation details or list and inspect its available Transfer to Content Team or Transfer to Committee action. Check the target, current state and supporting assessment; record the transfer note where the applicable form supports it. The server records the transition and target handler in the violation timeline.",
+              "The inspected list and detail handlers can submit a transfer directly; this source does not prove that the portal presents a separate preview/confirmation modal. An assistant must therefore remain explanation-only: do not invoke the write, imply confirmation occurred or claim the transfer completed. A future write capability would need a verified preview and explicit confirmation before invoking an authorized action.",
+              "If the request says Licensing or Content without selecting one, preserve that unresolved choice and explain the supported Content-case conditions. Ask for the relevant violation reference/target when needed; do not silently choose a department or imply a general task-transfer workflow exists."
+            ]
+          }
+        ],
+        "constraints": [
+          "These are source-defined conditions, not current-record eligibility or a permission grant. Verify current authorized record, available actions and applicable deployment before a business decision.",
+          "No write is executed by reading or explaining these documents. Do not invent missing operations, formal policy owners or approval rules."
+        ]
+      }
+    }
+  ]
+}

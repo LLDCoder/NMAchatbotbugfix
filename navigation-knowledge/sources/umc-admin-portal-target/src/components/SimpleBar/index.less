@@ -1,0 +1,49 @@
+.custom-simplebar .simplebar-content-wrapper {
+  outline: none;
+}
+
+.custom-simplebar .simplebar-track {
+  background: transparent;
+}
+
+.custom-simplebar .simplebar-track.simplebar-vertical {
+  width: 10px;
+}
+
+.custom-simplebar .simplebar-track.simplebar-horizontal {
+  height: 10px;
+}
+
+.custom-simplebar .simplebar-track .simplebar-scrollbar {
+  width: 10px;
+}
+
+.custom-simplebar .simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+  height: 10px;
+}
+
+.custom-simplebar .simplebar-scrollbar::before {
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0 !important;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.custom-simplebar.simplebar-dragging > div > .simplebar-scrollbar::before,
+.custom-simplebar:hover > div > .simplebar-scrollbar::before {
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 1 !important;
+}
+
+.custom-simplebar.layout-content-scroll.simplebar-scrollable-x
+  > .simplebar-track.simplebar-horizontal
+  > .simplebar-scrollbar {
+  pointer-events: auto;
+}
+
+.custom-simplebar.layout-content-scroll.simplebar-scrollable-x
+  > .simplebar-track.simplebar-horizontal
+  > .simplebar-scrollbar::before {
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 1 !important;
+}

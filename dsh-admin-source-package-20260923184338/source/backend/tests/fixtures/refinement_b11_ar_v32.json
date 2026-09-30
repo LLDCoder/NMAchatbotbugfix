@@ -1,0 +1,786 @@
+{
+  "evidenceKind": "actual terminal database audit, narrow offline projection; no model replay or new read",
+  "source": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/groups1113-20260928/round23-b11-v32/B-11__ar-audit-db.json",
+  "sourceSHA256": "8f0e0ff416115aad7e5daa4b54a6e42129436c01508f6a39eb62bc2cbf916fbd",
+  "requestId": "29e64f58-9885-465e-a527-61c32ffe1727",
+  "conversationId": "conv_d98d97e371fd47f3a7a1",
+  "question": "أرى حالة مختلفة للطلب نفسه على الصفحة. أعد التحقق من السجل الحالي، ووضح مصدر إجابتك ووقت الملاحظة، وأرشدني إلى كيفية التحديث أو التحقق من هذا الاختلاف. لا تغيّر أي بيانات.",
+  "canonicalQuestion": "I see a different status for the same request on the page. Re-verify the current record, and clarify the source of your answer and the time of observation, and guide me on how to update or verify this discrepancy. Do not change any data.",
+  "draft": {
+    "view": "",
+    "stage": "task",
+    "filters": [],
+    "groupBy": [],
+    "readOnly": true,
+    "timeField": "",
+    "timeRange": "unknown",
+    "outputShape": "detail",
+    "searchQuery": "request status discrepancy verification source observation time update procedure ML-1-7-6577159",
+    "slotUpdates": [
+      {
+        "field": "businessObject",
+        "value": "request",
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "requestedAttributes",
+        "value": [
+          "status",
+          "source of the answer",
+          "time of observation",
+          "documented procedure to verify or update a status discrepancy"
+        ],
+        "source": "current",
+        "evidence": "أعد التحقق من السجل الحالي، ووضح مصدر إجابتك ووقت الملاحظة، وأرشدني إلى كيفية التحديث أو التحقق من هذا الاختلاف"
+      },
+      {
+        "field": "outputShape",
+        "value": "detail",
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "recordIdentity",
+        "value": "ML-1-7-6577159",
+        "source": "previous",
+        "evidence": "الطلب نفسه"
+      },
+      {
+        "field": "requestedGrain",
+        "value": "request",
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "requestedScope",
+        "value": "unknown",
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "timeRange",
+        "value": "unknown",
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "businessFocus",
+        "value": "",
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "disclosurePurpose",
+        "value": "",
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "requestedMeasures",
+        "value": [],
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "groupBy",
+        "value": [],
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "filters",
+        "value": [],
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "view",
+        "value": "",
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "timeField",
+        "value": "",
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "requestedOrdering",
+        "value": [],
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "groupCompleteness",
+        "value": "observed",
+        "source": "previous",
+        "evidence": ""
+      }
+    ],
+    "responseMode": "answer",
+    "businessFocus": "",
+    "clarification": null,
+    "needsLiveData": true,
+    "businessObject": "request",
+    "recordIdentity": "ML-1-7-6577159",
+    "requestedGrain": "request",
+    "requestedScope": "unknown",
+    "contextRelation": "continue",
+    "unresolvedSlots": [],
+    "disclosurePurpose": "",
+    "groupCompleteness": "observed",
+    "requestBoundaries": [],
+    "requestedMeasures": [],
+    "requestedOrdering": [],
+    "requestedAttributes": [
+      "status",
+      "source of the answer",
+      "time of observation",
+      "documented procedure to verify or update a status discrepancy"
+    ],
+    "evidenceExplanations": [
+      {
+        "kind": "source",
+        "attribute": "source of the answer",
+        "questionQuote": "وضح مصدر إجابتك",
+        "aboutAttribute": "status"
+      },
+      {
+        "kind": "observation_time",
+        "attribute": "time of observation",
+        "questionQuote": "ووقت الملاحظة",
+        "aboutAttribute": "status"
+      },
+      {
+        "kind": "knowledge_guidance",
+        "attribute": "documented procedure to verify or update a status discrepancy",
+        "questionQuote": "وأرشدني إلى كيفية التحديث أو التحقق من هذا الاختلاف",
+        "aboutAttribute": ""
+      }
+    ]
+  },
+  "rejectedPlans": [
+    {
+      "stage": "TaskSpec",
+      "attempt": 1,
+      "failure": "{\"code\": \"intent_refinement_invalid\"}",
+      "candidate": {
+        "view": "",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "detail",
+        "searchQuery": "current application status ML-1-7-6577159 MyReviewDetail source of answer observation time status discrepancy verification procedure",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "application",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [
+              "status",
+              "source of the answer",
+              "time of observation",
+              "documented procedure to verify or update a status discrepancy"
+            ],
+            "source": "current",
+            "evidence": "أعد التحقق من السجل الحالي، ووضح مصدر إجابتك ووقت الملاحظة، وأرشدني إلى كيفية التحديث أو التحقق من هذا الاختلاف"
+          },
+          {
+            "field": "outputShape",
+            "value": "detail",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "recordIdentity",
+            "value": "ML-1-7-6577159",
+            "source": "previous",
+            "evidence": "الطلب نفسه"
+          },
+          {
+            "field": "requestedGrain",
+            "value": "application",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "requestedScope",
+            "value": "unknown",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "businessFocus",
+            "value": "",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "disclosurePurpose",
+            "value": "",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "view",
+            "value": "",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "previous",
+            "evidence": ""
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "",
+        "clarification": null,
+        "needsLiveData": true,
+        "businessObject": "application",
+        "recordIdentity": "ML-1-7-6577159",
+        "requestedGrain": "application",
+        "requestedScope": "unknown",
+        "contextRelation": "continue",
+        "unresolvedSlots": [],
+        "disclosurePurpose": "",
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [
+          "status",
+          "source of the answer",
+          "time of observation",
+          "documented procedure to verify or update a status discrepancy"
+        ],
+        "evidenceExplanations": [
+          {
+            "kind": "source",
+            "attribute": "source of the answer",
+            "questionQuote": "ووضح مصدر إجابتك",
+            "aboutAttribute": "status"
+          },
+          {
+            "kind": "observation_time",
+            "attribute": "time of observation",
+            "questionQuote": "ووقت الملاحظة",
+            "aboutAttribute": "status"
+          },
+          {
+            "kind": "knowledge_guidance",
+            "attribute": "documented procedure to verify or update a status discrepancy",
+            "questionQuote": "وأرشدني إلى كيفية التحديث أو التحقق من هذا الاختلاف"
+          }
+        ]
+      }
+    },
+    {
+      "stage": "TaskSpec",
+      "attempt": 2,
+      "failure": "{\"code\": \"intent_refinement_invalid\"}",
+      "candidate": {
+        "view": "",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "detail",
+        "searchQuery": "current application status ML-1-7-6577159 application detail source of answer observation time status discrepancy verification procedure",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "application",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [
+              "status",
+              "source of the answer",
+              "time of observation",
+              "documented procedure to verify or update a status discrepancy"
+            ],
+            "source": "current",
+            "evidence": "أعد التحقق من السجل الحالي، ووضح مصدر إجابتك ووقت الملاحظة، وأرشدني إلى كيفية التحديث أو التحقق من هذا الاختلاف"
+          },
+          {
+            "field": "outputShape",
+            "value": "detail",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "recordIdentity",
+            "value": "ML-1-7-6577159",
+            "source": "previous",
+            "evidence": "الطلب نفسه"
+          },
+          {
+            "field": "requestedGrain",
+            "value": "application",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "requestedScope",
+            "value": "unknown",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "businessFocus",
+            "value": "",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "disclosurePurpose",
+            "value": "",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "view",
+            "value": "",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "previous",
+            "evidence": ""
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "",
+        "clarification": null,
+        "needsLiveData": true,
+        "businessObject": "application",
+        "recordIdentity": "ML-1-7-6577159",
+        "requestedGrain": "application",
+        "requestedScope": "unknown",
+        "contextRelation": "continue",
+        "unresolvedSlots": [],
+        "disclosurePurpose": "",
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [
+          "status",
+          "source of the answer",
+          "time of observation",
+          "documented procedure to verify or update a status discrepancy"
+        ],
+        "evidenceExplanations": [
+          {
+            "kind": "source",
+            "attribute": "source of the answer",
+            "questionQuote": "ووضح مصدر إجابتك",
+            "aboutAttribute": "status"
+          },
+          {
+            "kind": "observation_time",
+            "attribute": "time of observation",
+            "questionQuote": "ووقت الملاحظة",
+            "aboutAttribute": "status"
+          },
+          {
+            "kind": "knowledge_guidance",
+            "attribute": "documented procedure to verify or update a status discrepancy",
+            "questionQuote": "وأرشدني إلى كيفية التحديث أو التحقق من هذا الاختلاف"
+          }
+        ]
+      }
+    }
+  ],
+  "intentNormalizations": [
+    {
+      "fields": [
+        "evidenceExplanations"
+      ],
+      "reason": "knowledge_cannot_change_evidence_responsibilities",
+      "requirementsRemoved": false,
+      "sourceVerificationWaived": false
+    },
+    {
+      "fields": [
+        "evidenceExplanations"
+      ],
+      "reason": "knowledge_cannot_change_evidence_responsibilities",
+      "requirementsRemoved": false,
+      "sourceVerificationWaived": false
+    }
+  ],
+  "history": {
+    "previousIntent": {
+      "task": {
+        "view": "",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "detail",
+        "searchQuery": "current application status ML-1-7-6577159 licensing application detail",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "request",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [
+              "status"
+            ],
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "outputShape",
+            "value": "detail",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "recordIdentity",
+            "value": "ML-1-7-6577159",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedGrain",
+            "value": "request",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedScope",
+            "value": "unknown",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "businessFocus",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "disclosurePurpose",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "view",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "current",
+            "evidence": "parsed current request"
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "",
+        "clarification": null,
+        "needsLiveData": true,
+        "businessObject": "request",
+        "recordIdentity": "ML-1-7-6577159",
+        "requestedGrain": "request",
+        "requestedScope": "unknown",
+        "contextRelation": "new",
+        "unresolvedSlots": [],
+        "disclosurePurpose": "",
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [
+          "status"
+        ],
+        "evidenceExplanations": []
+      },
+      "view": "",
+      "filters": [],
+      "groupBy": [],
+      "lastRead": {
+        "page": "/licensing/applications/applicationsDetails?taskId=3abd835b-a740-11f1-825e-86a333376d33",
+        "section": "ApplicationsDetails"
+      },
+      "question": "ما الحالة الحالية للطلب ML-1-7-6577159؟",
+      "requestId": "36148de0-9cd4-4c82-8ee3-d4e0e52ac979",
+      "timeField": "",
+      "timeRange": "unknown",
+      "slotStates": [
+        {
+          "field": "businessObject",
+          "value": "request",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedAttributes",
+          "value": [
+            "status"
+          ],
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "outputShape",
+          "value": "detail",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "recordIdentity",
+          "value": "ML-1-7-6577159",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedGrain",
+          "value": "request",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedScope",
+          "value": "unknown",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "timeRange",
+          "value": "unknown",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "businessFocus",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "disclosurePurpose",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedMeasures",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupBy",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "filters",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "view",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeField",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedOrdering",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupCompleteness",
+          "value": "observed",
+          "source": "current",
+          "evidence": "parsed current request"
+        }
+      ],
+      "outputShape": "detail",
+      "taskRevision": 1,
+      "businessFocus": "",
+      "referenceTime": {
+        "nowUtc": "2026-09-28T18:57:51.038007+00:00",
+        "source": "server_clock_and_config",
+        "businessNow": "2026-09-28T22:57:51.038007+04:00",
+        "businessDate": "2026-09-28",
+        "businessTimezone": "Asia/Dubai"
+      },
+      "browserContext": {
+        "view": "todo",
+        "query": {},
+        "route": "/licensing/applications",
+        "filters": [
+          {
+            "name": "tableFilters",
+            "value": "{\"contextVersion\":\"table-2:1\",\"filters\":{}}"
+          }
+        ]
+      },
+      "businessObject": "request",
+      "catalogVersion": "923ec44fe50a2342995e281c82aafca24ba1f1db20bf2c2184ec663e33329bf1",
+      "recordIdentity": "ML-1-7-6577159",
+      "requestedGrain": "request",
+      "requestedScope": "unknown",
+      "taskFingerprint": "d86bfb48165ee9b9dbb441cf464603ca6aac44c818e2b71b39642d430d9d71f8",
+      "knowledgeVersion": "b096fa03290de7d41658",
+      "originalQuestion": "ما الحالة الحالية للطلب ML-1-7-6577159؟",
+      "disclosurePurpose": "",
+      "groupCompleteness": "observed",
+      "lastClarification": null,
+      "requestedMeasures": [],
+      "requestedOrdering": [],
+      "clarificationRounds": 0,
+      "requestedAttributes": [
+        "status"
+      ],
+      "principalFingerprint": "7da85129c1862eb3c3f0"
+    }
+  }
+}

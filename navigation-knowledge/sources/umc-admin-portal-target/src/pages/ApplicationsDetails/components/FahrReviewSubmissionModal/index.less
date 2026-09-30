@@ -1,0 +1,150 @@
+.fahr-review-submission-modal {
+  max-width: calc(100vw - 48px);
+  font-family: Inter, sans-serif;
+
+  .ant-modal-content {
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .ant-modal-header {
+    min-height: 100px;
+    padding-block: 32px;
+    padding-inline: 40px 72px;
+    border-bottom: 1px solid #e1e3e5;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .ant-modal-title {
+    color: #361e12;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 36px;
+  }
+
+  .ant-modal-close {
+    top: 38px;
+    inset-inline-end: 40px;
+    width: 24px;
+    height: 24px;
+    color: #5f646d;
+
+    .ant-modal-close-x {
+      width: 24px;
+      height: 24px;
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  .fahr-review-submission-modal__form {
+    min-height: 400px;
+    padding: 32px 40px;
+
+    .ant-form-item {
+      margin-bottom: 24px;
+    }
+
+    .ant-form-item-label {
+      padding-bottom: 8px;
+
+      > label {
+        height: 20px;
+        color: #361e12;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+      }
+    }
+
+    .ant-form-item-label
+      > label.ant-form-item-required:not(
+        .ant-form-item-required-mark-optional
+      )::before {
+      display: none;
+    }
+
+    .ant-form-item-label
+      > label.ant-form-item-required:not(
+        .ant-form-item-required-mark-optional
+      )::after {
+      display: inline-block;
+      margin-inline-start: 4px;
+      color: #e60000;
+      content: "*";
+    }
+  }
+
+  .fahr-review-submission-modal__textarea {
+    width: 100%;
+
+    > .ant-input {
+      height: 110px;
+      min-height: 110px;
+      padding: 14px 16px;
+      border-color: #e1e3e5;
+      border-radius: 8px;
+      resize: vertical;
+    }
+  }
+
+  .fahr-review-submission-modal__action {
+    width: 140px;
+    height: 48px;
+    border-radius: 8px;
+  }
+
+  .ant-input-textarea-show-count::after,
+  .ant-input-textarea-show-count.ant-input-textarea-in-form-item::after {
+    display: block;
+    width: 100%;
+    margin-top: 4px;
+    color: #797e86;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: end;
+  }
+
+  .file-upload-wrapper .upload-tip {
+    margin-top: 8px;
+    color: #797e86;
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+  }
+
+  .ant-modal-body {
+    padding: 0;
+  }
+
+  .ant-modal-footer {
+    padding: 24px 40px;
+    border-top: 1px solid #e1e3e5;
+
+    > div {
+      display: flex;
+      justify-content: flex-end;
+      gap: 16px;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .fahr-review-submission-modal {
+    .ant-modal-header,
+    .fahr-review-submission-modal__form,
+    .ant-modal-footer {
+      padding-inline: 24px;
+    }
+
+    .ant-modal-close {
+      inset-inline-end: 24px;
+    }
+
+    .file-upload-wrapper .upload-tip {
+      font-size: 12px;
+    }
+  }
+}

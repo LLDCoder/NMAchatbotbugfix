@@ -1,0 +1,123 @@
+services:
+  postgres:
+    image: postgres:18
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: dsh
+      POSTGRES_USER: dsh
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Run init first}
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U dsh -d dsh']
+      interval: 3s
+      timeout: 3s
+      retries: 30
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: [CMD, redis-cli, ping]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  knowledge-gateway:
+    build:
+      context: ..
+      dockerfile: test/Dockerfile.python
+      args: {COMPONENT: knowledge-gateway}
+    restart: unless-stopped
+    command: uvicorn app:app --host 0.0.0.0 --port 8101
+    environment:
+      KNOWLEDGE_BASE_URL: ${KNOWLEDGE_BASE_URL}
+      KNOWLEDGE_PUBLIC_PATH: ${KNOWLEDGE_PUBLIC_PATH}
+      KNOWLEDGE_SEARCH_CONTRACT: ${KNOWLEDGE_SEARCH_CONTRACT:-public}
+      KNOWLEDGE_GATEWAY_TOKEN: ${KNOWLEDGE_GATEWAY_TOKEN:-}
+      KNOWLEDGE_SUBJECT_ID: ${KNOWLEDGE_SUBJECT_ID:-}
+      KNOWLEDGE_TENANT_ID: ${KNOWLEDGE_TENANT_ID:-}
+      KNOWLEDGE_SUBJECT_ROLES: ${KNOWLEDGE_SUBJECT_ROLES:-}
+      KNOWLEDGE_REQUIRED_CHANNELS: ${KNOWLEDGE_REQUIRED_CHANNELS:-}
+      KNOWLEDGE_TIMEOUT_SECONDS: '30'
+      KNOWLEDGE_RETRY_ATTEMPTS: '3'
+      KNOWLEDGE_UPSTREAM_MAX_TOP_K: '20'
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://localhost:8101/healthz')"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+  platform-gateway:
+    build:
+      context: ..
+      dockerfile: test/Dockerfile.python
+      args: {COMPONENT: platform-gateway}
+    restart: unless-stopped
+    init: true
+    shm_size: 512mb
+    command: uvicorn app:app --host 0.0.0.0 --port 8102
+    environment:
+      UMC_PORTAL: admin
+      UMC_ADMIN_BASE_URL: ${UMC_ADMIN_BASE_URL}
+      PLATFORM_BASE_URL: ${PLATFORM_BASE_URL}
+      PLATFORM_TIMEOUT_SECONDS: '30'
+      PLATFORM_RETRY_ATTEMPTS: '2'
+      PORTAL_READER_WHITELIST_ENABLED: 'true'
+      PORTAL_READER_WHITELIST_FILE: /app/config/reader-network-policy.json
+      PORTAL_READER_OPERATION_CATALOG: /app/config/reader-operation-catalog.json
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://localhost:8102/healthz')"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+  backend:
+    build:
+      context: ..
+      dockerfile: test/Dockerfile.python
+      args: {COMPONENT: backend}
+    restart: unless-stopped
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    environment:
+      ENVIRONMENT: ${ENVIRONMENT}
+      APP_NAME: NMA Admin Agent
+      DATABASE_URL: postgresql+asyncpg://dsh:${POSTGRES_PASSWORD}@postgres:5432/dsh
+      DATABASE_INIT_ENABLED: 'true'
+      AUDIT_CLEANUP_ENABLED: 'false'
+      REDIS_URL: redis://redis:6379/0
+      CORS_ORIGINS: ${CORS_ORIGINS}
+      UMC_PORTAL: admin
+      UMC_ADMIN_BASE_URL: ${UMC_ADMIN_BASE_URL}
+      KNOWLEDGE_GATEWAY_URL: http://knowledge-gateway:8101
+      KNOWLEDGE_DEFAULT_FOLDER_ID: ${KNOWLEDGE_DEFAULT_FOLDER_ID:-}
+      KNOWLEDGE_TOP_K: '32'
+      PLATFORM_GATEWAY_URL: http://platform-gateway:8102
+      LLM_BASE_URL: ${LLM_BASE_URL:-}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      LLM_MODEL: ${LLM_MODEL:-deepseek-v4-flash}
+      AUDIT_BOOTSTRAP_USERNAME: ${AUDIT_BOOTSTRAP_USERNAME:?Run init first}
+      AUDIT_BOOTSTRAP_PASSWORD: ${AUDIT_BOOTSTRAP_PASSWORD:?Set audit password}
+      CONSOLE_BOOTSTRAP_PASSWORD: ${CONSOLE_BOOTSTRAP_PASSWORD:-}
+      AUDIT_BOOTSTRAP_DISPLAY_NAME: NMA Test Administrator
+      AUDIT_COOKIE_SECURE: ${AUDIT_COOKIE_SECURE:-false}
+    depends_on:
+      postgres: {condition: service_healthy}
+      redis: {condition: service_healthy}
+      knowledge-gateway: {condition: service_healthy}
+      platform-gateway: {condition: service_healthy}
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://localhost:8000/healthz')"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+  audit:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    volumes:
+      - ../dsh-admin-source-package-20260923184338/source/frontend:/usr/share/nginx/html:ro
+      - ./nginx/audit.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      backend: {condition: service_healthy}
+volumes:
+  postgres_data:
+  redis_data:

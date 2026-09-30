@@ -1,0 +1,259 @@
+@import "@/styles/variables.less";
+
+/*
+  Migrated to the *.rwd.less convention (postcss.config.js `MIGRATED`), so every
+  px below stays literal instead of being rewritten to rem.
+
+  That is the whole point, and also the whole risk. While this file was on rem,
+  a 360px input rendered at 360 x (1024 / 1724) = 214px at the 1024 band. Now it
+  renders at 360px there unless this file says otherwise -- migrating without
+  adding the down-ramp makes a page bigger on small screens, not smaller.
+
+  Values below 1920 follow the design ramp where the spec is explicit, and are
+  marked as inferred where it is not. See docs/responsive-migration.md §2.2.
+
+  Why one breakpoint rather than four: design supplied two sets of sizes,
+  desktop (1920) and tablet (1024), and described 1280/1440 content as
+  autolayout. So typography and spacing step once at 1920, matching how the
+  sidebar rail and pagination were handled.
+*/
+
+.role-management {
+  display: flex;
+  flex-direction: column;
+  // gap: 24px;
+  height: 100%;
+  background-color: #fff;
+  padding: 24px;
+  border-radius: 20px;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+
+    .filters {
+      display: flex;
+      gap: 12px;
+      flex: 1;
+
+      .search-input {
+        width: 360px;
+      }
+
+      .status-select {
+        width: 200px;
+      }
+    }
+  }
+
+  .role-table {
+    flex: 1;
+    overflow: auto;
+
+    .role-status-tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 12px;
+      height: 24px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+
+      &.active {
+        background-color: #e6f7e9;
+        color: #30a46c;
+      }
+
+      &.disabled {
+        background-color: #f2f2f2;
+        color: #8c8c8c;
+      }
+    }
+
+    .role-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+
+      .action-link {
+        flex: 0 0 auto;
+        color: @primary-color;
+        font-weight: 500;
+        cursor: pointer;
+        white-space: nowrap;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+
+      .more-actions {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 16px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #f5f5f5;
+        }
+      }
+    }
+  }
+
+  .role-empty-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1919.98px) {
+  .role-management .role-table .table-panel-body {
+    margin-top: 0;
+  }
+}
+
+.role-management .role-management-filter-toolbar__filter-button,
+.role-management .role-management-filter-toolbar__reset-button {
+  display: none;
+}
+
+.role-management .header .filters .search-input {
+  box-sizing: border-box;
+  flex: 0 0 320px;
+  width: 320px;
+  min-width: 320px;
+  max-width: 320px;
+  height: 48px !important;
+  min-height: 48px !important;
+  max-height: 48px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.role-management .header .filters .status-select {
+  width: 240px;
+  max-width: 240px;
+}
+
+.role-management .role-management-filter-toolbar__reset-button {
+  min-width: 103px;
+  height: 48px;
+}
+
+@media (max-width: 1919.98px) {
+  .role-management {
+    /* Keep the section gap compact while preserving the page surface padding. */
+    // gap: 16px;
+
+    /* Spec: secondary radius 20 -> 10. */
+    border-radius: 10px;
+
+    .header {
+      /* Spec: 16 -> 12. */
+      gap: 12px;
+
+      .filters {
+        /* 12px is already the floor in the spec's spacing list; left alone. */
+
+        /*
+          Inferred, but anchored to a precedent in this repo: the
+          cms-filter-table variant sizes its controls at 260px with a 180px
+          floor. 360px would eat 39% of the 932px content area at 1024.
+        */
+        .search-input {
+          width: 260px;
+          min-width: 180px;
+        }
+
+        .status-select {
+          width: 180px;
+          min-width: 140px;
+        }
+      }
+    }
+
+    .role-table {
+      .role-status-tag {
+        /* Spec: type ramp 12 -> 10. */
+        font-size: 10px;
+        /* Inferred: the pill shrinks with its text. 999px radius is a pill
+           shape, not a design radius, so it stays. */
+        padding: 0 8px;
+        height: 20px;
+      }
+
+      .role-actions {
+        /* Spec: 16 -> 12. */
+        gap: 12px;
+
+        /*
+          32px is already the spec's small-button height, so the box stays.
+          Radius tracks it to remain a circle.
+        */
+      }
+    }
+  }
+}
+
+@media (max-width: 1919.98px) {
+  .role-management .header .filters .search-input,
+  .role-management .header .filters .status-select {
+    flex: 0 0 240px;
+    width: 240px;
+    min-width: 240px;
+    max-width: 240px;
+  }
+
+  .role-management
+    .header
+    .filters
+    .role-management-filter-toolbar__search.ant-input-affix-wrapper {
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .role-management .header .filters .status-select,
+  .role-management .header .filters .status-select .ant-select-selector {
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+  }
+
+  .role-management
+    .header
+    .filters
+    .status-select
+    .ant-select-selection-item,
+  .role-management
+    .header
+    .filters
+    .status-select
+    .ant-select-selection-placeholder {
+    line-height: 38px !important;
+  }
+
+  .role-management .role-management-filter-toolbar__reset-button {
+    height: 40px !important;
+    min-height: 40px;
+    max-height: 40px;
+  }
+
+  .role-management .responsive-filter-toolbar__action {
+    height: 40px !important;
+    min-height: 40px;
+    max-height: 40px;
+  }
+}

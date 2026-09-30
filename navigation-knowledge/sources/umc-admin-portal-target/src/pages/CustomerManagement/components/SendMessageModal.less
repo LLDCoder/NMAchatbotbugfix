@@ -1,0 +1,241 @@
+@import "@/styles/variables.less";
+
+.send-message-modal {
+  padding-bottom: 0;
+  font-family: Inter, sans-serif;
+
+  .ant-modal-content {
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .ant-modal-header {
+    box-sizing: border-box;
+    height: 95px;
+    padding: 32px 40px;
+    border-bottom: 1px solid #e1e3e5;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .ant-modal-title {
+    padding-right: 48px;
+    color: @text-color;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 31px;
+  }
+
+
+
+  .ant-modal-body {
+    box-sizing: border-box;
+    height: 400px;
+    padding: 32px 40px 40px;
+  }
+
+  .ant-modal-footer {
+    box-sizing: border-box;
+    height: 96px;
+    padding: 24px 40px;
+    border-top: 1px solid #e1e3e5;
+  }
+
+  &__form {
+    height: 100%;
+
+    .ant-form-item-label {
+      padding-bottom: 8px;
+    }
+
+    .ant-form-item-label > label {
+      height: 20px;
+      color: @text-color;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+    }
+
+    .ant-form-item-label
+      > label.ant-form-item-required:not(.ant-form-item-required-mark-optional) {
+      &::before {
+        display: none;
+      }
+
+      &::after {
+        display: inline-block;
+        margin: 0 0 0 4px;
+        color: #f5222d;
+        font-family: SimSun, sans-serif;
+        line-height: 1;
+        content: "*";
+      }
+    }
+  }
+
+  &__phone-field {
+    width: 428px;
+    margin-bottom: 24px;
+
+    .mobile-number-input {
+      width: 100%;
+    }
+
+    .mobile-number-input .ant-input-group-addon {
+      padding: 0;
+      background: #f9fafb;
+      border-color: #e1e3e5;
+      border-radius: 8px 0 0 8px;
+    }
+
+    .mobile-number-input__control {
+      height: 48px;
+    }
+
+    .mobile-number-input__control .ant-input {
+      height: 48px;
+    }
+
+    .mobile-number-input__country-select .ant-select-arrow {
+      color: #797e86;
+    }
+
+    .mobile-number-input__control .ant-input {
+      padding: 0 16px;
+      color: @text-color;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      border-color: #e1e3e5;
+      border-radius: 0 8px 8px 0;
+
+      &::placeholder {
+        color: #797e86;
+      }
+
+      &:hover,
+      &:focus {
+        border-color: @primary-color;
+        box-shadow: none;
+      }
+    }
+
+    &.ant-form-item-has-error {
+      .mobile-number-input .ant-input-group-addon,
+      .mobile-number-input__control .ant-input {
+        border-color: #ff4d4f;
+      }
+    }
+  }
+
+  &__message-field {
+    margin-bottom: 0;
+
+    .ant-input-textarea {
+      height: 228px;
+    }
+
+    textarea.ant-input {
+      min-height: 228px;
+      max-height: 228px;
+      padding: 14px 16px;
+      color: @text-color;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      border-color: #e1e3e5;
+      border-radius: 8px;
+
+      &::placeholder {
+        color: #797e86;
+      }
+
+      &:hover,
+      &:focus {
+        border-color: @primary-color;
+        box-shadow: none;
+      }
+    }
+
+    .ant-input-textarea-show-count::after {
+      margin-top: 6px;
+      color: #797e86;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  &__button {
+    width: 140px;
+    min-width: 140px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &--message-only {
+    .ant-modal-body {
+      height: 308px;
+    }
+  }
+
+  &--rtl {
+    direction: rtl;
+
+    .ant-modal-title {
+      padding-right: 0;
+      padding-left: 48px;
+      text-align: right;
+    }
+
+    .send-message-modal__footer {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .send-message-modal {
+    .ant-modal-header {
+      height: auto;
+      min-height: 80px;
+      padding: 24px;
+    }
+
+    .ant-modal-title {
+      font-size: 22px;
+      line-height: 28px;
+    }
+
+    .ant-modal-body,
+    &.send-message-modal--message-only .ant-modal-body {
+      height: auto;
+      min-height: 308px;
+      padding: 24px;
+    }
+
+    .ant-modal-footer {
+      height: auto;
+      padding: 20px 24px;
+    }
+
+    .send-message-modal__phone-field {
+      width: 100%;
+    }
+
+    .send-message-modal__footer {
+      width: 100%;
+    }
+
+    .send-message-modal__button {
+      flex: 1;
+      width: auto;
+      min-width: 0;
+    }
+  }
+}

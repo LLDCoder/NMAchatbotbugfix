@@ -1,0 +1,2239 @@
+{
+  "actualTurns": [
+    {
+      "language": "en",
+      "conversationId": "conv_0af7172bf3be41528287",
+      "requestId": "5eb6bf82-a849-4ea0-a60c-a8d8f647e76d",
+      "task": {
+        "view": "",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "received date",
+        "timeRange": "next month",
+        "outputShape": "count",
+        "searchQuery": "forecast predicted volume applications complaints inspections next month",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "application",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [
+              "predicted number of applications next month",
+              "predicted number of complaints next month",
+              "predicted number of inspections next month"
+            ],
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "timeField",
+            "value": "received date",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "timeRange",
+            "value": "next month",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "outputShape",
+            "value": "count",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "businessFocus",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "disclosurePurpose",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedScope",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedGrain",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "recordIdentity",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "view",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "current",
+            "evidence": "parsed current request"
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "",
+        "clarification": null,
+        "needsLiveData": true,
+        "businessObject": "application",
+        "recordIdentity": "",
+        "requestedGrain": "unknown",
+        "requestedScope": "unknown",
+        "contextRelation": "new",
+        "unresolvedSlots": [],
+        "disclosurePurpose": "",
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [
+          "predicted number of applications next month",
+          "predicted number of complaints next month",
+          "predicted number of inspections next month"
+        ],
+        "requestedOrdering": [],
+        "requestedAttributes": [],
+        "evidenceExplanations": []
+      },
+      "rejectedRouting": [
+        {
+          "stage": "RoutingDecision",
+          "attempt": 1,
+          "failure": "{\"code\":\"knowledge_citation_missing\",\"field\":\"routing.condition\"}",
+          "candidate": {
+            "stage": "routing_decision",
+            "reason": "Retrieved knowledge explicitly states the inspected Dashboard APIs establish no next-month forecasting model and that a precise arrivals forecast requires a matching historical arrivals series, explicit method, validation and uncertainty. No candidate supplies a forecast measure for applications, complaints or inspections, so no authorized probe can produce the requested prediction.",
+            "missing": [
+              "forecast_capability",
+              "historical_arrivals_series",
+              "forecast_method"
+            ],
+            "decision": "knowledge_gap",
+            "routePlan": [],
+            "candidates": [
+              {
+                "reason": "Aggregated operational reporting workspace; no cited forecast capability or arrival-volume measure.",
+                "evidence": [
+                  {
+                    "sourceId": "k_7922742386b49657f327:p0"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "reason": "Reports/analytics workspace is a mixed-entity reporting area; no cited binding establishes the requested application entity here.",
+                    "status": "unknown",
+                    "requirementId": "object"
+                  },
+                  {
+                    "reason": "No cited application-grain binding on this page.",
+                    "status": "unknown",
+                    "requirementId": "grain"
+                  },
+                  {
+                    "reason": "Page accepts a time range but no cited field maps to a received-date basis for next month.",
+                    "status": "unknown",
+                    "requirementId": "time"
+                  },
+                  {
+                    "reason": "No cited forecast measure for predicted application arrivals.",
+                    "status": "unknown",
+                    "requirementId": "measure_0"
+                  },
+                  {
+                    "reason": "No cited forecast measure for predicted complaint arrivals.",
+                    "status": "unknown",
+                    "requirementId": "measure_1"
+                  },
+                  {
+                    "reason": "No cited forecast measure for predicted inspection arrivals.",
+                    "status": "unknown",
+                    "requirementId": "measure_2"
+                  }
+                ],
+                "candidateId": "49f9f47fb5c336886eca"
+              },
+              {
+                "reason": "Dashboard explicitly documents that no forecast operation exists and completed-task series cannot predict next-month arrivals.",
+                "evidence": [
+                  {
+                    "sourceId": "k_edf65656488d01a27eae:p3"
+                  },
+                  {
+                    "sourceId": "k_69cfe4119031ee5dcbdf:p5"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "reason": "Dashboard aggregates multiple domains; no cited binding establishes the requested application entity.",
+                    "status": "unknown",
+                    "requirementId": "object"
+                  },
+                  {
+                    "reason": "No cited application-grain binding.",
+                    "status": "unknown",
+                    "requirementId": "grain"
+                  },
+                  {
+                    "reason": "Dashboard has a time filter but no cited received-date basis for next month.",
+                    "status": "unknown",
+                    "requirementId": "time"
+                  },
+                  {
+                    "reason": "Cited Dashboard knowledge states no forecast operation is established and current totals/trends do not support a next-month arrivals prediction.",
+                    "status": "conflict",
+                    "requirementId": "measure_0"
+                  },
+                  {
+                    "reason": "Cited knowledge states the trend returns completed tasks, not incoming complaint volume, and no forecasting model is established.",
+                    "status": "conflict",
+                    "requirementId": "measure_1"
+                  },
+                  {
+                    "reason": "Cited knowledge states the trend returns completed tasks, not incoming inspection volume, and no forecasting model is established.",
+                    "status": "conflict",
+                    "requirementId": "measure_2"
+                  }
+                ],
+                "candidateId": "587761e59eb1c4982ad9"
+              },
+              {
+                "reason": "Personal licensing application queue; no forecast capability and no received-date basis.",
+                "evidence": [
+                  {
+                    "sourceId": "k_20ced6e0b4b58b26fc02:p2"
+                  },
+                  {
+                    "sourceId": "k_20ced6e0b4b58b26fc02:p14"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "reason": "Cited binding defines the application entity on this licensing applications page.",
+                    "status": "supported",
+                    "requirementId": "object"
+                  },
+                  {
+                    "reason": "Cited binding defines application grain by id.",
+                    "status": "supported",
+                    "requirementId": "grain"
+                  },
+                  {
+                    "reason": "Request startTime/endTime filter lastUpdatedTime, not a received-date basis for next month.",
+                    "status": "unknown",
+                    "requirementId": "time"
+                  },
+                  {
+                    "reason": "No cited forecast measure; page provides current queue rows only.",
+                    "status": "unknown",
+                    "requirementId": "measure_0"
+                  },
+                  {
+                    "reason": "Complaints are not this page's entity.",
+                    "status": "unknown",
+                    "requirementId": "measure_1"
+                  },
+                  {
+                    "reason": "Inspections are not this page's entity.",
+                    "status": "unknown",
+                    "requirementId": "measure_2"
+                  }
+                ],
+                "candidateId": "d148f5bd85c7adc6a164"
+              },
+              {
+                "reason": "Customer-service ticket workspace; no forecast capability.",
+                "evidence": [
+                  {
+                    "sourceId": "k_470d53c5d2ff59256937:p0"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "reason": "Ticket workspace; no cited binding establishes the requested application entity.",
+                    "status": "unknown",
+                    "requirementId": "object"
+                  },
+                  {
+                    "reason": "No cited application-grain binding.",
+                    "status": "unknown",
+                    "requirementId": "grain"
+                  },
+                  {
+                    "reason": "No cited received-date basis for next month.",
+                    "status": "unknown",
+                    "requirementId": "time"
+                  },
+                  {
+                    "reason": "No cited forecast measure for application arrivals.",
+                    "status": "unknown",
+                    "requirementId": "measure_0"
+                  },
+                  {
+                    "reason": "Ticket queue is a current population, not a forecast of complaint arrivals.",
+                    "status": "unknown",
+                    "requirementId": "measure_1"
+                  },
+                  {
+                    "reason": "Inspections are not this page's entity.",
+                    "status": "unknown",
+                    "requirementId": "measure_2"
+                  }
+                ],
+                "candidateId": "14378073b232f29c7d8e"
+              },
+              {
+                "reason": "Team task/member management workspace; no forecast capability.",
+                "evidence": [
+                  {
+                    "sourceId": "k_92a79f71a10e04746f88:p0"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "reason": "Reused team task workspace; no cited binding establishes the requested application entity.",
+                    "status": "unknown",
+                    "requirementId": "object"
+                  },
+                  {
+                    "reason": "No cited application-grain binding.",
+                    "status": "unknown",
+                    "requirementId": "grain"
+                  },
+                  {
+                    "reason": "No cited received-date basis for next month.",
+                    "status": "unknown",
+                    "requirementId": "time"
+                  },
+                  {
+                    "reason": "No cited forecast measure.",
+                    "status": "unknown",
+                    "requirementId": "measure_0"
+                  },
+                  {
+                    "reason": "No cited forecast measure.",
+                    "status": "unknown",
+                    "requirementId": "measure_1"
+                  },
+                  {
+                    "reason": "No cited forecast measure.",
+                    "status": "unknown",
+                    "requirementId": "measure_2"
+                  }
+                ],
+                "candidateId": "2af4669a81483b327764"
+              }
+            ],
+            "taskFingerprint": "ab2f6169f333be6e0c00afb29cc533a808fa9c9685e3d5027eb81b657babf27d"
+          }
+        },
+        {
+          "stage": "RoutingDecision",
+          "attempt": 2,
+          "failure": "{\"code\":\"knowledge_citation_invalid\",\"field\":\"routing.candidate\",\"sourceId\":\"k_92a79f71a10e047f88:p0\"}",
+          "candidate": {
+            "stage": "routing_decision",
+            "reason": "No candidate supplies a documented next-month forecasting capability for application, complaint and inspection arrivals. Cited Dashboard knowledge explicitly states no forecast operation is established and that completed-task trends are not arrival volumes; the licensing applications page is a personal queue filtered on lastUpdatedTime. Missing knowledge, not a scope denial, so no probe or clarification is issued.",
+            "missing": [
+              "forecast_measure_definition",
+              "historical_arrivals_series",
+              "received_date_field"
+            ],
+            "decision": "knowledge_gap",
+            "routePlan": [],
+            "candidates": [
+              {
+                "reason": "Licensing reports/analytics workspace; no cited forecast capability or arrival-volume measure.",
+                "evidence": [
+                  {
+                    "sourceId": "k_7922742386b49657f327:p0"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "reason": "Reports/analytics workspace for the licensing domain; no cited definition binds it to the application entity or to complaint/inspection arrivals.",
+                    "status": "unknown",
+                    "evidence": [
+                      {
+                        "sourceId": "k_7922742386b49657f327:p0"
+                      }
+                    ],
+                    "requirementId": "object"
+                  },
+                  {
+                    "reason": "No cited grain definition for application-level records on this page.",
+                    "status": "unknown",
+                    "evidence": [
+                      {
+                        "sourceId": "k_7922742386b49657f327:p0"
+                      }
+                    ],
+                    "requirementId": "grain"
+                  },
+                  {
+                    "reason": "Page accepts a time range but no cited definition of a received-date field or of a next-month window.",
+                    "status": "unknown",
+                    "evidence": [
+                      {
+                        "sourceId": "k_7922742386b49657f327:p0"
+                      }
+                    ],
+                    "requirementId": "time"
+                  },
+                  {
+                    "reason": "No cited forecast measure for next-month application arrivals.",
+                    "status": "unknown",
+                    "evidence": [
+                      {
+                        "sourceId": "k_7922742386b49657f327:p0"
+                      }
+                    ],
+                    "requirementId": "measure_0"
+                  },
+                  {
+                    "reason": "No cited complaint-arrival forecast measure.",
+                    "status": "unknown",
+                    "evidence": [
+                      {
+                        "sourceId": "k_7922742386b49657f327:p0"
+                      }
+                    ],
+                    "requirementId": "measure_1"
+                  },
+                  {
+                    "reason": "No cited inspection-arrival forecast measure.",
+                    "status": "unknown",
+                    "evidence": [
+                      {
+                        "sourceId": "k_7922742386b49657f327:p0"
+                      }
+                    ],
+                    "requirementId": "measure_2"
+                  }
+                ],
+                "candidateId": "49f9f47fb5c336886eca"
+              },
+              {
+                "reason": "Dashboard explicitly documents that no next-month forecasting model exists and that completed-task trends are not arrival volumes.",
+                "evidence": [
+                  {
+                    "sourceId": "k_edf65656488d01a27eae:p3"
+                  },
+                  {
+                    "sourceId": "k_69cfe4119031ee5dcbdf:p5"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "reason": "Aggregated workspace across authorized domains; no cited binding to the application entity.",
+                    "status": "unknown",
+                    "evidence": [
+                      {
+                        "sourceId": "k_a1d744b0e34d67e76149:p0"
+                      }
+                    ],
+                    "requirementId": "object"
+                  },
+                  {
+                    "reason": "No cited application grain for this workspace.",
+                    "status": "unknown",
+                    "evidence": [
+                      {
+                        "sourceId": "k_a1d744b0e34d67e76149:p0"
+                      }
+                    ],
+                    "requirementId": "grain"
+                  },
+                  {
+                    "reason": "No cited received-date field or next-month window definition.",
+                    "status": "unknown",
+                    "evidence": [
+                      {
+                        "sourceId": "k_a1d744b0e34d67e76149:p0"
+                      }
+                    ],
+                    "requirementId": "time"
+                  },
+                  {
+                    "reason": "Cited Dashboard knowledge states the inspected APIs establish no next-month forecasting model and that a precise arrivals forecast is unsupported.",
+                    "status": "conflict",
+                    "evidence": [
+                      {
+                        "sourceId": "k_edf65656488d01a27eae:p3"
+                      },
+                      {
+                        "sourceId": "k_69cfe4119031ee5dcbdf:p5"
+                      }
+                    ],
+                    "requirementId": "measure_0"
+                  },
+                  {
+                    "reason": "Cited knowledge states the trend series returns completed tasks, not incoming complaint volume, and no forecast operation is established.",
+                    "status": "conflict",
+                    "evidence": [
+                      {
+                        "sourceId": "k_edf65656488d01a27eae:p3"
+                      },
+                      {
+                        "sourceId": "k_69cfe4119031ee5dcbdf:p5"
+                      }
+                    ],
+                    "requirementId": "measure_1"
+                  },
+                  {
+                    "reason": "Cited knowledge states the trend series does not return incoming inspection volume and no forecast operation is established.",
+                    "status": "conflict",
+                    "evidence": [
+                      {
+                        "sourceId": "k_edf65656488d01a27eae:p3"
+                      },
+                      {
+                        "sourceId": "k_69cfe4119031ee5dcbdf:p5"
+                      }
+                    ],
+                    "requirementId": "measure_2"
+                  }
+                ],
+                "candidateId": "587761e59eb1c4982ad9"
+              },
+              {
+                "reason": "Personal licensing application queue; time filter is lastUpdatedTime and no forecast or complaint/inspection measure exists.",
+                "evidence": [
+                  {
+                    "sourceId": "k_20ced6e0b4b58b26fc02:p14"
+                  },
+                  {
+                    "sourceId": "k_20ced6e0b4b58b26fc02:p17"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "reason": "Cited binding defines the application entity on this licensing applications page.",
+                    "status": "supported",
+                    "evidence": [
+                      {
+                        "sourceId": "k_20ced6e0b4b58b26fc02:p2"
+                      }
+                    ],
+                    "requirementId": "object"
+                  },
+                  {
+                    "reason": "Cited grain binding states application grain is id.",
+                    "status": "supported",
+                    "evidence": [
+                      {
+                        "sourceId": "k_20ced6e0b4b58b26fc02:p3"
+                      }
+                    ],
+                    "requirementId": "grain"
+                  },
+                  {
+                    "reason": "Cited request fields show startTime/endTime filter lastUpdatedTime, not a received date, and the page is a personal queue rather than an arrivals population.",
+                    "status": "conflict",
+                    "evidence": [
+                      {
+                        "sourceId": "k_20ced6e0b4b58b26fc02:p14"
+                      },
+                      {
+                        "sourceId": "k_20ced6e0b4b58b26fc02:p16"
+                      }
+                    ],
+                    "requirementId": "time"
+                  },
+                  {
+                    "reason": "Cited knowledge states counts require complete collection at the requested entity grain and that a bounded page is not a complete population; no forecast measure is defined.",
+                    "status": "conflict",
+                    "evidence": [
+                      {
+                        "sourceId": "k_20ced6e0b4b58b26fc02:p17"
+                      }
+                    ],
+                    "requirementId": "measure_0"
+                  },
+                  {
+                    "reason": "Complaints are not this page's entity; cited knowledge keeps tickets/enquiries distinct from applications.",
+                    "status": "conflict",
+                    "evidence": [
+                      {
+                        "sourceId": "k_270f6ba2b305f24ed194:p3"
+                      }
+                    ],
+                    "requirementId": "measure_1"
+                  },
+                  {
+                    "reason": "Inspections are not this page's entity; no inspection measure is defined here.",
+                    "status": "conflict",
+                    "evidence": [
+                      {
+                        "sourceId": "k_270f6ba2b305f24ed194:p3"
+                      }
+                    ],
+                    "requirementId": "measure_2"
+                  }
+                ],
+                "candidateId": "d148f5bd85c7adc6a164"
+              },
+              {
+                "reason": "Customer-service ticket workspace; wrong object for applications and inspections and no forecast measure.",
+                "evidence": [
+                  {
+                    "sourceId": "k_470d53c5d2ff59256937:p0"
+                  },
+                  {
+                    "sourceId": "k_528836269526ffd70edd:p3"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "reason": "Cited definition scopes this page to customer-service tickets, not the application entity.",
+                    "status": "conflict",
+                    "evidence": [
+                      {
+                        "sourceId": "k_470d53c5d2ff59256937:p0"
+                      }
+                    ],
+                    "requirementId": "object"
+                  },
+                  {
+                    "reason": "Ticket grain is id, not application grain.",
+                    "status": "conflict",
+                    "evidence": [
+                      {
+                        "sourceId": "k_528836269526ffd70edd:p1"
+                      }
+                    ],
+                    "requirementId": "grain"
+                  },
+                  {
+                    "reason": "No cited received-date field or next-month window for arrivals.",
+                    "status": "unknown",
+                    "evidence": [
+                      {
+                        "sourceId": "k_470d53c5d2ff59256937:p0"
+                      }
+                    ],
+                    "requirementId": "time"
+                  },
+                  {
+                    "reason": "Applications are not this page's entity.",
+                    "status": "conflict",
+                    "evidence": [
+                      {
+                        "sourceId": "k_470d53c5d2ff59256937:p0"
+                      }
+                    ],
+                    "requirementId": "measure_0"
+                  },
+                  {
+                    "reason": "Ticket counts exist but no cited forecast measure for next-month complaint arrivals.",
+                    "status": "unknown",
+                    "evidence": [
+                      {
+                        "sourceId": "k_528836269526ffd70edd:p3"
+                      }
+                    ],
+                    "requirementId": "measure_1"
+                  },
+                  {
+                    "reason": "Inspections are not this page's entity.",
+                    "status": "conflict",
+                    "evidence": [
+                      {
+                        "sourceId": "k_470d53c5d2ff59256937:p0"
+                      }
+                    ],
+                    "requirementId": "measure_2"
+                  }
+                ],
+                "candidateId": "14378073b232f29c7d8e"
+              },
+              {
+                "reason": "Team management workspace; no cited forecast capability or arrival-volume measure.",
+                "evidence": [
+                  {
+                    "sourceId": "k_92a79f71a10e047f88:p0"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "reason": "Reused team task/member workspace; no cited binding to the application entity.",
+                    "status": "unknown",
+                    "evidence": [
+                      {
+                        "sourceId": "k_92a79f71a10e04746f88:p0"
+                      }
+                    ],
+                    "requirementId": "object"
+                  },
+                  {
+                    "reason": "No cited application grain for this workspace.",
+                    "status": "unknown",
+                    "evidence": [
+                      {
+                        "sourceId": "k_92a79f71a10e046f88:p0"
+                      }
+                    ],
+                    "requirementId": "grain"
+                  },
+                  {
+                    "reason": "No cited received-date field or next-month window.",
+                    "status": "unknown",
+                    "evidence": [
+                      {
+                        "sourceId": "k_92a79f71a10e04746f88:p0"
+                      }
+                    ],
+                    "requirementId": "time"
+                  },
+                  {
+                    "reason": "No cited forecast measure for application arrivals.",
+                    "status": "unknown",
+                    "evidence": [
+                      {
+                        "sourceId": "k_92a79f71a10e047f88:p0"
+                      }
+                    ],
+                    "requirementId": "measure_0"
+                  },
+                  {
+                    "reason": "No cited forecast measure for complaint arrivals.",
+                    "status": "unknown",
+                    "evidence": [
+                      {
+                        "sourceId": "k_92a79f71a10e047f88:p0"
+                      }
+                    ],
+                    "requirementId": "measure_1"
+                  },
+                  {
+                    "reason": "No cited forecast measure for inspection arrivals.",
+                    "status": "unknown",
+                    "evidence": [
+                      {
+                        "sourceId": "k_92a79f71a10e047f88:p0"
+                      }
+                    ],
+                    "requirementId": "measure_2"
+                  }
+                ],
+                "candidateId": "2af4669a81483b327764"
+              }
+            ],
+            "taskFingerprint": "ab2f6169f333be6e0c00afb29cc533a808fa9c9685e3d5027eb81b657babf27d"
+          }
+        },
+        {
+          "stage": "RoutingDecision",
+          "attempt": 3,
+          "failure": "{\"code\":\"knowledge_citation_missing\",\"field\":\"routing.condition\"}",
+          "candidate": {
+            "stage": "routing_decision",
+            "reason": "No candidate supplies a next-month arrivals forecast; Dashboard knowledge explicitly states no forecast operation is established and current totals/completed-task trends cannot support a precise next-month arrivals prediction. No authorized page provides the required historical arrivals series or method, so this is a knowledge gap rather than a probe or permission denial.",
+            "missing": [
+              "forecast_definition",
+              "historical_arrivals_series",
+              "forecast_method"
+            ],
+            "decision": "knowledge_gap",
+            "routePlan": [],
+            "candidates": [
+              {
+                "reason": "Licensing reports/analytics workspace; no cited forecast capability for arrivals.",
+                "evidence": [
+                  {
+                    "sourceId": "k_7922742386b49657f327:p0"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "reason": "Reports workspace is a licensing operational reporting area; no cited definition establishes an application-arrivals forecast object.",
+                    "status": "unknown",
+                    "requirementId": "object"
+                  },
+                  {
+                    "reason": "No cited definition binds an application-arrival grain for this page.",
+                    "status": "unknown",
+                    "requirementId": "grain"
+                  },
+                  {
+                    "reason": "No cited definition establishes a next-month arrivals time basis on this page.",
+                    "status": "unknown",
+                    "requirementId": "time"
+                  },
+                  {
+                    "reason": "No cited definition establishes a predicted application-arrivals measure.",
+                    "status": "unknown",
+                    "requirementId": "measure_0"
+                  },
+                  {
+                    "reason": "No cited definition establishes a predicted complaint-arrivals measure.",
+                    "status": "unknown",
+                    "requirementId": "measure_1"
+                  },
+                  {
+                    "reason": "No cited definition establishes a predicted inspection-arrivals measure.",
+                    "status": "unknown",
+                    "requirementId": "measure_2"
+                  }
+                ],
+                "candidateId": "49f9f47fb5c336886eca"
+              },
+              {
+                "reason": "Dashboard definitions explicitly deny a next-month arrivals forecast capability.",
+                "evidence": [
+                  {
+                    "sourceId": "k_edf65656488d01a27eae:p3"
+                  },
+                  {
+                    "sourceId": "k_69cfe4119031ee5dcbdf:p5"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "reason": "Dashboard aggregates authorized metrics; no cited definition binds an application-arrivals forecast object.",
+                    "status": "unknown",
+                    "requirementId": "object"
+                  },
+                  {
+                    "reason": "No cited definition binds an application-arrival grain for the Dashboard.",
+                    "status": "unknown",
+                    "requirementId": "grain"
+                  },
+                  {
+                    "reason": "Dashboard panels have their own time bases; no next-month arrivals basis is defined.",
+                    "status": "unknown",
+                    "requirementId": "time"
+                  },
+                  {
+                    "reason": "Cited Dashboard knowledge states no forecast operation is established and current totals/trends do not support a precise next-month arrivals forecast.",
+                    "status": "conflict",
+                    "requirementId": "measure_0"
+                  },
+                  {
+                    "reason": "Cited Dashboard knowledge states the trend returns completed tasks, not incoming complaint volume, and no forecast model is established.",
+                    "status": "conflict",
+                    "requirementId": "measure_1"
+                  },
+                  {
+                    "reason": "Cited Dashboard knowledge states the trend returns completed tasks, not incoming inspection volume, and no forecast model is established.",
+                    "status": "conflict",
+                    "requirementId": "measure_2"
+                  }
+                ],
+                "candidateId": "587761e59eb1c4982ad9"
+              },
+              {
+                "reason": "Application entity/grain defined, but no forecast measure or next-month arrivals basis.",
+                "evidence": [
+                  {
+                    "sourceId": "k_20ced6e0b4b58b26fc02:p2"
+                  },
+                  {
+                    "sourceId": "k_20ced6e0b4b58b26fc02:p3"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "reason": "Cited binding defines the application entity on this licensing applications page.",
+                    "status": "supported",
+                    "requirementId": "object"
+                  },
+                  {
+                    "reason": "Cited binding defines application grain as id on this page.",
+                    "status": "supported",
+                    "requirementId": "grain"
+                  },
+                  {
+                    "reason": "Request filters use lastUpdatedTime; no next-month arrivals time basis is defined.",
+                    "status": "unknown",
+                    "requirementId": "time"
+                  },
+                  {
+                    "reason": "No cited definition establishes a predicted application-arrivals measure.",
+                    "status": "unknown",
+                    "requirementId": "measure_0"
+                  },
+                  {
+                    "reason": "Complaints are a distinct ticket subtype; no cited definition establishes a predicted complaint-arrivals measure here.",
+                    "status": "unknown",
+                    "requirementId": "measure_1"
+                  },
+                  {
+                    "reason": "No cited definition establishes a predicted inspection-arrivals measure on this page.",
+                    "status": "unknown",
+                    "requirementId": "measure_2"
+                  }
+                ],
+                "candidateId": "d148f5bd85c7adc6a164"
+              },
+              {
+                "reason": "Ticket queue counts only; no forecast capability for arrivals.",
+                "evidence": [
+                  {
+                    "sourceId": "k_470d53c5d2ff59256937:p0"
+                  },
+                  {
+                    "sourceId": "k_528836269526ffd70edd:p3"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "reason": "Tickets workspace covers customer-service tickets; no cited definition binds an application-arrivals forecast object.",
+                    "status": "unknown",
+                    "requirementId": "object"
+                  },
+                  {
+                    "reason": "No cited definition binds an application-arrival grain for this page.",
+                    "status": "unknown",
+                    "requirementId": "grain"
+                  },
+                  {
+                    "reason": "No cited definition establishes a next-month arrivals time basis.",
+                    "status": "unknown",
+                    "requirementId": "time"
+                  },
+                  {
+                    "reason": "No cited definition establishes a predicted application-arrivals measure.",
+                    "status": "unknown",
+                    "requirementId": "measure_0"
+                  },
+                  {
+                    "reason": "Ticket counts exist, but no cited definition establishes a predicted complaint-arrivals measure.",
+                    "status": "unknown",
+                    "requirementId": "measure_1"
+                  },
+                  {
+                    "reason": "No cited definition establishes a predicted inspection-arrivals measure.",
+                    "status": "unknown",
+                    "requirementId": "measure_2"
+                  }
+                ],
+                "candidateId": "14378073b232f29c7d8e"
+              },
+              {
+                "reason": "Team task/member workspace; no forecast capability for arrivals.",
+                "evidence": [
+                  {
+                    "sourceId": "k_92a79f71a10e04746f88:p0"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "reason": "Team management workspace; no cited definition binds an application-arrivals forecast object.",
+                    "status": "unknown",
+                    "requirementId": "object"
+                  },
+                  {
+                    "reason": "No cited definition binds an application-arrival grain for this page.",
+                    "status": "unknown",
+                    "requirementId": "grain"
+                  },
+                  {
+                    "reason": "No cited definition establishes a next-month arrivals time basis.",
+                    "status": "unknown",
+                    "requirementId": "time"
+                  },
+                  {
+                    "reason": "No cited definition establishes a predicted application-arrivals measure.",
+                    "status": "unknown",
+                    "requirementId": "measure_0"
+                  },
+                  {
+                    "reason": "No cited definition establishes a predicted complaint-arrivals measure.",
+                    "status": "unknown",
+                    "requirementId": "measure_1"
+                  },
+                  {
+                    "reason": "No cited definition establishes a predicted inspection-arrivals measure.",
+                    "status": "unknown",
+                    "requirementId": "measure_2"
+                  }
+                ],
+                "candidateId": "2af4669a81483b327764"
+              }
+            ],
+            "taskFingerprint": "ab2f6169f333be6e0c00afb29cc533a808fa9c9685e3d5027eb81b657babf27d"
+          }
+        }
+      ],
+      "routingDecision": null,
+      "candidateRecall": {
+        "topK": 5,
+        "algorithm": "catalog_multilingual_semantic_rrf_v3",
+        "candidates": [
+          {
+            "name": "LicenseReportsAnalytics",
+            "route": "/licensing/reports-analytics",
+            "score": 0.027984344422700584,
+            "fields": [
+              "serviceName",
+              "applications",
+              "totalRevenue",
+              "approvalRate",
+              "avgProcessingTime",
+              "avgSatisfaction",
+              "refundApplications",
+              "refundRate",
+              "memberName",
+              "applicationTasks",
+              "approvedApplications",
+              "rejectedApplications",
+              "sla",
+              "slaBreaches",
+              "license",
+              "issued",
+              "active",
+              "expiringSoon",
+              "expired"
+            ],
+            "pageId": "a3780c35dd57_da1a77697e11:Page:ed015ecc63f985587c8f",
+            "sourceIds": [],
+            "parameters": [
+              "tab"
+            ],
+            "browserHint": false,
+            "candidateId": "49f9f47fb5c336886eca",
+            "description": "该业务域的运营报表与分析工作区。按 Tab、时间范围和维度请求汇总或导出数据；指标公式须逐项追溯后端，不能仅凭图表标题推断。",
+            "lexicalScore": 8.1429,
+            "catalogSourceIds": [
+              "k_7922742386b49657f327:p0"
+            ],
+            "retrievedEvidenceCount": 0
+          },
+          {
+            "name": "Dashboard",
+            "route": "/dashboard",
+            "score": 0.03149801587301587,
+            "fields": [],
+            "pageId": "a3780c35dd57_da1a77697e11:Page:67b696468610b879ed7f",
+            "sourceIds": [
+              "k_2d2a589cafcfb0841eb2:p0",
+              "k_ac4bc548362e0198e0ef:p0",
+              "k_edf65656488d01a27eae:p0"
+            ],
+            "parameters": [
+              "taskId"
+            ],
+            "browserHint": false,
+            "candidateId": "587761e59eb1c4982ad9",
+            "description": "综合工作台，聚合授权范围内多个业务域的指标与任务。聚合卡片需保留原始指标来源和时间范围。",
+            "lexicalScore": 8.8571,
+            "catalogSourceIds": [
+              "k_a1d744b0e34d67e76149:p0"
+            ],
+            "retrievedEvidenceCount": 3
+          },
+          {
+            "name": "Applications",
+            "route": "/licensing/applications",
+            "score": 0.03128054740957967,
+            "fields": [
+              "applicationNumber",
+              "serviceNameEn",
+              "serviceCategoryNameEn",
+              "serviceTypeNameEn",
+              "status",
+              "slaDescription",
+              "applyForEn",
+              "lastUpdatedTime",
+              "taskStatus",
+              "action",
+              "note"
+            ],
+            "pageId": "a3780c35dd57_da1a77697e11:Page:98e33b0f3104fcf1b812",
+            "sourceIds": [
+              "k_c6411a6a61f78f2d6115:p0",
+              "k_4f9269b49716110907ab:p3"
+            ],
+            "parameters": [],
+            "browserHint": false,
+            "candidateId": "d148f5bd85c7adc6a164",
+            "description": "许可业务的个人待办与已完成任务。列表提供服务、状态、时间等筛选；从任务行进入申请详情。审批、驳回、补件、外部审批等属于业务写操作。",
+            "lexicalScore": 20.5714,
+            "catalogSourceIds": [
+              "k_3d02e7d4b02e2eb1c64d:p0"
+            ],
+            "retrievedEvidenceCount": 2
+          },
+          {
+            "name": "Tickets",
+            "route": "/happiness/tickets",
+            "score": 0.031054405392392875,
+            "fields": [
+              "enquiryNumber",
+              "enquirySourceId",
+              "applicationNo",
+              "custormer",
+              "agnetname",
+              "priorityId",
+              "sla",
+              "currentHander",
+              "enquiryStatusId",
+              "updatedOn",
+              "Actions",
+              "createdOn"
+            ],
+            "pageId": "a3780c35dd57_da1a77697e11:Page:3d131368b43397ff5fbe",
+            "sourceIds": [
+              "k_bcce27bf80d0fc24de9a:p2",
+              "k_5665bf5a212fe16c5e3a:p0",
+              "k_528836269526ffd70edd:p0"
+            ],
+            "parameters": [],
+            "browserHint": false,
+            "candidateId": "14378073b232f29c7d8e",
+            "description": "客户服务工单工作区，包含任务视图、筛选和工单详情；状态变更、回复和创建是独立动作。",
+            "lexicalScore": 8.4286,
+            "catalogSourceIds": [
+              "k_470d53c5d2ff59256937:p0"
+            ],
+            "retrievedEvidenceCount": 3
+          },
+          {
+            "name": "TeamManagement",
+            "route": "/licensing/team-management",
+            "score": 0.030309988518943745,
+            "fields": [
+              "taskNo",
+              "taskCategory",
+              "applyFor",
+              "assignedTo",
+              "status",
+              "lastUpdated",
+              "slaDisplay"
+            ],
+            "pageId": "a3780c35dd57_da1a77697e11:Page:d4706ed3ace7fd9f0345",
+            "sourceIds": [
+              "k_c6411a6a61f78f2d6115:p0"
+            ],
+            "parameters": [
+              "tab"
+            ],
+            "browserHint": false,
+            "candidateId": "2af4669a81483b327764",
+            "description": "复用的团队任务和成员管理工作区，挂在许可、内容和客户服务三个模块。主 Tab、任务来源及部门共同决定接口与业务语义。",
+            "lexicalScore": 8.5714,
+            "catalogSourceIds": [
+              "k_92a79f71a10e04746f88:p0"
+            ],
+            "retrievedEvidenceCount": 1
+          }
+        ],
+        "recallReason": "Forecast of next-month volumes for applications, complaints and inspections is an analytics/aggregation request; LicenseReportsAnalytics is the licensing reports/analytics workspace with time-range and dimension aggregation, and Dashboard aggregates cross-domain metrics. Applications is the licensing application list/queue, Tickets is the customer-service queue (complaint-like enquiries), and TeamManagement is the shared team task workspace. No catalog entry documents a forecasting/prediction c…",
+        "taskFingerprint": "ab2f6169f333be6e0c00afb29cc533a808fa9c9685e3d5027eb81b657babf27d"
+      },
+      "routingInvocations": [
+        {
+          "attempt": 1,
+          "taskFingerprint": "ab2f6169f333be6e0c00afb29cc533a808fa9c9685e3d5027eb81b657babf27d",
+          "modelFingerprintDiffered": false
+        },
+        {
+          "attempt": 2,
+          "taskFingerprint": "ab2f6169f333be6e0c00afb29cc533a808fa9c9685e3d5027eb81b657babf27d",
+          "modelFingerprintDiffered": false
+        },
+        {
+          "attempt": 3,
+          "taskFingerprint": "ab2f6169f333be6e0c00afb29cc533a808fa9c9685e3d5027eb81b657babf27d",
+          "modelFingerprintDiffered": false
+        }
+      ]
+    },
+    {
+      "language": "ar",
+      "conversationId": "conv_b48489aeb75343eebdba",
+      "requestId": "6d40a50a-9c88-4522-a4f0-018f961cb354",
+      "task": {
+        "view": "",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "next month",
+        "outputShape": "count",
+        "searchQuery": "forecast predicted number requests complaints inspections next month",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "request",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [
+              "predicted number of requests",
+              "predicted number of complaints",
+              "predicted number of inspections"
+            ],
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "timeRange",
+            "value": "next month",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "outputShape",
+            "value": "count",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "businessFocus",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "disclosurePurpose",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedScope",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedGrain",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "recordIdentity",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "view",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "current",
+            "evidence": "parsed current request"
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "",
+        "clarification": null,
+        "needsLiveData": true,
+        "businessObject": "request",
+        "recordIdentity": "",
+        "requestedGrain": "unknown",
+        "requestedScope": "unknown",
+        "contextRelation": "new",
+        "unresolvedSlots": [],
+        "disclosurePurpose": "",
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [
+          "predicted number of requests",
+          "predicted number of complaints",
+          "predicted number of inspections"
+        ],
+        "requestedOrdering": [],
+        "requestedAttributes": [],
+        "evidenceExplanations": []
+      },
+      "rejectedRouting": [],
+      "routingDecision": {
+        "stage": "routing_decision",
+        "reason": "لا تتوفر معرفة تثبت قدرة توقع لعدد الطلبات والشكاوى والتفتيشات الواردة الشهر القادم. تُظهر المصادر أن لوحة المعلومات وسلسلة المهام المكتملة لا تنشئ نموذج توقع، وأن التوقع يتطلب سلسلة تاريخية فعلية وطريقة معلنة وافتراضات وتحققاً؛ وغياب ذلك يعني أن رقم التوقع غير مدعوم، ولا يجوز إعادة تسمية عدد تاريخي كتوقع. لذلك القرار knowledge_gap دون مسار تنفيذ.",
+        "missing": [
+          "forecast_method",
+          "historical_arrivals_series"
+        ],
+        "decision": "knowledge_gap",
+        "routePlan": [],
+        "candidates": [
+          {
+            "reason": "Generic reports workspace; no cited definition binds it to arrival forecasting for requests, complaints and inspections.",
+            "evidence": [
+              {
+                "sourceId": "k_7922742386b49657f327:p0"
+              },
+              {
+                "sourceId": "k_69cfe4119031ee5dcbdf:p5"
+              }
+            ],
+            "conditions": [
+              {
+                "reason": "The reports-analytics workspace is a generic operational reporting area; no cited definition binds it to the requested request/complaint/inspection arrival object.",
+                "status": "unknown",
+                "evidence": [
+                  {
+                    "sourceId": "k_7922742386b49657f327:p0"
+                  }
+                ],
+                "requirementId": "object"
+              },
+              {
+                "reason": "No cited definition establishes an arrival-record grain for this workspace.",
+                "status": "unknown",
+                "evidence": [
+                  {
+                    "sourceId": "k_7922742386b49657f327:p0"
+                  }
+                ],
+                "requirementId": "grain"
+              },
+              {
+                "reason": "The workspace accepts a time range, but no cited definition establishes a next-month forecast period.",
+                "status": "unknown",
+                "evidence": [
+                  {
+                    "sourceId": "k_7922742386b49657f327:p0"
+                  }
+                ],
+                "requirementId": "time"
+              },
+              {
+                "reason": "No forecast capability is established; current totals and completed-task trends do not support a precise next-month arrivals prediction.",
+                "status": "conflict",
+                "evidence": [
+                  {
+                    "sourceId": "k_69cfe4119031ee5dcbdf:p5"
+                  }
+                ],
+                "requirementId": "measure_0"
+              },
+              {
+                "reason": "The trend series returns completed tasks, not incoming complaint volume, and no forecast model is established.",
+                "status": "conflict",
+                "evidence": [
+                  {
+                    "sourceId": "k_edf65656488d01a27eae:p3"
+                  }
+                ],
+                "requirementId": "measure_1"
+              },
+              {
+                "reason": "Inspection reports require historical series and an explicit method; a visible total is not an observed future outcome.",
+                "status": "conflict",
+                "evidence": [
+                  {
+                    "sourceId": "k_d0955e970a77aa02cc67:p5"
+                  }
+                ],
+                "requirementId": "measure_2"
+              }
+            ],
+            "candidateId": "49f9f47fb5c336886eca"
+          },
+          {
+            "reason": "Dashboard provides descriptive summaries and completed-task trends only; no forecast capability for next-month arrivals.",
+            "evidence": [
+              {
+                "sourceId": "k_a1d744b0e34d67e76149:p0"
+              },
+              {
+                "sourceId": "k_edf65656488d01a27eae:p3"
+              }
+            ],
+            "conditions": [
+              {
+                "reason": "The dashboard aggregates authorized-domain metrics but no cited definition binds it to the requested arrival object.",
+                "status": "unknown",
+                "evidence": [
+                  {
+                    "sourceId": "k_a1d744b0e34d67e76149:p0"
+                  }
+                ],
+                "requirementId": "object"
+              },
+              {
+                "reason": "No cited definition establishes an arrival-record grain for the dashboard.",
+                "status": "unknown",
+                "evidence": [
+                  {
+                    "sourceId": "k_a1d744b0e34d67e76149:p0"
+                  }
+                ],
+                "requirementId": "grain"
+              },
+              {
+                "reason": "The dashboard preserves an applied time range, but no cited definition establishes a next-month forecast period.",
+                "status": "unknown",
+                "evidence": [
+                  {
+                    "sourceId": "k_da322085110fe7face1f:p2"
+                  }
+                ],
+                "requirementId": "time"
+              },
+              {
+                "reason": "The inspected dashboard APIs provide descriptive summaries and historical completed-task series; they do not establish a next-month forecasting model.",
+                "status": "conflict",
+                "evidence": [
+                  {
+                    "sourceId": "k_edf65656488d01a27eae:p3"
+                  }
+                ],
+                "requirementId": "measure_0"
+              },
+              {
+                "reason": "The trend series does not return incoming complaint volume, and no forecast method is established.",
+                "status": "conflict",
+                "evidence": [
+                  {
+                    "sourceId": "k_edf65656488d01a27eae:p3"
+                  }
+                ],
+                "requirementId": "measure_1"
+              },
+              {
+                "reason": "No forecast operation is established by these dashboard APIs; current totals and completed-task trends do not support a precise forecast of next-month arrivals.",
+                "status": "conflict",
+                "evidence": [
+                  {
+                    "sourceId": "k_69cfe4119031ee5dcbdf:p5"
+                  }
+                ],
+                "requirementId": "measure_2"
+              }
+            ],
+            "candidateId": "587761e59eb1c4982ad9"
+          }
+        ],
+        "clarification": null,
+        "taskFingerprint": "f27709a826d8b0c42585fbf5b0bd59ac639e47109313e801b3defd7e186278b5"
+      },
+      "candidateRecall": {
+        "topK": 5,
+        "algorithm": "catalog_multilingual_semantic_rrf_v3",
+        "candidates": [
+          {
+            "name": "LicenseReportsAnalytics",
+            "route": "/licensing/reports-analytics",
+            "score": 0.027650648360030512,
+            "fields": [
+              "serviceName",
+              "applications",
+              "totalRevenue",
+              "approvalRate",
+              "avgProcessingTime",
+              "avgSatisfaction",
+              "refundApplications",
+              "refundRate",
+              "memberName",
+              "applicationTasks",
+              "approvedApplications",
+              "rejectedApplications",
+              "sla",
+              "slaBreaches",
+              "license",
+              "issued",
+              "active",
+              "expiringSoon",
+              "expired"
+            ],
+            "pageId": "a3780c35dd57_da1a77697e11:Page:ed015ecc63f985587c8f",
+            "sourceIds": [],
+            "parameters": [
+              "tab"
+            ],
+            "browserHint": false,
+            "candidateId": "49f9f47fb5c336886eca",
+            "description": "该业务域的运营报表与分析工作区。按 Tab、时间范围和维度请求汇总或导出数据；指标公式须逐项追溯后端，不能仅凭图表标题推断。",
+            "lexicalScore": 0,
+            "catalogSourceIds": [
+              "k_7922742386b49657f327:p0"
+            ],
+            "retrievedEvidenceCount": 0
+          },
+          {
+            "name": "Dashboard",
+            "route": "/dashboard",
+            "score": 0.03278688524590164,
+            "fields": [],
+            "pageId": "a3780c35dd57_da1a77697e11:Page:67b696468610b879ed7f",
+            "sourceIds": [
+              "k_2d2a589cafcfb0841eb2:p0",
+              "k_ac4bc548362e0198e0ef:p0",
+              "k_edf65656488d01a27eae:p0",
+              "k_da322085110fe7face1f:p1",
+              "k_da322085110fe7face1f:p2",
+              "k_da322085110fe7face1f:p3",
+              "k_da322085110fe7face1f:p4",
+              "k_7f6a6719f2295b716667:p0"
+            ],
+            "parameters": [
+              "taskId"
+            ],
+            "browserHint": false,
+            "candidateId": "587761e59eb1c4982ad9",
+            "description": "综合工作台，聚合授权范围内多个业务域的指标与任务。聚合卡片需保留原始指标来源和时间范围。",
+            "lexicalScore": 8.8,
+            "catalogSourceIds": [
+              "k_a1d744b0e34d67e76149:p0"
+            ],
+            "retrievedEvidenceCount": 8
+          }
+        ],
+        "recallReason": "Forecast counts for next month are an analytics/reporting need: LicenseReportsAnalytics is the domain reports-analytics workspace for aggregated metrics by time range and dimension, and Dashboard aggregates authorized cross-domain metrics with source and time range preserved. No catalog entry documents a forecasting/prediction capability, and no entry covers complaints or inspections as measures, so only these aggregation candidates are recalled.",
+        "taskFingerprint": "f27709a826d8b0c42585fbf5b0bd59ac639e47109313e801b3defd7e186278b5"
+      },
+      "routingInvocations": [
+        {
+          "attempt": 1,
+          "taskFingerprint": "f27709a826d8b0c42585fbf5b0bd59ac639e47109313e801b3defd7e186278b5",
+          "modelFingerprintDiffered": false
+        }
+      ]
+    }
+  ],
+  "findings": {
+    "at": "2026-09-28T23:43:24.575031+00:00",
+    "status": "design_only",
+    "actualSource": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/groups1113-20260928/round28-d04-v37/answers/D-04__en.json",
+    "sourceSHA256": "e79c63c237f4270d11f3433f7b5dc8bc4497face44836bf940b27d87e361ba50",
+    "visibleSourceIds": [
+      "k_041d8a922ab6c948e9e5:p1",
+      "k_041d8a922ab6c948e9e5:p10",
+      "k_041d8a922ab6c948e9e5:p2",
+      "k_041d8a922ab6c948e9e5:p5",
+      "k_041d8a922ab6c948e9e5:p9",
+      "k_08b9b4fbd9086a965276:p0",
+      "k_08b9b4fbd9086a965276:p1",
+      "k_08b9b4fbd9086a965276:p22",
+      "k_08b9b4fbd9086a965276:p4",
+      "k_08b9b4fbd9086a965276:p9",
+      "k_20ced6e0b4b58b26fc02:p0",
+      "k_20ced6e0b4b58b26fc02:p1",
+      "k_20ced6e0b4b58b26fc02:p10",
+      "k_20ced6e0b4b58b26fc02:p11",
+      "k_20ced6e0b4b58b26fc02:p12",
+      "k_20ced6e0b4b58b26fc02:p13",
+      "k_20ced6e0b4b58b26fc02:p14",
+      "k_20ced6e0b4b58b26fc02:p15",
+      "k_20ced6e0b4b58b26fc02:p16",
+      "k_20ced6e0b4b58b26fc02:p17",
+      "k_20ced6e0b4b58b26fc02:p2",
+      "k_20ced6e0b4b58b26fc02:p3",
+      "k_20ced6e0b4b58b26fc02:p4",
+      "k_20ced6e0b4b58b26fc02:p5",
+      "k_20ced6e0b4b58b26fc02:p6",
+      "k_20ced6e0b4b58b26fc02:p7",
+      "k_20ced6e0b4b58b26fc02:p8",
+      "k_20ced6e0b4b58b26fc02:p9",
+      "k_270f6ba2b305f24ed194:p0",
+      "k_270f6ba2b305f24ed194:p1",
+      "k_270f6ba2b305f24ed194:p2",
+      "k_270f6ba2b305f24ed194:p3",
+      "k_270f6ba2b305f24ed194:p4",
+      "k_270f6ba2b305f24ed194:p5",
+      "k_2e7f428f71deda70954d:p0",
+      "k_2e7f428f71deda70954d:p1",
+      "k_2e7f428f71deda70954d:p17",
+      "k_2e7f428f71deda70954d:p18",
+      "k_2e7f428f71deda70954d:p25",
+      "k_2e7f428f71deda70954d:p7",
+      "k_3d02e7d4b02e2eb1c64d:p0",
+      "k_470d53c5d2ff59256937:p0",
+      "k_4f9269b49716110907ab:p0",
+      "k_4f9269b49716110907ab:p1",
+      "k_4f9269b49716110907ab:p10",
+      "k_4f9269b49716110907ab:p11",
+      "k_4f9269b49716110907ab:p12",
+      "k_4f9269b49716110907ab:p13",
+      "k_4f9269b49716110907ab:p14",
+      "k_4f9269b49716110907ab:p15",
+      "k_4f9269b49716110907ab:p16",
+      "k_4f9269b49716110907ab:p17",
+      "k_4f9269b49716110907ab:p2",
+      "k_4f9269b49716110907ab:p3",
+      "k_4f9269b49716110907ab:p4",
+      "k_4f9269b49716110907ab:p5",
+      "k_4f9269b49716110907ab:p6",
+      "k_4f9269b49716110907ab:p7",
+      "k_4f9269b49716110907ab:p8",
+      "k_4f9269b49716110907ab:p9",
+      "k_528836269526ffd70edd:p0",
+      "k_528836269526ffd70edd:p1",
+      "k_528836269526ffd70edd:p2",
+      "k_528836269526ffd70edd:p3",
+      "k_528836269526ffd70edd:p4",
+      "k_528836269526ffd70edd:p5",
+      "k_528836269526ffd70edd:p6",
+      "k_528836269526ffd70edd:p7",
+      "k_528836269526ffd70edd:p8",
+      "k_528836269526ffd70edd:p9",
+      "k_5665bf5a212fe16c5e3a:p0",
+      "k_5665bf5a212fe16c5e3a:p1",
+      "k_5665bf5a212fe16c5e3a:p2",
+      "k_5665bf5a212fe16c5e3a:p3",
+      "k_5665bf5a212fe16c5e3a:p4",
+      "k_5665bf5a212fe16c5e3a:p5",
+      "k_5665bf5a212fe16c5e3a:p6",
+      "k_5665bf5a212fe16c5e3a:p7",
+      "k_5aa8d5ea911bb4b0b3f4:p0",
+      "k_5aa8d5ea911bb4b0b3f4:p1",
+      "k_5aa8d5ea911bb4b0b3f4:p10",
+      "k_5aa8d5ea911bb4b0b3f4:p11",
+      "k_5aa8d5ea911bb4b0b3f4:p12",
+      "k_5aa8d5ea911bb4b0b3f4:p13",
+      "k_5aa8d5ea911bb4b0b3f4:p14",
+      "k_5aa8d5ea911bb4b0b3f4:p15",
+      "k_5aa8d5ea911bb4b0b3f4:p16",
+      "k_5aa8d5ea911bb4b0b3f4:p2",
+      "k_5aa8d5ea911bb4b0b3f4:p3",
+      "k_5aa8d5ea911bb4b0b3f4:p4",
+      "k_5aa8d5ea911bb4b0b3f4:p5",
+      "k_5aa8d5ea911bb4b0b3f4:p6",
+      "k_5aa8d5ea911bb4b0b3f4:p7",
+      "k_5aa8d5ea911bb4b0b3f4:p8",
+      "k_5aa8d5ea911bb4b0b3f4:p9",
+      "k_5e165afb79c5c3965a55:p1",
+      "k_5e165afb79c5c3965a55:p10",
+      "k_5e165afb79c5c3965a55:p13",
+      "k_5e165afb79c5c3965a55:p7",
+      "k_5e165afb79c5c3965a55:p8",
+      "k_5e165afb79c5c3965a55:p9",
+      "k_6168a9eabce54635fbae:p0",
+      "k_6168a9eabce54635fbae:p1",
+      "k_6168a9eabce54635fbae:p10",
+      "k_6168a9eabce54635fbae:p11",
+      "k_6168a9eabce54635fbae:p12",
+      "k_6168a9eabce54635fbae:p13",
+      "k_6168a9eabce54635fbae:p14",
+      "k_6168a9eabce54635fbae:p15",
+      "k_6168a9eabce54635fbae:p2",
+      "k_6168a9eabce54635fbae:p3",
+      "k_6168a9eabce54635fbae:p4",
+      "k_6168a9eabce54635fbae:p5",
+      "k_6168a9eabce54635fbae:p6",
+      "k_6168a9eabce54635fbae:p7",
+      "k_6168a9eabce54635fbae:p8",
+      "k_6168a9eabce54635fbae:p9",
+      "k_69cfe4119031ee5dcbdf:p0",
+      "k_69cfe4119031ee5dcbdf:p1",
+      "k_69cfe4119031ee5dcbdf:p2",
+      "k_69cfe4119031ee5dcbdf:p3",
+      "k_69cfe4119031ee5dcbdf:p4",
+      "k_69cfe4119031ee5dcbdf:p5",
+      "k_69cfe4119031ee5dcbdf:p6",
+      "k_69cfe4119031ee5dcbdf:p7",
+      "k_7922742386b49657f327:p0",
+      "k_7c85b7f5b021c80cd0c0:p0",
+      "k_7c85b7f5b021c80cd0c0:p13",
+      "k_7c85b7f5b021c80cd0c0:p17",
+      "k_7c85b7f5b021c80cd0c0:p18",
+      "k_7c85b7f5b021c80cd0c0:p3",
+      "k_7c85b7f5b021c80cd0c0:p4",
+      "k_7e5ebb63b637bcb1a639:p0",
+      "k_7e5ebb63b637bcb1a639:p1",
+      "k_7e5ebb63b637bcb1a639:p2",
+      "k_7e5ebb63b637bcb1a639:p3",
+      "k_7e5ebb63b637bcb1a639:p4",
+      "k_7e5ebb63b637bcb1a639:p5",
+      "k_7e5ebb63b637bcb1a639:p6",
+      "k_92a79f71a10e04746f88:p0",
+      "k_930718ddaa4327d32404:p2",
+      "k_930718ddaa4327d32404:p3",
+      "k_930718ddaa4327d32404:p5",
+      "k_930718ddaa4327d32404:p7",
+      "k_930718ddaa4327d32404:p9",
+      "k_931f6e2b41cb1ef9cc52:p0",
+      "k_931f6e2b41cb1ef9cc52:p1",
+      "k_931f6e2b41cb1ef9cc52:p2",
+      "k_931f6e2b41cb1ef9cc52:p3",
+      "k_931f6e2b41cb1ef9cc52:p7",
+      "k_9bf0d0a3d9c171a276b8:p0",
+      "k_9bf0d0a3d9c171a276b8:p1",
+      "k_9bf0d0a3d9c171a276b8:p2",
+      "k_9bf0d0a3d9c171a276b8:p3",
+      "k_9bf0d0a3d9c171a276b8:p4",
+      "k_9bf0d0a3d9c171a276b8:p5",
+      "k_9bf0d0a3d9c171a276b8:p6",
+      "k_9c9a74f0a2084c22af91:p1",
+      "k_9c9a74f0a2084c22af91:p16",
+      "k_9c9a74f0a2084c22af91:p21",
+      "k_9c9a74f0a2084c22af91:p3",
+      "k_9c9a74f0a2084c22af91:p9",
+      "k_9fbc8e262b825aeeca0f:p0",
+      "k_9fbc8e262b825aeeca0f:p15",
+      "k_9fbc8e262b825aeeca0f:p17",
+      "k_9fbc8e262b825aeeca0f:p18",
+      "k_9fbc8e262b825aeeca0f:p2",
+      "k_a1d744b0e34d67e76149:p0",
+      "k_a54ea93d134133795482:p0",
+      "k_a54ea93d134133795482:p1",
+      "k_a54ea93d134133795482:p2",
+      "k_a54ea93d134133795482:p3",
+      "k_a54ea93d134133795482:p4",
+      "k_a54ea93d134133795482:p5",
+      "k_a54ea93d134133795482:p6",
+      "k_aab0932050e5c758c350:p0",
+      "k_aab0932050e5c758c350:p13",
+      "k_aab0932050e5c758c350:p16",
+      "k_aab0932050e5c758c350:p3",
+      "k_aab0932050e5c758c350:p6",
+      "k_bcce27bf80d0fc24de9a:p0",
+      "k_bcce27bf80d0fc24de9a:p1",
+      "k_bcce27bf80d0fc24de9a:p2",
+      "k_bcce27bf80d0fc24de9a:p3",
+      "k_bcce27bf80d0fc24de9a:p4",
+      "k_bcce27bf80d0fc24de9a:p5",
+      "k_bcce27bf80d0fc24de9a:p6",
+      "k_bcce27bf80d0fc24de9a:p7",
+      "k_c6411a6a61f78f2d6115:p0",
+      "k_c6411a6a61f78f2d6115:p1",
+      "k_c6411a6a61f78f2d6115:p2",
+      "k_c6411a6a61f78f2d6115:p3",
+      "k_c6411a6a61f78f2d6115:p4",
+      "k_c6411a6a61f78f2d6115:p5",
+      "k_d0955e970a77aa02cc67:p0",
+      "k_d0955e970a77aa02cc67:p1",
+      "k_d0955e970a77aa02cc67:p2",
+      "k_d0955e970a77aa02cc67:p5",
+      "k_d0955e970a77aa02cc67:p6",
+      "k_d3d4b2779cf3dcd92c0b:p0",
+      "k_d3d4b2779cf3dcd92c0b:p1",
+      "k_edf65656488d01a27eae:p0",
+      "k_edf65656488d01a27eae:p1",
+      "k_edf65656488d01a27eae:p10",
+      "k_edf65656488d01a27eae:p2",
+      "k_edf65656488d01a27eae:p3",
+      "k_edf65656488d01a27eae:p4",
+      "k_edf65656488d01a27eae:p5",
+      "k_edf65656488d01a27eae:p6",
+      "k_edf65656488d01a27eae:p7",
+      "k_edf65656488d01a27eae:p8",
+      "k_edf65656488d01a27eae:p9",
+      "k_fd7b899f0a79dd27d6fd:p0",
+      "k_fd7b899f0a79dd27d6fd:p1"
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "actualFeedback": {
+          "code": "knowledge_citation_missing",
+          "field": "routing.condition"
+        },
+        "requiredConditionEvidenceMissing": [
+          {
+            "path": "/candidates/1/conditions/3/evidence",
+            "candidateId": "587761e59eb1c4982ad9",
+            "requirementId": "measure_0",
+            "status": "conflict"
+          },
+          {
+            "path": "/candidates/1/conditions/4/evidence",
+            "candidateId": "587761e59eb1c4982ad9",
+            "requirementId": "measure_1",
+            "status": "conflict"
+          },
+          {
+            "path": "/candidates/1/conditions/5/evidence",
+            "candidateId": "587761e59eb1c4982ad9",
+            "requirementId": "measure_2",
+            "status": "conflict"
+          },
+          {
+            "path": "/candidates/2/conditions/0/evidence",
+            "candidateId": "d148f5bd85c7adc6a164",
+            "requirementId": "object",
+            "status": "supported"
+          },
+          {
+            "path": "/candidates/2/conditions/1/evidence",
+            "candidateId": "d148f5bd85c7adc6a164",
+            "requirementId": "grain",
+            "status": "supported"
+          }
+        ],
+        "unknownEmptyEvidenceAllowedByExistingContract": [
+          {
+            "path": "/candidates/0/conditions/0/evidence",
+            "candidateId": "49f9f47fb5c336886eca",
+            "requirementId": "object",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/0/conditions/1/evidence",
+            "candidateId": "49f9f47fb5c336886eca",
+            "requirementId": "grain",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/0/conditions/2/evidence",
+            "candidateId": "49f9f47fb5c336886eca",
+            "requirementId": "time",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/0/conditions/3/evidence",
+            "candidateId": "49f9f47fb5c336886eca",
+            "requirementId": "measure_0",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/0/conditions/4/evidence",
+            "candidateId": "49f9f47fb5c336886eca",
+            "requirementId": "measure_1",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/0/conditions/5/evidence",
+            "candidateId": "49f9f47fb5c336886eca",
+            "requirementId": "measure_2",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/1/conditions/0/evidence",
+            "candidateId": "587761e59eb1c4982ad9",
+            "requirementId": "object",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/1/conditions/1/evidence",
+            "candidateId": "587761e59eb1c4982ad9",
+            "requirementId": "grain",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/1/conditions/2/evidence",
+            "candidateId": "587761e59eb1c4982ad9",
+            "requirementId": "time",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/2/conditions/2/evidence",
+            "candidateId": "d148f5bd85c7adc6a164",
+            "requirementId": "time",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/2/conditions/3/evidence",
+            "candidateId": "d148f5bd85c7adc6a164",
+            "requirementId": "measure_0",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/2/conditions/4/evidence",
+            "candidateId": "d148f5bd85c7adc6a164",
+            "requirementId": "measure_1",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/2/conditions/5/evidence",
+            "candidateId": "d148f5bd85c7adc6a164",
+            "requirementId": "measure_2",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/3/conditions/0/evidence",
+            "candidateId": "14378073b232f29c7d8e",
+            "requirementId": "object",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/3/conditions/1/evidence",
+            "candidateId": "14378073b232f29c7d8e",
+            "requirementId": "grain",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/3/conditions/2/evidence",
+            "candidateId": "14378073b232f29c7d8e",
+            "requirementId": "time",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/3/conditions/3/evidence",
+            "candidateId": "14378073b232f29c7d8e",
+            "requirementId": "measure_0",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/3/conditions/4/evidence",
+            "candidateId": "14378073b232f29c7d8e",
+            "requirementId": "measure_1",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/3/conditions/5/evidence",
+            "candidateId": "14378073b232f29c7d8e",
+            "requirementId": "measure_2",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/4/conditions/0/evidence",
+            "candidateId": "2af4669a81483b327764",
+            "requirementId": "object",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/4/conditions/1/evidence",
+            "candidateId": "2af4669a81483b327764",
+            "requirementId": "grain",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/4/conditions/2/evidence",
+            "candidateId": "2af4669a81483b327764",
+            "requirementId": "time",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/4/conditions/3/evidence",
+            "candidateId": "2af4669a81483b327764",
+            "requirementId": "measure_0",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/4/conditions/4/evidence",
+            "candidateId": "2af4669a81483b327764",
+            "requirementId": "measure_1",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/4/conditions/5/evidence",
+            "candidateId": "2af4669a81483b327764",
+            "requirementId": "measure_2",
+            "status": "unknown"
+          }
+        ],
+        "handlesAbsentFromActualVisibleInput": [],
+        "candidateMissingPreservedForAnalysis": [
+          "forecast_capability",
+          "historical_arrivals_series",
+          "forecast_method"
+        ]
+      },
+      {
+        "attempt": 2,
+        "actualFeedback": {
+          "code": "knowledge_citation_invalid",
+          "field": "routing.candidate",
+          "sourceId": "k_92a79f71a10e047f88:p0"
+        },
+        "requiredConditionEvidenceMissing": [],
+        "unknownEmptyEvidenceAllowedByExistingContract": [],
+        "handlesAbsentFromActualVisibleInput": [
+          {
+            "path": "/candidates/4/evidence/0/sourceId",
+            "candidateId": "2af4669a81483b327764",
+            "sourceId": "k_92a79f71a10e047f88:p0"
+          },
+          {
+            "path": "/candidates/4/conditions/1/evidence/0/sourceId",
+            "candidateId": "2af4669a81483b327764",
+            "requirementId": "grain",
+            "status": "unknown",
+            "sourceId": "k_92a79f71a10e046f88:p0"
+          },
+          {
+            "path": "/candidates/4/conditions/3/evidence/0/sourceId",
+            "candidateId": "2af4669a81483b327764",
+            "requirementId": "measure_0",
+            "status": "unknown",
+            "sourceId": "k_92a79f71a10e047f88:p0"
+          },
+          {
+            "path": "/candidates/4/conditions/4/evidence/0/sourceId",
+            "candidateId": "2af4669a81483b327764",
+            "requirementId": "measure_1",
+            "status": "unknown",
+            "sourceId": "k_92a79f71a10e047f88:p0"
+          },
+          {
+            "path": "/candidates/4/conditions/5/evidence/0/sourceId",
+            "candidateId": "2af4669a81483b327764",
+            "requirementId": "measure_2",
+            "status": "unknown",
+            "sourceId": "k_92a79f71a10e047f88:p0"
+          }
+        ],
+        "candidateMissingPreservedForAnalysis": [
+          "forecast_measure_definition",
+          "historical_arrivals_series",
+          "received_date_field"
+        ]
+      },
+      {
+        "attempt": 3,
+        "actualFeedback": {
+          "code": "knowledge_citation_missing",
+          "field": "routing.condition"
+        },
+        "requiredConditionEvidenceMissing": [
+          {
+            "path": "/candidates/1/conditions/3/evidence",
+            "candidateId": "587761e59eb1c4982ad9",
+            "requirementId": "measure_0",
+            "status": "conflict"
+          },
+          {
+            "path": "/candidates/1/conditions/4/evidence",
+            "candidateId": "587761e59eb1c4982ad9",
+            "requirementId": "measure_1",
+            "status": "conflict"
+          },
+          {
+            "path": "/candidates/1/conditions/5/evidence",
+            "candidateId": "587761e59eb1c4982ad9",
+            "requirementId": "measure_2",
+            "status": "conflict"
+          },
+          {
+            "path": "/candidates/2/conditions/0/evidence",
+            "candidateId": "d148f5bd85c7adc6a164",
+            "requirementId": "object",
+            "status": "supported"
+          },
+          {
+            "path": "/candidates/2/conditions/1/evidence",
+            "candidateId": "d148f5bd85c7adc6a164",
+            "requirementId": "grain",
+            "status": "supported"
+          }
+        ],
+        "unknownEmptyEvidenceAllowedByExistingContract": [
+          {
+            "path": "/candidates/0/conditions/0/evidence",
+            "candidateId": "49f9f47fb5c336886eca",
+            "requirementId": "object",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/0/conditions/1/evidence",
+            "candidateId": "49f9f47fb5c336886eca",
+            "requirementId": "grain",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/0/conditions/2/evidence",
+            "candidateId": "49f9f47fb5c336886eca",
+            "requirementId": "time",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/0/conditions/3/evidence",
+            "candidateId": "49f9f47fb5c336886eca",
+            "requirementId": "measure_0",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/0/conditions/4/evidence",
+            "candidateId": "49f9f47fb5c336886eca",
+            "requirementId": "measure_1",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/0/conditions/5/evidence",
+            "candidateId": "49f9f47fb5c336886eca",
+            "requirementId": "measure_2",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/1/conditions/0/evidence",
+            "candidateId": "587761e59eb1c4982ad9",
+            "requirementId": "object",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/1/conditions/1/evidence",
+            "candidateId": "587761e59eb1c4982ad9",
+            "requirementId": "grain",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/1/conditions/2/evidence",
+            "candidateId": "587761e59eb1c4982ad9",
+            "requirementId": "time",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/2/conditions/2/evidence",
+            "candidateId": "d148f5bd85c7adc6a164",
+            "requirementId": "time",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/2/conditions/3/evidence",
+            "candidateId": "d148f5bd85c7adc6a164",
+            "requirementId": "measure_0",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/2/conditions/4/evidence",
+            "candidateId": "d148f5bd85c7adc6a164",
+            "requirementId": "measure_1",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/2/conditions/5/evidence",
+            "candidateId": "d148f5bd85c7adc6a164",
+            "requirementId": "measure_2",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/3/conditions/0/evidence",
+            "candidateId": "14378073b232f29c7d8e",
+            "requirementId": "object",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/3/conditions/1/evidence",
+            "candidateId": "14378073b232f29c7d8e",
+            "requirementId": "grain",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/3/conditions/2/evidence",
+            "candidateId": "14378073b232f29c7d8e",
+            "requirementId": "time",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/3/conditions/3/evidence",
+            "candidateId": "14378073b232f29c7d8e",
+            "requirementId": "measure_0",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/3/conditions/4/evidence",
+            "candidateId": "14378073b232f29c7d8e",
+            "requirementId": "measure_1",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/3/conditions/5/evidence",
+            "candidateId": "14378073b232f29c7d8e",
+            "requirementId": "measure_2",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/4/conditions/0/evidence",
+            "candidateId": "2af4669a81483b327764",
+            "requirementId": "object",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/4/conditions/1/evidence",
+            "candidateId": "2af4669a81483b327764",
+            "requirementId": "grain",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/4/conditions/2/evidence",
+            "candidateId": "2af4669a81483b327764",
+            "requirementId": "time",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/4/conditions/3/evidence",
+            "candidateId": "2af4669a81483b327764",
+            "requirementId": "measure_0",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/4/conditions/4/evidence",
+            "candidateId": "2af4669a81483b327764",
+            "requirementId": "measure_1",
+            "status": "unknown"
+          },
+          {
+            "path": "/candidates/4/conditions/5/evidence",
+            "candidateId": "2af4669a81483b327764",
+            "requirementId": "measure_2",
+            "status": "unknown"
+          }
+        ],
+        "handlesAbsentFromActualVisibleInput": [],
+        "candidateMissingPreservedForAnalysis": [
+          "forecast_definition",
+          "historical_arrivals_series",
+          "forecast_method"
+        ]
+      }
+    ],
+    "note": "unknown may have no evidence; only supported/conflict conditions require it. Similar spelling is not semantic support."
+  }
+}

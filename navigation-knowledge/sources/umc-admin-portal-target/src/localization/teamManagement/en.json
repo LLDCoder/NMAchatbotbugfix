@@ -1,0 +1,207 @@
+{
+  "teamManagement": {
+    "tabs": {
+      "teamTasks": "Team Tasks",
+      "teamTasksWithUrgentCount": "Team Tasks, urgent tasks: {{count}}",
+      "teamMembers": "Team Members"
+    },
+    "subTabs": {
+      "todo": "To Do",
+      "completed": "Completed"
+    },
+    "taskSources": {
+      "inspectionTask": "Inspection Task",
+      "otherTask": "Other Task"
+    },
+    "applicationTaskOnly": "Application Task Only",
+    "sla": {
+    "dueInDays": "Due in {{count}}d",
+    "dueInHours": "Due in {{count}}h",
+    "overdueDays": "{{count}}d Overdue",
+    "dueIn": "Due in {{duration}}",
+    "dueToday": "Due Today",
+    "exceeded": "Exceeded",
+    "onTime": "On Time",
+    "durationDays": "{{count}}d",
+    "durationDaysHours": "{{days}}d {{hours}}h",
+    "durationHours": "{{count}}h",
+    "durationHoursMinutes": "{{hours}}h {{minutes}}m",
+    "durationMinutes": "{{count}}m"
+    },
+    "duration": {
+      "daysShort": "{{value}}d",
+      "hoursShort": "{{value}}h",
+      "minutesShort": "{{value}}min"
+    },
+    "memberActions": {
+      "editAssignedArea": "Edit Assigned Area",
+      "setAssignedArea": "Set Assigned Area",
+      "markEmergencyLeave": "Mark Emergency Leave",
+      "resumeWork": "Resume Work"
+    },
+    "messages": {
+      "operationSuccess": "Operation successful.",
+      "operationFailed": "Operation failed",
+      "actionNotAvailable": "This action is not available yet.",
+      "failedToLoadMembers": "Failed to load members",
+      "failedToLoadMemberCards": "Failed to load member cards",
+      "failedToLoadLeaveReasons": "Failed to load leave reasons",
+      "failedToLoadSummary": "Failed to load summary",
+      "failedToLoadTasks": "Failed to load tasks"
+    },
+    "assignedArea": {
+      "editWarning1": "Existing tasks will not be affected. The inspector will continue working on their current tasks.",
+      "editWarning2": "Future tasks will be auto-assigned based on the new assigned area from the next assignment cycle.",
+      "setDescription": "No assigned area set. Once set, future tasks will be auto-assigned based on the assigned area.",
+      "emirate": "Emirate",
+      "region": "Region",
+      "area": "Area",
+      "assignedArea": "Assigned Area",
+      "selectEmirate": "Select Emirate",
+      "selectOneOrMoreEmirates": "Select one or more emirates",
+      "selectOneOrMoreRegions": "Select one or more regions",
+      "searchOrSelectAreas": "Search or select one or more areas",
+      "searchArea": "Search area",
+      "regionShownBecause": "Shown because Abu Dhabi is selected",
+      "pleaseSelectArea": "Please select an area"
+    },
+    "leave": {
+      "leaveReason": "Leave Reason",
+      "selectLeaveReason": "Select leave reason",
+      "expectedReturnDate": "Expected Return Date",
+      "expectedReturnDatePlaceholder": "DD/MM/YYYY  HH:MM:SS",
+      "notes": "Notes",
+      "notesPlaceholder": "Emergency leave reason",
+      "enterNotes": "Enter notes"
+    },
+    "resume": {
+      "confirmation": "Are you sure you want to mark this employee as returned to work?"
+    },
+    "reassign": {
+      "title": "Reassign Tasks",
+      "selectedCount": "({{count}} Selected)",
+      "selected": "selected",
+      "assignedPerson": "Assigned Person",
+      "selectTeamMember": "Select team member",
+      "noEligibleMembers": "No eligible team member is available for the selected tasks",
+      "noRecordsFound": "No records found",
+      "tasksSelected": "{{count}} tasks selected",
+      "action": "Reassign"
+    },
+    "profileApproval": {
+      "actions": {
+        "approve": "Approve",
+        "reject": "Reject"
+      },
+      "approveModal": {
+        "title": "Approve Application",
+        "content": "Are you sure you want to approve this application?",
+        "cancel": "Cancel",
+        "confirm": "Confirm"
+      },
+      "rejectModal": {
+        "title": "Reject Application",
+        "notes": "Notes",
+        "placeholder": "Enter notes",
+        "quickNote": "Quick Note",
+        "cancel": "Cancel",
+        "confirm": "Confirm"
+      },
+      "messages": {
+        "approveSuccess": "Application approved successfully.",
+        "approveFailed": "Failed to approve application.",
+        "rejectSuccess": "Application rejected successfully.",
+        "rejectFailed": "Failed to reject application."
+      },
+      "rejectReasons": {
+        "documentUnclear": "Document Unclear",
+        "documentMismatch": "Document Mismatch",
+        "faceNotClearlyVisible": "Face Not Clearly Visible",
+        "missingRequiredDocument": "Missing Required Document",
+        "invalidEmiratesId": "Invalid or Expired Emirates ID",
+        "documentExpired": "Document Expired",
+        "licenseNumberMismatch": "License Number Mismatch",
+        "licenseExpired": "License Expired",
+        "unableVerifyEconomy": "Unable to verify with the Ministry of Economy"
+      }
+    },
+    "memberCard": {
+      "assignedAreaUnassigned": "Unassigned",
+      "assignedAreaAssigned": "Assigned",
+      "assignedAreaPartial": "Partial",
+      "leaveTime": "Leave Time",
+      "reason": "Reason",
+      "emergencyLeaveReturnAt": "Emergency Leave, return at {{date}}"
+    },
+    "tooltips": {
+      "completedTasks": "Completed tasks / total assigned tasks (within the selected period and task category).",
+      "avgProcessingTime": "Average time taken to complete tasks within the selected period and task category.",
+      "slaCompliance": "Percentage of completed tasks that met the SLA within the selected period and task category.",
+      "overdueTasks": "Number of open tasks that exceeded the SLA deadline within the selected period and task category."
+    },
+    "metrics": {
+      "completedTasks": "Completed Tasks",
+      "avgProcessingTime": "Avg. Processing Time",
+      "slaCompliance": "SLA Compliance",
+      "overdueTasks": "Overdue Tasks"
+    },
+    "table": {
+      "taskNo": "Task No.",
+      "urgent": "Urgent",
+      "taskCategory": "Task Category",
+      "applyFor": "Apply For",
+      "sla": "SLA",
+      "assignedTo": "Assigned To",
+      "selfMonitor": "Self-Monitor",
+      "status": "Status",
+      "lastUpdated": "Last Updated",
+      "actions": "Actions"
+    },
+    "placeholders": {
+      "teamMembers": "Select Team Member",
+      "allCategories": "All Categories",
+      "allStatuses": "All Statuses",
+      "allMembers": "All Members",
+      "startDate": "Start Date",
+      "endDate": "End Date"
+    },
+    "filter": {
+      "member": "Member",
+      "lastUpdated": "Last Updated"
+    },
+    "memberOptions": {
+      "auto": "Auto",
+      "selfMonitor": "Self-Monitor"
+    },
+    "actions": {
+      "createTask": "Create Task"
+    },
+    "summary": {
+      "todo": "To Do"
+    },
+    "categories": {
+      "applications": "Applications",
+      "profileVerifications": "Profile Verifications",
+      "enquiries": "Enquiries",
+      "refunds": "Refunds",
+      "appeals": "Appeals",
+      "inspectionTasks": "Inspection Tasks",
+      "violations": "Violations"
+    },
+    "memberCategories": {
+      "all": "All",
+      "applications": "Applications",
+      "profileVerification": "Profile Verification",
+      "enquiries": "Enquiries & Complaints",
+      "appeals": "Appeals",
+      "refunds": "Refunds",
+      "inspectionTasks": "Inspection",
+      "violations": "Violations"
+    },
+    "validation": {
+      "futureDateRequired": "Please select a future date",
+      "assignedPersonRequired": "Please select an assigned person"
+    },
+    "title": "Team Management"
+  }
+}

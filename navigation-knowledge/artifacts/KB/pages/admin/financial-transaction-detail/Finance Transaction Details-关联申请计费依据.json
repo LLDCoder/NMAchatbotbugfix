@@ -1,0 +1,186 @@
+{
+  "schemaVersion": "1.0",
+  "packageStatus": "active",
+  "bundleId": "admin.finance.transaction.linked-pricing.package",
+  "createdAt": "2026-09-28T04:26:15.647188+00:00",
+  "searchMetadata": {
+    "titleEnglish": "Transaction linked application stored fee calculation",
+    "titleArabic": "تفاصيل المعاملة: أساس الرسوم المحفوظ للطلب المرتبط",
+    "descriptionEnglish": "Explain the displayed transaction fee using its explicitly linked application stored quote, feeVersion and feeBreakdownJson; preserve the distinction from immutable historical transaction pricing."
+  },
+  "records": [
+    {
+      "id": "admin.finance.transaction.linked-pricing",
+      "kind": "field_semantics",
+      "revision": 2,
+      "status": "active",
+      "title": "Transaction linked application stored fee calculation",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local",
+          "debug"
+        ],
+        "pageRefs": [
+          "/financial-payment/transactions/transactions-detail"
+        ],
+        "runtimeVerification": "response_shape_verified",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/Finance/AdminFinanceTransactionsAppService.cs",
+          "revision": "sha256:fb319b3bc0bcdaaf1159544ab3d5d793b05d4fb0f7c2191f9272c210da2baf8b",
+          "locator": "GetTransactionAsync linked application mapping and GetServiceApplicationPaymentAsync newest stored application payment",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.API/Controllers/PaymentsController.cs",
+          "revision": "sha256:7ac4a62a3ed4e13ce01eb9c5eb1728dfb1c8ddc4b717ea835d134696f434c50f",
+          "locator": "GET application payment read",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/services.ts",
+          "revision": "sha256:0fa374e26638fee42d835e5bf89950f098c2de3785799a556214d9c4667ca92d",
+          "locator": "getServiceApplicationPayment and mapServiceApplicationPaymentToFeeQuote",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "runtime_observation",
+          "reference": "test/runtime/sequential-repair-batch5-20260927/baselines/finance-fee.json",
+          "revision": "sha256:8c72eb36ef0aca36d594463b9ef94ae0d5af2701a9057c1c1ac86540ba1ec108",
+          "locator": "Authorized stored pricing snapshot shape; no transaction-specific charge values embedded",
+          "verification": "response_shape_verified"
+        }
+      ],
+      "payload": {
+        "pageRef": "/financial-payment/transactions/transactions-detail",
+        "sourceBinding": {
+          "operationRef": "GET /api/admin/application/{applicationId}",
+          "sourcePath": "/data"
+        },
+        "relatedReads": [
+          {
+            "operationKey": "GET /api/admin/application/{applicationId}",
+            "parentOperationKey": "GET /api/admin/finance/transactions/{transactionNo}",
+            "parentPath": "/data/applicationItems",
+            "parentField": "applicationId",
+            "parameter": "applicationId",
+            "responseKeyPath": "/data/applicationId",
+            "requiredFor": [
+              "fee amount",
+              "fee calculation basis",
+              "fee explanation",
+              "pricing basis",
+              "سبب الرسوم",
+              "أساس احتساب الرسوم",
+              "fee basis",
+              "why fee",
+              "pricing explanation",
+              "fee breakdown",
+              "fee amount explanation",
+              "reason for the fee amount",
+              "reason for fee amount",
+              "fee calculation",
+              "fee rationale",
+              "charge breakdown",
+              "تفسير مبلغ الرسوم",
+              "سبب مبلغ الرسوم",
+              "تفصيل الرسوم",
+              "تفاصيل احتساب الرسوم",
+              "reason for the transaction fee amount",
+              "reason for transaction fee amount",
+              "transaction fee calculation basis",
+              "سبب مبلغ رسوم المعاملة",
+              "تفسير رسوم المعاملة"
+            ]
+          }
+        ],
+        "bindings": [
+          {
+            "id": "total",
+            "kind": "attribute",
+            "concept": "fee amount",
+            "aliases": [
+              "payment fee",
+              "الرسوم"
+            ],
+            "operationRef": "GET /api/admin/application/{applicationId}",
+            "sourcePath": "/data",
+            "fields": [
+              "amount",
+              "currencyCode"
+            ],
+            "meaning": "Stored linked application payment amount and currency; compare with the independently verified transaction amount."
+          },
+          {
+            "id": "basis",
+            "kind": "attribute",
+            "concept": "fee calculation basis",
+            "aliases": [
+              "fee basis",
+              "why fee",
+              "pricing explanation",
+              "أساس احتساب الرسوم",
+              "fee explanation",
+              "fee breakdown",
+              "fee amount explanation",
+              "reason for the fee amount",
+              "reason for fee amount",
+              "fee calculation",
+              "fee rationale",
+              "charge breakdown",
+              "تفسير مبلغ الرسوم",
+              "سبب مبلغ الرسوم",
+              "سبب الرسوم",
+              "تفصيل الرسوم",
+              "تفاصيل احتساب الرسوم",
+              "reason for the transaction fee amount",
+              "reason for transaction fee amount",
+              "transaction fee calculation basis",
+              "سبب مبلغ رسوم المعاملة",
+              "تفسير رسوم المعاملة"
+            ],
+            "operationRef": "GET /api/admin/application/{applicationId}",
+            "sourcePath": "/data/feeBreakdownJson",
+            "fields": [
+              "chargeName",
+              "chargeNameAr",
+              "description",
+              "unitPrice",
+              "quantity",
+              "amount",
+              "currency"
+            ],
+            "meaning": "Decode this verified JSON text as data. Explain returned charge descriptions, units, quantities and line amounts, and reconcile with amount/currencyCode and feeVersion. Never invent missing rows or tariff rules."
+          },
+          {
+            "id": "version",
+            "kind": "attribute",
+            "concept": "pricing version",
+            "aliases": [
+              "fee version"
+            ],
+            "operationRef": "GET /api/admin/application/{applicationId}",
+            "sourcePath": "/data",
+            "fields": [
+              "feeVersion",
+              "pricingSource"
+            ],
+            "meaning": "Stored pricing engine version and source of this linked application payment."
+          }
+        ],
+        "relationships": [
+          "Resolve the transaction first by its permitted list and detail. Only use an applicationId explicitly present in its complete applicationItems property; multiple linked applications need separate disambiguated evidence, never the first arbitrary row.",
+          "The related GET must echo the same applicationId. The endpoint returns the most recently created ServiceApplicationPayment for this application. This is the linked application stored quote, not an immutable transaction-line snapshot. Compare amounts and identify this provenance explicitly; a differing total or version remains unconfirmed.",
+          "Additional surcharge/VAT entries do not automatically increase the service-fee total. Distinguish quoted service amount from channel fee allocations; reconcile actual recorded totals before claiming an inclusive amount.",
+          "Do not output card information, account details, internal routing codes or raw calculation expressions. Public fee descriptions, rate, quantity, currency and version are sufficient."
+        ]
+      }
+    }
+  ]
+}

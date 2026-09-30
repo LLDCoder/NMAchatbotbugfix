@@ -1,0 +1,730 @@
+body:has(.layout.layout--wide-screen-centered) {
+  background-color: #eeedea;
+}
+
+.layout {
+  /*
+    The Layout owns the shared page scroll area for every authenticated page.
+    The SimpleBar root must span to the physical viewport edge so the custom
+    scrollbar lands on the browser edge in LTR and on the opposite edge in RTL.
+    Width-constrained inner wrappers below preserve the existing visual content
+    width instead of stretching cards and tables into the scroll gutter.
+  */
+  --layout-side-spacing: 24px;
+  --layout-spacing-top: var(--layout-side-spacing);
+  --layout-spacing-bottom: var(--layout-side-spacing);
+  /*
+    This space is inside the SimpleBar scroll area, not outside it. It keeps
+    header actions and page content away from the track while still allowing
+    the scrollbar itself to sit on the physical viewport edge.
+  */
+  --layout-scroll-edge-spacing: 24px;
+  --layout-sider-width: 132px;
+  --layout-content-gap: 24px;
+  --layout-outer-gutter: max(
+    0px,
+    calc((100vw - var(--layout-wide-screen-base-width, 1724px)) / 2)
+  );
+  --layout-visual-content-width: calc(
+    var(--layout-wide-screen-base-width, 1724px) -
+      var(--layout-side-spacing) - var(--layout-side-spacing) -
+      var(--layout-sider-width) - var(--layout-content-gap)
+  );
+
+  background-color: #eeedea;
+  width: 100vw;
+  min-width: 0;
+  height: 100vh;
+  padding-block-start: var(--layout-spacing-top);
+  /*
+    No bottom padding on the layout box: the right-side scroll area must reach
+    the physical viewport bottom so content scrolls all the way down instead of
+    stopping inside a fixed 24px gap. The trailing 24px is applied inside the
+    page scroll content (.page-content__inner) so it only shows once the user
+    has scrolled to the very end. The Sider keeps its own 24px via margin below.
+  */
+  padding-block-end: 0;
+  padding-inline-start: calc(
+    var(--layout-outer-gutter) + var(--layout-side-spacing)
+  );
+  padding-inline-end: 0;
+  display: flex;
+  box-sizing: border-box;
+  column-gap: var(--layout-content-gap);
+}
+
+/* 1024 ≤ W < 1440 */
+@media (min-width: 1024px) and (max-width: 1439.98px) {
+  .layout {
+    --layout-spacing-top: 8px;
+    --layout-spacing-bottom: 8px;
+  }
+}
+
+.layout.layout--wide-screen-centered {
+  width: 100vw;
+  margin: 0;
+}
+
+.layout.layout--wide-screen-fluid {
+  --layout-outer-gutter: 0px;
+  --layout-visual-content-width: 100%;
+}
+
+.headerTitle {
+  font-family: Inter;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: #9ea2a9;
+}
+.layou-menu-popover {
+  padding-left: 5px !important;
+  .ant-popover-arrow {
+    display: none;
+  }
+  .ant-popover-inner {
+    border-radius: 16px;
+  }
+  .ant-popover-inner-content {
+    padding: 8px 0;
+    width: 300px;
+  }
+  .DropBox {
+    display: flex;
+    flex-direction: column;
+    .menu-item-drop {
+      padding: 16px 24px;
+      font-family: Inter;
+      font-weight: 500;
+      font-style: Medium;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0%;
+      vertical-align: middle;
+      color: #4b4f58;
+      width: 100% !important;
+    }
+  }
+}
+.layou-menu-popover-rtl {
+  padding-left: 0 !important;
+  padding-right: 5px !important;
+}
+.layout .sider {
+  width: var(--layout-sider-width);
+  flex: 0 0 var(--layout-sider-width);
+  /* Sider keeps the 24px bottom gap the layout box no longer provides. */
+  margin-block-end: var(--layout-spacing-bottom);
+
+  .sider-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+  }
+  .menu-other {
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  /* width: 132px; */
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  /* justify-content: space-between; */
+  padding-top: 32px;
+  .eagle {
+    width: 64px;
+    height: 64px;
+  }
+  .menu-item {
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+    img {
+      width: 24px;
+      height: 24px;
+    }
+    span {
+      display: block;
+      width: 100%;
+      padding: 0 8px;
+      box-sizing: border-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 18px;
+      text-align: center;
+    }
+  }
+}
+.menu-item-drop__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 0;
+  gap: 12px;
+}
+.menu-item-drop__label {
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.menu-item-drop__active-icon {
+  width: 15px;
+  height: 11px;
+  flex-shrink: 0;
+}
+.layou-menu-popover .DropBox .menu-item-drop.menuItem-active {
+  background-color: #bd94371a;
+  color: #92722a;
+}
+.layout .sider .menu {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  margin-top: 24px;
+  padding-bottom: 64px;
+  overflow-y: scroll;
+}
+.layout .sider .menu::-webkit-scrollbar {
+  display: none;
+}
+.layout .sider .menu .menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 10px;
+  width: 116px;
+  padding: 19px 0;
+  margin: 0 8px;
+  cursor: pointer;
+  border-radius: 10px;
+  text-align: center;
+  color: #5f646d;
+  text-decoration: none;
+  font-size: 16px;
+}
+.layout .sider .menu .menu-item:hover {
+  background-color: #bd94371a;
+}
+.layout .sider .menu .menu-item.menu-item-active {
+  background: #bd94371a;
+  color: #9e7538;
+}
+.layout .sider .menu-other {
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  width: 100%;
+  height: 64px;
+  margin-top: -64px;
+  padding: 32px 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff 25%);
+  pointer-events: none;
+}
+.layout .sider .menu-other > svg {
+  display: none;
+}
+.layout-content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.layout-content-scroll {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: visible;
+}
+.layout-content-scroll-node {
+  height: 100%;
+  max-height: 100%;
+}
+.layout-content-scroll-node > .simplebar-content {
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+}
+.layout-content-canvas {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  min-height: 0;
+}
+
+/*
+  The responsive layout is supported down to the 1024px tablet canvas. Below
+  that width, keep the full right-side canvas width so Header and page content
+  share one horizontal scrollbar while the Sider remains fixed.
+*/
+@media (max-width: 1023.98px) {
+  .layout-content-canvas {
+    min-width: calc(
+      1024px - var(--layout-side-spacing) - var(--layout-sider-width) -
+        var(--layout-content-gap)
+    );
+  }
+}
+.layout-content__inner {
+  /*
+    Header content follows the same visual width as pages. On narrow viewports
+    the max(0px, ...) guard prevents negative widths after reserving the inner
+    scrollbar spacing.
+  */
+  width: min(
+    max(0px, calc(100% - var(--layout-scroll-edge-spacing))),
+    var(--layout-visual-content-width)
+  );
+  max-width: var(--layout-visual-content-width);
+  min-width: 0;
+}
+.page-content__inner {
+  /*
+    The SimpleBar root is wider than the visible content by design. This inner
+    wrapper keeps page components aligned with the header while the surrounding
+    blank area still belongs to the same wheel-scrollable region.
+  */
+  width: min(
+    max(0px, calc(100% - var(--layout-scroll-edge-spacing))),
+    var(--layout-visual-content-width)
+  );
+  max-width: var(--layout-visual-content-width);
+  min-width: 0;
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  /*
+    Trailing bottom spacing lives inside the scroll content, not as an outer
+    layout gap, so the last content sits 24px above the viewport edge only when
+    fully scrolled. border-box keeps the padding within the 100% height so it
+    does not force a scrollbar when the page already fits.
+  */
+  box-sizing: border-box;
+  padding-block-end: var(--layout-spacing-bottom);
+}
+.page-content__inner > * {
+  flex: 1 0 auto;
+  min-width: 0;
+}
+
+/*
+  Pages with a sticky bottom action bar (.detail-action-footer,
+  position: sticky; bottom: 0) must keep the original layout
+  untouched. Those bars have to float 24px above the viewport bottom while the
+  page is scrolling, which only happens when the 24px gap lives on the OUTER
+  layout box (so the scroll port itself ends 24px above the viewport) rather
+  than inside the scroll content. For exactly these pages, restore the
+  pre-change model: 24px back on .layout, no inner trailing padding, and no
+  extra Sider margin (the layout padding already provides its gap).
+*/
+.layout:has(.detail-action-footer) {
+  padding-block-end: var(--layout-spacing-bottom);
+}
+.layout:has(.detail-action-footer) .sider {
+  margin-block-end: 0;
+}
+.layout:has(.detail-action-footer) .page-content__inner {
+  padding-block-end: 0;
+}
+.layout-content .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 8px;
+  /*
+    The title column and the toolbar sat on one nowrap row, so below roughly
+    800px the toolbar squeezed the title to 119px against the 221px it needs and
+    the page title was cut. Wrap the two onto separate rows instead once they
+    stop fitting; the toolbar keeps its intrinsic width and the title gets the
+    full row.
+  */
+  flex-wrap: wrap;
+  row-gap: 12px;
+}
+.layout-content .header > * {
+  min-width: 0;
+}
+.layout-content .header .header-left {
+  display: flex;
+  /*
+    `flex: 1` means a 0 basis, so this column shrinks to whatever is left
+    instead of ever forcing the row to wrap -- the title was squeezed to 119px
+    against the 221px it needs while the header's flex-wrap never triggered.
+    An auto basis makes its content the starting size, so the toolbar wraps to
+    the next line rather than crushing the title.
+  */
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+  min-width: 0;
+}
+.layout-content .header .page-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.layout-content .header .page-title-row--reserve-extra-height {
+  min-height: 28px;
+}
+.layout-content .header .page-title-extra {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+}
+.layout-content .header .page-title-extra:empty {
+  display: none;
+}
+.layout-content .header .breadcrumbs {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+  /*
+    Was a fixed 20px. Once the content area narrows, a long trail wraps inside
+    its own items, grows past 20px and collides with the page title underneath
+    -- visible at 834 on Reports & Analytics. Let the row grow, wrap between
+    crumbs rather than inside them, and keep the 20px as a floor so the header
+    height is unchanged wherever the trail already fits on one line.
+  */
+  min-height: 20px;
+  flex-wrap: wrap;
+  row-gap: 2px;
+  min-width: 0;
+}
+.layout-content .header .breadcrumbs a,
+.layout-content .header .breadcrumbs button,
+.layout-content .header .breadcrumbs span,
+.layout-content .header .breadcrumbs div {
+  white-space: nowrap;
+}
+.layout-content .header .breadcrumbs div {
+  display: flex;
+}
+.layout-content .header .breadcrumbs a,
+.layout-content .header .breadcrumbs button,
+.layout-content .header .breadcrumbs span {
+  color: #9ea2a9;
+  text-decoration: none;
+}
+.layout-content .header .breadcrumbs button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+.layout-content .header .breadcrumbs svg {
+  width: 7px;
+  height: 14px;
+  flex-shrink: 0;
+}
+html[dir="rtl"] .layout-content .header .breadcrumbs svg,
+body[dir="rtl"] .layout-content .header .breadcrumbs svg {
+  transform: scaleX(-1);
+}
+.layout-content .header .breadcrumbs .active a,
+.layout-content .header .breadcrumbs .active span {
+  color: #92722a;
+  font-weight: 500;
+}
+.layout-content .header .header-middle {
+  display: flex;
+  align-items: center;
+  width: auto;
+  min-width: 200px;
+  flex-shrink: 0;
+}
+.layout-content .header .header-middle:empty {
+  display: none;
+}
+.layout-content .header .actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  column-gap: 24px;
+  /* width: 368px; */
+  flex-shrink: 0;
+}
+.layout-content .header .actions svg {
+  width: 26px;
+  height: 26px;
+}
+.layout-content .header .actions .header-action-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  line-height: 0;
+}
+.layout-content .header .actions .header-language-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 2px solid #361e12;
+  border-radius: 6px;
+  color: #361e12;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.layout-content .header .actions .header-language-toggle:hover {
+  border-color: #361e12;
+  color: #92722a;
+}
+.layout-content
+  .header
+  .actions
+  > .ant-dropdown-trigger:not(.layout-header-user-dropdown) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  line-height: 0;
+}
+/* Same 26px slot for bell and lang; overrides global .ant-dropdown-trigger svg (22px) */
+.layout-content .header .actions .header-action-icon svg,
+.layout-content .header .actions .header-action-icon img {
+  width: 26px !important;
+  height: 26px !important;
+  display: block;
+  flex-shrink: 0;
+}
+.ant-dropdown-trigger svg {
+  width: 22px !important;
+  height: 22px !important;
+}
+.layout-content .header .actions > * {
+  cursor: pointer;
+}
+.layout-content .header .actions .profile-switcher {
+  appearance: none;
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+  max-width: 240px;
+  min-width: 0;
+  padding: 5px 12px 5px 5px;
+  border: 0.5px solid #797e86;
+  border-radius: 40px;
+  background: transparent;
+  box-sizing: border-box;
+  color: #361e12;
+  font-family: Inter, sans-serif;
+  text-align: start;
+}
+.layout-content .header .actions .profile-switcher__caret {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: #361e12;
+  transition: transform 0.2s ease;
+}
+.layout-content .header .actions .profile-switcher__caret svg {
+  display: block;
+  width: 16px !important;
+  height: 16px !important;
+}
+.layout-content .header .actions .profile-switcher__caret--expanded {
+  transform: rotate(180deg);
+}
+.layout-content .header .actions .profile-switcher__details {
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+}
+.layout-content .header .actions .profile-switcher__name,
+.layout-content .header .actions .profile-switcher__role {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.layout-content .header .actions .profile-switcher__name {
+  color: #361e12;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.layout-content .header .actions .profile-switcher__role {
+  color: #797e86;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+.layout-content .header .actions .profile-switcher__avatar {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  font-size: 0;
+  overflow: hidden;
+}
+.layout-content .header .actions .profile-switcher__avatar img {
+  display: block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.layout-content .header .actions .ant-dropdown-trigger {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s;
+}
+.layout-content .header .actions .ant-dropdown-trigger:hover {
+  opacity: 0.7;
+}
+.page-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #361e12;
+  pointer-events: none;
+  flex-shrink: 0;
+  line-height: 28px;
+}
+.page-heading-extra {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+.page-heading-extra:empty {
+  display: none;
+}
+.page-content {
+  /*
+    This is the shared SimpleBar root. It fills the full remaining layout width
+    so the track can attach to the physical edge selected by the element
+    direction, including the left edge for Arabic RTL.
+  */
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  min-width: 0;
+  min-height: 0;
+  /*
+    Do not use overflow:hidden here. SimpleBar reads overflow from the root to
+    decide whether the y axis is enabled; hiding overflow at this level makes
+    its inner .page-content-scroll node stop responding to wheel scrolling.
+  */
+  overflow: visible;
+}
+.page-content-scroll {
+  /*
+    This class is applied to SimpleBar's real scrollable node through
+    scrollableNodeProps. Route changes and page-level reset requests scroll
+    this node, not the wrapper or an individual page component.
+  */
+  height: 100%;
+  max-height: 100%;
+}
+.page-content-scroll > .simplebar-content {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.ant-dropdown .layout-header-user-menu {
+  border-radius: 10px;
+}
+.ant-dropdown
+  .layout-header-user-menu
+  .ant-dropdown-menu-item:last-child:hover {
+  background-color: unset;
+}
+.layout-header-user-menu-item {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+  height: 44px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 14px;
+}
+.layout-header-user-menu-item svg {
+  font-size: 24px;
+}
+.layout-header-user-menu .ant-dropdown-menu-item {
+  padding: 0 16px;
+}
+.layout-header-changelang-en-icon img {
+  width: 16px;
+  height: 16px;
+}
+.layout-header-lang {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e1e3e5;
+  background-color: #f7f7f7;
+  border-radius: 40px;
+  padding: 2px;
+}
+.layout-header-lang-active {
+  background: linear-gradient(90deg, #9e7538 0%, #c19453 100%);
+  color: #fff;
+}
+.layout-header-changelang {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 8px;
+  height: 32px;
+  border-radius: 20px;
+  flex: 1;
+}
+.notification-wrapper,
+.notification-selectWrapper {
+  position: relative;
+}
+.notification-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background-color: #d83731;
+  border-radius: 50%;
+  border: 2px solid #eeedea;
+  box-sizing: border-box;
+  pointer-events: none;
+}

@@ -1,0 +1,237 @@
+{
+  "schemaVersion": "1.0",
+  "bundleId": "page-personal-center-profile",
+  "packageStatus": "active",
+  "createdAt": "2026-09-26T17:52:50.258100+00:00",
+  "records": [
+    {
+      "id": "admin.personal-center.profile.bindings",
+      "kind": "field_semantics",
+      "revision": 2,
+      "status": "active",
+      "title": "Personal Center: current staff profile, departments and assigned roles",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local"
+        ],
+        "pageRefs": [
+          "/personal-center"
+        ],
+        "runtimeVerification": "observed",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/PersonalCenter/index.tsx",
+          "revision": "4e5d8bcb5f3a912e5e2e22bb3d956666893c19d56c3055a237531bd988996347",
+          "locator": "loadCurrentAdminUser; organizationRole read-only departmentLabels and assignRoleLabels",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/PersonalCenter/display.ts",
+          "revision": "7fbee20f45ad67da69be25010898d1f982bf336de6c3c76448588ea659f4103b",
+          "locator": "getResolvedNameLabels",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/userManagement.ts",
+          "revision": "23ab9e7ba55f150a6131a5eae42243cb7c24d69b3476c9b5f21c062d39bbe3e2",
+          "locator": "getAdminUserAsync; GetAdminUserAsync?userId",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/store/currentAdminUser.ts",
+          "revision": "20cfa4a04303137314912fa2acd10d849435e409979610d90f981de933fd98a9",
+          "locator": "loadCurrentAdminUser binds current store data to the signed-in userId",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "authorized_runtime_observation",
+          "reference": "test/runtime/sequential-repair-20260927/C02-page-baseline.json",
+          "locator": "Successful read of current staff profile; observed nested departmentsInfo and assignRolesIdsInfo name fields",
+          "verification": "runtime_observed"
+        }
+      ],
+      "payload": {
+        "pageRef": "/personal-center",
+        "sourceBinding": {
+          "operationRef": "GET /api/UserManagement/GetAdminUserAsync",
+          "sourcePath": "/data"
+        },
+        "authenticatedRecord": {
+          "subject": "user",
+          "requestField": "userId",
+          "identityField": "userId"
+        },
+        "bindings": [
+          {
+            "id": "profile_object",
+            "kind": "object",
+            "concept": "user",
+            "aliases": [
+              "current user",
+              "signed-in user",
+              "currently signed-in user",
+              "authenticated user",
+              "staff user",
+              "admin user",
+              "user profile",
+              "current user profile",
+              "المستخدم الحالي",
+              "المستخدم المسجل دخوله",
+              "الملف الشخصي",
+              "signed-in user profile",
+              "authenticated user profile",
+              "current staff profile",
+              "signed-in staff profile",
+              "currently signed-in user profile",
+              "current signed-in user profile",
+              "current signed-in user"
+            ],
+            "operationRef": "GET /api/UserManagement/GetAdminUserAsync",
+            "sourcePath": "/data",
+            "fields": [
+              "userId"
+            ],
+            "meaning": "The single staff profile identified by userId. It is not a department entity or a role entity. Names nested in the profile describe this parent user."
+          },
+          {
+            "id": "profile_grain",
+            "kind": "grain",
+            "concept": "user",
+            "aliases": [
+              "current user",
+              "signed-in user",
+              "currently signed-in user",
+              "authenticated user",
+              "staff user",
+              "admin user",
+              "user profile",
+              "current user profile",
+              "المستخدم الحالي",
+              "المستخدم المسجل دخوله",
+              "الملف الشخصي",
+              "signed-in user profile",
+              "authenticated user profile",
+              "current staff profile",
+              "signed-in staff profile",
+              "currently signed-in user profile",
+              "current signed-in user profile",
+              "current signed-in user"
+            ],
+            "operationRef": "GET /api/UserManagement/GetAdminUserAsync",
+            "sourcePath": "/data",
+            "fields": [
+              "userId"
+            ],
+            "meaning": "One authenticated staff user profile; multiple department/role entries are properties of that same user, not extra users."
+          },
+          {
+            "id": "profile_scope",
+            "kind": "scope",
+            "concept": "personal",
+            "aliases": [
+              "self",
+              "current user"
+            ],
+            "operationRef": "GET /api/UserManagement/GetAdminUserAsync",
+            "sourcePath": "/data",
+            "fields": [
+              "userId"
+            ],
+            "contextParameters": {},
+            "contextBindings": {
+              "userId": "principal.user_id"
+            },
+            "meaning": "The requested userId and observed response userId must both equal the verified signed-in subject. This definition does not authorize reading another user or expanding to a team."
+          },
+          {
+            "id": "current_user_population",
+            "kind": "population",
+            "concept": "currently signed-in user",
+            "aliases": [
+              "current user",
+              "signed-in user",
+              "current authenticated user",
+              "authenticated user",
+              "currently signed-in",
+              "signed-in",
+              "current session",
+              "current account"
+            ],
+            "operationRef": "GET /api/UserManagement/GetAdminUserAsync",
+            "sourcePath": "/data",
+            "fields": [
+              "userId"
+            ],
+            "contextParameters": {},
+            "contextBindings": {
+              "userId": "principal.user_id"
+            },
+            "meaning": "The profile of the current authenticated subject only; this is not a time-period filter."
+          },
+          {
+            "id": "departments",
+            "kind": "attribute",
+            "concept": "department",
+            "aliases": [
+              "departments",
+              "assigned departments",
+              "signed-in department",
+              "business department",
+              "القسم",
+              "الإدارة"
+            ],
+            "operationRef": "GET /api/UserManagement/GetAdminUserAsync",
+            "sourcePath": "/data/departmentsInfo",
+            "fields": [
+              "name"
+            ],
+            "meaning": "All nonempty names in departmentsInfo are displayed in Personal Center under Departments. Preserve multiple departments; names are localized by the upstream API. The numeric id is an internal key, not a department display name."
+          },
+          {
+            "id": "roles",
+            "kind": "attribute",
+            "concept": "role",
+            "aliases": [
+              "roles",
+              "assigned role",
+              "assigned roles",
+              "business role",
+              "business roles",
+              "current role",
+              "الدور",
+              "الأدوار"
+            ],
+            "operationRef": "GET /api/UserManagement/GetAdminUserAsync",
+            "sourcePath": "/data/assignRolesIdsInfo",
+            "fields": [
+              "name"
+            ],
+            "meaning": "All nonempty names in assignRolesIdsInfo are displayed as assigned business roles. Retain multiple assigned roles. The id/code is internal and is not a display label or proof of data access."
+          }
+        ],
+        "fields": {
+          "userId": "Single parent profile identity; internal validation only.",
+          "departmentsInfo": "Complete child array; display each name under Departments.",
+          "assignRolesIdsInfo": "Complete child array; display each name under Assigned Roles."
+        },
+        "businessDescription": {
+          "en": "Personal Center shows the signed-in staff profile. Departments and Assigned Roles are read-only profile properties, not a manager directory lookup. Current role names do not independently establish page, action or record permissions.",
+          "ar": "يعرض المركز الشخصي ملف الموظف المسجل دخوله. الأقسام والأدوار المعيّنة خصائص للملف الشخصي للقراءة فقط، وليست بحثاً في دليل الموظفين. أسماء الأدوار وحدها لا تثبت صلاحيات الصفحات أو الإجراءات أو السجلات."
+        },
+        "analysisGuidance": [
+          "Read the authenticated parent context before presenting child properties. Read each complete nested array separately and expose only its name values; never flatten array positions into a single first entry.",
+          "Each child property output belongs to the same verified parent profile. Do not expose parent keys or role IDs just to prove lineage.",
+          "Missing or incomplete child arrays are unconfirmed; an observed complete empty array means no displayed assignment. Do not invent a department from an email address or a role label.",
+          "The profile response provides department and assigned role names, but no universal row-level data-scope value. Keep this limitation separate from readable identity properties: report verified department/role names, explain that only currently authorized pages and records can be queried, and do not infer organization-wide access or managed-team membership from a role title."
+        ]
+      }
+    }
+  ]
+}

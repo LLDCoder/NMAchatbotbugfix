@@ -1,0 +1,754 @@
+{
+  "Settings": {
+    "userManagement": {
+      "rootOrganization": "الهيئة الوطنية للإعلام",
+      "filters": {
+        "search": "ابحث باسم المستخدم أو البريد الإلكتروني",
+        "allRoles": "كل الأدوار",
+        "allStatus": "كل الحالات",
+        "allAccounts": "جميع الحسابات المرتبطة"
+      },
+      "table": {
+        "username": "اسم المستخدم",
+        "department": "القسم",
+        "role": "الدور",
+        "linkedAccounts": "الحسابات المرتبطة",
+        "email": "البريد الإلكتروني",
+        "status": "الحالة",
+        "actions": "الإجراءات"
+      },
+      "actions": {
+        "edit": "تعديل",
+        "delete": "حذف",
+        "addUser": "إضافة مستخدم",
+        "addDepartment": "إضافة قسم",
+        "resetPassword": "إعادة تعيين كلمة المرور",
+        "setLeader": "تعيين كقائد",
+        "leaderTitle": "تعيين كقائد القسم",
+        "leaderContent": "هل أنت متأكد من تعيين هذا المستخدم كقائد للقسم؟"
+      },
+      "departmentMenu": {
+        "addDepartment": "إضافة قسم",
+        "editDepartment": "تعديل القسم",
+        "deleteDepartment": "حذف القسم",
+        "delete": "حذف"
+      },
+      "empty": {
+        "noDepartments": "لا توجد أقسام بعد",
+        "noUsers": "لا يوجد مستخدمون بعد",
+        "addDepartment": "إضافة قسم",
+        "noRoles": "لم يتم تعيين أي أدوار لهذا القسم بعد",
+        "addRole": "إضافة دور"
+      },
+      "pagination": {
+        "showTotal": "الإجمالي {{total}} {{currentPage}}/{{totalPages}}"
+      },
+      "messages": {
+        "departmentAdded": "تمت إضافة القسم بنجاح",
+        "departmentUpdated": "تم تحديث القسم بنجاح",
+        "departmentDeleted": "تم حذف القسم بنجاح",
+        "departmentSaveFailed": "تعذر حفظ القسم. يرجى المحاولة مرة أخرى.",
+        "userAdded": "تمت إضافة المستخدم بنجاح",
+        "userUpdated": "تم تحديث المستخدم بنجاح",
+        "userSaveFailed": "تعذر حفظ المستخدم. يرجى المحاولة مرة أخرى.",
+        "defaultPasswordResent": "تمت إعادة إرسال كلمة المرور الافتراضية بنجاح",
+        "rolesLoadFailed": "تعذر تحميل الأدوار. يرجى المحاولة مرة أخرى."
+      },
+      "modals": {
+        "addUser": {
+          "title": "إضافة مستخدم جديد"
+        },
+        "editUser": {
+          "title": "تعديل المستخدم"
+        },
+        "addDepartment": {
+          "title": "إضافة قسم جديد"
+        },
+        "editDepartment": {
+          "title": "تعديل القسم"
+        },
+        "changeDepartment": {
+          "title": "تغيير القسم"
+        },
+        "changeRole": {
+          "title": "تغيير الدور"
+        }
+      },
+      "buttons": {
+        "cancel": "إلغاء",
+        "confirm": "تأكيد",
+        "delete": "حذف",
+        "close": "إغلاق"
+      },
+      "sections": {
+        "personal": "المعلومات الشخصية",
+        "organization": "المؤسسة والدور",
+        "address": "معلومات العنوان",
+        "login": "إعدادات تسجيل الدخول"
+      },
+      "labels": {
+        "personalPhoto": "الصورة الشخصية",
+        "firstName": "الاسم الأول",
+        "lastName": "اسم العائلة",
+        "email": "البريد الإلكتروني",
+        "gender": "الجنس",
+        "dateOfBirth": "تاريخ الميلاد",
+        "emiratesId": "الهوية الإماراتية",
+        "mobileNumber": "رقم الهاتف المتحرك",
+        "occupation": "المهنة",
+        "department": "القسم",
+        "assignRoles": "تعيين الأدوار",
+        "emirate": "الإمارة",
+        "region": "المنطقة",
+        "area": "المنطقة الفرعية",
+        "street": "الشارع",
+        "status": "الحالة",
+        "password": "كلمة المرور",
+        "departmentNameEn": "اسم القسم بالإنجليزية",
+        "departmentNameAr": "اسم القسم بالعربية"
+      },
+      "placeholders": {
+        "enter": "أدخل",
+        "select": "اختر",
+        "selectEmirate": "اختر الإمارة",
+        "selectRegion": "اختر المنطقة",
+        "selectArea": "اختر المنطقة الفرعية",
+        "enterStreet": "أدخل الشارع",
+        "allStatus": "كل الحالات",
+        "dateFormat": "يوم/شهر/سنة",
+        "departmentNameEn": "أدخل اسم القسم",
+        "departmentNameAr": "أدخل اسم القسم",
+        "selectDepartment": "اختر القسم",
+        "emiratesId": "784-XXXX-XXXXXXX-X"
+      },
+      "gender": {
+        "male": "ذكر",
+        "female": "أنثى"
+      },
+      "countryDial": {
+        "uae": "(+971) الإمارات",
+        "usa": "(+1) الولايات المتحدة",
+        "uk": "(+44) المملكة المتحدة",
+        "ksa": "(+966) السعودية"
+      },
+      "validation": {
+        "textLength": "يجب أن يتراوح طول {{field}} بين {{min}} و{{max}} حرفًا بعد إزالة المسافات من البداية والنهاية.",
+        "textLetter": "يجب أن يحتوي {{field}} على حرف واحد على الأقل، وألا يقتصر على الأرقام أو الرموز أو علامات التطويل.",
+        "nameCharacters": "أدخل اسمًا دون فواصل أسطر أو محارف غير مرئية غير مدعومة.",
+        "departmentEnCharacters": "استخدم الأحرف الإنجليزية والأرقام والمسافات والشرطات فقط.",
+        "departmentArCharacters": "استخدم المحارف العربية والأرقام والمسافات فقط.",
+        "genderInvalid": "اختر ذكرًا أو أنثى.",
+        "required": "هذا الحقل مطلوب",
+        "pleaseEnter": "يرجى إدخال {{field}}",
+        "correctFormat": "يرجى إدخال التنسيق الصحيح.",
+        "emailInvalid": "يرجى إدخال بريد إلكتروني صالح",
+        "mobileInvalid": "يرجى إدخال رقم جوال صالح: 9 أرقام يبدأ بـ 5",
+        "selectDepartment": "يرجى اختيار القسم",
+        "selectRole": "يرجى اختيار الدور",
+        "emiratesIdInvalid": "يرجى إدخال رقم هوية إماراتي صالح (784-XXXX-XXXXXXX-X)."
+      },
+      "confirm": {
+        "deleteDepartment": {
+          "title": "حذف القسم",
+          "content": "هل أنت متأكد من حذف هذا القسم؟ لا يمكن التراجع عن هذا الإجراء."
+        },
+        "deleteDepartmentFailed": {
+          "title": "تعذّر حذف القسم",
+          "content": "القسم المحدد مرتبط بمستخدمين. يرجى إعادة تعيين جميع المستخدمين إلى قسم آخر قبل الحذف."
+        },
+        "deleteUserFailed": {
+          "title": "تعذّر حذف المستخدم",
+          "content": "هذا الحساب لا يزال نشطًا ولا يمكن حذفه. يرجى تغيير حالته إلى معطّل أولًا."
+        },
+        "deleteUser": {
+          "title": "حذف المستخدم",
+          "content": "هل أنت متأكد من حذف هذا المستخدم؟ لا يمكن التراجع عن هذا الإجراء وستُحذف جميع بياناته نهائيًا."
+        },
+        "deactivate": {
+          "title": "تأكيد التعطيل",
+          "intro": "هل أنت متأكد من تعطيل المستخدمين المحددين؟ بعد التعطيل:",
+          "bullet1": "سيتم تسجيل خروجهم ولن يتمكنوا من تسجيل الدخول",
+          "bullet2": "يمكن إعادة تفعيل الحسابات أو حذفها لاحقًا"
+        }
+      },
+      "avatar": {
+        "maxFileSize": "الحد الأقصى لحجم الملف: 5 ميجابايت.",
+        "invalidFileType": "نوع الملف غير صالح."
+      }
+    },
+    "roleManagement": {
+      "filters": {
+        "searchPlaceholder": "أدخل كلمات البحث",
+        "allStatus": "كل الحالات"
+      },
+      "table": {
+        "role": "الدور",
+        "associatedDepartment": "القسم المرتبط",
+        "description": "الوصف",
+        "status": "الحالة",
+        "actions": "الإجراءات"
+      },
+      "actions": {
+        "edit": "تعديل",
+        "delete": "حذف",
+        "addRole": "إضافة دور"
+      },
+      "empty": {
+        "noData": "لا توجد بيانات"
+      },
+      "buttons": {
+        "cancel": "إلغاء",
+        "delete": "حذف",
+        "close": "إغلاق"
+      },
+      "confirm": {
+        "deleteRole": {
+          "title": "حذف الدور",
+          "content": "هل أنت متأكد من حذف هذا الدور؟ لا يمكن التراجع عن هذا الإجراء."
+        },
+        "deleteFailed": {
+          "title": "تعذّر حذف الدور",
+          "content": "الدور المحدد مرتبط بمستخدمين. يرجى إعادة تعيين جميع المستخدمين إلى دور آخر قبل الحذف."
+        }
+      }
+    },
+    "roleDetails": {
+      "pageTitle": {
+        "add": "إضافة دور",
+        "edit": "تعديل دور"
+      },
+      "labels": {
+        "nameEn": "اسم الدور بالإنجليزية",
+        "nameAr": "اسم الدور بالعربية",
+        "departmentId": "القسم المرتبط",
+        "descEn": "الوصف بالإنجليزية",
+        "descAr": "الوصف بالعربية",
+        "status": "الحالة"
+      },
+      "placeholders": {
+        "enter": "أدخل",
+        "enterAr": "أدخل",
+        "selectDepartment": "اختر القسم"
+      },
+      "validation": {
+        "required": "هذا الحقل مطلوب.",
+        "roleNameFormat": "يُسمح فقط بالأحرف الإنجليزية والأرقام والمسافات والشرطات (-)."
+      },
+      "permissionsTable": {
+        "permissionName": "اسم الصلاحية",
+        "description": "الوصف",
+        "permissionType": "النوع",
+        "permissionTypeM": "المسار",
+        "permissionTypeB": "زر",
+        "permissionTypeA": "واجهة برمجة التطبيقات"
+      },
+      "buttons": {
+        "save": "حفظ",
+        "cancel": "إلغاء",
+        "leave": "مغادرة"
+      },
+      "confirm": {
+        "unsavedLeave": {
+          "title": "مغادرة الصفحة؟",
+          "content": "لديك تغييرات غير محفوظة ستُفقد عند المغادرة. هل تريد المتابعة؟"
+        }
+      }
+    },
+    "messageTemplates": {
+      "filters": {
+        "search": "بحث",
+        "startTime": "وقت البدء",
+        "endTime": "وقت الانتهاء",
+        "allPortals": "كل البوابات",
+        "allChannels": "كل القنوات"
+      },
+      "table": {
+        "templateNo": "رقم القالب",
+        "templateName": "اسم القالب",
+        "modifiedBy": "آخر تعديل بواسطة",
+        "portal": "البوابة",
+        "channels": "القنوات",
+        "lastUpdateTime": "وقت آخر تحديث",
+        "action": "إجراء"
+      },
+      "actions": {
+        "edit": "تعديل"
+      },
+      "channels": {
+        "email": "البريد الإلكتروني",
+        "sms": "رسالة نصية",
+        "push": "إشعار"
+      },
+      "pagination": {
+        "pageOf": "{{current}}/{{pages}}"
+      }
+    },
+    "editTemplate": {
+      "sections": {
+        "templateProperties": "خصائص القالب",
+        "basicInformation": "المعلومات الأساسية",
+        "channelsContent": "القنوات والمحتوى"
+      },
+      "labels": {
+        "templateId": "معرّف القالب",
+        "templateNo": "رقم القالب",
+        "lastUpdatedTime": "وقت آخر تحديث",
+        "modifiedBy": "آخر تعديل بواسطة",
+        "templateName": "اسم القالب",
+        "portalType": "نوع البوابة",
+        "description": "الوصف",
+        "emailSubjectEn": "موضوع البريد بالإنجليزية",
+        "emailBodyEn": "نص البريد بالإنجليزية",
+        "emailSubjectAr": "موضوع البريد بالعربية",
+        "emailBodyAr": "نص البريد بالعربية",
+        "smsMessageEn": "الرسالة بالإنجليزية",
+        "smsMessageAr": "الرسالة بالعربية",
+        "inAppTitleEn": "العنوان بالإنجليزية",
+        "inAppTitleAr": "العنوان بالعربية",
+        "inAppMessageEn": "الرسالة بالإنجليزية",
+        "inAppMessageAr": "الرسالة بالعربية"
+      },
+      "channels": {
+        "email": "البريد الإلكتروني",
+        "sms": "رسالة نصية",
+        "inPortal": "داخل البوابة"
+      },
+      "placeholders": {
+        "emailSubjectEn": "أدخل موضوع البريد بالإنجليزية",
+        "emailSubjectAr": "أدخل موضوع البريد بالعربية",
+        "inAppTitleEn": "أدخل العنوان بالإنجليزية",
+        "inAppTitleAr": "أدخل العنوان بالعربية"
+      },
+      "validation": {
+        "emailSubjectEnRequired": "هذا الحقل مطلوب.",
+        "emailSubjectArRequired": "موضوع البريد بالعربية مطلوب",
+        "emailBodyEnRequired": "نص البريد بالإنجليزية مطلوب",
+        "emailBodyArRequired": "نص البريد بالعربية مطلوب",
+        "smsMessageEnRequired": "الرسالة بالإنجليزية مطلوبة",
+        "smsMessageArRequired": "الرسالة بالعربية مطلوبة",
+        "inAppTitleEnRequired": "العنوان بالإنجليزية مطلوب",
+        "inAppTitleArRequired": "العنوان بالعربية مطلوب",
+        "inAppMessageEnRequired": "الرسالة بالإنجليزية مطلوبة",
+        "inAppMessageArRequired": "الرسالة بالعربية مطلوبة"
+      },
+      "buttons": {
+        "test": "اختبار",
+        "save": "حفظ",
+        "cancel": "إلغاء",
+        "confirm": "تأكيد",
+        "leave": "مغادرة"
+      },
+      "confirm": {
+        "unsavedLeave": {
+          "title": "مغادرة الصفحة؟",
+          "content": "لديك تغييرات غير محفوظة ستُفقد عند المغادرة. هل تريد المتابعة؟"
+        },
+        "test": {
+          "title": "تأكيد الاختبار",
+          "description": "أنت على وشك اختبار قالب الرسالة هذا على حساب اختباري:",
+          "account": "test001@nma.gov",
+          "note": "بعد الاختبار، سيتم إرسال قالب الرسالة هذا إلى حساب الاختبار للتحقق. لن يتأثر القالب الحالي المنشور حتى تحفظ تغييراتك."
+        }
+      },
+      "messages": {
+        "testSuccess": "اكتمل الاختبار بنجاح",
+        "operationSuccess": "تمت العملية بنجاح",
+        "operationFailed": "فشلت العملية"
+      }
+    },
+    "broadcast": {
+      "list": {
+        "filters": {
+          "search": "بحث",
+          "allRecipients": "كل المستلمين",
+          "allStatus": "كل الحالات",
+          "startTime": "وقت البدء",
+          "endTime": "وقت الانتهاء"
+        },
+        "recipientsTree": {
+          "customerPortal": "بوابة المتعاملين",
+          "adminPortal": "بوابة الإدارة",
+          "loading": "جاري تحميل المستلمين...",
+          "loadFailed": "تعذر تحميل المستلمين",
+          "noData": "لا يوجد مستلمون متاحون"
+        },
+        "table": {
+          "broadcastNo": "رقم البث",
+          "broadcastTitle": "عنوان البث",
+          "portal": "البوابة",
+          "recipients": "المستلمون",
+          "allDepartments": "كل الإدارات",
+          "allUserTypes": "كل أنواع المستخدمين",
+          "status": "الحالة",
+          "publishedBy": "نشر بواسطة",
+          "publishTime": "وقت النشر",
+          "channel": "القناة",
+          "actions": "الإجراءات"
+        },
+        "channels": {
+          "email": "البريد الإلكتروني",
+          "sms": "رسالة نصية",
+          "inPortal": "نافذة منبثقة"
+        },
+        "actions": {
+          "duplicate": "تكرار",
+          "unpublish": "إلغاء النشر",
+          "edit": "تعديل",
+          "addNew": "إضافة جديد"
+        },
+        "confirm": {
+          "unpublish": {
+            "title": "إلغاء نشر البث",
+            "content": "هل أنت متأكد من إلغاء نشر هذا البث؟ لن يكون مرئيًا للمستخدمين بعد ذلك."
+          }
+        },
+        "buttons": {
+          "cancel": "إلغاء",
+          "confirm": "تأكيد"
+        },
+        "messages": {
+          "operationSuccess": "تمت العملية بنجاح",
+          "unpublishFailed": "تعذر إلغاء نشر البث. يرجى المحاولة مرة أخرى."
+        },
+        "empty": "لا توجد بيانات",
+        "pagination": {
+          "pageOf": "{{current}}/{{pages}}"
+        }
+      },
+      "edit": {
+        "sections": {
+          "recipients": "المستلمون",
+          "timing": "التوقيت",
+          "content": "المحتوى",
+          "channelsContent": "القنوات والمحتوى"
+        },
+        "labels": {
+          "receivingPortal": "بوابة الاستقبال",
+          "userTypes": "أنواع المستخدمين",
+          "departments": "الأقسام",
+          "publishTime": "وقت النشر",
+          "expiryTime": "وقت الانتهاء",
+          "displayPeriod": "فترة العرض",
+          "titleEn": "العنوان بالإنجليزية",
+          "titleAr": "العنوان بالعربية",
+          "contentEn": "المحتوى بالإنجليزية",
+          "contentAr": "المحتوى بالعربية",
+          "emailSubjectEn": "موضوع البريد بالإنجليزية",
+          "emailSubjectAr": "موضوع البريد بالعربية",
+          "emailBodyEn": "نص البريد بالإنجليزية",
+          "emailBodyAr": "نص البريد بالعربية",
+          "smsMessageEn": "الرسالة بالإنجليزية",
+          "smsMessageAr": "الرسالة بالعربية",
+          "inAppTitleEn": "العنوان بالإنجليزية",
+          "inAppTitleAr": "العنوان بالعربية",
+          "inAppMessageEn": "الرسالة بالإنجليزية",
+          "inAppMessageAr": "الرسالة بالعربية"
+        },
+        "channels": {
+          "email": "البريد الإلكتروني",
+          "sms": "رسالة نصية",
+          "inPortal": "نافذة منبثقة"
+        },
+        "portals": {
+          "customer": "بوابة المتعاملين",
+          "admin": "بوابة الإدارة"
+        },
+        "publishTypes": {
+          "now": "نشر الآن",
+          "scheduled": "مجدول"
+        },
+        "placeholders": {
+          "selectDate": "اختر التاريخ",
+          "selectTime": "اختر الوقت",
+          "emailSubjectEn": "أدخل موضوع البريد بالإنجليزية",
+          "emailSubjectAr": "أدخل موضوع البريد بالعربية",
+          "emailBodyEn": "يرجى إدخال نص البريد بالإنجليزية",
+          "emailBodyAr": "يرجى إدخال نص البريد بالعربية",
+          "selectUserTypes": "اختر أنواع المستخدمين",
+          "selectDepartments": "اختر الأقسام",
+          "titleEn": "أدخل عنوان البث بالإنجليزية",
+          "titleAr": "أدخل عنوان البث بالعربية",
+          "rangeStart": "تاريخ البدء",
+          "rangeEnd": "تاريخ الانتهاء",
+          "smsMessageEn": "يرجى إدخال الرسالة بالإنجليزية",
+          "smsMessageAr": "يرجى إدخال الرسالة بالعربية",
+          "inAppTitleEn": "أدخل عنوان النافذة المنبثقة بالإنجليزية",
+          "inAppTitleAr": "أدخل عنوان النافذة المنبثقة بالعربية",
+          "inAppMessageEn": "يرجى إدخال رسالة النافذة المنبثقة بالإنجليزية",
+          "inAppMessageAr": "يرجى إدخال رسالة النافذة المنبثقة بالعربية"
+        },
+        "validation": {
+          "receivingPortalRequired": "يرجى اختيار بوابة الاستقبال",
+          "publishTimeRequired": "يرجى اختيار وقت النشر",
+          "expiryTimeRequired": "يرجى اختيار وقت الانتهاء",
+          "displayPeriodRequired": "يرجى اختيار فترة العرض",
+          "userTypesRequired": "يرجى اختيار أنواع المستخدمين",
+          "departmentsRequired": "يرجى اختيار الأقسام",
+          "titleEnRequired": "يرجى إدخال العنوان بالإنجليزية",
+          "titleArRequired": "يرجى إدخال العنوان بالعربية",
+          "titleMax": "لا يجوز أن يتجاوز العنوان 200 حرفًا",
+          "contentEnRequired": "المحتوى بالإنجليزية مطلوب",
+          "contentArRequired": "المحتوى بالعربية مطلوب",
+          "contentMax": "لا يجوز أن يتجاوز المحتوى 1000 حرفًا",
+          "channelRequired": "يرجى اختيار قناة واحدة على الأقل",
+          "emailSubjectEnRequired": "موضوع البريد بالإنجليزية مطلوب",
+          "emailSubjectArRequired": "موضوع البريد بالعربية مطلوب",
+          "emailBodyEnRequired": "نص البريد بالإنجليزية مطلوب",
+          "emailBodyArRequired": "نص البريد بالعربية مطلوب",
+          "smsMessageEnRequired": "الرسالة بالإنجليزية مطلوبة",
+          "smsMessageArRequired": "الرسالة بالعربية مطلوبة",
+          "inAppTitleEnRequired": "العنوان بالإنجليزية مطلوب",
+          "inAppTitleArRequired": "العنوان بالعربية مطلوب",
+          "inAppMessageEnRequired": "الرسالة بالإنجليزية مطلوبة",
+          "inAppMessageArRequired": "الرسالة بالعربية مطلوبة",
+          "emailSubjectOneRequired": "أدخل موضوع البريد بالإنجليزية أو العربية",
+          "emailBodyOneRequired": "أدخل نص البريد بالإنجليزية أو العربية",
+          "inAppTitleOneRequired": "أدخل عنوان النافذة المنبثقة بالإنجليزية أو العربية",
+          "inAppMessageOneRequired": "أدخل رسالة النافذة المنبثقة بالإنجليزية أو العربية"
+        },
+        "buttons": {
+          "publish": "نشر",
+          "test": "اختبار",
+          "saveAndTest": "حفظ واختبار",
+          "save": "حفظ",
+          "cancel": "إلغاء",
+          "disable": "تعطيل",
+          "leave": "مغادرة"
+        },
+        "confirm": {
+          "disableChannel": {
+            "title": "تعطيل القناة",
+            "content": "هل أنت متأكد من أنك تريد تعطيل هذه القناة؟ سيؤدي ذلك إلى إيقاف إرسال الرسائل."
+          },
+          "unsavedLeave": {
+            "title": "مغادرة الصفحة؟",
+            "content": "لم يتم نشر هذا البث بعد. ستؤدي المغادرة الآن إلى تجاهل كل ما أدخلته."
+          }
+        },
+        "messages": {
+          "saveSuccess": "تم الإرسال بنجاح ودخل الطلب في مسار التسليم",
+          "saveFailed": "فشل الإرسال. تحقق من المحتوى أو حاول مرة أخرى لاحقًا",
+          "smsRecipientMobileMissing": "تعذر إرسال الرسالة النصية لأن رقم الهاتف المتحرك غير مسجل في ملف أحد المستلمين.",
+          "saveAndTestSuccess": "تم حفظ المسودة وإرسال الاختبار بنجاح",
+          "saveAndTestFailed": "تعذر حفظ المسودة أو إرسال الاختبار. تحقق من المحتوى وحاول مرة أخرى",
+          "publishSuccess": "تم نشر البث بنجاح",
+          "publishFailed": "فشل نشر البث. تحقق من المحتوى وحاول مرة أخرى",
+          "testSuccess": "اكتمل الاختبار بنجاح",
+          "testFailed": "فشل الاختبار. تحقق من المحتوى أو حاول مرة أخرى لاحقًا",
+          "testRequiresSavedTemplate": "احفظ البث قبل اختباره",
+          "expiryTimeTooSoon": "يجب أن يكون وقت الانتهاء بعد الوقت الحالي بدقيقة واحدة على الأقل",
+          "displayPeriodInvalid": "يجب أن تكون فترة العرض صالحة وأن تنتهي بعد الوقت الحالي بدقيقة واحدة على الأقل"
+        }
+      },
+      "view": {
+        "sections": {
+          "basicInformation": "المعلومات الأساسية",
+          "recipients": "المستلمون",
+          "timing": "التوقيت",
+          "content": "المحتوى"
+        },
+        "labels": {
+          "broadcastNo": "رقم البث",
+          "publishedBy": "نشر بواسطة",
+          "status": "الحالة",
+          "receivingPortal": "بوابة الاستقبال",
+          "userTypes": "أنواع المستخدمين",
+          "departments": "الأقسام",
+          "publishTime": "وقت النشر",
+          "expiryTime": "وقت الانتهاء",
+          "titleEn": "العنوان بالإنجليزية",
+          "titleAr": "العنوان بالعربية",
+          "contentEn": "المحتوى بالإنجليزية",
+          "contentAr": "المحتوى بالعربية"
+        }
+      }
+    },
+    "adminPortalLogs": {
+      "tabs": {
+        "userActivity": "نشاط المستخدم",
+        "systemOperations": "عمليات النظام",
+        "securityLogs": "سجلات الأمان",
+        "userSecurityLogs": "سجلات أمان المستخدم",
+        "adminSecurityLogs": "سجلات أمان الإدارة"
+      },
+      "filters": {
+        "search": "بحث",
+      "source": "المصدر",
+      "environment": "البيئة",
+      "allEnvironments": "كل البيئات",
+        "allSources": "كل المصادر",
+        "eventType": "نوع الحدث",
+        "allEventTypes": "كل أنواع الأحداث",
+        "allStatuses": "كل الحالات",
+        "result": "النتيجة",
+        "allResults": "كل النتائج",
+        "date": "التاريخ",
+        "startDate": "تاريخ البدء",
+        "endDate": "تاريخ الانتهاء"
+      },
+      "table": {
+        "logId": "معرّف السجل",
+        "portal": "البوابة",
+        "accountHolder": "صاحب الحساب",
+        "adminUser": "مستخدم الإدارة",
+        "userId": "معرّف المستخدم",
+        "userRole": "دور المستخدم",
+        "logType": "نوع السجل",
+        "accountEvent": "حدث الحساب",
+        "actionEvent": "الإجراء / الحدث",
+        "securityEvent": "حدث أمني",
+        "ipAddress": "عنوان IP",
+        "status": "الحالة",
+        "httpMethod": "طريقة HTTP",
+        "elapsedMs": "المدة (مللي ثانية)",
+        "device": "الجهاز",
+        "timestamp": "الطابع الزمني"
+      },
+      "buttons": {
+        "export": "تصدير"
+      },
+      "options": {
+        "success": "ناجح",
+        "failed": "فشل",
+        "true": "نعم",
+        "false": "لا",
+        "source": {
+          "UMC": "UMC",
+          "AdminPortalService": "خدمة بوابة الإدارة",
+          "CustomerPortalService": "خدمة بوابة العملاء"
+        },
+        "environment": {
+          "UMC": "UMC"
+        },
+        "eventType": {
+          "Application.ApproveV2": "اعتماد الطلب V2"
+        }
+      },
+      "messages": {
+        "loadFailed": "تعذر تحميل السجلات. يرجى المحاولة مرة أخرى.",
+        "exportFailed": "تعذر تصدير السجلات. يرجى المحاولة مرة أخرى.",
+        "optionsLoadFailed": "تعذر تحميل خيارات تصفية السجل. ستتم إعادة المحاولة تلقائيًا.",
+        "detailLoadFailed": "تعذر تحديث تفاصيل السجل. يتم عرض بيانات القائمة المخزنة مؤقتًا عند توفرها."
+      },
+      "pagination": {
+        "pageOf": "{{current}}/{{pages}}"
+      }
+    },
+    "adminPortalLogsDetail": {
+      "detail": {
+        "header": "{{id}}"
+      },
+      "summary": {
+        "logType": "نوع السجل",
+        "portal": "البوابة",
+        "status": "الحالة",
+        "timestamp": "الطابع الزمني"
+      },
+      "sections": {
+        "userInformation": "معلومات المستخدم",
+        "activityInformation": "معلومات النشاط",
+        "operationInformation": "معلومات العملية",
+        "securityEventInformation": "معلومات حدث الأمان",
+        "requestInformation": "معلومات الطلب",
+        "networkDeviceInformation": "الشبكة ومعلومات الجهاز",
+        "operationResult": "نتيجة العملية",
+        "requestParameters": "معاملات الطلب",
+        "userAgentString": "سلسلة وكيل المستخدم"
+      },
+      "userInfo": {
+        "id": "المعرّف",
+        "fullName": "الاسم الكامل",
+        "userRole": "دور المستخدم",
+        "department": "القسم",
+        "actorType": "نوع المنفذ"
+      },
+      "requestInfo": {
+        "actionEvent": "الإجراء / الحدث",
+        "controllerName": "اسم المتحكم",
+        "actionName": "اسم الإجراء",
+        "httpMethod": "طريقة HTTP",
+        "requestUrl": "رابط الطلب",
+        "executionTime": "وقت التنفيذ",
+        "traceId": "معرّف التتبع",
+        "requestMethod": "طريقة الطلب",
+        "requestPath": "مسار الطلب"
+      },
+      "securityInfo": {
+        "eventType": "نوع الحدث",
+        "eventDescription": "وصف الحدث",
+        "result": "النتيجة",
+        "suspicious": "مشبوه",
+        "failureReason": "سبب الفشل",
+        "responseStatusCode": "رمز حالة الاستجابة"
+      },
+      "networkInfo": {
+        "ipAddress": "عنوان IP",
+        "location": "الموقع",
+        "browser": "المتصفح",
+        "operatingSystem": "نظام التشغيل",
+        "deviceType": "نوع الجهاز"
+      },
+      "fields": {
+        "id": "معرّف السجل",
+        "ualId": "معرّف نشاط المستخدم",
+        "source": "المصدر",
+        "environment": "البيئة",
+        "userId": "معرّف المستخدم",
+        "userName": "صاحب الحساب",
+        "tenantId": "معرّف المستأجر",
+        "eventType": "نوع الحدث",
+        "eventDescription": "وصف الحدث",
+        "businessEvent": "الإجراء / الحدث",
+        "controllerName": "اسم المتحكم",
+        "actionName": "اسم الإجراء",
+        "message": "الرسالة",
+        "requestUrl": "رابط الطلب",
+        "httpMethod": "طريقة HTTP",
+        "requestMethod": "طريقة الطلب",
+        "requestPath": "مسار الطلب",
+        "requestParam": "معاملات الطلب",
+        "requestParameters": "معاملات طلب الأمان",
+        "responseStatusCode": "رمز حالة الاستجابة",
+        "status": "الحالة",
+        "isSuccess": "ناجح",
+        "isSuspicious": "مشبوه",
+        "failureReason": "سبب الفشل",
+        "returnResult": "نتيجة الإرجاع",
+        "exception": "الاستثناء",
+        "remoteIp": "عنوان IP البعيد",
+        "ipAddress": "عنوان IP",
+        "browser": "المتصفح",
+        "os": "نظام التشغيل",
+        "device": "الجهاز",
+        "userAgent": "وكيل المستخدم",
+        "location": "الموقع",
+        "longitude": "خط الطول",
+        "latitude": "خط العرض",
+        "elapsed": "المدة (مللي ثانية)",
+        "logLevel": "مستوى السجل",
+        "traceId": "معرّف التتبع",
+        "correlationId": "معرّف الارتباط",
+        "eventId": "معرّف الحدث",
+        "threadId": "معرّف سلسلة التنفيذ",
+        "createTime": "وقت الحدث",
+        "eventTimestamp": "الطابع الزمني للحدث",
+        "createdAt": "وقت الحفظ",
+        "createdTime": "وقت الإنشاء",
+        "updatedTime": "وقت التحديث"
+      },
+      "empty": {
+        "noData": "لم يتم توفير بيانات تفاصيل السجل."
+      },
+      "options": {
+        "actorType": {
+          "adminUser": "مستخدم الإدارة",
+          "anonymous": "مجهول"
+        }
+      },
+      "actions": {
+        "back": "رجوع",
+        "openInKibana": "فتح في Kibana"
+      }
+    }
+  }
+}

@@ -1,0 +1,5207 @@
+@import "@/styles/variables.less";
+@import "@/styles/application-status-tag.less";
+
+.dashboard__page {
+  min-height: 0;
+  background: #eeedea;
+}
+
+.dashboard__content {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  gap: 16px;
+  /*
+    Was min-width: 1180px, which pinned the whole dashboard to a floor no
+    narrow viewport can meet -- every grid inside was held open by it, so
+    converting them to auto-fit changed nothing. Until proportional scaling was
+    removed the 1180 became 73.75rem and shrank to roughly 700px at the 1024
+    band, so it always fitted. Same failure as the other hard widths this
+    migration turned up, at page scope instead of component scope.
+
+    The cards below size themselves; the page only needs to not be narrower
+    than its own content.
+  */
+  min-width: 0;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.dashboard__heading-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.dashboard__title-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.dashboard__time-filter-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 200px;
+  height: 48px;
+  padding: 0 14px;
+  border: 1px solid #c3c6cb;
+  border-radius: 8px;
+  background: transparent;
+  color: #361e12;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0;
+  cursor: pointer;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 1279.98px) {
+    height: 40px;
+  }
+}
+
+.dashboard__department-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 28px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 6px;
+  background: #f6f6f7;
+  color: #92722a;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0;
+  cursor: pointer;
+  /* rwd-ramp */
+  @media (max-width: 1439.98px) {
+    height: 20px;
+    font-size: 12px;
+    line-height: normal;
+  }
+}
+
+.dashboard__role-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 190px;
+  height: 36px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 6px;
+  background: #f6f6f7;
+  color: #92722a;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0;
+  cursor: pointer;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__time-filter-trigger--custom {
+  width: auto;
+  min-width: 200px;
+}
+
+.dashboard__department-trigger--open,
+.dashboard__role-trigger--open {
+  background: #f6f6f7;
+}
+
+.dashboard__role-trigger--readonly {
+  cursor: default;
+}
+
+.dashboard__role-label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dashboard__department-trigger > *,
+.dashboard__role-trigger > *,
+.dashboard__time-filter-trigger > * {
+  pointer-events: none;
+}
+
+.dashboard__role-trigger > .dashboard__role-label {
+  pointer-events: auto;
+}
+
+.dashboard__department-icon-frame {
+  position: relative;
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1439.98px) {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.dashboard__department-icon {
+  position: absolute;
+  top: 4.69%;
+  left: 7.81%;
+  display: block;
+  width: 84.38%;
+  height: 79.68%;
+}
+
+.dashboard__department-label {
+  white-space: nowrap;
+}
+
+.dashboard__department-chevron,
+.dashboard__role-chevron {
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+}
+
+.dashboard__department-chevron-flip,
+.dashboard__role-chevron-flip {
+  position: absolute;
+  inset: 11.33%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scaleY(-1);
+}
+
+.dashboard__department-chevron-rotor,
+.dashboard__role-chevron-rotor {
+  flex: 0 0 auto;
+  width: 6.5625px;
+  height: 6.5625px;
+  transform: rotate(45deg) scaleX(-1);
+  transform-origin: 50% 50%;
+  transition: transform 0.2s ease;
+}
+
+.dashboard__department-trigger--open .dashboard__department-chevron-rotor,
+.dashboard__role-trigger--open .dashboard__role-chevron-rotor {
+  transform: rotate(-135deg) scaleX(-1);
+}
+
+.dashboard__department-chevron-icon,
+.dashboard__role-chevron-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.dashboard__time-filter-trigger svg.dashboard__time-filter-icon,
+.dashboard__time-filter-icon {
+  display: block;
+  width: 12px !important;
+  height: 12px !important;
+  color: #797e86;
+  transition: transform 0.2s ease;
+}
+
+.dashboard__time-filter-trigger--open .dashboard__time-filter-icon {
+  transform: rotate(180deg);
+}
+
+.dashboard__time-filter-dropdown {
+  min-width: 200px;
+}
+
+.dashboard__department-dropdown.ant-popover-placement-bottom,
+.dashboard__department-dropdown.ant-popover-placement-bottomLeft,
+.dashboard__department-dropdown.ant-popover-placement-bottomRight,
+.dashboard__role-dropdown.ant-popover-placement-bottom,
+.dashboard__role-dropdown.ant-popover-placement-bottomLeft,
+.dashboard__role-dropdown.ant-popover-placement-bottomRight,
+.dashboard__time-filter-dropdown.ant-popover-placement-bottom,
+.dashboard__time-filter-dropdown.ant-popover-placement-bottomLeft,
+.dashboard__time-filter-dropdown.ant-popover-placement-bottomRight {
+  padding-top: 0;
+}
+
+.dashboard__department-dropdown.ant-popover-placement-top,
+.dashboard__department-dropdown.ant-popover-placement-topLeft,
+.dashboard__department-dropdown.ant-popover-placement-topRight,
+.dashboard__role-dropdown.ant-popover-placement-top,
+.dashboard__role-dropdown.ant-popover-placement-topLeft,
+.dashboard__role-dropdown.ant-popover-placement-topRight,
+.dashboard__time-filter-dropdown.ant-popover-placement-top,
+.dashboard__time-filter-dropdown.ant-popover-placement-topLeft,
+.dashboard__time-filter-dropdown.ant-popover-placement-topRight {
+  padding-bottom: 0;
+}
+
+.dashboard__department-dropdown .ant-popover-inner,
+.dashboard__role-dropdown .ant-popover-inner,
+.dashboard__time-filter-dropdown .ant-popover-inner {
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.dashboard__department-dropdown .ant-popover-inner-content,
+.dashboard__role-dropdown .ant-popover-inner-content,
+.dashboard__time-filter-dropdown .ant-popover-inner-content {
+  padding: 0;
+}
+
+.dashboard__department-dropdown .ant-popover-arrow,
+.dashboard__role-dropdown .ant-popover-arrow,
+.dashboard__time-filter-dropdown .ant-popover-arrow {
+  display: none;
+}
+
+.dashboard__department-menu,
+.dashboard__role-menu {
+  overflow: hidden;
+  padding: 0;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 9px 28px 8px rgba(0, 0, 0, 0.05),
+    0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12);
+}
+
+.dashboard__department-menu {
+  width: 280px;
+}
+
+.dashboard__role-menu {
+  width: 190px;
+}
+
+.dashboard__time-filter-panel {
+  width: 200px;
+  padding: 8px 0;
+  border: 1px solid #e1e3e5;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 12px 24px rgba(54, 30, 18, 0.08);
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.dashboard__time-filter-panel--custom {
+  width: 340px;
+}
+
+.dashboard__department-menu-title,
+.dashboard__role-menu-title {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 40px;
+  padding: 10px 16px;
+  color: #797e86;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0;
+  text-align: start;
+  text-transform: uppercase;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+.dashboard__department-option,
+.dashboard__role-option,
+.dashboard__time-filter-option {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: #361e12;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: start;
+  cursor: pointer;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__department-option,
+.dashboard__role-option {
+  min-height: 40px;
+  padding: 10px 16px;
+}
+
+.dashboard__department-option:hover,
+.dashboard__department-option--active,
+.dashboard__role-option:hover,
+.dashboard__role-option--active {
+  background: #f9f7ed;
+}
+
+.dashboard__time-filter-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard__time-filter-option {
+  padding: 12px 18px;
+}
+
+.dashboard__time-filter-option:hover {
+  background: #f9f7ed;
+}
+
+.dashboard__time-filter-option--active,
+.dashboard__time-filter-option--active:hover {
+  background: #92722a;
+  color: #ffffff;
+}
+
+.dashboard__time-filter-custom {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px 16px 16px;
+  border-top: 1px solid #f0f0f0;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.dashboard__time-filter-range.ant-picker {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.dashboard__time-filter-range.ant-picker:hover,
+.dashboard__time-filter-range.ant-picker-focused {
+  border-color: #92722a;
+  box-shadow: none;
+}
+
+.dashboard__time-filter-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.dashboard__time-filter-action {
+  min-width: 84px;
+  height: 36px;
+  padding: 0 16px;
+  border: 1px solid #c3c6cb;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #361e12;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  cursor: pointer;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__time-filter-action:disabled {
+  cursor: not-allowed;
+}
+
+.dashboard__time-filter-action--secondary {
+  background: #ffffff;
+  border: 1px solid #c3c6cb;
+  color: #361e12;
+}
+
+.dashboard__time-filter-action--primary {
+  border-color: #92722a;
+  background: #92722a;
+  color: #ffffff;
+}
+
+.dashboard__card {
+  min-width: 0;
+  border-radius: 16px;
+  background: #ffffff;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.dashboard__card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 24px 0;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.dashboard__card-title-group {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  max-width: 100%;
+  gap: 8px;
+}
+
+.dashboard__card-title {
+  flex: 0 1 auto;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  color: #361e12;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.dashboard__icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.dashboard__icon-button img {
+  width: 28px;
+  height: 28px;
+}
+
+[dir="rtl"] .dashboard__icon-button img {
+  transform: scaleX(-1);
+}
+
+.dashboard__card-action-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 0 12px;
+  border: 1px solid #bd9437;
+  border-radius: 8px;
+  background: rgba(189, 148, 55, 0.08);
+  color: #92722a;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0;
+  cursor: pointer;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__tabs {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 16px 24px 0;
+  border-bottom: 1px solid #d8dadc;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 16px;
+  }
+}
+
+.dashboard__tabs--table {
+  margin-top: 20px;
+}
+
+.dashboard__task-section {
+  border-radius: 20px;
+}
+
+.dashboard__task-section .dashboard__card-title {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.dashboard__task-tabs-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 8px 24px 0;
+  border-bottom: 1px solid #d8dadc;
+}
+
+.dashboard__tabs--task {
+  min-width: 0;
+  flex: 1 1 auto;
+  gap: 32px;
+  margin: 0;
+  border-bottom: 0;
+}
+
+.dashboard__tabs--task .dashboard__tab {
+  min-height: 0;
+  padding: 16px 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.dashboard__tabs--task .dashboard__tab-label {
+  font-weight: 600;
+}
+
+.dashboard__tabs--task .dashboard__tab-count {
+  font-weight: 400;
+}
+
+.dashboard__task-tabs-action {
+  flex: 0 0 28px;
+  align-self: center;
+}
+
+.dashboard__tab {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 40px;
+  padding: 0 0 12px;
+  border: 0;
+  background: transparent;
+  color: #361e12;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  cursor: pointer;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__tab::after {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  display: block;
+  height: 2px;
+  border-radius: 2px;
+  background: transparent;
+  content: "";
+}
+
+.dashboard__tab--active {
+  color: #92722a;
+}
+
+.dashboard__tab--active::after {
+  background: #bd9437;
+}
+
+.dashboard__task-scroll {
+  height: 156px;
+  margin: 20px 24px 0;
+}
+
+.dashboard__task-scroll .simplebar-track.simplebar-horizontal {
+  right: 0;
+  bottom: 10px;
+  left: 0;
+}
+
+.dashboard__task-grid {
+  display: flex;
+  gap: 16px;
+  box-sizing: border-box;
+  padding-bottom: 8px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.dashboard__task-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 156px;
+  margin: 20px 24px 0;
+  padding-bottom: 20px;
+}
+
+.dashboard__task-empty .dashboard__empty-state {
+  gap: 6px;
+  min-height: 136px;
+  font-size: 14px;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__task-empty .dashboard__empty-state-illustration {
+  width: 108px;
+  height: 108px;
+}
+
+.dashboard__task-empty .dashboard__empty-state-label {
+  font-size: 14px;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__task-card {
+  display: flex;
+  flex: 0 0 clamp(280px, calc((100% - 48px) / 4), 356px);
+  flex-direction: column;
+  gap: 16px;
+  width: clamp(280px, calc((100% - 48px) / 4), 356px);
+  min-width: 0;
+  max-width: clamp(280px, calc((100% - 48px) / 4), 356px);
+  min-height: 130px;
+  padding: 16px;
+  border: 1px solid #eceef1;
+  border-radius: 12px;
+  background: #ffffff;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+    padding: 12px;
+  }
+}
+
+.dashboard__task-section .dashboard__task-card {
+  gap: 16px;
+  padding: 16px;
+  border-color: #e1e3e5;
+}
+
+.dashboard__task-card--clickable {
+  cursor: pointer;
+}
+
+.dashboard__task-card--clickable:hover,
+.dashboard__task-card--clickable:focus-visible {
+  border-color: #cba344;
+  background: #f9f7ed;
+  box-shadow: 0 8px 22px rgba(54, 30, 18, 0.08);
+  outline: none;
+}
+
+.dashboard__task-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 0;
+}
+
+.dashboard__task-card-top > * {
+  min-width: 0;
+}
+
+.dashboard__status-pill,
+.dashboard__table-cell {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  gap: 6px;
+  color: #361e12;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__status-pill {
+  display: block;
+  flex: 0 1 auto;
+  min-width: 0;
+  height: 26px;
+  padding: 2px 6px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #f6f6f7;
+  font-size: 14px;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__application-status {
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dashboard__task-alert {
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  color: #d83731;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: end;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__task-title {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  color: #361e12;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.dashboard__task-subtitle {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  max-width: 100%;
+  gap: 4px;
+  color: #361e12;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__task-subtitle-icon {
+  display: block;
+  flex: 0 0 auto;
+  width: 14px;
+  height: 14px;
+}
+
+.dashboard__task-section .dashboard__status-pill,
+.dashboard__task-section .dashboard__task-alert {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.dashboard__task-section .dashboard__application-status {
+  box-sizing: border-box;
+  height: 26px;
+  padding: 2px 6px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.dashboard__task-section .dashboard__task-title {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.dashboard__task-section .dashboard__task-subtitle {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.dashboard__task-subtitle span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dashboard__overflow-tooltip {
+  max-width: 320px;
+}
+
+.dashboard__overflow-tooltip .ant-tooltip-inner {
+  padding: 8px 10px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 12px 32px rgba(54, 30, 18, 0.16);
+  color: #361e12;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__overflow-tooltip .ant-tooltip-arrow-content {
+  --antd-arrow-background-color: #fff;
+}
+
+.dashboard__overflow-tooltip .ant-tooltip-arrow-content::before {
+  background: #fff;
+}
+
+.dashboard__overflow-tooltip.ant-tooltip-placement-top,
+.dashboard__overflow-tooltip.ant-tooltip-placement-topLeft,
+.dashboard__overflow-tooltip.ant-tooltip-placement-topRight {
+  padding-bottom: 6px;
+}
+
+.dashboard__overflow-tooltip.ant-tooltip-placement-bottom,
+.dashboard__overflow-tooltip.ant-tooltip-placement-bottomLeft,
+.dashboard__overflow-tooltip.ant-tooltip-placement-bottomRight {
+  padding-top: 6px;
+}
+
+.dashboard__summary-grid,
+.dashboard__performance-grid,
+.dashboard__support-grid {
+  display: grid;
+  gap: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+/*
+  Generic workload dashboard, aligned with the license module: card rows use fixed
+  column counts per breakpoint instead of width-driven auto-fit, so the layout never
+  reflows unpredictably between accounts/widths.
+*/
+.dashboard__summary-grid--2,
+.dashboard__performance-grid--staff,
+.dashboard__support-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.dashboard__performance-grid--manager {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.dashboard__summary-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/*
+  Generic workload dashboard, W<1440 (Figma node 44434:274239, Customer Happiness):
+  the wrapper merges its two inner grids into one continuous 2-column grid.
+  Staff: [donut | donut] [donut | My Performance] with the Trend spanning a full
+  row. Manager: [donut | donut] [donut | Emergency Leave] with Coaching spanning a
+  full row. From 1440 up the wrapper is transparent and the rows stay independent.
+*/
+.dashboard__workload-groups {
+  display: contents;
+}
+
+@media (max-width: 1439.98px) {
+  .dashboard__workload-groups {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .dashboard__workload-groups .dashboard__summary-grid,
+  .dashboard__workload-groups .dashboard__performance-grid--staff,
+  .dashboard__workload-groups .dashboard__support-grid {
+    display: contents;
+  }
+
+  .dashboard__workload-groups--manager {
+    display: contents;
+  }
+
+  .dashboard__workload-groups--manager .dashboard__summary-grid,
+  .dashboard__workload-groups--manager .dashboard__support-grid {
+    display: grid;
+  }
+
+  .dashboard__workload-groups--staff .dashboard__trend-card {
+    grid-column: 1 / -1;
+  }
+
+  /*
+    Equal-height pairing: My Performance stacks its tiles one per row and spaces
+    them out to line up with the donut card beside it (license-module pattern).
+  */
+  .dashboard__workload-groups--staff .dashboard__performance-card--staff {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dashboard__workload-groups--staff .dashboard__metric-grid {
+    flex: 1 1 auto;
+    align-content: space-between;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    padding: 24px;
+  }
+
+  /* Manager: keep Emergency Leave and Coaching together in the two-column support row. */
+  .dashboard__workload-groups--manager .dashboard__leave-card {
+    order: 1;
+  }
+
+  .dashboard__workload-groups--manager .dashboard__coaching-card {
+    order: 2;
+    grid-column: auto;
+  }
+}
+
+.dashboard__summary-card {
+  /*
+    Column flex so the stat tiles can pin to the card bottom (margin-top: auto on
+    .dashboard__summary-tiles). Without it the min-height floor left dead space
+    under the tiles instead of between the donut and the tiles.
+  */
+  display: flex;
+  flex-direction: column;
+  min-height: 344px;
+  padding-bottom: 24px;
+  border-radius: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.dashboard__ai-risk-card {
+  min-height: 316px;
+}
+
+.dashboard__summary-card--empty {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard__summary-empty {
+  flex: 1;
+  min-height: 248px;
+  padding: 24px;
+}
+
+.dashboard__summary-body {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 284px);
+  justify-content: center;
+  gap: 24px;
+  align-items: center;
+  min-width: 0;
+  padding: 32px 24px 0;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 16px;
+  }
+}
+
+.dashboard__summary-body--tiles-only {
+  display: block;
+  padding-top: 8px;
+}
+
+.dashboard__donut-wrap {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  min-width: 0;
+}
+
+.dashboard__donut-wrap--empty-data::before {
+  position: absolute;
+  inset: 13px;
+  box-sizing: border-box;
+  border: 14px solid #e6e8ec;
+  border-radius: 50%;
+  content: "";
+}
+
+.dashboard__donut-wrap--empty-data .dashboard__donut-center {
+  z-index: 1;
+}
+
+.dashboard__chart-shell {
+  width: 100%;
+  min-width: 0;
+}
+
+.dashboard__chart-shell canvas,
+.dashboard__chart-shell svg {
+  cursor: default !important;
+}
+
+.dashboard__donut-chart {
+  width: 140px;
+  height: 140px;
+  min-width: 0;
+}
+
+.dashboard__donut-chart-instance {
+  width: 100%;
+  height: 100% !important;
+  min-height: 0;
+}
+
+.dashboard__donut-chart-instance > div:first-child,
+.dashboard__donut-chart-instance > div:first-child > canvas,
+.dashboard__donut-chart-instance > div:first-child > svg {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.dashboard__donut-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.dashboard__donut-center strong {
+  color: #361e12;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+.dashboard__donut-center span {
+  color: #5f646d;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__legend-list {
+  display: grid;
+  width: 284px;
+  max-width: 100%;
+  gap: 12px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.dashboard__legend-item {
+  display: grid;
+  grid-template-columns: 8px minmax(0, 1fr) minmax(48px, auto);
+  align-items: center;
+  gap: 8px;
+  /* Clip instead of bleeding into the card padding when the card is very narrow. */
+  min-width: 0;
+  overflow: hidden;
+  color: #361e12;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s ease;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__legend-item:focus-visible {
+  outline: 2px solid fade(@primary-color, 28%);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.dashboard__legend-item--inactive {
+  opacity: 0.45;
+}
+
+.dashboard__legend-item--static {
+  cursor: default;
+}
+
+.dashboard__legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dashboard__legend-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dashboard__legend-value {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  min-width: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.dashboard__legend-value strong {
+  min-width: 28px;
+  text-align: end;
+}
+
+.dashboard__legend-percentage {
+  min-width: 48px;
+  color: #5f646d;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: end;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+  }
+}
+
+/*
+  Stat tiles under the donut cards: always ONE row, like the license module's
+  footer stats — column auto-flow keeps every tile on the row whatever the count.
+*/
+.dashboard__summary-tiles {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  gap: 8px;
+  /* Pin to the card bottom; leftover height sits between donut and tiles. */
+  margin-top: auto;
+  padding: 32px 24px 0;
+}
+
+/* Status-tile card (license-distribution shape): Total spans on top, rest two-up. */
+.dashboard__summary-tiles--status {
+  grid-auto-flow: row;
+  grid-auto-columns: auto;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding-top: 20px;
+}
+
+.dashboard__summary-tiles--status .dashboard__summary-tile:first-child {
+  grid-column: 1 / -1;
+}
+
+.dashboard__summary-tile,
+.dashboard__metric-card,
+.dashboard__service-stat {
+  border-radius: 8px;
+  background: #f6f6f7;
+}
+
+.dashboard__summary-tile {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 64px;
+  gap: 16px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: #f7f7f8;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.dashboard__summary-tile strong,
+.dashboard__service-stat strong {
+  display: block;
+  color: #361e12;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 16px;
+  }
+}
+
+.dashboard__summary-tile-label,
+.dashboard__service-stat span,
+.dashboard__service-stat small {
+  display: block;
+  color: #5f646d;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__summary-tile-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.dashboard__summary-tile-label {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  max-width: 100%;
+  gap: 2px;
+}
+
+.dashboard__summary-tile-label-text {
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dashboard__summary-tile-label .dashboard__metric-info-icon-trigger {
+  flex: 0 0 auto;
+}
+
+.dashboard__summary-tile-icon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+}
+
+.dashboard__risk-info-icon {
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+}
+
+.dashboard__risk-info-icon-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  line-height: 0;
+}
+
+.dashboard__risk-info-icon-circle,
+.dashboard__risk-info-icon-mark {
+  position: absolute;
+  display: block;
+  object-fit: contain;
+}
+
+.dashboard__risk-info-icon-circle {
+  inset: 6.25%;
+  width: 87.5%;
+  height: 87.5%;
+}
+
+.dashboard__risk-info-icon-mark {
+  top: 29.17%;
+  right: 38.44%;
+  bottom: 29.17%;
+  left: 38.44%;
+  width: 23.12%;
+  height: 41.66%;
+}
+
+/* Fixed two-up; auto-fit reflowed the risk tiles per card width. */
+.dashboard__ai-risk-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  padding: 24px;
+}
+
+.dashboard__ai-risk-item {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  height: 48px;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: #f8f7f4;
+}
+
+.dashboard__ai-risk-item--empty {
+  color: #5f646d;
+}
+
+.dashboard__ai-risk-icon {
+  display: block;
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.dashboard__ai-risk-title {
+  min-width: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
+  color: #361e12;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.dashboard__ai-risk-value {
+  flex: 0 0 auto;
+  color: #ea4f49;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  font-variant-numeric: tabular-nums;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.dashboard__ai-risk-value--empty {
+  color: #5f646d;
+}
+
+.dashboard__performance-card,
+.dashboard__trend-card {
+  min-height: 280px;
+}
+
+/*
+  My Performance (staff) sits beside the taller Performance Trend card and is
+  stretched to match its height. Fill the extra height by spacing the tile rows
+  out (license-module pattern) instead of leaving dead space under the 2x2 grid.
+*/
+.dashboard__performance-card--staff {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard__performance-card--staff .dashboard__metric-grid {
+  flex: 1 1 auto;
+  align-content: space-between;
+}
+
+.dashboard__performance-card--manager {
+  min-height: 172px;
+}
+
+.dashboard__donut-tooltip {
+  position: fixed !important;
+  z-index: 2000 !important;
+  padding: 8px 12px !important;
+  border: 1px solid #e1e3e5 !important;
+  border-radius: 8px !important;
+  background: #ffffff !important;
+  box-shadow: 0 8px 20px rgba(54, 30, 18, 0.08) !important;
+  pointer-events: none !important;
+  color: #361e12 !important;
+  font: 400 12px/16px Inter, sans-serif !important;
+}
+
+.dashboard__donut-tooltip-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap !important;
+}
+
+.dashboard__donut-tooltip-marker {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.dashboard__donut-tooltip-text {
+  color: #361e12;
+  font-size: 12px;
+  line-height: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+.dashboard__trend-tooltip {
+  position: fixed !important;
+  z-index: 2000 !important;
+  padding: 8px 12px !important;
+  border: 1px solid #e1e3e5 !important;
+  border-radius: 8px !important;
+  background: #ffffff !important;
+  box-shadow: 0 8px 20px rgba(54, 30, 18, 0.08) !important;
+  pointer-events: none !important;
+  color: #361e12 !important;
+  font: 400 12px/16px Inter, sans-serif !important;
+}
+
+.dashboard__trend-tooltip-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 156px;
+}
+
+.dashboard__trend-tooltip-title {
+  color: #5f646d;
+  font-size: 12px;
+  line-height: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+.dashboard__trend-tooltip-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.dashboard__trend-tooltip-series {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.dashboard__trend-tooltip-marker {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.dashboard__trend-tooltip-label,
+.dashboard__trend-tooltip-value {
+  color: #361e12;
+  font-size: 12px;
+  line-height: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+.dashboard__trend-tooltip-value {
+  font-weight: 500;
+}
+
+.dashboard__trend-tooltip--compact {
+  padding: 8px 12px !important;
+  border: 0 !important;
+  border-radius: 4px !important;
+  background: #ffffff !important;
+  box-shadow: none !important;
+}
+
+.dashboard__trend-tooltip--compact .dashboard__trend-tooltip-content {
+  gap: 8px;
+  min-width: 0;
+}
+
+.dashboard__trend-tooltip--compact .dashboard__trend-tooltip-title,
+.dashboard__trend-tooltip--compact .dashboard__trend-tooltip-label {
+  color: #5f646d;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.dashboard__trend-tooltip--compact .dashboard__trend-tooltip-value {
+  color: #361e12;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.dashboard__trend-tooltip--compact .dashboard__trend-tooltip-row--compact {
+  justify-content: flex-start;
+  gap: 0;
+}
+
+.dashboard__trend-tooltip--compact .dashboard__trend-tooltip-series {
+  gap: 8px;
+}
+
+.dashboard__trend-tooltip-copy {
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+.dashboard__trend-tooltip-marker--outlined {
+  box-sizing: border-box;
+  border: 2px solid;
+  background: #ffffff !important;
+}
+
+/* Staff performance metrics: fixed 2×2, like the license My Performance card. */
+.dashboard__metric-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  /*
+    24px at every width: the old <1920 ramp squeezed this to 12px, gluing the
+    card title to the first tile in the 1440-1920 band.
+  */
+  padding: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.dashboard__metric-empty {
+  min-height: 188px;
+  padding: 24px;
+}
+
+/*
+  Manager performance metrics: one row from 1440 up, 2×2 below — mirrors the
+  license Team Performance card (Figma nodes 44390:74486 / 44390:74641).
+*/
+.dashboard__performance-card--manager .dashboard__metric-grid {
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-template-columns: none;
+  /* rwd-ramp */
+  @media (max-width: 1439.98px) {
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.dashboard__metric-card {
+  display: flex;
+  align-items: center;
+  min-height: 84px;
+  gap: 16px;
+  padding: 16px 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.dashboard__performance-card--manager .dashboard__metric-card {
+  min-height: 76px;
+  padding: 14px 18px;
+}
+
+.dashboard__metric-content {
+  min-width: 0;
+}
+
+.dashboard__metric-icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: block;
+  flex: 0 0 40px;
+}
+
+.dashboard__metric-icon--timer {
+  border: 0;
+  border-radius: 0;
+}
+
+.dashboard__metric-icon--alert {
+  border: 0;
+  border-radius: 0;
+}
+
+.dashboard__metric-icon--sla-gauge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard__metric-sla-gauge-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  shape-rendering: geometricPrecision;
+}
+
+.dashboard__metric-value {
+  display: block;
+  color: #361e12;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 16px;
+  }
+}
+
+.dashboard__metric-label {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  gap: 2px;
+  color: #5f646d;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__metric-info-icon {
+  display: block;
+  flex: 0 0 auto;
+  width: 12px;
+  height: 12px;
+}
+
+.dashboard__metric-info-icon-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  line-height: 0;
+}
+
+.dashboard__trend-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+  padding-top: 18px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.dashboard__trend-card--empty {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard__trend-empty {
+  flex: 1;
+  min-height: 196px;
+  padding: 24px;
+}
+
+.dashboard__trend-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  width: 100%;
+  min-width: 0;
+  padding: 0 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 16px;
+  }
+}
+
+.dashboard__trend-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  max-width: 100%;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s ease;
+}
+
+.dashboard__trend-legend-item:focus-visible {
+  outline: 2px solid fade(@primary-color, 28%);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.dashboard__trend-legend-item--inactive {
+  opacity: 0.45;
+}
+
+.dashboard__trend-legend-icon {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  color: var(--legend-color);
+}
+
+.dashboard__trend-legend-line {
+  position: absolute;
+  top: 50%;
+  left: 1px;
+  right: 1px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transform: translateY(-50%);
+}
+
+.dashboard__trend-legend-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  background: #ffffff;
+  transform: translate(-50%, -50%);
+}
+
+.dashboard__trend-legend-label {
+  min-width: 0;
+  overflow: hidden;
+  color: #361e12;
+  font-size: 12px;
+  line-height: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__trend-chart {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  height: 220px;
+  padding: 0 14px 18px;
+}
+
+.dashboard__trend-chart-shell {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+
+.dashboard__trend-chart-instance {
+  width: 100%;
+  height: 100% !important;
+  min-height: 0;
+}
+
+.dashboard__trend-chart-instance > div:first-child,
+.dashboard__trend-chart-instance > div:first-child > canvas,
+.dashboard__trend-chart-instance > div:first-child > svg {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.dashboard__table-card {
+  padding-bottom: 24px;
+}
+
+.dashboard__selection-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+  margin: 16px 24px 0;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: #f9f7ed;
+  color: #92722a;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__selection-action {
+  min-width: 104px;
+  height: 36px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #9e7538 0%, #c19453 100%);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  cursor: pointer;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard-reassign-modal {
+  width: 860px !important;
+  max-width: calc(100vw - 64px);
+}
+
+.dashboard-reassign-modal .ant-modal-content {
+  display: flex;
+  max-height: 80vh;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #ffffff;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.dashboard-reassign-modal .ant-modal-header {
+  flex: 0 0 auto;
+  padding: 32px 40px;
+  border-bottom: 1px solid #e1e3e5;
+}
+
+.dashboard-reassign-modal .ant-modal-title {
+  margin: 0;
+  color: #361e12;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.dashboard-reassign-modal .ant-modal-body {
+  flex: 1 1 auto;
+  min-height: 400px;
+  padding: 32px 40px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+@media (max-height: 657.98px) {
+  .dashboard-reassign-modal-wrap.ant-modal-centered::before {
+    display: none;
+  }
+
+  .dashboard-reassign-modal-wrap .dashboard-reassign-modal {
+    margin: 32px auto;
+  }
+
+  .dashboard-reassign-modal .ant-modal-content {
+    max-height: none;
+  }
+}
+
+.dashboard-reassign-modal .ant-modal-footer {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  padding: 24px 40px;
+  border-top: 1px solid #e1e3e5;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.dashboard-reassign-modal .ant-modal-footer .ant-btn + .ant-btn {
+  margin-left: 0;
+}
+
+.dashboard-reassign-modal__form .ant-form-item {
+  margin-bottom: 0;
+}
+
+.dashboard-reassign-modal__form .ant-form-item-label {
+  padding-bottom: 8px;
+}
+
+.dashboard-reassign-modal__form .ant-form-item-label > label {
+  height: 20px;
+  color: #361e12;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard-reassign-modal__select.ant-select {
+  width: 100%;
+}
+
+.dashboard-reassign-modal__select.ant-select-single:not(
+    .ant-select-customize-input
+  )
+  .ant-select-selector {
+  min-height: 48px;
+  padding: 7px 11px;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.dashboard-reassign-modal__select.ant-select-focused:not(
+    .ant-select-disabled
+  ).ant-select-single:not(.ant-select-customize-input)
+  .ant-select-selector,
+.dashboard-reassign-modal__select.ant-select-single:not(
+    .ant-select-customize-input
+  )
+  .ant-select-selector:hover {
+  border-color: #92722a;
+  box-shadow: none;
+}
+
+.dashboard-reassign-modal__select.ant-select-single
+  .ant-select-selector
+  .ant-select-selection-search-input,
+.dashboard-reassign-modal__select.ant-select-single
+  .ant-select-selector
+  .ant-select-selection-item,
+.dashboard-reassign-modal__select.ant-select-single
+  .ant-select-selector
+  .ant-select-selection-placeholder {
+  height: 32px;
+  color: #2c2016;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 32px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+    }
+}
+
+.dashboard-reassign-modal__select.ant-select-single
+  .ant-select-selector
+  .ant-select-selection-placeholder {
+  color: #9ca3af;
+}
+
+.dashboard-reassign-modal__dropdown {
+  box-sizing: border-box;
+  padding: 4px 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 3px 6px -4px rgb(0 0 0 / 12%),
+    0 6px 16px rgb(0 0 0 / 8%), 0 9px 28px 8px rgb(0 0 0 / 5%);
+}
+
+.dashboard-reassign-modal__dropdown-panel {
+  display: flex;
+  height: auto;
+  max-height: 312px;
+  flex-direction: column;
+  background: #ffffff;
+}
+
+.dashboard-reassign-modal__dropdown-panel--empty {
+  min-height: 216px;
+}
+
+.dashboard-reassign-modal__dropdown-search {
+  display: flex;
+  height: 40px;
+  flex: 0 0 40px;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-bottom: 1px solid #e1e3e5;
+  background: #ffffff;
+}
+
+.dashboard-reassign-modal__dropdown-search--active {
+  border-bottom-color: #b68a35;
+}
+
+.dashboard-reassign-modal__dropdown-search-icon {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  color: #797e86;
+  font-size: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+  }
+}
+
+.dashboard-reassign-modal__dropdown-search-input {
+  height: 24px;
+  min-width: 0;
+  flex: 1;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #361e12;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.dashboard-reassign-modal__dropdown-search-input::placeholder {
+  color: #797e86;
+  font-size: 14px;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard-reassign-modal__dropdown-clear {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #797e86;
+  cursor: pointer;
+}
+
+.dashboard-reassign-modal__dropdown-clear img {
+  width: 16px;
+  height: 16px;
+}
+
+.dashboard-reassign-modal__dropdown-menu {
+  min-height: 0;
+  max-height: 272px;
+  flex: 0 1 auto;
+  overflow-y: auto;
+}
+
+.dashboard-reassign-modal__dropdown-menu::-webkit-scrollbar,
+.dashboard-reassign-modal__dropdown .rc-virtual-list-holder::-webkit-scrollbar {
+  width: 4px;
+}
+
+.dashboard-reassign-modal__dropdown-menu::-webkit-scrollbar-thumb,
+.dashboard-reassign-modal__dropdown
+  .rc-virtual-list-holder::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: rgb(225 227 229 / 75%);
+}
+
+.dashboard-reassign-modal__dropdown .rc-virtual-list-holder {
+  max-height: 272px !important;
+}
+
+.dashboard-reassign-modal__dropdown .ant-select-item {
+  min-height: 40px;
+  padding: 10px 16px;
+  color: #361e12;
+  font-size: 14px;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard-reassign-modal__dropdown .ant-select-item-option-content {
+  min-width: 0;
+  overflow: hidden;
+  font-weight: 500;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    line-height: 16px;
+  }
+}
+
+.dashboard-reassign-modal__dropdown
+  .dashboard-reassign-modal__dropdown-option-text {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-align: start;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dashboard-reassign-modal__dropdown
+  .ant-select-item-option-active:not(.ant-select-item-option-disabled),
+.dashboard-reassign-modal__dropdown
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background: #f9f7ed;
+}
+
+.dashboard-reassign-modal__dropdown .ant-select-item-option-state {
+  display: none;
+}
+
+.dashboard-reassign-modal__dropdown .ant-select-item-empty {
+  display: flex;
+  min-height: 216px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.dashboard-reassign-modal__dropdown-empty {
+  color: #797e86;
+  font-size: 14px;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard-reassign-modal__action.ant-btn {
+  min-width: 120px;
+  height: 48px;
+  padding: 0 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  box-shadow: none;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.dashboard-reassign-modal__action--secondary.ant-btn,
+.dashboard-reassign-modal__action--secondary.ant-btn:hover,
+.dashboard-reassign-modal__action--secondary.ant-btn:focus,
+.dashboard-reassign-modal__action--secondary.ant-btn:active {
+  border-color: #92722a;
+  background: #ffffff;
+  color: #92722a;
+}
+
+.dashboard-reassign-modal__action--primary.ant-btn,
+.dashboard-reassign-modal__action--primary.ant-btn:hover,
+.dashboard-reassign-modal__action--primary.ant-btn:focus,
+.dashboard-reassign-modal__action--primary.ant-btn:active {
+  border-color: transparent;
+  background: linear-gradient(90deg, #9e7538 0%, #c19453 100%);
+  color: #ffffff;
+}
+
+.dashboard-reassign-modal__action.ant-btn[disabled],
+.dashboard-reassign-modal__action.ant-btn[disabled]:hover,
+.dashboard-reassign-modal__action.ant-btn[disabled]:focus,
+.dashboard-reassign-modal__action.ant-btn[disabled]:active {
+  border-color: #e1e3e5;
+  background: #e1e3e5;
+  color: #9ea2a9;
+}
+
+.dashboard__table {
+  margin: 16px 24px 0;
+}
+
+.dashboard__table-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 292px;
+  margin: 16px 24px 0;
+}
+
+.dashboard__table .ant-table {
+  color: #361e12;
+  font-size: 14px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+  }
+}
+
+.dashboard__table .ant-table-thead > tr > th {
+  height: 46px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e1e3e5;
+  background: #f8f7f4;
+  color: #797e86;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__table .ant-table-tbody > tr > td {
+  height: 46px;
+  padding: 13px 16px;
+  border-bottom: 1px solid #e1e3e5;
+  color: #361e12;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__table--license-staff-attention .ant-table-tbody > tr > td,
+.dashboard__table--content-staff-attention .ant-table-tbody > tr > td,
+.dashboard__table--content-manager-attention .ant-table-tbody > tr > td,
+.dashboard__table--blocked .ant-table-tbody > tr > td {
+  height: 52px;
+  padding: 14px 16px;
+  font-size: 16px;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.dashboard__table .ant-table-tbody > tr.dashboard__table-row--selected > td {
+  background: #f9f7ed;
+}
+
+.dashboard__table .ant-table-cell-fix-left,
+.dashboard__table .ant-table-cell-fix-right {
+  background: #ffffff;
+}
+
+.dashboard__table .ant-table-thead > tr > th.ant-table-cell-fix-left,
+.dashboard__table .ant-table-thead > tr > th.ant-table-cell-fix-right {
+  background: #f8f7f4;
+}
+
+.dashboard__table .ant-table-tbody > tr > td.ant-table-cell-fix-left,
+.dashboard__table .ant-table-tbody > tr > td.ant-table-cell-fix-right {
+  background: #ffffff;
+}
+
+.dashboard__table
+  .ant-table-tbody
+  > tr.dashboard__table-row--selected
+  > td.ant-table-cell-fix-left,
+.dashboard__table
+  .ant-table-tbody
+  > tr.dashboard__table-row--selected
+  > td.ant-table-cell-fix-right {
+  background: #f9f7ed;
+}
+
+.dashboard__table .ant-table-tbody > tr.dashboard__table-row--clickable > td {
+  cursor: pointer;
+}
+
+.dashboard__table
+  .ant-table-tbody
+  > tr.dashboard__table-row--clickable
+  > td.dashboard__table-actions-column,
+.dashboard__table
+  .ant-table-tbody
+  > tr.dashboard__table-row--clickable
+  > td.ant-table-cell-fix-left,
+.dashboard__table
+  .ant-table-tbody
+  > tr.dashboard__table-row--clickable
+  > td.ant-table-cell-fix-right {
+  cursor: default;
+}
+
+.dashboard__table
+  .ant-table-tbody
+  > tr.dashboard__table-row--clickable:hover
+  > td,
+.dashboard__table .ant-table-tbody > tr > td.ant-table-cell-row-hover {
+  background: #f9f7ed;
+}
+
+.dashboard__table
+  .ant-table-tbody
+  > tr.dashboard__table-row--clickable:hover
+  > td.ant-table-cell-fix-left,
+.dashboard__table
+  .ant-table-tbody
+  > tr
+  > td.ant-table-cell-row-hover.ant-table-cell-fix-left,
+.dashboard__table
+  .ant-table-tbody
+  > tr.dashboard__table-row--clickable:hover
+  > td.ant-table-cell-fix-right,
+.dashboard__table
+  .ant-table-tbody
+  > tr
+  > td.ant-table-cell-row-hover.ant-table-cell-fix-right {
+  background: #f9f7ed;
+}
+
+.dashboard__table
+  .ant-table-ping-right
+  .ant-table-cell-fix-right-first::after,
+.dashboard__table
+  .ant-table-ping-right
+  .ant-table-cell-fix-right-last::after {
+  box-shadow: inset -10px 0 8px -8px rgba(54, 30, 18, 0.08);
+}
+
+.dashboard__table
+  .ant-table-ping-left
+  .ant-table-cell-fix-left-first::after,
+.dashboard__table
+  .ant-table-ping-left
+  .ant-table-cell-fix-left-last::after {
+  box-shadow: inset 10px 0 8px -8px rgba(54, 30, 18, 0.08);
+}
+
+.dashboard__table.ant-table-wrapper-rtl
+  .ant-table-ping-left
+  .ant-table-cell-fix-right-first::after,
+.dashboard__table.ant-table-wrapper-rtl
+  .ant-table-ping-left
+  .ant-table-cell-fix-right-last::after {
+  box-shadow: inset 10px 0 8px -8px rgba(54, 30, 18, 0.08);
+}
+
+.dashboard__table .ant-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 16px 0 0;
+}
+
+.dashboard__table .ant-pagination-total-text {
+  margin-inline-end: 16px;
+}
+
+.dashboard__table .ant-pagination-item,
+.dashboard__table .ant-pagination-prev,
+.dashboard__table .ant-pagination-next {
+  min-width: 40px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  background: @ant-pagination-color;
+  line-height: 40px;
+}
+
+.dashboard__table .ant-pagination-item a {
+  padding: 0;
+  color: #361e12;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 40px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+  }
+}
+
+.dashboard__table .ant-pagination-item-active {
+  border: none;
+  background: @ant-pagination-active-color;
+}
+
+.dashboard__table .ant-pagination-item-active a,
+.dashboard__table .ant-pagination-item:hover a {
+  color: #361e12;
+}
+
+.dashboard__table .ant-pagination-prev .ant-pagination-item-link,
+.dashboard__table .ant-pagination-next .ant-pagination-item-link {
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  background: @ant-pagination-color;
+}
+
+.dashboard__table .ant-pagination-prev .ant-pagination-item-link,
+.dashboard__table .ant-pagination-next .ant-pagination-item-link,
+.dashboard__table .ant-pagination-prev .ant-pagination-item-link .anticon,
+.dashboard__table .ant-pagination-next .ant-pagination-item-link .anticon {
+  color: #361e12;
+  font-size: 12px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+  }
+}
+
+.dashboard__table .ant-pagination-disabled .ant-pagination-item-link,
+.dashboard__table .ant-pagination-disabled .ant-pagination-item-link .anticon {
+  color: #c6c6c6;
+}
+
+.dashboard__table .ant-pagination-options {
+  margin-inline-start: 16px;
+}
+
+.dashboard__table .ant-pagination-options-size-changer.ant-select {
+  min-width: 88px;
+  width: 88px;
+  height: 40px;
+}
+
+.dashboard__table
+  .ant-pagination-options-size-changer.ant-select.ant-select-single:not(
+    .ant-select-customize-input
+  )
+  .ant-select-selector {
+  height: 40px !important;
+  padding: 0 16px !important;
+  border: none !important;
+  border-radius: 6px !important;
+  background: @ant-pagination-color !important;
+  box-shadow: none !important;
+}
+
+.dashboard__table
+  .ant-pagination-options-size-changer.ant-select
+  .ant-select-selection-search,
+.dashboard__table
+  .ant-pagination-options-size-changer.ant-select
+  .ant-select-selection-search-input {
+  height: 40px !important;
+}
+
+.dashboard__table
+  .ant-pagination-options-size-changer.ant-select
+  .ant-select-selection-item,
+.dashboard__table
+  .ant-pagination-options-size-changer.ant-select
+  .ant-select-selection-placeholder {
+  height: 40px;
+  color: #361e12;
+  font-size: 16px;
+  line-height: 40px !important;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 14px;
+    }
+}
+
+.dashboard__table
+  .ant-pagination-options-size-changer.ant-select
+  .ant-select-arrow {
+  inset-inline-start: auto;
+  inset-inline-end: 12px;
+  color: #bfbfbf;
+  font-size: 12px !important;
+}
+
+.dashboard__table-cell {
+  padding: 0;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.dashboard__table-cell-icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+}
+
+.dashboard__table-cell--column-serviceName {
+  align-items: flex-start;
+  width: 100%;
+  min-width: 0;
+  white-space: normal;
+}
+
+.dashboard__table-cell-service-name-text {
+  display: -webkit-box;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  line-height: 20px;
+  overflow-wrap: anywhere;
+  text-overflow: ellipsis;
+  white-space: normal;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    line-height: 16px;
+  }
+}
+
+.dashboard__table-cell--urgent {
+  gap: 8px;
+}
+
+.dashboard__urgent-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 22px;
+  padding: 2px 4px;
+  border-radius: 3px;
+  background: #eb5f24;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__table-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.dashboard__table-action {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #92722a;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  cursor: pointer;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__table-cell--status {
+  height: 26px;
+  padding: 2px 6px;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    line-height: 16px;
+  }
+}
+
+.dashboard__table-cell--status.dashboard__table-cell--externalApproval {
+  background: #e7f5ff;
+  color: #286cff;
+}
+
+.dashboard__table--urgent
+  .dashboard__table-cell--status.dashboard__table-cell--externalApproval {
+  background: #fffbeb;
+  color: #f29f0e;
+}
+
+.dashboard__table-cell--status.dashboard__table-cell--pendingModification,
+.dashboard__table-cell--status.dashboard__table-cell--departmentProcessing {
+  background: #fffbeb;
+  color: #f29f0e;
+}
+
+.dashboard__table-cell--status.dashboard__table-cell--initialApproval {
+  background: #fef5ee;
+  color: #eb5f24;
+}
+
+.dashboard__table-cell--status.dashboard__table-cell--inProgress,
+.dashboard__table-cell--status.dashboard__table-cell--pendingVisit {
+  background: #fef5ee;
+  color: #eb5f24;
+}
+
+.dashboard__table-cell--status.dashboard-tone--neutral {
+  background: #f5f5f6;
+  color: #5f646d;
+}
+
+.dashboard__table .ant-table-selection-column {
+  width: 48px;
+  min-width: 48px;
+  padding-inline: 16px;
+}
+
+.dashboard__table .ant-checkbox-inner {
+  width: 16px;
+  height: 16px;
+  border-color: #c3c6cb;
+  border-radius: 2px;
+}
+
+.dashboard__table .ant-checkbox-checked .ant-checkbox-inner {
+  border-color: #92722a;
+  background-color: #92722a;
+}
+
+.dashboard__table .ant-checkbox-indeterminate .ant-checkbox-inner {
+  border-color: #92722a;
+  background-color: #ffffff;
+}
+
+.dashboard__table .ant-checkbox-indeterminate .ant-checkbox-inner::after {
+  background-color: #92722a;
+}
+
+.dashboard__table .ant-checkbox-wrapper:hover .ant-checkbox-inner,
+.dashboard__table .ant-checkbox:hover .ant-checkbox-inner,
+.dashboard__table .ant-checkbox-input:focus + .ant-checkbox-inner {
+  border-color: #92722a;
+}
+
+.dashboard__coaching-card,
+.dashboard__leave-card {
+  min-height: 280px;
+  padding-bottom: 24px;
+}
+
+.dashboard__coaching-card {
+  overflow: hidden;
+}
+
+.dashboard__coaching-card-body {
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+  padding: 18px 24px 0;
+}
+
+.dashboard__coaching-table {
+  display: grid;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+
+.dashboard__coaching-empty,
+.dashboard__leave-empty {
+  min-height: 220px;
+  padding: 24px;
+}
+
+.dashboard__coaching-row {
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) 90px 140px 150px;
+  gap: 12px;
+  align-items: center;
+  min-height: 42px;
+  border-bottom: 1px solid #eceef1;
+  color: #361e12;
+  font-size: 13px;
+  font-weight: 500;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.dashboard__coaching-row--reopen {
+  grid-template-columns: minmax(160px, 1fr) 90px 140px 150px 120px;
+}
+
+.dashboard__coaching-row--header {
+  min-height: 34px;
+  color: #797e86;
+  font-size: 12px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+  }
+}
+
+.dashboard__leave-list {
+  display: grid;
+  gap: 10px;
+  padding: 18px 24px 0;
+}
+
+.dashboard__leave-item {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) 70px;
+  align-items: center;
+  gap: 12px;
+  min-height: 92px;
+  padding: 12px 16px;
+  border: 1px solid #eceef1;
+  border-radius: 10px;
+  background: #ffffff;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.dashboard__leave-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f6f6f7;
+  color: #92722a;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.dashboard__leave-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.dashboard__leave-body {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.dashboard__leave-body strong,
+.dashboard__leave-body span,
+.dashboard__leave-body small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dashboard__leave-body strong {
+  color: #361e12;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.dashboard__leave-body span {
+  color: #5f646d;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__leave-body small {
+  color: #eb5f24;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__leave-count {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 4px;
+  height: 100%;
+  padding-inline-start: 16px;
+  border-inline-start: 1px solid #e1e3e5;
+}
+
+.dashboard__leave-count strong {
+  color: #92722a;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 16px;
+  }
+}
+
+.dashboard__leave-count span {
+  color: #5f646d;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 8px;
+  color: #5f646d;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.dashboard__empty-state-illustration {
+  display: block;
+  width: 120px;
+  height: 120px;
+  flex: 0 0 auto;
+  overflow: visible;
+}
+
+.dashboard__empty-state-label {
+  display: block;
+  color: #5f646d;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.dashboard__empty-state--loading-placeholder {
+  visibility: hidden;
+}
+
+.dashboard__page-empty {
+  min-height: 520px;
+}
+
+.dashboard-tone--gold {
+  color: #92722a;
+}
+
+.dashboard-tone--green {
+  color: #18a86b;
+}
+
+.dashboard-tone--blue {
+  color: #286cff;
+}
+
+.dashboard-tone--red {
+  color: #ea4f49;
+}
+
+.dashboard-tone--orange {
+  color: #f29f0e;
+}
+
+.dashboard-tone--yellow {
+  color: #bd9437;
+}
+
+.dashboard-tone--neutral {
+  color: #5f646d;
+}
+
+.dashboard__status-pill.dashboard-tone--green {
+  background: #eaf8ef;
+}
+
+.dashboard__status-pill.dashboard-tone--blue {
+  background: #e7f5ff;
+}
+
+.dashboard__status-pill.dashboard-tone--red {
+  background: #fff0ef;
+}
+
+.dashboard__status-pill.dashboard-tone--orange {
+  background: #fffbeb;
+}
+
+.dashboard__page--customer .dashboard__status-pill.dashboard-tone--red,
+.dashboard__page--customer
+  .dashboard__table-cell--status.dashboard-tone--red {
+  border-radius: 4px;
+  background: #fef5ee;
+  color: #eb5f24;
+}
+
+.dashboard__page--customer
+  .dashboard__summary-tile.dashboard-tone--red
+  .dashboard__summary-tile-copy
+  > strong {
+  color: inherit;
+}
+
+.dashboard__page--inspection .dashboard__card {
+  border-radius: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.dashboard__page--inspection .dashboard__task-section {
+  border-radius: 24px;
+}
+
+.dashboard__page--inspection .dashboard__content {
+  padding-bottom: 0;
+}
+
+.dashboard__page--inspection .dashboard__card-title {
+  font-size: 20px;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+.dashboard__page--inspection .dashboard__summary-card {
+  display: flex;
+  box-sizing: border-box;
+  min-height: 344px;
+  flex-direction: column;
+  gap: 32px;
+  padding: 24px;
+}
+
+.dashboard__page--inspection .dashboard__summary-card > .dashboard__card-header {
+  flex: 0 0 28px;
+  padding: 0;
+}
+
+.dashboard__page--inspection .dashboard__summary-card .dashboard__summary-body {
+  flex: 0 0 140px;
+  height: 140px;
+  padding: 0;
+}
+
+.dashboard__page--inspection .dashboard__summary-card .dashboard__summary-tiles {
+  flex: 0 0 64px;
+  padding: 0;
+}
+
+.dashboard__page--inspection .dashboard__summary-tile {
+  border-radius: 10px;
+  background: #f7f7f8;
+}
+
+.dashboard__page--inspection .dashboard__legend-item {
+  grid-template-columns: 8px minmax(0, 1fr) minmax(32px, auto);
+  gap: 8px;
+}
+
+.dashboard__page--inspection .dashboard__performance-card,
+.dashboard__page--inspection .dashboard__trend-card {
+  min-height: 264px;
+}
+
+.dashboard__page--inspection .dashboard__performance-card--manager {
+  min-height: 146px;
+}
+
+.dashboard__page--inspection .dashboard__metric-grid {
+  gap: 8px;
+}
+
+.dashboard__page--inspection .dashboard__metric-card {
+  min-height: 80px;
+  padding: 8px 24px;
+  border-radius: 10px;
+  background: #f7f7f8;
+}
+
+.dashboard__page--inspection
+  .dashboard__performance-card--manager
+  .dashboard__metric-card {
+  min-height: 74px;
+  padding: 16px 24px;
+}
+
+.dashboard__page--inspection .dashboard__metric-content {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dashboard__page--inspection .dashboard__metric-label {
+  min-width: 0;
+}
+
+.dashboard__page--inspection .dashboard__trend-content {
+  gap: 16px;
+  padding-top: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.dashboard__page--inspection .dashboard__trend-chart {
+  height: 202px;
+  padding-bottom: 12px;
+}
+
+.dashboard__page--inspection .dashboard__coaching-card,
+.dashboard__page--inspection .dashboard__leave-card {
+  min-height: 280px;
+  padding-bottom: 24px;
+}
+
+.dashboard__page--inspection .dashboard__coaching-table {
+  gap: 0;
+}
+
+.dashboard__page--inspection .dashboard__coaching-row {
+  grid-template-columns: minmax(150px, 1fr) 97px 149px 182px;
+  min-height: 50px;
+  padding: 0 16px;
+  border-bottom: 1px solid #e1e3e5;
+  font-size: 14px;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__page--inspection .dashboard__coaching-row--header {
+  min-height: 46px;
+  border-bottom: 0;
+  border-radius: 6px 6px 0 0;
+  background: #f8f7f4;
+  color: #797e86;
+  font-size: 14px;
+  font-weight: 400;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+  }
+}
+
+.dashboard__page--inspection .dashboard__leave-list {
+  gap: 8px;
+  padding-top: 18px;
+}
+
+.dashboard__page--inspection .dashboard__leave-item {
+  min-height: 92px;
+  border-color: #e1e3e5;
+  border-radius: 10px;
+}
+
+.dashboard__page--customer .dashboard__card {
+  border-radius: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.dashboard__page--customer .dashboard__card-title {
+  font-size: 20px;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+.dashboard__page--customer .dashboard__summary-card {
+  min-height: 0;
+}
+
+.dashboard__page--customer .dashboard__summary-body {
+  padding-top: 24px;
+}
+
+.dashboard__page--customer .dashboard__summary-tiles {
+  padding-top: 16px;
+}
+
+.dashboard__page--customer .dashboard__legend-item {
+  grid-template-columns: 8px minmax(0, 1fr) minmax(32px, auto);
+  gap: 8px;
+}
+
+.dashboard__page--customer .dashboard__performance-card,
+.dashboard__page--customer .dashboard__trend-card {
+  min-height: 264px;
+}
+
+.dashboard__page--customer .dashboard__performance-card--manager {
+  min-height: 146px;
+}
+
+.dashboard__page--customer .dashboard__metric-grid {
+  /* Figma node 44434:275498 (1440<W<1920): 16px between the metric tiles. */
+  gap: 16px;
+}
+
+.dashboard__page--customer .dashboard__metric-card {
+  min-height: 80px;
+  padding: 8px 24px;
+  border-radius: 10px;
+  background: #f7f7f8;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    /* 24 + 76 + 16 + 76 + 24 = the 216px content block in the Figma frame. */
+    min-height: 76px;
+  }
+}
+
+.dashboard__page--customer
+  .dashboard__performance-card--manager
+  .dashboard__metric-card {
+  min-height: 74px;
+  padding: 16px 24px;
+}
+
+.dashboard__page--customer .dashboard__metric-content {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dashboard__page--customer .dashboard__metric-label {
+  min-width: 0;
+}
+
+.dashboard__metric-label-text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dashboard__page--customer .dashboard__trend-content {
+  gap: 16px;
+  padding-top: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.dashboard__page--customer .dashboard__trend-chart {
+  height: 202px;
+  padding-bottom: 12px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    /*
+      Figma node 44434:275498: the plot area is ~114px + axis labels, keeping the
+      Trend card the same height as My Performance. The desktop 202px chart made
+      the whole row taller and stretched a hole into the 2x2 metric grid.
+    */
+    height: 148px;
+  }
+}
+
+.dashboard__page--customer .dashboard__coaching-card,
+.dashboard__page--customer .dashboard__leave-card {
+  min-height: 280px;
+  padding-bottom: 24px;
+}
+
+.dashboard__page--customer .dashboard__coaching-table {
+  gap: 0;
+}
+
+.dashboard__page--customer .dashboard__coaching-row {
+  min-height: 50px;
+  padding: 0 16px;
+  border-bottom: 1px solid #e1e3e5;
+  font-size: 14px;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__page--customer .dashboard__coaching-row--header {
+  min-height: 46px;
+  border-bottom: 0;
+  border-radius: 6px 6px 0 0;
+  background: #f8f7f4;
+  color: #797e86;
+  font-size: 14px;
+  font-weight: 400;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+  }
+}
+
+.dashboard__page--customer .dashboard__coaching-row--reopen {
+  grid-template-columns: minmax(150px, 1fr) 72px 126px 154px 102px;
+}
+
+.dashboard__page--customer .dashboard__leave-list {
+  gap: 8px;
+  padding-top: 18px;
+}
+
+.dashboard__page--customer .dashboard__leave-item {
+  min-height: 92px;
+  border-color: #e1e3e5;
+  border-radius: 10px;
+}
+
+.dashboard__license-summary-grid {
+  display: grid;
+  gap: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+/*
+  Manager dashboard summary block. At 1920 and above the desktop layout stays as
+  designed originally: Service | Profile | License Distribution 3-up on one row,
+  with the LD tiles two-up under their Total. Below 1920 the two responsive frames
+  (Figma "1440<W<1920" node 44390:74486 and "W<1440" node 44390:74641) share a
+  different shape: Service Application and Profile Verification sit 2-up, and
+  License Distribution by Status breaks out onto its own full-width row with every
+  tile (Total included) on ONE horizontal row.
+*/
+.dashboard__license-summary-grid--manager {
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+}
+
+@media (max-width: 1919.98px) {
+  .dashboard__license-summary-grid--manager {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard__license-summary-grid--manager
+    > .dashboard__license-summary-card--status-grid {
+    grid-column: 1 / -1;
+    /* The full-width row hugs its single tile row instead of the 348px donut-card floor. */
+    min-height: 0;
+  }
+
+  /*
+    Column auto-flow keeps the tiles on that single row whatever the tile count,
+    instead of a wrapping template.
+  */
+  .dashboard__license-summary-grid--manager .dashboard__license-status-grid {
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-template-columns: none;
+  }
+}
+
+/*
+  Staff summary row is a strict 3-up per Figma "1440<W<1920" (node 44390:73837):
+  Service Application | Profile Verification | License Distribution, always one row.
+  The old auto-fit could wrap a card onto a second row once the track dropped under
+  300px. Below 1440 the wrapper grid takes over (display: contents), so this template
+  simply stops applying there.
+*/
+.dashboard__license-summary-grid--staff {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.dashboard__license-performance-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+/* Coaching + Emergency Leave: always 2-up (Figma nodes 44390:74486 / 44390:74641). */
+.dashboard__license-support-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+/*
+  Staff dashboard: at 1440 and above the summary row (3-up) and the performance row (My
+  Performance + Performance Trend, 2-up) stay independent — the wrapper is transparent
+  (Figma "1440<W<1920", node 44390:73837).
+  Below 1440 the wrapper becomes one continuous 2-column grid and both inner grids
+  dissolve into it, so the five cards pair up as [Profile | Service]
+  [My Performance | License Distribution] with the Performance Trend spanning the full
+  width on its own row (Figma "W<1440", node 44390:74002).
+*/
+.dashboard__license-staff-groups {
+  display: contents;
+}
+
+@media (max-width: 1439.98px) {
+  .dashboard__license-staff-groups {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .dashboard__license-staff-groups .dashboard__license-summary-grid,
+  .dashboard__license-staff-groups .dashboard__license-performance-grid {
+    display: contents;
+  }
+
+  /*
+    The W<1440 Figma frame reorders the cards relative to the wide DOM order
+    (Service, Profile, License Distribution, My Performance, Trend). nth-child maps
+    the fixed order of createStaffSummaryCards in services/licenseDashboard.ts.
+  */
+  .dashboard__license-staff-groups
+    .dashboard__license-summary-grid--staff
+    > :nth-child(1) {
+    order: 2; /* Service Application — row 1, right */
+  }
+
+  .dashboard__license-staff-groups
+    .dashboard__license-summary-grid--staff
+    > :nth-child(2) {
+    order: 1; /* Profile Verification — row 1, left */
+  }
+
+  .dashboard__license-staff-groups
+    .dashboard__license-summary-grid--staff
+    > :nth-child(3) {
+    order: 4; /* License Distribution — row 2, right */
+  }
+
+  .dashboard__license-staff-groups
+    .dashboard__license-performance-grid
+    > .dashboard__license-metric-card {
+    order: 3; /* My Performance — row 2, left */
+  }
+
+  .dashboard__license-staff-groups
+    .dashboard__license-performance-grid
+    > .dashboard__license-trend-card {
+    order: 5;
+    grid-column: 1 / -1;
+  }
+
+  /*
+    Once License Distribution is paired with My Performance, stack its status tiles one
+    per row so both cards read as matching vertical lists.
+  */
+  .dashboard__license-staff-groups .dashboard__license-status-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /*
+    Equal-height cards (align-items: stretch above) leave the metric card taller than its
+    content; let the metric grid grow and space its rows out so My Performance fills the
+    card and lines up with the License Distribution list beside it.
+  */
+  .dashboard__license-staff-groups .dashboard__license-metric-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dashboard__license-staff-groups .dashboard__license-metric-grid {
+    flex: 1 1 auto;
+    align-content: space-between;
+  }
+
+  /*
+    My Performance, W<1440 (Figma "Task Breakdown Row" in node 44390:74002): the
+    tile list sits 24px under the title with 24px side/bottom insets, and the four
+    tiles are strictly ONE per row with a 12px row gap. The base rules gave only
+    12px padding (title felt glued to the first tile) and an auto-fit template that
+    could flip to two columns near the 1440 edge. Three-class selector so this
+    outranks the later `.dashboard__license-metric-card--staff` auto-fit rule.
+  */
+  .dashboard__license-staff-groups
+    .dashboard__license-metric-card--staff
+    .dashboard__license-metric-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    padding: 24px;
+  }
+}
+
+.dashboard__license-metric-card,
+.dashboard__license-summary-card,
+.dashboard__license-coaching-card,
+.dashboard__license-leave-card,
+.dashboard__license-trend-card {
+  border-radius: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.dashboard__license-metric-card .dashboard__card-title,
+.dashboard__license-summary-card .dashboard__card-title,
+.dashboard__license-coaching-card .dashboard__card-title,
+.dashboard__license-leave-card .dashboard__card-title,
+.dashboard__license-trend-card .dashboard__card-title {
+  font-size: 20px;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+.dashboard__license-metric-card--manager {
+  min-height: 146px;
+}
+
+.dashboard__license-metric-card--staff,
+.dashboard__license-trend-card {
+  min-height: 280px;
+}
+
+.dashboard__license-trend-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard__license-summary-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 348px;
+}
+
+.dashboard__license-coaching-card,
+.dashboard__license-leave-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 396px;
+}
+
+.dashboard__license-metric-grid {
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+/*
+  Team Performance (manager): four metric tiles on ONE row from 1440 up (Figma node
+  44390:74486), collapsing to a 2×2 grid below 1440 (Figma node 44390:74641). The
+  old auto-fit wrapped 3+1 in the 1440-1920 band.
+*/
+.dashboard__license-metric-card--manager .dashboard__license-metric-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  /* rwd-ramp */
+  @media (max-width: 1439.98px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Staff My Performance: fixed 2×2 (Figma node 44390:73837); <1440 the merged-grid rule stacks them 1-per-row. */
+.dashboard__license-metric-card--staff .dashboard__license-metric-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.dashboard__license-metric-tile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+  background: #f7f7f8;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.dashboard__license-metric-card--manager .dashboard__license-metric-tile {
+  min-height: 74px;
+  padding: 16px 24px;
+  border-radius: 10px;
+}
+
+.dashboard__license-metric-card--staff .dashboard__license-metric-tile {
+  min-height: 98px;
+  padding: 20px 24px;
+  border-radius: 12px;
+}
+
+.dashboard__license-metric-icon {
+  display: block;
+  position: relative;
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+}
+
+.dashboard__license-metric-icon--composed {
+  overflow: visible;
+}
+
+.dashboard__license-metric-icon--sla-gauge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard__license-composed-icon-layer {
+  position: absolute;
+  display: block;
+}
+
+.dashboard__license-composed-icon-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+
+.dashboard__license-metric-copy {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.dashboard__license-metric-copy strong,
+.dashboard__license-footer-stat strong,
+.dashboard__license-status-tile strong {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 16px;
+  }
+}
+
+.dashboard__license-metric-label,
+.dashboard__license-footer-stat-label {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  max-width: 100%;
+  gap: 4px;
+  color: #5f646d;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__license-metric-label-text,
+.dashboard__license-footer-stat-label-text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dashboard__license-info-icon {
+  display: block;
+  flex: 0 0 auto;
+  width: 12px;
+  height: 12px;
+  object-fit: contain;
+}
+
+.dashboard__license-info-icon-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  line-height: 0;
+}
+
+.dashboard__license-info-icon--md {
+  width: 16px;
+  height: 16px;
+}
+
+.dashboard__license-summary-body,
+.dashboard__license-status-grid,
+.dashboard__license-trend-body,
+.dashboard__license-coaching-table,
+.dashboard__license-leave-list {
+  padding: 24px;
+}
+
+.dashboard__license-summary-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 16px;
+  }
+}
+
+.dashboard__license-summary-card--donut .dashboard__license-summary-body {
+  padding: 36px 24px 24px;
+}
+
+.dashboard__license-donut-layout {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.dashboard__license-donut-shell {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+}
+
+.dashboard__license-status-tile span,
+.dashboard__license-leave-todo span {
+  color: #5f646d;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__license-status-tile-label {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dashboard__license-legend-list {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.dashboard__license-legend-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.dashboard__license-legend-item:focus-visible {
+  outline: 2px solid #92722a;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+.dashboard__license-legend-item--inactive {
+  opacity: 0.45;
+}
+
+.dashboard__license-legend-item--static {
+  cursor: default;
+}
+
+.dashboard__license-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dashboard__license-legend-label {
+  min-width: 0;
+  overflow: hidden;
+  color: #361e12;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__license-legend-item strong {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+/*
+  The three stat tiles under Service Application / Profile Verification must always
+  sit on ONE row at every width (Figma nodes 44390:73837 and 44390:74002) — fixed
+  3-column track, never auto-fit, and each tile clamps its own content instead of
+  pushing the row to wrap.
+*/
+.dashboard__license-footer-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.dashboard__license-footer-stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  min-width: 0;
+  min-height: 62px;
+  padding: 10px 16px 8px;
+  border-radius: 10px;
+  background: #f7f7f8;
+}
+
+/* Keep the label on one line; clip rather than grow the tile when space runs out. */
+.dashboard__license-footer-stat-label {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.dashboard__license-status-grid {
+  display: grid;
+  /*
+    Keep the four status tiles two-up while the card sits in the wide summary row (the
+    old greedy auto-fit collapsed them to one column once the 3-up card dropped below
+    ~380px). Below 1440 the staff wrapper overrides this to one column so the tiles
+    stack to match the paired My Performance list (Figma node 44390:74002).
+  */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.dashboard__license-summary-card--status-grid .dashboard__license-status-grid {
+  flex: 1 1 auto;
+  padding: 32px 24px 23px;
+}
+
+@media (max-width: 1439.98px) {
+  .dashboard__license-footer-stats {
+    gap: 4px;
+  }
+
+  .dashboard__license-footer-stat {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .dashboard__license-footer-stat:last-child {
+    padding-right: 0;
+  }
+
+  /*
+    License Distribution by Status, W<1440 (Figma node 44390:74002): content block
+    sits 32px under the title, 24px from the card edges, tiles 8px apart, each tile
+    10px/16px/8px padding at ~56px tall (was 20px 12px 12px with a 6px gap and 75px
+    tiles, which crowded the card once it pairs with My Performance).
+  */
+  .dashboard__license-summary-card--status-grid .dashboard__license-status-grid {
+    gap: 8px;
+    padding: 32px 24px 24px;
+  }
+
+  .dashboard__license-status-tile {
+    min-height: 56px;
+  }
+}
+
+.dashboard__license-status-tile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 75px;
+  padding: 10px 16px 8px;
+  border-radius: 10px;
+  background: #f7f7f8;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.dashboard__license-status-tile--total {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2px;
+}
+
+.dashboard__license-status-tile--total strong,
+.dashboard__license-status-tile-copy strong {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+.dashboard__license-status-tile-copy {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.dashboard__license-status-icon {
+  display: block;
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+}
+
+.dashboard__license-value {
+  color: #361e12;
+}
+
+.dashboard__license-value--placeholder {
+  color: #9ea2a9;
+}
+
+.dashboard__license-value--green {
+  color: #4a9d5c;
+}
+
+.dashboard__license-value--orange {
+  color: #f29f0e;
+}
+
+.dashboard__license-value--red {
+  color: #ea4f49;
+}
+
+.dashboard__license-value--blue {
+  color: #81c1ff;
+}
+
+.dashboard__license-value--gold {
+  color: #92722a;
+}
+
+.dashboard__license-coaching-table {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 0;
+}
+
+.dashboard__license-coaching-row {
+  display: grid;
+  /* Fixed 4 columns (Member / Overdue / SLA / Avg); auto-fit let rows wrap into a broken table. */
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  min-height: 50px;
+  padding: 0 16px;
+  border-top: 1px solid #e1e3e5;
+  color: #361e12;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__license-coaching-row > span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dashboard__license-coaching-row--head {
+  min-height: 46px;
+  border-top: 0;
+  background: #f7f7f8;
+  color: #797e86;
+  font-weight: 400;
+}
+
+.dashboard__license-coaching-overdue {
+  color: #ea4f49;
+}
+
+.dashboard__license-coaching-empty {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+  border-top: 0;
+}
+
+.dashboard__license-leave-list {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dashboard__license-leave-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-height: 92px;
+  padding: 12px 16px;
+  border: 1px solid #e1e3e5;
+  border-radius: 10px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.dashboard__license-leave-main {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.dashboard__license-leave-avatar,
+.dashboard__license-leave-avatar-image,
+.dashboard__license-leave-avatar-fallback {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.dashboard__license-leave-avatar-image {
+  object-fit: cover;
+}
+
+.dashboard__license-leave-avatar-fallback {
+  background: #e1e3e5;
+}
+
+.dashboard__license-leave-avatar-fallback img {
+  width: 20px;
+  height: 20px;
+}
+
+.dashboard__license-leave-copy {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.dashboard__license-leave-copy strong {
+  overflow: hidden;
+  color: #361e12;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.dashboard__license-leave-copy span {
+  overflow: hidden;
+  color: #5f646d;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__license-leave-return {
+  color: #eb5f24 !important;
+}
+
+.dashboard__license-leave-divider {
+  width: 1px;
+  align-self: stretch;
+  background: #e1e3e5;
+}
+
+.dashboard__license-leave-todo {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  gap: 4px;
+}
+
+.dashboard__license-leave-todo strong {
+  color: #92722a;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 16px;
+  }
+}
+
+.dashboard__license-leave-empty {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+}
+
+.dashboard__license-trend-empty {
+  min-height: 240px;
+}
+
+.dashboard__license-trend-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 0;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.dashboard__license-trend-legend {
+  display: flex;
+  /* Wrap the legend so it never overflows the chart card when narrow. */
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 16px;
+  }
+}
+
+.dashboard__license-trend-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  max-width: 100%;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s ease;
+}
+
+.dashboard__license-trend-legend-item:focus-visible {
+  outline: 2px solid fade(@primary-color, 28%);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.dashboard__license-trend-legend-item--inactive {
+  opacity: 0.45;
+}
+
+.dashboard__license-trend-legend-line {
+  --license-trend-color: #fad44f;
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 8px;
+}
+
+.dashboard__license-trend-legend-line::before {
+  position: absolute;
+  top: 50%;
+  left: 1px;
+  right: 1px;
+  height: 2px;
+  background: var(--license-trend-color);
+  content: "";
+  transform: translateY(-50%);
+}
+
+.dashboard__license-trend-legend-line::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--license-trend-color);
+  border-radius: 50%;
+  background: #ffffff;
+  content: "";
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+}
+
+.dashboard__license-trend-legend-label {
+  min-width: 0;
+  overflow: hidden;
+  color: #361e12;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__license-trend-chart-shell {
+  display: flex;
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+
+.dashboard__license-trend-chart {
+  flex: 1 1 auto;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+}
+
+/*
+  ECharts stamps inline pixel sizes on its inner wrapper when it initialises. If a
+  resize tick is missed (fonts settling, breakpoint jump), those stale pixels leave a
+  gap inside the card. Pin the wrapper to the shell so the chart always spans the whole
+  Performance Trend card; useAutoResizeEChart still calls resize() to redraw the canvas.
+*/
+.dashboard__license-trend-chart > div {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/*
+  Content module, aligned with the license module: fixed 2-up card rows (the summary
+  row is always Service Application + AI Risk) instead of width-driven auto-fit.
+*/
+.dashboard__content-summary-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.dashboard__content-performance-grid,
+.dashboard__content-support-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.dashboard__content-metric-card,
+.dashboard__content-summary-card,
+.dashboard__content-risk-card,
+.dashboard__content-coaching-card,
+.dashboard__content-leave-card,
+.dashboard__content-trend-card {
+  border-radius: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.dashboard__content-metric-card .dashboard__card-title,
+.dashboard__content-summary-card .dashboard__card-title,
+.dashboard__content-risk-card .dashboard__card-title,
+.dashboard__content-coaching-card .dashboard__card-title,
+.dashboard__content-leave-card .dashboard__card-title,
+.dashboard__content-trend-card .dashboard__card-title {
+  font-size: 20px;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+.dashboard__content-metric-card--manager {
+  min-height: 146px;
+}
+
+.dashboard__content-metric-card--staff,
+.dashboard__content-trend-card {
+  min-height: 280px;
+}
+
+.dashboard__content-summary-card,
+.dashboard__content-risk-card {
+  min-height: 316px;
+}
+.dashboard__content-summary-card {
+  display: flex;
+  flex-direction: column;
+}
+.dashboard__content-summary-card .dashboard__content-summary-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+.dashboard__content-summary-card .dashboard__content-donut-layout {
+  flex: 1 1 auto;
+  align-items: center;
+}
+.dashboard__content-summary-card .dashboard__content-footer-stats {
+  margin-top: auto;
+}
+.dashboard__content-coaching-card,
+.dashboard__content-leave-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 396px;
+}
+
+.dashboard__content-metric-grid {
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+/*
+  Content Team Performance (manager): the metric tiles stay on ONE row at every
+  width — the Figma content frames (node 44406:4875, "W<1440" manager) keep all
+  four tiles on a single row even on the narrow band, unlike the license module.
+  Staff metrics are a fixed 2×2.
+*/
+.dashboard__content-metric-card--manager .dashboard__content-metric-grid {
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-template-columns: none;
+}
+
+.dashboard__content-metric-card--staff .dashboard__content-metric-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.dashboard__content-metric-tile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+  background: #f7f7f8;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.dashboard__content-metric-card--manager .dashboard__content-metric-tile {
+  min-height: 74px;
+  padding: 16px 24px;
+  border-radius: 10px;
+}
+
+.dashboard__content-metric-card--staff .dashboard__content-metric-tile {
+  min-height: 86px;
+  padding: 20px 24px;
+  border-radius: 12px;
+}
+
+.dashboard__content-metric-icon {
+  display: block;
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+}
+
+.dashboard__content-metric-icon--sla-gauge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard__content-metric-copy {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.dashboard__content-metric-copy strong,
+.dashboard__content-footer-stat strong {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 16px;
+  }
+}
+
+.dashboard__content-metric-label,
+.dashboard__content-footer-stat-label {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  max-width: 100%;
+  gap: 4px;
+  color: #5f646d;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__content-metric-label-text,
+.dashboard__content-footer-stat-label-text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dashboard__content-info-icon {
+  display: block;
+  flex: 0 0 auto;
+  width: 12px;
+  height: 12px;
+  object-fit: contain;
+}
+
+.dashboard__content-info-icon-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  line-height: 0;
+}
+
+.dashboard__content-info-icon--md {
+  width: 16px;
+  height: 16px;
+}
+
+.dashboard__content-summary-body,
+.dashboard__content-risk-grid,
+.dashboard__content-trend-body,
+.dashboard__content-coaching-table,
+.dashboard__content-leave-list {
+  padding: 24px;
+}
+
+.dashboard__content-summary-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 16px;
+  }
+}
+
+.dashboard__content-donut-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding-right: 24px;
+  min-height: 130px;
+}
+
+.dashboard__content-donut-shell {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+}
+
+.dashboard__content-donut-ring {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.dashboard__content-donut-inner {
+  position: absolute;
+  inset: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.dashboard__content-donut-inner strong {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+.dashboard__content-donut-inner span,
+.dashboard__content-leave-todo span {
+  color: #5f646d;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__content-donut-inner span {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dashboard__content-legend-list {
+  display: flex;
+  /*
+    Shrinkable like the license module's legend list. The old fixed 320px column
+    (donut 120 + gap 40 + legend 320 + insets ≈ 528px) overflowed narrow cards and
+    the centered layout shoved the donut against the card edge.
+  */
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  max-width: 320px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.dashboard__content-legend-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.dashboard__content-legend-item:focus-visible {
+  outline: 2px solid #92722a;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+.dashboard__content-legend-item--inactive {
+  opacity: 0.45;
+}
+
+.dashboard__content-legend-item--static {
+  cursor: default;
+}
+
+.dashboard__content-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dashboard__content-legend-label {
+  min-width: 0;
+  overflow: hidden;
+  color: #361e12;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__content-legend-item strong {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+/*
+  Same one-row rule as the license dashboard's footer stats: the tiles under the
+  content module's Service Application / Profile Verification-style cards must never
+  wrap. Column auto-flow keeps every tile on the single row whatever the count —
+  the old auto-fit wrapped them as soon as the card dropped under ~3×300px.
+*/
+.dashboard__content-footer-stats {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  gap: 8px;
+}
+
+.dashboard__content-footer-stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  min-width: 0;
+  min-height: 62px;
+  padding: 10px 16px 8px;
+  border-radius: 10px;
+  background: #f7f7f8;
+}
+
+/* Keep the label on one line; clip rather than grow the tile when space runs out. */
+.dashboard__content-footer-stat-label {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/*
+  Keep Service Application and AI Content Risk Detection side by side below 1440px.
+  Service Application retains the donut/legend row with its stat tiles below.
+*/
+@media (max-width: 1439.98px) {
+  .dashboard__content-performance-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .dashboard__content-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 767.98px) {
+  .dashboard__content-summary-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Fixed two-up; auto-fit reflowed the risk tiles per card width. */
+.dashboard__content-risk-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.dashboard__content-risk-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  min-height: 48px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: #f8f7f4;
+}
+
+.dashboard__content-risk-item--muted {
+  opacity: 0.72;
+}
+
+.dashboard__content-risk-icon {
+  display: block;
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+}
+
+.dashboard__content-risk-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  color: #361e12;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.dashboard__content-risk-value {
+  flex: 0 0 auto;
+  color: #361e12;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.dashboard__content-risk-value--highlight {
+  color: #ea4f49;
+}
+
+.dashboard__content-risk-value--muted {
+  color: #9ea2a9;
+}
+
+.dashboard__content-value {
+  color: #361e12;
+}
+
+.dashboard__content-value--placeholder {
+  color: #9ea2a9;
+}
+
+.dashboard__content-value--green {
+  color: #4a9d5c;
+}
+
+.dashboard__content-value--orange {
+  color: #f29f0e;
+}
+
+.dashboard__content-value--red {
+  color: #ea4f49;
+}
+
+.dashboard__content-value--blue {
+  color: #81c1ff;
+}
+
+.dashboard__content-value--gold {
+  color: #92722a;
+}
+
+.dashboard__content-coaching-table {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 0;
+}
+
+.dashboard__content-coaching-row {
+  display: grid;
+  /* Fixed 4 columns (Member / Overdue / SLA / Avg); auto-fit let rows wrap into a broken table. */
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  min-height: 50px;
+  padding: 0 16px;
+  border-top: 1px solid #e1e3e5;
+  color: #361e12;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__content-coaching-row > span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dashboard__content-coaching-row--head {
+  min-height: 46px;
+  border-top: 0;
+  background: #f7f7f8;
+  color: #797e86;
+  font-weight: 400;
+}
+
+.dashboard__content-coaching-overdue {
+  color: #ea4f49;
+}
+
+.dashboard__content-coaching-empty {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+}
+
+.dashboard__content-leave-list {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dashboard__content-leave-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-height: 92px;
+  padding: 12px 16px;
+  border: 1px solid #e1e3e5;
+  border-radius: 10px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.dashboard__content-leave-main {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.dashboard__content-leave-avatar,
+.dashboard__content-leave-avatar-image,
+.dashboard__content-leave-avatar-fallback {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.dashboard__content-leave-avatar-image {
+  object-fit: cover;
+}
+
+.dashboard__content-leave-avatar-fallback {
+  background: #e1e3e5;
+}
+
+.dashboard__content-leave-avatar-fallback img {
+  width: 20px;
+  height: 20px;
+}
+
+.dashboard__content-leave-copy {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.dashboard__content-leave-copy strong {
+  overflow: hidden;
+  color: #361e12;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.dashboard__content-leave-copy span {
+  overflow: hidden;
+  color: #5f646d;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__content-leave-return {
+  color: #eb5f24 !important;
+}
+
+.dashboard__content-leave-divider {
+  width: 1px;
+  align-self: stretch;
+  background: #e1e3e5;
+}
+
+.dashboard__content-leave-todo {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  gap: 4px;
+}
+
+.dashboard__content-leave-todo strong {
+  color: #92722a;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 16px;
+  }
+}
+
+.dashboard__content-leave-empty {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+}
+
+.dashboard__content-trend-empty {
+  min-height: 208px;
+}
+
+.dashboard__content-trend-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.dashboard__content-trend-legend {
+  display: flex;
+  /* Wrap the legend so it never overflows the chart card when narrow. */
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 16px;
+  }
+}
+
+.dashboard__content-trend-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.dashboard__content-trend-legend-item:focus-visible {
+  outline: 2px solid #92722a;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+.dashboard__content-trend-legend-item--inactive {
+  opacity: 0.45;
+}
+
+.dashboard__content-trend-legend-line {
+  --content-trend-color: #fad44f;
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 8px;
+}
+
+.dashboard__content-trend-legend-line::before {
+  position: absolute;
+  top: 50%;
+  left: 1px;
+  right: 1px;
+  height: 2px;
+  background: var(--content-trend-color);
+  content: "";
+  transform: translateY(-50%);
+}
+
+.dashboard__content-trend-legend-line::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--content-trend-color);
+  border-radius: 50%;
+  background: #ffffff;
+  content: "";
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+}
+
+.dashboard__content-trend-legend-label {
+  min-width: 0;
+  overflow: hidden;
+  color: #361e12;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 16px;
+  }
+}
+
+.dashboard__content-trend-chart-shell {
+  flex: 1 1 auto;
+  height: 280px;
+  min-height: 280px;
+}
+
+.dashboard__content-trend-chart {
+  width: 100%;
+  height: 100% !important;
+}

@@ -1,0 +1,68 @@
+{
+  "PersonalCenter": {
+    "personalInformation": "Personal Information",
+    "personalPhoto": "Personal Photo",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "gender": "Gender",
+    "genderMale": "Male",
+    "genderFemale": "Female",
+    "emiratesId": "Emirates ID",
+    "mobilePhone": "Mobile Phone",
+    "mobilePhoneInvalid": "Mobile phone number must contain exactly 9 digits.",
+    "organizationRole": "Organization & Role",
+    "departments": "Departments",
+    "assignRoles": "Assign Roles",
+    "addressInformation": "Address Information",
+    "emirate": "Emirate",
+    "region": "Region",
+    "area": "Area",
+    "street": "Street",
+    "placeholderSelectEmirate": "Select emirate",
+    "placeholderSelectRegion": "Select region",
+    "placeholderSelectArea": "Select area",
+    "placeholderEnterStreet": "Enter street",
+    "loginSettings": "Login Settings",
+    "lastLoginDate": "Last Login Date",
+    "changePassword": "Change Password",
+    "confirm": "Confirm",
+    "verifyCode": "Verify Code",
+    "changePasswordMessages": {
+      "firstLoginEmailNotice": "For security reasons, you must change your temporary password. A verification code will be sent to your email.",
+      "normalEmailNotice": "A verification code will be sent to your registered email address to change your password.",
+      "firstLoginPasswordNotice": "Please set your new password.",
+      "normalPasswordNotice": "Please enter your current password and set your new password."
+    },
+    "changePasswordFields": {
+      "currentPassword": "Current Password",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm Password"
+    },
+    "changePasswordPlaceholders": {
+      "currentPassword": "Enter current password",
+      "newPassword": "Enter new password",
+      "confirmPassword": "Enter confirm password"
+    },
+    "changePasswordValidation": {
+      "enterCurrentPassword": "Please enter current password",
+      "enterNewPassword": "Please enter new password",
+      "enterConfirmPassword": "Please enter confirm password",
+      "newPasswordSameAsCurrent": "New password cannot be the same as your current password.",
+      "passwordsDoNotMatch": "Passwords do not match"
+    },
+    "changePasswordErrors": {
+      "currentPasswordIncorrect": "Current password is incorrect"
+    },
+    "leavePageTitle": "Leaving the Page?",
+    "leavePageContent": "You have unsaved changes that will be lost if you leave. Do you want to continue?",
+    "leave": "Leave",
+    "operationSuccessful": "Operation successful.",
+    "operationFailed": "Operation failed!",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "avatarMaxFileSize": "Max file size: 5MB.",
+    "avatarInvalidFileType": "Invalid file type."
+  }
+}

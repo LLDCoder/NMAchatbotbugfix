@@ -1,0 +1,89 @@
+.team-management-resume-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 128px;
+  padding-right: 40px;
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 12px;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c19453;
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  &__title {
+    margin: 0;
+    color: #2c2f36;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 18px;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    padding-left: 40px;
+    color: #5d6169;
+    font-size: 16px;
+    line-height: 1.5;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 14px;
+    }
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.team-management-modal--resume {
+  .ant-modal-content {
+    border-radius: 20px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      border-radius: 10px;
+    }
+  }
+
+  .ant-modal-body {
+    padding: 32px 32px 20px;
+  }
+
+  .ant-modal-footer {
+    padding: 0 32px 32px;
+    border-top: none;
+  }
+
+  .team-management-modal__footer {
+    gap: 16px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 12px;
+    }
+  }
+}
+
+.team-management-modal--rtl {
+  .team-management-resume-modal {
+    &__description {
+      padding-left: 0;
+      padding-right: 40px;
+    }
+  }
+}

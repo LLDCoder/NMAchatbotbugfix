@@ -1,0 +1,35 @@
+{
+  "source": "test/runtime/group15-account-repair-20260928/round8-c04-ui/C-04__ar/browser-receipts.json",
+  "sourceSHA256": "5a0c2a6f4d4d9d95e7a939b90fe60aa6b3bc49abfde971264ee676495e020d8a",
+  "sourceAt": "2026-09-28T10:54:08.548Z",
+  "authResponse": {
+    "data": {
+      "id": "46ce3439-a6df-4180-b6d1-9c79d4b04479",
+      "firstName": "License",
+      "lastName": "Staff ff",
+      "listRoles": [
+        {
+          "id": "LICENSING_OFFICER",
+          "name": "Licensing Officer",
+          "discriminator": "Role",
+          "isShown": true,
+          "nameEn": "موظف التراخيص",
+          "nameAr": "موظف التراخيص",
+          "descEn": "يراجع ويعالج طلبات التراخيص المسندة إليه، ويتحقق من بيانات الطلب والمستندات، ويعيد الطلبات غير المكتملة لاستيفاء المتطلبات.",
+          "descAr": "يراجع ويعالج طلبات التراخيص المسندة إليه، ويتحقق من بيانات الطلب والمستندات، ويعيد الطلبات غير المكتملة لاستيفاء المتطلبات.",
+          "departmentId": 1,
+          "status": "1",
+          "createAt": "2026-06-29T06:00:16",
+          "adminUsers": []
+        }
+      ],
+      "rolesInfo": [
+        {
+          "roleID": "LICENSING_OFFICER",
+          "roleName": "Licensing Officer"
+        }
+      ]
+    }
+  },
+  "selection": "Only native identity/display fields required for offline projection; no token/email/phone, no fabricated department names."
+}

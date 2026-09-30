@@ -1,0 +1,72 @@
+.fahr-partner-list-section {
+  margin-top: 20px;
+  display: block;
+  width: 100%;
+  .partnerList--fahr-review {
+    background: #fff;
+    border: 1px solid #e1e3e5;
+    border-radius: 12px;
+    padding: 24px;
+    backdrop-filter: blur(5px);
+    width: 100%;
+    .detail-section,
+    .detail-section > .ant-card-body {
+      background: transparent;
+      border-radius: 0;
+      padding: 0;
+    }
+    .detail-section-body {
+      gap: 16px;
+    }
+    .section-title {
+      color: #361e12;
+      font-family: Inter;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 22px;
+    }
+    .partner-grid {
+      gap: 16px;
+    }
+    .partner-card--fahr-review {
+      position: relative;
+    }
+    .partner-card--fahr-review .partner-card__status-slot {
+      min-height: 26px;
+    }
+    .partner-card--fahr-review .fahr-review-status-tag-group {
+      width: 100%;
+    }
+    .fahr-review-status-tag {
+      justify-content: space-between;
+      padding: 3px 16px;
+      width: 100%;
+    }
+  }
+}
+
+.fahr-partner-list-section__unmatched-targets {
+  margin-top: 12px;
+  border: 1px solid #e1e3e5;
+  background: #fff;
+}
+
+.fahr-partner-list-section__unmatched-target {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e1e3e5;
+}
+
+.fahr-partner-list-section__unmatched-target:last-child {
+  border-bottom: 0;
+}
+
+.fahr-partner-list-section__unmatched-target-name {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: #1f2328;
+  font-weight: 600;
+}

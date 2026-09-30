@@ -1,0 +1,417 @@
+{
+  "schemaVersion": "1.0",
+  "bundleId": "admin.page-docs.content.applications.sla-semantics",
+  "createdAt": "2026-09-27T23:29:23.691079+00:00",
+  "packageStatus": "active",
+  "records": [
+    {
+      "id": "admin.page-docs.content.applications.sla-semantics",
+      "kind": "field_semantics",
+      "revision": 5,
+      "status": "active",
+      "title": "Content Application Tasks SLA clocks, pauses and fixed-reference analysis",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local"
+        ],
+        "pageRefs": [
+          "/content/ContentApplications"
+        ],
+        "runtimeVerification": "field_shapes_observed",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Application/ApplicationDto.cs",
+          "revision": "3efae9b26845ec68130f314cbccfd0861bb76f19a22ab6d083f5ec9435042cdc",
+          "locator": "MyReviewPageResponse and ApplicationTimeLineResponse",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ApplicationAppService.cs",
+          "revision": "22e94773e70c95fab9ce479919b51d0241e046bf085cd0c3f8b5991b9004772e",
+          "locator": "NormalizePausedSla, ApplyMyReviewSort, GetMyReviewDetailAsync",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Infrastructure/Utils/Extensions.ProcessInstance.cs",
+          "revision": "6adaec8378d2c091460bab450710437d206cf2a50b4f19a0f8e4393ffe58283a",
+          "locator": "ToSLAString and ToSLADueInString signed minutes",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Domain/Shares/DateTimeHelper.cs",
+          "revision": "7f405eebfca51883b884784cebdaf92425b0496bfc357e26bf99ca61c36ed4d0",
+          "locator": "Dubai wall-clock storage contract",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Domain/Shares/Enums/TypeDics/ApprovalNodeOrder.cs",
+          "revision": "d5919116f03550154e9645534b8350d3b835446ceff44ee758df24eb9537a402",
+          "locator": "ExternalApproval=11, PendingModification=13",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.API/Controllers/ContentController.cs",
+          "revision": "89a682ad6bb77e51bf21d22026fb79e57364b0dc1efa0c8b88f4ad070ce9181d",
+          "locator": "MyTodoPage delegates to shared GetMyReviewPageAsync with Content department and current permission.",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/ContentApplications/components/MyTasks/index.tsx",
+          "revision": "sha256:42d266c063fe64a6b689bfc38876f91ba7b0b150ea861f986996b7dcf524774c",
+          "locator": "request/requestConfig and Todo getParams; absent optional filters are omitted",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/content/ContentApplications",
+        "fields": {
+          "sla": "Signed review-clock minutes",
+          "slaDescription": "Localized rounded SLA display",
+          "statusId": "Projected process state. PendingModification is 13 and pauses review SLA. Disposition Pending is 108; Verification is 109.",
+          "taskId": "Projected workflow task key",
+          "submissionTime": "Submission time, not deadline",
+          "taskDueTime": "Normal approval-node due wall time in Asia/Dubai. A disposition case due date is a different clock.",
+          "taskApprovalAt": "Normal approval completion wall time in Asia/Dubai; null means the normal node clock uses the observation reference instant.",
+          "taskStatusId": "ApprovalNodeOrder key. ExternalApproval is 11. Active disposition rows have null taskStatusId.",
+          "overdueDays": "Signed elapsed review days at the same fixed reference instant as sla; exactly signed SLA minutes divided by 1440. Positive means overdue, null means paused or unavailable.",
+          "isOverdue": "Raw task deadline comparison (approval time or current time greater than taskDueTime). It does not apply review-clock paused-state normalization and is not interchangeable with positive numeric review SLA."
+        },
+        "relationships": [
+          "Review SLA measures workflow timing; certificate expiry is a separate clock.",
+          "The most overdue item has the maximum positive SLA value in the complete requested population. Rounded day labels can hide ties.",
+          "A page default sort can contain status/VIP buckets and is not proof of a global SLA maximum."
+        ],
+        "constraints": [
+          "Today can be a query reference time rather than a submission-date filter; retain the requested meaning.",
+          "A general business priority or escalation rule is not defined by SLA alone.",
+          "Pending Modification and External Approval can pause/hide review SLA; use the current supplied value and display.",
+          "Zero is the due boundary, not a confirmed positive overdue duration.",
+          "Full-population analysis uses the stable projected timestamps and status inputs from two matching scans, then calculates at one reference instant. Raw sla and rounded slaDescription change with wall time and are not suitable for strict cross-scan equality.",
+          "For Disposition Verification, reviewDue = submission.SubmittedOn + (reviewSla - initialReviewMinutes). Case TaskDueTime is not reviewDue. If these operands are absent from the authorized response, keep that row unconfirmed and obtain the appropriate detail evidence; never reuse the normal-node formula.",
+          "Displayed rounded labels are presentation only; order by signed numeric minutes and state the reference time. Calculated values are source-defined computations, not a transactional server snapshot.",
+          "للمهام العادية تُحسب دقائق التأخر عند وقت مرجعي واحد من وقت الاستحقاق ووقت إتمام المراجعة. حالات التوقف لا تُحسب صفراً. التحقق من التصرف له ساعة مختلفة؛ إذا غابت مدخلاتها، تبقى النتيجة غير مؤكدة.",
+          "The raw isOverdue flag compares the task deadline without applying the review SLA pause semantics. Determine review overdue work using positive signed review SLA with the documented paused-state conditions; do not replace this with the raw flag.",
+          "Exclude explicitly documented paused states before testing the remaining nullable clock; other missing active clock inputs remain unknown. A missing clock is not proof of being on time.",
+          "ليست قيمة isOverdue العامة بديلاً عن ساعة مراجعة المحتوى: قد تبقى صحيحة أثناء توقف ساعة المراجعة. حدّد تجاوز مهلة المراجعة من قيمة SLA الموجبة وشروط التوقف الموثّقة، واحفظ القيم النشطة غير المعروفة.",
+          "The returned numeric review clock and its equivalent day unit describe the same time interval. Order by the precise duration, not rounded display labels, and keep the full requested task list.",
+          "The default current MyTodoPage request includes approvalStatus:null, startTime:null and endTime:null. Optional empty keyword/serviceCodes/processInstanceStatus are omitted by the inspected page; it does not send legacy serviceTypeId. This population binding applies only to that exact current unfiltered request. An extra filter, an empty value sent in place of omission, or a different page context needs separate proof. Do not select an unrelated Approval or service control to imitate stale request defaults.",
+          "A count-only measure is row counting after independently validated population and filters; it never supplies missing SLA eligibility or proves that all task clocks are available. Numeric overdue day descending and signed SLA minute descending have the same order because days are minutes divided by the positive constant 1440. Their displayed units remain distinct."
+        ],
+        "sourceBinding": {
+          "operationRef": "POST /api/Content/MyTodoPage",
+          "sourcePath": "/data/page/items"
+        },
+        "bindings": [
+          {
+            "id": "sla",
+            "kind": "attribute",
+            "concept": "SLA minutes",
+            "aliases": [
+              "review-clock minutes",
+              "signed SLA minutes",
+              "دقائق التأخر",
+              "دقائق مهلة المراجعة"
+            ],
+            "operationRef": "POST /api/Content/MyTodoPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "sla"
+            ],
+            "meaning": "Signed minutes: positive overdue; negative time remaining. Null is unavailable/paused, not zero.",
+            "displayUnit": "min"
+          },
+          {
+            "id": "overdue",
+            "kind": "filter",
+            "concept": "overdue",
+            "aliases": [
+              "over SLA",
+              "متأخر",
+              "متأخرة",
+              "متجاوزة للمهلة",
+              "تجاوزت مهلة SLA"
+            ],
+            "operationRef": "POST /api/Content/MyTodoPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "sla"
+            ],
+            "meaning": "Strictly positive signed minutes identify overdue review work; retain unknown nulls separately."
+          },
+          {
+            "id": "overdue_count",
+            "kind": "measure",
+            "concept": "overdue tasks",
+            "aliases": [
+              "overdue task count",
+              "مهام مراجعة المحتوى المتأخرة",
+              "عدد المهام المتأخرة"
+            ],
+            "operationRef": "POST /api/Content/MyTodoPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "taskId",
+              "sla",
+              "statusId",
+              "taskStatusId"
+            ],
+            "meaning": "Exclude explicitly paused process states 13/108 first, then ExternalApproval task node 11, before evaluating positive signed SLA. These known paused rows are outside overdue population, not unknown. Null or unavailable clock on any other row remains unknown. Disposition Verification 109 requires its own documented clock inputs and cannot be silently excluded.",
+            "operator": "count",
+            "conditions": [
+              {
+                "field": "statusId",
+                "predicate": "not_in",
+                "value": [
+                  13,
+                  108
+                ]
+              },
+              {
+                "field": "taskStatusId",
+                "predicate": "not_in",
+                "value": [
+                  11
+                ]
+              },
+              {
+                "field": "sla",
+                "predicate": "gt",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "operationRef": "POST /api/Content/MyTodoPage",
+            "sourcePath": "/data/page/items",
+            "id": "sla_display",
+            "kind": "attribute",
+            "concept": "SLA",
+            "aliases": [
+              "review SLA",
+              "SLA display",
+              "service level agreement",
+              "اتفاقية مستوى الخدمة",
+              "service level agreement SLA",
+              "review service level agreement"
+            ],
+            "fields": [
+              "slaDescription"
+            ],
+            "meaning": "The current rendered review SLA text, including its duration unit and Overdue/Due In suffix; null or -- is not a zero duration."
+          },
+          {
+            "operationRef": "POST /api/Content/MyTodoPage",
+            "sourcePath": "/data/page/items",
+            "id": "overdue_days",
+            "kind": "attribute",
+            "concept": "overdue days",
+            "aliases": [
+              "days overdue",
+              "overdue duration",
+              "أيام التأخير",
+              "عدد أيام التأخير",
+              "delay days",
+              "days of delay",
+              "عدد أيام التأخر",
+              "أيام التأخر",
+              "مدة التأخر بالأيام"
+            ],
+            "fields": [
+              "overdueDays"
+            ],
+            "meaning": "Signed elapsed review days at the same fixed reference instant as sla; exactly signed SLA minutes divided by 1440. Positive means overdue, null means paused or unavailable.",
+            "displayUnit": "days"
+          },
+          {
+            "id": "over_sla_population",
+            "kind": "population",
+            "concept": "over SLA",
+            "aliases": [
+              "overdue",
+              "SLA exceeded",
+              "تجاوز اتفاقية مستوى الخدمة",
+              "متأخر",
+              "exceeded the service level agreement",
+              "exceeded service level agreement",
+              "service level agreement exceeded",
+              "service level agreement breached",
+              "SLA breached",
+              "تجاوزت اتفاقية مستوى الخدمة",
+              "مهام تجاوزت مهلة المراجعة",
+              "مهام فوق SLA"
+            ],
+            "operationRef": "POST /api/Content/MyTodoPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "sla",
+              "statusId",
+              "taskStatusId"
+            ],
+            "conditions": [
+              {
+                "field": "statusId",
+                "predicate": "not_in",
+                "value": [
+                  13,
+                  108
+                ]
+              },
+              {
+                "field": "taskStatusId",
+                "predicate": "not_in",
+                "value": [
+                  11
+                ]
+              },
+              {
+                "field": "sla",
+                "predicate": "gt",
+                "value": 0
+              }
+            ],
+            "meaning": "Exclude explicitly paused process states 13/108 first, then ExternalApproval task node 11, before evaluating positive signed SLA. These known paused rows are outside overdue population, not unknown. Null or unavailable clock on any other row remains unknown. Disposition Verification 109 requires its own documented clock inputs and cannot be silently excluded.",
+            "contextParameters": {
+              "approvalStatus": null,
+              "startTime": null,
+              "endTime": null
+            }
+          },
+          {
+            "id": "sla_order",
+            "kind": "ordering",
+            "concept": "signed SLA minutes descending",
+            "aliases": [
+              "SLA delay descending",
+              "most overdue first",
+              "overdue duration descending",
+              "SLA minutes descending",
+              "ترتيب الأكثر تأخرا حسب اتفاقية مستوى الخدمة",
+              "أيام التأخر تنازلياً",
+              "الأكثر تأخراً أولاً",
+              "overdue days descending",
+              "delay days descending",
+              "number of overdue days descending",
+              "number of delay days descending",
+              "days overdue descending",
+              "أيام التأخير تنازلياً",
+              "عدد أيام التأخير تنازلياً"
+            ],
+            "operationRef": "POST /api/Content/MyTodoPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "sla",
+              "statusId",
+              "taskStatusId"
+            ],
+            "direction": "descending",
+            "valueType": "number",
+            "meaning": "Ranks observed signed review-clock minutes numerically, greatest positive overdue value first. Preserve ties, missing values and the complete requested population. This ordering is not a definition of business urgency or a universal priority policy. Rank only rows whose review clock is applicable: exclude the explicitly documented paused process states and external-approval task node first. Retain negative non-overdue active values; do not apply a positive-SLA filter unless overdue-only was also requested. Describe the paused class as outside SLA ranking, never as missing data or as zero. Any other missing clock remains unknown and must not be silently dropped.",
+            "valueField": "sla",
+            "conditions": [
+              {
+                "field": "statusId",
+                "predicate": "not_in",
+                "value": [
+                  13,
+                  108
+                ]
+              },
+              {
+                "field": "taskStatusId",
+                "predicate": "not_in",
+                "value": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "id": "selected_task_count",
+            "kind": "measure",
+            "concept": "task count",
+            "aliases": [
+              "count",
+              "number of tasks",
+              "total number of tasks",
+              "عدد المهام",
+              "العدد"
+            ],
+            "operator": "count",
+            "operationRef": "POST /api/Content/MyTodoPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "taskId"
+            ],
+            "meaning": "Count task rows in the complete, independently verified selected population. This measure does not choose or prove that population. Over-SLA requests must separately prove the documented overdue predicate and exact request scope; unknown active clock inputs must remain unconfirmed. It does not count applicants, applications, officers, or historical workflow events."
+          }
+        ],
+        "temporalDerivations": [
+          {
+            "field": "sla",
+            "operator": "elapsed_minutes",
+            "startField": "taskDueTime",
+            "endField": "taskApprovalAt",
+            "endNull": "reference_time",
+            "sourceTimezone": "Asia/Dubai",
+            "nullStartValue": 0,
+            "requiresNonNull": [
+              "taskStatusId"
+            ],
+            "nullWhen": [
+              {
+                "field": "taskStatusId",
+                "equals": 11
+              },
+              {
+                "field": "statusId",
+                "equals": 13
+              },
+              {
+                "field": "statusId",
+                "equals": 108
+              }
+            ],
+            "description": "For normal workflow tasks, compute signed minutes from the due time at one fixed UTC reference; completed tasks use taskApprovalAt. Pending Modification, External Approval and Pending Disposition have null review SLA. Active Disposition Verification is excluded from this formula: its clock depends on submission time and remaining review budget. Null or unverified clocks are not zero and must be reported separately."
+          },
+          {
+            "field": "overdueDays",
+            "operator": "elapsed_days",
+            "startField": "taskDueTime",
+            "endField": "taskApprovalAt",
+            "endNull": "reference_time",
+            "sourceTimezone": "Asia/Dubai",
+            "nullStartValue": 0,
+            "requiresNonNull": [
+              "taskStatusId"
+            ],
+            "nullWhen": [
+              {
+                "field": "taskStatusId",
+                "equals": 11
+              },
+              {
+                "field": "statusId",
+                "equals": 13
+              },
+              {
+                "field": "statusId",
+                "equals": 108
+              }
+            ],
+            "description": "Elapsed review days = signed elapsed minutes / 1440 with the identical documented workflow clock and pause rules."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "scope": "v40 local development source handoff; no remote deployment",
+  "checks": {
+    "pythonSyntaxFiles": 363,
+    "nodeScriptSyntax": "passed",
+    "stagedSanitizedFrontendBuild": "passed using existing installed dependencies; not a fresh install",
+    "dockerHostHeaderOnStagedPortal": "passed on isolated temporary Vite port",
+    "localOnlyInitialization": "passed",
+    "configPreservedOnReinit": "passed",
+    "privateConfigMode": "0600",
+    "composeConfiguration": "passed",
+    "knownCredentialScan": "passed",
+    "debugConfigIncluded": false,
+    "runtimeDataIncluded": false,
+    "supplementarySourceEvidenceFiles": 2,
+    "logicalSourcePathAliases": 1
+  },
+  "limits": [
+    "No full fresh-machine image build or business acceptance run in this packaging check.",
+    "42 known regression failures remain; business acceptance is incomplete. See DELIVERY_STATE.json."
+  ]
+}

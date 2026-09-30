@@ -1,0 +1,181 @@
+.LogsDetail-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 100%;
+  overflow: visible;
+  .container {
+    border-radius: 20px;
+    padding: 24px;
+    background-color: #fff;
+    box-sizing: border-box;
+    .container-title {
+      font-family: Inter;
+      font-weight: 600;
+      font-style: Semi Bold;
+      font-size: 24px;
+      letter-spacing: 0px;
+      margin-bottom: 24px;
+    }
+    .container-html {
+      background-color: #f9fafb;
+      border: 1px solid #e1e3e5;
+      padding: 24px;
+      font-family: Inter;
+      font-weight: 500;
+      font-style: Medium;
+      font-size: 14px;
+      color: #797e86;
+      line-height: 20px;
+      letter-spacing: 0px;
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+    .container-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 16px 24px;
+      .item {
+        min-width: 0;
+        .title {
+          font-family: Inter;
+          font-weight: 500;
+          font-style: Medium;
+          font-size: 14px;
+          line-height: 20px;
+          letter-spacing: 0px;
+          color: #797e86;
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            font-size: 12px;
+            line-height: 16px;
+          }
+        }
+        .value {
+          font-family: Inter;
+          font-weight: 500;
+          font-style: Medium;
+          font-size: 16px;
+          color: #361e12;
+          line-height: 24px;
+          letter-spacing: 0px;
+          overflow-wrap: anywhere;
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      border-radius: 10px;
+    }
+  }
+  .icon-flex {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 12px;
+    .icon-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      img {
+        width: 40px;
+        height: 40px;
+      }
+      .title {
+        font-family: Inter;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 14px;
+        letter-spacing: 0px;
+        margin-bottom: 4px;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 12px;
+        }
+      }
+      .value {
+        font-family: Inter;
+        font-weight: 600;
+        font-style: Semi Bold;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0px;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        gap: 8px;
+      }
+    }
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.logs-detail-actions {
+  display: flex;
+  justify-content: flex-end;
+  min-height: 32px;
+}
+
+.logs-detail-state {
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+}
+
+.logs-detail-summary .container-title {
+  color: #361e12;
+  overflow-wrap: anywhere;
+}
+
+.LogsDetail-container .status-tag {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.LogsDetail-container .status-tag.Success {
+  background-color: #f3faf4;
+  color: #4a9d5c;
+}
+
+.LogsDetail-container .status-tag.Failed {
+  background-color: #fef2f2;
+  color: #ea4f49;
+}
+
+@media (max-width: 991.98px) {
+  .LogsDetail-container .icon-flex {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .LogsDetail-container .container .container-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .LogsDetail-container .icon-flex,
+  .LogsDetail-container .container .container-row {
+    grid-template-columns: 1fr;
+  }
+}

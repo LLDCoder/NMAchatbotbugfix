@@ -1,0 +1,310 @@
+{
+  "source": "test/runtime/groups1113-20260928/round22-b11-v31/answers/B-11__en.json",
+  "conversationId": "conv_9f52b5581010433f92be",
+  "requestId": "5e5d9ec9-4bfe-425d-8af5-f0ea6a68f3be",
+  "question": "I am seeing a conflicting status for this same application on the page. Please re-check the current record, explain which source and observation time your answer uses, and tell me how to refresh or verify the discrepancy. Do not change any data.",
+  "rejectedCandidates": [
+    {
+      "view": "",
+      "stage": "task",
+      "filters": [],
+      "groupBy": [],
+      "readOnly": true,
+      "timeField": "",
+      "timeRange": "unknown",
+      "outputShape": "detail",
+      "searchQuery": "application status conflicting values source observation time refresh verify discrepancy procedure ML-1-7-6577159",
+      "slotUpdates": [
+        {
+          "field": "requestedAttributes",
+          "value": [
+            "status",
+            "source of the status answer",
+            "observation time of the status answer",
+            "documented procedure to refresh or verify a conflicting status"
+          ],
+          "source": "current",
+          "evidence": "re-check the current record, explain which source and observation time your answer uses, and tell me how to refresh or verify the discrepancy"
+        },
+        {
+          "field": "businessObject",
+          "value": "application",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "recordIdentity",
+          "value": "ML-1-7-6577159",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "requestedGrain",
+          "value": "application",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "requestedScope",
+          "value": "unknown",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "outputShape",
+          "value": "detail",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "timeRange",
+          "value": "unknown",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "businessFocus",
+          "value": "",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "requestedMeasures",
+          "value": [],
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "groupBy",
+          "value": [],
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "filters",
+          "value": [],
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "view",
+          "value": "",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "timeField",
+          "value": "",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "requestedOrdering",
+          "value": [],
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "groupCompleteness",
+          "value": "observed",
+          "source": "previous",
+          "evidence": ""
+        }
+      ],
+      "responseMode": "answer",
+      "businessFocus": "",
+      "clarification": null,
+      "needsLiveData": true,
+      "businessObject": "application",
+      "recordIdentity": "ML-1-7-6577159",
+      "requestedGrain": "application",
+      "requestedScope": "unknown",
+      "contextRelation": "continue",
+      "unresolvedSlots": [],
+      "disclosurePurpose": "",
+      "groupCompleteness": "observed",
+      "requestBoundaries": [],
+      "requestedMeasures": [],
+      "requestedOrdering": [],
+      "requestedAttributes": [
+        "status",
+        "source of the status answer",
+        "observation time of the status answer",
+        "documented procedure to refresh or verify a conflicting status"
+      ],
+      "evidenceExplanations": [
+        {
+          "kind": "source",
+          "attribute": "source of the status answer",
+          "questionQuote": "explain which source and observation time your answer uses",
+          "aboutAttribute": "status"
+        },
+        {
+          "kind": "observation_time",
+          "attribute": "observation time of the status answer",
+          "questionQuote": "explain which source and observation time your answer uses",
+          "aboutAttribute": "status"
+        },
+        {
+          "kind": "knowledge_guidance",
+          "attribute": "documented procedure to refresh or verify a conflicting status",
+          "questionQuote": "tell me how to refresh or verify the discrepancy"
+        }
+      ]
+    },
+    {
+      "view": "",
+      "stage": "task",
+      "filters": [],
+      "groupBy": [],
+      "readOnly": true,
+      "timeField": "",
+      "timeRange": "unknown",
+      "outputShape": "detail",
+      "searchQuery": "application status ML-1-7-6577159 conflicting status source observation time refresh verify discrepancy",
+      "slotUpdates": [
+        {
+          "field": "requestedAttributes",
+          "value": [
+            "status",
+            "source of the status answer",
+            "observation time of the status answer",
+            "documented procedure to refresh or verify a conflicting status"
+          ],
+          "source": "current",
+          "evidence": "explain which source and observation time your answer uses, and tell me how to refresh or verify the discrepancy"
+        },
+        {
+          "field": "outputShape",
+          "value": "detail",
+          "source": "current",
+          "evidence": "re-check the current record"
+        },
+        {
+          "field": "recordIdentity",
+          "value": "ML-1-7-6577159",
+          "source": "previous",
+          "evidence": "this same application"
+        },
+        {
+          "field": "businessObject",
+          "value": "application",
+          "source": "previous",
+          "evidence": "this same application"
+        },
+        {
+          "field": "requestedGrain",
+          "value": "application",
+          "source": "previous",
+          "evidence": "this same application"
+        },
+        {
+          "field": "requestedScope",
+          "value": "unknown",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "timeRange",
+          "value": "unknown",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "businessFocus",
+          "value": "",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "disclosurePurpose",
+          "value": "",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "requestedMeasures",
+          "value": [],
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "groupBy",
+          "value": [],
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "filters",
+          "value": [],
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "view",
+          "value": "",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "timeField",
+          "value": "",
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "requestedOrdering",
+          "value": [],
+          "source": "previous",
+          "evidence": ""
+        },
+        {
+          "field": "groupCompleteness",
+          "value": "observed",
+          "source": "previous",
+          "evidence": ""
+        }
+      ],
+      "responseMode": "answer",
+      "businessFocus": "",
+      "clarification": null,
+      "needsLiveData": true,
+      "businessObject": "application",
+      "recordIdentity": "ML-1-7-6577159",
+      "requestedGrain": "application",
+      "requestedScope": "unknown",
+      "contextRelation": "continue",
+      "unresolvedSlots": [],
+      "disclosurePurpose": "",
+      "groupCompleteness": "observed",
+      "requestBoundaries": [],
+      "requestedMeasures": [],
+      "requestedOrdering": [],
+      "requestedAttributes": [
+        "status",
+        "source of the status answer",
+        "observation time of the status answer",
+        "documented procedure to refresh or verify a conflicting status"
+      ],
+      "evidenceExplanations": [
+        {
+          "kind": "source",
+          "attribute": "source of the status answer",
+          "questionQuote": "explain which source and observation time your answer uses",
+          "aboutAttribute": "status"
+        },
+        {
+          "kind": "observation_time",
+          "attribute": "observation time of the status answer",
+          "questionQuote": "explain which source and observation time your answer uses",
+          "aboutAttribute": "status"
+        },
+        {
+          "kind": "knowledge_guidance",
+          "attribute": "documented procedure to refresh or verify a conflicting status",
+          "questionQuote": "tell me how to refresh or verify the discrepancy"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+/*
+  P2a — breakpoint-aware layout spacing. Responsive spec, confirmed with design 2026-07.
+
+  This file is matched by postcss.config.js `MIGRATED`, so its px are NOT rewritten
+  to rem. That is the whole point: the spec calls for margins that stay fixed at a
+  given viewport width, which the global px->rem rewrite plus a scaling root
+  font-size cannot express.
+
+  Imported AFTER src/layout/index.css — same `.layout` specificity, so source order
+  decides. See src/layout/index.tsx.
+
+  ── Spec ──────────────────────────────────────────────────────────────────────
+    band            margin   sider   gap   content
+    1024 ≤ W < 1280   12       56     12    W − 92
+    1280 ≤ W < 1440   16       56     16    W − 104
+    1440 ≤ W < 1920   24       96     24    W − 168
+    W ≥ 1920          (W−1676)/2      132   24    1520 (fixed, centred)
+
+  ── Sider width (added in P3) ─────────────────────────────────────────────────
+  --layout-sider-width now varies too. It only works because the rail's own
+  metrics derive from it — see src/styles/rwd/sider.css, which replaces the
+  hard-coded `width: 116px` on .menu-item. Changing the token alone would just
+  squeeze a label-bearing sidebar.
+
+  ── Why only three variables ──────────────────────────────────────────────────
+  The existing layout already derives everything else:
+
+    left margin  = --layout-outer-gutter + --layout-side-spacing
+    right margin = --layout-scroll-edge-spacing
+                   (padding-inline-end is 0 so the scrollbar reaches the viewport
+                   edge; the inner wrappers reserve this space instead)
+    content      = min(100% − scroll-edge-spacing, --layout-visual-content-width)
+
+  Below 1920 the outer gutter is already 0 — max(0, (100vw − 1724px) / 2) clamps —
+  so the fixed margin is carried entirely by side-spacing / scroll-edge-spacing and
+  the content width falls out as the remainder.
+
+  At and above 1920 the current values already satisfy the spec and are restated
+  here only so they become literal px instead of scaled rem:
+    outer-gutter + side = (W − 1724)/2 + 24 = (W − 1676)/2   ✓ 122 at W = 1920
+    visual-content-width = 1724 − 24 − 24 − 132 − 24 = 1520   ✓
+*/
+
+/* 1024 ≤ W < 1280 — also the floor; narrower viewports are out of scope. */
+@media (max-width: 1279.98px) {
+  .layout {
+    --layout-side-spacing: 12px;
+    --layout-scroll-edge-spacing: 12px;
+    --layout-content-gap: 12px;
+    --layout-sider-width: 56px;
+  }
+}
+
+/* 1280 ≤ W < 1440 */
+@media (min-width: 1280px) and (max-width: 1439.98px) {
+  .layout {
+    --layout-side-spacing: 16px;
+    --layout-scroll-edge-spacing: 16px;
+    --layout-content-gap: 16px;
+    --layout-sider-width: 56px;
+  }
+}
+
+/* 1440 ≤ W < 1920 */
+@media (min-width: 1440px) and (max-width: 1919.98px) {
+  .layout {
+    --layout-side-spacing: 24px;
+    --layout-scroll-edge-spacing: 24px;
+    --layout-content-gap: 24px;
+    --layout-sider-width: 96px;
+  }
+}
+
+/* W ≥ 1920 — content pinned at 1520 and centred; margins absorb the remainder. */
+@media (min-width: 1920px) {
+  .layout {
+    --layout-side-spacing: 24px;
+    --layout-scroll-edge-spacing: 24px;
+    --layout-content-gap: 24px;
+    --layout-sider-width: 132px;
+  }
+}

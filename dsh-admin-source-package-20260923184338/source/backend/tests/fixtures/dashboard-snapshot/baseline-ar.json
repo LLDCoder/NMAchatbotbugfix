@@ -1,0 +1,102 @@
+{
+  "offlineFixture": true,
+  "responses": [
+    {
+      "path": "/api/license/dashboard/performance",
+      "query": {
+        "scope": "1",
+        "startDate": "2026-09-22",
+        "endDate": "2026-09-28"
+      },
+      "observedAt": "2026-09-28T08:32:00.262Z",
+      "data": {
+        "data": {
+          "summary": {
+            "slaComplianceRate": 100,
+            "averageHandlingTimeMinutes": 5.24,
+            "averageProcessingTime": "5min",
+            "approvalRateOfApplication": 0,
+            "approvedApplicationCount": 0,
+            "rejectedApplicationCount": 0,
+            "overdueTasks": 2
+          },
+          "startDate": "2026-09-22T00:00:00",
+          "endDate": "2026-09-28T23:59:59"
+        }
+      }
+    },
+    {
+      "path": "/api/license/dashboard/license-distribution",
+      "query": {
+        "startDate": "2026-09-22",
+        "endDate": "2026-09-28"
+      },
+      "observedAt": "2026-09-28T08:32:00.531Z",
+      "data": {
+        "data": {
+          "totalCount": 0,
+          "statusDistribution": {
+            "Active": 0,
+            "Expired": 0,
+            "ExpiringSoon": 0,
+            "Canceled": 0,
+            "Suspended": 0
+          },
+          "startDate": "2026-09-22T00:00:00",
+          "endDate": "2026-09-28T00:00:00"
+        }
+      }
+    },
+    {
+      "path": "/api/license/dashboard/overview",
+      "query": {
+        "taskCategory": "0",
+        "scope": "1",
+        "priorityCardCount": "10",
+        "startDate": "2026-09-22",
+        "endDate": "2026-09-28"
+      },
+      "observedAt": "2026-09-28T08:32:01.362Z",
+      "data": {
+        "data": {
+          "taskTabCounts": {
+            "ServiceApplication": 0,
+            "ProfileVerification": 0,
+            "Enquiries": 0,
+            "Refunds": 0,
+            "Appeals": 0
+          },
+          "serviceApplicationCard": {
+            "totalCount": 3,
+            "totalTasks": 4,
+            "doneToday": 0,
+            "overdueTasks": 1,
+            "slaDistribution": {
+              "pendingReview": 2,
+              "pendingModification": 0,
+              "externalApproval": 1
+            }
+          },
+          "profileVerificationCard": {
+            "totalCount": 0,
+            "totalTasks": 0,
+            "doneToday": 0,
+            "overdueTasks": 0,
+            "statusBreakdown": {
+              "pendingReview": 0,
+              "approved": 0,
+              "rejected": 0,
+              "expired": 0
+            },
+            "distribution": {
+              "PendingReview": 0,
+              "Approved": 0,
+              "Rejected": 0,
+              "Expired": 0
+            }
+          }
+        }
+      }
+    }
+  ]
+}

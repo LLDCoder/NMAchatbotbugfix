@@ -1,0 +1,427 @@
+{
+  "source": "test/runtime/group15-account-repair-20260928/round5-ui/ACC-012-happiness__en/audit.json",
+  "sourceSHA256": "329267d168b5d999825a3b5a2ae8545109d442f71b008cbc86c2cdbb3344442c",
+  "result": {
+    "result": "success",
+    "analysisStatus": "complete",
+    "requirementsSatisfied": true,
+    "missing": [],
+    "qualityBlockers": [],
+    "intentState": {
+      "task": {
+        "view": "",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "detail",
+        "searchQuery": "signed-in user department role data scope personal center profile account information",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "signed-in user profile",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedScope",
+            "value": "personal",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedGrain",
+            "value": "signed-in user",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [
+              "department",
+              "role",
+              "data scope"
+            ],
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "outputShape",
+            "value": "detail",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "businessFocus",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "recordIdentity",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "view",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "current",
+            "evidence": "parsed current request"
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "",
+        "clarification": null,
+        "needsLiveData": true,
+        "businessObject": "signed-in user profile",
+        "recordIdentity": "",
+        "requestedGrain": "signed-in user",
+        "requestedScope": "personal",
+        "contextRelation": "new",
+        "unresolvedSlots": [],
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [
+          "department",
+          "role",
+          "data scope"
+        ]
+      },
+      "status": "ready",
+      "version": 1,
+      "requestId": "c09f1fad-babc-443c-ab7b-7e3eaf1b88e7",
+      "slotStates": [
+        {
+          "field": "businessObject",
+          "value": "signed-in user profile",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedScope",
+          "value": "personal",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedGrain",
+          "value": "signed-in user",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedAttributes",
+          "value": [
+            "department",
+            "role",
+            "data scope"
+          ],
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "outputShape",
+          "value": "detail",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "businessFocus",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedMeasures",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupBy",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeRange",
+          "value": "unknown",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "filters",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "recordIdentity",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "view",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeField",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedOrdering",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupCompleteness",
+          "value": "observed",
+          "source": "current",
+          "evidence": "parsed current request"
+        }
+      ],
+      "taskRevision": 1,
+      "referenceTime": {
+        "nowUtc": "2026-09-28T09:03:19.388191+00:00",
+        "source": "server_clock_and_config",
+        "businessNow": "2026-09-28T13:03:19.388191+04:00",
+        "businessDate": "2026-09-28",
+        "businessTimezone": "Asia/Dubai"
+      },
+      "browserContext": {
+        "view": "",
+        "query": {},
+        "route": "/personal-center",
+        "filters": []
+      },
+      "catalogVersion": "5e95e73c42e54277e2416c19e71841fcde6644b97b5e76e08c725c07bc75d0a4",
+      "parentRequestId": null,
+      "taskFingerprint": "7a5b8b3b89e0834602bb49ec931b912f1a6960100c3c9048e3e77522c10fb971",
+      "knowledgeVersion": "",
+      "originalQuestion": "Do you know my currently signed-in department, role and data scope?",
+      "lastClarification": null,
+      "clarificationRounds": 0,
+      "pendingClarification": null,
+      "principalFingerprint": "b87c8f08c07000b6beb8"
+    },
+    "outputs": [
+      {
+        "id": "read_departments",
+        "role": "detail",
+        "label": "Departments",
+        "value": [
+          {
+            "name": "Happiness Center Unit"
+          }
+        ],
+        "evidence": [
+          {
+            "page": "/personal-center",
+            "sourceId": "api_faa1b21f1715ee3203b2",
+            "capturedAt": "2026-09-28T09:04:20.153424+00:00",
+            "fieldStatus": {
+              "name": "complete"
+            },
+            "completeness": "complete",
+            "fieldBinding": "/data/departmentsInfo",
+            "operationRef": "GET /api/UserManagement/GetAdminUserAsync",
+            "observationRef": "a0aa224715566f0c8ead",
+            "semanticContext": "",
+            "buildFingerprint": "unknown",
+            "observationShape": "complete_array",
+            "principalScopeRef": "b87c8f08c07000b6beb8",
+            "populationComplete": true
+          }
+        ],
+        "knowledge": [
+          {
+            "sourceId": "k_8eadf20d8e64652fc5bf:p5"
+          }
+        ],
+        "fieldLabels": {
+          "name": "Department"
+        },
+        "unknownCount": 0,
+        "requirementIds": [
+          "object",
+          "grain",
+          "scope",
+          "attribute_0",
+          "detail"
+        ],
+        "dataCompleteness": "complete",
+        "verifiedAbsences": [],
+        "unavailableFields": [],
+        "verifiedInterpretations": []
+      },
+      {
+        "id": "read_roles",
+        "role": "detail",
+        "label": "Assigned roles",
+        "value": [
+          {
+            "name": "Happiness Center Agent"
+          }
+        ],
+        "evidence": [
+          {
+            "page": "/personal-center",
+            "sourceId": "api_faa1b21f1715ee3203b2",
+            "capturedAt": "2026-09-28T09:04:20.153424+00:00",
+            "fieldStatus": {
+              "name": "complete"
+            },
+            "completeness": "complete",
+            "fieldBinding": "/data/assignRolesIdsInfo",
+            "operationRef": "GET /api/UserManagement/GetAdminUserAsync",
+            "observationRef": "a0aa224715566f0c8ead",
+            "semanticContext": "",
+            "buildFingerprint": "unknown",
+            "observationShape": "complete_array",
+            "principalScopeRef": "b87c8f08c07000b6beb8",
+            "populationComplete": true
+          }
+        ],
+        "knowledge": [
+          {
+            "sourceId": "k_8eadf20d8e64652fc5bf:p5"
+          }
+        ],
+        "fieldLabels": {
+          "name": "Role"
+        },
+        "unknownCount": 0,
+        "requirementIds": [
+          "object",
+          "grain",
+          "scope",
+          "attribute_1",
+          "detail"
+        ],
+        "dataCompleteness": "complete",
+        "verifiedAbsences": [],
+        "unavailableFields": [],
+        "verifiedInterpretations": []
+      }
+    ],
+    "context": {
+      "time": {
+        "value": "current observation",
+        "evidence": []
+      },
+      "grain": {
+        "value": "One authenticated staff user profile; multiple department and role entries are properties of that same user, not additional users.",
+        "evidence": [
+          {
+            "sourceId": "k_8eadf20d8e64652fc5bf:p2"
+          }
+        ]
+      },
+      "scope": "personal",
+      "caveats": [
+        {
+          "value": "The profile response provides department and assigned role names but no universal row-level data-scope value; only currently authorized pages and records can be queried, and organization-wide access or managed-team membership must not be inferred from a role title.",
+          "evidence": [
+            {
+              "sourceId": "k_8eadf20d8e64652fc5bf:p7"
+            }
+          ]
+        }
+      ],
+      "population": {
+        "value": "The profile of the current authenticated subject only; this is not a time-period filter.",
+        "evidence": [
+          {
+            "sourceId": "k_8eadf20d8e64652fc5bf:p4"
+          }
+        ]
+      },
+      "filterScope": {
+        "value": "Personal scope: the requested and observed userId must both equal the verified signed-in subject; it does not authorize reading another user or expanding to a team.",
+        "evidence": [
+          {
+            "sourceId": "k_8eadf20d8e64652fc5bf:p3"
+          }
+        ]
+      },
+      "scopeEvidence": [
+        {
+          "sourceId": "k_8eadf20d8e64652fc5bf:p3"
+        }
+      ]
+    },
+    "completeness": "complete",
+    "requestId": "c09f1fad-babc-443c-ab7b-7e3eaf1b88e7",
+    "page": "/personal-center",
+    "section": "PersonalCenter"
+  },
+  "audit": {
+    "captures": [
+      {
+        "page": "/personal-center",
+        "policy": "trusted_gateway",
+        "actions": [],
+        "capturedAt": "2026-09-28T09:04:20.153424+00:00",
+        "buildFingerprint": "unknown",
+        "bindingVerification": "observed_current_session"
+      }
+    ],
+    "observation": {
+      "appliedFilters": []
+    }
+  },
+  "note": "Exact selected fields from sealed real ACC012 EN success; unit mechanism replay only, not C05 or C08 business acceptance."
+}

@@ -1,0 +1,759 @@
+.partner-list-container {
+  width: 100%;
+}
+
+.partner-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+
+  .custom-button.custom-button-gold {
+    &:hover:not(:disabled),
+    &:active:not(:disabled),
+    &:focus:not(:disabled),
+    &.ant-btn:hover:not(:disabled),
+    &.ant-btn:active:not(:disabled),
+    &.ant-btn:focus:not(:disabled) {
+      background-color: #9e7538;
+      border-color: #9e7538;
+      color: #fff;
+    }
+  }
+
+  .partner-list-title {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    color: #361e12;
+  }
+}
+.partner-list-content {
+  min-height: 200px;
+}
+
+.partner-form-error {
+  margin-top: 4px;
+  color: #ea4f49;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.partner-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+
+  .partner-empty-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 16px;
+  }
+
+  .partner-empty-text {
+    font-size: 14px;
+    color: #8c8c8c;
+    margin-bottom: 24px;
+  }
+}
+
+.partner-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: stretch;
+}
+.partner-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  width: calc(50% - 8px);
+  min-width: 280px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .partner-card-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+
+    .partner-card-type-icon {
+      display: block;
+      height: 64px;
+      width: 64px;
+    }
+  }
+
+  .partner-card-info {
+    flex: 1;
+
+    .partner-card-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #361e12;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .partner-card-detail {
+      font-size: 13px;
+      color: #666666;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .partner-card-icon-small {
+        width: 20px;
+        height: 20px;
+        background: #f0f0f0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        color: #8c8c8c;
+      }
+    }
+  }
+
+  .partner-card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+
+    button {
+      flex: 1;
+    }
+
+    .custom-button.custom-button-primary {
+      &:hover:not(:disabled),
+      &:active:not(:disabled),
+      &:focus:not(:disabled),
+      &.ant-btn:hover:not(:disabled),
+      &.ant-btn:active:not(:disabled),
+      &.ant-btn:focus:not(:disabled) {
+        background: #9e7538;
+        border-color: #9e7538;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.partner-card.partner-card-individual,
+.partner-card.partner-card-company {
+  background: #f8f7f4;
+  border-radius: 10px;
+  box-shadow: none;
+  gap: 0;
+  min-height: 268px;
+  padding: 24px;
+
+  .partner-card-body {
+    display: flex;
+    gap: 16px;
+    min-height: 220px;
+    width: 100%;
+  }
+
+  .partner-card-main {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    padding-top: 8px;
+  }
+
+  .partner-card-name {
+    color: #361e12;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  .partner-card-status {
+    align-items: center;
+    align-self: flex-start;
+    background: #e7f5ff;
+    border-radius: 4px;
+    color: #286cff;
+    display: inline-flex;
+    font-size: 14px;
+    font-weight: 500;
+    height: 26px;
+    line-height: 20px;
+    margin-top: 16px;
+    padding: 2px 6px;
+    width: fit-content;
+
+    &.partner-card-status--deleted {
+      background: #fef2f2;
+      color: #ea4f49;
+    }
+
+    &.partner-card-status--new {
+      background: #e7f5ff;
+      color: #286cff;
+    }
+  }
+
+  .partner-card-meta-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: auto;
+    max-width: 202px;
+  }
+
+  .partner-card-meta-item {
+    align-items: center;
+    color: #361e12;
+    display: flex;
+    font-size: 16px;
+    font-weight: 400;
+    gap: 8px;
+    line-height: 24px;
+    width: 100%;
+  }
+
+  .partner-card-meta-icon {
+    flex: 0 0 16px;
+    height: 16px;
+    width: 16px;
+  }
+
+  .partner-card-meta-value-ltr {
+    direction: ltr;
+    text-align: left;
+    unicode-bidi: plaintext;
+  }
+
+  .partner-card-readonly-note {
+    color: #7a6d60;
+    font-size: 13px;
+    line-height: 20px;
+    margin-top: 16px;
+  }
+
+  .partner-card-aside {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    margin-left: auto;
+  }
+
+  .partner-card-avatar {
+    align-items: center;
+    background: rgba(182, 138, 53, 0.1);
+    border-radius: 50%;
+    display: flex;
+    height: 110px;
+    justify-content: center;
+    overflow: hidden;
+    width: 110px;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .partner-card-avatar-placeholder {
+      height: 56px;
+      object-fit: contain;
+      width: 56px;
+    }
+  }
+
+  .partner-card-details-button {
+    min-width: 104px;
+    padding-left: 12px;
+    padding-right: 12px;
+
+    .custom-button-content,
+    .custom-button-contentWithIcon {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+    }
+  }
+}
+
+.partner-card.partner-card-individual.partner-card--with-fahr-status,
+.partner-card.partner-card-company.partner-card--with-fahr-status {
+  overflow: hidden;
+  padding-bottom: 50px;
+  position: relative;
+
+  .partner-card__fahr-status {
+    bottom: 0;
+    left: 0;
+    min-height: 26px;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  .fahr-review-status-tag-group {
+    width: 100%;
+  }
+  .fahr-review-status-tag {
+    border-radius: 0;
+    justify-content: space-between;
+    padding: 3px 16px;
+    width: 100%;
+  }
+}
+
+.partner-card.partner-card-individual,
+.partner-card.partner-card-company {
+  background:
+    radial-gradient(circle at top right, rgba(193, 148, 83, 0.12), transparent 28%),
+    linear-gradient(180deg, #fffdf9 0%, #ffffff 100%);
+  border: 1px solid rgba(193, 148, 83, 0.55);
+  box-shadow: 0 10px 24px rgba(54, 30, 18, 0.08);
+  min-height: 320px;
+  padding: 28px 26px 24px;
+  width: 100%;
+  max-width: 606px;
+
+  .partner-card-body {
+    gap: 24px;
+    min-height: 268px;
+  }
+
+  .partner-card-main {
+    padding-top: 18px;
+  }
+
+  .partner-card-name {
+    font-size: 26px;
+    line-height: 34px;
+  }
+
+  .partner-card-meta-list {
+    gap: 12px;
+    max-width: 320px;
+    min-height: 128px;
+  }
+
+  .partner-card-meta-item {
+    font-size: 18px;
+    gap: 12px;
+    line-height: 28px;
+  }
+
+  .partner-card-meta-icon {
+    flex: 0 0 18px;
+    height: 18px;
+    width: 18px;
+  }
+
+  .partner-card-aside {
+    min-width: 0;
+    width: 140px;
+    flex-shrink: 0;
+  }
+
+  .partner-card-avatar {
+    background: radial-gradient(circle at center, rgba(198, 161, 87, 0.32) 0%, rgba(193, 148, 83, 0.1) 68%, rgba(193, 148, 83, 0.04) 100%);
+    height: 110px;
+    width: 110px;
+
+    .partner-card-avatar-placeholder {
+      height: 56px;
+      width: 56px;
+    }
+  }
+
+  .partner-card-details-button {
+    border-radius: 12px;
+    min-width: 0;
+    width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+
+    .custom-button-content,
+    .custom-button-contentWithIcon {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 22px;
+    }
+  }
+}
+
+.partner-card.partner-card-individual,
+.partner-card.partner-card-company {
+  .partner-card-company-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .partner-card-company-action-btn {
+    border-radius: 12px;
+    min-width: 0;
+    flex: 1 1 auto;
+
+    .custom-button-content,
+    .custom-button-contentWithIcon {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 22px;
+    }
+  }
+
+  .partner-card-company-action-btn-delete {
+    background: rgba(255, 255, 255, 0.9);
+  }
+}
+
+.partner-card.partner-card-owner {
+  background:
+    radial-gradient(circle at top right, rgba(193, 148, 83, 0.12), transparent 28%),
+    linear-gradient(180deg, #fffdf9 0%, #ffffff 100%);
+  border: 1px solid rgba(193, 148, 83, 0.55);
+  box-shadow: 0 10px 24px rgba(54, 30, 18, 0.08);
+  min-height: 320px;
+  padding: 28px 26px 24px;
+  position: relative;
+  width: 100%;
+  max-width: 606px;
+
+  .partner-card-owner-badge {
+    align-items: center;
+    color: #fff;
+    display: inline-flex;
+    font-size: 12px;
+    font-weight: 600;
+    height: 28px;
+    inset-inline-start: 18px;
+    justify-content: center;
+    line-height: 28px;
+    padding-inline-end: 25px;
+    position: absolute;
+    top: -10px;
+    width: 120px;
+
+    // The badge artwork is text-free and asymmetric, so only the background is
+    // mirrored in RTL while the label keeps its normal reading direction.
+    &::before {
+      background: url('@/assets/images/featured_bg.svg') no-repeat center center;
+      background-size: 100% 100%;
+      content: '';
+      inset: 0;
+      position: absolute;
+    }
+
+    html[dir="rtl"] &::before {
+      transform: scaleX(-1);
+    }
+  }
+
+  .partner-card-owner-badge-text {
+    overflow: hidden;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .partner-card-body {
+    gap: 24px;
+    min-height: 268px;
+  }
+
+  .partner-card-main {
+    padding-top: 18px;
+  }
+
+  .partner-card-name {
+    font-size: 26px;
+    line-height: 34px;
+  }
+
+  .partner-card-meta-list {
+    gap: 12px;
+    max-width: 320px;
+  }
+
+  .partner-card-meta-item {
+    font-size: 18px;
+    gap: 12px;
+    line-height: 28px;
+  }
+
+  .partner-card-meta-icon {
+    flex: 0 0 18px;
+    height: 18px;
+    width: 18px;
+  }
+
+  .partner-card-aside {
+    min-width: 0;
+    width: 140px;
+    flex-shrink: 0;
+  }
+
+  .partner-card-avatar {
+    background: radial-gradient(circle at center, rgba(198, 161, 87, 0.32) 0%, rgba(193, 148, 83, 0.1) 68%, rgba(193, 148, 83, 0.04) 100%);
+    height: 110px;
+    width: 110px;
+
+    .partner-card-avatar-placeholder {
+      height: 56px;
+      width: 56px;
+    }
+  }
+
+  .partner-card-owner-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .partner-card-owner-action-btn {
+    border-radius: 12px;
+    min-width: 0;
+    width: 100%;
+
+    .custom-button-content,
+    .custom-button-contentWithIcon {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 22px;
+    }
+  }
+
+  .partner-card-owner-action-btn-delete {
+    background: rgba(255, 255, 255, 0.9);
+  }
+}
+.partner-cards-container > .partner-card {
+  flex: 0 0 calc(50% - 8px);
+  max-width: none;
+  min-width: 0;
+  width: calc(50% - 8px);
+}
+.partner-modal {
+  .ant-modal-body {
+    padding: 24px;
+  }
+
+  .partner-modal-content {
+    .partner-type-select {
+      margin-bottom: 24px;
+    }
+
+    .partner-form-label {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      color: #361e12;
+      margin-bottom: 8px;
+
+      .partner-required {
+        color: #ea4f49;
+        margin-left: 4px;
+      }
+    }
+
+    .partner-verify-question {
+      font-size: 14px;
+      color: #666666;
+      margin-bottom: 16px;
+    }
+  }
+
+  .partner-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #e8e8e8;
+  }
+}
+
+.partner-company-form {
+  .partner-company-grid {
+    row-gap: 24px;
+    margin-bottom: 0;
+
+    .ant-col {
+      margin-bottom: 0;
+    }
+  }
+
+  .partner-form-label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #361e12;
+    margin-bottom: 8px;
+
+    .partner-required {
+      color: #ea4f49;
+      margin-left: 4px;
+    }
+  }
+
+  .ant-input {
+    height: 48px;
+    border-radius: 8px;
+  }
+
+  .ant-select {
+    .ant-select-selector {
+      height: 48px !important;
+      border-radius: 8px !important;
+      align-items: center;
+    }
+  }
+}
+
+.partner-individual-form {
+  .partner-verify-question {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 16px;
+  }
+}
+
+.partner-delete-modal {
+  .partner-delete-content {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 24px;
+  }
+
+  .partner-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .partner-cards-container > .partner-card {
+    flex-basis: 100%;
+    width: 100%;
+  }
+  .partner-card {
+    width: 100%;
+  }
+
+  .partner-card.partner-card-individual,
+  .partner-card.partner-card-company {
+    .partner-card-body {
+      flex-direction: column-reverse;
+      min-height: auto;
+    }
+
+    .partner-card-main {
+      padding-top: 0;
+    }
+
+    .partner-card-meta-list {
+      max-width: none;
+    }
+
+    .partner-card-aside {
+      align-items: flex-start;
+      gap: 16px;
+      width: 100%;
+    }
+  }
+
+  .partner-card.partner-card-individual,
+  .partner-card.partner-card-company {
+    min-height: auto;
+    padding: 24px 20px 20px;
+
+    .partner-card-body {
+      gap: 18px;
+      min-height: auto;
+    }
+
+    .partner-card-name {
+      font-size: 24px;
+      line-height: 30px;
+    }
+
+    .partner-card-meta-item {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .partner-card-aside {
+      min-width: 0;
+    }
+
+    .partner-card-details-button {
+      min-width: 0;
+    }
+  }
+
+  .partner-card.partner-card-individual,
+  .partner-card.partner-card-company {
+    .partner-card-company-actions {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .partner-card-company-action-btn {
+      flex: 1 1 140px;
+      min-width: 0;
+    }
+  }
+
+  .partner-card.partner-card-owner {
+    min-height: auto;
+    padding: 24px 20px 20px;
+
+    .partner-card-body {
+      gap: 18px;
+    }
+
+    .partner-card-name {
+      font-size: 24px;
+      line-height: 30px;
+    }
+
+    .partner-card-meta-item {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .partner-card-aside {
+      min-width: 0;
+    }
+
+    .partner-card-owner-actions {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    .partner-card-owner-action-btn {
+      flex: 1 1 140px;
+      min-width: 0;
+    }
+  }
+}

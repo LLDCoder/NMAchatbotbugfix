@@ -1,0 +1,1093 @@
+{
+  "sourceEvidence": {
+    "path": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/groups1113-20260928/round25-g15-v34/C-05__ar/audit-db.json",
+    "sha256": "5f93f0cfaa6bf9db24919d558838bd7be77d3948e95a41df7d65565af11734f1",
+    "conversationId": "conv_10a9988a2bd54c2db57b",
+    "requestId": "68871f5f-5320-4bbd-aeda-aa482cdfa777"
+  },
+  "originalEnglish": "Please list the data scope and limitations used for this query.",
+  "normalization": {
+    "stage": "input_normalization",
+    "clauses": [
+      {
+        "english": "Please list the data scope and the constraints used for this query.",
+        "sourceQuote": "يرجى سرد نطاق البيانات والقيود المستخدمة لهذا الاستعلام."
+      }
+    ]
+  },
+  "initialTask": {
+    "view": "",
+    "stage": "task",
+    "filters": [],
+    "groupBy": [],
+    "readOnly": true,
+    "timeField": "",
+    "timeRange": "unknown",
+    "outputShape": "detail",
+    "searchQuery": "previous query data scope constraints presentation explanation",
+    "slotUpdates": [
+      {
+        "field": "businessObject",
+        "value": "previous answer",
+        "source": "current",
+        "evidence": "يرجى سرد نطاق البيانات والقيود المستخدمة لهذا الاستعلام"
+      },
+      {
+        "field": "requestedScope",
+        "value": "unknown",
+        "source": "clear",
+        "evidence": "presentation of prior result, no inherited scope"
+      },
+      {
+        "field": "requestedGrain",
+        "value": "previous answer",
+        "source": "current",
+        "evidence": "يرجى سرد نطاق البيانات والقيود المستخدمة لهذا الاستعلام"
+      },
+      {
+        "field": "outputShape",
+        "value": "detail",
+        "source": "current",
+        "evidence": "يرجى سرد نطاق البيانات والقيود المستخدمة لهذا الاستعلام"
+      },
+      {
+        "field": "view",
+        "value": "",
+        "source": "clear",
+        "evidence": "presentation of prior result, no inherited view"
+      },
+      {
+        "field": "timeRange",
+        "value": "unknown",
+        "source": "clear",
+        "evidence": "presentation of prior result"
+      },
+      {
+        "field": "businessFocus",
+        "value": "",
+        "source": "clear",
+        "evidence": "presentation of prior result"
+      },
+      {
+        "field": "disclosurePurpose",
+        "value": "",
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "requestedMeasures",
+        "value": [],
+        "source": "clear",
+        "evidence": "presentation of prior result"
+      },
+      {
+        "field": "requestedAttributes",
+        "value": [
+          "data scope used for the previous query",
+          "constraints applied to the previous query"
+        ],
+        "source": "current",
+        "evidence": "يرجى سرد نطاق البيانات والقيود المستخدمة لهذا الاستعلام"
+      },
+      {
+        "field": "groupBy",
+        "value": [],
+        "source": "clear",
+        "evidence": "presentation of prior result"
+      },
+      {
+        "field": "filters",
+        "value": [],
+        "source": "clear",
+        "evidence": "presentation of prior result"
+      },
+      {
+        "field": "recordIdentity",
+        "value": "",
+        "source": "clear",
+        "evidence": "presentation of prior result"
+      },
+      {
+        "field": "timeField",
+        "value": "",
+        "source": "clear",
+        "evidence": "presentation of prior result"
+      },
+      {
+        "field": "requestedOrdering",
+        "value": [],
+        "source": "clear",
+        "evidence": "presentation of prior result"
+      },
+      {
+        "field": "groupCompleteness",
+        "value": "observed",
+        "source": "clear",
+        "evidence": "presentation of prior result"
+      }
+    ],
+    "responseMode": "answer",
+    "businessFocus": "",
+    "clarification": null,
+    "needsLiveData": false,
+    "businessObject": "previous answer",
+    "recordIdentity": "",
+    "requestedGrain": "previous answer",
+    "requestedScope": "unknown",
+    "contextRelation": "refine",
+    "unresolvedSlots": [],
+    "disclosurePurpose": "",
+    "groupCompleteness": "observed",
+    "requestBoundaries": [],
+    "requestedMeasures": [],
+    "requestedOrdering": [],
+    "requestedAttributes": [
+      "data scope used for the previous query",
+      "constraints applied to the previous query"
+    ],
+    "evidenceExplanations": []
+  },
+  "actualPreviousResult": {
+    "gaps": [],
+    "page": "/licensing/applications",
+    "facts": [
+      "تمييز الطلبات بمعرّف الكيان: []",
+      "قراءة صفوف قائمة المهام المطلوبة (قيد الإنجاز): []"
+    ],
+    "scope": "personal",
+    "result": "success",
+    "context": {
+      "time": {
+        "value": "current observation",
+        "evidence": []
+      },
+      "grain": {
+        "value": "طلب واحد محدد بمعرّف الكيان id ضمن قائمة مهام الطلبات الشخصية",
+        "evidence": [
+          {
+            "sourceId": "k_20ced6e0b4b58b26fc02:p3"
+          }
+        ]
+      },
+      "scope": "personal",
+      "caveats": [
+        {
+          "value": "عرض «قيد الإنجاز» هو تبويب المهام المطلوبة في صفحة مهام طلباتي، وليس حالة طلب مخزَّنة؛ عضوية الصف تُحدَّد بعملية المهام المطلوبة.",
+          "evidence": [
+            {
+              "sourceId": "k_0e1395e3dabfa9ebb60d:p4"
+            }
+          ]
+        },
+        {
+          "value": "هذه قائمة شخصية للمستخدم الموثَّق؛ دور المدير لا يحوّلها إلى قائمة فريق، والقائمة الشخصية لا تُثبت طلبات فريق آخر.",
+          "evidence": [
+            {
+              "sourceId": "k_20ced6e0b4b58b26fc02:p7"
+            }
+          ]
+        }
+      ],
+      "population": {
+        "value": "كامل قائمة الانتظار المعلقة (قيد الإنجاز) من عملية المهام المطلوبة، بما فيها التعديل المعلق والموافقة الخارجية، وليست فقط قيد المراجعة",
+        "evidence": [
+          {
+            "sourceId": "k_20ced6e0b4b58b26fc02:p9"
+          }
+        ]
+      },
+      "filterScope": {
+        "value": "لا يوجد مرشّح إضافي أدخله المستخدم؛ النطاق الشخصي مفروض من العملية نفسها",
+        "evidence": [
+          {
+            "sourceId": "k_20ced6e0b4b58b26fc02:p7"
+          }
+        ]
+      },
+      "scopeEvidence": [
+        {
+          "sourceId": "k_20ced6e0b4b58b26fc02:p7"
+        },
+        {
+          "sourceId": "k_0e1395e3dabfa9ebb60d:p4"
+        }
+      ]
+    },
+    "missing": [],
+    "outputs": [
+      {
+        "id": "distinct_applications",
+        "role": "detail",
+        "label": "تمييز الطلبات بمعرّف الكيان",
+        "value": [],
+        "evidence": [
+          {
+            "page": "/licensing/applications",
+            "sourceId": "api_33170c9f32467b1ea7d1",
+            "capturedAt": "2026-09-28T19:56:53.525912+00:00",
+            "derivation": {
+              "kind": "fixed_reference_computation",
+              "definitions": [
+                {
+                  "field": "sla",
+                  "recordId": "admin.page-docs.licensing.applications.sla-semantics",
+                  "revision": 11,
+                  "documentId": "4fcacf3cbbf040ffb668a3fc87b330b1",
+                  "definitionHash": "d70d3b0f401f7011e687824e201646a5afa9998e31c6b1d4497f87b760ca6cc4"
+                }
+              ],
+              "inputFields": [
+                "id",
+                "applicationNumber",
+                "taskId",
+                "dispositionCaseId",
+                "status",
+                "statusId",
+                "taskStatus",
+                "taskStatusId",
+                "serviceNameEn",
+                "serviceCategoryNameEn",
+                "serviceTypeNameEn",
+                "applyForEn",
+                "slaDescription",
+                "submissionTime",
+                "lastUpdatedTime",
+                "taskDueTime",
+                "taskApprovalAt"
+              ],
+              "referenceUtc": "2026-09-28T19:56:45.468261+00:00",
+              "fieldDiagnostics": {
+                "sla": {
+                  "computedRows": 0,
+                  "unverifiedRows": 0,
+                  "documentedNullRows": 0
+                }
+              },
+              "snapshotIsolation": false,
+              "inputProjectionHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+            },
+            "fieldStatus": {
+              "id": "complete",
+              "status": "complete",
+              "applyForEn": "complete",
+              "serviceNameEn": "complete",
+              "slaDescription": "complete",
+              "submissionTime": "complete",
+              "applicationNumber": "complete",
+              "serviceTypeNameEn": "complete",
+              "serviceCategoryNameEn": "complete"
+            },
+            "completeness": "complete",
+            "fieldBinding": "/data/page/items",
+            "operationRef": "POST /api/Application/MyTodoPage",
+            "observationRef": "2c5dd0d2b5fff5a28871",
+            "semanticContext": "",
+            "buildFingerprint": "unknown",
+            "principalScopeRef": "dea9eeec1453f665ac17",
+            "populationComplete": true
+          }
+        ],
+        "knowledge": [
+          {
+            "sourceId": "k_20ced6e0b4b58b26fc02:p3"
+          }
+        ],
+        "fieldLabels": {},
+        "unknownCount": 0,
+        "emptyListProof": {
+          "covers": "unspecified_list_shape_only",
+          "sources": [
+            {
+              "total": 0,
+              "sourceId": "api_33170c9f32467b1ea7d1",
+              "contextRef": "8d221aa290fa5756dd03065acb6031ae629989ca18b493347b531ae9f5066a63",
+              "sourcePath": "/data/page/items",
+              "receiptHash": "8d02ff45bb34f31a3b7b7d2e8cff88bd0761c1797229288b6c6cb3a4296bc420",
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "stablePasses": 2,
+              "observationRef": "2c5dd0d2b5fff5a28871"
+            }
+          ]
+        },
+        "requirementIds": [
+          "object",
+          "grain",
+          "scope",
+          "detail",
+          "view"
+        ],
+        "dataCompleteness": "complete",
+        "verifiedAbsences": [],
+        "unavailableFields": [],
+        "verifiedInterpretations": []
+      },
+      {
+        "id": "public_read_todo_rows",
+        "role": "observation",
+        "label": "قراءة صفوف قائمة المهام المطلوبة (قيد الإنجاز)",
+        "value": [],
+        "evidence": [
+          {
+            "page": "/licensing/applications",
+            "sourceId": "api_33170c9f32467b1ea7d1",
+            "capturedAt": "2026-09-28T19:56:53.525912+00:00",
+            "derivation": {
+              "kind": "fixed_reference_computation",
+              "definitions": [
+                {
+                  "field": "sla",
+                  "recordId": "admin.page-docs.licensing.applications.sla-semantics",
+                  "revision": 11,
+                  "documentId": "4fcacf3cbbf040ffb668a3fc87b330b1",
+                  "definitionHash": "d70d3b0f401f7011e687824e201646a5afa9998e31c6b1d4497f87b760ca6cc4"
+                }
+              ],
+              "inputFields": [
+                "id",
+                "applicationNumber",
+                "taskId",
+                "dispositionCaseId",
+                "status",
+                "statusId",
+                "taskStatus",
+                "taskStatusId",
+                "serviceNameEn",
+                "serviceCategoryNameEn",
+                "serviceTypeNameEn",
+                "applyForEn",
+                "slaDescription",
+                "submissionTime",
+                "lastUpdatedTime",
+                "taskDueTime",
+                "taskApprovalAt"
+              ],
+              "referenceUtc": "2026-09-28T19:56:45.468261+00:00",
+              "fieldDiagnostics": {
+                "sla": {
+                  "computedRows": 0,
+                  "unverifiedRows": 0,
+                  "documentedNullRows": 0
+                }
+              },
+              "snapshotIsolation": false,
+              "inputProjectionHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+            },
+            "fieldStatus": {
+              "status": "complete",
+              "applyForEn": "complete",
+              "serviceNameEn": "complete",
+              "slaDescription": "complete",
+              "submissionTime": "complete",
+              "applicationNumber": "complete",
+              "serviceTypeNameEn": "complete",
+              "serviceCategoryNameEn": "complete"
+            },
+            "completeness": "complete",
+            "fieldBinding": "/data/page/items",
+            "operationRef": "POST /api/Application/MyTodoPage",
+            "observationRef": "2c5dd0d2b5fff5a28871",
+            "semanticContext": "",
+            "buildFingerprint": "unknown",
+            "principalScopeRef": "dea9eeec1453f665ac17",
+            "populationComplete": true
+          }
+        ],
+        "knowledge": [
+          {
+            "sourceId": "k_20ced6e0b4b58b26fc02:p13"
+          },
+          {
+            "sourceId": "k_0a12ad247f9f2c194ef5:p0"
+          }
+        ],
+        "fieldLabels": {
+          "status": "الحالة",
+          "applyForEn": "التقديم لـ",
+          "serviceNameEn": "اسم الخدمة",
+          "slaDescription": "اتفاقية مستوى الخدمة",
+          "submissionTime": "وقت التقديم",
+          "applicationNumber": "رقم الطلب",
+          "serviceTypeNameEn": "النوع",
+          "serviceCategoryNameEn": "فئة الخدمة"
+        },
+        "unknownCount": 0,
+        "emptyListProof": {
+          "covers": "unspecified_list_shape_only",
+          "sources": [
+            {
+              "total": 0,
+              "sourceId": "api_33170c9f32467b1ea7d1",
+              "contextRef": "8d221aa290fa5756dd03065acb6031ae629989ca18b493347b531ae9f5066a63",
+              "sourcePath": "/data/page/items",
+              "receiptHash": "8d02ff45bb34f31a3b7b7d2e8cff88bd0761c1797229288b6c6cb3a4296bc420",
+              "operationRef": "POST /api/Application/MyTodoPage",
+              "stablePasses": 2,
+              "observationRef": "2c5dd0d2b5fff5a28871"
+            }
+          ]
+        },
+        "requirementIds": [
+          "object",
+          "scope",
+          "view"
+        ],
+        "dataCompleteness": "complete",
+        "verifiedAbsences": [],
+        "unavailableFields": [],
+        "verifiedInterpretations": []
+      }
+    ],
+    "section": "Applications",
+    "pipeline": "generic_v3",
+    "requestId": "4c279691-b21b-4bd1-8127-19900cf7e2c4",
+    "runtimeId": "rt_6782f56a666b4477",
+    "replyDraft": null,
+    "answerShape": "list",
+    "intentState": {
+      "task": {
+        "view": "todo",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "list",
+        "searchQuery": "licensing applications in progress view personal todo queue list",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "application",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedScope",
+            "value": "personal",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedGrain",
+            "value": "application",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "outputShape",
+            "value": "list",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "view",
+            "value": "todo",
+            "source": "page",
+            "evidence": "k_0e1395e3dabfa9ebb60d:p1"
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "businessFocus",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "disclosurePurpose",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "recordIdentity",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "current",
+            "evidence": "parsed current request"
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "",
+        "clarification": null,
+        "needsLiveData": true,
+        "businessObject": "application",
+        "recordIdentity": "",
+        "requestedGrain": "application",
+        "requestedScope": "personal",
+        "contextRelation": "new",
+        "unresolvedSlots": [],
+        "disclosurePurpose": "",
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [],
+        "evidenceExplanations": []
+      },
+      "status": "ready",
+      "version": 1,
+      "requestId": "4c279691-b21b-4bd1-8127-19900cf7e2c4",
+      "slotStates": [
+        {
+          "field": "businessObject",
+          "value": "application",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedScope",
+          "value": "personal",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedGrain",
+          "value": "application",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "outputShape",
+          "value": "list",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "view",
+          "value": "todo",
+          "source": "page",
+          "evidence": "k_0e1395e3dabfa9ebb60d:p1"
+        },
+        {
+          "field": "timeRange",
+          "value": "unknown",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "businessFocus",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "disclosurePurpose",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedMeasures",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedAttributes",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupBy",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "filters",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "recordIdentity",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeField",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedOrdering",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupCompleteness",
+          "value": "observed",
+          "source": "current",
+          "evidence": "parsed current request"
+        }
+      ],
+      "taskRevision": 1,
+      "referenceTime": {
+        "nowUtc": "2026-09-28T19:55:23.265891+00:00",
+        "source": "server_clock_and_config",
+        "businessNow": "2026-09-28T23:55:23.265891+04:00",
+        "businessDate": "2026-09-28",
+        "businessTimezone": "Asia/Dubai"
+      },
+      "browserContext": {
+        "view": "todo",
+        "query": {},
+        "route": "/licensing/applications",
+        "filters": [
+          {
+            "name": "tableFilters",
+            "value": "{\"contextVersion\":\"table-2:1\",\"filters\":{}}"
+          }
+        ]
+      },
+      "catalogVersion": "923ec44fe50a2342995e281c82aafca24ba1f1db20bf2c2184ec663e33329bf1",
+      "parentRequestId": null,
+      "taskFingerprint": "a1a6a16912eaf1a36f63e9461ebd37101052c51c26b28eb7139649da1fcb91be",
+      "knowledgeVersion": "db60c1f442ba7f8ec0f7",
+      "originalQuestion": "اعرض الطلبات الموجودة حاليًا في عرض «قيد الإنجاز» الخاص بي ضمن التراخيص.",
+      "lastClarification": null,
+      "clarificationRounds": 0,
+      "pendingClarification": null,
+      "principalFingerprint": "dea9eeec1453f665ac17"
+    },
+    "completeness": "complete",
+    "knowledgeGap": null,
+    "queryReceipt": {
+      "captures": [
+        {
+          "page": "/licensing/applications",
+          "source": "verified_gateway_collection_observation",
+          "sourceId": "api_33170c9f32467b1ea7d1",
+          "capturedAt": "2026-09-28T19:56:53.525912+00:00",
+          "sourcePath": "/data/page/items",
+          "operationRef": "POST /api/Application/MyTodoPage",
+          "appliedFilters": [],
+          "observationRef": "2c5dd0d2b5fff5a28871",
+          "principalScopeRef": "dea9eeec1453f665ac17",
+          "collectionContextRef": "8d221aa290fa5756dd03065acb6031ae629989ca18b493347b531ae9f5066a63",
+          "collectionReceiptHash": "8d02ff45bb34f31a3b7b7d2e8cff88bd0761c1797229288b6c6cb3a4296bc420"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "page": "/licensing/applications",
+          "sourceId": "api_33170c9f32467b1ea7d1",
+          "capturedAt": "2026-09-28T19:56:53.525912+00:00",
+          "completeness": "complete",
+          "observationRef": "2c5dd0d2b5fff5a28871",
+          "principalScopeRef": "dea9eeec1453f665ac17"
+        },
+        {
+          "page": "/licensing/applications",
+          "sourceId": "api_33170c9f32467b1ea7d1",
+          "capturedAt": "2026-09-28T19:56:53.525912+00:00",
+          "completeness": "complete",
+          "observationRef": "2c5dd0d2b5fff5a28871",
+          "principalScopeRef": "dea9eeec1453f665ac17"
+        }
+      ],
+      "schemaVersion": "observed-query-receipt/1"
+    },
+    "recoveryUsed": true,
+    "requirements": [
+      {
+        "id": "object",
+        "kind": "object",
+        "value": "application"
+      },
+      {
+        "id": "grain",
+        "kind": "grain",
+        "value": "application"
+      },
+      {
+        "id": "scope",
+        "kind": "scope",
+        "value": "personal"
+      },
+      {
+        "id": "detail",
+        "kind": "detail",
+        "value": "list"
+      },
+      {
+        "id": "view",
+        "kind": "view",
+        "value": "todo"
+      }
+    ],
+    "workflowState": "ready",
+    "analysisStatus": "complete",
+    "answerCoverage": [],
+    "executionStatus": [
+      {
+        "code": "identity_permissions_and_bound_context_verified",
+        "stage": "identity_context",
+        "status": "passed"
+      },
+      {
+        "code": "original_clauses_reviewed",
+        "stage": "intent",
+        "status": "passed"
+      },
+      {
+        "code": "requirement_bound_bilingual_terms",
+        "stage": "query_expansion",
+        "status": "passed"
+      },
+      {
+        "code": "retrieval_receipt_verified",
+        "stage": "knowledge_retrieval",
+        "status": "passed"
+      },
+      {
+        "code": "coverage_and_conflicts_checked",
+        "stage": "knowledge_coverage",
+        "status": "passed"
+      },
+      {
+        "code": "authorized_documented_route_selected",
+        "stage": "page_routing",
+        "status": "passed"
+      },
+      {
+        "code": "actual_page_and_observed_sources_checked",
+        "stage": "page_observation",
+        "status": "passed"
+      },
+      {
+        "code": "observed_sources_and_citations_validated",
+        "stage": "source_selection",
+        "status": "passed"
+      },
+      {
+        "code": "source_receipts_and_collection_constraints_checked",
+        "stage": "data_collection",
+        "status": "passed"
+      },
+      {
+        "code": "computation_and_evidence_validated",
+        "stage": "analysis",
+        "status": "passed"
+      },
+      {
+        "code": "all_requested_requirements_verified",
+        "stage": "task_completion",
+        "status": "passed"
+      },
+      {
+        "code": "evidence_projection_and_sensitive_fields_checked",
+        "stage": "output",
+        "status": "passed"
+      }
+    ],
+    "failureCategory": "",
+    "knowledgeAnswer": [],
+    "knowledgeQuotes": [],
+    "qualityBlockers": [],
+    "taskFingerprint": "a1a6a16912eaf1a36f63e9461ebd37101052c51c26b28eb7139649da1fcb91be",
+    "routeVerification": {
+      "stage": "route_verification",
+      "checks": [
+        {
+          "reason": "",
+          "status": "verified",
+          "sourceIds": [],
+          "requirementId": "page"
+        },
+        {
+          "reason": "",
+          "status": "verified",
+          "sourceIds": [
+            "api_33170c9f32467b1ea7d1",
+            "section_0",
+            "page_metrics"
+          ],
+          "requirementId": "view"
+        }
+      ],
+      "passed": true,
+      "actualRoute": "/licensing/applications",
+      "requestedRoute": "/licensing/applications",
+      "taskFingerprint": "a1a6a16912eaf1a36f63e9461ebd37101052c51c26b28eb7139649da1fcb91be"
+    },
+    "requirementCoverage": [
+      {
+        "id": "object",
+        "kind": "object",
+        "value": "application",
+        "fields": [
+          "id"
+        ],
+        "reason": "",
+        "status": "satisfied",
+        "stepIds": [
+          "read_todo_rows",
+          "distinct_applications"
+        ],
+        "evidence": [
+          {
+            "quote": "",
+            "sourceId": "k_20ced6e0b4b58b26fc02:p0"
+          }
+        ],
+        "sourceId": "api_33170c9f32467b1ea7d1",
+        "outputIds": [
+          "distinct_applications",
+          "public_read_todo_rows"
+        ],
+        "sourcePath": "/data/page/items",
+        "outputStepIds": {
+          "distinct_applications": [
+            "distinct_applications",
+            "read_todo_rows"
+          ],
+          "public_read_todo_rows": [
+            "read_todo_rows"
+          ]
+        }
+      },
+      {
+        "id": "grain",
+        "kind": "grain",
+        "value": "application",
+        "fields": [
+          "id"
+        ],
+        "reason": "",
+        "status": "satisfied",
+        "stepIds": [
+          "read_todo_rows",
+          "distinct_applications"
+        ],
+        "evidence": [
+          {
+            "quote": "",
+            "sourceId": "k_20ced6e0b4b58b26fc02:p0"
+          }
+        ],
+        "sourceId": "api_33170c9f32467b1ea7d1",
+        "outputIds": [
+          "distinct_applications"
+        ],
+        "sourcePath": "/data/page/items",
+        "outputStepIds": {
+          "distinct_applications": [
+            "distinct_applications",
+            "read_todo_rows"
+          ]
+        }
+      },
+      {
+        "id": "scope",
+        "kind": "scope",
+        "value": "personal",
+        "fields": [
+          "id"
+        ],
+        "reason": "",
+        "status": "satisfied",
+        "stepIds": [
+          "read_todo_rows",
+          "distinct_applications"
+        ],
+        "evidence": [
+          {
+            "quote": "",
+            "sourceId": "k_20ced6e0b4b58b26fc02:p0"
+          }
+        ],
+        "sourceId": "api_33170c9f32467b1ea7d1",
+        "outputIds": [
+          "distinct_applications",
+          "public_read_todo_rows"
+        ],
+        "sourcePath": "/data/page/items",
+        "outputStepIds": {
+          "distinct_applications": [
+            "distinct_applications",
+            "read_todo_rows"
+          ],
+          "public_read_todo_rows": [
+            "read_todo_rows"
+          ]
+        }
+      },
+      {
+        "id": "detail",
+        "kind": "detail",
+        "value": "list",
+        "reason": "",
+        "status": "satisfied",
+        "stepIds": [
+          "distinct_applications",
+          "public_read_todo_rows"
+        ],
+        "outputIds": [
+          "distinct_applications"
+        ],
+        "outputStepIds": {
+          "distinct_applications": [
+            "distinct_applications"
+          ]
+        }
+      },
+      {
+        "id": "view",
+        "kind": "view",
+        "value": "todo",
+        "reason": "",
+        "status": "satisfied",
+        "stepIds": [
+          "distinct_applications",
+          "public_read_todo_rows"
+        ],
+        "outputIds": [
+          "distinct_applications",
+          "public_read_todo_rows"
+        ],
+        "outputStepIds": {
+          "distinct_applications": [
+            "distinct_applications"
+          ],
+          "public_read_todo_rows": [
+            "public_read_todo_rows"
+          ]
+        }
+      }
+    ],
+    "requirementsSatisfied": true,
+    "knowledgeRequirementCoverage": [
+      {
+        "reason": "The todo read contract binds the application entity on /licensing/applications: id identifies the application, and the page-scoped aliases طلبات الترخيص/licensing applications denote that application entity, not licence entities or workflow tasks. The user manual confirms the To Do list is the current user's pending Licensing application workflow tasks. No opposing inclusion/exclusion clause found.",
+        "status": "covered",
+        "evidence": [
+          {
+            "sourceId": "k_20ced6e0b4b58b26fc02:p2"
+          },
+          {
+            "sourceId": "k_0a12ad247f9f2c194ef5:p0"
+          }
+        ],
+        "followupQuery": "",
+        "requirementId": "object",
+        "requiredPoints": [
+          "الطلبات في هذا العرض هي طلبات ترخيص (كيان الطلب) وليست تراخيص صادرة ولا مهام سير عمل.",
+          "يُعرض كل طلب كصف في قائمة مهام الطلبات، ورقم الطلب هو المرجع العام المعروض للصف."
+        ],
+        "missingEvidenceType": "none"
+      },
+      {
+        "reason": "Application grain is explicitly id, and the contract states distinct application counts can differ from projected workflow/disposition rows; task grain uses a nonempty taskId and is a different unit. This establishes the requested application-level grain for the list.",
+        "status": "covered",
+        "evidence": [
+          {
+            "sourceId": "k_20ced6e0b4b58b26fc02:p3"
+          },
+          {
+            "sourceId": "k_20ced6e0b4b58b26fc02:p5"
+          }
+        ],
+        "followupQuery": "",
+        "requirementId": "grain",
+        "requiredPoints": [
+          "حبيبة القائمة هي الطلب الواحد المحدد بـ id، وليست مهمة سير العمل (taskId) ولا صف الإسقاط.",
+          "قد يظهر أكثر من صف/مهمة لنفس الطلب، لذا لا تُحتسب المهمة طلبًا ثانيًا."
+        ],
+        "missingEvidenceType": "none"
+      },
+      {
+        "reason": "Personal scope is defined: tasks come from the authenticated user's task list filtered by the endpoint runtime approval department, with no user-entered narrowing filter, and the native مهامي label names the authenticated personal queue. A Manager role does not convert it to a team queue.",
+        "status": "covered",
+        "evidence": [
+          {
+            "sourceId": "k_20ced6e0b4b58b26fc02:p7"
+          },
+          {
+            "sourceId": "k_0e1395e3dabfa9ebb60d:p4"
+          }
+        ],
+        "followupQuery": "",
+        "requirementId": "scope",
+        "requiredPoints": [
+          "النطاق شخصي: تُعرض المهام من قائمة مهام المستخدم الموثَّق فقط، وفق قسم الموافقة وقت التشغيل.",
+          "دور المدير لا يحوّل هذه القائمة إلى قائمة فريق، والقائمة الشخصية لا تُثبت طلبات فريق آخر."
+        ],
+        "missingEvidenceType": "none"
+      },
+      {
+        "reason": "The todo view is defined with its native Arabic label قيد الإنجاز (applications.subTabs.todo) and the pending population means the complete To Do queue from the MyTodoPage operation with the exact filter context, including pending modification and external approval, not only Pending Review. The seven-counter table in the admin guide lists To Do as a separate counter from Pending Review, consistent with the queue-membership definition rather than a stored status.",
+        "status": "covered",
+        "evidence": [
+          {
+            "sourceId": "k_0e1395e3dabfa9ebb60d:p1"
+          },
+          {
+            "sourceId": "k_20ced6e0b4b58b26fc02:p9"
+          }
+        ],
+        "followupQuery": "",
+        "requirementId": "view",
+        "requiredPoints": [
+          "عرض «قيد الإنجاز» هو تبويب المهام المطلوبة (To Do) في صفحة مهام طلباتي، وليس حالة طلب مخزَّنة.",
+          "يشمل هذا العرض كامل قائمة الانتظار المعلقة من عملية المهام المطلوبة، بما فيها التعديل المعلق والموافقة الخارجية، وليس فقط قيد المراجعة.",
+          "عضوية الصف في هذا العرض تُحدَّد بعملية المهام المطلوبة، ولا يوجد نص حالة عام Pending يستبدل حالات سير العمل المعلقة."
+        ],
+        "missingEvidenceType": "none"
+      }
+    ],
+    "knowledgeRequirementsSatisfied": true
+  },
+  "actualPreviousAnswer": "نتائج قراءة الصفحة الحالية:\n\nتمييز الطلبات بمعرّف الكيان:\nلم يتم العثور على سجلات مطابقة.\n\nقراءة صفوف قائمة المهام المطلوبة (قيد الإنجاز) (ملاحظة مرصودة):\nلم يتم العثور على سجلات مطابقة.\n\nالنطاق: شخصي.\nالوقت المرجعي للحساب: 2026-09-28T19:56:45.468261+00:00.\nمجموعة البيانات: كامل قائمة الانتظار المعلقة (قيد الإنجاز) من عملية المهام المطلوبة، بما فيها التعديل المعلق والموافقة الخارجية، وليست فقط قيد المراجعة.\nنطاق التصفية: لا يوجد مرشّح إضافي أدخله المستخدم؛ النطاق الشخصي مفروض من العملية نفسها.\nعرض «قيد الإنجاز» هو تبويب المهام المطلوبة في صفحة مهام طلباتي، وليس حالة طلب مخزَّنة؛ عضوية الصف تُحدَّد بعملية المهام المطلوبة.\nهذه قائمة شخصية للمستخدم الموثَّق؛ دور المدير لا يحوّلها إلى قائمة فريق، والقائمة الشخصية لا تُثبت طلبات فريق آخر.",
+  "scope": "Saved real intent and completed previous read. Any fresh current profile used by an integration test is separately mocked; it is never present in this historical fixture."
+}

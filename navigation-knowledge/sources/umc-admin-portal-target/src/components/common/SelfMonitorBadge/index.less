@@ -1,0 +1,44 @@
+/*
+ * Colours follow the Figma spec: Active and Trial are highlighted in the amber
+ * family, while Suspended and Expired are muted grey — those two states mean the
+ * establishment can no longer use auto-approval, so they should read as inactive
+ * rather than as a warning.
+ *
+ * Shape matches the neighbouring .vip_text / .profile_status badges so the three
+ * sit evenly on one line.
+ */
+.self-monitor-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+
+  &--active {
+    background-color: #fef5ee;
+    color: #eb5f24;
+  }
+
+  &--trial {
+    background-color: #fdf6e3;
+    color: #c9a427;
+  }
+
+  &--suspended,
+  &--expired {
+    background-color: #e1e3e5;
+    color: #5f646d;
+  }
+}
+
+/*
+ * Profile list variant: the badge sits under the profile type inside a table
+ * cell, where the row height is tight and the full-size badge would push the
+ * rows taller.
+ */
+.self-monitor-badge--compact {
+  padding: 1px 8px;
+  font-size: 12px;
+  line-height: 18px;
+}

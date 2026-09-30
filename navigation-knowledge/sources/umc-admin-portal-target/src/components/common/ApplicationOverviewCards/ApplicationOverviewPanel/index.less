@@ -1,0 +1,131 @@
+.application-overview {
+  padding: 0;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 20px;
+  overflow: hidden;
+  font-family: Inter;
+  letter-spacing: 0;
+
+  .application-overview-box {
+    padding: 0 24px 24px;
+  }
+
+  .application-overview-statistic-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .application-overview-statistic-entry {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .application-overview-related-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .application-overview-statistic-item {
+    background-color: #f8f7f4;
+    padding: 12px 16px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+
+    &.is-clickable {
+      cursor: pointer;
+      transition:
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    &.is-clickable:hover {
+      box-shadow: 0 0 0 1px #d5d7db inset;
+    }
+
+    &.is-clickable:active {
+      transform: translateY(1px);
+    }
+
+    &.is-clickable:focus-visible {
+      outline: 2px solid #b68a35;
+      outline-offset: 1px;
+    }
+
+    .application-overview-si-title-wrapper {
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
+
+      .application-overview-si-icon {
+        font-size: 0;
+
+        svg {
+          color: #5f646d;
+          font-size: 16px;
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .application-overview-si-title {
+        font-family: Inter;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #361e12;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 12px;
+          line-height: 16px;
+        }
+      }
+    }
+
+    .application-overview-si-num {
+      font-family: Inter;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      color: #361e12;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  .application-overview-more {
+    .application-overview-more-item {
+      margin-top: 24px;
+      padding: 24px;
+      border: 1px solid #e1e3e5;
+      border-radius: 12px;
+      font-family: Inter;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      color: #361e12;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        padding: 24px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .application-overview-related-more-item {
+    background-color: #ffffff;
+    border: 1px solid #e1e3e5;
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}

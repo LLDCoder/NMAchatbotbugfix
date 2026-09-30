@@ -1,0 +1,710 @@
+.all-overview-table__column-title {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.all-overview-table__column-title--fine-amount {
+  gap: 2px;
+}
+
+.all-overview-table__column-title-currency-icon {
+  width: 22px;
+  height: 16px;
+  flex: 0 0 22px;
+  color: #797e86;
+}
+
+.all-overview-body--figma {
+  gap: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 16px;
+  }
+}
+
+.all-overview-stats--columns-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.all-overview-body--figma .all-overview-stats--columns-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.customer-details-page .all-overview-body--figma .all-overview-stats--columns-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.all-overview-stats--columns-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.all-overview-body--figma .all-overview-stats--columns-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.customer-details-page .all-overview-body--figma .all-overview-stats--columns-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.all-overview-stats--columns-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.all-overview-body--figma .all-overview-stats--columns-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.customer-details-page .all-overview-body--figma .all-overview-stats--columns-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.all-overview-stats--columns-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.all-overview-body--figma .all-overview-stats--columns-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.customer-details-page .all-overview-body--figma .all-overview-stats--columns-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.all-overview-stats--wide {
+  row-gap: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    row-gap: 12px;
+  }
+}
+
+.customer-details-page
+  .all-overview-body--figma
+  .all-overview-stats--wide {
+  display: grid;
+  overflow-x: visible;
+}
+
+.customer-details-page
+  .all-overview-body--figma
+  .all-overview-stats--wide
+  > .all-overview-stat-card {
+  min-width: 0;
+}
+
+.all-overview-body--figma .all-overview-stat-card {
+  min-height: 80px;
+  border-color: #e1e3e5;
+  border-radius: 12px;
+  padding: 10px 16px;
+  gap: 12px;
+  box-shadow: none;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.all-overview-body--figma .all-overview-stat-icon {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.all-overview-body--figma .all-overview-stat-icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.all-overview-body--figma .all-overview-stat-icon--vector {
+  border-radius: 50%;
+}
+
+.all-overview-body--figma .all-overview-stat-icon--vector img {
+  width: 20px;
+  height: 20px;
+}
+
+.all-overview-body--figma .all-overview-stat-icon--queued {
+  background: #f9f7ed;
+}
+
+.all-overview-body--figma .all-overview-stat-icon--warning {
+  background: #fffbeb;
+}
+
+.all-overview-body--figma .all-overview-stat-icon--info {
+  background: #e7f5ff;
+}
+
+.all-overview-body--figma .all-overview-stat-icon--danger {
+  background: #fef2f2;
+}
+
+.all-overview-body--figma .all-overview-stat-icon--success {
+  background: #f3faf4;
+}
+
+.all-overview-body--figma .all-overview-stat-icon--muted {
+  background: #f8f7f4;
+}
+
+.all-overview-body--figma .all-overview-stat-value {
+  color: #361e12;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.all-overview-body--figma .all-overview-stat-label {
+  margin-top: 2px;
+  color: #5f646d;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.customer-details-page .all-overview-body--figma .all-overview-stat-card {
+  height: 80px;
+  min-height: 80px;
+  padding: 10px 16px;
+  border-color: #e1e3e5;
+}
+
+.customer-details-page .all-overview-body--figma .all-overview-stat-icon {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+}
+
+.customer-details-page .all-overview-body--figma .all-overview-stat-icon img {
+  width: 40px;
+  height: 40px;
+}
+
+.customer-details-page .all-overview-body--figma .all-overview-stat-icon--vector img {
+  width: 20px;
+  height: 20px;
+}
+
+.all-overview-body--figma .all-overview-filters {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.all-overview-body--figma .all-overview-search,
+.all-overview-body--figma .all-overview-search.ant-input-affix-wrapper {
+  width: 320px;
+  flex: 0 0 320px;
+}
+
+.all-overview-body--figma .all-overview-search .ant-input-affix-wrapper,
+.all-overview-body--figma .all-overview-search.ant-input-affix-wrapper {
+  height: 48px;
+  border-color: #e1e3e5;
+  border-radius: 8px;
+  padding: 0 16px;
+}
+
+.all-overview-body--figma .all-overview-search .ant-input {
+  color: #361e12;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.all-overview-body--figma .all-overview-search .ant-input::placeholder {
+  color: #797e86;
+}
+
+.all-overview-body--figma .all-overview-search .ant-input-prefix {
+  margin-right: 8px;
+}
+
+.all-overview-body--figma .all-overview-type-select,
+.all-overview-body--figma .all-overview-type-select.ant-select {
+  width: 240px;
+  flex: 0 0 240px;
+}
+
+.all-overview-body--figma .all-overview-type-select .ant-select-selector {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 12px;
+  border-color: #e1e3e5;
+  border-radius: 8px;
+}
+
+.all-overview-body--figma
+  .all-overview-type-select
+  .ant-select-selection-search {
+  display: flex;
+  align-items: center;
+  inset-inline-start: 12px;
+  inset-inline-end: 32px;
+}
+
+.all-overview-body--figma
+  .all-overview-type-select
+  .ant-select-selection-search-input {
+  height: 46px;
+  line-height: 46px;
+}
+
+.all-overview-body--figma .all-overview-type-select .ant-select-selection-item,
+.all-overview-body--figma .all-overview-type-select .ant-select-selection-placeholder {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  min-height: 0;
+  line-height: 46px;
+  color: #797e86;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.all-overview-body--figma .all-overview-type-select .ant-select-selection-item {
+  color: #361e12;
+}
+
+.all-overview-empty {
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overview-reset-button,
+.overview-filter-button {
+  display: inline-flex;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 16px;
+  border: 1px solid #92722a;
+  border-radius: 8px;
+  background: #fff;
+  color: #92722a;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  cursor: pointer;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 1919.98px) {
+  .all-overview-body--figma .all-overview-search,
+  .all-overview-body--figma .all-overview-search.ant-input-affix-wrapper {
+    width: 240px;
+    flex-basis: 240px;
+  }
+
+  .all-overview-body--figma .all-overview-search .ant-input-affix-wrapper,
+  .all-overview-body--figma .all-overview-search.ant-input-affix-wrapper,
+  .all-overview-body--figma .all-overview-type-select .ant-select-selector,
+  .inspection-overview-toolbar__button.custom-button,
+  .overview-filter-button,
+  .overview-reset-button {
+    height: 40px;
+    min-height: 40px;
+  }
+
+  .all-overview-body--figma
+    .all-overview-type-select
+    .ant-select-selection-item,
+  .all-overview-body--figma
+    .all-overview-type-select
+    .ant-select-selection-placeholder {
+    min-height: 0;
+    line-height: 38px;
+  }
+
+  .all-overview-body--figma
+    .all-overview-type-select
+    .ant-select-selection-search-input {
+    height: 38px;
+    line-height: 38px;
+  }
+}
+
+.inspection-overview-filter-modal__responsive-field {
+  display: none;
+}
+
+.customer-details-overview-filter-modal__responsive-field {
+  display: none;
+}
+
+@media (max-width: 1439.98px) {
+  .all-overview-body--figma .inspection-overview-toolbar__secondary-filter {
+    display: none;
+  }
+
+  .all-overview-body--figma
+    .customer-details-overview-toolbar__secondary-filter {
+    display: none;
+  }
+
+  .inspection-overview-filter-modal__responsive-field {
+    display: block;
+  }
+
+  .customer-details-overview-filter-modal__responsive-field {
+    display: flex;
+  }
+}
+
+.overview-filter-button__icon {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  display: block;
+}
+
+.all-overview-body--figma .all-overview-range-picker.ant-picker,
+.all-overview-body--figma .all-overview-date-range.ant-picker,
+.all-overview-body--figma .overview-inline-range.ant-picker,
+.all-overview-body--figma .all-overview-filters > .ant-picker {
+  width: 300px;
+  flex: 0 0 300px;
+  height: 48px;
+  border-color: #e1e3e5;
+  border-radius: 8px;
+}
+
+.all-overview-body--figma .overview-inline-range .ant-picker-input > input {
+  color: #361e12;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.all-overview-body--figma .overview-inline-range .ant-picker-input > input::placeholder {
+  color: #797e86;
+}
+
+.overview-status-pill,
+.overview-priority-pill {
+  display: inline-block;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  height: 26px;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.overview-status-tooltip .ant-tooltip-inner {
+  max-width: 800px;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.overview-status-pill--success,
+.overview-priority-pill--low {
+  background: #f3faf4!important;
+  color: #4a9d5c!important;
+}
+
+.overview-status-pill--warning {
+  background: #fef5ee!important;
+  color: #eb5f24!important;
+}
+
+.overview-status-pill--pending {
+  background: #fffbeb!important;
+  color: #f29f0e!important;
+}
+
+.overview-priority-pill--medium {
+  background: #fffbeb!important;
+  color: #f29f0e!important;
+}
+
+.overview-status-pill--danger,
+.overview-priority-pill--high {
+  background: #fef2f2!important;
+  color: #ea4f49!important;
+}
+
+.overview-status-pill--active {
+  background: #eff6ff;
+  color: #1d6fff;
+}
+
+.overview-status-pill--neutral {
+  background: #f5f5f6;
+  color: #5f646d;
+}
+
+.customer-details-page .all-overview-body--figma .all-overview-table .overview-status-pill {
+  height: 26px;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.customer-details-page .all-overview-body--figma .all-overview-table .overview-status-pill--status-warning_issued,
+.customer-details-page .all-overview-body--figma .all-overview-table .overview-status-pill--status-pending_payment {
+  background: #e7f5ff;
+  color: #286cff;
+}
+
+.customer-details-page .all-overview-body--figma .all-overview-table .overview-status-pill--status-open,
+.customer-details-page .all-overview-body--figma .all-overview-table .overview-status-pill--status-pending_routing,
+.customer-details-page .all-overview-body--figma .all-overview-table .overview-status-pill--status-pending_content_report,
+.customer-details-page .all-overview-body--figma .all-overview-table .overview-status-pill--status-report_submitted,
+.customer-details-page .all-overview-body--figma .all-overview-table .overview-status-pill--status-pending_review,
+.customer-details-page .all-overview-body--figma .all-overview-table .overview-status-pill--status-pending_committee_decision,
+.customer-details-page .all-overview-body--figma .all-overview-table .overview-status-pill--status-pending_approval,
+.customer-details-page .all-overview-body--figma .all-overview-table .overview-status-pill--status-rectification {
+  background: #fffbeb;
+  color: #f29f0e;
+}
+
+.customer-details-page .all-overview-body--figma .all-overview-table .overview-status-pill--status-under_appeal {
+  background: #fef5ee;
+  color: #eb5f24;
+}
+
+.customer-details-page .all-overview-body--figma .all-overview-table .overview-status-pill--status-paid,
+.customer-details-page .all-overview-body--figma .all-overview-table .overview-status-pill--status-resolved {
+  background: #f3faf4;
+  color: #4a9d5c;
+}
+
+.customer-details-page .all-overview-body--figma .all-overview-table .overview-status-pill--status-cancelled {
+  background: #f5f5f6;
+  color: #5f646d;
+}
+
+.overview-target-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.overview-target-cell__icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+}
+
+.overview-target-cell__content {
+  display: inline-flex;
+  flex: 1 1 auto;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.overview-target-cell__title {
+  overflow: hidden;
+  color: #361e12;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.overview-target-cell__meta {
+  overflow: hidden;
+  color: #797e86;
+  font-size: 12px;
+  line-height: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 16px;
+  }
+}
+
+.overview-entity-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.overview-entity-cell__icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+}
+
+.overview-entity-cell__text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.overview-entity-cell--two-line {
+  align-items: flex-start;
+  width: 100%;
+}
+
+.overview-entity-cell--two-line .overview-entity-cell__icon {
+  margin-top: 3px;
+}
+
+.overview-entity-cell--two-line .overview-entity-cell__text {
+  display: -webkit-box;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: normal;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.overview-link-value {
+  color: #92722a;
+}
+
+.all-overview-body--figma .overview-amount {
+  color: #ea4f49;
+  font-weight: 500;
+}
+
+.all-overview-body--figma .all-overview-table .ant-table {
+  border: 1px solid #e1e3e5;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.all-overview-body--figma .all-overview-table .ant-table-thead > tr > th {
+  height: 46px;
+  padding: 12px 16px;
+  border-bottom: 0;
+  background: #f8f7f4;
+  color: #797e86;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+  }
+}
+
+.all-overview-body--figma .all-overview-table .ant-table-tbody > tr > td {
+  height: 76px;
+  padding: 14px 16px;
+  border-bottom-color: #eef0f2;
+  color: #361e12;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.all-overview-body--figma .all-overview-table .ant-table-tbody > tr > td:first-child {
+  white-space: nowrap;
+}
+
+.all-overview-body--figma .all-overview-table .ant-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.all-overview-body--figma .all-overview-table .ant-pagination-item,
+.all-overview-body--figma .all-overview-table .ant-pagination-prev .ant-pagination-item-link,
+.all-overview-body--figma .all-overview-table .ant-pagination-next .ant-pagination-item-link {
+  min-width: 40px;
+  height: 40px;
+  border-color: transparent;
+  border-radius: 6px;
+  background: #f8f7f4;
+  line-height: 38px;
+}
+
+.all-overview-body--figma .all-overview-table .ant-pagination-item-active {
+  border-color: transparent;
+  background: #f2eccf;
+}
+
+.all-overview-body--figma .all-overview-table .ant-pagination-item-active a {
+  color: #92722a;
+}

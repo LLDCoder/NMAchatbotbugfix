@@ -1,0 +1,462 @@
+.activity-config-modal {
+  .ant-modal-content {
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+  }
+
+  .ant-modal-header {
+    border-bottom: 1px solid #e8e8e8;
+    padding: 20px 24px;
+    background-color: #fff;
+    
+    .ant-modal-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #262626;
+    }
+  }
+
+  .ant-modal-body {
+    padding: 24px;
+    background-color: #fafafa;
+  }
+
+  .ant-modal-close {
+    top: 20px;
+    right: 24px;
+    
+    .ant-modal-close-x {
+      width: 22px;
+      height: 22px;
+      line-height: 22px;
+      color: #8c8c8c;
+      
+      &:hover {
+        color: #262626;
+      }
+    }
+  }
+}
+
+// 
+.activity-config-content {
+  display: flex;
+  min-height: 500px;
+  align-items: stretch;
+  position: relative;
+}
+
+// 
+.divider-vertical {
+  width: 1px;
+  background-color: #e8e8e8;
+  flex-shrink: 0;
+  margin: 0 12px;
+  align-self: stretch;
+}
+
+// ：Options Tree
+.options-tree-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 16px;
+  border: 1px solid #e8e8e8;
+
+  .options-tree-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f0f0f0;
+
+    .options-tree-title {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 500;
+      color: #262626;
+    }
+
+    .add-node-btn {
+      background-color: #fff;
+      border-color: #c89664;
+      color: #c89664;
+      font-weight: 500;
+      
+      &:hover {
+        background-color: #b88552;
+        border-color: #b88552;
+        color: #fff;
+      }
+
+      &:focus {
+        background-color: #b88552;
+        border-color: #b88552;
+        color: #fff;
+      }
+    }
+  }
+
+  .options-tree-content {
+    flex: 1;
+    overflow: auto;
+    padding: 8px 0;
+    min-height: 400px;
+    max-height: 500px;
+
+    //  Ant Design Tree 
+    .ant-tree {
+      background: transparent;
+
+      .ant-tree-node-content-wrapper {
+        padding: 0;
+        border-radius: 0;
+        
+        &:hover {
+          background: transparent !important;
+        }
+
+        &.ant-tree-node-selected {
+          background: transparent !important;
+        }
+      }
+    }
+  }
+
+  .empty-tree {
+    text-align: center;
+    color: #999;
+    padding: 80px 0;
+    font-size: 14px;
+  }
+}
+
+// 
+.activity-tree {
+  .ant-tree-list {
+    .ant-tree-treenode {
+      padding: 2px 0;
+    }
+  }
+
+  .ant-tree-node-content-wrapper {
+    padding: 0;
+    border-radius: 0;
+    transition: none;
+    width: 100%;
+    line-height: normal;
+  }
+
+  .tree-node-title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 6px 8px;
+    margin: 2px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-height: 28px;
+
+    .drag-handle {
+      color: #8c8c8c;
+      margin-right: 8px;
+      cursor: move;
+      font-size: 16px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      padding: 2px;
+      
+      &:hover {
+        color: #595959;
+        background-color: rgba(0, 0, 0, 0.06);
+        border-radius: 2px;
+      }
+
+      &:active {
+        cursor: grabbing;
+      }
+    }
+
+    .tree-node-text {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 14px;
+      color: #262626;
+      min-width: 0;
+    }
+
+    .tree-node-delete-btn {
+      margin-left: 8px;
+      padding: 0 4px;
+      height: 20px;
+      opacity: 0.7;
+      flex-shrink: 0;
+      
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &.tree-node-selected {
+      background-color: #d4a574 !important;
+      color: #fff;
+      font-weight: 500;
+
+      .tree-node-text {
+        color: #fff !important;
+        font-weight: 500;
+      }
+
+      .drag-handle {
+        color: rgba(255, 255, 255, 0.9);
+        
+        &:hover {
+          color: #fff;
+          background-color: rgba(255, 255, 255, 0.2);
+        }
+      }
+
+      .tree-node-delete-btn {
+        color: #ff4d4f;
+        
+        &:hover {
+          color: #ff7875;
+          background-color: rgba(255, 77, 79, 0.1);
+        }
+      }
+    }
+
+    &:hover:not(.tree-node-selected) {
+      background-color: #f5f5f5;
+    }
+  }
+
+  //  -  ant design 
+  .ant-tree-node-selected {
+    .ant-tree-node-content-wrapper {
+      background-color: transparent !important;
+      
+      .tree-node-title {
+        background-color: #d4a574 !important;
+      }
+    }
+  }
+
+  .ant-tree-node-content-wrapper {
+    &:hover {
+      background-color: transparent !important;
+    }
+
+    &.ant-tree-node-selected {
+      background-color: transparent !important;
+    }
+  }
+
+  // 
+  .ant-tree-drag-icon {
+    color: #8c8c8c;
+  }
+
+  .ant-tree-treenode-draggable {
+    .ant-tree-node-content-wrapper {
+      cursor: move;
+    }
+  }
+}
+
+// ：Node Property
+.node-property-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 16px;
+  border: 1px solid #e8e8e8;
+
+  .node-property-title {
+    margin: 0 0 16px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #262626;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .node-property-content {
+    flex: 1;
+    padding-top: 8px;
+
+    .ant-form-item {
+      margin-bottom: 20px;
+
+      .ant-form-item-label {
+        padding-bottom: 6px;
+
+        label {
+          font-size: 14px;
+          font-weight: 500;
+          color: #262626;
+        }
+      }
+    }
+
+    .ant-input {
+      border-radius: 4px;
+      border: 1px solid #d9d9d9;
+      padding: 6px 11px;
+      font-size: 14px;
+
+      &:focus {
+        border-color: #d4a574;
+        box-shadow: 0 0 0 2px rgba(212, 165, 116, 0.2);
+      }
+    }
+  }
+
+  .empty-property {
+    text-align: center;
+    color: #999;
+    padding: 80px 0;
+    font-size: 14px;
+  }
+}
+
+// 
+.modal-footer-custom {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #e8e8e8;
+
+  .cancel-btn {
+    background-color: #f5f0e8;
+    border-color: #e8dcc8;
+    color: #8b6f47;
+    min-width: 80px;
+    height: 36px;
+    border-radius: 4px;
+    font-weight: 500;
+
+    &:hover {
+      background-color: #ede5d6;
+      border-color: #dcc9ae;
+      color: #6b5638;
+    }
+
+    &:focus {
+      background-color: #ede5d6;
+      border-color: #dcc9ae;
+      color: #6b5638;
+    }
+  }
+
+  .save-btn {
+    background-color: #c89664;
+    border-color: #c89664;
+    color: #fff;
+    min-width: 80px;
+    height: 36px;
+    border-radius: 4px;
+    font-weight: 500;
+
+    &:hover {
+      background-color: #b88552;
+      border-color: #b88552;
+      color: #fff;
+    }
+
+    &:focus {
+      background-color: #b88552;
+      border-color: #b88552;
+      color: #fff;
+    }
+
+    &:active {
+      background-color: #a67440;
+      border-color: #a67440;
+    }
+  }
+}
+
+// /
+.activity-tree {
+  .ant-tree-switcher-noop{
+    display: none;
+  }
+  .ant-tree-switcher{
+    line-height: 36px;
+  }
+  // .ant-tree-switcher {
+  //   width: 24px;
+  //   height: 24px;
+  //   line-height: 24px;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   flex-shrink: 0;
+    
+  //   .ant-tree-switcher-icon {
+  //     font-size: 12px;
+  //     color: #8c8c8c;
+  //   }
+    
+  //   &:hover {
+  //     background-color: rgba(0, 0, 0, 0.06);
+  //   }
+  // }
+
+  .ant-tree-iconEle {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  // 
+  .ant-tree-treenode {
+    display: flex;
+    align-items: center;
+  }
+
+  // 
+  .ant-tree-node-content-wrapper {
+    &.drag-over {
+      background-color: #e6f7ff;
+    }
+
+    &.drag-over-gap-top {
+      border-top: 2px solid #c19453;
+    }
+
+    &.drag-over-gap-bottom {
+      border-bottom: 2px solid #c19453;
+    }
+  }
+}
+
+// 
+@media (max-width: 1200px) {
+  .activity-config-modal {
+    .ant-modal {
+      width: 90% !important;
+      max-width: 900px;
+    }
+  }
+}
+

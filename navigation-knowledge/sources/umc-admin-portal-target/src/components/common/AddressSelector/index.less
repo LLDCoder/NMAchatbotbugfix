@@ -1,0 +1,46 @@
+.address-selector {
+  &.vertical {
+    .address-selector-item {
+      margin-bottom: 16px;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &.horizontal {
+    .address-selector-item {
+      width: 100%;
+    }
+  }
+
+  .address-selector-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: rgba(0, 0, 0, 0.85);
+
+    .required-mark {
+      color: #ff4d4f;
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 10px;
+    }
+  }
+
+  .ant-select {
+    .ant-select-selector {
+      border-radius: 6px;
+    }
+  }
+
+  .ant-select-disabled {
+    .ant-select-selector {
+      background-color: #f5f5f5;
+      color: rgba(0, 0, 0, 0.25);
+    }
+  }
+}

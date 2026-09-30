@@ -1,0 +1,47 @@
+.persons-in-charge-list-container {
+  width: 100%;
+
+  .persons-in-charge-list-card {
+    .persons-in-charge-list-title {
+      display: flex;
+      justify-content: space-between;
+      font-family: Inter;
+      font-style: Medium;
+      // font-size: 16px;
+      color: #361e12;
+      line-height: 20px;
+      letter-spacing: 0px;
+      align-items: center;
+      span {
+        font-weight: 500;
+      }
+      button {
+        height: 40px;
+      }
+    }
+    .ant-card-head {
+      // background-color: #fafafa;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .ant-card-body {
+      padding: 20px;
+
+      .persons-in-charge-list-empty {
+        padding: 60px 0;
+      }
+
+      .ant-table {
+        .ant-table-thead > tr > th {
+          background-color: #fafafa;
+          font-weight: 600;
+        }
+
+        .ant-btn-link {
+          padding: 0;
+          height: auto;
+        }
+      }
+    }
+  }
+}

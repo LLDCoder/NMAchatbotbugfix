@@ -1,0 +1,544 @@
+@import "@/styles/variables.less";
+
+.select-all-dropdown {
+  position: relative;
+  width: 100%;
+
+  .dropdown-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: @text-color;
+    margin-bottom: 8px;
+
+    .required-mark {
+      color: #ff4d4f;
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+    }
+  }
+
+  .dropdown-selector {
+    min-height: 48px;
+    padding: 8px 12px;
+    background: #ffffff;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:hover {
+      border-color: @primary-color;
+    }
+
+    &.open {
+      border-color: @primary-color;
+      box-shadow: 0 0 0 2px rgba(203, 163, 68, 0.1);
+    }
+
+    &.disabled {
+      background: #f5f5f5;
+      cursor: not-allowed;
+      opacity: 0.6;
+
+      &:hover {
+        border-color: #d9d9d9;
+      }
+    }
+
+    .selected-content {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+      min-height: 32px;
+      min-width: 0;
+
+      .placeholder {
+        /* Was `1rem`, which keeps scaling in a migrated file. 16px at the 1920 baseline. */
+        font-size: 16px;
+        font-weight: 400;
+        font-family: Inter;
+        color: #797e86;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 14px;
+        }
+      }
+
+      .selected-text-input {
+        width: 100%;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        color: @text-color;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        pointer-events: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+
+      .selected-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        max-width: 100%;
+        min-width: 0;
+        padding: 4px 8px;
+        background: #f5f5f5;
+        border: 1px solid #d9d9d9;
+        border-radius: 4px;
+        font-size: 14px;
+        color: @text-color;
+        line-height: 1.5;
+        overflow: hidden;
+
+        .selected-tag-label {
+          flex: 1;
+          min-width: 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        .tag-close {
+          flex-shrink: 0;
+          font-size: 10px;
+          color: #8c8c8c;
+          cursor: pointer;
+          transition: color 0.2s ease;
+
+          &:hover {
+            color: #595959;
+          }
+        }
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .dropdown-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      margin-inline-start: 8px;
+      flex-shrink: 0;
+
+      .clear-icon {
+        font-size: 14px;
+        color: #bfbfbf;
+        cursor: pointer;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #8c8c8c;
+        }
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 12px;
+        }
+      }
+
+      .arrow-icon {
+        font-size: 12px;
+        color: #bfbfbf;
+        transition: transform 0.3s;
+
+        &.open {
+          transform: rotate(180deg);
+        }
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
+  .dropdown-panel {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08),
+      0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+    z-index: 1050;
+    max-height: 300px;
+    display: flex;
+    flex-direction: column;
+
+    .search-box {
+      padding: 12px;
+      border-bottom: 1px solid #f0f0f0;
+
+      .ant-input-affix-wrapper {
+        border-radius: 4px;
+
+        &:hover,
+        &:focus,
+        &.ant-input-affix-wrapper-focused {
+          border-color: @primary-color;
+          box-shadow: 0 0 0 2px rgba(203, 163, 68, 0.1);
+        }
+      }
+
+      .ant-input-prefix {
+        color: #bfbfbf;
+      }
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        padding: 8px;
+      }
+    }
+
+    .options-list {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      min-height: 0;
+      padding: 4px 0;
+
+      .option-item {
+        padding: 8px 16px;
+        cursor: pointer;
+        transition: background 0.3s;
+        height: 40px;
+
+        &:hover {
+          background: #f5f5f5;
+        }
+
+        &.option-item-disabled {
+          cursor: not-allowed;
+
+          &:hover {
+            background: transparent;
+          }
+
+          .ant-checkbox-wrapper {
+            cursor: not-allowed;
+          }
+        }
+
+        &.select-all-item {
+          font-weight: 500;
+          font-size: 14px;
+
+          .ant-checkbox-wrapper {
+            .option-label {
+              font-weight: 500;
+              color: @text-color;
+              font-size: 14px;
+              /* rwd-ramp */
+              @media (max-width: 1919.98px) {
+                font-size: 12px;
+              }
+            }
+          }
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            font-size: 12px;
+          }
+        }
+
+        .ant-checkbox-wrapper {
+          width: 100%;
+
+          .ant-checkbox {
+            .ant-checkbox-inner {
+              border-radius: 4px;
+              border-color: #d9d9d9;
+              transition: all 0.3s;
+
+              &:hover {
+                border-color: @primary-color;
+              }
+            }
+
+            &.ant-checkbox-checked {
+              .ant-checkbox-inner {
+                background-color: @primary-color;
+                border-color: @primary-color;
+              }
+            }
+
+            &.ant-checkbox-indeterminate {
+              .ant-checkbox-inner {
+                background-color: @primary-color;
+                border-color: @primary-color;
+
+                &::after {
+                  background-color: #fff;
+                  width: 8px;
+                  height: 2px;
+                  border-radius: 1px;
+                }
+              }
+            }
+          }
+
+          .option-label {
+            font-size: 14px;
+            color: @text-color;
+            margin-left: 8px;
+            /* rwd-ramp */
+            @media (max-width: 1919.98px) {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+
+      .divider {
+        height: 1px;
+        background: #f0f0f0;
+        margin: 4px 16px;
+      }
+
+      .no-results {
+        padding: 24px 16px;
+        text-align: center;
+        color: #bfbfbf;
+        font-size: 14px;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+.select-all-dropdown__option-content {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  min-width: 0;
+}
+
+.select-all-dropdown .option-item .ant-checkbox-wrapper > span:last-child,
+.select-all-dropdown-portal .option-item .ant-checkbox-wrapper > span:last-child {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.select-all-dropdown__option-content .option-label {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.select-all-dropdown__option-count {
+  flex: 0 0 auto;
+  color: #92722a;
+  font-weight: 500;
+}
+
+.select-all-dropdown.selection-display-text {
+  .dropdown-selector {
+    .selected-content {
+      flex-wrap: nowrap;
+    }
+  }
+}
+
+.select-all-dropdown-portal {
+  position: absolute;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08),
+    0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  z-index: 1050;
+  max-height: 300px;
+  display: flex;
+  flex-direction: column;
+
+  .search-box {
+    padding: 12px;
+    border-bottom: 1px solid #f0f0f0;
+
+    .ant-input-affix-wrapper {
+      border-radius: 4px;
+
+      &:hover,
+      &:focus,
+      &.ant-input-affix-wrapper-focused {
+        border-color: @primary-color;
+        box-shadow: 0 0 0 2px rgba(203, 163, 68, 0.1);
+      }
+    }
+
+    .ant-input-prefix {
+      color: #bfbfbf;
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      padding: 8px;
+    }
+  }
+
+  .options-list {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-height: 0;
+    padding: 4px 0;
+
+    .option-item {
+      padding: 8px 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+      height: 40px;
+
+      &:hover {
+        background: #f5f5f5;
+      }
+
+      &.select-all-item {
+        font-weight: 500;
+        font-size: 14px;
+
+        .ant-checkbox-wrapper {
+          .option-label {
+            font-weight: 500;
+            color: @text-color;
+            font-size: 14px;
+            /* rwd-ramp */
+            @media (max-width: 1919.98px) {
+              font-size: 12px;
+            }
+          }
+        }
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 12px;
+        }
+      }
+
+      .ant-checkbox-wrapper {
+        width: 100%;
+
+        .ant-checkbox {
+          .ant-checkbox-inner {
+            border-radius: 4px;
+            border-color: #d9d9d9;
+            transition: all 0.3s;
+
+            &:hover {
+              border-color: @primary-color;
+            }
+          }
+
+          &.ant-checkbox-checked {
+            .ant-checkbox-inner {
+              background-color: @primary-color;
+              border-color: @primary-color;
+            }
+          }
+
+          &.ant-checkbox-indeterminate {
+            .ant-checkbox-inner {
+              background-color: @primary-color;
+              border-color: @primary-color;
+
+              &::after {
+                background-color: #fff;
+                width: 8px;
+                height: 2px;
+                border-radius: 1px;
+              }
+            }
+          }
+        }
+
+        .option-label {
+          font-size: 14px;
+          color: @text-color;
+          margin-left: 8px;
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    .divider {
+      height: 1px;
+      background: #f0f0f0;
+      margin: 4px 16px;
+    }
+
+    .no-results {
+      padding: 24px 16px;
+      text-align: center;
+      color: #bfbfbf;
+      font-size: 14px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.select-all-dropdown__options-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+// Responsive design
+.select-all-dropdown.select-all-dropdown--responsive .dropdown-selector .selected-content {
+  position: relative;
+  flex-wrap: nowrap;
+}
+
+.select-all-dropdown.select-all-dropdown--responsive .dropdown-selector .selected-content > .selected-tag {
+  flex: 0 0 auto;
+}
+
+.select-all-dropdown.select-all-dropdown--responsive .dropdown-selector .selected-content > .selected-tag:first-child {
+  flex: 0 1 auto;
+}
+
+.select-all-dropdown.select-all-dropdown--responsive .dropdown-selector .select-all-dropdown__measure {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.select-all-dropdown.select-all-dropdown--responsive .dropdown-selector .select-all-dropdown__measure .selected-tag {
+  width: max-content;
+  max-width: none;
+}

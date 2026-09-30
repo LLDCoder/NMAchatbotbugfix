@@ -1,0 +1,117 @@
+.content-application-status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  max-width: 100%;
+  gap: 4px;
+}
+
+.content-application-status--inline {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: max-content;
+  max-width: none;
+}
+
+.content-application-status--inline .content-application-status__main,
+.content-application-status--inline .content-application-status__sub {
+  flex-shrink: 0;
+  max-width: none;
+  overflow: visible;
+  text-overflow: clip;
+  white-space: nowrap;
+  word-break: normal;
+  -webkit-line-clamp: unset;
+}
+
+.content-application-status__main {
+  display: -webkit-box;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: fit-content;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  font-weight: 400;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-break: break-word;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+  }
+}
+ 
+.content-application-status__main--orange {
+  background-color: #fef5ee;
+  color: #eb5f24;
+}
+ 
+.content-application-status__main--warning {
+  background-color: #fffbeb;
+  color: #f29f0e;
+}
+
+.content-application-status__main--info {
+  background-color: #e7f5ff;
+  color: #286cff;
+}
+
+.content-application-status__main--success {
+  background-color: #f3faf4;
+  color: #4a9d5c;
+}
+
+.content-application-status__main--danger {
+  background-color: #fef2f2;
+  color: #ea4f49;
+}
+
+.content-application-status__main--neutral {
+  background-color: rgba(225, 227, 229, 0.5);
+  color: #5f646d;
+}
+
+.content-application-status__sub {
+  display: -webkit-box;
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+  padding: 3px 6px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: rgba(225, 227, 229, 0.5);
+  color: #5f646d;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-break: break-word;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+  }
+}
+ 
+.content-application-status .content-application-status__sub--success {
+  background-color: #f3faf4;
+  color: #4a9d5c;
+}
+ 
+.content-application-status .content-application-status__sub--danger {
+  background-color: #fef2f2;
+  color: #ea4f49;
+}

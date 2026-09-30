@@ -1,0 +1,115 @@
+@import "@/styles/variables.less";
+
+.management-container{
+    .content-tabs {
+        padding: 0 24px;
+        background-color: rgba(255, 255, 255, 1);
+        border-radius: 20px;
+        margin-bottom: 16px;
+        .ant-tabs-nav{
+            margin-bottom: 0;
+            .ant-tabs-tab{
+                padding: 25px 0;
+            }
+        }
+        .ant-tabs-tab + .ant-tabs-tab{
+            margin-left: 32px;
+        }
+        .ant-tabs-ink-bar{
+            height: 2px;
+        }
+        .ant-tabs-nav::before{
+            border-bottom: 1px solid #f0f0f0;
+        }
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        border-radius: 10px;
+      }
+    }
+    .tabs-dot{
+        .ant-tabs-nav-wrap{
+            .ant-tabs-nav-list{
+                .ant-tabs-tab:nth-last-child(2){
+                    .ant-tabs-tab-btn{
+                        position: relative;
+                        &::after{
+                            position: absolute;
+                            top: 0;
+                            right: -8px;
+                            content: "";
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            background-color: #C54600;
+                        } 
+                    }
+                }
+            }
+        }
+    }
+
+    .content-table{
+        margin-top: 16px;
+        padding: 24px;
+        background-color: #fff;
+        border-radius: 20px;
+        .filters {
+            display: flex;
+            gap: 16px;
+            flex: 1;
+            justify-content: flex-start;
+            margin-bottom: 16px;
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            gap: 12px;
+          }
+        }
+        .search-input {
+            border-radius: 8px;
+            height: 48px;
+            width: 360px;
+            .ant-input {
+                border-radius: 8px;
+            }
+
+            &:hover,
+            &:focus-within {
+                .ant-input {
+                    border-color: @primary-color;
+                }
+            }
+        }
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        border-radius: 10px;
+      }
+    }
+    .btn-group{
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 12px;
+        white-space: nowrap;
+        .text-btn{
+            display: inline-block;
+            flex: 0 0 auto;
+            color: @primary-color;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            font-size: 14px;
+          }
+        }
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        gap: 8px;
+      }
+    }
+}
+
+.reject-form {
+  .select-reason {
+    height: 48px;
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "schemaVersion": "1.0",
+  "bundleId": "admin.finance.refund.detail.currency-and-update.package",
+  "packageStatus": "active",
+  "createdAt": "2026-09-28T09:32:05.186871+00:00",
+  "searchMetadata": {
+    "titleEnglish": "Finance Refund Details currency and source update time",
+    "titleArabic": "تفاصيل الاسترداد المالي: العملة ووقت تحديث المصدر",
+    "descriptionEnglish": "Independent executable field meanings for refund currency and the refund record source-reported last-updated time. Preserve the original refund amount and identity bindings.",
+    "descriptionArabic": "تعريفان مستقلان لعملة الاسترداد ووقت آخر تحديث لسجل الاسترداد من المصدر، مع الحفاظ على معنى مبلغ الاسترداد وهوية السجل."
+  },
+  "records": [
+    {
+      "id": "admin.finance.refund.detail.currency-and-update",
+      "kind": "field_semantics",
+      "revision": 1,
+      "status": "active",
+      "title": "Finance Refund Details currency and source update time",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local",
+          "debug"
+        ],
+        "pageRefs": [
+          "/financial-payment/refunds/refundsDetails"
+        ],
+        "runtimeVerification": "response_shape_verified",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "runtime_observation",
+          "reference": "test/runtime/group17-cross-repair-20260928/refund-detail-field-evidence.json",
+          "revision": "sha256:1c95914e03011373f9b5d034186baf4875f72940f82b4e2e8753505a2c46efc7",
+          "locator": "Saved authorized refund detail fieldEvidence and earlier native response comparison; only field presence and scalar equality are proved.",
+          "verification": "response_shape_verified"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Refunds/RefundBoundaryDtos.cs",
+          "revision": "sha256:be6408527019812688d641bd981b410f17d07471578a012791b2f1851954142c",
+          "locator": "RefundDetailDto.LastUpdatedOn and RefundApplicationInformationDto.Currency; separate RelatedPaymentInformation timestamps.",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/Refunds/RefundsAppService.cs",
+          "revision": "sha256:38c03a38858d4dc93ba5cdb21bdb1b117133d9afcf59545e7b420d2dc00ccb80",
+          "locator": "GetDetailAsync maps result.LastUpdatedOn and result.ApplicationInformation.Currency into the exact detail fields.",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Infrastructure/Repositorys/RefundRepository.cs",
+          "revision": "sha256:0ea3d0cc6687a9ffb3cfbc657cf6efdb0b53f90aa99ff1167c10ccc8039dbd88",
+          "locator": "GetDetailAsync detail projection assigns pendingRecord.LastUpdatedOn to the refund root, separately from RelatedPaymentInformation.LastUpdatedOn. Source inspection does not attest deployed build parity.",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/financial-payment/refunds/refundsDetails",
+        "sourceBinding": {
+          "operationRef": "GET /api/admin/payments/refunds/{refundNo}",
+          "sourcePath": "/data"
+        },
+        "bindings": [
+          {
+            "id": "currency",
+            "kind": "attribute",
+            "concept": "currency",
+            "aliases": [
+              "refund currency",
+              "display currency",
+              "عملة الاسترداد",
+              "العملة"
+            ],
+            "operationRef": "GET /api/admin/payments/refunds/{refundNo}",
+            "sourcePath": "/data",
+            "fields": [
+              "applicationInformation.currency"
+            ],
+            "meaning": "The currency returned with the refund amount on this verified refund detail record. Read its actual value; do not convert currency or fill a missing value from a DTO default. This standalone currency fact does not replace the existing compound amount binding."
+          },
+          {
+            "id": "source-update-time",
+            "kind": "attribute",
+            "concept": "last-updated date",
+            "aliases": [
+              "last updated date",
+              "last update time",
+              "last updated time",
+              "refund last update time",
+              "refund last updated date",
+              "lastUpdatedOn",
+              "تاريخ آخر تحديث",
+              "وقت آخر تحديث",
+              "آخر تحديث للاسترداد"
+            ],
+            "operationRef": "GET /api/admin/payments/refunds/{refundNo}",
+            "sourcePath": "/data",
+            "fields": [
+              "lastUpdatedOn"
+            ],
+            "meaning": "The source-reported update time of this refund record from the root detail field. It is distinct from the original payment timestamp, failure reason timestamp, reader capture time and refund execution completion proof."
+          }
+        ],
+        "constraints": [
+          "Use only the current authorized detail response whose refundNo has been exactly verified. These fields add no route, relation, permission or write capability.",
+          "Keep the existing refund amount binding and its signed-amount meaning. Currency is independently addressable as a requested attribute; sharing a physical currency field does not make the currency concept an alias of refund amount.",
+          "Use the root lastUpdatedOn only. Do not substitute relatedPaymentInformation.lastUpdatedOn, failureReason.lastUpdatedOn, submission dates or current time. List documentation does not establish a detail field binding.",
+          "Preserve the returned timestamp. If it lacks an offset, no timezone is verified; do not label it UTC or calculate cross-department synchronization latency. A later read alone does not prove a committed update.",
+          "Missing or null currency/update time remains unavailable. Do not replace it with the inspected implementation default, another record value, a cached answer or knowledge example.",
+          "The inspected source assigns pendingRecord.LastUpdatedOn to the root refund time; deployed source parity is unknown. This field is not proof of provider settlement, successful refund completion or synchronization of all systems."
+        ]
+      }
+    }
+  ]
+}

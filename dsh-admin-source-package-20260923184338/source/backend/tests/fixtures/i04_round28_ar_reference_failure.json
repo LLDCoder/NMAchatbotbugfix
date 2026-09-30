@@ -1,0 +1,1449 @@
+{
+  "evidenceKind": "saved_failed_stage_replay_not_fresh_authorization",
+  "conversationId": "conv_7232a563262d49949d4e",
+  "requestId": "a80754db-9877-4821-a5a9-4f74c3db49df",
+  "question": "ما الذي يمكنني فعله ضمن دوري الحالي؟",
+  "canonicalQuestion": "What can I do within my current role?",
+  "assignment": {
+    "authFacts": {
+      "roles": [
+        {
+          "label": "مدير الإعلام الأجنبي",
+          "roleRef": "81f95aa50573c29f6339ac8e28cc71a5fc21dccc04de5948e7ef685c92a43129"
+        },
+        {
+          "label": "مدير التراخيص",
+          "roleRef": "b4777ae9e7d66281912b6217d3f9ea314ee871feb11640706193a37a752de79b"
+        }
+      ],
+      "source": "fresh_authenticated_GetUserInfo",
+      "missing": [],
+      "sourceId": "auth_permissions_cd37c58b8c92d763038bf9714c4792cf9917fd31352cecd687cf34af97d5d11f",
+      "verified": true,
+      "observedAt": "2026-09-28T23:20:56.715159+00:00",
+      "displayHash": "5d2270a50263483de55b3e5d0f012310403bc88eebe978648dd4eb474434df0b",
+      "schemaVersion": "current-account-permission-examples/1",
+      "actionExamples": [
+        {
+          "label": "تصدير",
+          "route": "/licensing/licenses",
+          "pageLabel": "licenses",
+          "fieldPointer": "/data/listSysPermission/2/children/2/buttonList/1",
+          "permissionRef": "190fed45a4bb3fa430448ab48ea1c1be7556dac08769b053ff8e4c1365562c2b"
+        },
+        {
+          "label": "إضافة جديدة",
+          "route": "/happiness/tickets",
+          "pageLabel": "Tickets",
+          "fieldPointer": "/data/listSysPermission/3/children/0/buttonList/0",
+          "permissionRef": "28cb5159c458743ca4f0022f24fdd55e1cde008764446b165ec5031f68dce66c"
+        },
+        {
+          "label": "تغيير كلمة المرور",
+          "route": "/personal-center",
+          "pageLabel": "Personal Center",
+          "fieldPointer": "/data/listSysPermission/4/buttonList/0",
+          "permissionRef": "44559665ab251ff6c2e6b4d204aeb1db0a334e25b3d3d2a5c97f6665108256fe"
+        },
+        {
+          "label": "تصدير",
+          "route": "/happiness/appeals",
+          "pageLabel": "Appeals",
+          "fieldPointer": "/data/listSysPermission/3/children/3/buttonList/1",
+          "permissionRef": "49610daf3206777e41c4164554fec4263da91410a7a9feb5a0adc9ebdbbefe74"
+        }
+      ],
+      "catalogVersion": "923ec44fe50a2342995e281c82aafca24ba1f1db20bf2c2184ec663e33329bf1",
+      "actionsExecuted": false,
+      "sourceRequestId": "a80754db-9877-4821-a5a9-4f74c3db49df",
+      "rowScopeVerified": false,
+      "principalScopeRef": "7da85129c1862eb3c3f0",
+      "examplesExhaustive": false,
+      "selectedRoleVerified": false,
+      "permissionProjectionHash": "8c0ff7c39006d62059a75926c9f48585e794d7cc769650edb0df35488c223a85",
+      "roleActionMappingVerified": false,
+      "recordActionEligibilityVerified": false
+    },
+    "originalTask": {
+      "view": "",
+      "stage": "task",
+      "filters": [],
+      "groupBy": [],
+      "readOnly": true,
+      "timeField": "",
+      "timeRange": "unknown",
+      "outputShape": "overview",
+      "searchQuery": "current role available actions permissions limitations capabilities",
+      "slotUpdates": [
+        {
+          "field": "businessObject",
+          "value": "current role",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedScope",
+          "value": "personal",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedGrain",
+          "value": "current role",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedAttributes",
+          "value": [
+            "available actions within current role",
+            "limitations of current role"
+          ],
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "outputShape",
+          "value": "overview",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "businessFocus",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "disclosurePurpose",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedMeasures",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupBy",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeRange",
+          "value": "unknown",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "filters",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "recordIdentity",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "view",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeField",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedOrdering",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupCompleteness",
+          "value": "observed",
+          "source": "current",
+          "evidence": "parsed current request"
+        }
+      ],
+      "responseMode": "answer",
+      "businessFocus": "",
+      "clarification": null,
+      "needsLiveData": false,
+      "businessObject": "current role",
+      "recordIdentity": "",
+      "requestedGrain": "current role",
+      "requestedScope": "personal",
+      "contextRelation": "new",
+      "unresolvedSlots": [],
+      "disclosurePurpose": "",
+      "groupCompleteness": "observed",
+      "requestBoundaries": [],
+      "requestedMeasures": [],
+      "requestedOrdering": [],
+      "requestedAttributes": [
+        "available actions within current role",
+        "limitations of current role"
+      ],
+      "evidenceExplanations": []
+    },
+    "knowledgeTask": {
+      "view": "",
+      "stage": "task",
+      "filters": [],
+      "groupBy": [],
+      "readOnly": true,
+      "timeField": "",
+      "timeRange": "unknown",
+      "outputShape": "overview",
+      "searchQuery": "current role available actions permissions limitations capabilities",
+      "slotUpdates": [
+        {
+          "field": "businessObject",
+          "value": "current role",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedScope",
+          "value": "personal",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedGrain",
+          "value": "current role",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "requestedAttributes",
+          "value": [
+            "limitations of current role"
+          ],
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "outputShape",
+          "value": "overview",
+          "source": "current",
+          "evidence": ""
+        },
+        {
+          "field": "businessFocus",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "disclosurePurpose",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedMeasures",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupBy",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeRange",
+          "value": "unknown",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "filters",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "recordIdentity",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "view",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeField",
+          "value": "",
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedOrdering",
+          "value": [],
+          "source": "current",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupCompleteness",
+          "value": "observed",
+          "source": "current",
+          "evidence": "parsed current request"
+        }
+      ],
+      "responseMode": "answer",
+      "businessFocus": "",
+      "clarification": null,
+      "needsLiveData": false,
+      "businessObject": "current role",
+      "recordIdentity": "",
+      "requestedGrain": "current role",
+      "requestedScope": "personal",
+      "contextRelation": "new",
+      "unresolvedSlots": [],
+      "disclosurePurpose": "",
+      "groupCompleteness": "observed",
+      "requestBoundaries": [],
+      "requestedMeasures": [],
+      "requestedOrdering": [],
+      "requestedAttributes": [
+        "limitations of current role"
+      ],
+      "evidenceExplanations": []
+    },
+    "schemaVersion": "current-account-permission-assignment/1",
+    "completionPolicy": "combine_auth_configuration_and_cited_boundaries_keep_all_gaps",
+    "originalRequirements": [
+      {
+        "id": "object",
+        "kind": "object",
+        "value": "current role"
+      },
+      {
+        "id": "grain",
+        "kind": "grain",
+        "value": "current role"
+      },
+      {
+        "id": "scope",
+        "kind": "scope",
+        "value": "personal"
+      },
+      {
+        "id": "attribute_0",
+        "kind": "attribute",
+        "value": "available actions within current role"
+      },
+      {
+        "id": "attribute_1",
+        "kind": "attribute",
+        "value": "limitations of current role"
+      }
+    ],
+    "stageRequirementIdMap": {
+      "grain": "grain",
+      "scope": "scope",
+      "object": "object",
+      "attribute_0": "attribute_1"
+    },
+    "deferredAuthRequirementIds": [
+      "attribute_0"
+    ]
+  },
+  "originalExpansion": {
+    "stage": "query_expansion",
+    "terms": [
+      {
+        "arabic": "الدور الحالي",
+        "english": "current role",
+        "sourceText": "current role",
+        "alternatives": [],
+        "requirementId": "object"
+      },
+      {
+        "arabic": "الدور الحالي",
+        "english": "current role",
+        "sourceText": "current role",
+        "alternatives": [],
+        "requirementId": "grain"
+      },
+      {
+        "arabic": "دوري",
+        "english": "my",
+        "sourceText": "personal",
+        "alternatives": [],
+        "requirementId": "scope"
+      },
+      {
+        "arabic": "الإجراءات المتاحة ضمن الدور الحالي",
+        "english": "available actions within current role",
+        "sourceText": "available actions within current role",
+        "alternatives": [],
+        "requirementId": "attribute_0"
+      },
+      {
+        "arabic": "قيود الدور الحالي",
+        "english": "limitations of current role",
+        "sourceText": "limitations of current role",
+        "alternatives": [],
+        "requirementId": "attribute_1"
+      }
+    ],
+    "issues": [],
+    "intentStatus": "consistent"
+  },
+  "stageCoverage": [
+    {
+      "reason": "Role concept is coherent: assigned business roles are read-only profile properties read from the authenticated staff session and shown in Personal Center; a displayed or claimed role name is not an assigned role, and role names alone do not establish page, action or record permissions. No opposing clause found.",
+      "status": "covered",
+      "evidence": [
+        {
+          "sourceId": "k_8eadf20d8e64652fc5bf:p5"
+        },
+        {
+          "sourceId": "k_afdffb05b1d24a430f7a:p4"
+        }
+      ],
+      "followupQuery": "",
+      "requirementId": "object",
+      "requiredPoints": [
+        "الدور الحالي هو دور عمل معيَّن يُقرأ من جلسة الموظف الموثَّقة ويُعرض ضمن الأدوار المعيّنة في المركز الشخصي.",
+        "قد يكون للمستخدم أكثر من دور معيَّن، وتبقى جميع الأدوار خصائص قراءة فقط في الملف الشخصي.",
+        "اسم الدور وحده لا يثبت صلاحيات الصفحات أو الإجراءات أو السجلات."
+      ],
+      "missingEvidenceType": "none"
+    },
+    {
+      "reason": "Grain is the single authenticated staff profile: multiple department/role entries are properties of that same user, not extra users. Role names are read from the complete assignRolesIdsInfo array; the internal id/code is not a display label. Consistent across passages.",
+      "status": "covered",
+      "evidence": [
+        {
+          "sourceId": "k_8eadf20d8e64652fc5bf:p2"
+        },
+        {
+          "sourceId": "k_8eadf20d8e64652fc5bf:p5"
+        }
+      ],
+      "followupQuery": "",
+      "requirementId": "grain",
+      "requiredPoints": [
+        "حبيبة السؤال هي ملف الموظف المسجَّل دخوله الواحد؛ تعدد الأدوار أو الأقسام خصائص لنفس المستخدم لا مستخدمين إضافيين.",
+        "تُقرأ أسماء الأدوار المعيّنة كاملة من مصفوفة الأدوار في الملف الشخصي دون دمجها في مدخل واحد."
+      ],
+      "missingEvidenceType": "none"
+    },
+    {
+      "reason": "Personal scope is coherent: requested and observed userId must both equal the verified signed-in subject; the definition does not authorize reading another user or expanding to a team. Identity and assigned roles come from the authenticated session. No conflicting clause.",
+      "status": "covered",
+      "evidence": [
+        {
+          "sourceId": "k_8eadf20d8e64652fc5bf:p3"
+        },
+        {
+          "sourceId": "k_afdffb05b1d24a430f7a:p4"
+        }
+      ],
+      "followupQuery": "",
+      "requirementId": "scope",
+      "requiredPoints": [
+        "النطاق شخصي: يقتصر على المستخدم المسجَّل دخوله نفسه، ولا يوسَّع إلى مستخدم آخر أو فريق.",
+        "الهوية والأدوار المعيّنة تُقرأ من الجلسة الموثَّقة، ولا يمنح اسم دور مُدَّعى في السؤال أي صلاحية."
+      ],
+      "missingEvidenceType": "none"
+    },
+    {
+      "reason": "General boundaries of what a role does and does not permit are documented and mutually compatible: roles grant route and button permissions while department/team membership scopes records; page permission does not imply approval, assignment, export or hidden-field permission; a Manager title alone proves no department-wide or cross-team access; the read-only assistant surface covers explanation and authorized reading only, and portal business actions remain portal actions. No opposing inclusion/exclusion clause found.",
+      "status": "covered",
+      "evidence": [
+        {
+          "sourceId": "k_afdffb05b1d24a430f7a:p4"
+        },
+        {
+          "sourceId": "k_afdffb05b1d24a430f7a:p5"
+        },
+        {
+          "sourceId": "k_d0a214c895c965c1d96c:p2"
+        }
+      ],
+      "followupQuery": "",
+      "requirementId": "attribute_0",
+      "requiredPoints": [
+        "تمنح الأدوار صلاحيات المسار والزر، بينما تحدد عضوية القسم والفريق نطاق السجلات التي يراها المستخدم.",
+        "صلاحية الصفحة لا تعني ضمنًا صلاحية الموافقة أو الإسناد أو التصدير أو الحقول المخفية.",
+        "لقب المدير وحده لا يثبت وصولًا على مستوى القسم أو عبر الفرق.",
+        "سطح المساعد الموثَّق للقراءة فقط يغطي الشرح والقراءة المصرَّح بها؛ إجراءات البوابة التجارية تبقى إجراءات بوابة ولا تصبح قابلة للتنفيذ في المحادثة.",
+        "تتحدد الإجراءات المتاحة فعليًا بالجلسة الموثَّقة والصفحات المسموح بها والبيانات المتاحة ومعرفة الصفحة، لا باسم الدور."
+      ],
+      "missingEvidenceType": "none"
+    }
+  ],
+  "rejectedDrafts": [
+    {
+      "stage": "KnowledgeAnswerDraft",
+      "attempt": 1,
+      "failure": "{\"code\": \"knowledge_answer_reference_invalid\"}",
+      "candidate": {
+        "stage": "knowledge_answer_draft",
+        "blocks": [
+          {
+            "id": "role_meaning",
+            "text": "الدور الحالي هو دور عمل معيَّن يُقرأ من جلسة الموظف الموثَّقة ويظهر ضمن الأدوار المعيّنة في المركز الشخصي. وقد يكون لك أكثر من دور معيَّن في الوقت نفسه، وتبقى هذه الأدوار خصائص للقراءة فقط في ملفك الشخصي، وتُعرض أسماؤها كاملة دون دمجها في مدخل واحد. وحدة السؤال هي ملفك الواحد بوصفك الموظف المسجَّل دخوله؛ فتعدد الأدوار أو الأقسام خصائص لنفس المستخدم لا مستخدمين إضافيين.",
+            "quoteIndexes": [
+              0,
+              1,
+              5
+            ],
+            "requirementIds": [
+              "object",
+              "grain"
+            ]
+          },
+          {
+            "id": "scope_personal",
+            "text": "ينحصر هذا العرض في نطاقك الشخصي: هويتك وأدوارك المعيّنة تُقرأ من جلستك الموثَّقة، ولا يمتد إلى مستخدم آخر أو إلى فريق. كما أن اسم دور مذكور في سؤالك لا يمنح بحد ذاته أي صلاحية.",
+            "quoteIndexes": [
+              2,
+              6
+            ],
+            "requirementIds": [
+              "scope"
+            ]
+          },
+          {
+            "id": "role_boundaries",
+            "text": "أما حدود دورك فهي كالتالي: الأدوار تمنح صلاحيات المسار والزر، بينما تحدد عضوية القسم والفريق نطاق السجلات التي تراها. وصلاحية الصفحة لا تعني ضمنًا صلاحية الموافقة أو الإسناد أو التصدير أو الوصول إلى الحقول المخفية، كما أن لقب المدير وحده لا يثبت وصولًا على مستوى القسم أو عبر الفرق. والإجراءات المتاحة فعليًا تتحدد بالجلسة الموثَّقة والصفحات المسموح بها والبيانات المتاحة ومعرفة الصفحة، لا باسم الدور.",
+            "quoteIndexes": [
+              2,
+              3
+            ],
+            "requirementIds": [
+              "attribute_1"
+            ]
+          },
+          {
+            "id": "read_only_help",
+            "text": "ضمن ما يمكنني تقديمه لك: شرح معاني الصفحات والحقول الموثَّقة، وقراءة المعلومات والسجلات الحالية المصرَّح بها لك، وعرض الحقول العامة المطلوبة مع إبقاء القيم الناقصة غير مؤكدة، وعدّ السجلات وتلخيصها وفق الحقول الموثَّقة بعد التحقق من النطاق واكتمال الجمع، والمقارنة والتصفية وفق معاني الحقول والتواريخ الموثَّقة، وصياغة نص للمراجعة البشرية استنادًا إلى حقائق مؤكدة دون إرساله أو تغيير السجل. أما إجراءات البوابة التجارية — مثل الموافقة أو الرفض أو الإرسال أو إعادة الإسناد أو التعديل أو الحذف أو الدفع أو الاسترداد أو إرسال رسائل العمل — فتبقى إجراءات تُنفَّذ في مسار البوابة المصرَّح به بشروطه، ولا تُنفَّذ في المحادثة.",
+            "quoteIndexes": [
+              3,
+              4
+            ],
+            "requirementIds": [
+              "attribute_1"
+            ]
+          },
+          {
+            "id": "navigation",
+            "text": "يمكنك الاطلاع على أدوارك المعيّنة وأقسامك من صفحة [المركز الشخصي](/personal-center)، ومراجعة نطاق عملك من [لوحة المعلومات](/dashboard)، ومن صفحات [التراخيص](/licensing/licenses) و[الطلبات](/licensing/applications) و[تقارير وتحليلات التراخيص](/licensing/reports-analytics) و[إدارة الفريق](/licensing/team-management)، ومن صفحات خدمة العملاء: [الطلبات](/happiness/appeals) و[إدارة العملاء](/happiness/customerManagement) و[المبالغ المستردة](/happiness/refunds) و[التذاكر](/happiness/tickets).",
+            "quoteIndexes": [
+              7
+            ],
+            "requirementIds": [
+              "attribute_1"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "stage": "KnowledgeAnswerDraft",
+      "attempt": 2,
+      "failure": "{\"code\": \"knowledge_answer_reference_invalid\"}",
+      "candidate": {
+        "stage": "knowledge_answer_draft",
+        "blocks": [
+          {
+            "id": "role_meaning",
+            "text": "الدور الحالي هو دور عمل معيَّن يُقرأ من جلسة الموظف الموثَّقة ويظهر ضمن الأدوار المعيّنة في المركز الشخصي، وقد يكون لك أكثر من دور معيَّن في الوقت نفسه. هذه الأدوار خصائص للقراءة فقط في ملفك الشخصي، واسم الدور وحده لا يثبت صلاحيات الصفحات أو الإجراءات أو السجلات. وحدود ما يمكنك فعله فعليًا تتحدد بالجلسة الموثَّقة والصفحات المسموح بها والبيانات المتاحة ومعرفة الصفحة، لا باسم الدور.",
+            "quoteIndexes": [
+              0,
+              1,
+              2,
+              5
+            ],
+            "requirementIds": [
+              "object",
+              "grain",
+              "scope"
+            ]
+          },
+          {
+            "id": "role_boundaries",
+            "text": "تمنح الأدوار صلاحيات المسار والزر، بينما تحدد عضوية القسم والفريق نطاق السجلات التي تراها. لذلك فإن صلاحية الوصول إلى صفحة لا تعني ضمنًا صلاحية الموافقة أو الإسناد أو التصدير أو الاطلاع على الحقول المخفية، ولقب المدير وحده لا يثبت وصولًا على مستوى القسم أو عبر الفرق. كما أن تطابق الصفحات بين دورين لا يعني تطابق السجلات المتاحة.",
+            "quoteIndexes": [
+              2
+            ],
+            "requirementIds": [
+              "attribute_1"
+            ]
+          },
+          {
+            "id": "assistant_scope",
+            "text": "أما سطح المساعد الموثَّق فهو للقراءة فقط، ويغطي الشرح والقراءة المصرَّح بها ضمن نطاقك الشخصي، مع إبقاء القيم غير المؤكدة غير مؤكدة. إجراءات البوابة التجارية الموصوفة في الأدلة تبقى إجراءات تُنفَّذ في البوابة نفسها ولا تصبح قابلة للتنفيذ في المحادثة.",
+            "quoteIndexes": [
+              3,
+              4
+            ],
+            "requirementIds": [
+              "attribute_1"
+            ]
+          },
+          {
+            "id": "navigation",
+            "text": "يمكنك الاطلاع على أدوارك المعيّنة وأقسامك من صفحة [المركز الشخصي](/personal-center)، وهي الصفحة التي تعرض ملف الموظف المسجَّل دخوله.",
+            "quoteIndexes": [
+              1,
+              7
+            ],
+            "requirementIds": [
+              "object",
+              "scope"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "permissionAudit": {
+    "roles": [
+      "Foreign Media Manager",
+      "Licensing Manager"
+    ],
+    "pageCount": 5,
+    "observedAt": "2026-09-28T23:20:56.715159+00:00",
+    "buttonCount": 22,
+    "currentRole": "Foreign Media Manager",
+    "departments": [
+      "1"
+    ],
+    "fingerprint": "137549e932bef4870c7547df2edbbcfe81c1cbbc6ef1fe9eeda85efe79744b0a",
+    "subpageCount": 18,
+    "preferredLanguage": "en"
+  },
+  "preflightRawHashInputs": {
+    "listRoles": [
+      {
+        "id": "FOREIGN_MEDIA_MANAGER",
+        "name": "Foreign Media Manager",
+        "discriminator": "ApprovalRole",
+        "isShown": true,
+        "nameEn": "Foreign Media Manager",
+        "nameAr": "مدير الإعلام الأجنبي",
+        "descEn": "Manages foreign media applications, issues final decisions, confirms external approvals, and authorizes the issuance of press cards.",
+        "descAr": "يدير طلبات الإعلام الأجنبي، ويصدر القرارات النهائية، ويعتمد موافقات الجهات الخارجية، ويصرح بإصدار البطاقات الصحفية.",
+        "departmentId": 1,
+        "status": "1",
+        "createAt": "2026-06-29T06:00:16",
+        "adminUsers": []
+      },
+      {
+        "id": "LICENSING_MANAGER",
+        "name": "Licensing Manager",
+        "discriminator": "ApprovalRole",
+        "isShown": true,
+        "nameEn": "Licensing Manager",
+        "nameAr": "مدير التراخيص",
+        "descEn": "Manages licensing applications within the department and has the authority to approve, reject, return, or finalize licensing decisions.",
+        "descAr": "يدير طلبات التراخيص ضمن الإدارة، ويتمتع بصلاحية اعتماد الطلبات أو رفضها أو إعادتها، وإصدار القرار النهائي بشأنها.",
+        "departmentId": 1,
+        "status": "1",
+        "createAt": "2026-06-29T06:00:16",
+        "adminUsers": []
+      }
+    ],
+    "rolesInfo": [
+      {
+        "roleID": "FOREIGN_MEDIA_MANAGER",
+        "roleName": "Foreign Media Manager"
+      },
+      {
+        "roleID": "LICENSING_MANAGER",
+        "roleName": "Licensing Manager"
+      }
+    ],
+    "listSysPermission": [
+      {
+        "permissionCode": "DashBoard",
+        "permissionNameEn": "Dashboard",
+        "permissionNameAr": "Dashboard",
+        "permissionType": "M",
+        "frontendRoute": "/dashboard",
+        "status": "1",
+        "children": [],
+        "buttonList": []
+      },
+      {
+        "permissionCode": "Common",
+        "permissionNameEn": "Common",
+        "permissionNameAr": "Common",
+        "permissionType": "M",
+        "frontendRoute": null,
+        "status": "1",
+        "children": [
+          {
+            "permissionCode": "Common.Document",
+            "permissionNameEn": "Document",
+            "permissionNameAr": "Document",
+            "permissionType": "M",
+            "frontendRoute": null,
+            "status": "1",
+            "children": [],
+            "buttonList": [
+              {
+                "key": null,
+                "permissionCode": "Common.Document.Upload",
+                "permissionNameEn": "Upload",
+                "permissionNameAr": "Upload",
+                "permissionType": "B",
+                "frontendRoute": null,
+                "status": "1"
+              },
+              {
+                "key": null,
+                "permissionCode": "Common.Document.Download",
+                "permissionNameEn": "Download",
+                "permissionNameAr": "Download",
+                "permissionType": "B",
+                "frontendRoute": null,
+                "status": "1"
+              }
+            ]
+          }
+        ],
+        "buttonList": []
+      },
+      {
+        "permissionCode": "Licensing",
+        "permissionNameEn": "Licensing",
+        "permissionNameAr": "Licensing",
+        "permissionType": "M",
+        "frontendRoute": "/licensing",
+        "status": "1",
+        "children": [
+          {
+            "permissionCode": "Licensing.Applications",
+            "permissionNameEn": "Applications",
+            "permissionNameAr": "Applications",
+            "permissionType": "M",
+            "frontendRoute": "/licensing/applications",
+            "status": "1",
+            "children": [
+              {
+                "permissionCode": "Licensing.Applications.ApplicationDetails",
+                "permissionNameEn": "ApplicationDetails",
+                "permissionNameAr": "ApplicationDetails",
+                "permissionType": "M",
+                "frontendRoute": "/licensing/applications/applicationsDetails",
+                "status": "1",
+                "children": [],
+                "buttonList": [
+                  {
+                    "key": "/licensing/applications/applicationsDetails-externalApproval-fahrAdmin",
+                    "permissionCode": "Fahr.Admin",
+                    "permissionNameEn": "External Approval - Call FAHR Interface",
+                    "permissionNameAr": "استدعاء واجهة فاهر",
+                    "permissionType": "B",
+                    "frontendRoute": "/licensing/applications/applicationsDetails",
+                    "status": "1"
+                  },
+                  {
+                    "key": "/licensing/applications/applicationsDetails-approve",
+                    "permissionCode": "Licensing.Applications.ApplicationDetails.Approve",
+                    "permissionNameEn": "Approve",
+                    "permissionNameAr": "موافقة",
+                    "permissionType": "B",
+                    "frontendRoute": "/licensing/applications/applicationsDetails",
+                    "status": "1"
+                  },
+                  {
+                    "key": "/licensing/applications/applicationsDetails-externalApproval",
+                    "permissionCode": "Licensing.Applications.ApplicationDetails.ExternalApproval",
+                    "permissionNameEn": "External Approval",
+                    "permissionNameAr": "موافقة خارجية",
+                    "permissionType": "B",
+                    "frontendRoute": "/licensing/applications/applicationsDetails",
+                    "status": "1"
+                  },
+                  {
+                    "key": "/licensing/applications/applicationsDetails-reject",
+                    "permissionCode": "Licensing.Applications.ApplicationDetails.Reject",
+                    "permissionNameEn": "Reject",
+                    "permissionNameAr": "رفض",
+                    "permissionType": "B",
+                    "frontendRoute": "/licensing/applications/applicationsDetails",
+                    "status": "1"
+                  },
+                  {
+                    "key": "/licensing/applications/applicationsDetails-requestModification",
+                    "permissionCode": "Licensing.Applications.ApplicationDetails.RequestModification",
+                    "permissionNameEn": "Request Modification",
+                    "permissionNameAr": "طلب تعديل",
+                    "permissionType": "B",
+                    "frontendRoute": "/licensing/applications/applicationsDetails",
+                    "status": "1"
+                  },
+                  {
+                    "key": "/licensing/applications/applicationsDetails-sendBack",
+                    "permissionCode": "Licensing.Applications.ApplicationDetails.SendBack",
+                    "permissionNameEn": "Send Back",
+                    "permissionNameAr": "إرجاع",
+                    "permissionType": "B",
+                    "frontendRoute": "/licensing/applications/applicationsDetails",
+                    "status": "1"
+                  }
+                ]
+              }
+            ],
+            "buttonList": [
+              {
+                "key": "/licensing/applications-confirm",
+                "permissionCode": "Licensing.Applications.Confirm",
+                "permissionNameEn": "Confirm",
+                "permissionNameAr": "موافق",
+                "permissionType": "B",
+                "frontendRoute": "/licensing/applications",
+                "status": "1"
+              },
+              {
+                "key": "/licensing/applications-confirmDispositionDecisionModal",
+                "permissionCode": "Licensing.Applications.ConfirmDispositionDecisionModal",
+                "permissionNameEn": "Confirm - DispositionDecisionModal",
+                "permissionNameAr": "تأكيد",
+                "permissionType": "B",
+                "frontendRoute": "/licensing/applications",
+                "status": "1"
+              },
+              {
+                "key": "/licensing/applications-confirmMediaMaterialReportModal",
+                "permissionCode": "Licensing.Applications.ConfirmMediaMaterialReportModal",
+                "permissionNameEn": "Confirm - MediaMaterialReportModal",
+                "permissionNameAr": "تأكيد",
+                "permissionType": "B",
+                "frontendRoute": "/licensing/applications",
+                "status": "1"
+              },
+              {
+                "key": "/licensing/applications-confirmRejectModal",
+                "permissionCode": "Licensing.Applications.ConfirmRejectModal",
+                "permissionNameEn": "Confirm - RejectModal",
+                "permissionNameAr": "رفض",
+                "permissionType": "B",
+                "frontendRoute": "/licensing/applications",
+                "status": "1"
+              },
+              {
+                "key": "/licensing/applications-confirmRequestModal",
+                "permissionCode": "Licensing.Applications.ConfirmRequestModal",
+                "permissionNameEn": "Confirm - RequestModal",
+                "permissionNameAr": "Confirm - RequestModal",
+                "permissionType": "B",
+                "frontendRoute": "/licensing/applications",
+                "status": "1"
+              },
+              {
+                "key": "/licensing/applications-export",
+                "permissionCode": "Licensing.Applications.Export",
+                "permissionNameEn": "Export",
+                "permissionNameAr": "يصدّر",
+                "permissionType": "B",
+                "frontendRoute": "/licensing/applications",
+                "status": "1"
+              }
+            ]
+          },
+          {
+            "permissionCode": "Licensing.TeamManagement",
+            "permissionNameEn": "Team Management",
+            "permissionNameAr": "Team Management",
+            "permissionType": "M",
+            "frontendRoute": "/licensing/team-management",
+            "status": "1",
+            "children": [],
+            "buttonList": [
+              {
+                "key": "/licensing/team-management-confirmMarkEmergencyLeaveModal",
+                "permissionCode": "Licensing.TeamManagement.ConfirmMarkEmergencyLeaveModal",
+                "permissionNameEn": "Confirm - MarkEmergencyLeaveModal",
+                "permissionNameAr": "تأكيد",
+                "permissionType": "B",
+                "frontendRoute": "/licensing/team-management",
+                "status": "1"
+              },
+              {
+                "key": "/licensing/team-management-confirmReassignTasksModal",
+                "permissionCode": "Licensing.TeamManagement.ConfirmReassignTasksModal",
+                "permissionNameEn": "Confirm - ReassignTasksModal",
+                "permissionNameAr": "تأكيد",
+                "permissionType": "B",
+                "frontendRoute": "/licensing/team-management",
+                "status": "1"
+              },
+              {
+                "key": "/licensing/team-management-confirmResumeWorkModal",
+                "permissionCode": "Licensing.TeamManagement.ConfirmResumeWorkModal",
+                "permissionNameEn": "Confirm - ResumeWorkModal",
+                "permissionNameAr": "تأكيد",
+                "permissionType": "B",
+                "frontendRoute": "/licensing/team-management",
+                "status": "1"
+              },
+              {
+                "key": "/licensing/team-management-export",
+                "permissionCode": "Licensing.TeamManagement.Export",
+                "permissionNameEn": "Export",
+                "permissionNameAr": "تصدير",
+                "permissionType": "B",
+                "frontendRoute": "/licensing/team-management",
+                "status": "1"
+              },
+              {
+                "key": "/licensing/team-management-reassign",
+                "permissionCode": "Licensing.TeamManagement.Reassign",
+                "permissionNameEn": "Reassign",
+                "permissionNameAr": "إعادة تعيين",
+                "permissionType": "B",
+                "frontendRoute": "/licensing/team-management",
+                "status": "1"
+              }
+            ]
+          },
+          {
+            "permissionCode": "Licensing.Licenses",
+            "permissionNameEn": "licenses",
+            "permissionNameAr": "licenses",
+            "permissionType": "M",
+            "frontendRoute": "/licensing/licenses",
+            "status": "1",
+            "children": [
+              {
+                "permissionCode": "Licensing.Licenses.LicenseDatails",
+                "permissionNameEn": "LicenseDatails",
+                "permissionNameAr": "LicenseDatails",
+                "permissionType": "M",
+                "frontendRoute": "/licensing/license/LicenseDatails",
+                "status": "1",
+                "children": [],
+                "buttonList": [
+                  {
+                    "key": "/licensing/license/LicenseDatails-disable",
+                    "permissionCode": "Licensing.Licenses.LicenseDatails.Disable",
+                    "permissionNameEn": "Disable",
+                    "permissionNameAr": "تعطيل",
+                    "permissionType": "B",
+                    "frontendRoute": "/licensing/license/LicenseDatails",
+                    "status": "1"
+                  },
+                  {
+                    "key": "/licensing/license/LicenseDatails-enable",
+                    "permissionCode": "Licensing.Licenses.LicenseDatails.Enable",
+                    "permissionNameEn": "Enable",
+                    "permissionNameAr": "تفعيل",
+                    "permissionType": "B",
+                    "frontendRoute": "/licensing/license/LicenseDatails",
+                    "status": "1"
+                  }
+                ]
+              }
+            ],
+            "buttonList": [
+              {
+                "key": "/licensing/licenses-confirm",
+                "permissionCode": "Licensing.Licenses.Confirm",
+                "permissionNameEn": "Confirm",
+                "permissionNameAr": "تأكيد",
+                "permissionType": "B",
+                "frontendRoute": "/licensing/licenses",
+                "status": "1"
+              },
+              {
+                "key": "/licensing/licenses-export",
+                "permissionCode": "Licensing.Licenses.Export",
+                "permissionNameEn": "Export",
+                "permissionNameAr": "تصدير",
+                "permissionType": "B",
+                "frontendRoute": "/licensing/licenses",
+                "status": "1"
+              }
+            ]
+          },
+          {
+            "permissionCode": "Licensing.Profile",
+            "permissionNameEn": "Profile",
+            "permissionNameAr": "Profile",
+            "permissionType": "M",
+            "frontendRoute": "/licensing/profile",
+            "status": "1",
+            "children": [
+              {
+                "permissionCode": "Licensing.Profile.ApplicationsDetails",
+                "permissionNameEn": "ApplicationsDetails",
+                "permissionNameAr": "ApplicationsDetails",
+                "permissionType": "M",
+                "frontendRoute": "/licensing/Profile/ProfileDetails",
+                "status": "1",
+                "children": [],
+                "buttonList": [
+                  {
+                    "key": "/licensing/Profile/ProfileDetails-details",
+                    "permissionCode": "Licensing.Profile.ApplicationsDetails.Details",
+                    "permissionNameEn": "Details",
+                    "permissionNameAr": "التفاصيل",
+                    "permissionType": "B",
+                    "frontendRoute": "/licensing/Profile/ProfileDetails",
+                    "status": "1"
+                  }
+                ]
+              }
+            ],
+            "buttonList": [
+              {
+                "key": "/licensing/profile-export",
+                "permissionCode": "Licensing.Profile.Export",
+                "permissionNameEn": "Export",
+                "permissionNameAr": "تصدير",
+                "permissionType": "B",
+                "frontendRoute": "/licensing/profile",
+                "status": "1"
+              }
+            ]
+          },
+          {
+            "permissionCode": "Licensing.LicenseReportsAnalytics",
+            "permissionNameEn": "LicenseReportsAnalytics",
+            "permissionNameAr": "LicenseReportsAnalytics",
+            "permissionType": "M",
+            "frontendRoute": "/licensing/reports-analytics",
+            "status": "1",
+            "children": [],
+            "buttonList": [
+              {
+                "key": null,
+                "permissionCode": "Licensing.ReportsAnalytics.Export",
+                "permissionNameEn": "Reports Export",
+                "permissionNameAr": "Reports Export",
+                "permissionType": "B",
+                "frontendRoute": null,
+                "status": "1"
+              }
+            ]
+          }
+        ],
+        "buttonList": []
+      },
+      {
+        "permissionCode": "CustomerModule",
+        "permissionNameEn": "Customer Module",
+        "permissionNameAr": "Customer Module",
+        "permissionType": "M",
+        "frontendRoute": "/happiness",
+        "status": "1",
+        "children": [
+          {
+            "permissionCode": "CustomerModule.Tickets",
+            "permissionNameEn": "Tickets",
+            "permissionNameAr": "Tickets",
+            "permissionType": "M",
+            "frontendRoute": "/happiness/tickets",
+            "status": "1",
+            "children": [
+              {
+                "permissionCode": "CustomerModule.Tickets.TicketsDetails",
+                "permissionNameEn": "TicketsDetails",
+                "permissionNameAr": "TicketsDetails",
+                "permissionType": "M",
+                "frontendRoute": "/happiness/tickets/tickets-details",
+                "status": "1",
+                "children": [],
+                "buttonList": [
+                  {
+                    "key": "/happiness/tickets/tickets-details-send",
+                    "permissionCode": "CustomerModule.Tickets.TicketsDetails.Send",
+                    "permissionNameEn": "Send",
+                    "permissionNameAr": "إرسال",
+                    "permissionType": "B",
+                    "frontendRoute": "/happiness/tickets/tickets-details",
+                    "status": "1"
+                  }
+                ]
+              }
+            ],
+            "buttonList": [
+              {
+                "key": "/happiness/tickets-addNew",
+                "permissionCode": "CustomerModule.Tickets.AddNew",
+                "permissionNameEn": "Add New",
+                "permissionNameAr": "إضافة جديدة",
+                "permissionType": "B",
+                "frontendRoute": "/happiness/tickets",
+                "status": "1"
+              },
+              {
+                "key": "/happiness/tickets-addNewTicketsTable",
+                "permissionCode": "CustomerModule.Tickets.AddNewTicketsTable",
+                "permissionNameEn": "Add New - TicketsTable",
+                "permissionNameAr": "إضافة جديدة",
+                "permissionType": "B",
+                "frontendRoute": "/happiness/tickets",
+                "status": "1"
+              },
+              {
+                "key": "/happiness/tickets-changeStatus",
+                "permissionCode": "CustomerModule.Tickets.ChangeStatus",
+                "permissionNameEn": "Change Status",
+                "permissionNameAr": "تغيير الحالة",
+                "permissionType": "B",
+                "frontendRoute": "/happiness/tickets",
+                "status": "1"
+              },
+              {
+                "key": "/happiness/tickets-confirm",
+                "permissionCode": "CustomerModule.Tickets.Confirm",
+                "permissionNameEn": "Confirm",
+                "permissionNameAr": "تأكيد",
+                "permissionType": "B",
+                "frontendRoute": "/happiness/tickets",
+                "status": "1"
+              },
+              {
+                "key": "/happiness/tickets-confirmProcessModal",
+                "permissionCode": "CustomerModule.Tickets.ConfirmProcessModal",
+                "permissionNameEn": "Confirm - ProcessModal",
+                "permissionNameAr": "تأكيد",
+                "permissionType": "B",
+                "frontendRoute": "/happiness/tickets",
+                "status": "1"
+              },
+              {
+                "key": "/happiness/tickets-confirmSendBackModal",
+                "permissionCode": "CustomerModule.Tickets.ConfirmSendBackModal",
+                "permissionNameEn": "Confirm - SendBackModal",
+                "permissionNameAr": "تأكيد",
+                "permissionType": "B",
+                "frontendRoute": "/happiness/tickets",
+                "status": "1"
+              },
+              {
+                "key": "/happiness/tickets-confirmTransferModal",
+                "permissionCode": "CustomerModule.Tickets.ConfirmTransferModal",
+                "permissionNameEn": "Confirm - TransferModal",
+                "permissionNameAr": "تأكيد",
+                "permissionType": "B",
+                "frontendRoute": "/happiness/tickets",
+                "status": "1"
+              },
+              {
+                "key": "/happiness/tickets-export",
+                "permissionCode": "CustomerModule.Tickets.Export",
+                "permissionNameEn": "Export",
+                "permissionNameAr": "تصدير",
+                "permissionType": "B",
+                "frontendRoute": "/happiness/tickets",
+                "status": "1"
+              },
+              {
+                "key": "/happiness/tickets-exportTicketsTable",
+                "permissionCode": "CustomerModule.Tickets.ExportTicketsTable",
+                "permissionNameEn": "Export - TicketsTable",
+                "permissionNameAr": "تصدير",
+                "permissionType": "B",
+                "frontendRoute": "/happiness/tickets",
+                "status": "1"
+              },
+              {
+                "key": "/happiness/tickets-process",
+                "permissionCode": "CustomerModule.Tickets.Process",
+                "permissionNameEn": "Process",
+                "permissionNameAr": "معالجة",
+                "permissionType": "B",
+                "frontendRoute": "/happiness/tickets",
+                "status": "1"
+              },
+              {
+                "key": "/happiness/tickets-save",
+                "permissionCode": "CustomerModule.Tickets.Save",
+                "permissionNameEn": "Save",
+                "permissionNameAr": "حفظ",
+                "permissionType": "B",
+                "frontendRoute": "/happiness/tickets",
+                "status": "1"
+              }
+            ]
+          },
+          {
+            "permissionCode": "CustomerModule.Customers",
+            "permissionNameEn": "Customers",
+            "permissionNameAr": "Customers",
+            "permissionType": "M",
+            "frontendRoute": "/happiness/customerManagement",
+            "status": "1",
+            "children": [
+              {
+                "permissionCode": "CustomerModule.Customers.CustomerDetails",
+                "permissionNameEn": "Customer Details",
+                "permissionNameAr": "Customer Details",
+                "permissionType": "M",
+                "frontendRoute": "/happiness/customerManagement/customer-details",
+                "status": "1",
+                "children": [],
+                "buttonList": [
+                  {
+                    "key": "/happiness/customerManagement/customer-details-confirm",
+                    "permissionCode": "CustomerModule.Customers.CustomerDetails.Confirm",
+                    "permissionNameEn": "Confirm",
+                    "permissionNameAr": "تأكيد",
+                    "permissionType": "B",
+                    "frontendRoute": "/happiness/customerManagement/customer-details",
+                    "status": "1"
+                  }
+                ]
+              },
+              {
+                "permissionCode": "CustomerModule.Customers.ProfileDetail",
+                "permissionNameEn": "Profile Detail",
+                "permissionNameAr": "Profile Detail",
+                "permissionType": "M",
+                "frontendRoute": "/happiness/customerManagement/customerProfileDetail",
+                "status": "1",
+                "children": [],
+                "buttonList": [
+                  {
+                    "key": null,
+                    "permissionCode": "CustomerModule.Customers.ProfileDetail.RelatedDetail.Read",
+                    "permissionNameEn": "Read Related Profile Details",
+                    "permissionNameAr": "Read Related Profile Details",
+                    "permissionType": "B",
+                    "frontendRoute": null,
+                    "status": "1"
+                  },
+                  {
+                    "key": "/happiness/customerManagement/customerProfileDetail-confirm",
+                    "permissionCode": "CustomerModule.Customers.ProfileDetail.Confirm",
+                    "permissionNameEn": "Confirm",
+                    "permissionNameAr": "تأكيد",
+                    "permissionType": "B",
+                    "frontendRoute": "/happiness/customerManagement/customerProfileDetail",
+                    "status": "1"
+                  }
+                ]
+              }
+            ],
+            "buttonList": [
+              {
+                "key": "/happiness/customerManagement-confirm",
+                "permissionCode": "CustomerModule.Customers.Confirm",
+                "permissionNameEn": "Confirm",
+                "permissionNameAr": "تأكيد",
+                "permissionType": "B",
+                "frontendRoute": "/happiness/customerManagement",
+                "status": "1"
+              },
+              {
+                "key": "/happiness/customerManagement-confirmCustomerManagement",
+                "permissionCode": "CustomerModule.Customers.ConfirmCustomerManagement",
+                "permissionNameEn": "Confirm - CustomerManagement",
+                "permissionNameAr": "تأكيد",
+                "permissionType": "B",
+                "frontendRoute": "/happiness/customerManagement",
+                "status": "1"
+              },
+              {
+                "key": "/happiness/customerManagement-export",
+                "permissionCode": "CustomerModule.Customers.Export",
+                "permissionNameEn": "Export",
+                "permissionNameAr": "تصدير",
+                "permissionType": "B",
+                "frontendRoute": "/happiness/customerManagement",
+                "status": "1"
+              },
+              {
+                "key": "/happiness/customerManagement-exportCustomerManagement",
+                "permissionCode": "CustomerModule.Customers.ExportCustomerManagement",
+                "permissionNameEn": "Export - CustomerManagement",
+                "permissionNameAr": "تصدير",
+                "permissionType": "B",
+                "frontendRoute": "/happiness/customerManagement",
+                "status": "1"
+              }
+            ]
+          },
+          {
+            "permissionCode": "CustomerModule.Refunds",
+            "permissionNameEn": "Refunds",
+            "permissionNameAr": "Refunds",
+            "permissionType": "M",
+            "frontendRoute": "/happiness/refunds",
+            "status": "1",
+            "children": [
+              {
+                "permissionCode": "CustomerModule.Refunds.RefundsDetails",
+                "permissionNameEn": "Refunds Details",
+                "permissionNameAr": "Refunds Details",
+                "permissionType": "M",
+                "frontendRoute": "/happiness/refunds/refundsDetails",
+                "status": "1",
+                "children": [],
+                "buttonList": [
+                  {
+                    "key": "/happiness/refunds/refundsDetails-send",
+                    "permissionCode": "CustomerModule.Refunds.RefundsDetails.Send",
+                    "permissionNameEn": "Send",
+                    "permissionNameAr": "إرسال",
+                    "permissionType": "B",
+                    "frontendRoute": "/happiness/refunds/refundsDetails",
+                    "status": "1"
+                  },
+                  {
+                    "key": "/happiness/refunds/refundsDetails-changeStatus",
+                    "permissionCode": "CustomerModule.Refunds.RefundsDetails.ChangeStatus",
+                    "permissionNameEn": "Change Status",
+                    "permissionNameAr": "Change Status",
+                    "permissionType": "B",
+                    "frontendRoute": "/happiness/refunds/refundsDetails",
+                    "status": "1"
+                  },
+                  {
+                    "key": "/happiness/refunds/refundsDetails-transfer",
+                    "permissionCode": "CustomerModule.Refunds.RefundsDetails.Transfer",
+                    "permissionNameEn": "Transfer",
+                    "permissionNameAr": "Transfer",
+                    "permissionType": "B",
+                    "frontendRoute": "/happiness/refunds/refundsDetails",
+                    "status": "1"
+                  }
+                ]
+              }
+            ],
+            "buttonList": [
+              {
+                "key": "/happiness/refunds-export",
+                "permissionCode": "CustomerModule.Refunds.Export",
+                "permissionNameEn": "Export",
+                "permissionNameAr": "Export",
+                "permissionType": "B",
+                "frontendRoute": "/happiness/refunds",
+                "status": "1"
+              }
+            ]
+          },
+          {
+            "permissionCode": "CustomerModule.Appeals",
+            "permissionNameEn": "Appeals",
+            "permissionNameAr": "Appeals",
+            "permissionType": "M",
+            "frontendRoute": "/happiness/appeals",
+            "status": "1",
+            "children": [
+              {
+                "permissionCode": "CustomerModule.Appeals.AppealsDetails",
+                "permissionNameEn": "Appeals Details",
+                "permissionNameAr": "Appeals Details",
+                "permissionType": "M",
+                "frontendRoute": "/happiness/appeals/appealsDetails",
+                "status": "1",
+                "children": [],
+                "buttonList": []
+              }
+            ],
+            "buttonList": [
+              {
+                "key": null,
+                "permissionCode": "CustomerModule.Appeals.ChangeStatus",
+                "permissionNameEn": "Appeals Change Status",
+                "permissionNameAr": "Appeals Change Status",
+                "permissionType": "B",
+                "frontendRoute": null,
+                "status": "1"
+              },
+              {
+                "key": "/happiness/appeals-export",
+                "permissionCode": "CustomerModule.Appeals.Export",
+                "permissionNameEn": "Export",
+                "permissionNameAr": "تصدير",
+                "permissionType": "B",
+                "frontendRoute": "/happiness/appeals",
+                "status": "1"
+              },
+              {
+                "key": null,
+                "permissionCode": "CustomerModule.Appeals.Process",
+                "permissionNameEn": "Appeals Process",
+                "permissionNameAr": "Appeals Process",
+                "permissionType": "B",
+                "frontendRoute": null,
+                "status": "1"
+              }
+            ]
+          }
+        ],
+        "buttonList": []
+      },
+      {
+        "permissionCode": "PersonalCenter",
+        "permissionNameEn": "Personal Center",
+        "permissionNameAr": "Personal Center",
+        "permissionType": "M",
+        "frontendRoute": "/personal-center",
+        "status": "1",
+        "children": [],
+        "buttonList": [
+          {
+            "key": "/personal-center-changePassword",
+            "permissionCode": "PersonalCenter.ChangePassword",
+            "permissionNameEn": "Change Password",
+            "permissionNameAr": "تغيير كلمة المرور",
+            "permissionType": "B",
+            "frontendRoute": "/personal-center",
+            "status": "1"
+          },
+          {
+            "key": "/personal-center-save",
+            "permissionCode": "PersonalCenter.Save",
+            "permissionNameEn": "Save",
+            "permissionNameAr": "حفظ",
+            "permissionType": "B",
+            "frontendRoute": "/personal-center",
+            "status": "1"
+          }
+        ]
+      }
+    ]
+  },
+  "preflightTime": {
+    "start": "2026-09-28T23:20:36.716Z",
+    "end": "2026-09-28T23:20:41.581Z",
+    "note": "Earlier preflight raw data corroborates the permission hash only, not the turn freshness."
+  },
+  "terminalState": {
+    "status": "READY",
+    "lastError": null,
+    "lastActivityAt": "2026-09-28 23:21:37.221350+00:00"
+  },
+  "sources": [
+    {
+      "path": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/groups1113-20260928/round28-i04-v37/audit-db/I-04__ar.json",
+      "sha256": "92b08fdb63e22c2a744ef94731e8cc3033dfa04056d1de29c95572252cb37608"
+    },
+    {
+      "path": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/groups1113-20260928/round28-i04-v37/answers/I-04__ar.json",
+      "sha256": "f8e420a3696f20036a803de515b5b83b2a10cb6869728831ddac07c5197dcdb7"
+    },
+    {
+      "path": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/groups1113-20260928/round28-i04-v37/identities/header-license-com.json",
+      "sha256": "1a5ed9caa80dfc36415c3e19ef95337c0d094bb73d00c98e9e0a57e85da7b67e"
+    }
+  ]
+}

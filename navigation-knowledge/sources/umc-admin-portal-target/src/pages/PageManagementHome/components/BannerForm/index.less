@@ -1,0 +1,54 @@
+@import "@/styles/variables.less";
+
+.disabled{
+    cursor: not-allowed !important;
+}
+.banner-list{
+    min-width: 0;
+    .banner-item{
+        &.dragging {
+            opacity: 1;
+            cursor: move;
+            transform: scale(1);
+            transition: transform 0.2s ease;
+            z-index: 1000;
+        }
+        .collapse{
+            cursor: pointer;
+            padding: 24px 16px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            border-bottom: 1px solid #E1E3E5;
+            .title-name{
+                flex: 1;
+                font-weight: 500;
+                font-size: 14px;
+                color: @text-color;
+              /* rwd-ramp */
+              @media (max-width: 1919.98px) {
+                font-size: 12px;
+              }
+            }
+            .label-img{
+                width: 50px;
+                height: 30px;
+            }
+        }
+        .item-form{
+            padding: 24px;
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            padding: 12px;
+          }
+        }
+        .delete-btn{
+            display: none;
+        }
+        &:hover{
+            .delete-btn{
+                display: block;
+            }
+        }
+    }
+}

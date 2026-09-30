@@ -1,0 +1,108 @@
+{
+  "schemaVersion": "1.0",
+  "packageStatus": "active",
+  "bundleId": "admin.licensing.application.update-time.package",
+  "createdAt": "2026-09-28T08:33:09.127325+00:00",
+  "searchMetadata": {
+    "titleEnglish": "Application Details source-reported last update time",
+    "titleArabic": "تفاصيل الطلب: وقت آخر تحديث الوارد من المصدر",
+    "descriptionEnglish": "Read the timestamp returned by the verified application detail without claiming a global modification time or synchronization result."
+  },
+  "records": [
+    {
+      "id": "admin.licensing.application.update-time",
+      "kind": "field_semantics",
+      "revision": 1,
+      "status": "active",
+      "title": "Application Details source-reported last update time",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local",
+          "debug"
+        ],
+        "pageRefs": [
+          "/licensing/applications/applicationsDetails"
+        ],
+        "runtimeVerification": "response_shape_verified",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "runtime_observation",
+          "reference": "test/runtime/group17-cross-repair-20260928/baselines/license-latest.json",
+          "revision": "sha256:aa5268a0a3a846a3ed886628fb1f2b423d2259eb446a384460e9486be3a6a318",
+          "locator": "Successful authorized application-detail response retains unmodified /data/detail/lastUpdatedTime; only field shape is verified, no update event witnessed.",
+          "verification": "response_shape_verified"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ApplicationAppService.cs",
+          "revision": "sha256:22e94773e70c95fab9ce479919b51d0241e046bf085cd0c3f8b5991b9004772e",
+          "locator": "GetLastTimelineTimeMapAsync; BuildReviewResponseAsync LastUpdatedTime assignment; code observation only, deployed implementation match unknown.",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "test/runtime/group17-cross-repair-20260928/read-license-baseline.mjs",
+          "revision": "sha256:2649fbd817dc907e117e814a5eb61eb913271d801a5927e96b28504361519d33",
+          "locator": "rowKeys and direct pick of native detail fields; timestamp is not synthesized by the baseline script.",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/licensing/applications/applicationsDetails",
+        "sourceBinding": {
+          "operationRef": "GET /api/Application/MyReviewDetail/{taskId}",
+          "sourcePath": "/data/detail"
+        },
+        "bindings": [
+          {
+            "id": "source-update-time",
+            "kind": "attribute",
+            "concept": "application last update time",
+            "aliases": [
+              "application update time",
+              "application last updated",
+              "last updated time",
+              "record update time",
+              "وقت آخر تحديث للطلب",
+              "آخر تحديث للطلب",
+              "وقت تحديث الطلب"
+            ],
+            "operationRef": "GET /api/Application/MyReviewDetail/{taskId}",
+            "sourcePath": "/data/detail",
+            "fields": [
+              "lastUpdatedTime"
+            ],
+            "meaning": "Read the source-reported application detail lastUpdatedTime only after binding the current authorized response to the exact application identity. The value is a stored business timestamp, separate from reader capture time."
+          }
+        ],
+        "fieldSemantics": {
+          "lastUpdatedTime": {
+            "displayMeaning": "Source-reported application detail update time.",
+            "inspectedSourceAlgorithm": "The inspected source derives this field from maximum ApprovalRecords.ApprovalDate for the application, otherwise the task ApprovalAt, otherwise task CreatedTime. This source observation does not prove that the current deployed build uses the identical algorithm.",
+            "notEquivalentTo": [
+              "all-field modifiedAt",
+              "database rowversion",
+              "payment updatedOn",
+              "ticket updatedOn",
+              "reader capturedAt",
+              "cross-department synchronization acknowledgement"
+            ]
+          }
+        },
+        "readingBoundaries": [
+          "Retain the timestamp as returned. An offsetless timestamp has no verified timezone; never silently label it UTC or compute synchronization latency against UTC capture time.",
+          "A later capture does not imply that the business row changed. Equal timestamps and statuses in two reads do not prove a requested update was committed.",
+          "Do not turn this timestamp into a promise that all modules or departments are synchronized. An update/convergence claim needs the actual committed change receipt and authorized before/after source reads for the same typed record.",
+          "Do not infer missing or null timestamps from submissionTime, payment time, task time or the current clock. Report the field unavailable when the source does not return it.",
+          "This definition applies only to the License application detail operation. Content update-time response shape remains unverified in the saved native receipts."
+        ],
+        "relationships": [
+          "Use existing exact application identity and record proof on /data/detail. This field adds no relationship, route, permission or business write."
+        ]
+      }
+    }
+  ]
+}

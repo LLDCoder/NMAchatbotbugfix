@@ -1,0 +1,83 @@
+.seo-form {
+  .ant-form-item-required {
+    font-family: Inter;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+  .search-input {
+    height: 48px;
+    width: 100%;
+  }
+  .search-input::placeholder {
+    font-family: Inter;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    color: #8C8C8C;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+  .seo-textarea{
+    .ant-input::placeholder {
+    font-family: Inter;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    color: #8C8C8C;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+        line-height: 16px;
+      }
+  }
+  }
+}
+
+.seo-field-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  line-height: inherit;
+
+  &__icon {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    flex-shrink: 0;
+    display: block;
+  }
+}
+
+.seo-form-tooltip {
+  max-width: 320px;
+
+  .ant-tooltip-inner {
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: break-word;
+    line-height: 20px;
+    text-align: left;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      line-height: 16px;
+    }
+  }
+}

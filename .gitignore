@@ -1,0 +1,8 @@
+**/node_modules/
+**/__pycache__/
+**/dist/
+**/.env.local
+**/.env.debug
+test/runtime/
+test/releases/
+.DS_Store

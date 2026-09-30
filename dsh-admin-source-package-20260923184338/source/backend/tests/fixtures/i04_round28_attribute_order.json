@@ -1,0 +1,134 @@
+{
+  "question": "What can I do in my current role?",
+  "source": {
+    "answer": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/groups1113-20260928/round28-i04-v37/answers/I-04__en.json",
+    "answerSHA256": "e6f1d0d801f536b26bc69c360c80fccaf54be7c1a821e2819066e76bdd304afa",
+    "db": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/groups1113-20260928/round28-i04-v37/audit-db/I-04__en.json",
+    "dbSHA256": "6c9e8a894be53c3c983804305d4af8c9451d00206361accd2a89b1e6fdb31cf3"
+  },
+  "conversationId": "conv_673baef01a1947d0aaf2",
+  "requestId": "864c4ec4-d1ca-423e-b311-e17333a4a7a5",
+  "rejectedPlans": [
+    {
+      "stage": "TaskSpec",
+      "attempt": 1,
+      "failure": "{\"code\":\"current_permission_intent_unverified\",\"correction\":\"The complete question asks about the signed-in user's current role/account permissions and limitations, not the assistant's available help or tools. Return a complete TaskSpec preserving that subject and all original clauses. Keep current configured action capabilities distinct from general boundaries and from eligibility for a particular record. Do not drop a user condition, invent permissions, choose an active role, or broaden the scope to make this overview applicable.\"}",
+      "candidate": {
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeRange": "unknown",
+        "outputShape": "overview",
+        "searchQuery": "current role available assistance limitations permitted actions capabilities",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "current role",
+            "source": "current"
+          },
+          {
+            "field": "requestedScope",
+            "value": "personal",
+            "source": "current"
+          },
+          {
+            "field": "requestedGrain",
+            "value": "current role",
+            "source": "current"
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [
+              "available assistance",
+              "limitations"
+            ],
+            "source": "current"
+          },
+          {
+            "field": "outputShape",
+            "value": "overview",
+            "source": "current"
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "current"
+          }
+        ],
+        "businessFocus": "",
+        "needsLiveData": false,
+        "businessObject": "current role",
+        "requestedGrain": "current role",
+        "requestedScope": "personal",
+        "contextRelation": "new",
+        "unresolvedSlots": [],
+        "requestedMeasures": [],
+        "requestedAttributes": [
+          "available assistance",
+          "limitations"
+        ]
+      }
+    },
+    {
+      "stage": "TaskSpec",
+      "attempt": 2,
+      "failure": "{\"code\":\"current_permission_intent_unverified\",\"correction\":\"The complete question asks about the signed-in user's current role/account permissions and limitations, not the assistant's available help or tools. Return a complete TaskSpec preserving that subject and all original clauses. Keep current configured action capabilities distinct from general boundaries and from eligibility for a particular record. Do not drop a user condition, invent permissions, choose an active role, or broaden the scope to make this overview applicable.\"}",
+      "candidate": {
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeRange": "unknown",
+        "outputShape": "overview",
+        "searchQuery": "current role permissions limitations allowed actions account capabilities",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "current role",
+            "source": "current"
+          },
+          {
+            "field": "requestedScope",
+            "value": "personal",
+            "source": "current"
+          },
+          {
+            "field": "requestedGrain",
+            "value": "current role",
+            "source": "current"
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [
+              "current role permissions",
+              "current role limitations",
+              "actions permitted in current role",
+              "actions not permitted in current role"
+            ],
+            "source": "current"
+          },
+          {
+            "field": "outputShape",
+            "value": "overview",
+            "source": "current"
+          }
+        ],
+        "businessFocus": "",
+        "needsLiveData": true,
+        "businessObject": "current role",
+        "requestedGrain": "current role",
+        "requestedScope": "personal",
+        "contextRelation": "new",
+        "unresolvedSlots": [],
+        "requestedMeasures": [],
+        "requestedAttributes": [
+          "current role permissions",
+          "current role limitations",
+          "actions permitted in current role",
+          "actions not permitted in current role"
+        ]
+      }
+    }
+  ]
+}

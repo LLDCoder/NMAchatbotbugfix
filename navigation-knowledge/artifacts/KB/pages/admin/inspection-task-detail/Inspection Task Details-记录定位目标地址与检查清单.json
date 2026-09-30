@@ -1,0 +1,444 @@
+{
+  "schemaVersion": "1.0",
+  "packageStatus": "active",
+  "bundleId": "admin.inspection.task.detail.page.package",
+  "createdAt": "2026-09-27T09:06:53.205591+00:00",
+  "searchMetadata": {
+    "titleEnglish": "Inspection Task Details target address status and authorized checklist catalog",
+    "titleArabic": "تفاصيل مهمة التفتيش: الهدف والعنوان والحالة وقائمة التحقق المصرح بها",
+    "descriptionEnglish": "Inspection Task Details target address status and authorized checklist catalog",
+    "descriptionArabic": "تفاصيل مهمة التفتيش: الهدف والعنوان والحالة وقائمة التحقق المصرح بها"
+  },
+  "records": [
+    {
+      "id": "admin.inspection.task.detail.page",
+      "kind": "page_definition",
+      "revision": 2,
+      "status": "active",
+      "title": "Inspection Task Details",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local",
+          "debug"
+        ],
+        "pageRefs": [
+          "/inspection/tasks/detail"
+        ],
+        "runtimeVerification": "response_shape_verified",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/inspection.ts",
+          "revision": "sha256:4a841e7f947b4e73a3960cc0d1b6478b8d43c28652c0113c0b9f0fc38035f618",
+          "locator": "Task number lookup, taskId detail and checklist-template read",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/InspectionTaskDetails/index.tsx",
+          "revision": "sha256:d23023f4518c3371d1a613c3886555c0c5bf14a791fb4cddb9c083e287fa9bdb",
+          "locator": "taskId and taskNo entry",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/InspectionStartVisit/index.tsx",
+          "revision": "sha256:30a4fd518dbfff77eb18170d55c2a81bf61f50564f2b9953907773f15fd031b8",
+          "locator": "normalizeChecklistCatalogItems: active and visible items, displayOrder",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.API/Controllers/InspectionTaskController.cs",
+          "revision": "sha256:9015dc75d7bf99acf0e1067d2156b17564061b7f66cf3eab82f0ca6e0299f5d7",
+          "locator": "GET detail and checklist-template permission",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "runtime_observation",
+          "reference": "test/runtime/sequential-repair-batch5-20260927/baselines/inspection-detail.json",
+          "revision": "sha256:1dbc54ded376070e723c1f2bc5bbe00243687543247ec77314257eee44fb385a",
+          "locator": "Authorized task detail fields",
+          "verification": "response_shape_verified"
+        },
+        {
+          "kind": "runtime_observation",
+          "reference": "test/runtime/sequential-repair-batch5-20260927/baselines/inspection-checklist.json",
+          "revision": "sha256:3b41ec3510b619f0e534dc6c703a092b9979abf3acc866bb6e2ddb98d25280da",
+          "locator": "Authorized full checklist catalog response shape",
+          "verification": "response_shape_verified"
+        }
+      ],
+      "payload": {
+        "pageRef": "/inspection/tasks/detail",
+        "routing": {
+          "parameters": [
+            {
+              "id": "admin.inspection.task.detail_lookup",
+              "name": "taskId",
+              "from": "previous_record",
+              "operationRef": "GET /api/admin/inspection/tasks",
+              "sourcePath": "/data/items",
+              "identityField": "taskNo",
+              "keyFields": [
+                "id"
+              ],
+              "field": "id",
+              "unique": false,
+              "required": true,
+              "lookupPageRefs": [
+                "/inspection/tasks"
+              ]
+            }
+          ],
+          "records": [
+            {
+              "id": "admin.inspection.task.detail_record",
+              "operationRef": "GET /api/admin/inspection/tasks/{id}",
+              "sourcePath": "/data",
+              "identityField": "taskNo",
+              "keyFields": [
+                "id"
+              ],
+              "unique": false
+            }
+          ]
+        },
+        "readOperation": {
+          "operationRef": "GET /api/admin/inspection/tasks/{id}",
+          "responseRoot": "/data"
+        },
+        "entryConditions": [
+          "taskId is required; resolve from a complete authorized exact business-number match."
+        ],
+        "constraints": [
+          "Read-only definitions do not grant operation permissions."
+        ]
+      }
+    },
+    {
+      "id": "admin.inspection.task.detail.fields",
+      "kind": "field_semantics",
+      "revision": 2,
+      "status": "active",
+      "title": "Inspection Task Details fields",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local",
+          "debug"
+        ],
+        "pageRefs": [
+          "/inspection/tasks/detail"
+        ],
+        "runtimeVerification": "response_shape_verified",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/inspection.ts",
+          "revision": "sha256:4a841e7f947b4e73a3960cc0d1b6478b8d43c28652c0113c0b9f0fc38035f618",
+          "locator": "Task number lookup, taskId detail and checklist-template read",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/InspectionTaskDetails/index.tsx",
+          "revision": "sha256:d23023f4518c3371d1a613c3886555c0c5bf14a791fb4cddb9c083e287fa9bdb",
+          "locator": "taskId and taskNo entry",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/InspectionStartVisit/index.tsx",
+          "revision": "sha256:30a4fd518dbfff77eb18170d55c2a81bf61f50564f2b9953907773f15fd031b8",
+          "locator": "normalizeChecklistCatalogItems: active and visible items, displayOrder",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.API/Controllers/InspectionTaskController.cs",
+          "revision": "sha256:9015dc75d7bf99acf0e1067d2156b17564061b7f66cf3eab82f0ca6e0299f5d7",
+          "locator": "GET detail and checklist-template permission",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "runtime_observation",
+          "reference": "test/runtime/sequential-repair-batch5-20260927/baselines/inspection-detail.json",
+          "revision": "sha256:1dbc54ded376070e723c1f2bc5bbe00243687543247ec77314257eee44fb385a",
+          "locator": "Authorized task detail fields",
+          "verification": "response_shape_verified"
+        },
+        {
+          "kind": "runtime_observation",
+          "reference": "test/runtime/sequential-repair-batch5-20260927/baselines/inspection-checklist.json",
+          "revision": "sha256:3b41ec3510b619f0e534dc6c703a092b9979abf3acc866bb6e2ddb98d25280da",
+          "locator": "Authorized full checklist catalog response shape",
+          "verification": "response_shape_verified"
+        }
+      ],
+      "payload": {
+        "pageRef": "/inspection/tasks/detail",
+        "sourceBinding": {
+          "operationRef": "GET /api/admin/inspection/tasks/{id}",
+          "sourcePath": "/data"
+        },
+        "bindings": [
+          {
+            "id": "object",
+            "kind": "object",
+            "concept": "inspection task",
+            "fields": [
+              "id"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks/{id}",
+            "sourcePath": "/data",
+            "aliases": [
+              "inspection",
+              "task",
+              "مهمة تفتيش"
+            ],
+            "meaning": "inspection task details"
+          },
+          {
+            "id": "grain",
+            "kind": "grain",
+            "concept": "inspection task",
+            "fields": [
+              "id"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks/{id}",
+            "sourcePath": "/data",
+            "aliases": [
+              "inspection",
+              "task",
+              "مهمة تفتيش"
+            ],
+            "meaning": "inspection task details"
+          },
+          {
+            "id": "number",
+            "kind": "attribute",
+            "concept": "task number",
+            "fields": [
+              "taskNo"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks/{id}",
+            "sourcePath": "/data",
+            "aliases": [
+              "رقم المهمة"
+            ],
+            "meaning": "Inspection task business number."
+          },
+          {
+            "id": "target",
+            "kind": "attribute",
+            "concept": "target",
+            "fields": [
+              "targetName",
+              "targetTypeName"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks/{id}",
+            "sourcePath": "/data",
+            "aliases": [
+              "inspection target",
+              "هدف التفتيش",
+              "الهدف",
+              "هدف"
+            ],
+            "meaning": "Returned inspected subject. In this task page, Arabic الهدف refers to the inspected subject, not an inferred inspection objective. Arabic العنوان is the physical address, not a document title."
+          },
+          {
+            "id": "address",
+            "kind": "attribute",
+            "concept": "address",
+            "fields": [
+              "emirateName",
+              "regionName",
+              "communityName",
+              "areaStreet"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks/{id}",
+            "sourcePath": "/data",
+            "aliases": [
+              "location",
+              "العنوان"
+            ],
+            "meaning": "Returned location components. Do not infer a missing address component."
+          },
+          {
+            "id": "status",
+            "kind": "attribute",
+            "concept": "status",
+            "fields": [
+              "statusName"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks/{id}",
+            "sourcePath": "/data",
+            "aliases": [
+              "task status",
+              "الحالة"
+            ],
+            "meaning": "Current task status display, not permission to start a visit."
+          }
+        ],
+        "relationships": [
+          "The task detail response belongs to the verified task id/taskNo. Checklist requires its separate authorized read."
+        ]
+      }
+    },
+    {
+      "id": "admin.inspection.task.checklist",
+      "kind": "field_semantics",
+      "revision": 4,
+      "status": "active",
+      "title": "Inspection task checklist catalog",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local",
+          "debug"
+        ],
+        "pageRefs": [
+          "/inspection/tasks/detail"
+        ],
+        "runtimeVerification": "response_shape_verified",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/inspection.ts",
+          "revision": "sha256:4a841e7f947b4e73a3960cc0d1b6478b8d43c28652c0113c0b9f0fc38035f618",
+          "locator": "Task number lookup, taskId detail and checklist-template read",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/InspectionTaskDetails/index.tsx",
+          "revision": "sha256:d23023f4518c3371d1a613c3886555c0c5bf14a791fb4cddb9c083e287fa9bdb",
+          "locator": "taskId and taskNo entry",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/InspectionStartVisit/index.tsx",
+          "revision": "sha256:30a4fd518dbfff77eb18170d55c2a81bf61f50564f2b9953907773f15fd031b8",
+          "locator": "normalizeChecklistCatalogItems: active and visible items, displayOrder",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.API/Controllers/InspectionTaskController.cs",
+          "revision": "sha256:9015dc75d7bf99acf0e1067d2156b17564061b7f66cf3eab82f0ca6e0299f5d7",
+          "locator": "GET detail and checklist-template permission",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "runtime_observation",
+          "reference": "test/runtime/sequential-repair-batch5-20260927/baselines/inspection-detail.json",
+          "revision": "sha256:1dbc54ded376070e723c1f2bc5bbe00243687543247ec77314257eee44fb385a",
+          "locator": "Authorized task detail fields",
+          "verification": "response_shape_verified"
+        },
+        {
+          "kind": "runtime_observation",
+          "reference": "test/runtime/sequential-repair-batch5-20260927/baselines/inspection-checklist.json",
+          "revision": "sha256:3b41ec3510b619f0e534dc6c703a092b9979abf3acc866bb6e2ddb98d25280da",
+          "locator": "Authorized full checklist catalog response shape",
+          "verification": "response_shape_verified"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/InspectionTasks/InspectionTaskAppService.cs",
+          "revision": "sha256:a68f2bc0ce96ca363f0384ca86982dd989ed8838929749b11c28a3c6950196aa",
+          "locator": "GetChecklistTemplateAsync calls GetItemsAsync with visibleOnly true and the default includeInactive false; returns AllChecklistItems.",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/inspection/tasks/detail",
+        "sourceBinding": {
+          "operationRef": "GET /api/admin/inspection/tasks/{id}/checklist-template",
+          "sourcePath": "/data/items"
+        },
+        "bindings": [
+          {
+            "id": "checklist",
+            "kind": "attribute",
+            "concept": "checklist",
+            "fields": [
+              "checklistName",
+              "violationDescription",
+              "isActive",
+              "isVisibleInChecklist"
+            ],
+            "operationRef": "GET /api/admin/inspection/tasks/{id}/checklist-template",
+            "sourcePath": "/data/items",
+            "aliases": [
+              "inspection checklist",
+              "قائمة التحقق"
+            ],
+            "meaning": "Task-authorized checklist catalog. Read every active and visible item in display order. It describes items available for inspection, not checked or passed results. Checklist answer values are item names and violation descriptions. Activity and visibility are selection dependencies, not display columns. Internal id, item code and ordering metadata are not required answer properties merely to show the checklist. Preserve all selected items and their display order.",
+            "conditions": [
+              {
+                "field": "isActive",
+                "predicate": "eq",
+                "value": true
+              },
+              {
+                "field": "isVisibleInChecklist",
+                "predicate": "eq",
+                "value": true
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          "Response taskId must match the verified task id. The source reports templateType=AllChecklistItems and returns the full catalog; do not invent a Book-only filter from contentType. The inspected page keeps items where isActive and isVisibleInChecklist are not false, then sorts by displayOrder.",
+          "Reading this template does not start a visit or save checklist results."
+        ],
+        "relatedReads": [
+          {
+            "operationKey": "GET /api/admin/inspection/tasks/{id}/checklist-template",
+            "parentOperationKey": "GET /api/admin/inspection/tasks/{id}",
+            "parentPath": "/data",
+            "parentField": "id",
+            "parameter": "id",
+            "responseKeyPath": "/data/taskId",
+            "requiredFor": [
+              "checklist",
+              "inspection checklist",
+              "قائمة التحقق",
+              "required documents",
+              "documents",
+              "required preparation steps",
+              "preparation steps",
+              "prepare",
+              "المستندات المطلوبة",
+              "الوثائق",
+              "خطوات التحضير",
+              "التحضير"
+            ]
+          }
+        ],
+        "fields": {
+          "id": "Internal checklist item key.",
+          "checklistCode": "Catalog reference code, optional display when explicitly requested.",
+          "displayOrder": "Ascending catalog display order; used to sort, not a mandatory output column.",
+          "checklistName": "Checklist item name.",
+          "violationDescription": "Violation criterion description for the item.",
+          "isActive": "Server boolean indicating the active catalog entry.",
+          "isVisibleInChecklist": "Server boolean indicating checklist visibility."
+        },
+        "constraints": [
+          "Preparation/document requests trigger this related checklist read as supporting evidence. The checklist describes current inspection criteria, not a complete required-document inventory or an instruction to assume every criterion applies. Keep the actual task method/template and missing document requirements distinct."
+        ]
+      }
+    }
+  ]
+}

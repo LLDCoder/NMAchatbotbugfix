@@ -1,0 +1,115 @@
+{
+  "schemaVersion": "1.0",
+  "packageStatus": "active",
+  "bundleId": "admin.finance.transactions.exact-identifier-set.package",
+  "createdAt": "2026-09-28T09:14:39.486099+00:00",
+  "searchMetadata": {
+    "titleEnglish": "Finance Transactions exact transaction and reference number lookup",
+    "titleArabic": "المعاملات المالية: مطابقة أرقام المعاملات والمراجع بدقة",
+    "descriptionEnglish": "Read multiple separately identified financial transaction records by exact returned transaction number or payment reference number; preserve each transaction entity and every requested identifier.",
+    "descriptionArabic": "قراءة سجلات معاملات مالية متعددة بمطابقة رقم المعاملة أو الرقم المرجعي الوارد تماماً، مع إبقاء هوية كل معاملة منفصلة."
+  },
+  "records": [
+    {
+      "id": "admin.finance.transactions.exact-identifier-set",
+      "kind": "field_semantics",
+      "revision": 1,
+      "status": "active",
+      "title": "Finance Transactions exact transaction and reference number lookup",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local",
+          "debug"
+        ],
+        "pageRefs": [
+          "/financial-payment/transactions"
+        ],
+        "runtimeVerification": "response_shape_verified",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "runtime_observation",
+          "reference": "test/runtime/group17-cross-repair-20260928/record-set-reference-number-field-evidence.json",
+          "revision": "sha256:ef1ee31d70b38f1afa5c8546af48b6f062307f450b74acc58f5144955bab6843",
+          "locator": "Native authorized HTTP 200 list field shape and exact row projections; raw source file hashes retained in this evidence receipt.",
+          "verification": "response_shape_verified"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/finance.ts",
+          "revision": "sha256:7c91d564496d85ad9b6e244fa8a58efdc947ee7a09a5713ffb38d6e8c1eae831",
+          "locator": "Transaction list interface referenceNumber and transactionNo; getTransactions operation.",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/Finance/AdminFinanceTransactionsAppService.cs",
+          "revision": "sha256:fb319b3bc0bcdaaf1159544ab3d5d793b05d4fb0f7c2191f9272c210da2baf8b",
+          "locator": "MapTransactionsAsync and ApplyFiltersAsync; KeyWord uses Contains, exact field comparison remains required. ReferenceNumber may repeat across attempts and may refer to other payment objects.",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Finance/AdminFinanceTransactionDtos.cs",
+          "revision": "sha256:8a815d61efddaee32b2e2709c95f538583bb7b14d4f5cd92427f5dc184f6da15",
+          "locator": "AdminFinanceTransactionListItemDto transactionNo/referenceNumber/id fields.",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/financial-payment/transactions",
+        "sourceBinding": {
+          "operationRef": "GET /api/admin/finance/transactions",
+          "sourcePath": "/data/items"
+        },
+        "fields": {
+          "id": "Transaction entity key; keep only for verification and distinct entities unless explicitly requested.",
+          "transactionNo": "Public transaction business number; remains the primary detail routing identity.",
+          "referenceNumber": "Public payment reference returned on the same list row. It may be an application, refund or violation number according to the returned transaction data, and may repeat across transaction attempts. It is neither the transaction primary identity nor proof of a cross-module relationship."
+        },
+        "bindings": [
+          {
+            "id": "reference-number",
+            "kind": "attribute",
+            "concept": "reference number",
+            "aliases": [
+              "payment reference number",
+              "referenceNumber",
+              "الرقم المرجعي",
+              "رقم مرجع الدفع"
+            ],
+            "operationRef": "GET /api/admin/finance/transactions",
+            "sourcePath": "/data/items",
+            "fields": [
+              "referenceNumber"
+            ]
+          }
+        ],
+        "recordSetLookups": [
+          {
+            "id": "transaction-or-reference-number",
+            "operationRef": "GET /api/admin/finance/transactions",
+            "sourcePath": "/data/items",
+            "identifierFields": [
+              "transactionNo",
+              "referenceNumber"
+            ],
+            "keyFields": [
+              "id"
+            ]
+          }
+        ],
+        "constraints": [
+          "This optional multi-record lookup augments the existing Finance Transactions page and field definitions; it does not replace transactionNo detail routing or id transaction grain.",
+          "For a user-established transaction business type and an explicit list of literal identifiers, compare exact equality of each literal with transactionNo or referenceNumber on the authorized list. Keep both returned public numbers with each matching transaction entity. Do not concatenate identifiers, use substrings, infer type from a prefix, or silently query only one target.",
+          "KeyWord is broad server search. Its positive rows still require exact comparison; an empty partial keyword response cannot establish absence. Preserve every original scope and filter and validate collection completeness.",
+          "A referenceNumber may match multiple transaction ids. Keep the ambiguity; never choose an arbitrary attempt or count an ambiguous target as fully identified. Do not treat referenceNumber as unique, a child echo, a foreign key or authorization to fetch another module.",
+          "Every requested literal must retain its own verified result. Partial matches are partial results, not success for the complete request. Missing source fields, page binding, complete collection or same-principal observation remain unresolved evidence requirements.",
+          "This knowledge defines only read semantics; native API permissions and current-session provenance remain authoritative. No role label, remembered source, test identifier or derived metadata grants access."
+        ]
+      }
+    }
+  ]
+}

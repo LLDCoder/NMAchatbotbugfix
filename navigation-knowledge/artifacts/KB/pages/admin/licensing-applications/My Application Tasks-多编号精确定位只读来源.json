@@ -1,0 +1,156 @@
+{
+  "schemaVersion": "1.0",
+  "bundleId": "page-supplement.admin.licensing.applications.exact-set-page-reads",
+  "createdAt": "2026-09-28T10:56:46.452082+00:00",
+  "packageStatus": "active",
+  "records": [
+    {
+      "id": "admin.licensing.applications.exact-set-page-reads",
+      "kind": "page_definition",
+      "revision": 1,
+      "status": "active",
+      "title": "Application exact identifier set lookup sources",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local"
+        ],
+        "pageRefs": [
+          "/licensing/applications"
+        ],
+        "sourceSnapshot": "source-inspected-20260928",
+        "runtimeVerification": "pending",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Applications/index.tsx",
+          "revision": "433c90d2018350b78f1f51a50c31aa2ba3089e2b0753a9f1dd76de95066c962e",
+          "locator": "717-844: To Do and Completed request filters; defaults, paging and source operations",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.API/Controllers/ApplicationController.cs",
+          "revision": "c43e5e7e836b3aa6f2f5070d8456f4378ab205112cddc012fde6949e26a44397",
+          "locator": "32-50: MyTodo and MyCompleted have distinct required view permissions",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Application/ApplicationDto.cs",
+          "revision": "3efae9b26845ec68130f314cbccfd0861bb76f19a22ab6d083f5ec9435042cdc",
+          "locator": "12-35: optional nullable request filters; PageRequest inheritance",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/MyReviewFilter.cs",
+          "revision": "e85bf61625c530802e0a177de8eeba436c26ba8ad98952b7908ddfa915073ebb",
+          "locator": "29-78: empty keyword and omitted optional filters do not narrow rows; serviceTypeId 1 means all service types",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/licensing/applications",
+        "purpose": "Locate all explicit application identifiers across the current user’s authorized To Do and Completed collections without serially replacing one keyword criterion.",
+        "pageReads": [
+          {
+            "operationKey": "POST /api/Application/MyTodoPage",
+            "parameters": {
+              "keyword": "",
+              "serviceTypeId": "1",
+              "sortBy": "LastUpdatedTime",
+              "sortDirection": 1,
+              "pageIndex": 1,
+              "pageSize": 10
+            },
+            "requiredScope": "unknown",
+            "requiredObjects": [
+              "application"
+            ],
+            "requiredFor": [
+              "record identifiers"
+            ],
+            "requiredIntent": "bare_record_set"
+          },
+          {
+            "operationKey": "POST /api/Application/MyComplatedPage",
+            "parameters": {
+              "keyword": "",
+              "serviceTypeId": "1",
+              "sortBy": "LastUpdatedTime",
+              "sortDirection": 1,
+              "pageIndex": 1,
+              "pageSize": 10
+            },
+            "requiredScope": "unknown",
+            "requiredObjects": [
+              "application"
+            ],
+            "requiredFor": [
+              "record identifiers"
+            ],
+            "requiredIntent": "bare_record_set"
+          }
+        ],
+        "knowledgeDependencies": [
+          {
+            "purpose": "analysis",
+            "operationRef": "POST /api/Application/MyTodoPage",
+            "document": "My Application Tasks-页面范围与记录定位.json"
+          },
+          {
+            "purpose": "analysis",
+            "operationRef": "POST /api/Application/MyComplatedPage",
+            "document": "My Application Tasks-页面范围与记录定位.json"
+          },
+          {
+            "purpose": "analysis",
+            "operationRef": "POST /api/Application/MyTodoPage",
+            "document": "My Application Tasks-待办分页字段与统计范围.json"
+          },
+          {
+            "purpose": "analysis",
+            "operationRef": "POST /api/Application/MyComplatedPage",
+            "document": "My Application Tasks-已完成分页字段与审批决定.json"
+          },
+          {
+            "purpose": "collection",
+            "operationRef": "POST /api/Application/MyTodoPage",
+            "document": "My Application Tasks-待办分页字段与统计范围.json"
+          },
+          {
+            "purpose": "collection",
+            "operationRef": "POST /api/Application/MyComplatedPage",
+            "document": "My Application Tasks-已完成分页字段与审批决定.json"
+          }
+        ],
+        "identityRules": [
+          "The caller’s literal identifiers remain request values. Exact equality is against applicationNumber, and id is the application entity key. This document contains no record identifiers or expected business outcomes.",
+          "keyword is a substring predicate and cannot encode an OR set by concatenating identifiers. Read the authorized collection under stable documented request context, then apply the exact identity filter.",
+          "Each displayed identifier must have exactly one verified application key; similarity, shared prefixes and related payment numbers establish no identity or relationship."
+        ],
+        "permissions": [
+          "The current bearer identity is used for each operation; each native permission result remains authoritative. MyTodo.View and MyCompleted.View are separate server checks. This definition grants neither permission.",
+          "A native 401 or 403 is an access result, not an empty collection. Do not change account, use a different identity, guess internal IDs or bypass a denied read."
+        ],
+        "requestSemantics": {
+          "keyword": "Empty string removes only keyword narrowing in these supplemental reads. All caller-requested clauses still require independent final proof.",
+          "serviceTypeId": "String 1 is the source-defined all-service-types sentinel; it does not mean department 1, Licensing membership or Foreign Media.",
+          "omittedOptionalFilters": "Start/end dates, status, approval decision, category and service-code filters are omitted nullable DTO properties. This is a source-inspected contract, not proof of the deployed build. Never represent omitted values as captured non-null filters.",
+          "pagination": "Start with pageIndex 1 and pageSize 10. Only declared pagination fields may change during bounded two-pass collection; response page.total and stable projection determine completeness."
+        },
+        "boundaries": [
+          "These supplemental reads activate only for the reviewed bare_record_set request shape: an explicit exact identifier set with no selected view, added scope/date/predicate, or requested attribute/measure/order/group. A different shape requires its own already supported source path and cannot reuse this activation marker.",
+          "These reads locate application entities only; they are not enterprise-wide or cross-department performance access.",
+          "One complete collected source that verifies all requested identifiers can satisfy the existing exact-set output contract. If identifiers are split across two sources, preserve the gap until a separately reviewed server-owned multi-source proof contract exists.",
+          "Do not join two partial populations or unequal capture timestamps into an invented complete snapshot. Do not change timestamps or observation references to force compatibility.",
+          "A missing identifier in any one view is unobserved in that view, never proof of global absence. Keep each original identifier in the task and final evidence coverage.",
+          "Never replace user-requested status, SLA, date, scope or other attributes with this locator-only projection. Runtime collection must independently verify the deployed response, identity and completeness before any business conclusion."
+        ]
+      }
+    }
+  ]
+}

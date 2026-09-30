@@ -1,0 +1,1973 @@
+{
+  "mode": "historical_failure_fixture_for_offline_testing_only",
+  "authCapture": {
+    "start": "2026-09-28T20:07:36.509Z",
+    "end": "2026-09-28T20:07:41.293Z",
+    "path": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/groups1113-20260928/round25-i04-i05-v34/identities/header-license-com.json",
+    "sha256": "29d3a63f0cd30f7c7d4f61f1f9a32e5db06522e6d0c98895822443f1abfc90db",
+    "limitation": "This browser capture precedes per-turn auth. Tests supply controlled fresh receipts; no claim of original per-turn raw action evidence."
+  },
+  "auth": {
+    "isSuccess": true,
+    "statusCode": 200,
+    "data": {
+      "id": "c8353c37-b54d-4919-b3b3-4682d4ab3397",
+      "listRoles": [
+        {
+          "id": "FOREIGN_MEDIA_MANAGER",
+          "name": "Foreign Media Manager",
+          "discriminator": "ApprovalRole",
+          "isShown": true,
+          "nameEn": "Foreign Media Manager",
+          "nameAr": "مدير الإعلام الأجنبي",
+          "descEn": "Manages foreign media applications, issues final decisions, confirms external approvals, and authorizes the issuance of press cards.",
+          "descAr": "يدير طلبات الإعلام الأجنبي، ويصدر القرارات النهائية، ويعتمد موافقات الجهات الخارجية، ويصرح بإصدار البطاقات الصحفية.",
+          "departmentId": 1,
+          "status": "1",
+          "createAt": "2026-06-29T06:00:16",
+          "adminUsers": []
+        },
+        {
+          "id": "LICENSING_MANAGER",
+          "name": "Licensing Manager",
+          "discriminator": "ApprovalRole",
+          "isShown": true,
+          "nameEn": "Licensing Manager",
+          "nameAr": "مدير التراخيص",
+          "descEn": "Manages licensing applications within the department and has the authority to approve, reject, return, or finalize licensing decisions.",
+          "descAr": "يدير طلبات التراخيص ضمن الإدارة، ويتمتع بصلاحية اعتماد الطلبات أو رفضها أو إعادتها، وإصدار القرار النهائي بشأنها.",
+          "departmentId": 1,
+          "status": "1",
+          "createAt": "2026-06-29T06:00:16",
+          "adminUsers": []
+        }
+      ],
+      "rolesInfo": [
+        {
+          "roleID": "FOREIGN_MEDIA_MANAGER",
+          "roleName": "Foreign Media Manager"
+        },
+        {
+          "roleID": "LICENSING_MANAGER",
+          "roleName": "Licensing Manager"
+        }
+      ],
+      "listSysPermission": [
+        {
+          "permissionCode": "DashBoard",
+          "permissionNameEn": "Dashboard",
+          "permissionNameAr": "Dashboard",
+          "permissionType": "M",
+          "frontendRoute": "/dashboard",
+          "status": "1",
+          "buttonList": [],
+          "children": []
+        },
+        {
+          "permissionCode": "Common",
+          "permissionNameEn": "Common",
+          "permissionNameAr": "Common",
+          "permissionType": "M",
+          "frontendRoute": null,
+          "status": "1",
+          "buttonList": [],
+          "children": [
+            {
+              "permissionCode": "Common.Document",
+              "permissionNameEn": "Document",
+              "permissionNameAr": "Document",
+              "permissionType": "M",
+              "frontendRoute": null,
+              "status": "1",
+              "buttonList": [
+                {
+                  "permissionCode": "Common.Document.Upload",
+                  "permissionNameEn": "Upload",
+                  "permissionNameAr": "Upload",
+                  "permissionType": "B",
+                  "frontendRoute": null,
+                  "key": null,
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                },
+                {
+                  "permissionCode": "Common.Document.Download",
+                  "permissionNameEn": "Download",
+                  "permissionNameAr": "Download",
+                  "permissionType": "B",
+                  "frontendRoute": null,
+                  "key": null,
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "permissionCode": "Licensing",
+          "permissionNameEn": "Licensing",
+          "permissionNameAr": "Licensing",
+          "permissionType": "M",
+          "frontendRoute": "/licensing",
+          "status": "1",
+          "buttonList": [],
+          "children": [
+            {
+              "permissionCode": "Licensing.Applications",
+              "permissionNameEn": "Applications",
+              "permissionNameAr": "Applications",
+              "permissionType": "M",
+              "frontendRoute": "/licensing/applications",
+              "status": "1",
+              "buttonList": [
+                {
+                  "permissionCode": "Licensing.Applications.Confirm",
+                  "permissionNameEn": "Confirm",
+                  "permissionNameAr": "موافق",
+                  "permissionType": "B",
+                  "frontendRoute": "/licensing/applications",
+                  "key": "/licensing/applications-confirm",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                },
+                {
+                  "permissionCode": "Licensing.Applications.ConfirmDispositionDecisionModal",
+                  "permissionNameEn": "Confirm - DispositionDecisionModal",
+                  "permissionNameAr": "تأكيد",
+                  "permissionType": "B",
+                  "frontendRoute": "/licensing/applications",
+                  "key": "/licensing/applications-confirmDispositionDecisionModal",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                },
+                {
+                  "permissionCode": "Licensing.Applications.ConfirmMediaMaterialReportModal",
+                  "permissionNameEn": "Confirm - MediaMaterialReportModal",
+                  "permissionNameAr": "تأكيد",
+                  "permissionType": "B",
+                  "frontendRoute": "/licensing/applications",
+                  "key": "/licensing/applications-confirmMediaMaterialReportModal",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                },
+                {
+                  "permissionCode": "Licensing.Applications.ConfirmRejectModal",
+                  "permissionNameEn": "Confirm - RejectModal",
+                  "permissionNameAr": "رفض",
+                  "permissionType": "B",
+                  "frontendRoute": "/licensing/applications",
+                  "key": "/licensing/applications-confirmRejectModal",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                },
+                {
+                  "permissionCode": "Licensing.Applications.ConfirmRequestModal",
+                  "permissionNameEn": "Confirm - RequestModal",
+                  "permissionNameAr": "Confirm - RequestModal",
+                  "permissionType": "B",
+                  "frontendRoute": "/licensing/applications",
+                  "key": "/licensing/applications-confirmRequestModal",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                },
+                {
+                  "permissionCode": "Licensing.Applications.Export",
+                  "permissionNameEn": "Export",
+                  "permissionNameAr": "يصدّر",
+                  "permissionType": "B",
+                  "frontendRoute": "/licensing/applications",
+                  "key": "/licensing/applications-export",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                }
+              ],
+              "children": [
+                {
+                  "permissionCode": "Licensing.Applications.ApplicationDetails",
+                  "permissionNameEn": "ApplicationDetails",
+                  "permissionNameAr": "ApplicationDetails",
+                  "permissionType": "M",
+                  "frontendRoute": "/licensing/applications/applicationsDetails",
+                  "status": "1",
+                  "buttonList": [
+                    {
+                      "permissionCode": "Fahr.Admin",
+                      "permissionNameEn": "External Approval - Call FAHR Interface",
+                      "permissionNameAr": "استدعاء واجهة فاهر",
+                      "permissionType": "B",
+                      "frontendRoute": "/licensing/applications/applicationsDetails",
+                      "key": "/licensing/applications/applicationsDetails-externalApproval-fahrAdmin",
+                      "status": "1",
+                      "buttonList": [],
+                      "children": []
+                    },
+                    {
+                      "permissionCode": "Licensing.Applications.ApplicationDetails.Approve",
+                      "permissionNameEn": "Approve",
+                      "permissionNameAr": "موافقة",
+                      "permissionType": "B",
+                      "frontendRoute": "/licensing/applications/applicationsDetails",
+                      "key": "/licensing/applications/applicationsDetails-approve",
+                      "status": "1",
+                      "buttonList": [],
+                      "children": []
+                    },
+                    {
+                      "permissionCode": "Licensing.Applications.ApplicationDetails.ExternalApproval",
+                      "permissionNameEn": "External Approval",
+                      "permissionNameAr": "موافقة خارجية",
+                      "permissionType": "B",
+                      "frontendRoute": "/licensing/applications/applicationsDetails",
+                      "key": "/licensing/applications/applicationsDetails-externalApproval",
+                      "status": "1",
+                      "buttonList": [],
+                      "children": []
+                    },
+                    {
+                      "permissionCode": "Licensing.Applications.ApplicationDetails.Reject",
+                      "permissionNameEn": "Reject",
+                      "permissionNameAr": "رفض",
+                      "permissionType": "B",
+                      "frontendRoute": "/licensing/applications/applicationsDetails",
+                      "key": "/licensing/applications/applicationsDetails-reject",
+                      "status": "1",
+                      "buttonList": [],
+                      "children": []
+                    },
+                    {
+                      "permissionCode": "Licensing.Applications.ApplicationDetails.RequestModification",
+                      "permissionNameEn": "Request Modification",
+                      "permissionNameAr": "طلب تعديل",
+                      "permissionType": "B",
+                      "frontendRoute": "/licensing/applications/applicationsDetails",
+                      "key": "/licensing/applications/applicationsDetails-requestModification",
+                      "status": "1",
+                      "buttonList": [],
+                      "children": []
+                    },
+                    {
+                      "permissionCode": "Licensing.Applications.ApplicationDetails.SendBack",
+                      "permissionNameEn": "Send Back",
+                      "permissionNameAr": "إرجاع",
+                      "permissionType": "B",
+                      "frontendRoute": "/licensing/applications/applicationsDetails",
+                      "key": "/licensing/applications/applicationsDetails-sendBack",
+                      "status": "1",
+                      "buttonList": [],
+                      "children": []
+                    }
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "permissionCode": "Licensing.TeamManagement",
+              "permissionNameEn": "Team Management",
+              "permissionNameAr": "Team Management",
+              "permissionType": "M",
+              "frontendRoute": "/licensing/team-management",
+              "status": "1",
+              "buttonList": [
+                {
+                  "permissionCode": "Licensing.TeamManagement.ConfirmMarkEmergencyLeaveModal",
+                  "permissionNameEn": "Confirm - MarkEmergencyLeaveModal",
+                  "permissionNameAr": "تأكيد",
+                  "permissionType": "B",
+                  "frontendRoute": "/licensing/team-management",
+                  "key": "/licensing/team-management-confirmMarkEmergencyLeaveModal",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                },
+                {
+                  "permissionCode": "Licensing.TeamManagement.ConfirmReassignTasksModal",
+                  "permissionNameEn": "Confirm - ReassignTasksModal",
+                  "permissionNameAr": "تأكيد",
+                  "permissionType": "B",
+                  "frontendRoute": "/licensing/team-management",
+                  "key": "/licensing/team-management-confirmReassignTasksModal",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                },
+                {
+                  "permissionCode": "Licensing.TeamManagement.ConfirmResumeWorkModal",
+                  "permissionNameEn": "Confirm - ResumeWorkModal",
+                  "permissionNameAr": "تأكيد",
+                  "permissionType": "B",
+                  "frontendRoute": "/licensing/team-management",
+                  "key": "/licensing/team-management-confirmResumeWorkModal",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                },
+                {
+                  "permissionCode": "Licensing.TeamManagement.Export",
+                  "permissionNameEn": "Export",
+                  "permissionNameAr": "تصدير",
+                  "permissionType": "B",
+                  "frontendRoute": "/licensing/team-management",
+                  "key": "/licensing/team-management-export",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                },
+                {
+                  "permissionCode": "Licensing.TeamManagement.Reassign",
+                  "permissionNameEn": "Reassign",
+                  "permissionNameAr": "إعادة تعيين",
+                  "permissionType": "B",
+                  "frontendRoute": "/licensing/team-management",
+                  "key": "/licensing/team-management-reassign",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                }
+              ],
+              "children": []
+            },
+            {
+              "permissionCode": "Licensing.Licenses",
+              "permissionNameEn": "licenses",
+              "permissionNameAr": "licenses",
+              "permissionType": "M",
+              "frontendRoute": "/licensing/licenses",
+              "status": "1",
+              "buttonList": [
+                {
+                  "permissionCode": "Licensing.Licenses.Confirm",
+                  "permissionNameEn": "Confirm",
+                  "permissionNameAr": "تأكيد",
+                  "permissionType": "B",
+                  "frontendRoute": "/licensing/licenses",
+                  "key": "/licensing/licenses-confirm",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                },
+                {
+                  "permissionCode": "Licensing.Licenses.Export",
+                  "permissionNameEn": "Export",
+                  "permissionNameAr": "تصدير",
+                  "permissionType": "B",
+                  "frontendRoute": "/licensing/licenses",
+                  "key": "/licensing/licenses-export",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                }
+              ],
+              "children": [
+                {
+                  "permissionCode": "Licensing.Licenses.LicenseDatails",
+                  "permissionNameEn": "LicenseDatails",
+                  "permissionNameAr": "LicenseDatails",
+                  "permissionType": "M",
+                  "frontendRoute": "/licensing/license/LicenseDatails",
+                  "status": "1",
+                  "buttonList": [
+                    {
+                      "permissionCode": "Licensing.Licenses.LicenseDatails.Disable",
+                      "permissionNameEn": "Disable",
+                      "permissionNameAr": "تعطيل",
+                      "permissionType": "B",
+                      "frontendRoute": "/licensing/license/LicenseDatails",
+                      "key": "/licensing/license/LicenseDatails-disable",
+                      "status": "1",
+                      "buttonList": [],
+                      "children": []
+                    },
+                    {
+                      "permissionCode": "Licensing.Licenses.LicenseDatails.Enable",
+                      "permissionNameEn": "Enable",
+                      "permissionNameAr": "تفعيل",
+                      "permissionType": "B",
+                      "frontendRoute": "/licensing/license/LicenseDatails",
+                      "key": "/licensing/license/LicenseDatails-enable",
+                      "status": "1",
+                      "buttonList": [],
+                      "children": []
+                    }
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "permissionCode": "Licensing.Profile",
+              "permissionNameEn": "Profile",
+              "permissionNameAr": "Profile",
+              "permissionType": "M",
+              "frontendRoute": "/licensing/profile",
+              "status": "1",
+              "buttonList": [
+                {
+                  "permissionCode": "Licensing.Profile.Export",
+                  "permissionNameEn": "Export",
+                  "permissionNameAr": "تصدير",
+                  "permissionType": "B",
+                  "frontendRoute": "/licensing/profile",
+                  "key": "/licensing/profile-export",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                }
+              ],
+              "children": [
+                {
+                  "permissionCode": "Licensing.Profile.ApplicationsDetails",
+                  "permissionNameEn": "ApplicationsDetails",
+                  "permissionNameAr": "ApplicationsDetails",
+                  "permissionType": "M",
+                  "frontendRoute": "/licensing/Profile/ProfileDetails",
+                  "status": "1",
+                  "buttonList": [
+                    {
+                      "permissionCode": "Licensing.Profile.ApplicationsDetails.Details",
+                      "permissionNameEn": "Details",
+                      "permissionNameAr": "التفاصيل",
+                      "permissionType": "B",
+                      "frontendRoute": "/licensing/Profile/ProfileDetails",
+                      "key": "/licensing/Profile/ProfileDetails-details",
+                      "status": "1",
+                      "buttonList": [],
+                      "children": []
+                    }
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "permissionCode": "Licensing.LicenseReportsAnalytics",
+              "permissionNameEn": "LicenseReportsAnalytics",
+              "permissionNameAr": "LicenseReportsAnalytics",
+              "permissionType": "M",
+              "frontendRoute": "/licensing/reports-analytics",
+              "status": "1",
+              "buttonList": [
+                {
+                  "permissionCode": "Licensing.ReportsAnalytics.Export",
+                  "permissionNameEn": "Reports Export",
+                  "permissionNameAr": "Reports Export",
+                  "permissionType": "B",
+                  "frontendRoute": null,
+                  "key": null,
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "permissionCode": "CustomerModule",
+          "permissionNameEn": "Customer Module",
+          "permissionNameAr": "Customer Module",
+          "permissionType": "M",
+          "frontendRoute": "/happiness",
+          "status": "1",
+          "buttonList": [],
+          "children": [
+            {
+              "permissionCode": "CustomerModule.Tickets",
+              "permissionNameEn": "Tickets",
+              "permissionNameAr": "Tickets",
+              "permissionType": "M",
+              "frontendRoute": "/happiness/tickets",
+              "status": "1",
+              "buttonList": [
+                {
+                  "permissionCode": "CustomerModule.Tickets.AddNew",
+                  "permissionNameEn": "Add New",
+                  "permissionNameAr": "إضافة جديدة",
+                  "permissionType": "B",
+                  "frontendRoute": "/happiness/tickets",
+                  "key": "/happiness/tickets-addNew",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                },
+                {
+                  "permissionCode": "CustomerModule.Tickets.AddNewTicketsTable",
+                  "permissionNameEn": "Add New - TicketsTable",
+                  "permissionNameAr": "إضافة جديدة",
+                  "permissionType": "B",
+                  "frontendRoute": "/happiness/tickets",
+                  "key": "/happiness/tickets-addNewTicketsTable",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                },
+                {
+                  "permissionCode": "CustomerModule.Tickets.ChangeStatus",
+                  "permissionNameEn": "Change Status",
+                  "permissionNameAr": "تغيير الحالة",
+                  "permissionType": "B",
+                  "frontendRoute": "/happiness/tickets",
+                  "key": "/happiness/tickets-changeStatus",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                },
+                {
+                  "permissionCode": "CustomerModule.Tickets.Confirm",
+                  "permissionNameEn": "Confirm",
+                  "permissionNameAr": "تأكيد",
+                  "permissionType": "B",
+                  "frontendRoute": "/happiness/tickets",
+                  "key": "/happiness/tickets-confirm",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                },
+                {
+                  "permissionCode": "CustomerModule.Tickets.ConfirmProcessModal",
+                  "permissionNameEn": "Confirm - ProcessModal",
+                  "permissionNameAr": "تأكيد",
+                  "permissionType": "B",
+                  "frontendRoute": "/happiness/tickets",
+                  "key": "/happiness/tickets-confirmProcessModal",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                },
+                {
+                  "permissionCode": "CustomerModule.Tickets.ConfirmSendBackModal",
+                  "permissionNameEn": "Confirm - SendBackModal",
+                  "permissionNameAr": "تأكيد",
+                  "permissionType": "B",
+                  "frontendRoute": "/happiness/tickets",
+                  "key": "/happiness/tickets-confirmSendBackModal",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                },
+                {
+                  "permissionCode": "CustomerModule.Tickets.ConfirmTransferModal",
+                  "permissionNameEn": "Confirm - TransferModal",
+                  "permissionNameAr": "تأكيد",
+                  "permissionType": "B",
+                  "frontendRoute": "/happiness/tickets",
+                  "key": "/happiness/tickets-confirmTransferModal",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                },
+                {
+                  "permissionCode": "CustomerModule.Tickets.Export",
+                  "permissionNameEn": "Export",
+                  "permissionNameAr": "تصدير",
+                  "permissionType": "B",
+                  "frontendRoute": "/happiness/tickets",
+                  "key": "/happiness/tickets-export",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                },
+                {
+                  "permissionCode": "CustomerModule.Tickets.ExportTicketsTable",
+                  "permissionNameEn": "Export - TicketsTable",
+                  "permissionNameAr": "تصدير",
+                  "permissionType": "B",
+                  "frontendRoute": "/happiness/tickets",
+                  "key": "/happiness/tickets-exportTicketsTable",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                },
+                {
+                  "permissionCode": "CustomerModule.Tickets.Process",
+                  "permissionNameEn": "Process",
+                  "permissionNameAr": "معالجة",
+                  "permissionType": "B",
+                  "frontendRoute": "/happiness/tickets",
+                  "key": "/happiness/tickets-process",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                },
+                {
+                  "permissionCode": "CustomerModule.Tickets.Save",
+                  "permissionNameEn": "Save",
+                  "permissionNameAr": "حفظ",
+                  "permissionType": "B",
+                  "frontendRoute": "/happiness/tickets",
+                  "key": "/happiness/tickets-save",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                }
+              ],
+              "children": [
+                {
+                  "permissionCode": "CustomerModule.Tickets.TicketsDetails",
+                  "permissionNameEn": "TicketsDetails",
+                  "permissionNameAr": "TicketsDetails",
+                  "permissionType": "M",
+                  "frontendRoute": "/happiness/tickets/tickets-details",
+                  "status": "1",
+                  "buttonList": [
+                    {
+                      "permissionCode": "CustomerModule.Tickets.TicketsDetails.Send",
+                      "permissionNameEn": "Send",
+                      "permissionNameAr": "إرسال",
+                      "permissionType": "B",
+                      "frontendRoute": "/happiness/tickets/tickets-details",
+                      "key": "/happiness/tickets/tickets-details-send",
+                      "status": "1",
+                      "buttonList": [],
+                      "children": []
+                    }
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "permissionCode": "CustomerModule.Customers",
+              "permissionNameEn": "Customers",
+              "permissionNameAr": "Customers",
+              "permissionType": "M",
+              "frontendRoute": "/happiness/customerManagement",
+              "status": "1",
+              "buttonList": [
+                {
+                  "permissionCode": "CustomerModule.Customers.Confirm",
+                  "permissionNameEn": "Confirm",
+                  "permissionNameAr": "تأكيد",
+                  "permissionType": "B",
+                  "frontendRoute": "/happiness/customerManagement",
+                  "key": "/happiness/customerManagement-confirm",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                },
+                {
+                  "permissionCode": "CustomerModule.Customers.ConfirmCustomerManagement",
+                  "permissionNameEn": "Confirm - CustomerManagement",
+                  "permissionNameAr": "تأكيد",
+                  "permissionType": "B",
+                  "frontendRoute": "/happiness/customerManagement",
+                  "key": "/happiness/customerManagement-confirmCustomerManagement",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                },
+                {
+                  "permissionCode": "CustomerModule.Customers.Export",
+                  "permissionNameEn": "Export",
+                  "permissionNameAr": "تصدير",
+                  "permissionType": "B",
+                  "frontendRoute": "/happiness/customerManagement",
+                  "key": "/happiness/customerManagement-export",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                },
+                {
+                  "permissionCode": "CustomerModule.Customers.ExportCustomerManagement",
+                  "permissionNameEn": "Export - CustomerManagement",
+                  "permissionNameAr": "تصدير",
+                  "permissionType": "B",
+                  "frontendRoute": "/happiness/customerManagement",
+                  "key": "/happiness/customerManagement-exportCustomerManagement",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                }
+              ],
+              "children": [
+                {
+                  "permissionCode": "CustomerModule.Customers.CustomerDetails",
+                  "permissionNameEn": "Customer Details",
+                  "permissionNameAr": "Customer Details",
+                  "permissionType": "M",
+                  "frontendRoute": "/happiness/customerManagement/customer-details",
+                  "status": "1",
+                  "buttonList": [
+                    {
+                      "permissionCode": "CustomerModule.Customers.CustomerDetails.Confirm",
+                      "permissionNameEn": "Confirm",
+                      "permissionNameAr": "تأكيد",
+                      "permissionType": "B",
+                      "frontendRoute": "/happiness/customerManagement/customer-details",
+                      "key": "/happiness/customerManagement/customer-details-confirm",
+                      "status": "1",
+                      "buttonList": [],
+                      "children": []
+                    }
+                  ],
+                  "children": []
+                },
+                {
+                  "permissionCode": "CustomerModule.Customers.ProfileDetail",
+                  "permissionNameEn": "Profile Detail",
+                  "permissionNameAr": "Profile Detail",
+                  "permissionType": "M",
+                  "frontendRoute": "/happiness/customerManagement/customerProfileDetail",
+                  "status": "1",
+                  "buttonList": [
+                    {
+                      "permissionCode": "CustomerModule.Customers.ProfileDetail.RelatedDetail.Read",
+                      "permissionNameEn": "Read Related Profile Details",
+                      "permissionNameAr": "Read Related Profile Details",
+                      "permissionType": "B",
+                      "frontendRoute": null,
+                      "key": null,
+                      "status": "1",
+                      "buttonList": [],
+                      "children": []
+                    },
+                    {
+                      "permissionCode": "CustomerModule.Customers.ProfileDetail.Confirm",
+                      "permissionNameEn": "Confirm",
+                      "permissionNameAr": "تأكيد",
+                      "permissionType": "B",
+                      "frontendRoute": "/happiness/customerManagement/customerProfileDetail",
+                      "key": "/happiness/customerManagement/customerProfileDetail-confirm",
+                      "status": "1",
+                      "buttonList": [],
+                      "children": []
+                    }
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "permissionCode": "CustomerModule.Refunds",
+              "permissionNameEn": "Refunds",
+              "permissionNameAr": "Refunds",
+              "permissionType": "M",
+              "frontendRoute": "/happiness/refunds",
+              "status": "1",
+              "buttonList": [
+                {
+                  "permissionCode": "CustomerModule.Refunds.Export",
+                  "permissionNameEn": "Export",
+                  "permissionNameAr": "Export",
+                  "permissionType": "B",
+                  "frontendRoute": "/happiness/refunds",
+                  "key": "/happiness/refunds-export",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                }
+              ],
+              "children": [
+                {
+                  "permissionCode": "CustomerModule.Refunds.RefundsDetails",
+                  "permissionNameEn": "Refunds Details",
+                  "permissionNameAr": "Refunds Details",
+                  "permissionType": "M",
+                  "frontendRoute": "/happiness/refunds/refundsDetails",
+                  "status": "1",
+                  "buttonList": [
+                    {
+                      "permissionCode": "CustomerModule.Refunds.RefundsDetails.Send",
+                      "permissionNameEn": "Send",
+                      "permissionNameAr": "إرسال",
+                      "permissionType": "B",
+                      "frontendRoute": "/happiness/refunds/refundsDetails",
+                      "key": "/happiness/refunds/refundsDetails-send",
+                      "status": "1",
+                      "buttonList": [],
+                      "children": []
+                    },
+                    {
+                      "permissionCode": "CustomerModule.Refunds.RefundsDetails.ChangeStatus",
+                      "permissionNameEn": "Change Status",
+                      "permissionNameAr": "Change Status",
+                      "permissionType": "B",
+                      "frontendRoute": "/happiness/refunds/refundsDetails",
+                      "key": "/happiness/refunds/refundsDetails-changeStatus",
+                      "status": "1",
+                      "buttonList": [],
+                      "children": []
+                    },
+                    {
+                      "permissionCode": "CustomerModule.Refunds.RefundsDetails.Transfer",
+                      "permissionNameEn": "Transfer",
+                      "permissionNameAr": "Transfer",
+                      "permissionType": "B",
+                      "frontendRoute": "/happiness/refunds/refundsDetails",
+                      "key": "/happiness/refunds/refundsDetails-transfer",
+                      "status": "1",
+                      "buttonList": [],
+                      "children": []
+                    }
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "permissionCode": "CustomerModule.Appeals",
+              "permissionNameEn": "Appeals",
+              "permissionNameAr": "Appeals",
+              "permissionType": "M",
+              "frontendRoute": "/happiness/appeals",
+              "status": "1",
+              "buttonList": [
+                {
+                  "permissionCode": "CustomerModule.Appeals.ChangeStatus",
+                  "permissionNameEn": "Appeals Change Status",
+                  "permissionNameAr": "Appeals Change Status",
+                  "permissionType": "B",
+                  "frontendRoute": null,
+                  "key": null,
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                },
+                {
+                  "permissionCode": "CustomerModule.Appeals.Export",
+                  "permissionNameEn": "Export",
+                  "permissionNameAr": "تصدير",
+                  "permissionType": "B",
+                  "frontendRoute": "/happiness/appeals",
+                  "key": "/happiness/appeals-export",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                },
+                {
+                  "permissionCode": "CustomerModule.Appeals.Process",
+                  "permissionNameEn": "Appeals Process",
+                  "permissionNameAr": "Appeals Process",
+                  "permissionType": "B",
+                  "frontendRoute": null,
+                  "key": null,
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                }
+              ],
+              "children": [
+                {
+                  "permissionCode": "CustomerModule.Appeals.AppealsDetails",
+                  "permissionNameEn": "Appeals Details",
+                  "permissionNameAr": "Appeals Details",
+                  "permissionType": "M",
+                  "frontendRoute": "/happiness/appeals/appealsDetails",
+                  "status": "1",
+                  "buttonList": [],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "permissionCode": "PersonalCenter",
+          "permissionNameEn": "Personal Center",
+          "permissionNameAr": "Personal Center",
+          "permissionType": "M",
+          "frontendRoute": "/personal-center",
+          "status": "1",
+          "buttonList": [
+            {
+              "permissionCode": "PersonalCenter.ChangePassword",
+              "permissionNameEn": "Change Password",
+              "permissionNameAr": "تغيير كلمة المرور",
+              "permissionType": "B",
+              "frontendRoute": "/personal-center",
+              "key": "/personal-center-changePassword",
+              "status": "1",
+              "buttonList": [],
+              "children": []
+            },
+            {
+              "permissionCode": "PersonalCenter.Save",
+              "permissionNameEn": "Save",
+              "permissionNameAr": "حفظ",
+              "permissionType": "B",
+              "frontendRoute": "/personal-center",
+              "key": "/personal-center-save",
+              "status": "1",
+              "buttonList": [],
+              "children": []
+            }
+          ],
+          "children": []
+        }
+      ]
+    }
+  },
+  "turns": [
+    {
+      "language": "en",
+      "question": "What can I do in my current role?",
+      "canonicalQuestion": "What can I do in my current role?",
+      "task": {
+        "view": "",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "overview",
+        "searchQuery": "current role available actions permissions limitations capabilities",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "user role",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedScope",
+            "value": "personal",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [
+              "available actions in current role",
+              "limitations of current role"
+            ],
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "outputShape",
+            "value": "overview",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "businessFocus",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "disclosurePurpose",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedGrain",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "recordIdentity",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "view",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "current",
+            "evidence": "parsed current request"
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "",
+        "clarification": null,
+        "needsLiveData": false,
+        "businessObject": "user role",
+        "recordIdentity": "",
+        "requestedGrain": "unknown",
+        "requestedScope": "personal",
+        "contextRelation": "new",
+        "unresolvedSlots": [],
+        "disclosurePurpose": "",
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [
+          "available actions in current role",
+          "limitations of current role"
+        ],
+        "evidenceExplanations": []
+      },
+      "conversationId": "conv_62343377de6c44e48fe0",
+      "requestId": "7bde76c5-0eb2-4009-89e5-a541a46418af",
+      "permission": {
+        "roles": [
+          "Foreign Media Manager",
+          "Licensing Manager"
+        ],
+        "account": "[redacted]",
+        "pageCount": 5,
+        "observedAt": "2026-09-28T20:08:11.413221+00:00",
+        "buttonCount": 22,
+        "currentRole": "Foreign Media Manager",
+        "departments": [
+          "1"
+        ],
+        "fingerprint": "137549e932bef4870c7547df2edbbcfe81c1cbbc6ef1fe9eeda85efe79744b0a",
+        "subpageCount": 18,
+        "preferredLanguage": "en"
+      },
+      "rejectedPlans": [
+        {
+          "stage": "KnowledgeCoverage",
+          "attempt": 1,
+          "failure": "{\"code\": \"knowledge_gap_outside_task_scope\", \"requirementId\": \"attribute_0\", \"missingEvidenceType\": \"current_eligibility\", \"correction\": \"Reassess the stated explanation requirement against cited knowledge. Current record values/eligibility and unrequested extensions cannot be its missing semantic evidence. Do not automatically mark covered: retain any actual missing business definition, requested policy, procedure step or applicability rule.\"}",
+          "candidate": {
+            "stage": "knowledge_coverage",
+            "checks": [
+              {
+                "reason": "Role is defined as an assigned business role shown in Personal Center from the authenticated staff session; roles grant route and button permissions. A displayed name or claimed role is not an assigned role, and role names alone do not prove page, action or record permissions.",
+                "status": "covered",
+                "evidence": [
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p5"
+                  },
+                  {
+                    "sourceId": "k_afdffb05b1d24a430f7a:p4"
+                  }
+                ],
+                "requirementId": "object",
+                "requiredPoints": [
+                  "A role is an assigned business role attached to the signed-in staff profile, shown in Personal Center.",
+                  "Roles grant route and button permissions; a role name alone does not prove page, action or record access."
+                ],
+                "missingEvidenceType": "none"
+              },
+              {
+                "reason": "Personal scope is defined: the requested and observed userId must both equal the verified signed-in subject, and current identity, assigned roles, workspace, page/action permissions and team membership must be refreshed for the active session. This does not authorize reading another user or expanding to a team.",
+                "status": "covered",
+                "evidence": [
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p3"
+                  },
+                  {
+                    "sourceId": "k_afdffb05b1d24a430f7a:p5"
+                  }
+                ],
+                "requirementId": "scope",
+                "requiredPoints": [
+                  "Personal scope means the profile of the currently signed-in user only, not another user or a team.",
+                  "Current identity, assigned roles, workspace and page/action permissions must be refreshed for the active session."
+                ],
+                "missingEvidenceType": "none"
+              },
+              {
+                "reason": "Sources explain that available actions come from route and button permissions and, for workflow tasks, from the task's node configuration rather than the role name. But no source enumerates which concrete actions a given role can perform; that requires the current session's permission set, which is a live check.",
+                "status": "partial",
+                "evidence": [
+                  {
+                    "sourceId": "k_75d412413ddf26e34c12:p3"
+                  },
+                  {
+                    "sourceId": "k_afdffb05b1d24a430f7a:p4"
+                  },
+                  {
+                    "sourceId": "k_85f78e7722b3c671e313:p9"
+                  }
+                ],
+                "followupQuery": "Which concrete actions and buttons does each Admin Portal role grant, and how are they listed per role?",
+                "requirementId": "attribute_0",
+                "requiredPoints": [
+                  "Available actions are determined by the role's route and button permissions, not by the role name.",
+                  "For workflow tasks, action availability is resolved from the current task node configuration.",
+                  "The concrete actions for a specific role must be read from the current session's permission set."
+                ],
+                "missingEvidenceType": "current_eligibility"
+              },
+              {
+                "reason": "Sources state the general boundaries: page access, action permission and record scope are separate; a page permission does not imply approval, assignment, export or hidden-field permission; department and team membership scope records; and role titles do not prove organization-wide access. No source lists role-specific limitations, so the concrete limits need the live permission set.",
+                "status": "partial",
+                "evidence": [
+                  {
+                    "sourceId": "k_afdffb05b1d24a430f7a:p4"
+                  },
+                  {
+                    "sourceId": "k_75d412413ddf26e34c12:p3"
+                  },
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p7"
+                  }
+                ],
+                "followupQuery": "What are the documented limitations of each Admin Portal role, such as which pages, actions or record scopes it cannot access?",
+                "requirementId": "attribute_1",
+                "requiredPoints": [
+                  "Page access, action permission and record scope are separate concepts.",
+                  "A page permission does not imply approval, assignment, export or hidden-field permission.",
+                  "Department and team membership scope which records are visible; a role title alone does not prove organization-wide or cross-team access.",
+                  "Concrete role-specific limits must be read from the current session's permissions."
+                ],
+                "missingEvidenceType": "current_eligibility"
+              }
+            ]
+          }
+        },
+        {
+          "stage": "KnowledgeCoverage",
+          "attempt": 2,
+          "failure": "{\"code\": \"knowledge_answer_points_not_business_facing\", \"invalidPoints\": [{\"requirementId\": \"scope\", \"pointIndex\": 1, \"text\": \"The requested and returned userId must both match the verified signed-in subject; reading another user or expanding to a team is not authorized by this definition.\"}], \"correction\": \"Correct ALL listed points in one revision. Preserve actual business steps and necessary conditions, but remove incidental implementation clauses and identifier explanations entirely; do not merely rephrase their names. API operations, internal keys, code handlers and source metadata are evidence machinery, not required customer-facing content. A form confirmation is a visible user action; the code that handles it is not an extra user step.\"}",
+          "candidate": {
+            "stage": "knowledge_coverage",
+            "checks": [
+              {
+                "reason": "Personal Center defines the assigned business role as the nonempty names in assignRolesIdsInfo, a read-only profile property of the signed-in staff user. The consolidated page knowledge states roles grant route and button permissions, so the role is the permission-bearing business object, not a department or a page.",
+                "status": "covered",
+                "evidence": [
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p5"
+                  },
+                  {
+                    "sourceId": "k_afdffb05b1d24a430f7a:p4"
+                  }
+                ],
+                "requirementId": "object",
+                "requiredPoints": [
+                  "A role is an assigned business role shown on the signed-in staff profile in Personal Center.",
+                  "Roles are the mechanism that grants route and button permissions; a role name alone does not prove page, action or record access."
+                ],
+                "missingEvidenceType": "none"
+              },
+              {
+                "reason": "The personal scope binding requires the requested and observed userId to equal the verified signed-in subject, and the population is the current authenticated subject only, not a time filter. This defines personal scope for the current role without needing live values.",
+                "status": "covered",
+                "evidence": [
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p3"
+                  },
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p4"
+                  }
+                ],
+                "requirementId": "scope",
+                "requiredPoints": [
+                  "Personal scope means the profile of the currently signed-in user only.",
+                  "The requested and returned userId must both match the verified signed-in subject; reading another user or expanding to a team is not authorized by this definition."
+                ],
+                "missingEvidenceType": "none"
+              },
+              {
+                "reason": "Sources explain that roles grant route and button permissions, that route access and action capability are separate grants, and that a page permission does not imply approval, assignment, export or hidden-field permission. They do not supply a role-to-action catalogue or a general rule enumerating which actions a given role may perform, so the specific available actions cannot be derived from knowledge alone.",
+                "status": "partial",
+                "evidence": [
+                  {
+                    "sourceId": "k_75d412413ddf26e34c12:p3"
+                  },
+                  {
+                    "sourceId": "k_afdffb05b1d24a430f7a:p4"
+                  },
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p6"
+                  }
+                ],
+                "followupQuery": "role to permission mapping: which route and button permissions are assigned to each business role (Lookup.Role_Permission)",
+                "requirementId": "attribute_0",
+                "requiredPoints": [
+                  "Roles grant route (page) permissions and button (action) permissions, and these are separate grants.",
+                  "A page permission does not imply approval, assignment, export or hidden-field permission.",
+                  "The specific actions available depend on the permissions actually assigned to the current role and must be read from the authorized session, not inferred from the role name."
+                ],
+                "missingEvidenceType": "business_definition"
+              },
+              {
+                "reason": "The sources state the documented limitations: page access, action permission and record scope are separate; department and team membership scope which records, and a Manager title alone does not prove department-wide or cross-team access; the profile response provides no universal row-level data-scope value; and hiding a menu item is not security. These are the supported boundaries of what a role does and does not grant.",
+                "status": "covered",
+                "evidence": [
+                  {
+                    "sourceId": "k_afdffb05b1d24a430f7a:p4"
+                  },
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p7"
+                  },
+                  {
+                    "sourceId": "k_75d412413ddf26e34c12:p3"
+                  }
+                ],
+                "requirementId": "attribute_1",
+                "requiredPoints": [
+                  "Page access, action permission and record scope are separate concepts.",
+                  "Department and team membership scope which records a user sees; a Manager title alone does not prove department-wide or cross-team access.",
+                  "The profile response provides no universal row-level data-scope value, so organization-wide access or managed-team membership must not be inferred from a role title.",
+                  "Frontend menu hiding is presentation only; server-side checks govern actual capability."
+                ],
+                "missingEvidenceType": "none"
+              }
+            ]
+          }
+        },
+        {
+          "stage": "KnowledgeCoverage",
+          "attempt": 3,
+          "failure": "{\"code\": \"knowledge_gap_outside_task_scope\", \"requirementId\": \"attribute_0\", \"missingEvidenceType\": \"current_eligibility\", \"correction\": \"Reassess the stated explanation requirement against cited knowledge. Current record values/eligibility and unrequested extensions cannot be its missing semantic evidence. Do not automatically mark covered: retain any actual missing business definition, requested policy, procedure step or applicability rule.\"}",
+          "candidate": {
+            "stage": "knowledge_coverage",
+            "checks": [
+              {
+                "reason": "Personal Center defines the signed-in staff profile as the parent user entity, and assigned business roles are read-only profile properties displayed by name. The role is a business role attached to that user, not a department or a permission grant.",
+                "status": "covered",
+                "evidence": [
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p1"
+                  },
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p5"
+                  }
+                ],
+                "requirementId": "object",
+                "requiredPoints": [
+                  "The current role is an assigned business role shown on the signed-in staff profile in Personal Center.",
+                  "A user may hold several assigned roles at once; they are read-only profile properties, not a manager directory lookup."
+                ],
+                "missingEvidenceType": "none"
+              },
+              {
+                "reason": "The personal scope definition states the profile shown is the current authenticated subject only, and that this definition does not authorize reading another user or expanding to a team. That is the applicable boundary for a personal-scope question.",
+                "status": "covered",
+                "evidence": [
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p3"
+                  },
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p4"
+                  }
+                ],
+                "requirementId": "scope",
+                "requiredPoints": [
+                  "Personal scope means the profile of the currently signed-in user only.",
+                  "This scope does not extend to another user's profile or to a team view."
+                ],
+                "missingEvidenceType": "none"
+              },
+              {
+                "reason": "Sources explain that roles grant route and button permissions, that route access and action capability are separate grants, and that role names alone do not establish page, action or record permissions. They do not enumerate which specific actions the current role holds; that set is a live permission lookup, so the general mechanism is covered but the concrete action list is not.",
+                "status": "partial",
+                "evidence": [
+                  {
+                    "sourceId": "k_afdffb05b1d24a430f7a:p4"
+                  },
+                  {
+                    "sourceId": "k_75d412413ddf26e34c12:p3"
+                  },
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p6"
+                  }
+                ],
+                "followupQuery": "Which permissions does the current signed-in role hold, and which pages and buttons do they enable?",
+                "requirementId": "attribute_0",
+                "requiredPoints": [
+                  "Roles grant route (page) permissions and button (action) permissions, and these are separate grants.",
+                  "A role name or visible menu alone does not prove that a specific action is permitted.",
+                  "The concrete set of actions available depends on the permissions actually assigned to the current role and must be read from the current authorized session."
+                ],
+                "missingEvidenceType": "current_eligibility"
+              },
+              {
+                "reason": "Sources state the documented limitations: page permission does not imply approval, assignment, export or hidden-field permission; department and team membership scope records; a Manager title alone does not prove department-wide access; and read-only documentation does not enable approvals, refunds, edits, deletion, exports or external sending. The specific limits of the current role still require the live permission set.",
+                "status": "partial",
+                "evidence": [
+                  {
+                    "sourceId": "k_afdffb05b1d24a430f7a:p4"
+                  },
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p7"
+                  },
+                  {
+                    "sourceId": "k_973f6ef20c7e3ac8ffe8:p5"
+                  }
+                ],
+                "followupQuery": "What are the current role's record-scope limits and which business actions are excluded for it?",
+                "requirementId": "attribute_1",
+                "requiredPoints": [
+                  "A page permission does not imply approval, assignment, export or hidden-field permission.",
+                  "Department and team membership scope which records are visible; a role title alone does not prove department-wide or cross-team access.",
+                  "Read-only documentation does not enable approvals, refunds, edits, deletion, exports or external sending.",
+                  "The exact limits applying to the current role depend on its actual assigned permissions and record scope."
+                ],
+                "missingEvidenceType": "current_eligibility"
+              }
+            ]
+          }
+        }
+      ],
+      "provenance": {
+        "path": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/groups1113-20260928/round25-i04-i05-v34/I-04__en-audit-db.json",
+        "sha256": "76be29cb80ebfeac7052791c02b973c2e5cd3f0cf758dd4cf56e0388a35608af"
+      }
+    },
+    {
+      "language": "ar",
+      "question": "ما الذي يمكنني فعله ضمن دوري الحالي؟",
+      "canonicalQuestion": "What can I do within my current role?",
+      "task": {
+        "view": "",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "overview",
+        "searchQuery": "current role available actions permissions limitations page access action permission record scope",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "current role",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedScope",
+            "value": "personal",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedGrain",
+            "value": "current signed-in staff user",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [
+              "available actions within current role",
+              "limitations of current role"
+            ],
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "outputShape",
+            "value": "overview",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "businessFocus",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "disclosurePurpose",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "recordIdentity",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "view",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "current",
+            "evidence": "parsed current request"
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "",
+        "clarification": null,
+        "needsLiveData": false,
+        "businessObject": "current role",
+        "recordIdentity": "",
+        "requestedGrain": "current signed-in staff user",
+        "requestedScope": "personal",
+        "contextRelation": "new",
+        "unresolvedSlots": [],
+        "disclosurePurpose": "",
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [
+          "available actions within current role",
+          "limitations of current role"
+        ],
+        "evidenceExplanations": []
+      },
+      "conversationId": "conv_65e9dff843d5470b96f9",
+      "requestId": "5ed1cd13-909e-4ad0-af78-588323f233f2",
+      "permission": {
+        "roles": [
+          "Foreign Media Manager",
+          "Licensing Manager"
+        ],
+        "account": "[redacted]",
+        "pageCount": 5,
+        "observedAt": "2026-09-28T20:09:21.817760+00:00",
+        "buttonCount": 22,
+        "currentRole": "Foreign Media Manager",
+        "departments": [
+          "1"
+        ],
+        "fingerprint": "137549e932bef4870c7547df2edbbcfe81c1cbbc6ef1fe9eeda85efe79744b0a",
+        "subpageCount": 18,
+        "preferredLanguage": "en"
+      },
+      "rejectedPlans": [
+        {
+          "stage": "KnowledgeCoverage",
+          "attempt": 1,
+          "failure": "{\"code\": \"knowledge_gap_outside_task_scope\", \"requirementId\": \"attribute_0\", \"missingEvidenceType\": \"current_eligibility\", \"correction\": \"Reassess the stated explanation requirement against cited knowledge. Current record values/eligibility and unrequested extensions cannot be its missing semantic evidence. Do not automatically mark covered: retain any actual missing business definition, requested policy, procedure step or applicability rule.\"}",
+          "candidate": {
+            "stage": "knowledge_coverage",
+            "checks": [
+              {
+                "reason": "The role object is defined: assigned business roles come from the authenticated staff session and Personal Center, displayed as the nonempty names in assignRolesIdsInfo, with multiple roles retained. A displayed or claimed role name is not itself an assigned role, and the internal id/code is not a display label.",
+                "status": "covered",
+                "evidence": [
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p5"
+                  },
+                  {
+                    "sourceId": "k_afdffb05b1d24a430f7a:p4"
+                  }
+                ],
+                "requirementId": "object",
+                "requiredPoints": [
+                  "الدور الحالي هو أحد الأدوار المعيّنة الظاهرة في المركز الشخصي للموظف المسجّل دخوله، وقد تكون هناك أكثر من دور واحد.",
+                  "اسم الدور المعروض لا يُثبت بحد ذاته صلاحيات الصفحات أو الإجراءات أو السجلات."
+                ],
+                "missingEvidenceType": "none"
+              },
+              {
+                "reason": "Grain is one authenticated staff user profile identified by userId; multiple department/role entries are properties of that same user, not extra users. The population is the current authenticated subject only, not a time-period filter.",
+                "status": "covered",
+                "evidence": [
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p2"
+                  },
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p4"
+                  }
+                ],
+                "requirementId": "grain",
+                "requiredPoints": [
+                  "الوحدة هي ملف الموظف المسجّل دخوله واحدًا، وتُعدّ الأقسام والأدوار المتعددة خصائص لنفس المستخدم لا مستخدمين إضافيين."
+                ],
+                "missingEvidenceType": "none"
+              },
+              {
+                "reason": "Personal scope is defined: the requested and observed userId must both equal the verified signed-in subject, and this does not authorize reading another user or expanding to a team. Department and team membership scope records, but a role title alone does not prove broader access.",
+                "status": "covered",
+                "evidence": [
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p3"
+                  },
+                  {
+                    "sourceId": "k_afdffb05b1d24a430f7a:p4"
+                  }
+                ],
+                "requirementId": "scope",
+                "requiredPoints": [
+                  "النطاق شخصي: يقتصر على المستخدم المسجّل دخوله نفسه ولا يمتد إلى مستخدم آخر أو فريق.",
+                  "لقب الدور وحده لا يثبت وصولًا على مستوى القسم أو عبر الفرق."
+                ],
+                "missingEvidenceType": "none"
+              },
+              {
+                "reason": "Knowledge establishes that roles grant route and button permissions and that page, action and record scope are separate concepts, and it gives role-authority descriptions (e.g. Officer reviews/returns, Manager decides, Read-only Support has no modification or approval). But the actual set of actions available to the current signed-in role is a live session fact that must be refreshed; no static list of the current user's permitted actions is supplied.",
+                "status": "partial",
+                "evidence": [
+                  {
+                    "sourceId": "k_afdffb05b1d24a430f7a:p4"
+                  },
+                  {
+                    "sourceId": "k_9a8a129ed89171e4b556:p1"
+                  },
+                  {
+                    "sourceId": "k_9a8a129ed89171e4b556:p4"
+                  }
+                ],
+                "followupQuery": "ما الإجراءات المصرّح بها للدور الحالي في الجلسة النشطة وفق صلاحيات الصفحة والزر؟",
+                "requirementId": "attribute_0",
+                "requiredPoints": [
+                  "الأدوار تمنح صلاحيات المسار والزر، وتُفصل صلاحية الصفحة عن صلاحية الإجراء وعن نطاق السجلات.",
+                  "تحديد الإجراءات المتاحة فعليًا يتطلب تحديث صلاحيات الجلسة النشطة الحالية.",
+                  "أمثلة موثّقة لسلطات الأدوار: الموظف المسؤول يراجع ويعيد الطلبات الناقصة، والمدير يوافق أو يرفض أو يعيد أو ينهي، ودور الدعم للقراءة فقط بلا تعديل أو موافقة."
+                ],
+                "missingEvidenceType": "current_eligibility"
+              },
+              {
+                "reason": "Documented limitations are supported: page permission does not imply approval, assignment, export or hidden-field permission; matching page schemas across roles do not establish matching records; role names alone do not establish page, action or record permissions; and the profile response provides no universal row-level data-scope value. The specific limits applying to the current signed-in role remain a live session check.",
+                "status": "partial",
+                "evidence": [
+                  {
+                    "sourceId": "k_afdffb05b1d24a430f7a:p4"
+                  },
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p6"
+                  },
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p7"
+                  }
+                ],
+                "followupQuery": "ما القيود المطبّقة فعليًا على الدور الحالي في الجلسة النشطة من حيث الصفحات والإجراءات ونطاق السجلات؟",
+                "requirementId": "attribute_1",
+                "requiredPoints": [
+                  "صلاحية الصفحة لا تعني ضمنًا صلاحية الموافقة أو الإسناد أو التصدير أو الحقول المخفية.",
+                  "تطابق مخططات الصفحات بين دورين لا يثبت تطابق السجلات.",
+                  "أسماء الأدوار وحدها لا تثبت صلاحيات الصفحات أو الإجراءات أو السجلات، ولا يوجد في ملف التعريف قيمة نطاق سجلات عامة.",
+                  "تحديد القيود السارية فعليًا يتطلب تحديث صلاحيات الجلسة النشطة الحالية."
+                ],
+                "missingEvidenceType": "current_eligibility"
+              }
+            ]
+          }
+        },
+        {
+          "stage": "KnowledgeCoverage",
+          "attempt": 1,
+          "failure": "{\"code\": \"knowledge_answer_points_not_business_facing\", \"invalidPoints\": [{\"requirementId\": \"grain\", \"pointIndex\": 0, \"text\": \"\\u0627\\u0644\\u062d\\u0628\\u064a\\u0628\\u0629 \\u0647\\u064a \\u0645\\u0644\\u0641 \\u0645\\u0648\\u0638\\u0641 \\u0648\\u0627\\u062d\\u062f \\u0645\\u0648\\u062b\\u0651\\u0642 \\u0645\\u062d\\u062f\\u064e\\u0651\\u062f \\u0628\\u0640 userId\"}], \"correction\": \"Correct ALL listed points in one revision. Preserve actual business steps and necessary conditions, but remove incidental implementation clauses and identifier explanations entirely; do not merely rephrase their names. API operations, internal keys, code handlers and source metadata are evidence machinery, not required customer-facing content. A form confirmation is a visible user action; the code that handles it is not an extra user step.\"}",
+          "candidate": {
+            "stage": "knowledge_coverage",
+            "checks": [
+              {
+                "reason": "The role concept is defined: assigned business roles are the nonempty names in assignRolesIdsInfo shown in Personal Center, and identity/assigned roles come from the authenticated staff session. A displayed or claimed role is not an assigned role, and the internal id/code is not a display label.",
+                "status": "covered",
+                "evidence": [
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p5"
+                  },
+                  {
+                    "sourceId": "k_afdffb05b1d24a430f7a:p4"
+                  }
+                ],
+                "requirementId": "object",
+                "requiredPoints": [
+                  "الدور الحالي هو الدور/الأدوار المعيّنة المعروضة في المركز الشخصي للموظف المسجّل دخوله",
+                  "تُقرأ أسماء الأدوار المعيّنة من جلسة الموظف الموثّقة، وليس من اسم معروض أو دور مُدَّعى في السؤال",
+                  "المعرّف/الرمز الداخلي للدور ليس تسمية معروضة"
+                ],
+                "missingEvidenceType": "none"
+              },
+              {
+                "reason": "The grain is one authenticated staff user profile identified by userId; multiple department/role entries are properties of that same user, not extra users. The profile is that of the current authenticated subject only.",
+                "status": "covered",
+                "evidence": [
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p2"
+                  },
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p4"
+                  }
+                ],
+                "requirementId": "grain",
+                "requiredPoints": [
+                  "الحبيبة هي ملف موظف واحد موثّق محدَّد بـ userId",
+                  "تعدد الأقسام أو الأدوار خصائص لنفس المستخدم وليست مستخدمين إضافيين",
+                  "الملف يخص الذات الموثّقة الحالية فقط"
+                ],
+                "missingEvidenceType": "none"
+              },
+              {
+                "reason": "Personal scope is defined: the requested and observed userId must both equal the verified signed-in subject, and this does not authorize reading another user or expanding to a team. Department/team membership scopes records separately.",
+                "status": "covered",
+                "evidence": [
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p3"
+                  },
+                  {
+                    "sourceId": "k_afdffb05b1d24a430f7a:p4"
+                  }
+                ],
+                "requirementId": "scope",
+                "requiredPoints": [
+                  "النطاق شخصي: معرّف المستخدم المطلوب والمرصود يطابقان الذات الموثّقة المسجّلة دخولها",
+                  "لا يوسّع هذا التعريف القراءة إلى مستخدم آخر أو إلى فريق",
+                  "عضوية القسم والفريق تحدّد نطاق السجلات بشكل منفصل"
+                ],
+                "missingEvidenceType": "none"
+              },
+              {
+                "reason": "Knowledge explains the model: roles grant route and button permissions; page permission does not imply approval, assignment, export or hidden-field permission; the role table gives plain-language authority per role (e.g. Officer reviews/returns, Manager decides, Read-only Support read-only, Default User dashboard/personal-center only). But the actual set of actions available to the current signed-in user's specific role is a live session fact that must be refreshed, and no source enumerates the current user's concrete permitted actions.",
+                "status": "partial",
+                "evidence": [
+                  {
+                    "sourceId": "k_afdffb05b1d24a430f7a:p4"
+                  },
+                  {
+                    "sourceId": "k_afdffb05b1d24a430f7a:p5"
+                  },
+                  {
+                    "sourceId": "k_9a8a129ed89171e4b556:p1"
+                  },
+                  {
+                    "sourceId": "k_9a8a129ed89171e4b556:p4"
+                  }
+                ],
+                "followupQuery": "ما الإجراءات والصفحات المصرّح بها فعلياً للدور المعيّن للمستخدم المسجّل دخوله حالياً؟",
+                "requirementId": "attribute_0",
+                "requiredPoints": [
+                  "الأدوار تمنح صلاحيات المسار والزر",
+                  "صلاحية الصفحة لا تعني ضمنياً صلاحية الموافقة أو الإسناد أو التصدير أو الحقول المخفية",
+                  "جدول الأدوار يوضح سلطة كل دور بلغة واضحة (مثل: الموظف يراجع ويعيد، المدير يقرر، الدعم للقراءة فقط)",
+                  "الإجراءات المتاحة فعلياً تعتمد على الجلسة النشطة ويجب تحديثها"
+                ],
+                "missingEvidenceType": "current_eligibility"
+              },
+              {
+                "reason": "The limitations are documented: a role title alone does not prove department-wide or cross-team access; page permission does not imply approval/assignment/export/hidden-field permission; role names alone do not establish page, action or record permissions; and the read-only assistant cannot approve, reject, submit, reassign, edit, delete, pay, refund or send business messages.",
+                "status": "covered",
+                "evidence": [
+                  {
+                    "sourceId": "k_afdffb05b1d24a430f7a:p4"
+                  },
+                  {
+                    "sourceId": "k_afdffb05b1d24a430f7a:p5"
+                  },
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p7"
+                  },
+                  {
+                    "sourceId": "k_d0a214c895c965c1d96c:p2"
+                  }
+                ],
+                "requirementId": "attribute_1",
+                "requiredPoints": [
+                  "لقب الدور وحده لا يثبت وصولاً على مستوى القسم أو عبر الفرق",
+                  "صلاحية الصفحة لا تمنح ضمنياً صلاحية الموافقة أو الإسناد أو التصدير أو الحقول المخفية",
+                  "أسماء الأدوار وحدها لا تثبت صلاحيات الصفحات أو الإجراءات أو السجلات",
+                  "المساعد للقراءة فقط ولا ينفذ الموافقة أو الرفض أو التقديم أو إعادة التعيين أو التعديل أو الحذف أو الدفع أو الاسترداد أو إرسال رسائل العمل"
+                ],
+                "missingEvidenceType": "none"
+              }
+            ]
+          }
+        },
+        {
+          "stage": "KnowledgeCoverage",
+          "attempt": 2,
+          "failure": "{\"code\": \"knowledge_gap_outside_task_scope\", \"requirementId\": \"attribute_0\", \"missingEvidenceType\": \"current_eligibility\", \"correction\": \"Reassess the stated explanation requirement against cited knowledge. Current record values/eligibility and unrequested extensions cannot be its missing semantic evidence. Do not automatically mark covered: retain any actual missing business definition, requested policy, procedure step or applicability rule.\"}",
+          "candidate": {
+            "stage": "knowledge_coverage",
+            "checks": [
+              {
+                "reason": "The role is defined as an assigned business role shown in Personal Center, taken from the authenticated staff session; a displayed or claimed role name is not an assigned role. Role names alone do not establish page, action or record permissions.",
+                "status": "covered",
+                "evidence": [
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p5"
+                  },
+                  {
+                    "sourceId": "k_afdffb05b1d24a430f7a:p4"
+                  }
+                ],
+                "requirementId": "object",
+                "requiredPoints": [
+                  "الدور الحالي هو الدور التجاري المعيَّن للموظف كما يظهر في المركز الشخصي من جلسته الموثّقة.",
+                  "اسم الدور المعروض أو المذكور في السؤال لا يُعد دورًا معيَّنًا بحد ذاته.",
+                  "قد يكون للموظف أكثر من دور معيَّن، وتُحفظ جميعها.",
+                  "اسم الدور وحده لا يثبت صلاحيات الصفحات أو الإجراءات أو السجلات."
+                ],
+                "missingEvidenceType": "none"
+              },
+              {
+                "reason": "The grain is one authenticated staff user profile; multiple department and role entries are properties of that same user, not extra users. The profile is the current authenticated subject only, not a time-period filter.",
+                "status": "covered",
+                "evidence": [
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p2"
+                  },
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p4"
+                  }
+                ],
+                "requirementId": "grain",
+                "requiredPoints": [
+                  "الحبيبة هي ملف موظف واحد موثّق للمستخدم الحالي المسجّل دخوله.",
+                  "تعدد الأقسام والأدوار المعيّنة خصائص لنفس المستخدم، وليست مستخدمين إضافيين.",
+                  "يقتصر النطاق على المستخدم الحالي المصادق عليه، ولا يمتد إلى فريق أو قسم."
+                ],
+                "missingEvidenceType": "none"
+              },
+              {
+                "reason": "Personal scope means the verified signed-in subject only; the definition does not authorize reading another user or expanding to a team. Department and team membership scope records, and a Manager title alone does not prove department-wide access.",
+                "status": "covered",
+                "evidence": [
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p3"
+                  },
+                  {
+                    "sourceId": "k_afdffb05b1d24a430f7a:p4"
+                  }
+                ],
+                "requirementId": "scope",
+                "requiredPoints": [
+                  "النطاق شخصي ويخص المستخدم الحالي الموثّق فقط.",
+                  "لا يجيز هذا التعريف قراءة مستخدم آخر أو التوسّع إلى فريق.",
+                  "عضوية القسم والفريق تحدّد نطاق السجلات، ولقب المدير وحده لا يثبت وصولًا على مستوى القسم أو عبر الفرق."
+                ],
+                "missingEvidenceType": "none"
+              },
+              {
+                "reason": "Sources establish that roles grant route and button permissions, that page permission does not imply approval, assignment, export or hidden-field permission, and that the read-only assistant explains and reads authorized pages but does not approve, reject, submit, reassign, edit, delete, pay, refund or send. However, no source enumerates the concrete actions available for the current role; that depends on the live session and role configuration.",
+                "status": "partial",
+                "evidence": [
+                  {
+                    "sourceId": "k_afdffb05b1d24a430f7a:p4"
+                  },
+                  {
+                    "sourceId": "k_d0a214c895c965c1d96c:p2"
+                  },
+                  {
+                    "sourceId": "k_9a8a129ed89171e4b556:p1"
+                  }
+                ],
+                "followupQuery": "ما الإجراءات المتاحة فعليًا للدور الحالي للمستخدم المسجّل دخوله في بوابة الإدارة؟",
+                "requirementId": "attribute_0",
+                "requiredPoints": [
+                  "الأدوار تمنح صلاحيات المسار والزر.",
+                  "صلاحية الصفحة لا تعني ضمنًا صلاحية الموافقة أو الإسناد أو التصدير أو الحقول المخفية.",
+                  "المساعد الموثّق للقراءة فقط يشرح ويقرأ الصفحات المصرّح بها، ولا يوافق ولا يرفض ولا يقدّم ولا يعيد الإسناد ولا يعدّل ولا يحذف ولا يدفع ولا يسترد ولا يرسل رسائل العمل.",
+                  "تحديد الإجراءات المتاحة فعليًا يعتمد على الجلسة الحالية وتكوين الدور، ويُتحقق منه وقت التشغيل."
+                ],
+                "missingEvidenceType": "current_eligibility"
+              },
+              {
+                "reason": "Sources state that page permission does not imply approval, assignment, export or hidden-field permission; that a role title alone does not grant page, row or action access; and that the profile response provides no universal row-level data-scope value, so only currently authorized pages and records can be queried. The specific limits of the current role still require the live session.",
+                "status": "partial",
+                "evidence": [
+                  {
+                    "sourceId": "k_afdffb05b1d24a430f7a:p4"
+                  },
+                  {
+                    "sourceId": "k_d0a214c895c965c1d96c:p2"
+                  },
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p7"
+                  }
+                ],
+                "followupQuery": "ما حدود صلاحيات الدور الحالي للمستخدم المسجّل دخوله من حيث الصفحات والسجلات والإجراءات؟",
+                "requirementId": "attribute_1",
+                "requiredPoints": [
+                  "صلاحية الصفحة لا تعني ضمنًا صلاحية الموافقة أو الإسناد أو التصدير أو الحقول المخفية.",
+                  "اسم الدور وحده لا يمنح الوصول إلى الصفحات أو الصفوف أو الإجراءات.",
+                  "ملف الموظف لا يوفّر قيمة نطاق بيانات عامة على مستوى الصف؛ ولا يمكن الاستعلام إلا عن الصفحات والسجلات المصرّح بها حاليًا.",
+                  "لا يجوز استنتاج وصول على مستوى القسم أو عضوية فريق مُدار من لقب الدور.",
+                  "تحديد القيود الفعلية يعتمد على الجلسة الحالية، ويُتحقق منه وقت التشغيل."
+                ],
+                "missingEvidenceType": "current_eligibility"
+              }
+            ]
+          }
+        },
+        {
+          "stage": "KnowledgeCoverage",
+          "attempt": 3,
+          "failure": "{\"code\": \"knowledge_gap_outside_task_scope\", \"requirementId\": \"attribute_0\", \"missingEvidenceType\": \"current_eligibility\", \"correction\": \"Reassess the stated explanation requirement against cited knowledge. Current record values/eligibility and unrequested extensions cannot be its missing semantic evidence. Do not automatically mark covered: retain any actual missing business definition, requested policy, procedure step or applicability rule.\"}",
+          "candidate": {
+            "stage": "knowledge_coverage",
+            "checks": [
+              {
+                "reason": "The role concept is defined: assigned business roles are the nonempty names in the profile's assigned-roles list, and identity/assigned roles come from the authenticated staff session and Personal Center. A displayed name or a role claimed in a question is not an assigned role.",
+                "status": "covered",
+                "evidence": [
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p5"
+                  },
+                  {
+                    "sourceId": "k_afdffb05b1d24a430f7a:p4"
+                  }
+                ],
+                "requirementId": "object",
+                "requiredPoints": [
+                  "الدور الحالي هو الدور/الأدوار المعيّنة للموظف المسجَّل دخوله كما تظهر في المركز الشخصي.",
+                  "قد تكون هناك أدوار متعددة معيّنة لنفس المستخدم، وتُعرض جميعها.",
+                  "اسم معروض أو دور مذكور في السؤال لا يُعد دوراً معيّناً."
+                ],
+                "missingEvidenceType": "none"
+              },
+              {
+                "reason": "The grain is defined as one authenticated staff user profile; multiple department/role entries are properties of that same user, and the profile is the current authenticated subject only, not a time-period filter.",
+                "status": "covered",
+                "evidence": [
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p2"
+                  },
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p4"
+                  }
+                ],
+                "requirementId": "grain",
+                "requiredPoints": [
+                  "الحبيبة هي ملف موظف واحد موثّق (المستخدم المسجَّل دخوله).",
+                  "تعدد الأقسام أو الأدوار خصائص لنفس المستخدم وليست مستخدمين إضافيين."
+                ],
+                "missingEvidenceType": "none"
+              },
+              {
+                "reason": "Personal scope is defined: the requested and observed identity must equal the verified signed-in subject, and this definition does not authorize reading another user or expanding to a team. Department/team membership scopes records separately.",
+                "status": "covered",
+                "evidence": [
+                  {
+                    "sourceId": "k_8eadf20d8e64652fc5bf:p3"
+                  },
+                  {
+                    "sourceId": "k_afdffb05b1d24a430f7a:p4"
+                  }
+                ],
+                "requirementId": "scope",
+                "requiredPoints": [
+                  "النطاق شخصي: يقتصر على المستخدم المسجَّل دخوله ولا يوسَّع إلى فريق أو قسم.",
+                  "عضوية القسم/الفريق تحدّد نطاق السجلات بشكل منفصل عن الدور."
+                ],
+                "missingEvidenceType": "none"
+              },
+              {
+                "reason": "Knowledge explains that roles grant route and button permissions, that page permission does not imply approval/assignment/export/hidden-field permission, and that the read-only assistant can explain and guide to permitted pages but cannot approve, reject, submit, reassign, edit, delete, pay, refund or send. It also gives a role-to-authority table. However, the specific set of actions available to the current signed-in user's role is not established by static knowledge; it depends on the live session's assigned roles and page/action permissions, which must be refreshed for the active session.",
+                "status": "partial",
+                "evidence": [
+                  {
+                    "sourceId": "k_afdffb05b1d24a430f7a:p4"
+                  },
+                  {
+                    "sourceId": "k_d0a214c895c965c1d96c:p2"
+                  },
+                  {
+                    "sourceId": "k_9a8a129ed89171e4b556:p1"
+                  }
+                ],
+                "followupQuery": "ما الإجراءات المتاحة حالياً للدور المعيّن للمستخدم المسجَّل دخوله وفق صلاحيات الصفحة والإجراء؟",
+                "requirementId": "attribute_0",
+                "requiredPoints": [
+                  "الأدوار تمنح صلاحيات المسار والزر، لكن صلاحية الصفحة لا تعني صلاحية الموافقة أو الإسناد أو التصدير أو الحقول المخفية.",
+                  "المساعد للقراءة فقط يشرح ويرشد إلى الصفحات المسموح بها ولا ينفذ الموافقة أو الرفض أو التقديم أو إعادة التعيين أو التعديل أو الحذف أو الدفع أو الاسترداد أو إرسال رسائل العمل.",
+                  "تحديد الإجراءات المتاحة فعلاً يتطلب تحديث الهوية والأدوار وصلاحيات الصفحة/الإجراء للجلسة النشطة."
+                ],
+                "missingEvidenceType": "current_eligibility"
+              },
+              {
+                "reason": "Limitations are documented: a Manager title alone does not prove department-wide or cross-team access; page permission does not imply approval, assignment, export or hidden-field permission; matching page schemas do not establish matching records; and the assistant cannot execute business actions, reveal credentials or hidden fields, or guarantee approval.",
+                "status": "covered",
+                "evidence": [
+                  {
+                    "sourceId": "k_afdffb05b1d24a430f7a:p4"
+                  },
+                  {
+                    "sourceId": "k_d0a214c895c965c1d96c:p2"
+                  },
+                  {
+                    "sourceId": "k_d0a214c895c965c1d96c:p3"
+                  }
+                ],
+                "requirementId": "attribute_1",
+                "requiredPoints": [
+                  "لقب المدير وحده لا يثبت وصولاً على مستوى القسم أو عبر الفرق.",
+                  "صلاحية الصفحة لا تعني صلاحية الموافقة أو الإسناد أو التصدير أو الحقول المخفية.",
+                  "تطابق مخططات الصفحات بين دورين لا يثبت تطابق السجلات.",
+                  "المساعد لا ينفذ إجراءات العمل ولا يكشف بيانات الاعتماد أو الحقول المخفية ولا يضمن الموافقة أو إكمال الخدمة."
+                ],
+                "missingEvidenceType": "none"
+              }
+            ]
+          }
+        }
+      ],
+      "provenance": {
+        "path": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/groups1113-20260928/round25-i04-i05-v34/I-04__ar-audit-db.json",
+        "sha256": "13a2a137b8d961fc567b1224ff34febd32357972d3e6ea21a82f483df819d884"
+      }
+    }
+  ]
+}

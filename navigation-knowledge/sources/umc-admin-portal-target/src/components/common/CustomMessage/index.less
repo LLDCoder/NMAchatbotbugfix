@@ -1,0 +1,114 @@
+.ant-message .ant-message-notice-content {
+  box-sizing: border-box;
+  min-height: 56px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.08);
+}
+
+.ant-message .ant-message-custom-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #361e12;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.ant-message .ant-message-custom-content > span:last-child {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+}
+
+.ant-message .ant-message-custom-content > .anticon {
+  position: static;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-right: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 17.5px 17.5px;
+  color: transparent;
+  font-size: 0;
+  line-height: 20px;
+  vertical-align: top;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    line-height: 16px;
+  }
+}
+
+.ant-message .ant-message-custom-content > .anticon svg {
+  display: none;
+}
+
+.ant-message .ant-message-success > .anticon {
+  background-image: url("@/assets/icons/toast-success.svg");
+}
+
+.ant-message .ant-message-error > .anticon {
+  background-image: url("@/assets/icons/toast-error.svg");
+}
+
+.ant-message .ant-message-info > .anticon {
+  background-image: url("@/assets/icons/toast-info.svg");
+}
+
+.ant-message .ant-message-warning > .anticon {
+  background-image: url("@/assets/icons/toast-warning.svg");
+}
+
+.ant-message .ant-message-loading > .anticon {
+  background-image: url("@/assets/icons/toast-loading.svg");
+  background-position: top right;
+  background-size: 10.7012px 10.7031px;
+  animation: custom-message-loading-spin 0.8s linear infinite;
+  transform-origin: center;
+}
+
+.custom-message__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+}
+
+.custom-message__icon img {
+  display: block;
+  width: 17.5px;
+  height: 17.5px;
+}
+
+.custom-message__icon--loading {
+  align-items: flex-start;
+  justify-content: flex-end;
+  animation: custom-message-loading-spin 0.8s linear infinite;
+  transform-origin: center;
+}
+
+.custom-message__icon--loading img {
+  width: 10.7012px;
+  height: 10.7031px;
+}
+
+@keyframes custom-message-loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

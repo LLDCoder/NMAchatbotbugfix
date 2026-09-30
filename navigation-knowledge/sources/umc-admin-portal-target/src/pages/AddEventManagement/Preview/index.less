@@ -1,0 +1,410 @@
+.event-preview-modal {
+  .Direction {
+    width: 135px;
+    height: 40px;
+    border-radius: 20px;
+    background: linear-gradient(180deg, #c19453, #c19453);
+    font-family: Inter;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    color: #f9f7ed;
+    line-height: 40px;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 8px 20px;
+    justify-content: center;
+    flex-shrink: 0;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      border-radius: 10px;
+      font-size: 14px;
+    }
+  }
+  .text-ellipsis {
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .address {
+    /*
+      Was a hard 1396px. Nothing depends on that number -- it is one row inside
+      the preview, and it fitted only because pxtorem scaled it down with the
+      root font-size. Let it fill whatever the preview column gives it.
+    */
+    width: 100%;
+    height: 64px;
+    border-radius: 40px;
+    background: linear-gradient(180deg, #f7f6f3, #f6f6f5, #f7f2eb);
+    padding: 22px 28px;
+    gap: 20px;
+    margin-bottom: 64px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 12px;
+    }
+  }
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .position {
+    flex: 1;
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 0;
+    min-width: 0;
+    gap: 16px;
+    font-family: Inter;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 18px;
+    color: #92722a;
+    line-height: 28px;
+    letter-spacing: 0%;
+    justify-content: flex-start;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 12px;
+      font-size: 16px;
+    }
+  }
+  .MapPin {
+    width: 24px;
+    height: 24px;
+  }
+  .TrafficSign {
+    width: 20px;
+    height: 20px;
+  }
+  .Ended {
+    width: 143px;
+    height: 40px;
+    background-color: #f2f2f2;
+    border-radius: 40px;
+    font-family: Inter;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 18px;
+    color: #4b4f58;
+    line-height: 40px;
+    letter-spacing: 0%;
+    text-align: center;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 16px;
+    }
+  }
+  .event-preview-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    .glodspan {
+      color: #92722a;
+      font-family: Inter;
+      font-weight: 500;
+      font-style: Medium;
+      font-size: 18px;
+      line-height: 28px;
+      letter-spacing: 0%;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 16px;
+      }
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 16px;
+    }
+  }
+  .share-content {
+    width: 254px;
+    height: 44px;
+    border-radius: 40px;
+    // background-color: #bd94371a;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+    span {
+      font-family: Inter;
+      font-weight: 500;
+      font-style: Medium;
+      font-size: 20px;
+      color: #5F646D;
+      line-height: 28px;
+      letter-spacing: 0%;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 18px;
+      }
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 12px;
+    }
+  }
+  .ant-modal {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    top: 0;
+  }
+
+  .ant-modal-content {
+    height: 100vh;
+    border-radius: 0;
+    // display: flex;
+    // flex-direction: column;
+  }
+
+  .ant-modal-body {
+    flex: 1;
+    overflow: auto;
+    padding: 0;
+  }
+  .preview-content {
+    padding: 0 260px 0 260px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .event-preview-container {
+    width: 100%;
+    height: 100vh;
+    // display: flex;
+    // flex-direction: column;
+    background: #fff;
+  }
+
+  .event-preview-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 40px;
+    // border-bottom: 1px solid #f0f0f0;
+
+    .close-button {
+      font-size: 20px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+
+      &:hover {
+        background: #f5f5f5;
+      }
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 18px;
+      }
+    }
+  }
+  .language-switcher {
+    display: flex;
+
+    justify-content: flex-end;
+    .btnList {
+      border-radius: 6px !important;
+      border: 1px solid #c3c6cb;
+      padding: 4px;
+    }
+    .ant-btn {
+      width: 88px;
+      height: 40px;
+      border-radius: 6px !important;
+      border: none !important;
+    }
+    .ant-btn-primary {
+      background: linear-gradient(90deg, #9e7538, #c19453);
+    }
+  }
+  .event-preview-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 64px 0;
+    width: 100%;
+
+    &.ar {
+      direction: rtl;
+
+      .glodspan {
+        direction: ltr;
+        unicode-bidi: isolate;
+      }
+    }
+  }
+
+  .event-preview-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000;
+    margin: 24px 0;
+    line-height: 1.4;
+  }
+
+  .event-preview-date {
+    font-size: 16px;
+    color: #666;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 14px;
+    }
+  }
+
+  .event-preview-image {
+    width: 100%;
+    margin-bottom: 32px;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 40px;
+    }
+
+    .image-placeholder {
+      width: 100%;
+      height: 400px;
+      background: #f5f5f5;
+      border: 2px dashed #d9d9d9;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+      font-size: 16px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 14px;
+      }
+    }
+  }
+  .event-preview-footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 100px;
+    p {
+      font-family: Inter;
+      font-weight: 400;
+      font-style: Regular;
+      font-size: 18px;
+      color: #797E86;
+      line-height: 28px;
+      letter-spacing: 0%;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 16px;
+      }
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 12px;
+    }
+  }
+  .event-preview-btn {
+    cursor: pointer;
+    background: linear-gradient(90deg, #9e7538, #c19453);
+    width: 238px;
+    height: 60px;
+    font-family: Inter;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 20px;
+    color: #fff;
+    line-height: 60px;
+    letter-spacing: 0%;
+    border-radius: 40px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px 0 24px;
+    img {
+      width: 44px;
+      height: 44px;
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 18px;
+    }
+  }
+  .event-preview-text {
+    font-family: Inter;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 18px;
+    color: #232528;
+    line-height: 28px;
+    letter-spacing: 0%;
+    video {
+      width: 100%;
+      height: auto;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+    :global {
+      p {
+        margin-bottom: 16px;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin-top: 24px;
+        margin-bottom: 16px;
+        font-weight: bold;
+      }
+
+      ul,
+      ol {
+        margin-bottom: 16px;
+        padding-left: 24px;
+      }
+
+      li {
+        margin-bottom: 8px;
+      }
+
+      a {
+        color: #c19453;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      blockquote {
+        border-left: 4px solid #d9d9d9;
+        padding-left: 16px;
+        margin: 16px 0;
+        color: #666;
+      }
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 16px;
+    }
+  }
+}

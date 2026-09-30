@@ -1,0 +1,210 @@
+{
+  "schemaVersion": "1.0",
+  "bundleId": "admin.happiness.tickets.team-todo-population.package",
+  "createdAt": "2026-09-28T08:31:36.897763+00:00",
+  "packageStatus": "active",
+  "searchMetadata": {
+    "titleEnglish": "Tickets team To Do queue identity, authorized scope and count",
+    "titleArabic": "قائمة مهام التذاكر المعلقة: هوية السجل ونطاق الفريق والعدد"
+  },
+  "records": [
+    {
+      "id": "admin.happiness.tickets.team-todo-population",
+      "kind": "field_semantics",
+      "revision": 1,
+      "status": "active",
+      "title": "Tickets team To Do queue identity, authorized scope and count",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local"
+        ],
+        "pageRefs": [
+          "/happiness/tickets"
+        ],
+        "runtimeVerification": "response_shape_verified",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Tickets/index.tsx",
+          "revision": "sha256:89125408a0b3eaa94685c0b2d44dfa8bd9861d167e69dd214d52d0ebddb54a23",
+          "locator": "UserInfo.isLeader selects TeamTasks exclusively, otherwise personal TicketsTable",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Tickets/components/TeamTasks/index.tsx",
+          "revision": "sha256:17615077ea7e65a1041cff8b9c2e3d2bc3e3f7d0c9e2b5a08c7bb08855d6508e",
+          "locator": "buildRequestParams: IsEnquiryComplete=false for todo; response data.items and data.total",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/tickets.ts",
+          "revision": "sha256:f7187f3a26a387e67704abf368aa8fff61b2cf47bfbadf44dd742df23aa7f974",
+          "locator": "getTeamTaskList and ITeamTaskListResponse",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.API/Controllers/EnquiryController.cs",
+          "revision": "sha256:aee90d03eea602911e84f04871018a0c7cdf32c67d964e3f9502f537d2e44521",
+          "locator": "Management/TeamTask/List requires Ticket.View",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/EnquiryApp/EnquiryAppService.cs",
+          "revision": "sha256:693bbed263aff3b567409dc654fe221d835351077272abc6df9ef2fc35cd31a2",
+          "locator": "GetAdminEnquiriesAsync team branch; BuildDepartmentTeamTaskPredicate; GetAdminTeamTaskEnquiriesAsync",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "runtime_observation",
+          "reference": "test/runtime/targeted-g810-20260928/ui-r09-v17-r2/answers/R-09__en.json",
+          "revision": "sha256:baf882a9e42cdd8c2bd7cd660f62297cdd99b7b4c32a9e50a2e081723860ce6a",
+          "locator": "Second turn: real sidebar switch, authorized TeamTask/List complete two-pass id projection and actual todo view",
+          "verification": "response_shape_verified"
+        }
+      ],
+      "payload": {
+        "pageRef": "/happiness/tickets",
+        "view": "todo",
+        "sourceBinding": {
+          "operationRef": "GET /api/Enquiry/Management/TeamTask/List",
+          "sourcePath": "/data/items"
+        },
+        "bindings": [
+          {
+            "operationRef": "GET /api/Enquiry/Management/TeamTask/List",
+            "sourcePath": "/data/items",
+            "fields": [
+              "id"
+            ],
+            "contextParameters": {
+              "IsEnquiryComplete": false
+            },
+            "id": "ticket_object",
+            "kind": "object",
+            "concept": "ticket",
+            "aliases": [
+              "tickets",
+              "service ticket",
+              "service tickets",
+              "تذكرة",
+              "تذاكر"
+            ],
+            "meaning": "Ticket entities in the authorized TeamTask/List result, without any subtype restriction."
+          },
+          {
+            "operationRef": "GET /api/Enquiry/Management/TeamTask/List",
+            "sourcePath": "/data/items",
+            "fields": [
+              "id"
+            ],
+            "contextParameters": {
+              "IsEnquiryComplete": false
+            },
+            "id": "ticket_grain",
+            "kind": "grain",
+            "concept": "ticket",
+            "aliases": [
+              "tickets",
+              "service ticket",
+              "service tickets",
+              "تذكرة",
+              "تذاكر"
+            ],
+            "meaning": "One ticket per id; public enquiryNumber is a display label, not the entity key."
+          },
+          {
+            "operationRef": "GET /api/Enquiry/Management/TeamTask/List",
+            "sourcePath": "/data/items",
+            "fields": [
+              "id"
+            ],
+            "contextParameters": {
+              "IsEnquiryComplete": false
+            },
+            "id": "team_scope",
+            "kind": "scope",
+            "concept": "team",
+            "aliases": [
+              "team queue",
+              "department queue",
+              "طابور الفريق"
+            ],
+            "meaning": "The authenticated server-scoped TeamTasks workspace; it is not the personal Management/List endpoint and does not by itself prove a requested managed-member subset."
+          },
+          {
+            "operationRef": "GET /api/Enquiry/Management/TeamTask/List",
+            "sourcePath": "/data/items",
+            "fields": [
+              "id"
+            ],
+            "contextParameters": {
+              "IsEnquiryComplete": false
+            },
+            "id": "todo_population",
+            "kind": "population",
+            "concept": "pending",
+            "aliases": [
+              "pending tickets",
+              "to do",
+              "outstanding",
+              "السجلات المعلقة",
+              "التذاكر المعلقة",
+              "قيد الإنجاز"
+            ],
+            "meaning": "The complete actual To Do queue returned by this operation with IsEnquiryComplete=false and no other population-changing request parameters. Queue membership is server-defined for the current principal, not an invented universal status filter."
+          },
+          {
+            "operationRef": "GET /api/Enquiry/Management/TeamTask/List",
+            "sourcePath": "/data/items",
+            "fields": [
+              "id"
+            ],
+            "contextParameters": {
+              "IsEnquiryComplete": false
+            },
+            "id": "ticket_count",
+            "kind": "measure",
+            "concept": "count",
+            "aliases": [
+              "ticket count",
+              "pending ticket count",
+              "number of pending tickets",
+              "عدد التذاكر"
+            ],
+            "meaning": "Count ticket ids across the complete same-context collection, or the total only when proved to describe exactly that same population before paging.",
+            "operator": "count"
+          }
+        ],
+        "fields": {
+          "id": "Stable ticket key.",
+          "enquiryNumber": "User-visible ticket reference.",
+          "enquiryStatusId": "Current ticket status; its membership meaning depends on the actual principal and view, not a universal pending value."
+        },
+        "pagination": {
+          "rowsPath": "/data/items",
+          "totalPath": "/data/total",
+          "total": "Count after current server authorization and actual filters, before paging."
+        },
+        "relationships": [
+          "The frontend uses the actual UserInfo.isLeader result to select TeamTasks. Do not choose this scope merely from a display name or role string; verify the observed operation under the current session.",
+          "Happiness Center membership and business-department membership use different pending buckets. Happiness Center team todo is below Resolved; business-department team todo is DepartmentProcessing and restricted by the actual leader-department or own-handler predicate. This is a server-enforced distinction, not permission granted by this knowledge.",
+          "For business departments, the server includes own assigned tickets and tickets assigned to departments the current user actually leads. Non-leaders remain limited to their own assigned tickets. The personal Management/List operation has separate documented membership and cannot replace this queue.",
+          "The nine status counters may span the union of todo and completed buckets; their total is not the selected todo count. Never use status-card total or another department/person queue to fill a missing current-list count.",
+          "GET IsEnquiryComplete=false is observed as the wire string false; PageIndex/PageSize/SortBy/SortDirection change presentation, not the proved complete population."
+        ],
+        "constraints": [
+          "These are exact-context bindings. Extra date, status, subtype, search, priority or IsReopened parameters require their own verified requested meaning. Do not silently discard a requested filter or apply this unfiltered definition to a reopened query.",
+          "Completed is a separate view and population. No counts or live record values are supplied by this knowledge. Use a fresh authorized observation after each workspace/view switch.",
+          "Page, action, row and field permissions remain current-session checks. No export, reassignment, change-status or other write is authorized."
+        ]
+      }
+    }
+  ]
+}

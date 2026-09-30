@@ -1,0 +1,694 @@
+{
+  "Content": {
+    "contentDashboard": {
+      "sections": {
+        "applicationTasks": "Application Tasks",
+        "recommendationStatistics": "AI Recommendation Statistics",
+        "slaStatusBreakdown": "SLA Status Breakdown",
+        "summary": "Summary",
+        "taskBreakdown": "Task Breakdown"
+      },
+      "aiModelCenter": {
+        "image": "Image",
+        "highRiskApplications": "High-risk Applications",
+        "violations": "Violations:",
+        "terrorismRelatedContent": "Terrorism-Related Content",
+        "moreCount": "+{{count}} more",
+        "title": "AI Model Center"
+      },
+      "metrics": {
+        "adoptionRate": "Adoption Rate"
+      },
+      "task": {
+        "running": "Running",
+        "hoursRemaining": "{{count}}h Remaining",
+        "suggestion": "Suggestion {{number}}",
+        "success": "Success",
+        "license": "License {{number}}",
+        "hub": "Hub {{number}}"
+      },
+      "taskStatuses": {
+        "pendingReview": "Pending Review",
+        "pendingModification": "Pending Modification",
+        "externalApproval": "External Approval",
+        "exportVerification": "Export Verification"
+      },
+      "sla": {
+        "onTime": "On Time",
+        "exceeded": "Exceeded",
+        "total": "Total"
+      }
+    },
+    "contentLibrary": {
+      "tabs": {
+        "books": "Books",
+        "newspapers": "Newspapers / Magazines",
+        "movies": "Movies",
+        "videoGames": "Video Games",
+        "regulateEntryItems": "Regulate Entry Items",
+        "blockedAuthors": "Blocked Authors"
+      },
+      "stats": {
+        "total": "Total",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "pendingReview": "Pending Review"
+      },
+      "columns": {
+        "isbn": "ISBN",
+        "bookTitle": "Book Title",
+        "authorName": "Author Name",
+        "language": "Language",
+        "source": "Source",
+        "numberOfCopies": "Number of Copies",
+        "status": "Status",
+        "actions": "Actions",
+        "type": "Type",
+        "periodicalType": "Periodical Type",
+        "subjectCategory": "Subject Category",
+        "copies": "Copies",
+        "title": "Title",
+        "copyrightsType": "Copyrights Type",
+        "gameTitle": "Game Title",
+        "category": "Category",
+        "printYear": "Print Year",
+        "versionNumber": "Version No.",
+        "hsCode": "HS Code",
+        "materialType": "Material Type",
+        "numberOfTitles": "Number of Titles",
+        "materialStatus": "Material Status"
+      },
+      "actions": {
+        "changeStatus": "Change Status"
+      },
+      "filters": {
+      "allSources": "All Sources",
+      "allStatuses": "All statuses",
+      "allSubjectCategories": "All subject categories",
+      "allPrintYears": "All Print Years",
+      "allCategories": "All categories",
+      "allCopyrightsTypes": "All types",
+      "allPeriodicalTypes": "All types",
+      "allMaterialTypes": "All material types",
+        "allLanguages": "All Languages",
+        "allMaterialStatuses": "All Statuses",
+        "dateRange": "Date Range",
+        "languages": "Languages",
+        "approvalDate": "Approval Date",
+        "startDate": "Start Date",
+        "endDate": "End Date"
+      },
+      "sources": {
+        "local": "Local",
+        "import": "Import",
+        "localImport": "Local/Import"
+      },
+      "modals": {
+        "changeStatus": "Change Status",
+        "changeStatusToPendingReview": "Are you sure you want to change the status of this content to \"Pending Review\"?",
+        "changeStatusImpact": "Changing this status will affect the review outcome of future applications related to this content.",
+        "newStatus": "New Status",
+        "selectNewStatus": "Please select a new status.",
+        "attachments": "Attachments",
+        "uploadTip": "Maximum size: 5MB. File types: jpg, jpeg, and png.",
+        "notes": "Notes",
+        "enterNotes": "Enter notes"
+      },
+      "blockedAuthors": {
+        "searchLabel": "Author Name",
+        "searchPlaceholder": "Search for an author...",
+        "columns": {
+          "authorNameAr": "Author Name (Arabic)",
+          "authorNameEn": "Author Name (English)",
+          "creationTime": "Creation Time"
+        },
+        "actions": {
+          "addAuthor": "Add Author"
+        },
+        "modals": {
+          "addTitle": "Add Blocked Author",
+          "editTitle": "Edit Blocked Author",
+          "deleteTitle": "Delete Blocked Author",
+          "deleteContent": "Are you sure you want to delete this blocked author?"
+        },
+        "fields": {
+          "authorNameAr": "Author Name (Arabic)",
+          "authorNameEn": "Author Name (English)",
+          "notes": "Notes"
+        },
+        "placeholders": {
+          "authorNameAr": "Enter author name in Arabic",
+          "authorNameEn": "Enter author name in English",
+          "notes": "Enter notes"
+        },
+        "validation": {
+          "authorNameArRequired": "Please enter the author name in Arabic.",
+          "authorNameArArabicOnly": "Arabic characters only.",
+          "authorNameEnRequired": "Please enter the author name in English."
+        },
+        "messages": {
+          "loadFailed": "Unable to load blocked authors.",
+          "addSuccess": "Blocked author added successfully.",
+          "addFailed": "Unable to add the blocked author.",
+          "updateSuccess": "Blocked author updated successfully.",
+          "updateFailed": "Unable to update the blocked author.",
+          "deleteSuccess": "Blocked author deleted successfully.",
+          "deleteFailed": "Unable to delete the blocked author."
+        }
+      }
+    },
+    "contentApplications": {
+      "tabs": {
+        "myTasks": "My Tasks",
+        "teamMembers": "Team Members",
+        "teamTasks": "Team Tasks",
+        "todo": "To Do",
+        "completed": "Completed"
+      },
+      "table": {
+        "applicationNo": "Application No.",
+        "serviceName": "Service Name",
+        "serviceCategory": "Service Category",
+        "type": "Type",
+        "sla": "SLA",
+        "aiRecommendation": "AI Recommendation",
+        "applyFor": "Apply For",
+        "assignedTo": "Assigned To",
+        "status": "Status",
+        "submissionTime": "Submission Time",
+        "lastUpdatedTime": "Last Updated Time",
+        "actions": "Actions",
+        "approvalResult": "Approval Result",
+        "myDecision": "My Decision",
+        "slaExceeded": "Exceeded",
+        "slaOnTime": "On Time"
+      },
+      "actions": {
+        "approve": "Approve",
+        "reject": "Reject",
+        "extrareject": "External Reject",
+        "extraapprove": "External Approve",
+        "sendBack": "Send Back",
+        "externalApproval": "External Approval",
+        "requestModification": "Request Modification",
+        "reassign": "Reassign"
+      },
+      "approvalResults": {
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "requestModification": "Request Modification",
+        "externalApproval": "External Approval",
+        "sendBack": "Send Back"
+      },
+      "aiRecommendations": {
+        "approve": "Approve",
+        "reject": "Reject"
+      },
+      "filters": {
+        "allCategories": "All Categories",
+        "allServices": "All Services",
+        "allStatuses": "All Statuses",
+        "teamMembers": "Team Members",
+        "startTime": "Start Time",
+        "endTime": "End Time",
+        "approvalResults": "My Decision",
+        "allResults": "All Decision"
+      },
+      "labels": {
+        "urgent": "Urgent",
+        "tasksSelected": "{{count}} tasks selected",
+        "selectedCount": "({{count}} selected)",
+        "tasks": "Tasks",
+        "emergencyLeave": "Emergency Leave",
+        "reason": "Reason",
+        "returnTime": "Return Time"
+      },
+      "metrics": {
+        "workload": "WorkLoad",
+        "avgTaskDuration": "Average task duration",
+        "sla": "SLA",
+        "overdue": "Overdue"
+      },
+      "tips": {
+        "tasks": "Completed Tasks / Total Assigned Tasks",
+        "workload": "(Current Assigned Tasks / Task Capacity Limit) × 100%",
+        "avgDurationDescription": "Total Processing Time of All Completed Tasks / Number of Completed Tasks",
+        "sla": "(Tasks Completed Within SLA Timeframe / Total Completed Tasks) × 100%",
+        "overdueCount": "The number of tasks exceeding the SLA deadline"
+      },
+      "form": {
+        "leaveType": "Leave Type",
+        "expectedReturnDate": "Expected Return Date",
+        "briefDescription": "Brief Description"
+      },
+      "placeholders": {
+        "selectAssignPerson": "Select assign person",
+        "selectOrganization": "Select organization",
+        "selectLeaveType": "Select leave type",
+        "expectedReturnDate": "DD/MM/YYYY HH:mm:ss",
+        "enterBriefDescription": "Enter a brief description",
+        "selectRejectionReason": "Please select rejection reason",
+        "selectModificationReason": "Please select a modification reason",
+        "selectNode": "Select node"
+      },
+      "validation": {
+        "selectAssignPerson": "Please select an assign person",
+        "selectLeaveType": "Please select a leave type",
+        "selectDate": "Please select a date",
+        "selectRejectionReason": "Please select rejection reason",
+        "selectModificationReason": "Please select a modification reason",
+        "selectFallbackNode": "Please select a fallback node",
+        "enterNotes": "Please enter notes",
+        "selectOrganization": "Please select a organization"
+      },
+      "messages": {
+        "failedToGetUrgentCount": "Failed to get urgent count",
+        "failedToGetLeaderStatus": "Failed to get leader status",
+        "failedToGetApplicationStatuses": "Failed to get application statuses",
+        "failedToExportTodoReview": "Failed to export todo review",
+        "failedToExportCompletedReview": "Failed to export completed review",
+        "failedToGetTeamMembers": "Failed to get team members",
+        "failedToGetTeamMembersTasks": "Failed to get team members tasks",
+        "reassignTaskSuccess": "Reassign task user successfully",
+        "failedToReassignTaskUser": "Failed to reassign task user",
+        "operationSuccess": "Operation successful.",
+        "dispositionCaseIdMissing": "Disposition case ID is missing.",
+        "failedToResumeEmployee": "Failed to resume employee",
+        "failedToMarkEmergencyLeave": "Failed to mark emergency leave"
+      },
+      "modals": {
+        "common": {
+          "notes": "Notes",
+          "enterNotes": "Enter notes",
+          "uploadTip": "Maximum Size: 5MB, File Types: jpg, jpeg, png, and pdf."
+        },
+        "approve": {
+          "title": "Approve Application",
+          "tips": "Please confirm that all application details are correct. After approval, the application will proceed to the next step.",
+          "attachments": "Attachments",
+          "uploadFile": "Upload File"
+        },
+        "reject": {
+          "title": "Reject Application",
+          "rejectionReason": "Rejection Reason",
+          "attachment": "Attachment",
+          "upload": "Upload",
+          "quickNote": "Quick Note",
+          "tipsEndProcess": "Once you reject this application, the review process will end and the application will be closed.",
+          "tipsFlowNextNode": "Note that after rejection, it will still flow to the next node.",
+          "quickNote1": "Violates content policy",
+          "quickNote2": "Incomplete application",
+          "quickNote3": "Legal issues found",
+          "quickNote4": "Fraudulent information",
+          "quickNote5": "Prohibited content detected",
+          "quickNote6": "Does not meet standards"
+        },
+        "requestModification": {
+          "title": "Request Modification",
+          "modificationReason": "Modifications Reason",
+          "quickNotes": "Quick Notes"
+        },
+        "sendBack": {
+          "title": "Send Back",
+          "fallbackNode": "Fallback Node"
+        },
+        "changeStatus": {
+          "title": "Confirm Status Change",
+          "descPrefix": "Are you sure you want to change the status of this application to",
+          "pendingReview": "Pending Review"
+        },
+        "approveExport": {
+          "title": "Approve Export Verification",
+          "desc": "Are you sure you want to approve this export verification?"
+        },
+        "rejectExport": {
+          "title": "Reject Export Verification"
+        },
+        "externalApproval": {
+          "title": "External Approval",
+          "organization": "Organization"
+        }
+      }
+    },
+    "contentApplicationsDetails": {
+      "publicationPrinting": {
+        "applicationNumber": "Application Number",
+        "serviceCategory": "Service Category",
+        "sla": "SLA",
+        "status": "Status",
+        "fromWeb": "From Web",
+        "remainingDays": "{{count}}d Remaining"
+      },
+      "details": {
+        "number": "Number",
+        "activity": "Activity",
+        "feesInAED": "Fees",
+        "applicationDetails": "Application Details",
+        "serviceFees": "Service Fees",
+        "totalFee": "Total Fee"
+      },
+      "timeline": {
+        "title": "Application Timeline",
+        "expand": "Expand application timeline",
+        "collapse": "Collapse application timeline",
+        "applicationSubmitted": "Application Submitted",
+        "duration": "Duration",
+        "reviewResult": "Review Result",
+        "rejectionReason": "Rejection Reason",
+        "modificationReason": "Modification Reason",
+        "externalOrganization": "External Organization",
+        "disposalMethod": "Disposal Method",
+        "inspectionTaskNo": "Task No.",
+        "notes": "Notes",
+        "customerRemark": "Customer Remark",
+        "submittedBy": "Submitted by",
+        "handledBy": "Handled by",
+        "itemsApproved": "{{value}} items approved",
+        "itemsRejected": "{{value}} items rejected",
+        "nodes": {
+          "submitted": "Application Submitted",
+          "pendingpayment": "Pending Payment",
+          "paid": "Paid",
+          "pendingmodification": "Pending Modification",
+          "pendingdisposition": "Pending Disposition",
+          "dispositionsubmitted": "Disposition Submitted",
+          "dispositionverification": "Disposition Verification",
+          "externalapproval": "External Approval",
+          "aireview": "AI Review",
+          "autoapproved": "Auto Approved",
+          "completed": "Completed",
+          "rejected": "Rejected",
+          "cancelled": "Cancelled",
+          "recalledapproval": "Recalled Approval",
+          "initialapproval": "Initial Approval",
+          "supervisorreport": "Supervisor Report",
+          "finalApproval": "Final Approval"
+        },
+        "prompts": {
+          "paid": "The customer has completed the payment for this application.",
+          "pendingpayment": "Pending payment for this application.",
+          "pendingmodification": "The application has been returned to the customer for revision.",
+          "pendingdisposition": "The applicant has been notified to select a disposition method and upload the required supporting documentation for the rejected media materials.",
+          "dispositionsubmitted": "The applicant has submitted the required disposition documentation.",
+          "completed": "The application process has been completed.",
+          "rejected": "The application has been rejected.",
+          "cancelled": "The customer has cancelled the application.",
+          "autoapproved": "The application was automatically approved.",
+          "externalapproval": "The application has been submitted to the external department for approval."
+        }
+      },
+      "authBtns": {
+        "externalApproval": "External Approval"
+      },
+      "applicantOverview": {
+        "title": "Applicant Overview",
+        "nationality": "Nationality",
+        "email": "Email",
+        "mobileNumber": "Mobile Number",
+        "documents": "Documents"
+      },
+      "establishmentOverview": {
+        "title": "Establishment Overview",
+        "warningsViolations": "Warnings & Violations",
+        "unpaidFines": "Unpaid Fines",
+        "establishmentName": "Establishment Name",
+        "commercialLicenseNumber": "Commercial License Number",
+        "emirate": "Emirate",
+        "documents": "Documents",
+        "partners": "Partners",
+        "establishmentSubTypes": "Establishment Sub-types",
+        "workEmail": "Work Email",
+        "licenseExpiryDate": "License Expiry Date",
+        "establishmentNameAr": "Establishment Name in Arabic",
+        "establishmentNameEn": "Establishment Name in English",
+        "licensingAuthority": "Licensing Authority",
+        "phoneNumber": "Phone Number",
+        "tenancyContractEndDate": "Tenancy Contract End Date",
+        "establishmentInformation": "Establishment Information",
+        "commercialLicense": "Commercial License",
+        "tenancyContract": "Tenancy Contract",
+        "memorandumOfAssociation": "Memorandum of Association",
+        "powerOfAttorney": "Power Of Attorney",
+        "establishmentDocuments": "Establishment Documents",
+        "legalPerson": "Legal Person",
+        "legalPersonContactNumber": "Legal Person’s Contact Number",
+        "idType": "ID Type",
+        "dateOfBirth": "Date of Birth",
+        "email": "Email",
+        "legalPersonInformation": "Legal Person Information",
+        "region": "Region",
+        "area": "Area",
+        "street": "Street",
+        "addressInformation": "Address Information",
+        "partnerList": "Partner List",
+        "details": "Details"
+      },
+      "messages": {
+        "confirmApprove": "Are you sure you want to approve this application?",
+        "confirmReject": "Are you sure you want to reject this application?",
+        "confirm": "Confirm",
+        "cancel": "Cancel",
+        "updateSuccess": "Application updated successfully."
+      },
+      "aiContentCheck": {
+        "title": "AI Content Check Report",
+        "desc": "The AI system has conducted a comprehensive scan and analysis of the submitted document.",
+        "detectionTime": "Detection Time",
+        "preview": "Preview",
+        "download": "Download",
+        "downloadFailed": "Failed to download the file. Please try again.",
+        "aiBookSummary": "AI Book Summary",
+        "aiSummary": "AI Summary",
+        "strongApprove": "Strong Recommendation to Approve Application",
+        "strongReject": "Strong Recommendation to Reject Application",
+        "all": "All",
+        "text": "Text",
+        "image": "Image",
+        "page": "Page {{page}}",
+        "pageParagraph": "Page {{page}} / Paragraph {{paragraph}}",
+        "timestamp": "Timestamp",
+        "detectionType": "Detection Type",
+        "confidenceLevel": "Confidence Level",
+        "defaultSummary": "No summary generated.",
+        "noEvidence": "No evidence available.",
+        "subjects": {
+          "Political Sensitive": "Political Sensitive",
+          "Religious Content": "Religious Content",
+          "LGBT+ ": "LGBT+",
+          "Royal Family": "Royal Family",
+          "Adult Content": "Adult Content",
+          "Violence & Hate Speech": "Violence & Hate Speech",
+          "Child Protection": "Child Protection",
+          "Prohibited Words": "Prohibited Words"
+        }
+      }
+    },
+    "videoGamesDetail": {
+      "labels": {
+        "gameInformation": "Game Information",
+        "gameTitle": "Game Title",
+        "category": "Category",
+        "copyrightsType": "Copyrights Type",
+        "language": "Language",
+        "source": "Source",
+        "platform": "Platform",
+        "ageRating": "Age Rating"
+      },
+      "relatedApplications": {
+        "title": "Related Applications",
+        "applicationNo": "Application No.",
+        "serviceName": "Service Name",
+        "status": "Status",
+        "applyFor": "Apply For",
+        "submissionTime": "Submission Time"
+      },
+      "statusHistory": {
+        "title": "Status History",
+        "status": "Status"
+      },
+      "modals": {
+        "confirmStatusChangeTitle": "Confirm Status Change"
+      }
+    },
+    "cinemaDetail": {
+      "labels": {
+        "publicationInformation": "Publication Information",
+        "title": "Title",
+        "language": "Language",
+        "source": "Source",
+        "director": "Director",
+        "writer": "Writer",
+        "ageRating": "Age Rating"
+      },
+      "relatedApplications": {
+        "title": "Related Applications",
+        "applicationNo": "Application No.",
+        "serviceName": "Service Name",
+        "status": "Status",
+        "applyFor": "Apply For",
+        "submissionTime": "Submission Time"
+      },
+      "statusHistory": {
+        "title": "Status History",
+        "status": "Status"
+      },
+      "modals": {
+        "confirmStatusChangeTitle": "Confirm Status Change"
+      }
+    },
+    "newspapersDetail": {
+      "labels": {
+        "publicationInformation": "Publication Information",
+        "language": "Language",
+        "source": "Source",
+        "lastVersionNumber": "Last Version Number",
+        "publishingHouse": "Publishing House",
+        "titlesCount": "{{count}} Titles"
+      },
+      "relatedApplications": {
+        "title": "Related Applications",
+        "applicationNo": "Application No.",
+        "serviceName": "Service Name",
+        "status": "Status",
+        "applyFor": "Apply For",
+        "submissionTime": "Submission Time"
+      },
+      "statusHistory": {
+        "title": "Status History",
+        "status": "Status"
+      },
+      "modals": {
+        "confirmStatusChangeTitle": "Confirm Status Change"
+      }
+    },
+    "booksDetail": {
+      "labels": {
+        "bookInformation": "Book Information",
+        "isbn": "ISBN",
+        "language": "Language",
+        "source": "Source",
+        "printYear": "Print Year",
+        "versionNumber": "Version Number",
+        "nationalDepositoryNumber": "National Depository Number",
+        "noData": "No Data"
+      },
+      "relatedApplications": {
+        "title": "Related Applications",
+        "applicationNo": "Application No.",
+        "serviceName": "Service Name",
+        "status": "Status",
+        "applyFor": "Apply For",
+        "submissionTime": "Submission Time"
+      },
+      "statusHistory": {
+        "title": "Status History",
+        "status": "Status"
+      },
+      "modals": {
+        "confirmStatusChangeTitle": "Confirm Status Change"
+      }
+    },
+    "permits": {
+      "stats": {
+        "active": "Active",
+        "expired": "Expired",
+        "cancelled": "Cancelled",
+        "disabled": "Suspended"
+      },
+      "table": {
+        "licenseNo": "Permit No.",
+        "applicationNo": "Application No.",
+        "license": "Permit Name",
+        "title": "Title",
+        "authorOrPublishingHouse": "Author/Publishing House",
+        "applyFor": "Apply For",
+        "status": "Status",
+        "effectiveDate": "Effective Date",
+        "expirationDate": "Expiry Date",
+        "actions": "Actions"
+      },
+      "actions": {
+        "preview": "Download",
+        "enable": "Reinstate",
+        "disable": "Suspend"
+      },
+      "filters": {
+        "effectiveStartDate": "Effective Start Date",
+        "effectiveEndDate": "Effective End Date",
+        "allStatuses": "All Statuses"
+      },
+      "messages": {
+        "enableSuccess": "Permit reinstated successfully",
+        "enableFailed": "Failed to reinstate permit",
+        "disableSuccess": "Suspend permit success",
+        "disableFailed": "Suspend permit failed",
+        "licenseIdMissing": "License ID is missing",
+        "previewPermissionDenied": "You do not have permission to perform this action."
+      },
+      "modals": {
+        "enableTitle": "Reinstate Permit",
+        "enableConfirm": "Are you sure you want to reinstate this permit?",
+        "disableTitle": "Suspend Permit",
+        "disableReason": "Suspend Reason",
+        "selectDisableReason": "Select suspend reason",
+        "notes": "Notes",
+        "disableReasonPlaceholder": "Enter a reason for suspending the permit"
+      },
+      "documentDown": {
+        "filePassword": "PDF Access Code",
+        "licenseTypeTips": "Use the access code below to open your downloaded PDF file.",
+        "password": "Access Code",
+        "note": "Note",
+        "noteText": "Copy and keep this access code. You will need it to open the PDF file after downloading.",
+        "copyPasswordRedirect": "Copy Access Code & Download"
+      }
+    },
+    "permitsDetails": {
+      "title": "",
+      "licenseDetails": "License Details",
+      "baseInfo": {
+        "licenseNumber": "Permit Number",
+        "issuanceDate": "Issuance Date",
+        "effectiveDate": "Effective Date",
+        "expiryDate": "Expiry Date",
+        "daysRemaining": "Days Remaining"
+      },
+      "relatedApplications": {
+        "title": "Related Applications",
+        "number": "Number",
+        "applicationNumber": "Application Number",
+        "serviceName": "Service Name",
+        "type": "Type",
+        "submissionTime": "Submission Time"
+      },
+      "applicationType": {
+        "new": "New",
+        "renew": "Renew",
+        "modify": "Modify",
+        "cancel": "Cancel",
+        "transfer": "Transfer",
+        "partnerManagement": "Partner Management"
+      },
+      "documents": {
+        "uploadCommercialLicense": "Upload Commercial License",
+        "uploadTenancyContract": "Upload Tenancy Contract"
+      },
+      "idLabels": {
+        "emiratesId": "Emirates ID",
+        "uid": "UID",
+        "passportNumber": "Passport Number"
+      }
+    },
+    "ticketsStatistics": {
+      "total": "Total",
+      "open": "Open",
+      "pendingCustomer": "Pending Customer",
+      "departmentProcessing": "Department Processing",
+      "departmentProcessed": "Department Processed",
+      "resolved": "Resolved",
+      "reopened": "Reopened",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    }
+  }
+}

@@ -1,0 +1,250 @@
+.filter-modal.ant-modal {
+  max-width: calc(100vw - 32px);
+
+  .ant-modal-content {
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .ant-modal-header {
+    box-sizing: border-box;
+    min-height: 100px;
+    margin: 0;
+    padding: 32px 40px;
+    border-bottom: 1px solid #e1e3e5;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .ant-modal-title {
+    color: #361e12;
+    font-family: Inter, sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 32px;
+  }
+
+  .ant-modal-body {
+    min-height: 0 !important;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .ant-modal-footer {
+    box-sizing: border-box;
+    min-height: 96px;
+    margin: 0;
+    padding: 24px 40px;
+    border-top: 1px solid #e1e3e5;
+    border-radius: 0 0 20px 20px;
+  }
+}
+
+.filter-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  width: 100%;
+}
+
+.filter-modal-footer__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.filter-modal-footer__cancel,
+.filter-modal-footer__apply {
+  width: 140px;
+  min-width: 140px;
+  height: 48px;
+}
+
+.filter-modal-footer__cancel.custom-button-outline {
+  color: #c4a47c !important;
+  background-color: #fff !important;
+  border-color: #c4a47c !important;
+
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
+    color: #b8954a !important;
+    background-color: rgba(201, 169, 97, 0.08) !important;
+    border-color: #b8954a !important;
+  }
+}
+
+.filter-modal-footer__apply.custom-button-primary {
+  color: #fff !important;
+  background: linear-gradient(90deg, #9e7538 0%, #c19453 100%) !important;
+  border: none !important;
+  box-shadow: none !important;
+
+  &:hover:not(:disabled),
+  &:active:not(:disabled),
+  &:focus:not(:disabled) {
+    color: #fff !important;
+    background: linear-gradient(90deg, #9e7538 0%, #c19453 100%) !important;
+  }
+
+  &:disabled,
+  &:disabled:hover {
+    color: #8c8c8c !important;
+    background: #dcdcdc !important;
+    cursor: not-allowed;
+  }
+}
+
+.filter-modal-content {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: min-content;
+  column-gap: 24px;
+  row-gap: 24px;
+  align-content: start;
+  justify-content: stretch;
+  justify-items: stretch;
+  min-height: 400px;
+  padding: 32px 40px;
+
+  > * {
+    width: 100%;
+  }
+
+  .ant-picker-range,
+  .ant-select,
+  .ant-input {
+    width: 100%;
+  }
+
+  @filter-modal-control-height: 48px;
+
+  .ant-picker.ant-picker-range {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    height: @filter-modal-control-height;
+    min-height: @filter-modal-control-height;
+    max-height: @filter-modal-control-height;
+    padding: 0 11px;
+    line-height: normal;
+  }
+
+  .ant-picker-input {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .ant-picker-input > input {
+    height: (@filter-modal-control-height - 10px);
+    padding: 0;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: (@filter-modal-control-height - 10px);
+
+    &::placeholder {
+      color: #797e86;
+      opacity: 1;
+    }
+  }
+
+  .ant-picker-separator,
+  .ant-picker-active-bar,
+  .ant-picker-suffix,
+  .ant-picker-suffix .anticon {
+    line-height: 1;
+  }
+
+  .ant-picker-suffix {
+    pointer-events: none;
+  }
+
+  .ant-picker-clear {
+    z-index: 2;
+    pointer-events: auto;
+  }
+
+  .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    display: flex;
+    align-items: center;
+    height: @filter-modal-control-height !important;
+    min-height: @filter-modal-control-height !important;
+  }
+
+  .ant-select-single .ant-select-selector .ant-select-selection-item,
+  .ant-select-single .ant-select-selector .ant-select-selection-placeholder {
+    line-height: (@filter-modal-control-height - 2px) !important;
+  }
+
+  .ant-select .ant-select-selector .ant-select-selection-placeholder {
+    color: #797e86;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .ant-select-multiple .ant-select-selector {
+    align-items: center;
+    height: auto !important;
+    min-height: @filter-modal-control-height !important;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  .ant-select-multiple .ant-select-selection-item {
+    line-height: 22px;
+  }
+}
+
+.filter-modal-item {
+  display: flex;
+  flex-direction: column;
+  grid-column: auto;
+  gap: 8px;
+  align-self: start;
+  justify-self: stretch;
+  width: 100%;
+  min-height: 0;
+}
+
+.filter-modal-item > .ant-input,
+.filter-modal-item > .ant-input-affix-wrapper,
+.filter-modal-item > .ant-picker,
+.filter-modal-item > .ant-select {
+  /*
+    Page toolbars may use flex-basis as a desktop width. Inside this column
+    wrapper that same basis would become a height and create a blank modal row.
+  */
+  flex: none;
+}
+
+.filter-modal-item-label {
+  color: #361e12;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.filter-modal-item--compact-only {
+  display: none !important;
+}
+
+@media (max-width: 1919.98px) {
+  .filter-modal-content .ant-picker-input > input,
+  .filter-modal-content
+    .ant-select
+    .ant-select-selector
+    .ant-select-selection-placeholder {
+    font-size: 12px;
+  }
+
+}
+
+@media (max-width: 1439.98px) {
+  .filter-modal-item--compact-only {
+    display: flex !important;
+  }
+}

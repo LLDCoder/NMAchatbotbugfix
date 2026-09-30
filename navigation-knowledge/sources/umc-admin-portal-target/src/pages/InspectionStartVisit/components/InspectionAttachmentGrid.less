@@ -1,0 +1,169 @@
+.inspection-attachment-grid {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.inspection-attachment-grid--single {
+  width: 100%;
+}
+
+.inspection-attachment-grid--modal {
+  margin-top: -8px;
+  margin-bottom: 16px;
+}
+
+.inspection-attachment-grid :where(.refund-attachments.is-application-info) {
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.inspection-attachment-grid--single :where(.refund-attachments.is-application-info) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.inspection-attachment-grid--modal :where(.refund-attachments.is-application-info) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.inspection-attachment-grid--two-columns :where(.refund-attachments.is-application-info) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.inspection-attachment-grid :where(.refund-attachment-chip.is-application-info) {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #f7f6f3 0%, #f6f6f5 56.253%, #f7f2eb 100%);
+}
+
+.inspection-attachment-grid :where(.refund-attachment-left) {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.inspection-attachment-grid :where(.refund-attachment-icon.is-application-info) {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.inspection-attachment-grid :where(.refund-attachment-icon.is-application-info img) {
+  width: 32px;
+  height: 32px;
+  display: block;
+  object-fit: contain;
+}
+
+.inspection-attachment-grid :where(.refund-attachment-name.is-application-info) {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  color: #21252e;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.inspection-attachment-grid :where(.refund-attachment-actions.is-application-info) {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 0 auto;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.inspection-attachment-grid :where(.refund-attachment-action) {
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.inspection-attachment-grid :where(.refund-attachment-action img) {
+  width: 20px;
+  height: 20px;
+  display: block;
+  object-fit: contain;
+}
+
+.inspection-attachment-grid :where(.refund-attachment-delete) {
+  opacity: 0.8;
+}
+
+.inspection-attachment-grid--compact {
+  margin-top: 0;
+}
+
+.inspection-attachment-grid--compact :where(.refund-attachments.is-application-info) {
+  gap: 6px;
+}
+
+.inspection-attachment-grid--compact :where(.refund-attachment-chip.is-application-info) {
+  height: 28px;
+  min-height: 28px;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.inspection-attachment-grid--compact :where(.refund-attachment-left) {
+  flex: 1;
+  gap: 4px;
+}
+
+.inspection-attachment-grid--compact :where(.refund-attachment-icon.is-application-info),
+.inspection-attachment-grid--compact :where(.refund-attachment-icon.is-application-info img) {
+  width: 16px;
+  height: 16px;
+}
+
+.inspection-attachment-grid--compact :where(.refund-attachment-name.is-application-info) {
+  color: #361e12;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.inspection-attachment-grid--compact :where(.refund-attachment-actions.is-application-info) {
+  gap: 8px;
+}
+
+.inspection-attachment-grid--compact :where(.refund-attachment-action),
+.inspection-attachment-grid--compact :where(.refund-attachment-action img) {
+  width: 16px;
+  height: 16px;
+}

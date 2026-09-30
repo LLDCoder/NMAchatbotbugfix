@@ -1,0 +1,1426 @@
+{
+  "evidenceKind": "actual_v38_saved_audit_tasks_no_live_replay",
+  "diagnosisFreezeSHA256": "4d1244715d020425ab57640233f7688f03559878fc779f5a11c041f048be0a16",
+  "cases": {
+    "en": {
+      "auditPath": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/groups1113-20260928/round29-i04-v38/audit-db/I-04__en.json",
+      "auditSHA256": "563deed0296cfa68806a78b98fb1ad8094e9e9f7542d6d001f71d61dd1fa3310",
+      "answerPath": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/groups1113-20260928/round29-i04-v38/answers/I-04__en.json",
+      "answerSHA256": "c9896bc4e9b7e606b4610d59661cfadb2b40af7003ea6cba1948d94cd23ab07a",
+      "conversationId": "conv_527ee9158fcd4fa79796",
+      "requestId": "0f525c8d-a44d-4838-8fe5-648923b08ee4",
+      "question": "What can I do in my current role?",
+      "canonicalQuestion": "What can I do in my current role?",
+      "rejectedPlans": [
+        {
+          "stage": "TaskSpec",
+          "attempt": 1,
+          "failure": "{\"code\": \"current_permission_intent_unverified\", \"invalidAttributePaths\": [\"requestedAttributes[0]\"], \"correction\": \"The complete question asks about the signed-in user's current role/account permissions and limitations, not the assistant's available help or tools. Return a complete TaskSpec preserving that subject and all original clauses. Keep current configured action capabilities distinct from general boundaries and from eligibility for a particular record. Do not drop a user condition, invent permissions, choose an active role, or broaden the scope to make this overview applicable. For invalidAttributePaths, inspect those complete attribute slots: configured actions and cited limitations are separate meanings. Full nominals such as \\\"actions permitted in current role\\\" and \\\"actions not permitted in current role\\\" retain their positive and negative meanings respectively. Preserve the user's requested meanings and any negation; absence from configured examples is not proof that an action is prohibited.\"}",
+          "candidate": {
+            "stage": "task",
+            "filters": [],
+            "groupBy": [],
+            "readOnly": true,
+            "timeRange": "unknown",
+            "outputShape": "overview",
+            "searchQuery": "current role permissions available actions capabilities limitations allowed tasks",
+            "slotUpdates": [
+              {
+                "field": "businessObject",
+                "value": "role capability",
+                "source": "current"
+              },
+              {
+                "field": "requestedScope",
+                "value": "personal",
+                "source": "current"
+              },
+              {
+                "field": "requestedAttributes",
+                "value": [
+                  "available assistance",
+                  "limitations"
+                ],
+                "source": "current"
+              },
+              {
+                "field": "outputShape",
+                "value": "overview",
+                "source": "current"
+              }
+            ],
+            "businessFocus": "",
+            "needsLiveData": false,
+            "businessObject": "role capability",
+            "requestedGrain": "unknown",
+            "requestedScope": "personal",
+            "contextRelation": "new",
+            "unresolvedSlots": [],
+            "requestedMeasures": [],
+            "requestedAttributes": [
+              "available assistance",
+              "limitations"
+            ]
+          }
+        }
+      ],
+      "acceptedInitialTask": {
+        "view": "",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "overview",
+        "searchQuery": "current role permitted actions limitations account permissions configured capabilities",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "current role",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedScope",
+            "value": "personal",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedGrain",
+            "value": "current role",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [
+              "actions permitted in current role",
+              "actions not permitted in current role"
+            ],
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "outputShape",
+            "value": "overview",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "businessFocus",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "disclosurePurpose",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "recordIdentity",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "view",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "current",
+            "evidence": "parsed current request"
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "",
+        "clarification": null,
+        "needsLiveData": true,
+        "businessObject": "current role",
+        "recordIdentity": "",
+        "requestedGrain": "current role",
+        "requestedScope": "personal",
+        "contextRelation": "new",
+        "unresolvedSlots": [],
+        "disclosurePurpose": "",
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [
+          "actions permitted in current role",
+          "actions not permitted in current role"
+        ],
+        "evidenceExplanations": []
+      },
+      "knowledgeTask": {
+        "view": "",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "overview",
+        "searchQuery": "current role permitted actions limitations account permissions configured capabilities",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "current role",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedScope",
+            "value": "personal",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedGrain",
+            "value": "current role",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [
+              "actions not permitted in current role"
+            ],
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "outputShape",
+            "value": "overview",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "businessFocus",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "disclosurePurpose",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "recordIdentity",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "view",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "current",
+            "evidence": "parsed current request"
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "",
+        "clarification": null,
+        "needsLiveData": false,
+        "businessObject": "current role",
+        "recordIdentity": "",
+        "requestedGrain": "current role",
+        "requestedScope": "personal",
+        "contextRelation": "new",
+        "unresolvedSlots": [],
+        "disclosurePurpose": "",
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [
+          "actions not permitted in current role"
+        ],
+        "evidenceExplanations": []
+      },
+      "originalMissing": [
+        "knowledge_answer_incomplete",
+        "stage_quality_incomplete"
+      ],
+      "knowledgeCoverage": [
+        {
+          "reason": "The current role is a read-only profile property: all nonempty names in assignRolesIdsInfo are displayed as assigned business roles, and identity/assigned roles come from the authenticated staff session and Personal Center. A displayed or claimed role is not an assigned role, and role names alone do not establish page, action or record permissions.",
+          "status": "covered",
+          "evidence": [
+            {
+              "sourceId": "k_8eadf20d8e64652fc5bf:p5"
+            },
+            {
+              "sourceId": "k_afdffb05b1d24a430f7a:p4"
+            }
+          ],
+          "followupQuery": "",
+          "requirementId": "object",
+          "requiredPoints": [
+            "The current role is the assigned business role shown on the signed-in staff profile in Personal Center, read from the authenticated session.",
+            "Multiple assigned roles are retained; a role name or title alone does not by itself prove page, action or record permissions."
+          ],
+          "missingEvidenceType": "none"
+        },
+        {
+          "reason": "Grain is the single authenticated staff profile: one signed-in user profile whose multiple department/role entries are properties of that same user, not extra users. Assigned roles are read as the complete child array of that one profile.",
+          "status": "covered",
+          "evidence": [
+            {
+              "sourceId": "k_8eadf20d8e64652fc5bf:p2"
+            },
+            {
+              "sourceId": "k_8eadf20d8e64652fc5bf:p5"
+            }
+          ],
+          "followupQuery": "",
+          "requirementId": "grain",
+          "requiredPoints": [
+            "The answer is scoped to one authenticated staff profile; its assigned roles are properties of that same user, not separate users.",
+            "All nonempty assigned role names for that profile are retained together."
+          ],
+          "missingEvidenceType": "none"
+        },
+        {
+          "reason": "Personal scope means the requested and observed userId must both equal the verified signed-in subject; this definition does not authorize reading another user or expanding to a team. Department and team membership scope records, and a Manager title alone does not prove department-wide or cross-team access.",
+          "status": "covered",
+          "evidence": [
+            {
+              "sourceId": "k_8eadf20d8e64652fc5bf:p3"
+            },
+            {
+              "sourceId": "k_afdffb05b1d24a430f7a:p4"
+            }
+          ],
+          "followupQuery": "",
+          "requirementId": "scope",
+          "requiredPoints": [
+            "Personal scope covers only the signed-in user's own profile and roles.",
+            "It does not authorize reading another user, a team, or department-wide records; a Manager title alone does not establish broader access."
+          ],
+          "missingEvidenceType": "none"
+        },
+        {
+          "reason": "Sources establish general boundaries: page access, action permission and record scope are separate concepts; a page permission does not imply approval, assignment, export or hidden-field permission; role names alone do not establish page, action or record permissions; and the read-only assistant surface covers explanation and authorized reading, not portal business actions. However, no source enumerates which specific actions are not permitted for a given role, so the concrete negative action list for the current role is not established by static knowledge.",
+          "status": "partial",
+          "evidence": [
+            {
+              "sourceId": "k_afdffb05b1d24a430f7a:p4"
+            },
+            {
+              "sourceId": "k_afdffb05b1d24a430f7a:p5"
+            },
+            {
+              "sourceId": "k_8eadf20d8e64652fc5bf:p6"
+            }
+          ],
+          "followupQuery": "Which specific actions are not permitted for the current assigned role, and how are role-to-action restrictions defined?",
+          "requirementId": "attribute_1",
+          "requiredPoints": [
+            "Page access, action permission and record scope are separate concepts; a page permission does not imply approval, assignment, export or hidden-field permission.",
+            "Role names alone do not establish page, action or record permissions.",
+            "The read-only assistant surface covers explanation and authorized reading; portal business actions described in manuals remain portal actions and are not executable in chat.",
+            "The specific set of actions not permitted for the current role is not enumerated by the available knowledge and must be verified against the current authorized configuration."
+          ],
+          "missingEvidenceType": "requested_policy"
+        }
+      ],
+      "permissionAssignment": {
+        "originalTask": {
+          "view": "",
+          "stage": "task",
+          "filters": [],
+          "groupBy": [],
+          "readOnly": true,
+          "timeField": "",
+          "timeRange": "unknown",
+          "outputShape": "overview",
+          "searchQuery": "current role permitted actions limitations account permissions configured capabilities",
+          "slotUpdates": [
+            {
+              "field": "businessObject",
+              "value": "current role",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "requestedScope",
+              "value": "personal",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "requestedGrain",
+              "value": "current role",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "requestedAttributes",
+              "value": [
+                "actions permitted in current role",
+                "actions not permitted in current role"
+              ],
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "outputShape",
+              "value": "overview",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "timeRange",
+              "value": "unknown",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "businessFocus",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "disclosurePurpose",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedMeasures",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "groupBy",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "filters",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "recordIdentity",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "view",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "timeField",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedOrdering",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "groupCompleteness",
+              "value": "observed",
+              "source": "current",
+              "evidence": "parsed current request"
+            }
+          ],
+          "responseMode": "answer",
+          "businessFocus": "",
+          "clarification": null,
+          "needsLiveData": true,
+          "businessObject": "current role",
+          "recordIdentity": "",
+          "requestedGrain": "current role",
+          "requestedScope": "personal",
+          "contextRelation": "new",
+          "unresolvedSlots": [],
+          "disclosurePurpose": "",
+          "groupCompleteness": "observed",
+          "requestBoundaries": [],
+          "requestedMeasures": [],
+          "requestedOrdering": [],
+          "requestedAttributes": [
+            "actions permitted in current role",
+            "actions not permitted in current role"
+          ],
+          "evidenceExplanations": []
+        },
+        "knowledgeTask": {
+          "view": "",
+          "stage": "task",
+          "filters": [],
+          "groupBy": [],
+          "readOnly": true,
+          "timeField": "",
+          "timeRange": "unknown",
+          "outputShape": "overview",
+          "searchQuery": "current role permitted actions limitations account permissions configured capabilities",
+          "slotUpdates": [
+            {
+              "field": "businessObject",
+              "value": "current role",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "requestedScope",
+              "value": "personal",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "requestedGrain",
+              "value": "current role",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "requestedAttributes",
+              "value": [
+                "actions not permitted in current role"
+              ],
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "outputShape",
+              "value": "overview",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "timeRange",
+              "value": "unknown",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "businessFocus",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "disclosurePurpose",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedMeasures",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "groupBy",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "filters",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "recordIdentity",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "view",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "timeField",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedOrdering",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "groupCompleteness",
+              "value": "observed",
+              "source": "current",
+              "evidence": "parsed current request"
+            }
+          ],
+          "responseMode": "answer",
+          "businessFocus": "",
+          "clarification": null,
+          "needsLiveData": false,
+          "businessObject": "current role",
+          "recordIdentity": "",
+          "requestedGrain": "current role",
+          "requestedScope": "personal",
+          "contextRelation": "new",
+          "unresolvedSlots": [],
+          "disclosurePurpose": "",
+          "groupCompleteness": "observed",
+          "requestBoundaries": [],
+          "requestedMeasures": [],
+          "requestedOrdering": [],
+          "requestedAttributes": [
+            "actions not permitted in current role"
+          ],
+          "evidenceExplanations": []
+        },
+        "schemaVersion": "current-account-permission-assignment/1",
+        "completionPolicy": "combine_auth_configuration_and_cited_boundaries_keep_all_gaps",
+        "originalRequirements": [
+          {
+            "id": "object",
+            "kind": "object",
+            "value": "current role"
+          },
+          {
+            "id": "grain",
+            "kind": "grain",
+            "value": "current role"
+          },
+          {
+            "id": "scope",
+            "kind": "scope",
+            "value": "personal"
+          },
+          {
+            "id": "attribute_0",
+            "kind": "attribute",
+            "value": "actions permitted in current role"
+          },
+          {
+            "id": "attribute_1",
+            "kind": "attribute",
+            "value": "actions not permitted in current role"
+          }
+        ],
+        "stageRequirementIdMap": {
+          "grain": "grain",
+          "scope": "scope",
+          "object": "object",
+          "attribute_0": "attribute_1"
+        },
+        "deferredAuthRequirementIds": [
+          "attribute_0"
+        ]
+      },
+      "authProjectionProvenance": {
+        "source": "fresh_authenticated_GetUserInfo",
+        "missing": [],
+        "sourceId": "auth_permissions_0a00c19214eadf769e0d09cd113c832a43aeefccc215078a70f7e3c1de71b3aa",
+        "verified": true,
+        "observedAt": "2026-09-29T00:42:36.035283+00:00",
+        "displayHash": "5caa8a6bea8dad3ceed9b5e53fe2308a6fe9b84d2040cb76333f099fa2c2bb09",
+        "schemaVersion": "current-account-permission-examples/1",
+        "catalogVersion": "923ec44fe50a2342995e281c82aafca24ba1f1db20bf2c2184ec663e33329bf1",
+        "actionsExecuted": false,
+        "sourceRequestId": "0f525c8d-a44d-4838-8fe5-648923b08ee4",
+        "rowScopeVerified": false,
+        "principalScopeRef": "7da85129c1862eb3c3f0",
+        "examplesExhaustive": false,
+        "selectedRoleVerified": false,
+        "permissionProjectionHash": "8c0ff7c39006d62059a75926c9f48585e794d7cc769650edb0df35488c223a85",
+        "roleActionMappingVerified": false,
+        "recordActionEligibilityVerified": false
+      },
+      "roleCount": 2,
+      "actionExampleCount": 4
+    },
+    "ar": {
+      "auditPath": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/groups1113-20260928/round29-i04-v38/audit-db/I-04__ar.json",
+      "auditSHA256": "8355fcf3791feae4094661f61a9266f279ebfa5d1a3d0ba2b82dab349409347a",
+      "answerPath": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/groups1113-20260928/round29-i04-v38/answers/I-04__ar.json",
+      "answerSHA256": "2813066e19c474a515de2f71fc2ed3db96a0a35049de3cb406e67396fc89ab55",
+      "conversationId": "conv_2140601596ed476eb32c",
+      "requestId": "84381c44-14f9-499d-84af-96e708145922",
+      "question": "ما الذي يمكنني فعله ضمن دوري الحالي؟",
+      "canonicalQuestion": "What can I do in my current role?",
+      "rejectedPlans": [],
+      "acceptedInitialTask": {
+        "view": "",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "overview",
+        "searchQuery": "current role available actions permissions limitations capabilities",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "current role",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedScope",
+            "value": "personal",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedGrain",
+            "value": "current role",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [
+              "available actions within current role",
+              "limitations of current role"
+            ],
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "outputShape",
+            "value": "overview",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "businessFocus",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "disclosurePurpose",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "recordIdentity",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "view",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "current",
+            "evidence": "parsed current request"
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "",
+        "clarification": null,
+        "needsLiveData": false,
+        "businessObject": "current role",
+        "recordIdentity": "",
+        "requestedGrain": "current role",
+        "requestedScope": "personal",
+        "contextRelation": "new",
+        "unresolvedSlots": [],
+        "disclosurePurpose": "",
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [
+          "available actions within current role",
+          "limitations of current role"
+        ],
+        "evidenceExplanations": []
+      },
+      "knowledgeTask": {
+        "view": "",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "overview",
+        "searchQuery": "current role available actions permissions limitations capabilities",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "current role",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedScope",
+            "value": "personal",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedGrain",
+            "value": "current role",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [
+              "limitations of current role"
+            ],
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "outputShape",
+            "value": "overview",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "businessFocus",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "disclosurePurpose",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "recordIdentity",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "view",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "current",
+            "evidence": "parsed current request"
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "",
+        "clarification": null,
+        "needsLiveData": false,
+        "businessObject": "current role",
+        "recordIdentity": "",
+        "requestedGrain": "current role",
+        "requestedScope": "personal",
+        "contextRelation": "new",
+        "unresolvedSlots": [],
+        "disclosurePurpose": "",
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [
+          "limitations of current role"
+        ],
+        "evidenceExplanations": []
+      },
+      "originalMissing": [],
+      "knowledgeCoverage": [
+        {
+          "reason": "Role concept is coherent: assigned business roles are read-only profile properties read from the authenticated staff session and Personal Center; a displayed or claimed role name is not an assigned role, and a role title alone does not grant page, action or record access. No opposing clause found in the same or other applicable passages.",
+          "status": "covered",
+          "evidence": [
+            {
+              "sourceId": "k_8eadf20d8e64652fc5bf:p5"
+            },
+            {
+              "sourceId": "k_afdffb05b1d24a430f7a:p4"
+            }
+          ],
+          "followupQuery": "",
+          "requirementId": "object",
+          "requiredPoints": [
+            "الدور الحالي هو دور عمل معيَّن يُقرأ من جلسة الموظف الموثَّقة ويظهر ضمن الأدوار المعيّنة في المركز الشخصي.",
+            "قد تكون هناك أدوار متعددة معيّنة، وكلها خصائص للقراءة فقط في الملف الشخصي.",
+            "اسم الدور المعروض أو المُدَّعى في السؤال لا يُثبت بحد ذاته صلاحيات الصفحات أو الإجراءات أو السجلات."
+          ],
+          "missingEvidenceType": "none"
+        },
+        {
+          "reason": "Grain is one authenticated staff profile whose multiple department/role entries are properties of that same user, not extra users. Role names are read from the complete assignRolesIdsInfo array; the internal id/code is not a display label or proof of access. Consistent across the applicable passages.",
+          "status": "covered",
+          "evidence": [
+            {
+              "sourceId": "k_8eadf20d8e64652fc5bf:p2"
+            },
+            {
+              "sourceId": "k_8eadf20d8e64652fc5bf:p5"
+            }
+          ],
+          "followupQuery": "",
+          "requirementId": "grain",
+          "requiredPoints": [
+            "حبيبة السؤال هي ملف الموظف المسجَّل دخوله الواحد؛ تعدد الأدوار خصائص لنفس المستخدم لا مستخدمين إضافيين.",
+            "تُقرأ أسماء الأدوار المعيّنة كاملة من مصفوفة الأدوار في الملف الشخصي دون اختزالها في أول عنصر.",
+            "المعرّف/الرمز الداخلي للدور ليس تسمية معروضة ولا دليلًا على الوصول."
+          ],
+          "missingEvidenceType": "none"
+        },
+        {
+          "reason": "Personal scope is coherent: the requested and observed userId must both equal the verified signed-in subject, and this definition does not authorize reading another user or expanding to a team. Identity and assigned roles come from the authenticated session. No opposing clause found.",
+          "status": "covered",
+          "evidence": [
+            {
+              "sourceId": "k_8eadf20d8e64652fc5bf:p3"
+            },
+            {
+              "sourceId": "k_afdffb05b1d24a430f7a:p4"
+            }
+          ],
+          "followupQuery": "",
+          "requirementId": "scope",
+          "requiredPoints": [
+            "النطاق شخصي: يقتصر على المستخدم المسجَّل دخوله نفسه ولا يصرّح بقراءة مستخدم آخر أو التوسع إلى فريق.",
+            "الهوية والأدوار المعيّنة تُقرأ من الجلسة الموثَّقة والمركز الشخصي.",
+            "الوصول إلى الصفحات والسجلات يبقى مشروطًا بالصلاحيات المصرَّح بها حاليًا."
+          ],
+          "missingEvidenceType": "none"
+        },
+        {
+          "reason": "General role limitations are documented and mutually compatible: roles grant route and button permissions while department/team membership scopes records; a page permission does not imply approval, assignment, export or hidden-field permission; a Manager title alone does not prove department-wide or cross-team access; the profile response supplies no universal row-level data-scope value; and the read-only assistant surface covers explanation and authorized reading only, not portal business actions. No internal contradiction found.",
+          "status": "covered",
+          "evidence": [
+            {
+              "sourceId": "k_afdffb05b1d24a430f7a:p4"
+            },
+            {
+              "sourceId": "k_8eadf20d8e64652fc5bf:p7"
+            },
+            {
+              "sourceId": "k_d0a214c895c965c1d96c:p2"
+            }
+          ],
+          "followupQuery": "",
+          "requirementId": "attribute_1",
+          "requiredPoints": [
+            "الأدوار تمنح صلاحيات المسار والزر، بينما عضوية القسم والفريق تحدِّد نطاق السجلات.",
+            "صلاحية الصفحة لا تعني ضمنًا صلاحية الموافقة أو الإسناد أو التصدير أو الحقول المخفية.",
+            "لقب المدير وحده لا يثبت وصولًا على مستوى القسم أو عبر الفرق.",
+            "استجابة الملف الشخصي لا توفّر قيمة نطاق بيانات عامة على مستوى الصفوف.",
+            "سطح المساعد الموثَّق للقراءة فقط يغطي الشرح والقراءة المصرَّح بها؛ إجراءات البوابة التجارية تبقى إجراءات بوابة ولا تُنفَّذ في المحادثة.",
+            "الصلاحيات الفعلية للصفحات والإجراءات والسجلات تُحدَّد من الجلسة النشطة الحالية."
+          ],
+          "missingEvidenceType": "none"
+        }
+      ],
+      "permissionAssignment": {
+        "originalTask": {
+          "view": "",
+          "stage": "task",
+          "filters": [],
+          "groupBy": [],
+          "readOnly": true,
+          "timeField": "",
+          "timeRange": "unknown",
+          "outputShape": "overview",
+          "searchQuery": "current role available actions permissions limitations capabilities",
+          "slotUpdates": [
+            {
+              "field": "businessObject",
+              "value": "current role",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "requestedScope",
+              "value": "personal",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "requestedGrain",
+              "value": "current role",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "requestedAttributes",
+              "value": [
+                "available actions within current role",
+                "limitations of current role"
+              ],
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "outputShape",
+              "value": "overview",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "businessFocus",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "disclosurePurpose",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedMeasures",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "groupBy",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "timeRange",
+              "value": "unknown",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "filters",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "recordIdentity",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "view",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "timeField",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedOrdering",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "groupCompleteness",
+              "value": "observed",
+              "source": "current",
+              "evidence": "parsed current request"
+            }
+          ],
+          "responseMode": "answer",
+          "businessFocus": "",
+          "clarification": null,
+          "needsLiveData": false,
+          "businessObject": "current role",
+          "recordIdentity": "",
+          "requestedGrain": "current role",
+          "requestedScope": "personal",
+          "contextRelation": "new",
+          "unresolvedSlots": [],
+          "disclosurePurpose": "",
+          "groupCompleteness": "observed",
+          "requestBoundaries": [],
+          "requestedMeasures": [],
+          "requestedOrdering": [],
+          "requestedAttributes": [
+            "available actions within current role",
+            "limitations of current role"
+          ],
+          "evidenceExplanations": []
+        },
+        "knowledgeTask": {
+          "view": "",
+          "stage": "task",
+          "filters": [],
+          "groupBy": [],
+          "readOnly": true,
+          "timeField": "",
+          "timeRange": "unknown",
+          "outputShape": "overview",
+          "searchQuery": "current role available actions permissions limitations capabilities",
+          "slotUpdates": [
+            {
+              "field": "businessObject",
+              "value": "current role",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "requestedScope",
+              "value": "personal",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "requestedGrain",
+              "value": "current role",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "requestedAttributes",
+              "value": [
+                "limitations of current role"
+              ],
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "outputShape",
+              "value": "overview",
+              "source": "current",
+              "evidence": ""
+            },
+            {
+              "field": "businessFocus",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "disclosurePurpose",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedMeasures",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "groupBy",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "timeRange",
+              "value": "unknown",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "filters",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "recordIdentity",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "view",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "timeField",
+              "value": "",
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "requestedOrdering",
+              "value": [],
+              "source": "current",
+              "evidence": "parsed current request"
+            },
+            {
+              "field": "groupCompleteness",
+              "value": "observed",
+              "source": "current",
+              "evidence": "parsed current request"
+            }
+          ],
+          "responseMode": "answer",
+          "businessFocus": "",
+          "clarification": null,
+          "needsLiveData": false,
+          "businessObject": "current role",
+          "recordIdentity": "",
+          "requestedGrain": "current role",
+          "requestedScope": "personal",
+          "contextRelation": "new",
+          "unresolvedSlots": [],
+          "disclosurePurpose": "",
+          "groupCompleteness": "observed",
+          "requestBoundaries": [],
+          "requestedMeasures": [],
+          "requestedOrdering": [],
+          "requestedAttributes": [
+            "limitations of current role"
+          ],
+          "evidenceExplanations": []
+        },
+        "schemaVersion": "current-account-permission-assignment/1",
+        "completionPolicy": "combine_auth_configuration_and_cited_boundaries_keep_all_gaps",
+        "originalRequirements": [
+          {
+            "id": "object",
+            "kind": "object",
+            "value": "current role"
+          },
+          {
+            "id": "grain",
+            "kind": "grain",
+            "value": "current role"
+          },
+          {
+            "id": "scope",
+            "kind": "scope",
+            "value": "personal"
+          },
+          {
+            "id": "attribute_0",
+            "kind": "attribute",
+            "value": "available actions within current role"
+          },
+          {
+            "id": "attribute_1",
+            "kind": "attribute",
+            "value": "limitations of current role"
+          }
+        ],
+        "stageRequirementIdMap": {
+          "grain": "grain",
+          "scope": "scope",
+          "object": "object",
+          "attribute_0": "attribute_1"
+        },
+        "deferredAuthRequirementIds": [
+          "attribute_0"
+        ]
+      },
+      "authProjectionProvenance": {
+        "source": "fresh_authenticated_GetUserInfo",
+        "missing": [],
+        "sourceId": "auth_permissions_95c44bfc371cb5cf1fe31fdb6a487feec36b8fa5cbcb84c846967069ab9da678",
+        "verified": true,
+        "observedAt": "2026-09-29T00:44:46.704468+00:00",
+        "displayHash": "6879b56d5432c31cb5ab5b23f33e2472473ae805f4b60806f110fab63ae56e40",
+        "schemaVersion": "current-account-permission-examples/1",
+        "catalogVersion": "923ec44fe50a2342995e281c82aafca24ba1f1db20bf2c2184ec663e33329bf1",
+        "actionsExecuted": false,
+        "sourceRequestId": "84381c44-14f9-499d-84af-96e708145922",
+        "rowScopeVerified": false,
+        "principalScopeRef": "7da85129c1862eb3c3f0",
+        "examplesExhaustive": false,
+        "selectedRoleVerified": false,
+        "permissionProjectionHash": "8c0ff7c39006d62059a75926c9f48585e794d7cc769650edb0df35488c223a85",
+        "roleActionMappingVerified": false,
+        "recordActionEligibilityVerified": false
+      },
+      "roleCount": 2,
+      "actionExampleCount": 4
+    }
+  }
+}

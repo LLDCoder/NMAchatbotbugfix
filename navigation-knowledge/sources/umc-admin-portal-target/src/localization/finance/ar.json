@@ -1,0 +1,221 @@
+{
+  "Finance": {
+    "transactions": {
+      "tabs": {
+        "payments": "المدفوعات",
+        "recharges": "إعادة الشحن"
+      },
+      "common": {
+        "search": "بحث",
+        "allTypes": "كل الأنواع",
+        "allStatuses": "كل الحالات",
+        "noData": "لا توجد بيانات"
+      },
+      "actions": {
+        "filter": "تصفية",
+        "export": "تصدير"
+      },
+      "table": {
+        "transactionNo": "رقم المعاملة",
+        "type": "النوع",
+        "applyFor": "مقدم الطلب",
+        "accountOrCardHolder": "صاحب الحساب / البطاقة",
+        "paymentMethod": "طريقة الدفع",
+        "amount": "المبلغ",
+        "status": "الحالة",
+        "submissionTime": "وقت التقديم",
+        "transactionTime": "وقت المعاملة"
+      },
+      "statistics": {
+        "payments": "المدفوعات",
+        "revenue": "الإيرادات",
+        "total": "الإجمالي",
+        "totalAmount": "إجمالي المبلغ",
+        "last7Days": "آخر 7 أيام",
+        "inLast7Days": "خلال آخر 7 أيام",
+        "serviceApplication": "طلب خدمة",
+        "serviceApplicationFees": "رسوم طلب الخدمة",
+        "fines": "الغرامات",
+        "refunds": "الاستردادات",
+        "wallet": "المحفظة",
+        "creditDebitCard": "بطاقة ائتمان / خصم",
+        "failed": "فشل",
+        "failedRefund": "فشل الاسترداد",
+        "completed": "مكتمل",
+        "onlyCompletedHint": "يتم احتساب المعاملات المكتملة فقط",
+        "calculationRule": "قاعدة الحساب: رسوم طلب الخدمة + الغرامات - المبالغ المستردة"
+      },
+      "filterModal": {
+        "title": "تصفية",
+        "paymentMethod": "طريقة الدفع",
+        "allPaymentMethods": "كل طرق الدفع",
+        "startDate": "وقت البدء",
+        "endDate": "وقت الانتهاء"
+      },
+      "recharges": {
+        "accountHolder": "صاحب الحساب",
+        "accountEmail": "بريد الحساب الإلكتروني",
+        "cardHolder": "صاحب البطاقة",
+        "cardInformation": "معلومات البطاقة",
+        "lastUpdatedTime": "وقت آخر تحديث",
+        "totalRecharges": "إجمالي عمليات الشحن"
+      }
+    },
+    "transactionsDetail": {
+      "messages": {
+        "receiptUnavailable": "الإيصال غير متاح",
+        "relatedPaymentUnavailable": "تفاصيل الدفع ذات الصلة غير متاحة."
+      },
+      "actions": {
+        "downloadReceipt": "تنزيل الإيصال"
+      },
+      "header": {
+        "transactionNumber": "رقم المعاملة"
+      },
+      "failureReason": {
+        "title": "سبب الفشل",
+        "description": "رقم البطاقة غير صالح. يرجى التحقق وإعادة الإدخال."
+      },
+      "sections": {
+        "paymentInformation": "معلومات الدفع",
+        "relatedApplications": "الطلبات ذات الصلة",
+        "relatedInspectionViolation": "مخالفة التفتيش ذات الصلة",
+        "refundInformation": "معلومات الاسترداد",
+        "refundApplicationInformation": "معلومات طلب الاسترداد",
+        "relatedPaymentInformation": "معلومات الدفع ذات الصلة",
+        "walletInformation": "معلومات المحفظة"
+      },
+      "breadcrumbs": {
+        "financeAndPayments": "المالية والمدفوعات",
+        "transactions": "المعاملات",
+        "payments": "المدفوعات",
+        "paymentsDetails": "تفاصيل المدفوعات"
+      },
+      "fields": {
+        "amountCharged": "المبلغ المحصل",
+        "accountHolderName": "اسم صاحب الحساب",
+        "cardHolderName": "اسم صاحب البطاقة",
+        "description": "الوصف",
+        "serviceName": "اسم الخدمة",
+        "appliedFor": "مقدم الطلب",
+        "violationId": "رقم المخالفة",
+        "violationType": "نوع المخالفة",
+        "violationTime": "وقت المخالفة",
+        "fineAmount": "مبلغ الغرامة",
+        "inspector": "المفتش",
+        "entityName": "اسم الجهة",
+        "processedBy": "تمت المعالجة بواسطة",
+        "processorAccount": "حساب المعالج",
+        "applicationNumber": "رقم الطلب",
+        "refundStatus": "حالة الاسترداد",
+        "refundType": "نوع الاسترداد",
+        "lastUpdated": "آخر تحديث",
+        "refundCharged": "مبلغ الاسترداد",
+        "refundScope": "نطاق الاسترداد",
+        "refundReason": "سبب الاسترداد",
+        "transactionType": "نوع المعاملة",
+        "accountInformation": "معلومات الحساب",
+        "rechargeAmount": "مبلغ إعادة الشحن",
+        "transactionFee": "رسوم المعاملة",
+        "currentBalance": "الرصيد الحالي",
+        "lastRecharge": "آخر عملية شحن"
+      },
+      "violationTypes": {
+        "licensing": "مخالفة ترخيص",
+        "content": "مخالفة محتوى"
+      },
+      "defaults": {
+        "serviceApplicationFeeDesc": "دفع رسوم طلب الخدمة",
+        "finePaymentDesc": "دفع غرامة مخالفة التفتيش"
+      }
+    },
+    "financialRefunds": {
+      "common": {
+        "search": "بحث",
+        "allStatuses": "كل الحالات",
+        "startTime": "تاريخ البدء",
+        "endTime": "تاريخ الانتهاء"
+      },
+      "actions": {
+        "refund": "استرداد"
+      },
+      "messages": {
+        "loadDetailsFailed": "فشل تحميل تفاصيل الاسترداد.",
+        "executionFailed": "فشل تنفيذ الاسترداد.",
+        "executionSuccess": "تم إكمال الاسترداد بنجاح."
+      },
+      "table": {
+        "applicationNo": "رقم الطلب",
+        "refundNo": "رقم الاسترداد",
+        "transactionNo": "رقم المعاملة",
+        "type": "النوع",
+        "partial": "جزئي",
+        "applyFor": "مقدم الطلب",
+        "accountOrCardHolder": "صاحب الحساب / البطاقة",
+        "paymentMethod": "طريقة الدفع",
+        "amount": "المبلغ",
+        "status": "الحالة",
+        "lastUpdated": "آخر تحديث",
+        "actions": "الإجراءات"
+      },
+      "status": {
+        "refunded": "تم الاسترداد",
+        "pendingRefund": "قيد الاسترداد"
+      },
+      "statistics": {
+        "total": "الإجمالي",
+        "totalRefundAmount": "إجمالي مبلغ الاسترداد",
+        "totalRefundCount": "إجمالي عدد الاستردادات",
+        "pendingRefundCount": "عدد الاستردادات المعلقة",
+        "pendingRefundAmount": "مبلغ الاسترداد المعلق",
+        "walletRefund": "استرداد المحفظة",
+        "cardRefund": "استرداد البطاقة",
+        "onlyCompletedHint": "يتم احتساب معاملات الاسترداد المكتملة فقط"
+      },
+      "confirmModal": {
+        "warning": "هل أنت متأكد من تأكيد الاسترداد؟ لا يمكن التراجع عن هذا الإجراء."
+      },
+      "details": {
+        "refundAmount": "مبلغ الاسترداد",
+        "accountHolder": "صاحب الحساب",
+        "account": "الحساب",
+        "cardHolder": "صاحب البطاقة",
+        "cardInformation": "معلومات البطاقة"
+      },
+      "errors": {
+        "refundNotFound": "سجل الاسترداد غير موجود أو تمت إزالته.",
+        "originalTransactionNotFound": "سجل الدفع الأصلي غير موجود. لا يمكن تنفيذ الاسترداد.",
+        "unsupportedPaymentMethod": "طريقة الدفع الحالية غير مدعومة للاسترداد.",
+        "invalidOriginalTransactionStatus": "حالة المعاملة الأصلية لا تسمح بالاسترداد.",
+        "amountExceeded": "مبلغ الاسترداد يتجاوز الرصيد القابل للاسترداد المتبقي.",
+        "alreadyCompleted": "تم إكمال هذا الاسترداد بالفعل.",
+        "concurrencyConflict": "تمت معالجة هذا السجل في مكان آخر. أعد تحميل الصفحة وحاول مرة أخرى.",
+        "gatewayTimeout": "انتهت مهلة بوابة الدفع. يرجى المحاولة لاحقًا.",
+        "gatewayFailed": "فشل تنفيذ بوابة الدفع. تحقق من سبب الفشل.",
+        "executionFailedContactBackend": "فشل تنفيذ الاسترداد. يرجى التواصل مع فريق الدعم التقني."
+      }
+    },
+    "financialRefundsDetails": {
+      "messages": {
+        "noPermission": "لا توجد صلاحية لعرض تفاصيل الاسترداد.",
+        "notFound": "لم يتم العثور على تفاصيل الاسترداد."
+      },
+      "failureReason": "سبب الفشل",
+      "refundAmount": "مبلغ الاسترداد",
+      "sections": {
+        "refundApplicationInformation": "معلومات طلب الاسترداد",
+        "relatedPaymentInformation": "معلومات الدفع ذات الصلة"
+      },
+      "fields": {
+        "cardInformation": "معلومات البطاقة",
+        "email": "البريد الإلكتروني",
+        "refundScope": "نطاق الاسترداد",
+        "refundReason": "سبب الاسترداد",
+        "transactionNumber": "رقم المعاملة",
+        "transactionType": "نوع المعاملة",
+        "amountCharged": "المبلغ المحصل",
+        "description": "الوصف"
+      }
+    }
+  }
+}

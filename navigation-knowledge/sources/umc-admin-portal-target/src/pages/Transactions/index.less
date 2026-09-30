@@ -1,0 +1,27 @@
+.transactions{
+    height: 100%;
+    overflow-y: scroll;
+}
+
+html[dir="rtl"] .transactions .transactions-filter-select {
+    direction: rtl;
+}
+
+html[dir="rtl"] .transactions .transactions-filter-select .ant-select-selector {
+    direction: rtl;
+    padding: 0 16px 0 32px !important;
+}
+
+html[dir="rtl"] .transactions .transactions-filter-select .ant-select-selection-item,
+html[dir="rtl"] .transactions .transactions-filter-select .ant-select-selection-placeholder {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    text-align: right;
+}
+
+html[dir="rtl"] .transactions .transactions-filter-select .ant-select-arrow,
+html[dir="rtl"] .transactions .transactions-filter-select .ant-select-clear {
+    right: auto;
+    left: 12px;
+    transform: none;
+}

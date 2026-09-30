@@ -1,0 +1,704 @@
+/* Styles for the "match the public portal" preview sections.
+   Ported section by section from the real public styles (Header.less /
+   publics.scss .one|.three / MediaSection.less / Footer.less), with every
+   size scaled by 0.458 (preview column 773 / design width 1920 — the same
+   ratio as the preview's original 55px page margin).
+   Everything is scoped under .prview-container so nothing leaks into other
+   admin pages. This file is imported after index.less, so at equal
+   specificity it wins and overrides the legacy static-image rules. */
+
+.prview-container {
+  /* ===== Shared: section head (title + View All), mirrors public .tabsTiele/.goldbut ===== */
+  .pv-sec-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 55px;
+  }
+  .pv-sec-title {
+    font-weight: 700;
+    color: #9e7538;
+    line-height: 1;
+  }
+  .pv-viewall-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(189, 148, 55, 0.1);
+    border-radius: 23px;
+    height: 27px;
+    padding: 0 11px;
+    color: #92722a;
+    font-size: 9px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    img {
+      width: 7px;
+      height: 7px;
+    }
+    &.white {
+      background: #fdfdfb;
+    }
+  }
+
+  /* ===== Top nav (inside .banner-header) — mirrors the public .header-publics glass capsule ===== */
+  .pv-topnav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 22px;
+    border-radius: 23px;
+    background: rgba(255, 206, 99, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    backdrop-filter: blur(5px);
+    .pv-tn-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      min-width: 0;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        gap: 12px;
+      }
+    }
+    .pv-tn-eagle {
+      height: 29px;
+      width: auto;
+      flex-shrink: 0;
+    }
+    .pv-tn-menu {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      .pv-tn-item {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        font-size: 8px;
+        font-weight: 500;
+        color: #fff;
+        white-space: nowrap;
+        .pv-tn-caret {
+          width: 5px;
+          height: 3px;
+        }
+      }
+    }
+    .pv-tn-actions {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      flex-shrink: 0;
+      .pv-tn-ico {
+        width: 14px;
+        height: 14px;
+      }
+      /* Hamburger only appears on the mobile preview */
+      .pv-tn-burger {
+        display: none;
+      }
+      .pv-tn-lang {
+        width: 12px;
+      }
+      .pv-tn-login {
+        width: 39px;
+        height: 15px;
+      }
+      /* Arabic text version of the Login pill, replicating the loginWhite.svg look */
+      .pv-tn-login-pill {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        height: 15px;
+        padding: 0 7px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 8px;
+        color: #fff;
+        font-size: 7px;
+        font-weight: 500;
+        white-space: nowrap;
+        backdrop-filter: blur(5px);
+        svg {
+          width: 7px;
+          height: 7px;
+        }
+      }
+    }
+  }
+
+  /* ===== Services — mirrors public .one ===== */
+  .pv-services {
+    background-color: #fff;
+    padding: 49px 0 0;
+    margin-bottom: 25px;
+    .pv-sec-title {
+      font-size: 15px;
+    }
+    .pv-svc-tabrow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin: 22px 0 18px;
+      padding: 0 55px;
+      .pv-svc-tabs {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 5px;
+        overflow: hidden;
+        .pv-svc-tab {
+          font-size: 8px;
+          font-weight: 600;
+          padding: 4px 9px;
+          border-radius: 18px;
+          cursor: pointer;
+          white-space: nowrap;
+          transition: all 0.2s ease;
+          &.active {
+            background: #eee3cc;
+          }
+        }
+      }
+      .pv-svc-scroll {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        flex-shrink: 0;
+        img {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+    .pv-svc-list {
+      display: flex;
+      gap: 11px;
+      overflow-x: auto;
+      padding-bottom: 11px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        background: transparent;
+      }
+      &::after {
+        content: "";
+        flex: 0 0 44px;
+      }
+      .pv-svc-card {
+        flex-shrink: 0;
+        width: 184px;
+        min-width: 184px;
+        height: 142px;
+        box-sizing: border-box;
+        padding: 11px;
+        border-radius: 18px;
+        background: #f8f7f4;
+        border: 1px solid transparent;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        transition: border-color 0.3s ease;
+        &:first-child {
+          margin-inline-start: 55px;
+        }
+        .pv-svc-card-top {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          .pv-svc-icon {
+            width: 23px;
+            height: 23px;
+          }
+          .pv-svc-name {
+            font-weight: 600;
+            font-size: 11px;
+            line-height: 1.25;
+            margin: 11px 0 5px;
+            color: #361e12;
+          }
+          .pv-svc-cat {
+            padding: 2px 7px;
+            border-radius: 9px;
+            background: #92722a1a;
+            color: #b68a35;
+            font-size: 7px;
+            display: inline-block;
+            width: fit-content;
+          }
+        }
+        /* Same as public: action buttons hidden by default, revealed on hover */
+        .pv-svc-card-btns {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 70px;
+          padding: 11px;
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-end;
+          gap: 5px;
+          background: linear-gradient(
+            177.6deg,
+            rgba(248, 247, 244, 0) 1.73%,
+            #f8f7f4 45.35%
+          );
+          border-radius: 0 0 18px 18px;
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.3s ease, visibility 0.3s ease;
+          .pv-svc-learn {
+            border: none;
+            height: 22px;
+            background: rgba(189, 148, 55, 0.1);
+            color: #92722a;
+            border-radius: 18px;
+            padding: 0 7px;
+            font-size: 7px;
+            font-weight: 500;
+            cursor: pointer;
+            white-space: nowrap;
+          }
+          .pv-svc-start {
+            border: none;
+            height: 22px;
+            background: #9e7538;
+            color: #fff;
+            border-radius: 18px;
+            padding-inline: 7px 4px;
+            font-size: 7px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            white-space: nowrap;
+            img {
+              width: 15px;
+              height: 15px;
+            }
+          }
+        }
+        &:hover {
+          border-color: #cba344;
+          .pv-svc-card-btns {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+
+  /* ===== Track Request — mirrors public .two (non-configurable) ===== */
+  .pv-track {
+    height: 161px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    .pv-track-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #9e7538;
+    }
+    .pv-track-search {
+      width: 183px;
+      height: 27px;
+      border: 1px solid #9e7538;
+      border-radius: 18px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      padding-inline: 9px 2px;
+      gap: 5px;
+      .pv-track-ph {
+        flex: 1;
+        color: #92722a;
+        font-size: 9px;
+      }
+      .pv-track-btn {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: linear-gradient(90deg, #9e7538 0%, #c19453 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: 11px;
+          height: 11px;
+        }
+      }
+    }
+  }
+
+  /* ===== Partnership — mirrors public .five (band + watermark + logo cards) ===== */
+  .pv-partnership {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    padding-bottom: 18px;
+    .pv-pt-band {
+      width: 100%;
+      height: 87px;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      border-top-left-radius: 37px;
+      border-top-right-radius: 37px;
+    }
+    .pv-pt-watermark {
+      width: 80%;
+      height: auto;
+      margin-top: 9px;
+    }
+    .pv-pt-scroll {
+      width: 100%;
+      display: flex;
+      gap: 9px;
+      overflow-x: auto;
+      margin-top: -32px;
+      padding: 0 9px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        background: transparent;
+      }
+      .pv-pt-card {
+        flex-shrink: 0;
+        width: 197px;
+        height: 150px;
+        border: 1px solid rgba(151, 80, 0, 0.3);
+        border-radius: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+          /* The canvas root sets cursor not-allowed; linked logos are clickable */
+          cursor: pointer;
+        }
+        img {
+          width: 110px;
+          height: 63px;
+          /* cover, same as public .bannimg: scales the logo up and crops the
+             artwork's own padding, so the mark reads large like the design */
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  /* ===== Knowledge Hub — mirrors public .three ===== */
+  .pv-knowledge {
+    margin: 0 9px;
+    padding: 60px 41px 0;
+    border-radius: 18px;
+    height: 510px;
+    overflow: hidden;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    .pv-kh-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+    .pv-kh-star {
+      width: 15px;
+      height: 15px;
+      margin-bottom: 18px;
+    }
+    .pv-kh-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #9e7538;
+      line-height: 1;
+    }
+    .pv-kh-list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      .pv-kh-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        border-bottom: 1px solid rgba(151, 80, 0, 0.3);
+        .pv-kh-item-title {
+          font-size: 22px;
+          font-weight: 200;
+          color: #9e7538;
+          line-height: 1;
+          margin: 27px 0 18px;
+        }
+        .pv-kh-arrow {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+
+  /* ===== Media — mirrors public .six (wave background inlined from JSX) ===== */
+  .pv-media {
+    padding: 50px 55px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-top-left-radius: 37px;
+    border-top-right-radius: 37px;
+    .pv-sec-head {
+      padding: 0;
+    }
+    .pv-sec-title {
+      font-size: 28px;
+    }
+    .pv-media-tabs {
+      display: flex;
+      gap: 5px;
+      margin: 22px 0 9px;
+      .pv-media-tab {
+        padding: 4px 11px;
+        border-radius: 14px;
+        font-size: 9px;
+        font-weight: 500;
+        cursor: pointer;
+        color: #000;
+        background: transparent;
+        transition: all 0.2s ease;
+        &.active {
+          background: rgba(238, 227, 204, 1);
+          font-weight: 600;
+        }
+      }
+    }
+    .pv-media-grid {
+      display: flex;
+      gap: 11px;
+      .pv-media-left {
+        flex: 1;
+      }
+      .pv-media-right {
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 11px;
+      }
+      .pv-media-card {
+        border-radius: 14px;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        &.big {
+          height: 253px;
+        }
+        &.small {
+          height: 119px;
+        }
+        .pv-media-cont {
+          width: 100%;
+          padding: 7px;
+          background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.65) 0%,
+            rgba(0, 0, 0, 0) 100%
+          );
+          .pv-media-title {
+            color: #fff;
+            font-size: 9px;
+            font-weight: 500;
+            line-height: 1.25;
+          }
+          .pv-media-date {
+            color: #fff;
+            font-size: 8px;
+            margin: 5px 0;
+            opacity: 0.95;
+          }
+        }
+        &.small .pv-media-cont {
+          .pv-media-title {
+            font-size: 7px;
+          }
+          .pv-media-date {
+            font-size: 6px;
+            margin: 3px 0;
+          }
+        }
+      }
+    }
+  }
+
+  /* ===== Footer subscribe card — mirrors public footer-main-top-left ===== */
+  .footer-box .top-line .subscribe-newsletter {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    padding: 15px;
+  }
+  .pv-subscribe {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    .pv-sub-title {
+      color: #b68a35;
+      font-size: 14px;
+      font-weight: 400;
+      margin-bottom: 6px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+      }
+    }
+    .pv-sub-desc {
+      color: #c3c6cb;
+      font-size: 8px;
+      font-weight: 300;
+      margin-bottom: 5px;
+    }
+    .pv-sub-input {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: transparent;
+      border: 1px solid #92722a;
+      border-radius: 23px;
+      height: 27px;
+      padding-inline: 9px 2px;
+      width: 100%;
+      max-width: 224px;
+      .pv-sub-mail {
+        width: 8px;
+        height: 7px;
+      }
+      .pv-sub-ph {
+        flex: 1;
+        color: #92722a;
+        font-size: 8px;
+      }
+      .pv-sub-arrow {
+        width: 23px;
+        height: 23px;
+      }
+    }
+  }
+
+  /* ===== Footer contact card addition: corner logo (public .toptu) ===== */
+  .footer-box .top-line .reach-Us .reach-content {
+    align-items: flex-end;
+    .pv-reach-logo {
+      img {
+        width: 132px;
+        height: 29px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  /* ===== Footer bottom nav — mirrors public footer-main-bottom ===== */
+  .footer-box .foot-content {
+    height: auto;
+    .pv-footernav {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      width: 100%;
+      .pv-fn-col {
+        display: flex;
+        flex-direction: column;
+        .pv-fn-title {
+          color: #b68a35;
+          font-size: 14px;
+          font-weight: 400;
+          margin-bottom: 9px;
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            font-size: 12px;
+          }
+        }
+        .pv-fn-list {
+          display: flex;
+          flex-direction: column;
+          gap: 7px;
+          .pv-fn-link {
+            color: #c3c6cb;
+            font-size: 8px;
+            font-weight: 300;
+            line-height: 1.3;
+            margin: 0;
+          }
+        }
+      }
+      .pv-fn-logo {
+        display: flex;
+        align-items: flex-start;
+        img {
+          width: 226px;
+          height: 35px;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+
+  /* ===== Banner content tweaks — mirrors public .bananLift / Figma ===== */
+  .banner-box .carousel-item .banner-content {
+    img {
+      width: 15px;
+      height: 15px;
+    }
+    .title {
+      margin-top: 11px;
+    }
+    .description {
+      font-size: 9px;
+      color: rgba(255, 255, 255, 0.85);
+      margin-top: 15px;
+    }
+    .btn-group {
+      margin-top: 18px;
+      .primary-btn {
+        height: 27px;
+        font-size: 9px;
+      }
+      .secondary-btn {
+        height: 27px;
+        font-size: 9px;
+        background: rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+}
+
+/* ===== RTL: flips with the page-local lan=ar (scoped to the preview subtree) =====
+   Flex rows auto-reverse, text auto right-aligns and margin-inline-start
+   auto-swaps via dir="rtl" on the root; only directional arrow icons need
+   an explicit mirror here. */
+.prview-container[dir="rtl"] {
+  .pv-viewall-btn img,
+  .pv-svc-start img,
+  .pv-svc-scroll img,
+  .pv-kh-arrow,
+  .pv-sub-arrow {
+    transform: scaleX(-1);
+  }
+}

@@ -1,0 +1,260 @@
+{
+  "provenance": {
+    "rawSha256": "2c2b7cefc2cd208e47c5ccdce205e91ad557652f6a5388568f5f6ebe09275361",
+    "rawPath": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/group16-security-repair-20260928/round6-protocol/S-09__en.json",
+    "knowledgeSources": [
+      {
+        "name": "分组修复第五组-20260928/My Application Tasks-待办分页字段与统计范围.json",
+        "sha256": "b94de8fa1b3d627ab3b3939631d439515ca30a1ab0a8d90928453806a9ee46d4"
+      },
+      {
+        "name": "分组修复第二组-20260928/My Application Tasks-页面范围与记录定位.json",
+        "sha256": "8d09d2e4c7f610abc64006ab64fc96487d9fab81c45cfc7f10449996ddc2d72e"
+      }
+    ],
+    "projection": "Unchanged original TaskSpec and exact required fields/bindings from the hashed full documents; unrelated fields omitted."
+  },
+  "task": {
+    "view": "todo",
+    "stage": "task",
+    "filters": [],
+    "groupBy": [],
+    "readOnly": true,
+    "timeField": "",
+    "timeRange": "unknown",
+    "outputShape": "list",
+    "searchQuery": "Licensing applications currently in my personal To Do queue",
+    "slotUpdates": [
+      {
+        "field": "businessObject",
+        "value": "application",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "businessFocus",
+        "value": "in my Licensing To Do queue",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedScope",
+        "value": "personal",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedGrain",
+        "value": "application",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedMeasures",
+        "value": [],
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "requestedAttributes",
+        "value": [],
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "groupBy",
+        "value": [],
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "timeRange",
+        "value": "unknown",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "filters",
+        "value": [],
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "outputShape",
+        "value": "list",
+        "source": "current",
+        "evidence": ""
+      },
+      {
+        "field": "recordIdentity",
+        "value": "",
+        "source": "clear",
+        "evidence": ""
+      },
+      {
+        "field": "view",
+        "value": "todo",
+        "source": "knowledge",
+        "evidence": "k_15ce29fc75bc60aff18f:p1"
+      },
+      {
+        "field": "timeField",
+        "value": "",
+        "source": "clear",
+        "evidence": ""
+      },
+      {
+        "field": "requestedOrdering",
+        "value": [],
+        "source": "current",
+        "evidence": "parsed current request"
+      },
+      {
+        "field": "groupCompleteness",
+        "value": "observed",
+        "source": "current",
+        "evidence": "parsed current request"
+      }
+    ],
+    "responseMode": "answer",
+    "businessFocus": "in my Licensing To Do queue",
+    "clarification": null,
+    "needsLiveData": true,
+    "businessObject": "application",
+    "recordIdentity": "",
+    "requestedGrain": "application",
+    "requestedScope": "personal",
+    "contextRelation": "switch",
+    "unresolvedSlots": [],
+    "groupCompleteness": "observed",
+    "requestBoundaries": [],
+    "requestedMeasures": [],
+    "requestedOrdering": [],
+    "requestedAttributes": []
+  },
+  "records": [
+    {
+      "id": "admin.page-docs.licensing.applications.todo.collection",
+      "kind": "field_semantics",
+      "status": "active",
+      "revision": 4,
+      "payload": {
+        "pageRef": "/licensing/applications",
+        "view": "todo",
+        "bindings": [
+          {
+            "id": "application_object",
+            "kind": "object",
+            "concept": "application",
+            "aliases": [
+              "applications",
+              "license application",
+              "license applications",
+              "licensing applications",
+              "license request",
+              "license requests",
+              "licensing request",
+              "licensing requests",
+              "licence request",
+              "licence requests",
+              "طلب ترخيص",
+              "طلبات الترخيص",
+              "طلبات التراخيص",
+              "request",
+              "requests",
+              "licensing application"
+            ],
+            "operationRef": "POST /api/Application/MyTodoPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "id"
+            ],
+            "meaning": "id identifies the application entity. Departmental assignment determines queue access; the service owning department alone does not prove queue membership. On this licensing applications page, license request / licensing request / طلبات الترخيص denotes the application entity identified by id. These are page-scoped language aliases, not licence entities or workflow tasks; they do not alter the selected queue or any status definition. For an application list, applicationNumber is the public row reference displayed in the Application No. column. Preserve it alongside the requested attributes; the internal id is an entity key, not its public display substitute.",
+            "displayFields": [
+              "applicationNumber"
+            ]
+          },
+          {
+            "id": "personal_scope",
+            "kind": "scope",
+            "concept": "personal",
+            "aliases": [
+              "my",
+              "mine",
+              "my tasks",
+              "current user"
+            ],
+            "operationRef": "POST /api/Application/MyTodoPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "id"
+            ],
+            "meaning": "Personal scope: tasks come from the authenticated user task list, filtered by the endpoint runtime approval department. This exact request context has no user-entered narrowing filter.",
+            "contextParameters": {
+              "keyword": "",
+              "startTime": null,
+              "endTime": null,
+              "serviceTypeId": "1"
+            }
+          },
+          {
+            "id": "pending_population",
+            "kind": "population",
+            "concept": "pending",
+            "aliases": [
+              "pending applications",
+              "pending tasks",
+              "todo",
+              "to do",
+              "outstanding"
+            ],
+            "operationRef": "POST /api/Application/MyTodoPage",
+            "sourcePath": "/data/page/items",
+            "fields": [
+              "id"
+            ],
+            "meaning": "Pending population means the complete To Do queue from this operation with this exact filter context. It includes pending modification and external approval as well as pending review; it is not only Pending Review.",
+            "contextParameters": {
+              "keyword": "",
+              "startTime": null,
+              "endTime": null,
+              "serviceTypeId": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "admin.page-docs.licensing.applications.routing",
+      "kind": "page_definition",
+      "status": "active",
+      "revision": 2,
+      "payload": {
+        "pageIdentity": {
+          "route": "/licensing/applications"
+        },
+        "routing": {
+          "views": [
+            {
+              "id": "todo",
+              "label": "To Do",
+              "aliases": [
+                "1",
+                "to do",
+                "pending queue"
+              ]
+            },
+            {
+              "id": "completed",
+              "label": "Completed",
+              "aliases": [
+                "2",
+                "completed queue"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

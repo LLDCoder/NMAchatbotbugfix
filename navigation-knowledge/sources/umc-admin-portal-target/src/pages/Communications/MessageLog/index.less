@@ -1,0 +1,171 @@
+.communications-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  color: #361e12;
+}
+
+.message-log-table-container {
+  flex: 1 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 24px;
+  border-radius: 20px;
+  background: #fff;
+
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.message-log-filter-table .filter-table-header .ant-input-affix-wrapper,
+.message-log-filter-table .filter-table-header .ant-picker,
+.message-log-filter-table .filter-table-header .ant-select-selector {
+  height: 48px !important;
+  border-color: #c3c6cb !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+}
+
+.message-log-filter-table .filter-table-header {
+  margin-bottom: 12px;
+}
+
+.message-log-filter-table .filter-table-header .ant-input-affix-wrapper,
+.message-log-filter-table .filter-table-header .ant-picker {
+  display: flex;
+  align-items: center;
+}
+
+.message-log-filter-table .filter-table-header .ant-select-selector {
+  display: flex;
+  align-items: center;
+}
+
+.message-log-search {
+  width: 360px;
+  flex: 0 1 360px;
+}
+
+.message-log-search .anticon {
+  // color: #797e86;
+  // font-size: 18px;
+}
+
+.message-log-range {
+  width: 300px;
+  flex: 0 1 300px;
+}
+
+.message-log-type {
+  width: 240px;
+  flex: 0 1 240px;
+}
+
+.message-log-filter-table .message-log-row {
+  cursor: pointer;
+}
+
+.message-log-filter-table .message-log-row:hover > td {
+  background: #fcfaf5 !important;
+}
+
+.message-log-filter-table .ant-table-content {
+  overflow-x: hidden;
+}
+
+.message-log-filter-table .message-log-nowrap {
+  white-space: nowrap;
+}
+
+.message-log-filter-table .message-log-wrap {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.message-recipient {
+  display: -webkit-box;
+  max-height: 48px;
+  overflow: hidden;
+  line-height: 24px;
+  white-space: normal;
+  word-break: break-word;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.message-channel {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.message-channel img {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+.message-status {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.message-status--sent {
+  color: #4a9d5c;
+  background: #f3faf4;
+}
+
+.message-status--failed {
+  color: #b42318;
+  background: #fef0ef;
+}
+
+@media (max-width: 1180px) {
+  .message-log-filter-table .filter-table-header .header-filter {
+    flex-wrap: wrap;
+  }
+
+  .message-log-search,
+  .message-log-range,
+  .message-log-type {
+    flex-grow: 1;
+  }
+}
+
+@media (max-width: 1919.98px) {
+  .message-log-filter-table
+    .filter-table-header
+    .message-log-search.ant-input-affix-wrapper {
+    box-sizing: border-box;
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .message-log-filter-table .filter-table-header .ant-input-affix-wrapper,
+  .message-log-filter-table .filter-table-header .ant-picker,
+  .message-log-filter-table .filter-table-header .ant-select-selector {
+    height: 40px !important;
+    min-height: 40px !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .message-log-search,
+  .message-log-range,
+  .message-log-type {
+    width: 100%;
+    flex-basis: 100%;
+  }
+}

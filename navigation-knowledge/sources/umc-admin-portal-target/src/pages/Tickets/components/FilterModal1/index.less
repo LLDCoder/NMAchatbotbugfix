@@ -1,0 +1,74 @@
+.tickets-application-filter-modal {
+  max-width: calc(100vw - 48px);
+
+  .ant-modal-content {
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .ant-modal-header {
+    min-height: 100px;
+    margin: 0;
+    padding: 32px 40px;
+    border-bottom: 1px solid #e1e3e5;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .ant-modal-title {
+    color: #361e12;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 32px;
+  }
+
+  .ant-modal-body {
+    min-height: 400px;
+    padding: 32px 40px;
+  }
+
+  .ant-modal-footer {
+    min-height: 96px;
+    margin: 0;
+    padding: 24px 40px;
+    border-top: 1px solid #e1e3e5;
+    border-radius: 0 0 20px 20px;
+  }
+}
+
+.tickets-application-filter-modal__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+
+  .custom-button {
+    width: 140px;
+    min-width: 140px;
+    height: 48px;
+  }
+}
+
+.filter-box{
+  min-height: 336px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: start;
+  gap: 24px;
+  padding: 0;
+  .filter-item{
+    width: 100%;
+    min-width: 0;
+    .ant-select{
+      width: 100%;
+    }
+    .ant-picker{
+      width: 100%;
+    }
+    .item-label{
+      font-size: 14px;
+      font-weight: 500;
+      color: #361e12;
+      margin-bottom: 12px;
+    }
+  }
+}

@@ -1,0 +1,2685 @@
+@import "@/styles/variables.less";
+
+@ink: #361e12;
+@muted: #5f646d;
+@surface: #ffffff;
+@line: #e1e3e5;
+@green: #a0d5ab;
+@yellow: #fad44f;
+@red: #faaaa7;
+@orange: #f5ac7c;
+@blue: #81c1ff;
+
+.inspection-reports__page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+  min-height: 100%;
+  height: 100%;
+  overflow: auto;
+  font-family: Inter, Arial, sans-serif;
+
+  .ant-spin-nested-loading > div > .ant-spin {
+    background: transparent !important;
+  }
+
+  .ant-spin-container.ant-spin-blur {
+    opacity: 1 !important;
+    filter: none !important;
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.inspection-reports__tab--hidden {
+  display: none !important;
+}
+
+.inspection-reports__reports-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.inspection-reports__tabs-card {
+  padding: 0 24px;
+  background: @surface;
+  border-radius: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.inspection-reports__tabs.ant-tabs {
+  margin-bottom: 0;
+
+  .ant-tabs-nav {
+    min-height: 70px;
+    margin-bottom: 0;
+  }
+
+  .ant-tabs-nav::before {
+    border-bottom: 1px solid #e9e4d8;
+  }
+
+  .ant-tabs-tab {
+    padding: 24px 0 21px;
+    color: @ink;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 16px;
+    }
+  }
+
+  .ant-tabs-tab + .ant-tabs-tab {
+    margin-inline-start: 32px;
+    margin-inline-end: 0;
+  }
+
+  .ant-tabs-tab:hover,
+  .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: @primary-color;
+  }
+
+  .ant-tabs-ink-bar {
+    height: 2px;
+    background: @primary-color;
+    border-radius: 999px;
+  }
+
+  .ant-tabs-content-holder {
+    display: none;
+  }
+}
+
+.inspection-reports__dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.inspection-reports__summary-grid {
+  display: grid;
+  /* 5 stat cards in a row down to 1440, then 3 per row (3+2) below — per Figma. */
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+  @media (max-width: 1439.98px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.inspection-reports__summary-card {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  min-height: 80px;
+  padding: 24px;
+  background: @surface;
+  border-radius: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.inspection-reports__summary-icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-inline-end: 12px;
+  position: relative;
+  background: rgba(182, 138, 53, 0.1);
+  border-radius: 50%;
+
+  > img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+
+  &--danger {
+    background: #fef2f2;
+  }
+
+  &--warning {
+    background: #fffbeb;
+  }
+
+  &--full {
+    background: transparent;
+
+    > img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+.inspection-reports__summary-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+
+  strong {
+    overflow: hidden;
+    color: @ink;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 16px;
+    }
+  }
+
+  span {
+    overflow: hidden;
+    color: @muted;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}
+
+.inspection-reports__summary-value {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  min-height: 22px;
+
+  > img {
+    width: 16px;
+    height: 14px;
+    flex: 0 0 auto;
+    object-fit: contain;
+  }
+
+  small {
+    color: @muted;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}
+
+.inspection-reports__summary-label {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+
+  > span:first-child {
+    min-width: 0;
+  }
+}
+
+.inspection-reports__summary-info-button {
+  position: relative;
+  display: inline-block;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  overflow: visible;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+
+  &:focus-visible {
+    outline: 2px solid #b68a35;
+    outline-offset: 2px;
+  }
+}
+
+.inspection-reports__summary-info-circle {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 14px;
+  height: 14px;
+}
+
+.inspection-reports__summary-info-glyph {
+  position: absolute;
+  top: 4.67px;
+  left: 6.15px;
+  width: 3.7px;
+  height: 6.67px;
+}
+
+.inspection-reports__card {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  min-width: 0;
+  padding: 24px;
+  background: @surface;
+  border-radius: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.inspection-reports__card-heading {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  margin: 0;
+
+  h2 {
+    min-width: 0;
+    margin: 0;
+    color: @ink;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
+}
+
+.inspection-reports__info-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #8c9199;
+  font-size: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+  }
+}
+
+.inspection-reports__currency-unit-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  white-space: nowrap;
+
+  img {
+    width: 16px;
+    height: 14px;
+    object-fit: contain;
+  }
+}
+
+.inspection-reports__donut-visual,
+.inspection-reports__fine-collection-visual {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  flex: 0 0 140px;
+  align-self: center;
+}
+
+.inspection-reports__donut-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(4px);
+  pointer-events: none;
+  text-align: center;
+
+  strong {
+    color: @ink;
+    font-family: Inter, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
+
+  span {
+    color: #5f646d;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}
+
+.inspection-reports__donut-legend {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 0;
+  margin-top: auto;
+  overflow: hidden;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.inspection-reports__donut-legend-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 20px;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s ease;
+
+  &:focus-visible {
+    outline: 2px solid fade(@primary-color, 28%);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  &--inactive {
+    opacity: 0.45;
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.inspection-reports__donut-legend-name {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  color: @ink;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+
+  i {
+    display: inline-block;
+    flex: 0 0 auto;
+    width: 8px;
+    height: 8px;
+    margin-inline-end: 8px;
+    border-radius: 50%;
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.inspection-reports__donut-legend-label-text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.inspection-reports__donut-legend-value {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 0 0 auto;
+  min-width: 144px;
+  gap: 8px;
+  color: @ink;
+  font-size: 14px;
+  line-height: 20px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+
+  b {
+    min-width: 72px;
+    font-weight: 600;
+    text-align: end;
+  }
+
+  small {
+    width: 64px;
+    color: @muted;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: end;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.inspection-reports__donut-tooltip,
+.inspection-reports__trend-tooltip {
+  position: fixed !important;
+  z-index: 2000;
+  padding: 8px 12px !important;
+  border: 1px solid #e1e3e5 !important;
+  border-radius: 8px !important;
+  background: #ffffff !important;
+  box-shadow: 0 8px 20px rgba(54, 30, 18, 0.08) !important;
+  pointer-events: none !important;
+  color: @ink !important;
+  font: 400 12px/16px Inter, sans-serif !important;
+}
+
+.inspection-reports__donut-tooltip-content {
+  display: flex;
+  max-width: min(320px, calc(100vw - 32px));
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.inspection-reports__donut-tooltip-marker,
+.inspection-reports__trend-tooltip-marker {
+  display: block;
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.inspection-reports__donut-tooltip-text,
+.inspection-reports__trend-tooltip-label,
+.inspection-reports__trend-tooltip-value {
+  color: @ink;
+  font-size: 12px;
+  line-height: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+.inspection-reports__donut-tooltip-text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal !important;
+}
+
+.inspection-reports__trend-tooltip-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 156px;
+}
+
+.inspection-reports__trend-tooltip-title {
+  color: #5f646d;
+  font-size: 12px;
+  line-height: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+.inspection-reports__trend-tooltip-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.inspection-reports__trend-tooltip-series {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  min-width: 0;
+}
+
+.inspection-reports__trend-tooltip-value {
+  font-weight: 500;
+}
+
+.inspection-reports__trend-card {
+  gap: 24px;
+  min-height: 0;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 16px;
+  }
+}
+
+.inspection-reports__trend-visual {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 0;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 16px;
+  }
+}
+
+.inspection-reports__chart-empty {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  color: #9ea2a9;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.inspection-reports__trend-visual > .inspection-reports__chart-empty {
+  min-height: 0;
+}
+
+.inspection-reports__trend-visual--fine,
+.inspection-reports__trend-visual--compact {
+  gap: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.inspection-reports__trend-visual--fine .inspection-reports__trend-legend {
+  column-gap: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    column-gap: 16px;
+  }
+}
+
+.inspection-reports__trend-canvas {
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 0;
+  min-width: 0;
+}
+
+.inspection-reports__trend-canvas > div:first-child,
+.inspection-reports__trend-canvas > div:first-child > canvas,
+.inspection-reports__trend-canvas > div:first-child > svg {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.inspection-reports__trend-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 18px;
+  width: 100%;
+}
+
+.inspection-reports__trend-legend-item {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  color: @ink;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s ease;
+
+  &:focus-visible {
+    outline: 2px solid fade(@primary-color, 28%);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  &--inactive {
+    opacity: 0.45;
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 16px;
+  }
+}
+
+.inspection-reports__trend-legend-marker {
+  position: relative;
+  display: block;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+}
+
+.inspection-reports__trend-legend-marker--bar::before {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  background: var(--trend-color);
+  border-radius: 2px;
+  content: "";
+}
+
+.inspection-reports__trend-legend-marker--line::before {
+  position: absolute;
+  top: 7px;
+  right: 1px;
+  left: 1px;
+  height: 1.5px;
+  background: var(--trend-color);
+  border-radius: 10px;
+  content: "";
+}
+
+.inspection-reports__trend-legend-marker--dashed-line::before {
+  position: absolute;
+  top: 7px;
+  right: 1px;
+  left: 1px;
+  height: 1.5px;
+  background: var(--trend-color);
+  border-radius: 10px;
+  content: "";
+}
+
+.inspection-reports__trend-legend-marker--line::after {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  box-sizing: border-box;
+  width: 8px;
+  height: 8px;
+  background: #ffffff;
+  border: 1.5px solid var(--trend-color);
+  border-radius: 50%;
+  content: "";
+}
+
+.inspection-reports__trend-legend-marker--dashed-line::after {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  box-sizing: border-box;
+  width: 8px;
+  height: 8px;
+  background: #ffffff;
+  border: 1.5px solid var(--trend-color);
+  border-radius: 50%;
+  content: "";
+}
+
+.inspection-reports__fine-trend-tooltip {
+  padding: 8px 12px !important;
+  overflow: visible !important;
+  color: #5f646d !important;
+  background: #ffffff !important;
+  border: 0 !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) !important;
+  font-family: Inter, sans-serif !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: -4px;
+    width: 8px;
+    height: 8px;
+    background: #ffffff;
+    border-radius: 0 0 0 2px;
+    content: "";
+    transform: translateY(-50%) rotate(45deg);
+  }
+}
+
+.inspection-reports__fine-trend-tooltip-date {
+  margin-bottom: 8px;
+  color: @ink;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.inspection-reports__fine-trend-tooltip-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #5f646d;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+
+  b {
+    color: @ink;
+    font-weight: 500;
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.inspection-reports__fine-trend-tooltip-marker {
+  display: block;
+  flex: 0 0 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+
+  &--license {
+    background: #faaaa7;
+  }
+
+  &--content {
+    background: #fad44f;
+  }
+
+  &--total {
+    box-sizing: border-box;
+    background: #ffffff;
+    border: 1.5px solid #d7bc6d;
+    border-radius: 50%;
+  }
+}
+
+.inspection-reports__fine-trend-heading {
+  justify-content: flex-start;
+}
+
+.inspection-reports__tabbed-trend-card {
+  height: 360px;
+  min-height: 0;
+  padding: 24px;
+  gap: 0;
+
+  .inspection-reports__trend-visual {
+    margin-top: 24px;
+  }
+}
+
+.inspection-reports__tabbed-trend-tabs.ant-tabs {
+  margin-bottom: 0;
+
+  .ant-tabs-nav {
+    min-height: 56px;
+    height: 56px;
+    margin-bottom: 0;
+  }
+
+  .ant-tabs-nav::before {
+    border-bottom: 1px solid #e1e3e5;
+  }
+
+  .ant-tabs-tab {
+    padding: 16px 0;
+    color: @ink;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  .ant-tabs-tab-btn {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  .ant-tabs-tab + .ant-tabs-tab {
+    margin-inline-start: 32px;
+  }
+
+  .ant-tabs-tab:hover,
+  .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: @primary-color;
+  }
+
+  .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    text-shadow: none;
+  }
+
+  .ant-tabs-ink-bar {
+    height: 2px;
+    background: @primary-color;
+  }
+
+  .ant-tabs-content-holder {
+    display: none;
+  }
+}
+
+.inspection-reports__heatmap-card {
+  gap: 32px;
+  min-height: 0;
+}
+
+.inspection-reports__heatmap-visual {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: auto;
+}
+
+.inspection-reports__heatmap-content {
+  --heatmap-column-count: 7;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 704px;
+}
+
+.inspection-reports__heatmap-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.inspection-reports__heatmap-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 528px 32px;
+  align-items: center;
+  column-gap: 16px;
+  min-height: 60px;
+
+  > strong {
+    color: @ink;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: end;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    column-gap: 12px;
+  }
+}
+
+.inspection-reports__heatmap-reason {
+  display: -webkit-box;
+  overflow: hidden;
+  color: #797e86;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+.inspection-reports__heatmap-cells,
+.inspection-reports__heatmap-axis > div {
+  display: grid;
+  grid-template-columns: repeat(var(--heatmap-column-count), minmax(0, 1fr));
+  gap: 4px;
+}
+
+.inspection-reports__heatmap-cells {
+  height: 60px;
+}
+
+.inspection-reports__heatmap-cell {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  height: 60px;
+  overflow: hidden;
+  color: @surface;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+.inspection-reports__heatmap-axis {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 528px 32px;
+  align-items: start;
+  column-gap: 16px;
+
+  > div > span {
+    overflow: hidden;
+    /* Primary text color per the Figma annotation (node 44565:74482) - was #797e86. */
+    color: @ink;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: center;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 10px;
+      line-height: 14px;
+    }
+  }
+
+  > strong {
+    /* Primary text color per the Figma annotation (node 44565:74482) - was #797e86. */
+    color: @ink;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: end;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 10px;
+      line-height: 14px;
+    }
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    column-gap: 12px;
+  }
+}
+
+.inspection-reports__heatmap-scale {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+
+  > div {
+    display: grid;
+    grid-template-columns: 110px 529px;
+    gap: 16px;
+    align-items: center;
+    width: 655px;
+
+    span {
+      color: @ink;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+      text-align: end;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 10px;
+        line-height: 16px;
+      }
+    }
+
+    i {
+      height: 8px;
+      border-radius: 4px;
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 12px;
+    }
+  }
+}
+
+.inspection-reports__heatmap-visual--blue .inspection-reports__heatmap-scale > div > i {
+  background: linear-gradient(90deg, #b0dbff 0%, #4f98ff 53.421%, #002dc2 100%);
+}
+
+.inspection-reports__heatmap-visual--orange .inspection-reports__heatmap-scale > div > i {
+  background: linear-gradient(90deg, #f9cfaf 0%, #ef8048 53.421%, #b2550b 100%);
+}
+
+.inspection-reports__gauge-card {
+  min-height: 0;
+}
+
+.inspection-reports__gauge-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 220px;
+  flex: 0 0 220px;
+  align-self: center;
+}
+
+.inspection-reports__gauge-track {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.inspection-reports__gauge-gradient-wrap {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 208px;
+  height: 208px;
+  transform: rotate(90deg);
+  transform-origin: center;
+}
+
+.inspection-reports__gauge-gradient {
+  display: block;
+  width: 92.98125%;
+  height: 100%;
+}
+
+.inspection-reports__gauge-value {
+  position: relative;
+  z-index: 1;
+  color: @ink;
+  font-family: Inter, sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+}
+
+.inspection-reports__gauge-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: auto;
+
+  span {
+    display: grid;
+    grid-template-columns: 12px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 8px;
+    color: @ink;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  b {
+    color: @ink;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+    }
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.inspection-reports__metric-marker {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+
+  &--green {
+    background: @green;
+  }
+
+  &--gray {
+    background: #c3c6cb;
+  }
+}
+
+.inspection-reports__source-card {
+  height: 432px;
+  min-height: 0;
+  gap: 0;
+
+  .inspection-reports__source-metrics {
+    margin-top: 32px;
+  }
+
+  .inspection-reports__source-chart {
+    margin-top: 32px;
+  }
+
+  .inspection-reports__donut-legend {
+    flex: 0 0 auto;
+    margin-top: auto;
+    overflow: visible;
+  }
+}
+
+.inspection-reports__source-metrics {
+  display: grid;
+  /*
+    The two metric chips (Auto-triage rate / Tasks per day) sit on ONE row at every
+    width (Figma node 44500:74417 annotation) — the old auto-fit stacked them as
+    soon as the card dropped under ~750px.
+  */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+
+  > span {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    align-items: center;
+    column-gap: 12px;
+    min-width: 0;
+    min-height: 80px;
+    padding: 16px;
+    background: #f9fafb;
+    border-radius: 20px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      column-gap: 8px;
+      padding: 12px;
+      border-radius: 10px;
+    }
+  }
+
+  .inspection-reports__source-metric-icon {
+    display: inline-flex;
+    grid-row: 1 / -1;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(182, 138, 53, 0.1);
+    border-radius: 50%;
+
+    img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+  }
+
+  b {
+    overflow: hidden;
+    color: @ink;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 16px;
+    }
+  }
+
+  small {
+    overflow: hidden;
+    color: @muted;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.inspection-reports__source-chart {
+  width: 140px;
+  height: 140px;
+  flex: 0 0 140px;
+  align-self: center;
+
+  .inspection-reports__donut-visual {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+.inspection-reports__horizontal-bars {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  /*
+    Figma node 44500:74417 annotation: bar rows distribute automatically when there
+    are many, with a 12px floor (row-gap acts as the minimum under space-between).
+    With few rows the --sparse modifier from HorizontalBarsCard caps the spacing at
+    32px instead of stranding two bars across the whole card.
+  */
+  justify-content: space-between;
+  row-gap: 12px;
+  min-height: 0;
+}
+
+.inspection-reports__horizontal-bars--sparse {
+  justify-content: flex-start;
+  row-gap: 32px;
+}
+
+.inspection-reports__horizontal-bar-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.inspection-reports__horizontal-bar-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: @ink;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+
+  span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  b {
+    flex: 0 0 auto;
+    color: @ink;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+    }
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.inspection-reports__horizontal-bar-track {
+  width: 100%;
+  height: 12px;
+  overflow: hidden;
+  background: #f0f1f2;
+  border-radius: 10px;
+
+  i {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+  }
+}
+
+.inspection-reports__stacked-card {
+  min-height: 0;
+}
+
+.inspection-reports__stacked-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-bottom: 14px;
+  color: @muted;
+  font-size: 12px;
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  i {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 10px;
+  }
+}
+
+.inspection-reports__stacked-rows {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.inspection-reports__stacked-row {
+  > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 2px;
+    color: @ink;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      gap: 8px;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  b {
+    color: @ink;
+    font-weight: 600;
+  }
+}
+
+.inspection-reports__stacked-track {
+  display: flex;
+  width: 100%;
+  height: 12px;
+  overflow: hidden;
+  background: #f0f1f2;
+  border-radius: 10px;
+
+  .inspection-reports__stacked-segment {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    display: block;
+    height: 100%;
+
+    &--divider {
+      border-inline-end: 2px solid @surface;
+    }
+
+    &--first {
+      border-radius: 10px 0 0 10px;
+    }
+
+    &--last {
+      border-radius: 0 10px 10px 0;
+    }
+
+    &--only {
+      border-radius: inherit;
+    }
+  }
+}
+
+.inspection-reports__stacked-segment--interactive {
+  cursor: pointer;
+}
+
+.inspection-reports__stacked-tooltip-overlay {
+  .ant-tooltip-content {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+  }
+
+  .ant-tooltip-inner {
+    min-width: auto;
+    min-height: auto;
+    padding: 8px 12px;
+    color: @ink;
+    background: @surface;
+    border-radius: 4px;
+    box-shadow: none;
+  }
+
+  .ant-tooltip-arrow-content {
+    background: @surface;
+    box-shadow: none;
+  }
+
+  .ant-tooltip-arrow-content::before {
+    background: @surface;
+  }
+}
+
+.inspection-reports__stacked-tooltip {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.inspection-reports__stacked-tooltip-title,
+.inspection-reports__stacked-tooltip-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: @muted;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+
+  b,
+  > span:last-child {
+    color: @ink;
+    font-weight: 500;
+  }
+}
+
+.inspection-reports__stacked-tooltip-title {
+  color: @ink;
+  font-weight: 500;
+}
+
+.inspection-reports__stacked-tooltip-marker {
+  flex: 0 0 auto;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+}
+
+.inspection-reports__operational-primary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr));
+  gap: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.inspection-reports__operational-status-column,
+.inspection-reports__operational-trend-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.inspection-reports__operational-status-column {
+  grid-column: 1;
+}
+
+.inspection-reports__operational-trend-column {
+  grid-column: 2 / -1;
+
+  .inspection-reports__trend-card {
+    height: 360px;
+  }
+}
+
+.inspection-reports__operational-inspection-status {
+  height: 482px;
+  min-height: 0;
+}
+
+.inspection-reports__operational-violation-status {
+  height: 614px;
+  min-height: 0;
+}
+
+.inspection-reports__operational-heatmaps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.inspection-reports__operational-summary-charts {
+  display: grid;
+  /*
+    Three summary cards stay 3-up down to 1280 (Figma "1440" frame). The old greedy
+    auto-fit (min 440px) needed ~1352px of content width for three tracks, so the
+    third card (Penalties by Violation Degree) wrapped as early as ~1510px viewport.
+    Explicit tracks keep them 3-up to 1280, then pair up 2-up below it (Figma
+    "1204/1280" frame). Below 1280 the whole operational tab regroups, so this rule
+    only bites in the brief window before the parent grid takes over.
+  */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+
+  > .inspection-reports__card {
+    height: 384px;
+    min-height: 0;
+  }
+
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.inspection-reports__penalties-card {
+  .inspection-reports__donut-legend {
+    flex: 0 0 auto;
+    gap: 8px;
+    overflow: visible;
+  }
+}
+
+.inspection-reports__operational-performance-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(670px, 100%), 1fr));
+  gap: 16px;
+
+  > .inspection-reports__card {
+    height: 470px;
+    min-height: 0;
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.inspection-reports__team-trend-card {
+  gap: 24px;
+
+  .inspection-reports__trend-visual {
+    min-height: 0;
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 16px;
+  }
+}
+
+.inspection-reports__team-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  gap: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.inspection-reports__team-summary-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  min-height: 80px;
+  padding: 16px;
+  background: #f9fafb;
+  border-radius: 20px;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+
+  strong {
+    overflow: hidden;
+    color: @ink;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 16px;
+    }
+  }
+
+  span {
+    overflow: hidden;
+    color: @muted;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+    padding: 12px;
+    border-radius: 10px;
+  }
+}
+
+.inspection-reports__team-summary-icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  background: rgba(182, 138, 53, 0.1);
+  border-radius: 50%;
+
+  > img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+
+  > img + img {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+  }
+
+  &--full {
+    background: transparent;
+
+    > img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+.inspection-reports__operational-table-card {
+  /*
+    No fixed min-height (was 717px): the unpaginated Breakdown by Emirate table
+    left a tall dead band under the last row. The card now hugs its content, so
+    the table sits 24px above the card bottom - that gap is the content block's
+    own bottom padding (Figma node 44565:74482 annotation).
+  */
+  padding: 0;
+  gap: 0;
+}
+
+.inspection-reports__operational-table-tabs.ant-tabs {
+  margin: 0 24px;
+
+  .ant-tabs-nav {
+    min-height: 64px;
+    margin-bottom: 0;
+  }
+
+  .ant-tabs-nav::before {
+    border-bottom: 1px solid #e1e3e5;
+  }
+
+  .ant-tabs-tab {
+    padding: 16px 0;
+    color: @ink;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+      line-height: 20px;
+    }
+  }
+
+  .ant-tabs-tab + .ant-tabs-tab {
+    margin-inline-start: 32px;
+  }
+
+  .ant-tabs-tab:hover,
+  .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: @primary-color;
+  }
+
+  .ant-tabs-ink-bar {
+    height: 2px;
+    background: @primary-color;
+  }
+
+  .ant-tabs-content-holder {
+    display: none;
+  }
+}
+
+.inspection-reports__operational-table-content {
+  padding: 24px;
+
+  @media (max-width: 1919.98px) {
+    .inspection-reports__table .ant-pagination-item,
+    .inspection-reports__table .ant-pagination-prev,
+    .inspection-reports__table .ant-pagination-next,
+    .inspection-reports__table .ant-pagination-prev .ant-pagination-item-link,
+    .inspection-reports__table .ant-pagination-next .ant-pagination-item-link {
+      width: 32px;
+      min-width: 32px;
+      height: 32px;
+      line-height: 32px;
+    }
+
+    .inspection-reports__table .ant-pagination-item a {
+      line-height: 32px;
+    }
+
+    .inspection-reports__table
+      .ant-pagination-options-size-changer.ant-select,
+    .inspection-reports__table
+      .ant-pagination-options-size-changer.ant-select.ant-select-single:not(
+        .ant-select-customize-input
+      )
+      .ant-select-selector,
+    .inspection-reports__table
+      .ant-pagination-options-size-changer.ant-select
+      .ant-select-selection-search,
+    .inspection-reports__table
+      .ant-pagination-options-size-changer.ant-select
+      .ant-select-selection-search-input,
+    .inspection-reports__table
+      .ant-pagination-options-size-changer.ant-select
+      .ant-select-selection-item,
+    .inspection-reports__table
+      .ant-pagination-options-size-changer.ant-select
+      .ant-select-selection-placeholder {
+      height: 32px !important;
+      line-height: 32px !important;
+    }
+  }
+}
+
+/*
+  Below 1280 the Risk tab reflows from 3 columns to 2 (Figma "1204/1280" frame);
+  from 1280 to 1440 it keeps the wide 3-up layout (Figma "1440" frame).
+  The two 3-card rows are made display:contents so their six cards flow as one
+  continuous 2-column grid on the parent — [Top | AI][Source | Band Distribution]
+  [Emirate | Factors] — while the stat grid and the Top-10 table span full width.
+*/
+.inspection-reports__dashboard--risk {
+  /* Regroups below 1440 per Figma node 44500:74417 ("W<1440" frame). */
+  @media (max-width: 1439.98px) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+
+    > .inspection-reports__summary-grid,
+    > .inspection-reports__card {
+      grid-column: 1 / -1;
+    }
+    > .inspection-reports__risk-top-row,
+    > .inspection-reports__risk-middle-row {
+      display: contents;
+    }
+
+    /*
+      In the 2-col flow a fixed-height card (e.g. Risk Task Source, 432) can land
+      next to a taller one (Risk Band Distribution, ~494) and sit short. Relax the
+      fixed heights to a min so the grid stretches each pair to equal height; the
+      donut/gauge inside keep their own internal sizing.
+    */
+    .inspection-reports__risk-top-card,
+    .inspection-reports__source-card {
+      height: auto;
+      min-height: 432px;
+    }
+    .inspection-reports__risk-band-emirate,
+    .inspection-reports__risk-factors {
+      height: auto;
+      min-height: 498px;
+    }
+  }
+}
+
+/*
+  Operational tab reflow below 1280 (Figma "1204/1280" frame): the parent becomes
+  a 2-column grid and the grouping rows are dissolved (display:contents) so their
+  cards flow into it. From 1280 to 1440 it keeps the wide layout (Figma "1440"
+  frame). Result of the reflow, top to bottom:
+    Inspection Status | Violation Status   (two donuts side by side)
+    Inspection & Violation Trend           (full width)
+    Fine Trend by Category                 (full width)
+    …emirate trend (if present)            (full width)
+    Content / License Violations heatmaps  (full width, stacked)
+    Fine Collection | Appeal Outcomes
+    Penalties | Top Repeat Violators
+    Team Performance Trend                 (full width)
+    Breakdown table                        (full width)
+*/
+/*
+  Operational tab reflow (Figma node 44500:74001). Below 1920 the "1440<W<1920"
+  frame applies: the two status donuts sit side by side, every trend card spans full
+  width, the heatmaps go [Content | License] 2-up, the three summary charts stay
+  3-up, and Team Performance Trend / Top Repeat Violators each take a full-width
+  row. Below 1440 the "W<1440" frame applies on top: heatmaps stack full-width and
+  the summary + performance groups dissolve so the cards pair up
+  [Fine | Appeal] [Penalties | Top Repeat] with Team Performance Trend last.
+*/
+.inspection-reports__dashboard--operational {
+  @media (max-width: 1919.98px) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+
+    /* Full-width blocks that keep their own box. */
+    > .inspection-reports__summary-grid,
+    > .inspection-reports__operational-heatmaps,
+    > .inspection-reports__operational-summary-charts,
+    > .inspection-reports__operational-performance-row,
+    > .inspection-reports__card {
+      grid-column: 1 / -1;
+    }
+    /* Keep the breakdown table last. */
+    > .inspection-reports__card {
+      order: 2;
+    }
+
+    /* Dissolve the primary split so donuts pair up and trends span full width. */
+    > .inspection-reports__operational-primary {
+      display: contents;
+    }
+    .inspection-reports__operational-status-column,
+    .inspection-reports__operational-trend-column {
+      display: contents;
+    }
+    .inspection-reports__operational-trend-column > * {
+      grid-column: 1 / -1;
+    }
+
+    /* Heatmaps: Content before License (DOM order is License, Content). */
+    > .inspection-reports__operational-heatmaps > :nth-child(1) {
+      order: 2;
+    }
+    > .inspection-reports__operational-heatmaps > :nth-child(2) {
+      order: 1;
+    }
+
+    /* Team Performance Trend and Top Repeat Violators: one full-width row each. */
+    > .inspection-reports__operational-performance-row {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    /*
+      Equalize the paired donut / bar cards: their fixed heights (Violation Status
+      614 vs Inspection Status 482, Top Repeat 470 vs Penalties 384) leave the
+      shorter one hanging. Relax to auto so the grid stretches each pair even.
+    */
+    .inspection-reports__donut-card,
+    .inspection-reports__horizontal-bars-card {
+      height: auto;
+    }
+  }
+
+  @media (max-width: 1439.98px) {
+    /* The two emirate heatmaps stack full-width. */
+    > .inspection-reports__operational-heatmaps {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    /*
+      Dissolve the summary and performance groups so their cards pair up in the
+      2-col grid: [Fine Collection | Appeal Outcomes] [Penalties | Top Repeat],
+      with Team Performance Trend last on its own full-width row.
+    */
+    > .inspection-reports__operational-summary-charts,
+    > .inspection-reports__operational-performance-row {
+      display: contents;
+    }
+    .inspection-reports__operational-performance-row > :first-child {
+      order: 1;
+      grid-column: 1 / -1;
+    }
+
+    /*
+      Full-width heatmap: the cells column was a fixed 528px, so it stayed clustered
+      on the right with a gap after the labels while the card grew. Cap the label
+      column and let the cells fill the card (matching the design). The axis (column
+      labels) and the colour-scale bar carry their own fixed widths, so align them
+      to the same tracks — otherwise the scale bar stays short under wider cells.
+    */
+    .inspection-reports__heatmap-row,
+    .inspection-reports__heatmap-axis {
+      grid-template-columns: minmax(0, 340px) minmax(0, 1fr) 32px;
+    }
+    .inspection-reports__heatmap-scale {
+      display: grid;
+      grid-template-columns: minmax(0, 340px) minmax(0, 1fr) 32px;
+      column-gap: 16px;
+
+      > div {
+        grid-column: 2;
+        width: 100%;
+        grid-template-columns: auto minmax(0, 1fr);
+      }
+    }
+  }
+}
+
+.inspection-reports__risk-top-row,
+.inspection-reports__risk-middle-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.inspection-reports__risk-top-card {
+  height: 432px;
+  min-height: 0;
+}
+
+.inspection-reports__risk-left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.inspection-reports__risk-band-distribution {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr);
+  grid-template-rows: 24px 140px;
+  column-gap: 24px;
+  row-gap: 32px;
+  height: 244px;
+  min-height: 0;
+
+  .inspection-reports__card-heading {
+    grid-column: 1 / -1;
+  }
+
+  .inspection-reports__donut-visual {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .inspection-reports__donut-legend {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: center;
+    margin: 0;
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    column-gap: 16px;
+  }
+}
+
+.inspection-reports__risk-band-source {
+  height: 238px;
+  min-height: 0;
+
+  .inspection-reports__stacked-legend {
+    display: none;
+  }
+
+  .inspection-reports__stacked-rows {
+    justify-content: space-between;
+  }
+}
+
+.inspection-reports__risk-band-emirate,
+.inspection-reports__risk-factors {
+  height: 498px;
+  min-height: 0;
+}
+
+.inspection-reports__risk-band-emirate {
+  .inspection-reports__stacked-legend {
+    display: none;
+  }
+
+  .inspection-reports__stacked-rows {
+    justify-content: space-between;
+  }
+}
+
+.inspection-reports__risk-factors {
+  /*
+    Figma node 44500:74417 annotation: many rows distribute automatically with a
+    12px floor; few rows (--sparse, <=4 items) use a fixed 32px gap instead of
+    being stranded across the 498px card. This card-scoped block outranks the
+    generic .inspection-reports__horizontal-bars rules, so the sparse branch must
+    be restated here.
+  */
+  .inspection-reports__horizontal-bars {
+    justify-content: space-between;
+    row-gap: 12px;
+  }
+
+  .inspection-reports__horizontal-bars--sparse {
+    justify-content: flex-start;
+    row-gap: 32px;
+  }
+}
+
+.inspection-reports__table-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.inspection-reports__table-search.ant-input-affix-wrapper {
+  width: 360px;
+  max-width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  border-color: #dedfe2;
+  border-radius: 8px;
+  box-shadow: none;
+  color: @ink;
+  font-size: 14px;
+
+  &:hover,
+  &.ant-input-affix-wrapper-focused {
+    border-color: @primary-color;
+    box-shadow: none;
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+  }
+}
+
+.inspection-reports__export-button.ant-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  height: 48px;
+  padding: 0 16px;
+  color: @primary-color !important;
+  background: #ffffff !important;
+  border-color: @primary-color !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+  font-family: Inter, sans-serif;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 24px !important;
+
+  &:hover,
+  &:focus {
+    color: @primary-color !important;
+    background: #ffffff !important;
+    border-color: @primary-color !important;
+    box-shadow: none !important;
+  }
+}
+
+.inspection-reports__table {
+  .ant-table {
+    color: @ink;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 14px;
+    }
+  }
+
+  .ant-table-container {
+    border-inline-start: 0;
+    border-top: 0;
+  }
+
+  .ant-table-thead > tr > th {
+    height: 45px;
+    padding: 12px 16px;
+    color: #797e86;
+    background: #f8f7f4;
+    border-bottom-color: #e7e8eb;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    white-space: nowrap;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  .ant-table-tbody > tr > td {
+    height: 72px;
+    padding: 14px 16px;
+    color: @ink;
+    border-bottom-color: #e7e8eb;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    vertical-align: middle;
+    white-space: nowrap;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  .ant-table-tbody > tr:hover > td {
+    background: #fbfaf7;
+  }
+
+  .ant-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px 0 0;
+    flex-wrap: wrap;
+  }
+
+  .ant-pagination-total-text {
+    margin-right: 16px;
+    color: @muted;
+  }
+
+  .ant-pagination-item,
+  .ant-pagination-prev,
+  .ant-pagination-next {
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    border-radius: 6px;
+    background: @ant-pagination-color;
+  }
+
+  .ant-pagination-item-active {
+    background: @ant-pagination-active-color;
+    border: none;
+
+    a {
+      color: @ink;
+    }
+  }
+
+  .ant-pagination-item a {
+    color: @ink;
+    padding: 0;
+    font-size: 16px;
+    line-height: 40px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 14px;
+    }
+  }
+
+  .ant-pagination-item:hover a {
+    color: @ink;
+  }
+
+  .ant-pagination-prev .ant-pagination-item-link,
+  .ant-pagination-next .ant-pagination-item-link {
+    height: 40px;
+    border: none;
+    border-radius: 6px;
+    background: @ant-pagination-color;
+  }
+
+  .ant-pagination-prev .ant-pagination-item-link,
+  .ant-pagination-next .ant-pagination-item-link,
+  .ant-pagination-prev .ant-pagination-item-link .anticon,
+  .ant-pagination-next .ant-pagination-item-link .anticon {
+    color: @ink;
+    font-size: 12px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 10px;
+    }
+  }
+
+  .ant-pagination-disabled .ant-pagination-item-link,
+  .ant-pagination-disabled .ant-pagination-item-link .anticon {
+    color: #c6c6c6;
+  }
+
+  .ant-pagination-options {
+    margin-left: 16px;
+  }
+
+  .ant-pagination-options-size-changer.ant-select {
+    min-width: 240px;
+    width: 240px;
+    height: 40px;
+  }
+
+  .ant-pagination-options-size-changer.ant-select.ant-select-single:not(
+      .ant-select-customize-input
+    )
+    .ant-select-selector {
+    height: 40px !important;
+    padding: 0 16px !important;
+    border: none !important;
+    border-radius: 6px !important;
+    background: @ant-pagination-color !important;
+    box-shadow: none !important;
+  }
+
+  .ant-pagination-options-size-changer.ant-select .ant-select-selection-search,
+  .ant-pagination-options-size-changer.ant-select
+    .ant-select-selection-search-input {
+    height: 40px !important;
+  }
+
+  .ant-pagination-options-size-changer.ant-select .ant-select-selection-item,
+  .ant-pagination-options-size-changer.ant-select
+    .ant-select-selection-placeholder {
+    height: 40px;
+    color: @ink;
+    font-size: 16px;
+    line-height: 40px !important;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 14px;
+      }
+  }
+
+  .ant-pagination-options-size-changer.ant-select .ant-select-arrow {
+    right: 12px;
+    color: #bfbfbf;
+    font-size: 12px !important;
+  }
+}
+
+.inspection-reports__risk-table-card {
+  height: auto;
+  min-height: 702px;
+  gap: 16px;
+  overflow: hidden;
+
+  .inspection-reports__table--risk {
+    .ant-table-tbody > tr > td {
+      height: 52px;
+      padding: 14px 16px;
+    }
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.inspection-reports__factor-tags {
+  display: inline-flex;
+  max-width: 100%;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.inspection-reports__factor-tag,
+.inspection-reports__factor-tooltip-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 2px 6px;
+  color: #cba344;
+  background: #f9f7ed;
+  border-radius: 4px;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  white-space: nowrap;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.inspection-reports__factor-tag--more {
+  cursor: default;
+}
+
+.inspection-reports__factor-tooltip.ant-tooltip {
+  max-width: none;
+
+  .ant-tooltip-inner {
+    min-width: 0;
+    padding: 8px;
+    color: @ink;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow:
+      0 3px 6px -4px rgba(0, 0, 0, 0.12),
+      0 6px 16px rgba(0, 0, 0, 0.08),
+      0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .ant-tooltip-arrow {
+    display: none;
+  }
+}
+
+.inspection-reports__factor-tooltip-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.inspection-reports__risk-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+
+  &--critical {
+    color: #ff4d4f;
+    background: #fff0ef;
+  }
+
+  &--high {
+    color: #ff7a45;
+    background: #fff3ed;
+  }
+
+  &--medium {
+    color: #d99400;
+    background: #fff9e8;
+  }
+
+  &--low {
+    color: #58a564;
+    background: #f0faef;
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.inspection-reports__time-filter-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 200px;
+  height: 48px;
+  padding: 0 14px;
+  color: @ink;
+  background: transparent;
+  border: 1px solid #c3c6cb;
+  border-radius: 8px;
+  box-shadow: none;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+
+  &:hover,
+  &--open {
+    border-color: @ant-hover-color;
+  }
+
+  &--custom {
+    width: auto;
+    min-width: 200px;
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 1279.98px) {
+    height: 40px;
+  }
+}
+
+.inspection-reports__time-filter-label {
+  min-width: 0;
+  overflow: visible;
+  text-align: start;
+  white-space: nowrap;
+}
+
+.inspection-reports__time-filter-trigger svg.inspection-reports__time-filter-icon {
+  color: #797e86;
+  width: 12px !important;
+  height: 12px !important;
+  min-width: 12px;
+  min-height: 12px;
+  transition: transform 0.2s ease;
+}
+
+.inspection-reports__time-filter-trigger--open .inspection-reports__time-filter-icon {
+  transform: rotate(180deg);
+}
+
+.inspection-reports__time-filter-dropdown {
+  min-width: 200px;
+}
+
+.inspection-reports__time-filter-panel {
+  width: 200px;
+  padding: 8px 0;
+  background: #ffffff;
+  border: 1px solid #e1e3e5;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(54, 30, 18, 0.08);
+
+  &--custom {
+    width: 340px;
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}
+
+.inspection-reports__time-filter-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.inspection-reports__time-filter-option {
+  width: 100%;
+  padding: 12px 18px;
+  background: transparent;
+  border: 0;
+  color: @ink;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: start;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background: #f9f7ed;
+  }
+
+  &--active,
+  &--active:hover {
+    color: #ffffff;
+    background: @primary-color;
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.inspection-reports__time-filter-custom {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px 16px 16px;
+  border-top: 1px solid #f0f0f0;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.inspection-reports__time-filter-range.ant-picker {
+  width: 100%;
+  border-radius: 8px;
+
+  &:hover,
+  &.ant-picker-focused {
+    border-color: @primary-color;
+    box-shadow: none;
+  }
+}
+
+.inspection-reports__time-filter-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.inspection-reports__time-filter-action {
+  min-width: 84px;
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  cursor: pointer;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+  }
+
+  &--secondary {
+    color: @ink;
+    background: #ffffff;
+    border: 1px solid #c3c6cb;
+  }
+
+  &--primary {
+    color: #ffffff;
+    background: @primary-color;
+    border: 1px solid @primary-color;
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+/*
+  Operational donut cards (Inspection Status / Violation Status column and the
+  Fine Collection / Appeal Outcomes / Penalties by Violation Degree row): the
+  legend used to flex-grow, so the slack from the fixed card heights pooled
+  UNDER the last legend row and it sat far from the card bottom. Stop it
+  growing - margin-top:auto keeps it pinned to the bottom, the slack moves
+  between chart and legend instead - and hold the bottom inset at 24px at every
+  width (the module-wide <1920 ramp squeezes card padding to 12px).
+  Figma node 44565:74482.
+*/
+.inspection-reports__operational-status-column > .inspection-reports__card,
+.inspection-reports__operational-summary-charts > .inspection-reports__card {
+  padding-bottom: 24px;
+
+  .inspection-reports__donut-legend {
+    flex: 0 0 auto;
+  }
+}

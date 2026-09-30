@@ -1,0 +1,240 @@
+{
+  "schemaVersion": "1.0",
+  "packageStatus": "active",
+  "bundleId": "admin.licensing.application.linked-payment.package",
+  "createdAt": "2026-09-28T07:22:01.665137+00:00",
+  "searchMetadata": {
+    "titleEnglish": "Application Details linked payment amount and status",
+    "titleArabic": "تفاصيل الطلب: مبلغ الدفع المرتبط وحالته",
+    "descriptionEnglish": "Read the verified application linked payment amount and payment status independently of application approval and workflow task state.",
+    "descriptionArabic": "قراءة مبلغ الدفع المرتبط وحالته بعد التحقق من هوية الطلب، مع الفصل بين حالة الدفع وحالة الطلب."
+  },
+  "records": [
+    {
+      "id": "admin.licensing.application.linked-payment",
+      "kind": "field_semantics",
+      "revision": 3,
+      "status": "active",
+      "title": "Application Details linked payment amount and status",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local",
+          "debug"
+        ],
+        "pageRefs": [
+          "/licensing/applications/applicationsDetails"
+        ],
+        "runtimeVerification": "response_shape_verified",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/services.ts",
+          "revision": "sha256:0fa374e26638fee42d835e5bf89950f098c2de3785799a556214d9c4667ca92d",
+          "locator": "getServiceApplicationPayment and IServiceApplicationPaymentDto",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/components/common/FormilyReviewList/index.tsx",
+          "revision": "sha256:20266b03d1fe02680232998234f4abdb799ce5335fb4608be9571ecaff047fb5",
+          "locator": "Payment quote useEffect reads getServiceApplicationPayment using the actual applicationId",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/Finance/AdminFinanceTransactionsAppService.cs",
+          "revision": "sha256:fb319b3bc0bcdaaf1159544ab3d5d793b05d4fb0f7c2191f9272c210da2baf8b",
+          "locator": "GetServiceApplicationPaymentAsync exact ApplicationId query; latest CreatedOn then Id; null when absent",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ApplicationAppService.cs",
+          "revision": "sha256:22e94773e70c95fab9ce479919b51d0241e046bf085cd0c3f8b5991b9004772e",
+          "locator": "FinalizeLicensingApprovedAsync documents ServiceApplicationPaymentStatus contract",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "runtime_observation",
+          "reference": "test/runtime/group17-cross-repair-20260928/baselines/license-latest.json",
+          "revision": "sha256:aa5268a0a3a846a3ed886628fb1f2b423d2259eb446a384460e9486be3a6a318",
+          "locator": "Fresh same-principal list-to-detail-to-payment read with exact applicationId echo; no fixed business values in this definition",
+          "verification": "response_shape_verified"
+        },
+        {
+          "kind": "source_code",
+          "reference": "test/runtime/group14-data-repair-20260928/m14-payment-status-candidate-v1/source-evidence/ServiceApplicationPaymentStatus.cs",
+          "revision": "sha256:bdc53586f1d60c63b502f6d7784c7c3264f44aaf097ca3e4fbe69dddc1732d41",
+          "locator": "Verbatim CustomerPortal enum snapshot: Pending=1, InProgress=2, Completed=3. Original path/hash and snapshot limitations are retained in source-evidence/provenance.json. No enum evidence for 4/5.",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/licensing/applications/applicationsDetails",
+        "sourceBinding": {
+          "operationRef": "GET /api/admin/application/{applicationId}",
+          "sourcePath": "/data"
+        },
+        "relatedReads": [
+          {
+            "operationKey": "GET /api/admin/application/{applicationId}",
+            "parentOperationKey": "GET /api/Application/MyReviewDetail/{taskId}",
+            "parentPath": "/data/detail",
+            "parentField": "id",
+            "parameter": "applicationId",
+            "responseKeyPath": "/data/applicationId",
+            "requiredFor": [
+              "fee amount",
+              "fees",
+              "application fee",
+              "payment amount",
+              "payment fee",
+              "amount due",
+              "الرسوم",
+              "مبلغ الرسوم",
+              "مبلغ الدفع",
+              "payment status",
+              "payment result",
+              "payment completion",
+              "payment complete",
+              "whether payment is complete",
+              "paid status",
+              "حالة الدفع",
+              "نتيجة الدفع",
+              "اكتمال الدفع",
+              "payment update time",
+              "payment last updated",
+              "payment timestamp",
+              "وقت تحديث الدفع",
+              "payment completion status",
+              "حالة اكتمال الدفع"
+            ]
+          }
+        ],
+        "bindings": [
+          {
+            "id": "amount",
+            "kind": "attribute",
+            "concept": "fee amount",
+            "aliases": [
+              "fees",
+              "application fee",
+              "payment amount",
+              "payment fee",
+              "amount due",
+              "الرسوم",
+              "مبلغ الرسوم",
+              "مبلغ الدفع"
+            ],
+            "operationRef": "GET /api/admin/application/{applicationId}",
+            "sourcePath": "/data",
+            "fields": [
+              "amount",
+              "currencyCode"
+            ],
+            "meaning": "Amount and currency of the most recently created stored ServiceApplicationPayment explicitly linked to this application. This is a stored application payment amount, not proof of settlement or an immutable transaction charge snapshot."
+          },
+          {
+            "id": "status",
+            "kind": "attribute",
+            "concept": "payment status",
+            "aliases": [
+              "payment result",
+              "payment completion",
+              "payment complete",
+              "whether payment is complete",
+              "paid status",
+              "حالة الدفع",
+              "نتيجة الدفع",
+              "اكتمال الدفع",
+              "payment completion status",
+              "حالة اكتمال الدفع"
+            ],
+            "operationRef": "GET /api/admin/application/{applicationId}",
+            "sourcePath": "/data",
+            "fields": [
+              "status"
+            ],
+            "meaning": "ServiceApplicationPayment.Status contract: 1=Pending, 2=InProgress, 3=Completed, 4=Failed, 5=Cancelled. This status belongs only to the linked payment object. Application status and workflow taskStatus do not establish payment completion; an unfamiliar or null value remains unknown.",
+            "interpretationRules": [
+              {
+                "conditions": [
+                  {
+                    "field": "status",
+                    "predicate": "eq",
+                    "value": 1
+                  }
+                ],
+                "hideFields": [
+                  "status"
+                ],
+                "message": {
+                  "en": "Linked payment status: Pending. Payment has not been completed.",
+                  "ar": "حالة الدفع المرتبط: قيد الانتظار. لم يكتمل الدفع."
+                }
+              },
+              {
+                "conditions": [
+                  {
+                    "field": "status",
+                    "predicate": "eq",
+                    "value": 2
+                  }
+                ],
+                "hideFields": [
+                  "status"
+                ],
+                "message": {
+                  "en": "Linked payment status: In progress. Payment has not been completed.",
+                  "ar": "حالة الدفع المرتبط: قيد المعالجة. لم يكتمل الدفع."
+                }
+              },
+              {
+                "conditions": [
+                  {
+                    "field": "status",
+                    "predicate": "eq",
+                    "value": 3
+                  }
+                ],
+                "hideFields": [
+                  "status"
+                ],
+                "message": {
+                  "en": "Linked payment status: Completed.",
+                  "ar": "حالة الدفع المرتبط: مكتمل."
+                }
+              }
+            ]
+          },
+          {
+            "id": "updated",
+            "kind": "attribute",
+            "concept": "payment update time",
+            "aliases": [
+              "payment last updated",
+              "payment timestamp",
+              "وقت تحديث الدفع"
+            ],
+            "operationRef": "GET /api/admin/application/{applicationId}",
+            "sourcePath": "/data",
+            "fields": [
+              "updatedOn"
+            ],
+            "meaning": "Stored payment update timestamp as returned. A timestamp without an offset must not be silently labelled UTC or converted using an assumed server timezone."
+          }
+        ],
+        "relationships": [
+          "Verify the application business number and internal id from the current permitted application detail before reading payment. Use detail.id, never taskId, applicationDetailId, a guessed numeric key or a parsed business-number prefix.",
+          "The related read must use the same current authenticated principal and echo the same applicationId. The ordinary API enforces permission: preserve an actual denial or unavailable response; this definition grants no read permission.",
+          "Keep application status, task status and payment status separately labelled. Payment completion cannot be inferred from application approval, expiry time, a receipt link, fee amount, or another transaction with a similar number.",
+          "A null payment object means this endpoint did not return a stored linked payment. It does not establish zero fees, free service, an unpaid or paid state, or global absence of transactions.",
+          "Project only the requested amount, currency, payment status and timestamp. Do not disclose payment channel identifiers, card or gateway details, receipt URLs, raw quote responses, approval notes or internal calculation expressions."
+        ]
+      }
+    }
+  ]
+}

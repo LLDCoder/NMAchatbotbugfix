@@ -1,0 +1,1778 @@
+{
+  "businessAcceptance": false,
+  "replay": {
+    "en": {
+      "task": {
+        "view": "",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "detail",
+        "searchQuery": "refund HC-02-2026-0507490 current status refund amount currency last updated date",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "refund",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedGrain",
+            "value": "refund",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [
+              "status",
+              "refund amount",
+              "currency",
+              "last-updated date"
+            ],
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "outputShape",
+            "value": "detail",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "recordIdentity",
+            "value": "HC-02-2026-0507490",
+            "source": "current",
+            "evidence": ""
+          },
+          {
+            "field": "businessFocus",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedScope",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "view",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "current",
+            "evidence": "parsed current request"
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "",
+        "clarification": null,
+        "needsLiveData": true,
+        "businessObject": "refund",
+        "recordIdentity": "HC-02-2026-0507490",
+        "requestedGrain": "refund",
+        "requestedScope": "unknown",
+        "contextRelation": "new",
+        "unresolvedSlots": [],
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [
+          "status",
+          "refund amount",
+          "currency",
+          "last-updated date"
+        ]
+      },
+      "rejectedPlans": [
+        {
+          "stage": "AnalysisPlan",
+          "attempt": 1,
+          "failure": "{\"code\":\"analysis_binding_inapplicable\",\"requirementId\":\"attribute_2\",\"allowedBindingIds\":[\"admin.finance.refund.detail.fields#amount\",\"admin.finance.refund.detail.fields#grain\",\"admin.finance.refund.detail.fields#next\",\"admin.finance.refund.detail.fields#number\",\"admin.finance.refund.detail.fields#object\",\"admin.finance.refund.detail.fields#status\",\"admin.finance.refunds.lookup-fields#grain\",\"admin.finance.refunds.lookup-fields#object\"],\"selectedDefinition\":{\"knowledgeBindingId\":\"admin.finance.refund.detail.fields#amount\",\"operationRef\":\"GET /api/admin/payments/refunds/{refundNo}\",\"sourcePath\":\"/data\",\"fields\":[\"applicationInformation.amountCharged\",\"applicationInformation.currency\"],\"conditions\":null},\"providedFields\":[\"applicationInformation.currency\"],\"providedPath\":\"/data\",\"correction\":\"Select a binding for this exact live operation/path. Copy its complete physical dependency fields into the requirement binding, not only the visible columns. The contributing read must retain the required identity and condition fields; apply documented filters and use a final project step for public display columns. Do not reuse another interface binding.\"}",
+          "candidate": {
+            "stage": "analysis",
+            "steps": [
+              {
+                "id": "read_refund_detail",
+                "op": "read_rows",
+                "path": "/data",
+                "role": "detail",
+                "label": "Refund detail record",
+                "expose": true,
+                "fields": [
+                  "refundNo",
+                  "status",
+                  "lastUpdatedOn",
+                  "applicationInformation.amountCharged",
+                  "applicationInformation.currency"
+                ],
+                "evidence": [
+                  {
+                    "sourceId": "k_9119f1120cba777d86ef:p0"
+                  },
+                  {
+                    "sourceId": "k_d861b1580f07e6d3799a:p1"
+                  }
+                ],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "fieldLabels": {
+                  "status": "Status",
+                  "refundNo": "Refund No.",
+                  "lastUpdatedOn": "Last Updated",
+                  "applicationInformation.currency": "Currency",
+                  "applicationInformation.amountCharged": "Refund Amount"
+                },
+                "unknownPolicy": "report"
+              }
+            ],
+            "context": {
+              "time": {
+                "value": "No time range was requested; the record's last-updated timestamp is reported as a field value, not used as a filter.",
+                "evidence": [
+                  {
+                    "sourceId": "k_3a34a84492148bf894ad:p0"
+                  }
+                ]
+              },
+              "grain": {
+                "value": "One refund record identified by its refund number (refundNo).",
+                "evidence": [
+                  {
+                    "sourceId": "k_9119f1120cba777d86ef:p1"
+                  },
+                  {
+                    "sourceId": "k_d861b1580f07e6d3799a:p1"
+                  }
+                ]
+              },
+              "scope": "unknown",
+              "caveats": [
+                {
+                  "value": "The refund status shown is the current Finance processing display and does not by itself establish an approval conclusion or completed payout.",
+                  "evidence": [
+                    {
+                      "sourceId": "k_9119f1120cba777d86ef:p2"
+                    },
+                    {
+                      "sourceId": "k_7111d40ada60a9a8a4c9:p6"
+                    }
+                  ]
+                },
+                {
+                  "value": "A negative refund amount records the refund debit direction; the refund magnitude is its absolute value in the displayed currency and is not a negative entitlement.",
+                  "evidence": [
+                    {
+                      "sourceId": "k_9119f1120cba777d86ef:p3"
+                    }
+                  ]
+                }
+              ],
+              "population": {
+                "value": "The single authorized Finance refund record matching refund number HC-02-2026-0507490.",
+                "evidence": [
+                  {
+                    "sourceId": "k_d861b1580f07e6d3799a:p1"
+                  },
+                  {
+                    "sourceId": "k_9119f1120cba777d86ef:p0"
+                  }
+                ]
+              },
+              "filterScope": {
+                "value": "Exact match on the refund number HC-02-2026-0507490 within the authorized Finance refund detail read.",
+                "evidence": [
+                  {
+                    "sourceId": "k_9119f1120cba777d86ef:p1"
+                  },
+                  {
+                    "sourceId": "k_d861b1580f07e6d3799a:p1"
+                  }
+                ]
+              },
+              "scopeEvidence": []
+            },
+            "missing": [],
+            "metricCoverage": [],
+            "requirementBindings": [
+              {
+                "fields": [
+                  "refundNo"
+                ],
+                "reason": "Refund object bound to the verified single refund detail record.",
+                "stepIds": [
+                  "read_refund_detail"
+                ],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "object",
+                "knowledgeBindingId": "admin.finance.refund.detail.fields#object"
+              },
+              {
+                "fields": [
+                  "refundNo"
+                ],
+                "reason": "Grain is one refund record keyed by refundNo.",
+                "stepIds": [
+                  "read_refund_detail"
+                ],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "grain",
+                "knowledgeBindingId": "admin.finance.refund.detail.fields#grain"
+              },
+              {
+                "fields": [
+                  "status"
+                ],
+                "reason": "Current finance processing status of the refund.",
+                "stepIds": [
+                  "read_refund_detail"
+                ],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "attribute_0",
+                "knowledgeBindingId": "admin.finance.refund.detail.fields#status"
+              },
+              {
+                "fields": [
+                  "applicationInformation.amountCharged",
+                  "applicationInformation.currency"
+                ],
+                "reason": "Returned signed refund amount with its currency.",
+                "stepIds": [
+                  "read_refund_detail"
+                ],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "attribute_1",
+                "knowledgeBindingId": "admin.finance.refund.detail.fields#amount"
+              },
+              {
+                "fields": [
+                  "applicationInformation.currency"
+                ],
+                "reason": "Currency returned with the refund amount.",
+                "stepIds": [
+                  "read_refund_detail"
+                ],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "attribute_2",
+                "knowledgeBindingId": "admin.finance.refund.detail.fields#amount"
+              },
+              {
+                "fields": [
+                  "lastUpdatedOn"
+                ],
+                "reason": "Last-updated date is the record's lastUpdatedOn field, distinct from other date fields.",
+                "stepIds": [
+                  "read_refund_detail"
+                ],
+                "evidence": [
+                  {
+                    "sourceId": "k_3a34a84492148bf894ad:p0"
+                  },
+                  {
+                    "sourceId": "k_930718ddaa4327d32404:p9"
+                  }
+                ],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "attribute_3"
+              },
+              {
+                "fields": [
+                  "refundNo",
+                  "status",
+                  "lastUpdatedOn",
+                  "applicationInformation.amountCharged",
+                  "applicationInformation.currency"
+                ],
+                "reason": "Detail output shape projected from the verified single refund record.",
+                "stepIds": [
+                  "read_refund_detail"
+                ],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "detail",
+                "knowledgeBindingId": ""
+              }
+            ]
+          }
+        },
+        {
+          "stage": "AnalysisPlan",
+          "attempt": 2,
+          "failure": "{\"code\":\"analysis_binding_inapplicable\",\"requirementId\":\"attribute_2\",\"requestedConcept\":\"currency\",\"matchingBindingIds\":[],\"correction\":\"The selected fact must match the requested concept and kind. Use an exact matchingBindingId when listed and update all corresponding mappings, including object and grain. Copy that definition's sourcePath and fields; its citations are compiled by the runtime. Do not rename the user's request, invent an alias or reuse another operation. Leave unsupported requirements unbound.\"}",
+          "candidate": {
+            "stage": "analysis",
+            "steps": [
+              {
+                "id": "read_refund",
+                "op": "read_rows",
+                "path": "/data",
+                "role": "observation",
+                "label": "Refund record HC-02-2026-0507490",
+                "expose": false,
+                "fields": [
+                  "refundNo",
+                  "status",
+                  "lastUpdatedOn",
+                  "applicationInformation.amountCharged",
+                  "applicationInformation.currency"
+                ],
+                "evidence": [
+                  {
+                    "sourceId": "k_9119f1120cba777d86ef:p0"
+                  },
+                  {
+                    "sourceId": "k_d861b1580f07e6d3799a:p1"
+                  }
+                ],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "unknownPolicy": "report"
+              },
+              {
+                "id": "project_refund",
+                "op": "project",
+                "role": "detail",
+                "label": "Refund HC-02-2026-0507490",
+                "expose": true,
+                "fields": [
+                  "refundNo",
+                  "status",
+                  "applicationInformation.amountCharged",
+                  "applicationInformation.currency",
+                  "lastUpdatedOn"
+                ],
+                "inputs": [
+                  "read_refund"
+                ],
+                "evidence": [
+                  {
+                    "sourceId": "k_9119f1120cba777d86ef:p2"
+                  },
+                  {
+                    "sourceId": "k_9119f1120cba777d86ef:p3"
+                  }
+                ],
+                "fieldLabels": {
+                  "status": "Status",
+                  "refundNo": "Refund number",
+                  "lastUpdatedOn": "Last updated",
+                  "applicationInformation.currency": "Currency",
+                  "applicationInformation.amountCharged": "Refund amount"
+                }
+              }
+            ],
+            "context": {
+              "time": {
+                "value": "current record state; no time range requested",
+                "evidence": [
+                  {
+                    "sourceId": "k_930718ddaa4327d32404:p9"
+                  }
+                ]
+              },
+              "grain": {
+                "value": "one refund record identified by its refund number",
+                "evidence": [
+                  {
+                    "sourceId": "k_9119f1120cba777d86ef:p1"
+                  },
+                  {
+                    "sourceId": "k_d861b1580f07e6d3799a:p1"
+                  }
+                ]
+              },
+              "scope": "unknown",
+              "caveats": [
+                {
+                  "value": "The refund amount is returned as a signed value; a negative amount records the refund debit direction and the refund magnitude is its absolute value in the displayed currency, not a negative entitlement.",
+                  "evidence": [
+                    {
+                      "sourceId": "k_9119f1120cba777d86ef:p3"
+                    }
+                  ]
+                },
+                {
+                  "value": "The status shown is the current Finance processing display and does not by itself establish approval, execution or completed payout.",
+                  "evidence": [
+                    {
+                      "sourceId": "k_9119f1120cba777d86ef:p2"
+                    },
+                    {
+                      "sourceId": "k_7111d40ada60a9a8a4c9:p6"
+                    }
+                  ]
+                }
+              ],
+              "population": {
+                "value": "the refund record matching refund number HC-02-2026-0507490",
+                "evidence": [
+                  {
+                    "sourceId": "k_d861b1580f07e6d3799a:p1"
+                  }
+                ]
+              },
+              "filterScope": {
+                "value": "single refund detail read for the requested refund number",
+                "evidence": [
+                  {
+                    "sourceId": "k_d861b1580f07e6d3799a:p1"
+                  }
+                ]
+              },
+              "scopeEvidence": []
+            },
+            "missing": [],
+            "metricCoverage": [],
+            "requirementBindings": [
+              {
+                "fields": [
+                  "refundNo"
+                ],
+                "reason": "Refund object bound to the verified single refund detail record.",
+                "stepIds": [
+                  "read_refund",
+                  "project_refund"
+                ],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "object",
+                "knowledgeBindingId": "admin.finance.refund.detail.fields#object"
+              },
+              {
+                "fields": [
+                  "refundNo"
+                ],
+                "reason": "One refund record per refundNo.",
+                "stepIds": [
+                  "read_refund",
+                  "project_refund"
+                ],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "grain",
+                "knowledgeBindingId": "admin.finance.refund.detail.fields#grain"
+              },
+              {
+                "fields": [
+                  "status"
+                ],
+                "reason": "Current finance processing status of the refund.",
+                "stepIds": [
+                  "read_refund",
+                  "project_refund"
+                ],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "attribute_0",
+                "knowledgeBindingId": "admin.finance.refund.detail.fields#status"
+              },
+              {
+                "fields": [
+                  "applicationInformation.amountCharged",
+                  "applicationInformation.currency"
+                ],
+                "reason": "Signed refund amount with its currency; negative value records the refund debit direction.",
+                "stepIds": [
+                  "read_refund",
+                  "project_refund"
+                ],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "attribute_1",
+                "knowledgeBindingId": "admin.finance.refund.detail.fields#amount"
+              },
+              {
+                "fields": [
+                  "applicationInformation.amountCharged",
+                  "applicationInformation.currency"
+                ],
+                "reason": "Currency returned with the refund amount; the amount binding declares both amount and currency fields.",
+                "stepIds": [
+                  "read_refund",
+                  "project_refund"
+                ],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "attribute_2",
+                "knowledgeBindingId": "admin.finance.refund.detail.fields#amount"
+              },
+              {
+                "fields": [
+                  "lastUpdatedOn"
+                ],
+                "reason": "Last-updated date is the record's lastUpdatedOn field; no dedicated structured binding is supplied.",
+                "stepIds": [
+                  "read_refund",
+                  "project_refund"
+                ],
+                "evidence": [
+                  {
+                    "quote": "The response uses `refundNo` for the detail key and `originalTransactionNo` for the payment relationship, with type, refundScope, status, amount, currency and lastUpdatedOn fields.",
+                    "sourceId": "k_3a34a84492148bf894ad:p0"
+                  }
+                ],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "attribute_3",
+                "knowledgeBindingId": ""
+              },
+              {
+                "fields": [
+                  "refundNo",
+                  "status",
+                  "applicationInformation.amountCharged",
+                  "applicationInformation.currency",
+                  "lastUpdatedOn"
+                ],
+                "reason": "Detail output projects the requested attributes of the single refund record.",
+                "stepIds": [
+                  "project_refund"
+                ],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "detail",
+                "knowledgeBindingId": ""
+              }
+            ]
+          }
+        }
+      ],
+      "capturedSourceMetadata": {
+        "sourceId": "api_0054b5a14754be5bb3d0",
+        "operationRef": "GET /api/admin/payments/refunds/{refundNo}",
+        "capturedAt": "2026-09-28T09:21:42.152380+00:00",
+        "page": "/financial-payment/refunds/refundsDetails?refundNo=HC-02-2026-0507490",
+        "verifiedRecord": {
+          "path": "/data",
+          "field": "refundNo",
+          "single": true,
+          "identity": "HC-02-2026-0507490",
+          "keyFields": [
+            "refundNo"
+          ]
+        },
+        "principalScopeRef": "17cd8f9132bd95c2d432",
+        "observationRef": "5c62709b02e9338022f3"
+      }
+    },
+    "ar": {
+      "task": {
+        "view": "",
+        "stage": "task",
+        "filters": [],
+        "groupBy": [],
+        "readOnly": true,
+        "timeField": "",
+        "timeRange": "unknown",
+        "outputShape": "detail",
+        "searchQuery": "refund HC-02-2026-0507490 current status refund amount currency last updated date",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "value": "refund",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "requestedGrain",
+            "value": "refund",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "requestedAttributes",
+            "value": [
+              "status",
+              "refund amount",
+              "currency",
+              "last-updated date"
+            ],
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "outputShape",
+            "value": "detail",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "recordIdentity",
+            "value": "HC-02-2026-0507490",
+            "source": "previous",
+            "evidence": ""
+          },
+          {
+            "field": "businessFocus",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedScope",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedMeasures",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupBy",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeRange",
+            "value": "unknown",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "filters",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "view",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeField",
+            "value": "",
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedOrdering",
+            "value": [],
+            "source": "current",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupCompleteness",
+            "value": "observed",
+            "source": "current",
+            "evidence": "parsed current request"
+          }
+        ],
+        "responseMode": "answer",
+        "businessFocus": "",
+        "clarification": null,
+        "needsLiveData": true,
+        "businessObject": "refund",
+        "recordIdentity": "HC-02-2026-0507490",
+        "requestedGrain": "refund",
+        "requestedScope": "unknown",
+        "contextRelation": "continue",
+        "unresolvedSlots": [],
+        "groupCompleteness": "observed",
+        "requestBoundaries": [],
+        "requestedMeasures": [],
+        "requestedOrdering": [],
+        "requestedAttributes": [
+          "status",
+          "refund amount",
+          "currency",
+          "last-updated date"
+        ]
+      },
+      "rejectedPlans": [
+        {
+          "stage": "AnalysisPlan",
+          "attempt": 1,
+          "failure": "{\"code\":\"analysis_binding_inapplicable\",\"requirementId\":\"attribute_2\",\"allowedBindingIds\":[\"admin.finance.refund.detail.fields#amount\",\"admin.finance.refund.detail.fields#grain\",\"admin.finance.refund.detail.fields#next\",\"admin.finance.refund.detail.fields#number\",\"admin.finance.refund.detail.fields#object\",\"admin.finance.refund.detail.fields#status\",\"admin.finance.refunds.lookup-fields#grain\",\"admin.finance.refunds.lookup-fields#object\"],\"selectedDefinition\":{\"knowledgeBindingId\":\"admin.finance.refund.detail.fields#amount\",\"operationRef\":\"GET /api/admin/payments/refunds/{refundNo}\",\"sourcePath\":\"/data\",\"fields\":[\"applicationInformation.amountCharged\",\"applicationInformation.currency\"],\"conditions\":null},\"providedFields\":[\"applicationInformation.currency\"],\"providedPath\":\"/data\",\"correction\":\"Select a binding for this exact live operation/path. Copy its complete physical dependency fields into the requirement binding, not only the visible columns. The contributing read must retain the required identity and condition fields; apply documented filters and use a final project step for public display columns. Do not reuse another interface binding.\"}",
+          "candidate": {
+            "stage": "analysis",
+            "steps": [
+              {
+                "id": "read_refund",
+                "op": "read_rows",
+                "path": "/data",
+                "role": "detail",
+                "label": "تفاصيل الاسترداد HC-02-2026-0507490",
+                "expose": true,
+                "fields": [
+                  "refundNo",
+                  "status",
+                  "lastUpdatedOn",
+                  "applicationInformation.amountCharged",
+                  "applicationInformation.currency"
+                ],
+                "evidence": [
+                  {
+                    "sourceId": "k_9119f1120cba777d86ef:p0"
+                  },
+                  {
+                    "sourceId": "k_d861b1580f07e6d3799a:p1"
+                  }
+                ],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "fieldLabels": {
+                  "status": "الحالة الحالية",
+                  "refundNo": "رقم الاسترداد",
+                  "lastUpdatedOn": "تاريخ آخر تحديث",
+                  "applicationInformation.currency": "العملة",
+                  "applicationInformation.amountCharged": "مبلغ الاسترداد"
+                },
+                "unknownPolicy": "report"
+              }
+            ],
+            "context": {
+              "time": {
+                "value": "لا يوجد نطاق زمني مطلوب؛ يُعرض تاريخ آخر تحديث للسجل",
+                "evidence": [
+                  {
+                    "sourceId": "k_930718ddaa4327d32404:p9"
+                  }
+                ]
+              },
+              "grain": {
+                "value": "استرداد واحد محدد برقم الاسترداد HC-02-2026-0507490",
+                "evidence": [
+                  {
+                    "sourceId": "k_9119f1120cba777d86ef:p1"
+                  }
+                ]
+              },
+              "scope": "unknown",
+              "caveats": [
+                {
+                  "value": "الحالة المعروضة هي حالة معالجة المالية الحالية للسجل وليست قرار موافقة.",
+                  "evidence": [
+                    {
+                      "sourceId": "k_9119f1120cba777d86ef:p2"
+                    }
+                  ]
+                },
+                {
+                  "value": "المبلغ الموقّع السالب يسجّل اتجاه الخصم الخاص بالاسترداد؛ قيمة الاسترداد هي القيمة المطلقة بالعملة المعروضة وليست استحقاقاً سالباً.",
+                  "evidence": [
+                    {
+                      "sourceId": "k_9119f1120cba777d86ef:p3"
+                    }
+                  ]
+                },
+                {
+                  "value": "تُحفظ العملة المصدرية كما هي دون أي تحويل.",
+                  "evidence": [
+                    {
+                      "sourceId": "k_930718ddaa4327d32404:p9"
+                    }
+                  ]
+                }
+              ],
+              "population": {
+                "value": "سجل الاسترداد المالي المطابق لرقم الاسترداد HC-02-2026-0507490",
+                "evidence": [
+                  {
+                    "sourceId": "k_d861b1580f07e6d3799a:p1"
+                  }
+                ]
+              },
+              "filterScope": {
+                "value": "لا توجد مرشحات إضافية مطلوبة؛ يُحدَّد السجل برقم الاسترداد",
+                "evidence": [
+                  {
+                    "sourceId": "k_d861b1580f07e6d3799a:p0"
+                  }
+                ]
+              },
+              "scopeEvidence": [
+                {
+                  "sourceId": "k_9119f1120cba777d86ef:p0"
+                }
+              ]
+            },
+            "missing": [],
+            "metricCoverage": [],
+            "requirementBindings": [
+              {
+                "fields": [
+                  "refundNo"
+                ],
+                "stepIds": [
+                  "read_refund"
+                ],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "object",
+                "knowledgeBindingId": "admin.finance.refund.detail.fields#object"
+              },
+              {
+                "fields": [
+                  "refundNo"
+                ],
+                "stepIds": [
+                  "read_refund"
+                ],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "grain",
+                "knowledgeBindingId": "admin.finance.refund.detail.fields#grain"
+              },
+              {
+                "fields": [
+                  "status"
+                ],
+                "stepIds": [
+                  "read_refund"
+                ],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "attribute_0",
+                "knowledgeBindingId": "admin.finance.refund.detail.fields#status"
+              },
+              {
+                "fields": [
+                  "applicationInformation.amountCharged",
+                  "applicationInformation.currency"
+                ],
+                "stepIds": [
+                  "read_refund"
+                ],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "attribute_1",
+                "knowledgeBindingId": "admin.finance.refund.detail.fields#amount"
+              },
+              {
+                "fields": [
+                  "applicationInformation.currency"
+                ],
+                "stepIds": [
+                  "read_refund"
+                ],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "attribute_2",
+                "knowledgeBindingId": "admin.finance.refund.detail.fields#amount"
+              },
+              {
+                "fields": [
+                  "lastUpdatedOn"
+                ],
+                "stepIds": [
+                  "read_refund"
+                ],
+                "evidence": [
+                  {
+                    "quote": "The Finance list contains Application No. and Transaction No. as separate fields, plus Type, Apply For, Payment Method, Amount, Status and Last Updated.",
+                    "sourceId": "k_e3311a95b55e0d3cdb62:p6"
+                  },
+                  {
+                    "quote": "Date fields keep their distinct meanings: submission, assignment, last update, issue/effective, expiry and payment time must not be swapped when changing language.",
+                    "sourceId": "k_930718ddaa4327d32404:p9"
+                  }
+                ],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "attribute_3"
+              },
+              {
+                "fields": [
+                  "refundNo",
+                  "status",
+                  "lastUpdatedOn",
+                  "applicationInformation.amountCharged",
+                  "applicationInformation.currency"
+                ],
+                "stepIds": [
+                  "read_refund"
+                ],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "detail",
+                "knowledgeBindingId": ""
+              }
+            ]
+          }
+        },
+        {
+          "stage": "AnalysisPlan",
+          "attempt": 2,
+          "failure": "{\"code\":\"analysis_binding_inapplicable\",\"requirementId\":\"attribute_2\",\"requestedConcept\":\"currency\",\"matchingBindingIds\":[],\"correction\":\"The selected fact must match the requested concept and kind. Use an exact matchingBindingId when listed and update all corresponding mappings, including object and grain. Copy that definition's sourcePath and fields; its citations are compiled by the runtime. Do not rename the user's request, invent an alias or reuse another operation. Leave unsupported requirements unbound.\"}",
+          "candidate": {
+            "stage": "analysis",
+            "steps": [
+              {
+                "id": "read_refund_detail",
+                "op": "read_rows",
+                "path": "/data",
+                "role": "detail",
+                "label": "تفاصيل الاسترداد المالي",
+                "expose": true,
+                "fields": [
+                  "refundNo",
+                  "status",
+                  "lastUpdatedOn",
+                  "applicationInformation.amountCharged",
+                  "applicationInformation.currency"
+                ],
+                "evidence": [
+                  {
+                    "sourceId": "k_9119f1120cba777d86ef:p2"
+                  },
+                  {
+                    "sourceId": "k_9119f1120cba777d86ef:p3"
+                  }
+                ],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "fieldLabels": {
+                  "status": "الحالة الحالية",
+                  "refundNo": "رقم الاسترداد",
+                  "lastUpdatedOn": "تاريخ آخر تحديث",
+                  "applicationInformation.currency": "العملة",
+                  "applicationInformation.amountCharged": "مبلغ الاسترداد"
+                },
+                "unknownPolicy": "report"
+              }
+            ],
+            "context": {
+              "time": {
+                "value": "لا نطاق زمني مطلوب؛ تاريخ آخر تحديث يُقرأ كقيمة حالية للسجل",
+                "evidence": [
+                  {
+                    "sourceId": "k_930718ddaa4327d32404:p9"
+                  }
+                ]
+              },
+              "grain": {
+                "value": "سجل استرداد مالي واحد محدد برقم الاسترداد HC-02-2026-0507490",
+                "evidence": [
+                  {
+                    "sourceId": "k_9119f1120cba777d86ef:p1"
+                  },
+                  {
+                    "sourceId": "k_d861b1580f07e6d3799a:p1"
+                  }
+                ]
+              },
+              "scope": "unknown",
+              "caveats": [
+                {
+                  "value": "الحالة المعروضة هي حالة معالجة المالية للسجل وليست قرار موافقة.",
+                  "evidence": [
+                    {
+                      "sourceId": "k_9119f1120cba777d86ef:p2"
+                    }
+                  ]
+                },
+                {
+                  "value": "المبلغ الموقّع السالب يسجّل اتجاه الخصم؛ قيمة الاسترداد هي قيمته المطلقة بالعملة المعروضة وليست استحقاقاً سالباً.",
+                  "evidence": [
+                    {
+                      "sourceId": "k_9119f1120cba777d86ef:p3"
+                    }
+                  ]
+                },
+                {
+                  "value": "تاريخ آخر تحديث حقل مستقل ولا يُستبدل بوقت التقديم أو الانتهاء أو الدفع.",
+                  "evidence": [
+                    {
+                      "sourceId": "k_930718ddaa4327d32404:p9"
+                    }
+                  ]
+                }
+              ],
+              "population": {
+                "value": "سجل الاسترداد المالي المطابق لرقم الاسترداد HC-02-2026-0507490 في تفاصيل الاستردادات المالية",
+                "evidence": [
+                  {
+                    "sourceId": "k_9119f1120cba777d86ef:p0"
+                  },
+                  {
+                    "sourceId": "k_d861b1580f07e6d3799a:p0"
+                  }
+                ]
+              },
+              "filterScope": {
+                "value": "لا مرشحات إضافية مطلوبة؛ يُحدَّد السجل برقم الاسترداد المطلوب",
+                "evidence": [
+                  {
+                    "sourceId": "k_d861b1580f07e6d3799a:p0"
+                  }
+                ]
+              },
+              "scopeEvidence": [
+                {
+                  "sourceId": "k_176457f0064d5ec4a859:p0"
+                }
+              ]
+            },
+            "missing": [],
+            "metricCoverage": [],
+            "requirementBindings": [
+              {
+                "fields": [
+                  "refundNo"
+                ],
+                "stepIds": [
+                  "read_refund_detail"
+                ],
+                "evidence": [],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "object",
+                "knowledgeBindingId": "admin.finance.refund.detail.fields#object"
+              },
+              {
+                "fields": [
+                  "refundNo"
+                ],
+                "stepIds": [
+                  "read_refund_detail"
+                ],
+                "evidence": [],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "grain",
+                "knowledgeBindingId": "admin.finance.refund.detail.fields#grain"
+              },
+              {
+                "fields": [
+                  "status"
+                ],
+                "stepIds": [
+                  "read_refund_detail"
+                ],
+                "evidence": [],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "attribute_0",
+                "knowledgeBindingId": "admin.finance.refund.detail.fields#status"
+              },
+              {
+                "fields": [
+                  "applicationInformation.amountCharged",
+                  "applicationInformation.currency"
+                ],
+                "stepIds": [
+                  "read_refund_detail"
+                ],
+                "evidence": [],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "attribute_1",
+                "knowledgeBindingId": "admin.finance.refund.detail.fields#amount"
+              },
+              {
+                "fields": [
+                  "applicationInformation.amountCharged",
+                  "applicationInformation.currency"
+                ],
+                "stepIds": [
+                  "read_refund_detail"
+                ],
+                "evidence": [],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "attribute_2",
+                "knowledgeBindingId": "admin.finance.refund.detail.fields#amount"
+              },
+              {
+                "fields": [
+                  "lastUpdatedOn"
+                ],
+                "stepIds": [
+                  "read_refund_detail"
+                ],
+                "evidence": [
+                  {
+                    "quote": "The Finance list contains Application No. and Transaction No. as separate fields, plus Type, Apply For, Payment Method, Amount, Status and Last Updated.",
+                    "sourceId": "k_e3311a95b55e0d3cdb62:p6"
+                  },
+                  {
+                    "quote": "Date fields keep their distinct meanings: submission, assignment, last update, issue/effective, expiry and payment time must not be swapped when changing language.",
+                    "sourceId": "k_930718ddaa4327d32404:p9"
+                  }
+                ],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "attribute_3"
+              },
+              {
+                "fields": [
+                  "refundNo",
+                  "status",
+                  "lastUpdatedOn",
+                  "applicationInformation.amountCharged",
+                  "applicationInformation.currency"
+                ],
+                "stepIds": [
+                  "read_refund_detail"
+                ],
+                "evidence": [],
+                "sourceId": "api_0054b5a14754be5bb3d0",
+                "sourcePath": "/data",
+                "requirementId": "detail",
+                "knowledgeBindingId": ""
+              }
+            ]
+          }
+        }
+      ],
+      "capturedSourceMetadata": {
+        "sourceId": "api_0054b5a14754be5bb3d0",
+        "operationRef": "GET /api/admin/payments/refunds/{refundNo}",
+        "capturedAt": "2026-09-28T09:23:42.827360+00:00",
+        "page": "/financial-payment/refunds/refundsDetails?refundNo=HC-02-2026-0507490",
+        "verifiedRecord": {
+          "path": "/data",
+          "field": "refundNo",
+          "single": true,
+          "identity": "HC-02-2026-0507490",
+          "keyFields": [
+            "refundNo"
+          ]
+        },
+        "principalScopeRef": "17cd8f9132bd95c2d432",
+        "observationRef": "b8bbc718dafe47556a8a"
+      }
+    }
+  },
+  "earlierNativeProjection": {
+    "refundNo": "HC-02-2026-0507490",
+    "status": "Pending Refund",
+    "lastUpdatedOn": "2026-09-23T10:21:40",
+    "applicationInformation": {
+      "amountCharged": -25,
+      "currency": "AED"
+    }
+  },
+  "sourceFieldProof": {
+    "at": "2026-09-28T09:32:05.186871+00:00",
+    "sourceAudit": {
+      "path": "test/runtime/groups1113-20260928/round12-finance/answers/I-03__en-ar.json",
+      "sha256": "0e69d830571127b70673f2da2e6ae527a5b0e1535f0db4a39c1cd8bbf5641933"
+    },
+    "earlierNativeSource": {
+      "path": "test/runtime/groups1113-20260928/baselines/refund-current-peer-20260928.json",
+      "sha256": "d6ac9968a0d9b987c4c20dfd656461385211b3f91533bb0536ede2271b152ec6",
+      "capturedAt": "2026-09-28T03:03:48.359Z"
+    },
+    "proofs": [
+      {
+        "language": "en",
+        "operationRef": "GET /api/admin/payments/refunds/{refundNo}",
+        "sourceId": "api_0054b5a14754be5bb3d0",
+        "capturedAt": "2026-09-28T09:21:42.152380+00:00",
+        "verifiedRecord": {
+          "path": "/data",
+          "field": "refundNo",
+          "single": true,
+          "identity": "HC-02-2026-0507490",
+          "keyFields": [
+            "refundNo"
+          ]
+        },
+        "fieldChecks": [
+          {
+            "path": "/data/refundNo",
+            "earlierNativeValueHash": "ee958da6d9120a80b4741bfd48ea3d6b235ffbeae7e650e945d6a8f273e18071",
+            "auditEvidence": {
+              "kind": "scalar",
+              "status": "complete",
+              "valueHash": "ee958da6d9120a80b4741bfd48ea3d6b235ffbeae7e650e945d6a8f273e18071"
+            },
+            "equal": true
+          },
+          {
+            "path": "/data/status",
+            "earlierNativeValueHash": "67cec1f91f78a7b4d6199f4ba35df57a5213bdbe81c8581c8de0153550e2c298",
+            "auditEvidence": {
+              "kind": "scalar",
+              "status": "complete",
+              "valueHash": "67cec1f91f78a7b4d6199f4ba35df57a5213bdbe81c8581c8de0153550e2c298"
+            },
+            "equal": true
+          },
+          {
+            "path": "/data/lastUpdatedOn",
+            "earlierNativeValueHash": "2c6bb37b89de0445df066ed9b2b60f4e909611e6fbb3d9d03d756c3f8f3214ba",
+            "auditEvidence": {
+              "kind": "scalar",
+              "status": "complete",
+              "valueHash": "2c6bb37b89de0445df066ed9b2b60f4e909611e6fbb3d9d03d756c3f8f3214ba"
+            },
+            "equal": true
+          },
+          {
+            "path": "/data/applicationInformation/currency",
+            "earlierNativeValueHash": "a02a8fac8fe645256291b77c9781bda64b7963e2dbe47eb7639fb259af96c6b4",
+            "auditEvidence": {
+              "kind": "scalar",
+              "status": "complete",
+              "valueHash": "a02a8fac8fe645256291b77c9781bda64b7963e2dbe47eb7639fb259af96c6b4"
+            },
+            "equal": true
+          }
+        ]
+      },
+      {
+        "language": "ar",
+        "operationRef": "GET /api/admin/payments/refunds/{refundNo}",
+        "sourceId": "api_0054b5a14754be5bb3d0",
+        "capturedAt": "2026-09-28T09:23:42.827360+00:00",
+        "verifiedRecord": {
+          "path": "/data",
+          "field": "refundNo",
+          "single": true,
+          "identity": "HC-02-2026-0507490",
+          "keyFields": [
+            "refundNo"
+          ]
+        },
+        "fieldChecks": [
+          {
+            "path": "/data/refundNo",
+            "earlierNativeValueHash": "ee958da6d9120a80b4741bfd48ea3d6b235ffbeae7e650e945d6a8f273e18071",
+            "auditEvidence": {
+              "kind": "scalar",
+              "status": "complete",
+              "valueHash": "ee958da6d9120a80b4741bfd48ea3d6b235ffbeae7e650e945d6a8f273e18071"
+            },
+            "equal": true
+          },
+          {
+            "path": "/data/status",
+            "earlierNativeValueHash": "67cec1f91f78a7b4d6199f4ba35df57a5213bdbe81c8581c8de0153550e2c298",
+            "auditEvidence": {
+              "kind": "scalar",
+              "status": "complete",
+              "valueHash": "67cec1f91f78a7b4d6199f4ba35df57a5213bdbe81c8581c8de0153550e2c298"
+            },
+            "equal": true
+          },
+          {
+            "path": "/data/lastUpdatedOn",
+            "earlierNativeValueHash": "2c6bb37b89de0445df066ed9b2b60f4e909611e6fbb3d9d03d756c3f8f3214ba",
+            "auditEvidence": {
+              "kind": "scalar",
+              "status": "complete",
+              "valueHash": "2c6bb37b89de0445df066ed9b2b60f4e909611e6fbb3d9d03d756c3f8f3214ba"
+            },
+            "equal": true
+          },
+          {
+            "path": "/data/applicationInformation/currency",
+            "earlierNativeValueHash": "a02a8fac8fe645256291b77c9781bda64b7963e2dbe47eb7639fb259af96c6b4",
+            "auditEvidence": {
+              "kind": "scalar",
+              "status": "complete",
+              "valueHash": "a02a8fac8fe645256291b77c9781bda64b7963e2dbe47eb7639fb259af96c6b4"
+            },
+            "equal": true
+          }
+        ]
+      }
+    ],
+    "fieldPresenceVerified": true,
+    "valueComparisonOnly": "Four earlier native string values (refundNo, status, currency and root lastUpdatedOn) exactly match current EN and AR source-owned fieldEvidence hashes. The earlier native amount remains in the isolated fixture only; its original integer JSON encoding differs from the later floating numeric representation, so it is not included in this exact-byte proof. This is a read-only comparison of stored artifacts; no new HTTP response or business mutation occurred.",
+    "missingKnowledge": [
+      "A dedicated currency attribute binding for applicationInformation.currency",
+      "A detail last-updated date attribute binding for lastUpdatedOn; Finance list prose cannot stand in for a detail mapping."
+    ],
+    "businessAcceptance": false
+  },
+  "baselinePackage": {
+    "schemaVersion": "1.0",
+    "packageStatus": "active",
+    "bundleId": "admin.finance.refund.detail.page.package",
+    "createdAt": "2026-09-27T09:06:53.204095+00:00",
+    "searchMetadata": {
+      "titleEnglish": "Finance Refund Details current status amount and next processing step",
+      "titleArabic": "تفاصيل الاسترداد المالي: الحالة الحالية والمبلغ وخطوة المعالجة التالية",
+      "descriptionEnglish": "Finance Refund Details current status amount and next processing step",
+      "descriptionArabic": "تفاصيل الاسترداد المالي: الحالة الحالية والمبلغ وخطوة المعالجة التالية"
+    },
+    "records": [
+      {
+        "id": "admin.finance.refund.detail.page",
+        "kind": "page_definition",
+        "revision": 4,
+        "status": "active",
+        "title": "Refund Details",
+        "applicability": {
+          "portal": "admin",
+          "environments": [
+            "local",
+            "debug"
+          ],
+          "pageRefs": [
+            "/financial-payment/refunds/refundsDetails"
+          ],
+          "runtimeVerification": "response_shape_verified",
+          "deployedBuildMatch": "unknown"
+        },
+        "sources": [
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/FinancialRefundsDetails/index.tsx",
+            "revision": "sha256:3d0a62c878ccc3c2dc2898bb3f36faa7c925f3c29030e0fb618a110dedc2daec",
+            "locator": "refundNo entry, financial refund detail and execute action gate",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.API/Controllers/AdminPaymentsRefundsController.cs",
+            "revision": "sha256:349ca1cef07115ec1ec07bdf2d80aa16aabeacce16362c396bb66963999dfe9b",
+            "locator": "Authorized GET list/detail and separate execute mutation",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "runtime_observation",
+            "reference": "test/runtime/sequential-repair-batch5-20260927/baselines/finance-refund-detail.json",
+            "revision": "sha256:6f7ce372a4ff38805201d5e028db3438ea1f350a83e007a148d46d13f53d8dd5",
+            "locator": "Authorized refund status, amount and action capability shape",
+            "verification": "response_shape_verified"
+          }
+        ],
+        "payload": {
+          "pageRef": "/financial-payment/refunds/refundsDetails",
+          "routing": {
+            "parameters": [
+              {
+                "id": "admin.finance.refund.detail_lookup",
+                "name": "refundNo",
+                "from": "previous_record",
+                "operationRef": "GET /api/admin/payments/refunds",
+                "sourcePath": "/data/items",
+                "identityField": "refundNo",
+                "keyFields": [
+                  "refundNo"
+                ],
+                "field": "refundNo",
+                "unique": false,
+                "required": true,
+                "lookupPageRefs": [
+                  "/financial-payment/refunds"
+                ]
+              }
+            ],
+            "records": [
+              {
+                "id": "admin.finance.refund.detail_record",
+                "operationRef": "GET /api/admin/payments/refunds/{refundNo}",
+                "sourcePath": "/data",
+                "identityField": "refundNo",
+                "keyFields": [
+                  "refundNo"
+                ],
+                "unique": false
+              }
+            ]
+          },
+          "readOperation": {
+            "operationRef": "GET /api/admin/payments/refunds/{refundNo}",
+            "responseRoot": "/data"
+          },
+          "entryConditions": [
+            "refundNo is required; resolve from a complete authorized exact business-number match."
+          ],
+          "constraints": [
+            "Read-only definitions do not grant operation permissions."
+          ]
+        }
+      },
+      {
+        "id": "admin.finance.refund.detail.fields",
+        "kind": "field_semantics",
+        "revision": 3,
+        "status": "active",
+        "title": "Refund Details fields",
+        "applicability": {
+          "portal": "admin",
+          "environments": [
+            "local",
+            "debug"
+          ],
+          "pageRefs": [
+            "/financial-payment/refunds/refundsDetails"
+          ],
+          "runtimeVerification": "response_shape_verified",
+          "deployedBuildMatch": "unknown"
+        },
+        "sources": [
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/FinancialRefundsDetails/index.tsx",
+            "revision": "sha256:3d0a62c878ccc3c2dc2898bb3f36faa7c925f3c29030e0fb618a110dedc2daec",
+            "locator": "refundNo entry, financial refund detail and execute action gate",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.API/Controllers/AdminPaymentsRefundsController.cs",
+            "revision": "sha256:349ca1cef07115ec1ec07bdf2d80aa16aabeacce16362c396bb66963999dfe9b",
+            "locator": "Authorized GET list/detail and separate execute mutation",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "runtime_observation",
+            "reference": "test/runtime/sequential-repair-batch5-20260927/baselines/finance-refund-detail.json",
+            "revision": "sha256:6f7ce372a4ff38805201d5e028db3438ea1f350a83e007a148d46d13f53d8dd5",
+            "locator": "Authorized refund status, amount and action capability shape",
+            "verification": "response_shape_verified"
+          }
+        ],
+        "payload": {
+          "pageRef": "/financial-payment/refunds/refundsDetails",
+          "sourceBinding": {
+            "operationRef": "GET /api/admin/payments/refunds/{refundNo}",
+            "sourcePath": "/data"
+          },
+          "bindings": [
+            {
+              "id": "object",
+              "kind": "object",
+              "concept": "refund",
+              "fields": [
+                "refundNo"
+              ],
+              "operationRef": "GET /api/admin/payments/refunds/{refundNo}",
+              "sourcePath": "/data",
+              "aliases": [
+                "refund request",
+                "financial refund",
+                "استرداد"
+              ],
+              "meaning": "refund details"
+            },
+            {
+              "id": "grain",
+              "kind": "grain",
+              "concept": "refund",
+              "fields": [
+                "refundNo"
+              ],
+              "operationRef": "GET /api/admin/payments/refunds/{refundNo}",
+              "sourcePath": "/data",
+              "aliases": [
+                "refund request",
+                "financial refund",
+                "استرداد"
+              ],
+              "meaning": "refund details"
+            },
+            {
+              "id": "number",
+              "kind": "attribute",
+              "concept": "refund number",
+              "fields": [
+                "refundNo"
+              ],
+              "operationRef": "GET /api/admin/payments/refunds/{refundNo}",
+              "sourcePath": "/data",
+              "aliases": [
+                "application number",
+                "رقم الاسترداد"
+              ],
+              "meaning": "Financial refund business number; exact match within refund records."
+            },
+            {
+              "id": "status",
+              "kind": "attribute",
+              "concept": "status",
+              "fields": [
+                "status"
+              ],
+              "operationRef": "GET /api/admin/payments/refunds/{refundNo}",
+              "sourcePath": "/data",
+              "aliases": [
+                "refund status",
+                "الحالة",
+                "current status",
+                "current refund status",
+                "الحالة الحالية"
+              ],
+              "meaning": "Current finance processing display, not an approval conclusion."
+            },
+            {
+              "id": "amount",
+              "kind": "attribute",
+              "concept": "amount",
+              "fields": [
+                "applicationInformation.amountCharged",
+                "applicationInformation.currency"
+              ],
+              "operationRef": "GET /api/admin/payments/refunds/{refundNo}",
+              "sourcePath": "/data",
+              "aliases": [
+                "refund amount",
+                "مبلغ الاسترداد"
+              ],
+              "meaning": "Returned signed amount and currency. A negative charge expresses the refund debit direction; state the refund magnitude with its currency and do not treat it as a negative entitlement.",
+              "interpretationRules": [
+                {
+                  "conditions": [
+                    {
+                      "field": "applicationInformation.amountCharged",
+                      "predicate": "lt",
+                      "value": 0
+                    },
+                    {
+                      "field": "applicationInformation.currency",
+                      "predicate": "ne",
+                      "value": null
+                    }
+                  ],
+                  "hideFields": [],
+                  "message": {
+                    "en": "The signed amount is negative because it records the refund debit direction. The refund magnitude is the absolute value of that amount in the displayed currency; it is not a negative entitlement.",
+                    "ar": "المبلغ المعروض سالب لأنه يسجّل اتجاه الخصم الخاص بالاسترداد. قيمة الاسترداد هي القيمة المطلقة لهذا المبلغ بالعملة المعروضة، وليست استحقاقاً سالباً."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "next",
+              "kind": "attribute",
+              "concept": "next step",
+              "fields": [
+                "status",
+                "canExecuteRefund",
+                "unsupportedReason",
+                "failureReason.isVisible",
+                "failureReason.message"
+              ],
+              "operationRef": "GET /api/admin/payments/refunds/{refundNo}",
+              "sourcePath": "/data",
+              "aliases": [
+                "next action",
+                "الخطوة التالية"
+              ],
+              "meaning": "When current status is Pending Refund and canExecuteRefund is true, an authorized finance operator can execute the refund in the portal after its checks. This read does not execute or complete a refund. If false, report unsupportedReason or failure state, not a guaranteed payout.",
+              "interpretationRules": [
+                {
+                  "conditions": [
+                    {
+                      "field": "status",
+                      "value": "Pending Refund"
+                    },
+                    {
+                      "field": "canExecuteRefund",
+                      "value": true
+                    },
+                    {
+                      "field": "unsupportedReason",
+                      "value": null
+                    },
+                    {
+                      "field": "failureReason.isVisible",
+                      "value": false
+                    },
+                    {
+                      "field": "failureReason.message",
+                      "value": ""
+                    }
+                  ],
+                  "hideFields": [
+                    "canExecuteRefund",
+                    "unsupportedReason",
+                    "failureReason.isVisible",
+                    "failureReason.message"
+                  ],
+                  "message": {
+                    "en": "Next step: an authorized finance operator can execute the pending refund in the portal after checking the refund details. This read has not executed the refund or confirmed payment completion.",
+                    "ar": "الخطوة التالية: يمكن لموظف المالية المخوّل تنفيذ الاسترداد المعلّق في البوابة بعد التحقق من تفاصيله. لم تنفّذ هذه القراءة الاسترداد ولم تؤكد اكتمال الدفع."
+                  }
+                }
+              ]
+            }
+          ],
+          "relationships": [
+            "Finance refund processing is separate from the happiness refund approval ticket; identical visible numbers do not make their states interchangeable.",
+            "Keep card, email and private payment details out of the response."
+          ]
+        }
+      }
+    ]
+  },
+  "candidatePackage": {
+    "schemaVersion": "1.0",
+    "bundleId": "admin.finance.refund.detail.currency-and-update.package",
+    "packageStatus": "draft",
+    "createdAt": "2026-09-28T09:32:05.186871+00:00",
+    "searchMetadata": {
+      "titleEnglish": "Finance Refund Details currency and source update time",
+      "titleArabic": "تفاصيل الاسترداد المالي: العملة ووقت تحديث المصدر",
+      "descriptionEnglish": "Independent executable field meanings for refund currency and the refund record source-reported last-updated time. Preserve the original refund amount and identity bindings.",
+      "descriptionArabic": "تعريفان مستقلان لعملة الاسترداد ووقت آخر تحديث لسجل الاسترداد من المصدر، مع الحفاظ على معنى مبلغ الاسترداد وهوية السجل."
+    },
+    "records": [
+      {
+        "id": "admin.finance.refund.detail.currency-and-update",
+        "kind": "field_semantics",
+        "revision": 1,
+        "status": "draft",
+        "title": "Finance Refund Details currency and source update time",
+        "applicability": {
+          "portal": "admin",
+          "environments": [
+            "local",
+            "debug"
+          ],
+          "pageRefs": [
+            "/financial-payment/refunds/refundsDetails"
+          ],
+          "runtimeVerification": "response_shape_verified",
+          "deployedBuildMatch": "unknown"
+        },
+        "sources": [
+          {
+            "kind": "runtime_observation",
+            "reference": "test/runtime/group17-cross-repair-20260928/refund-detail-field-evidence.json",
+            "revision": "sha256:1c95914e03011373f9b5d034186baf4875f72940f82b4e2e8753505a2c46efc7",
+            "locator": "Saved authorized refund detail fieldEvidence and earlier native response comparison; only field presence and scalar equality are proved.",
+            "verification": "response_shape_verified"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Dtos/Refunds/RefundBoundaryDtos.cs",
+            "revision": "sha256:be6408527019812688d641bd981b410f17d07471578a012791b2f1851954142c",
+            "locator": "RefundDetailDto.LastUpdatedOn and RefundApplicationInformationDto.Currency; separate RelatedPaymentInformation timestamps.",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/Refunds/RefundsAppService.cs",
+            "revision": "sha256:38c03a38858d4dc93ba5cdb21bdb1b117133d9afcf59545e7b420d2dc00ccb80",
+            "locator": "GetDetailAsync maps result.LastUpdatedOn and result.ApplicationInformation.Currency into the exact detail fields.",
+            "verification": "source_inspected"
+          },
+          {
+            "kind": "source_code",
+            "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Infrastructure/Repositorys/RefundRepository.cs",
+            "revision": "sha256:0ea3d0cc6687a9ffb3cfbc657cf6efdb0b53f90aa99ff1167c10ccc8039dbd88",
+            "locator": "GetDetailAsync detail projection assigns pendingRecord.LastUpdatedOn to the refund root, separately from RelatedPaymentInformation.LastUpdatedOn. Source inspection does not attest deployed build parity.",
+            "verification": "source_inspected"
+          }
+        ],
+        "payload": {
+          "pageRef": "/financial-payment/refunds/refundsDetails",
+          "sourceBinding": {
+            "operationRef": "GET /api/admin/payments/refunds/{refundNo}",
+            "sourcePath": "/data"
+          },
+          "bindings": [
+            {
+              "id": "currency",
+              "kind": "attribute",
+              "concept": "currency",
+              "aliases": [
+                "refund currency",
+                "display currency",
+                "عملة الاسترداد",
+                "العملة"
+              ],
+              "operationRef": "GET /api/admin/payments/refunds/{refundNo}",
+              "sourcePath": "/data",
+              "fields": [
+                "applicationInformation.currency"
+              ],
+              "meaning": "The currency returned with the refund amount on this verified refund detail record. Read its actual value; do not convert currency or fill a missing value from a DTO default. This standalone currency fact does not replace the existing compound amount binding."
+            },
+            {
+              "id": "source-update-time",
+              "kind": "attribute",
+              "concept": "last-updated date",
+              "aliases": [
+                "last updated date",
+                "last update time",
+                "last updated time",
+                "refund last update time",
+                "refund last updated date",
+                "lastUpdatedOn",
+                "تاريخ آخر تحديث",
+                "وقت آخر تحديث",
+                "آخر تحديث للاسترداد"
+              ],
+              "operationRef": "GET /api/admin/payments/refunds/{refundNo}",
+              "sourcePath": "/data",
+              "fields": [
+                "lastUpdatedOn"
+              ],
+              "meaning": "The source-reported update time of this refund record from the root detail field. It is distinct from the original payment timestamp, failure reason timestamp, reader capture time and refund execution completion proof."
+            }
+          ],
+          "constraints": [
+            "Use only the current authorized detail response whose refundNo has been exactly verified. These fields add no route, relation, permission or write capability.",
+            "Keep the existing refund amount binding and its signed-amount meaning. Currency is independently addressable as a requested attribute; sharing a physical currency field does not make the currency concept an alias of refund amount.",
+            "Use the root lastUpdatedOn only. Do not substitute relatedPaymentInformation.lastUpdatedOn, failureReason.lastUpdatedOn, submission dates or current time. List documentation does not establish a detail field binding.",
+            "Preserve the returned timestamp. If it lacks an offset, no timezone is verified; do not label it UTC or calculate cross-department synchronization latency. A later read alone does not prove a committed update.",
+            "Missing or null currency/update time remains unavailable. Do not replace it with the inspected implementation default, another record value, a cached answer or knowledge example.",
+            "The inspected source assigns pendingRecord.LastUpdatedOn to the root refund time; deployed source parity is unknown. This field is not proof of provider settlement, successful refund completion or synchronization of all systems."
+          ]
+        }
+      }
+    ]
+  },
+  "sourceRefs": [
+    {
+      "path": "navigation-knowledge/artifacts/KB/逐例修复第五批-20260927/Finance Refund Details-记录定位金额与下一步.json",
+      "sha256": "f07aa3c49b888d91ced16b3413483a684b066d22e156431ec835a313ae7e12d5"
+    },
+    {
+      "path": "test/runtime/group17-cross-repair-20260928/knowledge/Finance Refund Details-币种与源返回更新时间-20260928-r1-draft.json",
+      "sha256": "384985dadf3872f228e40046341f63617d8a3358d4f3359bdb92fffc2dd7c968"
+    }
+  ]
+}

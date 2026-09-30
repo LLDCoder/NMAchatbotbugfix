@@ -1,0 +1,86 @@
+.transfer-info-container {
+  width: 100%;
+
+  .transfer-info-card {
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e8e8e8;
+
+    .ant-card-head {
+      background-color: #fff;
+      border-bottom: none;
+      padding: 20px 24px 0;
+      min-height: auto;
+
+      .ant-card-head-title {
+        font-weight: 600;
+        font-size: 16px;
+        color: #361e12;
+        padding: 0;
+      }
+    }
+
+    .ant-card-body {
+      padding: 20px 24px 24px;
+    }
+  }
+
+  .ant-row {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .transfer-info-field {
+    margin-bottom: 0;
+  }
+
+  .transfer-info-label {
+    font-size: 14px;
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    .transfer-info-required {
+      color: #ea4f49;
+      margin-left: 2px;
+    }
+
+    .transfer-info-tooltip-icon {
+      color: #999;
+      font-size: 14px;
+      cursor: pointer;
+      margin-left: 4px;
+
+      &:hover {
+        color: #8b7355;
+      }
+    }
+  }
+
+  .transfer-info-textarea {
+    border-radius: 8px;
+    border: 1px solid #d9d9d9;
+    resize: none;
+
+    &:hover:not(:disabled) {
+      border-color: #8b7355;
+    }
+
+    &:focus {
+      border-color: #8b7355;
+      box-shadow: 0 0 0 2px rgba(139, 115, 85, 0.1);
+    }
+
+    &.ant-input-disabled {
+      background-color: #f5f5f5;
+      color: #333;
+      cursor: not-allowed;
+    }
+  }
+}

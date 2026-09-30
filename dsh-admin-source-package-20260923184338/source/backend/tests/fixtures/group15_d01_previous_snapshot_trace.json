@@ -1,0 +1,1377 @@
+{
+  "provenance": {
+    "mode": "round8_D01_saved_output_and_33_attested_scalars_offline_replay",
+    "newQuestions": 0,
+    "modelCalls": 0,
+    "networkRequests": 0,
+    "capturedAnswerSHA256": "b6fdc72a556ef9c7bdc6b4dd0bd8b8d6c88d010c6a33725711b66069a813943c",
+    "scalarHashesVerified": 33
+  },
+  "result": {
+    "pipeline": "generic_v3",
+    "result": "success",
+    "analysisStatus": "complete",
+    "page": "/dashboard",
+    "section": "Dashboard",
+    "scope": "team",
+    "answerShape": "overview",
+    "completeness": "complete",
+    "facts": [
+      "Dashboard overview panel values: [{\"taskTabCounts.ServiceApplication\": 0, \"taskTabCounts.ProfileVerification\": 0, \"taskTabCounts.Enquiries\": 0, \"taskTabCounts.Refunds\": 0, \"taskTabCounts.Appeals\": 0, \"serviceApplicationCard.totalCount\": 3, \"serviceApplicationCard.totalTasks\": 4, \"serviceApplicationCard.doneToday\": 0, \"serviceApplicationCard.overdueTasks\": 2, \"serviceApplicationCard.slaDistribution.pendingReview\": 2, \"serviceApplicationCard.slaDistribution.pendingModification\": 0, \"serviceApplicationCard.slaDistribution.externalApproval\": 1, \"profileVerificationCard.totalCount\": 0, \"profileVerificationCard.totalTasks\": 0, \"profileVerificationCard.doneToday\": 0, \"profileVerificationCard.overdueTasks\": 0, \"profileVerificationCard.statusBreakdown.pendingReview\": 0, \"profileVerificationCard.statusBreakdown.approved\": 0, \"profileVerificationCard.statusBreakdown.rejected\": 0}]",
+      "My/Team Performance panel values: [{\"slaComplianceRate\": 100, \"averageHandlingTimeMinutes\": 5.24, \"approvalRateOfApplication\": 0, \"overdueTasks\": 3}]",
+      "License Distribution panel values: [{\"totalCount\": 0, \"statusDistribution.Active\": 0, \"statusDistribution.Expired\": 0, \"statusDistribution.ExpiringSoon\": 0, \"statusDistribution.Canceled\": 0, \"statusDistribution.Suspended\": 0}]"
+    ],
+    "missing": [],
+    "gaps": [],
+    "context": {
+      "scope": "team",
+      "scopeEvidence": [
+        {
+          "sourceId": "k_c20b7d097a835c897989:p5"
+        },
+        {
+          "sourceId": "k_edf65656488d01a27eae:p0"
+        }
+      ],
+      "grain": {
+        "value": "One current Dashboard snapshot: a single captured response object per panel whose metric values are scalar observations, not entity identifiers or row-derived record counts.",
+        "evidence": [
+          {
+            "sourceId": "k_2724011d1f095378f5e0:p4"
+          },
+          {
+            "sourceId": "k_ac4bc548362e0198e0ef:p2"
+          }
+        ]
+      },
+      "population": {
+        "value": "The current authenticated Dashboard workspace: the visible My Tasks category counts, the Service Application and Profile Verification summary cards, the License Distribution panel and the My/Team Performance panel, each with its own population and time basis.",
+        "evidence": [
+          {
+            "sourceId": "k_2724011d1f095378f5e0:p6"
+          },
+          {
+            "sourceId": "k_ac4bc548362e0198e0ef:p11"
+          },
+          {
+            "sourceId": "k_82305fdbe85edf92818f:p4"
+          }
+        ]
+      },
+      "filterScope": {
+        "value": "The Dashboard view is determined by the selected department/role workspace and the applied time range; the observed performance response is the department (scope=1) variant.",
+        "evidence": [
+          {
+            "sourceId": "k_6fb051a4f175c9b992b6:p1"
+          },
+          {
+            "sourceId": "k_c20b7d097a835c897989:p5"
+          }
+        ]
+      },
+      "time": {
+        "value": "current observation",
+        "evidence": []
+      },
+      "caveats": [
+        {
+          "value": "Each Dashboard panel has its own population and time basis; values from different panels must not be added together, and a panel that is not observed stays explicitly unavailable rather than being shown as zero.",
+          "evidence": [
+            {
+              "sourceId": "k_2724011d1f095378f5e0:p8"
+            },
+            {
+              "sourceId": "k_82305fdbe85edf92818f:p5"
+            }
+          ]
+        },
+        {
+          "value": "The License Distribution total is a sum of independent status buckets that may overlap, so it is not a certified count of distinct licenses.",
+          "evidence": [
+            {
+              "sourceId": "k_82305fdbe85edf92818f:p3"
+            },
+            {
+              "sourceId": "k_82305fdbe85edf92818f:p6"
+            }
+          ]
+        },
+        {
+          "value": "The My Tasks tab counts and priority cards are personal tasks even for a manager, while the Service Application summary follows the backend role scope; their totals are not automatically comparable.",
+          "evidence": [
+            {
+              "sourceId": "k_2724011d1f095378f5e0:p8"
+            },
+            {
+              "sourceId": "k_6e3576d9a0a39149646c:p3"
+            }
+          ]
+        },
+        {
+          "value": "The inspected performance pipeline is application-only, and SLA/approval rates are rendered with the page percentage formatter; a raw/display ambiguity is reported rather than converted.",
+          "evidence": [
+            {
+              "sourceId": "k_ac4bc548362e0198e0ef:p15"
+            },
+            {
+              "sourceId": "k_ac4bc548362e0198e0ef:p4"
+            }
+          ]
+        }
+      ]
+    },
+    "outputs": [
+      {
+        "id": "read_overview",
+        "label": "Dashboard overview panel values",
+        "value": [
+          {
+            "taskTabCounts.ServiceApplication": 0,
+            "taskTabCounts.ProfileVerification": 0,
+            "taskTabCounts.Enquiries": 0,
+            "taskTabCounts.Refunds": 0,
+            "taskTabCounts.Appeals": 0,
+            "serviceApplicationCard.totalCount": 3,
+            "serviceApplicationCard.totalTasks": 4,
+            "serviceApplicationCard.doneToday": 0,
+            "serviceApplicationCard.overdueTasks": 2,
+            "serviceApplicationCard.slaDistribution.pendingReview": 2,
+            "serviceApplicationCard.slaDistribution.pendingModification": 0,
+            "serviceApplicationCard.slaDistribution.externalApproval": 1,
+            "profileVerificationCard.totalCount": 0,
+            "profileVerificationCard.totalTasks": 0,
+            "profileVerificationCard.doneToday": 0,
+            "profileVerificationCard.overdueTasks": 0,
+            "profileVerificationCard.statusBreakdown.pendingReview": 0,
+            "profileVerificationCard.statusBreakdown.approved": 0,
+            "profileVerificationCard.statusBreakdown.rejected": 0
+          }
+        ],
+        "role": "detail",
+        "fieldLabels": {
+          "taskTabCounts.ServiceApplication": "My Tasks – Service Application",
+          "taskTabCounts.ProfileVerification": "My Tasks – Profile Verification",
+          "taskTabCounts.Enquiries": "My Tasks – Enquiries & Complaints",
+          "taskTabCounts.Refunds": "My Tasks – Refunds",
+          "taskTabCounts.Appeals": "My Tasks – Appeals",
+          "serviceApplicationCard.totalCount": "Service Application – To Do",
+          "serviceApplicationCard.totalTasks": "Service Application – Total Tasks",
+          "serviceApplicationCard.doneToday": "Service Application – Done Today",
+          "serviceApplicationCard.overdueTasks": "Service Application – Overdue Tasks",
+          "serviceApplicationCard.slaDistribution.pendingReview": "Service Application – Pending Review",
+          "serviceApplicationCard.slaDistribution.pendingModification": "Service Application – Pending Modification",
+          "serviceApplicationCard.slaDistribution.externalApproval": "Service Application – External Approval",
+          "profileVerificationCard.totalCount": "Profile Verification – Total",
+          "profileVerificationCard.totalTasks": "Profile Verification – Total Tasks",
+          "profileVerificationCard.doneToday": "Profile Verification – Done Today",
+          "profileVerificationCard.overdueTasks": "Profile Verification – Overdue Tasks",
+          "profileVerificationCard.statusBreakdown.pendingReview": "Profile Verification – Pending Review",
+          "profileVerificationCard.statusBreakdown.approved": "Profile Verification – Approved",
+          "profileVerificationCard.statusBreakdown.rejected": "Profile Verification – Rejected"
+        },
+        "unavailableFields": [],
+        "unknownCount": 0,
+        "evidence": [
+          {
+            "page": "/dashboard",
+            "capturedAt": "2026-09-28T17:34:39.730421+00:00",
+            "principalScopeRef": "7da85129c1862eb3c3f0",
+            "operationRef": "GET /api/license/dashboard/overview",
+            "buildFingerprint": "unknown",
+            "completeness": "complete",
+            "observationRef": "99507d8a02344fbfcd62",
+            "sourceId": "api_11c41b2554cc206eedfe",
+            "fieldBinding": "/data",
+            "semanticContext": "",
+            "observationShape": "object",
+            "fieldStatus": {
+              "taskTabCounts.ServiceApplication": "complete",
+              "taskTabCounts.ProfileVerification": "complete",
+              "taskTabCounts.Enquiries": "complete",
+              "taskTabCounts.Refunds": "complete",
+              "taskTabCounts.Appeals": "complete",
+              "serviceApplicationCard.totalCount": "complete",
+              "serviceApplicationCard.totalTasks": "complete",
+              "serviceApplicationCard.doneToday": "complete",
+              "serviceApplicationCard.overdueTasks": "complete",
+              "serviceApplicationCard.slaDistribution.pendingReview": "complete",
+              "serviceApplicationCard.slaDistribution.pendingModification": "complete",
+              "serviceApplicationCard.slaDistribution.externalApproval": "complete",
+              "profileVerificationCard.totalCount": "complete",
+              "profileVerificationCard.totalTasks": "complete",
+              "profileVerificationCard.doneToday": "complete",
+              "profileVerificationCard.overdueTasks": "complete",
+              "profileVerificationCard.statusBreakdown.pendingReview": "complete",
+              "profileVerificationCard.statusBreakdown.approved": "complete",
+              "profileVerificationCard.statusBreakdown.rejected": "complete"
+            },
+            "populationComplete": true
+          }
+        ],
+        "knowledge": [
+          {
+            "sourceId": "k_2724011d1f095378f5e0:p6"
+          }
+        ],
+        "requirementIds": [
+          "object",
+          "grain",
+          "attribute_0"
+        ],
+        "verifiedAbsences": [],
+        "verifiedInterpretations": [],
+        "dataCompleteness": "complete"
+      },
+      {
+        "id": "read_performance",
+        "label": "My/Team Performance panel values",
+        "value": [
+          {
+            "slaComplianceRate": 100,
+            "averageHandlingTimeMinutes": 5.24,
+            "approvalRateOfApplication": 0,
+            "overdueTasks": 3
+          }
+        ],
+        "role": "detail",
+        "fieldLabels": {
+          "slaComplianceRate": "SLA Compliance (%)",
+          "averageHandlingTimeMinutes": "Avg. Processing Time (min)",
+          "approvalRateOfApplication": "Approval Rate of Application (%)",
+          "overdueTasks": "Overdue Tasks (tasks)"
+        },
+        "unavailableFields": [],
+        "unknownCount": 0,
+        "evidence": [
+          {
+            "page": "/dashboard",
+            "capturedAt": "2026-09-28T17:34:39.730421+00:00",
+            "principalScopeRef": "7da85129c1862eb3c3f0",
+            "operationRef": "GET /api/license/dashboard/performance",
+            "buildFingerprint": "unknown",
+            "completeness": "complete",
+            "observationRef": "99507d8a02344fbfcd62",
+            "sourceId": "api_8080c0de4e6a7b165633",
+            "fieldBinding": "/data/summary",
+            "semanticContext": "",
+            "observationShape": "object",
+            "fieldStatus": {
+              "slaComplianceRate": "complete",
+              "averageHandlingTimeMinutes": "complete",
+              "approvalRateOfApplication": "complete",
+              "overdueTasks": "complete"
+            },
+            "populationComplete": true
+          }
+        ],
+        "knowledge": [
+          {
+            "sourceId": "k_ac4bc548362e0198e0ef:p11"
+          }
+        ],
+        "requirementIds": [
+          "object",
+          "grain",
+          "attribute_0"
+        ],
+        "verifiedAbsences": [],
+        "verifiedInterpretations": [],
+        "dataCompleteness": "complete",
+        "snapshotDisplayDefinitions": [
+          {
+            "field": "slaComplianceRate",
+            "knowledgeBindingId": "admin.dashboard.license-performance.department#sla_compliance",
+            "sourceId": "api_8080c0de4e6a7b165633",
+            "sourcePath": "/data/summary",
+            "displayUnit": "%",
+            "displayScale": {
+              "threshold": 1,
+              "atMostFactor": 100,
+              "otherwiseFactor": 1,
+              "decimals": 1
+            }
+          },
+          {
+            "field": "averageHandlingTimeMinutes",
+            "knowledgeBindingId": "admin.dashboard.license-performance.department#average_processing_time",
+            "sourceId": "api_8080c0de4e6a7b165633",
+            "sourcePath": "/data/summary",
+            "displayUnit": "min"
+          },
+          {
+            "field": "approvalRateOfApplication",
+            "knowledgeBindingId": "admin.dashboard.license-performance.department#approval_rate",
+            "sourceId": "api_8080c0de4e6a7b165633",
+            "sourcePath": "/data/summary",
+            "displayUnit": "%",
+            "displayScale": {
+              "threshold": 1,
+              "atMostFactor": 100,
+              "otherwiseFactor": 1,
+              "decimals": 1
+            }
+          },
+          {
+            "field": "overdueTasks",
+            "knowledgeBindingId": "admin.dashboard.license-performance.department#overdue_tasks",
+            "sourceId": "api_8080c0de4e6a7b165633",
+            "sourcePath": "/data/summary",
+            "displayUnit": "tasks"
+          }
+        ],
+        "snapshotResponseDates": [
+          {
+            "parameter": "startDate",
+            "date": "2026-09-22",
+            "sourcePath": "/data/startDate",
+            "valueHash": "7bb8f992cee03aa07a6873858e24c1e5d856fa3dfe3bf2b2477b80dd4a36a703"
+          },
+          {
+            "parameter": "endDate",
+            "date": "2026-09-28",
+            "sourcePath": "/data/endDate",
+            "valueHash": "8a5a2c56f836d10b0a017f37064c1d0635b19a6768ee6fabe68ac54f5e3b3c94"
+          }
+        ],
+        "displayRows": [
+          {
+            "slaComplianceRate": "100%",
+            "averageHandlingTimeMinutes": 5.24,
+            "approvalRateOfApplication": "0%",
+            "overdueTasks": 3
+          }
+        ]
+      },
+      {
+        "id": "read_distribution",
+        "label": "License Distribution panel values",
+        "value": [
+          {
+            "totalCount": 0,
+            "statusDistribution.Active": 0,
+            "statusDistribution.Expired": 0,
+            "statusDistribution.ExpiringSoon": 0,
+            "statusDistribution.Canceled": 0,
+            "statusDistribution.Suspended": 0
+          }
+        ],
+        "role": "detail",
+        "fieldLabels": {
+          "totalCount": "License Distribution – Total",
+          "statusDistribution.Active": "License Distribution – Active",
+          "statusDistribution.Expired": "License Distribution – Expired",
+          "statusDistribution.ExpiringSoon": "License Distribution – Expiring Soon",
+          "statusDistribution.Canceled": "License Distribution – Canceled",
+          "statusDistribution.Suspended": "License Distribution – Suspended"
+        },
+        "unavailableFields": [],
+        "unknownCount": 0,
+        "evidence": [
+          {
+            "page": "/dashboard",
+            "capturedAt": "2026-09-28T17:34:39.730421+00:00",
+            "principalScopeRef": "7da85129c1862eb3c3f0",
+            "operationRef": "GET /api/license/dashboard/license-distribution",
+            "buildFingerprint": "unknown",
+            "completeness": "complete",
+            "observationRef": "99507d8a02344fbfcd62",
+            "sourceId": "api_601ef82dc37d9594288a",
+            "fieldBinding": "/data",
+            "semanticContext": "",
+            "observationShape": "object",
+            "fieldStatus": {
+              "totalCount": "complete",
+              "statusDistribution.Active": "complete",
+              "statusDistribution.Expired": "complete",
+              "statusDistribution.ExpiringSoon": "complete",
+              "statusDistribution.Canceled": "complete",
+              "statusDistribution.Suspended": "complete"
+            },
+            "populationComplete": true
+          }
+        ],
+        "knowledge": [
+          {
+            "sourceId": "k_82305fdbe85edf92818f:p4"
+          }
+        ],
+        "requirementIds": [
+          "object",
+          "grain",
+          "attribute_0"
+        ],
+        "verifiedAbsences": [],
+        "verifiedInterpretations": [],
+        "dataCompleteness": "complete",
+        "snapshotResponseDates": [
+          {
+            "parameter": "startDate",
+            "date": "2026-09-22",
+            "sourcePath": "/data/startDate",
+            "valueHash": "7bb8f992cee03aa07a6873858e24c1e5d856fa3dfe3bf2b2477b80dd4a36a703"
+          },
+          {
+            "parameter": "endDate",
+            "date": "2026-09-28",
+            "sourcePath": "/data/endDate",
+            "valueHash": "aa46ae5af5c443098471fcbd2eef04eb6b26e8e9b26a5048da6644e00b6127a5"
+          }
+        ]
+      }
+    ],
+    "requirements": [
+      {
+        "id": "object",
+        "kind": "object",
+        "value": "Dashboard"
+      },
+      {
+        "id": "grain",
+        "kind": "grain",
+        "value": "Dashboard"
+      },
+      {
+        "id": "attribute_0",
+        "kind": "attribute",
+        "value": "key metrics"
+      }
+    ],
+    "requirementCoverage": [
+      {
+        "id": "object",
+        "kind": "object",
+        "value": "Dashboard",
+        "status": "satisfied",
+        "outputIds": [
+          "read_overview",
+          "read_performance",
+          "read_distribution"
+        ],
+        "stepIds": [
+          "read_overview",
+          "read_performance",
+          "read_distribution"
+        ],
+        "reason": "",
+        "sourceId": "api_11c41b2554cc206eedfe",
+        "sourcePath": "/data",
+        "fields": [
+          "taskTabCounts.ServiceApplication",
+          "taskTabCounts.ProfileVerification",
+          "taskTabCounts.Enquiries",
+          "taskTabCounts.Refunds",
+          "taskTabCounts.Appeals",
+          "serviceApplicationCard.totalCount",
+          "serviceApplicationCard.totalTasks",
+          "serviceApplicationCard.doneToday",
+          "serviceApplicationCard.overdueTasks",
+          "profileVerificationCard.totalCount",
+          "profileVerificationCard.totalTasks",
+          "profileVerificationCard.doneToday",
+          "profileVerificationCard.overdueTasks",
+          "serviceApplicationCard.slaDistribution.pendingReview",
+          "serviceApplicationCard.slaDistribution.pendingModification",
+          "serviceApplicationCard.slaDistribution.externalApproval",
+          "profileVerificationCard.statusBreakdown.pendingReview",
+          "profileVerificationCard.statusBreakdown.approved",
+          "profileVerificationCard.statusBreakdown.rejected"
+        ],
+        "evidence": [
+          {
+            "sourceId": "k_2724011d1f095378f5e0:p0",
+            "quote": ""
+          }
+        ],
+        "bindingResults": [
+          {
+            "id": "object",
+            "kind": "object",
+            "value": "Dashboard",
+            "status": "satisfied",
+            "outputIds": [
+              "read_overview"
+            ],
+            "stepIds": [
+              "read_overview"
+            ],
+            "reason": "",
+            "sourceId": "api_11c41b2554cc206eedfe",
+            "sourcePath": "/data",
+            "fields": [
+              "taskTabCounts.ServiceApplication",
+              "taskTabCounts.ProfileVerification",
+              "taskTabCounts.Enquiries",
+              "taskTabCounts.Refunds",
+              "taskTabCounts.Appeals",
+              "serviceApplicationCard.totalCount",
+              "serviceApplicationCard.totalTasks",
+              "serviceApplicationCard.doneToday",
+              "serviceApplicationCard.overdueTasks",
+              "profileVerificationCard.totalCount",
+              "profileVerificationCard.totalTasks",
+              "profileVerificationCard.doneToday",
+              "profileVerificationCard.overdueTasks",
+              "serviceApplicationCard.slaDistribution.pendingReview",
+              "serviceApplicationCard.slaDistribution.pendingModification",
+              "serviceApplicationCard.slaDistribution.externalApproval",
+              "profileVerificationCard.statusBreakdown.pendingReview",
+              "profileVerificationCard.statusBreakdown.approved",
+              "profileVerificationCard.statusBreakdown.rejected"
+            ],
+            "evidence": [
+              {
+                "sourceId": "k_2724011d1f095378f5e0:p0",
+                "quote": ""
+              }
+            ]
+          },
+          {
+            "id": "object",
+            "kind": "object",
+            "value": "Dashboard",
+            "status": "satisfied",
+            "outputIds": [
+              "read_performance"
+            ],
+            "stepIds": [
+              "read_performance"
+            ],
+            "reason": "",
+            "sourceId": "api_8080c0de4e6a7b165633",
+            "sourcePath": "/data/summary",
+            "fields": [
+              "slaComplianceRate",
+              "averageHandlingTimeMinutes",
+              "approvalRateOfApplication",
+              "overdueTasks"
+            ],
+            "evidence": [
+              {
+                "sourceId": "k_c20b7d097a835c897989:p0",
+                "quote": ""
+              }
+            ]
+          },
+          {
+            "id": "object",
+            "kind": "object",
+            "value": "Dashboard",
+            "status": "satisfied",
+            "outputIds": [
+              "read_distribution"
+            ],
+            "stepIds": [
+              "read_distribution"
+            ],
+            "reason": "",
+            "sourceId": "api_601ef82dc37d9594288a",
+            "sourcePath": "/data",
+            "fields": [
+              "totalCount"
+            ],
+            "evidence": [
+              {
+                "sourceId": "k_82305fdbe85edf92818f:p0",
+                "quote": ""
+              }
+            ]
+          }
+        ],
+        "outputStepIds": {
+          "read_overview": [
+            "read_overview"
+          ],
+          "read_performance": [
+            "read_performance"
+          ],
+          "read_distribution": [
+            "read_distribution"
+          ]
+        }
+      },
+      {
+        "id": "grain",
+        "kind": "grain",
+        "value": "Dashboard",
+        "status": "satisfied",
+        "outputIds": [
+          "read_overview",
+          "read_performance",
+          "read_distribution"
+        ],
+        "stepIds": [
+          "read_overview",
+          "read_performance",
+          "read_distribution"
+        ],
+        "reason": "",
+        "sourceId": "api_11c41b2554cc206eedfe",
+        "sourcePath": "/data",
+        "fields": [
+          "taskTabCounts.ServiceApplication",
+          "taskTabCounts.ProfileVerification",
+          "taskTabCounts.Enquiries",
+          "taskTabCounts.Refunds",
+          "taskTabCounts.Appeals",
+          "serviceApplicationCard.totalCount",
+          "serviceApplicationCard.totalTasks",
+          "serviceApplicationCard.doneToday",
+          "serviceApplicationCard.overdueTasks",
+          "profileVerificationCard.totalCount",
+          "profileVerificationCard.totalTasks",
+          "profileVerificationCard.doneToday",
+          "profileVerificationCard.overdueTasks",
+          "serviceApplicationCard.slaDistribution.pendingReview",
+          "serviceApplicationCard.slaDistribution.pendingModification",
+          "serviceApplicationCard.slaDistribution.externalApproval",
+          "profileVerificationCard.statusBreakdown.pendingReview",
+          "profileVerificationCard.statusBreakdown.approved",
+          "profileVerificationCard.statusBreakdown.rejected"
+        ],
+        "evidence": [
+          {
+            "sourceId": "k_2724011d1f095378f5e0:p0",
+            "quote": ""
+          }
+        ],
+        "bindingResults": [
+          {
+            "id": "grain",
+            "kind": "grain",
+            "value": "Dashboard",
+            "status": "satisfied",
+            "outputIds": [
+              "read_overview"
+            ],
+            "stepIds": [
+              "read_overview"
+            ],
+            "reason": "",
+            "sourceId": "api_11c41b2554cc206eedfe",
+            "sourcePath": "/data",
+            "fields": [
+              "taskTabCounts.ServiceApplication",
+              "taskTabCounts.ProfileVerification",
+              "taskTabCounts.Enquiries",
+              "taskTabCounts.Refunds",
+              "taskTabCounts.Appeals",
+              "serviceApplicationCard.totalCount",
+              "serviceApplicationCard.totalTasks",
+              "serviceApplicationCard.doneToday",
+              "serviceApplicationCard.overdueTasks",
+              "profileVerificationCard.totalCount",
+              "profileVerificationCard.totalTasks",
+              "profileVerificationCard.doneToday",
+              "profileVerificationCard.overdueTasks",
+              "serviceApplicationCard.slaDistribution.pendingReview",
+              "serviceApplicationCard.slaDistribution.pendingModification",
+              "serviceApplicationCard.slaDistribution.externalApproval",
+              "profileVerificationCard.statusBreakdown.pendingReview",
+              "profileVerificationCard.statusBreakdown.approved",
+              "profileVerificationCard.statusBreakdown.rejected"
+            ],
+            "evidence": [
+              {
+                "sourceId": "k_2724011d1f095378f5e0:p0",
+                "quote": ""
+              }
+            ]
+          },
+          {
+            "id": "grain",
+            "kind": "grain",
+            "value": "Dashboard",
+            "status": "satisfied",
+            "outputIds": [
+              "read_performance"
+            ],
+            "stepIds": [
+              "read_performance"
+            ],
+            "reason": "",
+            "sourceId": "api_8080c0de4e6a7b165633",
+            "sourcePath": "/data/summary",
+            "fields": [
+              "slaComplianceRate",
+              "averageHandlingTimeMinutes",
+              "approvalRateOfApplication",
+              "overdueTasks"
+            ],
+            "evidence": [
+              {
+                "sourceId": "k_c20b7d097a835c897989:p0",
+                "quote": ""
+              }
+            ]
+          },
+          {
+            "id": "grain",
+            "kind": "grain",
+            "value": "Dashboard",
+            "status": "satisfied",
+            "outputIds": [
+              "read_distribution"
+            ],
+            "stepIds": [
+              "read_distribution"
+            ],
+            "reason": "",
+            "sourceId": "api_601ef82dc37d9594288a",
+            "sourcePath": "/data",
+            "fields": [
+              "totalCount"
+            ],
+            "evidence": [
+              {
+                "sourceId": "k_82305fdbe85edf92818f:p0",
+                "quote": ""
+              }
+            ]
+          }
+        ],
+        "outputStepIds": {
+          "read_overview": [
+            "read_overview"
+          ],
+          "read_performance": [
+            "read_performance"
+          ],
+          "read_distribution": [
+            "read_distribution"
+          ]
+        }
+      },
+      {
+        "id": "attribute_0",
+        "kind": "attribute",
+        "value": "key metrics",
+        "status": "satisfied",
+        "outputIds": [
+          "read_overview",
+          "read_performance",
+          "read_distribution"
+        ],
+        "stepIds": [
+          "read_overview",
+          "read_performance",
+          "read_distribution"
+        ],
+        "reason": "",
+        "sourceId": "api_11c41b2554cc206eedfe",
+        "sourcePath": "/data",
+        "fields": [
+          "taskTabCounts.ServiceApplication",
+          "taskTabCounts.ProfileVerification",
+          "taskTabCounts.Enquiries",
+          "taskTabCounts.Refunds",
+          "taskTabCounts.Appeals",
+          "serviceApplicationCard.totalCount",
+          "serviceApplicationCard.totalTasks",
+          "serviceApplicationCard.doneToday",
+          "serviceApplicationCard.overdueTasks",
+          "profileVerificationCard.totalCount",
+          "profileVerificationCard.totalTasks",
+          "profileVerificationCard.doneToday",
+          "profileVerificationCard.overdueTasks",
+          "serviceApplicationCard.slaDistribution.pendingReview",
+          "serviceApplicationCard.slaDistribution.pendingModification",
+          "serviceApplicationCard.slaDistribution.externalApproval",
+          "profileVerificationCard.statusBreakdown.pendingReview",
+          "profileVerificationCard.statusBreakdown.approved",
+          "profileVerificationCard.statusBreakdown.rejected"
+        ],
+        "evidence": [
+          {
+            "sourceId": "k_2724011d1f095378f5e0:p0",
+            "quote": ""
+          }
+        ],
+        "bindingResults": [
+          {
+            "id": "attribute_0",
+            "kind": "attribute",
+            "value": "key metrics",
+            "status": "satisfied",
+            "outputIds": [
+              "read_overview"
+            ],
+            "stepIds": [
+              "read_overview"
+            ],
+            "reason": "",
+            "sourceId": "api_11c41b2554cc206eedfe",
+            "sourcePath": "/data",
+            "fields": [
+              "taskTabCounts.ServiceApplication",
+              "taskTabCounts.ProfileVerification",
+              "taskTabCounts.Enquiries",
+              "taskTabCounts.Refunds",
+              "taskTabCounts.Appeals",
+              "serviceApplicationCard.totalCount",
+              "serviceApplicationCard.totalTasks",
+              "serviceApplicationCard.doneToday",
+              "serviceApplicationCard.overdueTasks",
+              "profileVerificationCard.totalCount",
+              "profileVerificationCard.totalTasks",
+              "profileVerificationCard.doneToday",
+              "profileVerificationCard.overdueTasks",
+              "serviceApplicationCard.slaDistribution.pendingReview",
+              "serviceApplicationCard.slaDistribution.pendingModification",
+              "serviceApplicationCard.slaDistribution.externalApproval",
+              "profileVerificationCard.statusBreakdown.pendingReview",
+              "profileVerificationCard.statusBreakdown.approved",
+              "profileVerificationCard.statusBreakdown.rejected"
+            ],
+            "evidence": [
+              {
+                "sourceId": "k_2724011d1f095378f5e0:p0",
+                "quote": ""
+              }
+            ]
+          },
+          {
+            "id": "attribute_0",
+            "kind": "attribute",
+            "value": "key metrics",
+            "status": "satisfied",
+            "outputIds": [
+              "read_performance"
+            ],
+            "stepIds": [
+              "read_performance"
+            ],
+            "reason": "",
+            "sourceId": "api_8080c0de4e6a7b165633",
+            "sourcePath": "/data/summary",
+            "fields": [
+              "slaComplianceRate",
+              "averageHandlingTimeMinutes",
+              "approvalRateOfApplication",
+              "overdueTasks"
+            ],
+            "evidence": [
+              {
+                "sourceId": "k_c20b7d097a835c897989:p0",
+                "quote": ""
+              }
+            ]
+          },
+          {
+            "id": "attribute_0",
+            "kind": "attribute",
+            "value": "key metrics",
+            "status": "satisfied",
+            "outputIds": [
+              "read_distribution"
+            ],
+            "stepIds": [
+              "read_distribution"
+            ],
+            "reason": "",
+            "sourceId": "api_601ef82dc37d9594288a",
+            "sourcePath": "/data",
+            "fields": [
+              "totalCount",
+              "statusDistribution.Active",
+              "statusDistribution.Expired",
+              "statusDistribution.ExpiringSoon",
+              "statusDistribution.Canceled",
+              "statusDistribution.Suspended"
+            ],
+            "evidence": [
+              {
+                "sourceId": "k_82305fdbe85edf92818f:p0",
+                "quote": ""
+              }
+            ]
+          }
+        ],
+        "outputStepIds": {
+          "read_overview": [
+            "read_overview"
+          ],
+          "read_performance": [
+            "read_performance"
+          ],
+          "read_distribution": [
+            "read_distribution"
+          ]
+        }
+      }
+    ],
+    "knowledgeRequirementCoverage": [
+      {
+        "requirementId": "object",
+        "status": "covered",
+        "evidence": [
+          {
+            "sourceId": "k_a1d744b0e34d67e76149:p0"
+          },
+          {
+            "sourceId": "k_547474d75370469062f7:p0"
+          }
+        ],
+        "reason": "Page catalog defines /dashboard as the Dashboard, a consolidated workbench aggregating metrics and tasks from authorized business domains; the user manual describes it as the current role and department's work, performance and attention overview. Both agree on the requested business object; no opposing inclusion/exclusion clause found.",
+        "followupQuery": "",
+        "missingEvidenceType": "none",
+        "requiredPoints": [
+          "Dashboard is the landing/overview page at /dashboard summarizing the current role and department's work, performance and attention.",
+          "It aggregates metrics and tasks from multiple authorized business domains, not a single Licensing list."
+        ]
+      },
+      {
+        "requirementId": "grain",
+        "status": "covered",
+        "evidence": [
+          {
+            "sourceId": "k_31f7cfc016292eae6d71:p3"
+          },
+          {
+            "sourceId": "k_2724011d1f095378f5e0:p4"
+          }
+        ],
+        "reason": "Field contracts state the Dashboard observation shape is a singleton object: one current panel/overview response whose metric values are scalar observations, not entity identifiers or row-derived record counts. This matches the requested Dashboard-level grain; no incompatible grain clause found.",
+        "followupQuery": "",
+        "missingEvidenceType": "none",
+        "requiredPoints": [
+          "The Dashboard is observed as one current response object per selected context, not a collection of records.",
+          "Its metric values are scalar panel observations, not entity keys or counts computed from rows."
+        ]
+      },
+      {
+        "requirementId": "attribute_0",
+        "status": "covered",
+        "evidence": [
+          {
+            "sourceId": "k_2724011d1f095378f5e0:p6"
+          },
+          {
+            "sourceId": "k_ac4bc548362e0198e0ef:p11"
+          },
+          {
+            "sourceId": "k_82305fdbe85edf92818f:p4"
+          }
+        ],
+        "reason": "Three field contracts jointly define the key-metric summary as three observed components: overview response (five My Tasks counts plus Service Application and Profile Verification summary values and status breakdowns), performance panel (SLA Compliance, Avg. Processing Time, Overdue Tasks, Approval Rate), and License Distribution (total plus five status buckets). All three cite the same requiredComponents group (overview, performance, distribution) and the same constraints: keep panel names, do not sum across panels, unavailable panels stay unavailable. No opposing clause found; the manual's panel list is compatible and less exhaustive.",
+        "followupQuery": "",
+        "missingEvidenceType": "none",
+        "requiredPoints": [
+          "Key metrics cover the visible My Tasks category counts and the Service Application and Profile Verification summary cards with their status breakdowns.",
+          "They include the My/Team Performance panel: SLA Compliance, Avg. Processing Time, Overdue Tasks and Approval Rate.",
+          "They include License Distribution: its total and the observed status buckets (Active, Expired, Expiring Soon, Canceled, Suspended).",
+          "Each panel keeps its own name, population and time basis; values from different panels must not be added together.",
+          "Panels that are not observed or available stay explicitly unavailable rather than being shown as zero."
+        ]
+      }
+    ],
+    "answerCoverage": [],
+    "knowledgeRequirementsSatisfied": true,
+    "requirementsSatisfied": true,
+    "knowledgeQuotes": [],
+    "knowledgeAnswer": [],
+    "knowledgeGap": null,
+    "replyDraft": null,
+    "failureCategory": "",
+    "recoveryUsed": false,
+    "queryReceipt": {
+      "schemaVersion": "observed-query-receipt/1",
+      "captures": [
+        {
+          "page": "/dashboard",
+          "capturedAt": "2026-09-28T17:34:39.730421+00:00",
+          "appliedFilters": []
+        }
+      ],
+      "sourceRefs": [
+        {
+          "page": "/dashboard",
+          "capturedAt": "2026-09-28T17:34:39.730421+00:00",
+          "observationRef": "99507d8a02344fbfcd62",
+          "sourceId": "api_11c41b2554cc206eedfe",
+          "principalScopeRef": "7da85129c1862eb3c3f0",
+          "completeness": "complete"
+        },
+        {
+          "page": "/dashboard",
+          "capturedAt": "2026-09-28T17:34:39.730421+00:00",
+          "observationRef": "99507d8a02344fbfcd62",
+          "sourceId": "api_8080c0de4e6a7b165633",
+          "principalScopeRef": "7da85129c1862eb3c3f0",
+          "completeness": "complete"
+        },
+        {
+          "page": "/dashboard",
+          "capturedAt": "2026-09-28T17:34:39.730421+00:00",
+          "observationRef": "99507d8a02344fbfcd62",
+          "sourceId": "api_601ef82dc37d9594288a",
+          "principalScopeRef": "7da85129c1862eb3c3f0",
+          "completeness": "complete"
+        }
+      ]
+    },
+    "taskFingerprint": "12dce8827535f38051850b411c865c55f95d64d7d0c8105c6348a7129c9f580e",
+    "routeVerification": {
+      "stage": "route_verification",
+      "taskFingerprint": "12dce8827535f38051850b411c865c55f95d64d7d0c8105c6348a7129c9f580e",
+      "requestedRoute": "/dashboard",
+      "actualRoute": "/dashboard",
+      "checks": [
+        {
+          "requirementId": "page",
+          "status": "verified",
+          "sourceIds": [],
+          "reason": ""
+        }
+      ],
+      "passed": true
+    },
+    "intentState": {
+      "version": 1,
+      "task": {
+        "stage": "task",
+        "businessObject": "Dashboard",
+        "businessFocus": "",
+        "disclosurePurpose": "",
+        "requestedScope": "unknown",
+        "requestedGrain": "Dashboard",
+        "requestedMeasures": [],
+        "requestedAttributes": [
+          "key metrics"
+        ],
+        "evidenceExplanations": [],
+        "requestedOrdering": [],
+        "groupBy": [],
+        "groupCompleteness": "observed",
+        "timeRange": "unknown",
+        "timeField": "",
+        "filters": [],
+        "outputShape": "overview",
+        "needsLiveData": true,
+        "readOnly": true,
+        "responseMode": "answer",
+        "requestBoundaries": [],
+        "searchQuery": "dashboard key metrics summary panels Service Application Profile Verification License Distribution My Performance current values",
+        "unresolvedSlots": [],
+        "recordIdentity": "",
+        "view": "",
+        "contextRelation": "new",
+        "slotUpdates": [
+          {
+            "field": "businessObject",
+            "source": "page",
+            "value": "Dashboard",
+            "evidence": "currentPage.pageCandidates[0].name=Dashboard route /dashboard"
+          },
+          {
+            "field": "requestedGrain",
+            "source": "page",
+            "value": "Dashboard",
+            "evidence": "currentPage.pageCandidates[0].name=Dashboard route /dashboard"
+          },
+          {
+            "field": "requestedAttributes",
+            "source": "current",
+            "value": [
+              "key metrics"
+            ],
+            "evidence": ""
+          },
+          {
+            "field": "outputShape",
+            "source": "current",
+            "value": "overview",
+            "evidence": ""
+          },
+          {
+            "field": "requestedScope",
+            "source": "current",
+            "value": "unknown",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "businessFocus",
+            "source": "current",
+            "value": "",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "disclosurePurpose",
+            "source": "current",
+            "value": "",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedMeasures",
+            "source": "current",
+            "value": [],
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupBy",
+            "source": "current",
+            "value": [],
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeRange",
+            "source": "current",
+            "value": "unknown",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "filters",
+            "source": "current",
+            "value": [],
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "recordIdentity",
+            "source": "current",
+            "value": "",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "view",
+            "source": "current",
+            "value": "",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "timeField",
+            "source": "current",
+            "value": "",
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "requestedOrdering",
+            "source": "current",
+            "value": [],
+            "evidence": "parsed current request"
+          },
+          {
+            "field": "groupCompleteness",
+            "source": "current",
+            "value": "observed",
+            "evidence": "parsed current request"
+          }
+        ],
+        "clarification": null
+      },
+      "slotStates": [
+        {
+          "field": "businessObject",
+          "source": "page",
+          "value": "Dashboard",
+          "evidence": "currentPage.pageCandidates[0].name=Dashboard route /dashboard"
+        },
+        {
+          "field": "requestedGrain",
+          "source": "page",
+          "value": "Dashboard",
+          "evidence": "currentPage.pageCandidates[0].name=Dashboard route /dashboard"
+        },
+        {
+          "field": "requestedAttributes",
+          "source": "current",
+          "value": [
+            "key metrics"
+          ],
+          "evidence": ""
+        },
+        {
+          "field": "outputShape",
+          "source": "current",
+          "value": "overview",
+          "evidence": ""
+        },
+        {
+          "field": "requestedScope",
+          "source": "current",
+          "value": "unknown",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "businessFocus",
+          "source": "current",
+          "value": "",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "disclosurePurpose",
+          "source": "current",
+          "value": "",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedMeasures",
+          "source": "current",
+          "value": [],
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupBy",
+          "source": "current",
+          "value": [],
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeRange",
+          "source": "current",
+          "value": "unknown",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "filters",
+          "source": "current",
+          "value": [],
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "recordIdentity",
+          "source": "current",
+          "value": "",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "view",
+          "source": "current",
+          "value": "",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "timeField",
+          "source": "current",
+          "value": "",
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "requestedOrdering",
+          "source": "current",
+          "value": [],
+          "evidence": "parsed current request"
+        },
+        {
+          "field": "groupCompleteness",
+          "source": "current",
+          "value": "observed",
+          "evidence": "parsed current request"
+        }
+      ],
+      "originalQuestion": "Summarize the key metrics on my current Dashboard.",
+      "principalFingerprint": "7da85129c1862eb3c3f0",
+      "catalogVersion": "923ec44fe50a2342995e281c82aafca24ba1f1db20bf2c2184ec663e33329bf1",
+      "referenceTime": {
+        "nowUtc": "2026-09-28T17:33:22.821096+00:00",
+        "businessTimezone": "Asia/Dubai",
+        "businessNow": "2026-09-28T21:33:22.821096+04:00",
+        "businessDate": "2026-09-28",
+        "source": "server_clock_and_config"
+      },
+      "browserContext": {
+        "route": "/dashboard",
+        "view": "",
+        "query": {},
+        "filters": [
+          {
+            "name": "department",
+            "value": "license"
+          },
+          {
+            "name": "roleVariant",
+            "value": "manager"
+          },
+          {
+            "name": "timeFilter",
+            "value": "{\"preset\":\"last7\",\"days\":7}"
+          }
+        ]
+      },
+      "knowledgeVersion": "f646eb093d6972ed873b",
+      "taskFingerprint": "12dce8827535f38051850b411c865c55f95d64d7d0c8105c6348a7129c9f580e",
+      "taskRevision": 1,
+      "requestId": "a42e3587-99f0-4493-b2c5-bc5825ae0153",
+      "parentRequestId": null,
+      "clarificationRounds": 0,
+      "lastClarification": null,
+      "status": "ready",
+      "pendingClarification": null
+    },
+    "workflowState": "ready",
+    "executionStatus": [
+      {
+        "stage": "identity_context",
+        "status": "passed",
+        "code": "identity_permissions_and_bound_context_verified"
+      },
+      {
+        "stage": "intent",
+        "status": "passed",
+        "code": "original_clauses_reviewed"
+      },
+      {
+        "stage": "query_expansion",
+        "status": "passed",
+        "code": "requirement_bound_bilingual_terms"
+      },
+      {
+        "stage": "knowledge_retrieval",
+        "status": "passed",
+        "code": "retrieval_receipt_verified"
+      },
+      {
+        "stage": "knowledge_coverage",
+        "status": "passed",
+        "code": "coverage_and_conflicts_checked"
+      },
+      {
+        "stage": "page_routing",
+        "status": "passed",
+        "code": "authorized_documented_route_selected"
+      },
+      {
+        "stage": "page_observation",
+        "status": "passed",
+        "code": "actual_page_and_observed_sources_checked"
+      },
+      {
+        "stage": "source_selection",
+        "status": "passed",
+        "code": "observed_sources_and_citations_validated"
+      },
+      {
+        "stage": "data_collection",
+        "status": "passed",
+        "code": "source_receipts_and_collection_constraints_checked"
+      },
+      {
+        "stage": "analysis",
+        "status": "passed",
+        "code": "computation_and_evidence_validated"
+      },
+      {
+        "stage": "task_completion",
+        "status": "passed",
+        "code": "all_requested_requirements_verified"
+      },
+      {
+        "stage": "output",
+        "status": "passed",
+        "code": "evidence_projection_and_sensitive_fields_checked"
+      }
+    ],
+    "qualityBlockers": [],
+    "requestId": "a42e3587-99f0-4493-b2c5-bc5825ae0153",
+    "runtimeId": "rt_c91fa15eab364db3",
+    "observedPageContext": {
+      "route": "/dashboard",
+      "capturedAt": "2026-09-28T17:34:39.730421+00:00",
+      "department": "license",
+      "roleVariant": "manager",
+      "preset": "last7",
+      "days": 7,
+      "browserTimezone": "Asia/Dubai",
+      "appliedFiltersHash": "fd86f033f9a67ba17672c66706968ce73dee5b09eb5baeb4dd680a428908fd33"
+    }
+  },
+  "originalAnswer": "Current page results:\n\nDashboard overview panel values:\n| My Tasks – Service Application | My Tasks – Profile Verification | My Tasks – Enquiries & Complaints | My Tasks – Refunds | My Tasks – Appeals | Service Application – To Do | Service Application – Total Tasks | Service Application – Done Today | Service Application – Overdue Tasks | Service Application – Pending Review | Service Application – Pending Modification | Service Application – External Approval | Profile Verification – Total | Profile Verification – Total Tasks | Profile Verification – Done Today | Profile Verification – Overdue Tasks | Profile Verification – Pending Review | Profile Verification – Approved | Profile Verification – Rejected |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 0 | 0 | 0 | 0 | 0 | 3 | 4 | 0 | 2 | 2 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |\n\nMy/Team Performance panel values:\n| SLA Compliance (%) | Avg. Processing Time (min) | Approval Rate of Application (%) | Overdue Tasks (tasks) |\n| --- | --- | --- | --- |\n| 100% | 5.24 | 0% | 3 |\nResponse dates for this panel: Start date 2026-09-22; End date 2026-09-28.\n\nLicense Distribution panel values:\n| License Distribution – Total | License Distribution – Active | License Distribution – Expired | License Distribution – Expiring Soon | License Distribution – Canceled | License Distribution – Suspended |\n| --- | --- | --- | --- | --- | --- |\n| 0 | 0 | 0 | 0 | 0 | 0 |\nResponse dates for this panel: Start date 2026-09-22; End date 2026-09-28.\n\nScope: team.\nCurrent page filters: Licensing; Manager view; Last 7 days; browser timezone: Asia/Dubai.\nPopulation: The current authenticated Dashboard workspace: the visible My Tasks category counts, the Service Application and Profile Verification summary cards, the License Distribution panel and the My/Team Performance panel, each with its own population and time basis..\nEach Dashboard panel has its own population and time basis; values from different panels must not be added together, and a panel that is not observed stays explicitly unavailable rather than being shown as zero.\nThe License Distribution total is a sum of independent status buckets that may overlap, so it is not a certified count of distinct licenses.\nThe My Tasks tab counts and priority cards are personal tasks even for a manager, while the Service Application summary follows the backend role scope; their totals are not automatically comparable.\nThe inspected performance pipeline is application-only, and SLA/approval rates are rendered with the page percentage formatter; a raw/display ambiguity is reported rather than converted."
+}

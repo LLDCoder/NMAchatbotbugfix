@@ -1,0 +1,131 @@
+.application-details {
+  border-radius: 20px;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 1);
+  overflow: hidden;
+
+  .application-details__body {
+    padding: 0 24px 24px;
+
+  }
+  .details-content {
+    border: 1px solid #E1E3E5;
+    background: #F8F7F4;
+    padding: 14px 10px;
+    border-radius: 8px;
+    margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    .tag-item{
+      display: inline-block;
+      color: #9EA2A9;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 4px;
+      padding: 4px 6px;
+      background: #E1E3E580;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 12px;
+      }
+    }
+    // border: solid 1px rgba(225, 227, 229, 1);
+    // border-radius: 12px;
+    // padding: 24px;
+    // margin-top: 24px;
+    // display: grid;
+    // grid-template-columns: repeat(2, 1fr);
+    // // NOTE no need accurate rows
+    // // grid-template-rows: repeat(6, 1fr);
+    // column-gap: 16px;
+    // row-gap: 24px;
+    // align-items: start;
+    // .detail-item:last-child {
+    //   grid-column: 1 / span 2;
+    // }
+  }
+  .service-fees {
+    border-radius: 20px;
+    padding: 24px;
+    background-color: rgba(255, 255, 255, 1);
+    border: solid 1px rgba(225, 227, 229, 1);
+    margin-top: 24px;
+    .table-aed {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: #8c8c8c;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1;
+      /* Override global .aed-icon 26×20 to align with 13px header text */
+      svg.aed-icon {
+        width: 17px !important;
+        height: 13px !important;
+        flex-shrink: 0;
+        vertical-align: -0.15em;
+      }
+    }
+    .table-title {
+      font-weight: 500;
+      font-size: 18px;
+      // color: @text-color;
+      margin-bottom: 24px;
+      /* rwd-ramp */
+      @media (max-width: 1919.98px) {
+        font-size: 16px;
+      }
+    }
+    .total-fees {
+      margin-top: 24px;
+      text-align: right;
+      & span:first-child {
+        font-size: 16px;
+        color: rgba(54, 30, 18, 1);
+        margin-bottom: 0;
+        margin-right: 8px;
+        /* rwd-ramp */
+        @media (max-width: 1919.98px) {
+          font-size: 14px;
+        }
+      }
+      .fees-unit {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        color: #8c8c8c;
+        font-size: 13px;
+        line-height: 1;
+        margin: 0;
+        svg.aed-icon {
+          width: 17px !important;
+          height: 13px !important;
+          flex-shrink: 0;
+          vertical-align: -0.15em;
+          margin-right: 0;
+          color: inherit;
+        }
+        > span {
+          font-size: 16px;
+          line-height: 1.2;
+          color: rgba(146, 114, 42, 1);
+          font-weight: 400;
+          /* rwd-ramp */
+          @media (max-width: 1919.98px) {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      border-radius: 10px;
+      padding: 12px;
+    }
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    border-radius: 10px;
+  }
+}

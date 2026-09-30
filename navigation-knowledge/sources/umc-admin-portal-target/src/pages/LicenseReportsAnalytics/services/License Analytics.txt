@@ -1,0 +1,128 @@
+# License Analytics
+
+Base URL in the source docs:
+- `http://localhost:5246`
+
+## 1. Dashboard Charts
+
+### Endpoint
+- `GET /api/LicenseManagement/dashboard/statistics`
+
+### Query Params
+- `days`
+
+### Response
+- `statusStats`
+- `userTypeStats[]`
+- `emirateStats[]`
+- `trendStats[]`
+
+### statusStats
+- `total`
+- `active`
+- `activePercentage`
+- `expiringSoon`
+- `expiringSoonPercentage`
+- `expired`
+- `expiredPercentage`
+- `renewRate`
+
+### userTypeStats[]
+- `userType: string`
+- `count: number`
+- `percentage: number`
+
+Documented examples include:
+- `Individual`
+- `Establishment`
+- `Talent Agency`
+- `Commercial`
+- `Free Zone`
+- `Government`
+- `Embassy`
+- `Consulate`
+- `Cultural Clubs`
+
+### emirateStats[]
+- `emirate: string`
+- `count: number`
+- `percentage: number`
+
+### trendStats[]
+- `date: string`
+- `typeCounts[]`
+
+### typeCounts[]
+- `type: string`
+- `count: number`
+
+Documented examples include:
+- `Media License`
+- `Photography Equipment Entry Permit`
+- `Press Card License`
+- `Foreign Correspondent Permit`
+- `Foreign Media Office License`
+- `Newspaper Media License`
+- `Radio & TV Broadcasting License`
+- `Aerial Photography Permit`
+- `Ground Photography Permit`
+- `Marine Photography Permit`
+
+## 2. Bottom Table
+
+### Endpoint
+- `GET /api/LicenseManagement/dashboard/report`
+
+### Query Params
+- `days`
+- `keyword`
+- `pageIndex`
+- `pageSize`
+- `orderby`
+- `sort`
+
+### orderby
+- `issued`
+- `active`
+- `expiringsoon`
+- `expired`
+
+### sort
+- `desc`
+- `asc`
+
+### Response
+- `pageIndex: number`
+- `pageSize: number`
+- `total: number`
+- `items: LicenseDashboardItem[]`
+
+### LicenseDashboardItem
+- `license: string`
+- `issued: number`
+- `active: number`
+- `expiringSoon: number`
+- `expired: number`
+- `geographicDistribution[]`
+- `userTypeDistribution[]`
+
+### geographicDistribution[]
+- `region: string`
+- `percentage: number`
+
+Documented examples include `Foreign`.
+
+### userTypeDistribution[]
+- `userType: string`
+- `percentage: number`
+
+Documented examples include `Establishment`.
+
+## 3. Export
+
+### Endpoint
+- `GET /api/LicenseManagement/dashboard/report/export`
+
+### Query Params
+- `days`
+- `keyword`

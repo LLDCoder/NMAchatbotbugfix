@@ -1,0 +1,786 @@
+{
+  "schemaVersion": "1.0",
+  "bundleId": "admin.dashboard.license-performance",
+  "packageStatus": "active",
+  "createdAt": "2026-09-28T09:01:24.684145+00:00",
+  "records": [
+    {
+      "id": "admin.dashboard.license-performance.personal",
+      "kind": "field_semantics",
+      "revision": 5,
+      "status": "active",
+      "title": "License Dashboard performance snapshot (personal)",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local"
+        ],
+        "pageRefs": [
+          "/dashboard"
+        ],
+        "runtimeVerification": "pending",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/licenseDashboard.ts",
+          "revision": "sha256:7ed99b6783c36f5849e1d21584a68630bcb8e48f64e9ec2c4fef470759b5cf8b",
+          "locator": "getScope; createTaskHubDonutCard; createPerformanceTiles; createDistributionStatusCard; createTrendCard; getLicenseDashboardData",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/LicenseDashboard/LicenseDashboardAppService.cs",
+          "revision": "sha256:a3a0bd755cf7ac404d6388b6b03021880de5a0cf0bd3035725b95a6d4dba0890",
+          "locator": "GetTaskTabCountsAsync; GetPriorityCardsAsync; BuildServiceApplicationCardAsync; BuildProfileVerificationCardAsync; GetPerformanceMetricsAsync; GetPerformanceTrendAsync; ResolveRoleScopeAsync",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/dashboardApiShared.ts",
+          "revision": "sha256:3c31d383c4781bb437c3aedf348f9e50fde1f7e8e390f4ad396bba30d4718760",
+          "locator": "resolveDashboardDateRange; resolveDashboardTrendDateRange; formatPercent",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Dashboard/index.tsx",
+          "revision": "sha256:7c9a862100b8cb2ed0300767b555a354dd402c7ca1fa7584f2ffb1ce5d032485",
+          "locator": "applied department, roleVariant and timeFilter reader attributes; cancel stale requests on context changes",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/dashboard",
+        "sourceBinding": {
+          "operationRef": "GET /api/license/dashboard/performance",
+          "sourcePath": "/data/summary"
+        },
+        "bindings": [
+          {
+            "operationRef": "GET /api/license/dashboard/performance",
+            "sourcePath": "/data/summary",
+            "fields": [
+              "slaComplianceRate",
+              "averageHandlingTimeMinutes",
+              "approvalRateOfApplication",
+              "overdueTasks"
+            ],
+            "contextParameters": {
+              "scope": "0"
+            },
+            "contextResponseBindings": {
+              "startDate": {
+                "path": "/data/startDate",
+                "format": "date"
+              },
+              "endDate": {
+                "path": "/data/endDate",
+                "format": "date"
+              }
+            },
+            "id": "object",
+            "kind": "object",
+            "concept": "dashboard",
+            "aliases": [
+              "dashboard",
+              "current dashboard",
+              "dashboard snapshot",
+              "dashboard metric",
+              "performance snapshot",
+              "لوحة المعلومات"
+            ],
+            "meaning": "The selected License Dashboard performance snapshot, not an SLA contract or a collection of task rows."
+          },
+          {
+            "operationRef": "GET /api/license/dashboard/performance",
+            "sourcePath": "/data/summary",
+            "fields": [
+              "slaComplianceRate",
+              "averageHandlingTimeMinutes",
+              "approvalRateOfApplication",
+              "overdueTasks"
+            ],
+            "contextParameters": {
+              "scope": "0"
+            },
+            "contextResponseBindings": {
+              "startDate": {
+                "path": "/data/startDate",
+                "format": "date"
+              },
+              "endDate": {
+                "path": "/data/endDate",
+                "format": "date"
+              }
+            },
+            "id": "grain",
+            "kind": "grain",
+            "concept": "dashboard",
+            "aliases": [
+              "dashboard",
+              "current dashboard",
+              "dashboard snapshot",
+              "dashboard metric",
+              "performance snapshot",
+              "لوحة المعلومات"
+            ],
+            "observationShape": "singleton_object",
+            "meaning": "One current authorized performance response for its selected scope and date period. Numeric metric values are not entity identifiers."
+          },
+          {
+            "operationRef": "GET /api/license/dashboard/performance",
+            "sourcePath": "/data/summary",
+            "fields": [
+              "slaComplianceRate"
+            ],
+            "contextParameters": {
+              "scope": "0"
+            },
+            "contextResponseBindings": {
+              "startDate": {
+                "path": "/data/startDate",
+                "format": "date"
+              },
+              "endDate": {
+                "path": "/data/endDate",
+                "format": "date"
+              }
+            },
+            "id": "sla_compliance",
+            "kind": "attribute",
+            "concept": "SLA compliance",
+            "aliases": [
+              "SLA Compliance",
+              "SLA compliance rate",
+              "compliance rate",
+              "SLA Compliance value",
+              "SLA compliance value",
+              "معدل الامتثال لاتفاقية مستوى الخدمة",
+              "الالتزام باتفاقية مستوى الخدمة",
+              "service level agreement compliance",
+              "service level agreement compliance rate",
+              "service level agreement SLA compliance",
+              "service level agreement SLA compliance rate"
+            ],
+            "displayUnit": "%",
+            "displayScale": {
+              "threshold": 1,
+              "atMostFactor": 100,
+              "otherwiseFactor": 1,
+              "decimals": 1
+            },
+            "meaning": "Current displayed SLA compliance percentage for the application-only performance pipeline, within the current response period and authenticated scope. Null is unavailable. The frontend scales a raw value <=1 by 100; values >1 are already percentage points. Do not substitute overdue count or infer a denominator from another card. The older all-task tooltip is broader than the inspected backend implementation."
+          },
+          {
+            "operationRef": "GET /api/license/dashboard/performance",
+            "sourcePath": "/data/summary",
+            "fields": [
+              "slaComplianceRate"
+            ],
+            "contextParameters": {
+              "scope": "0"
+            },
+            "contextResponseBindings": {
+              "startDate": {
+                "path": "/data/startDate",
+                "format": "date"
+              },
+              "endDate": {
+                "path": "/data/endDate",
+                "format": "date"
+              }
+            },
+            "id": "scope",
+            "kind": "scope",
+            "concept": "personal",
+            "meaning": "Only the observed scope=0 response establishes personal performance. My Dashboard alone is not proof of this query scope. This must agree with the current native identity/role and selected rendered panel; query scope alone is not an authorization proof because the service resolves scope from the authenticated role."
+          },
+          {
+            "id": "average_processing_time",
+            "kind": "attribute",
+            "concept": "average processing time",
+            "aliases": [
+              "Avg. Processing Time",
+              "average handling time",
+              "متوسط وقت المعالجة"
+            ],
+            "operationRef": "GET /api/license/dashboard/performance",
+            "sourcePath": "/data/summary",
+            "fields": [
+              "averageHandlingTimeMinutes"
+            ],
+            "meaning": "Observed average handling duration of the application-only performance pipeline, in minutes. The page formats these minutes into minutes/hours/days; preserve units and do not confuse this with a count.",
+            "displayUnit": "min",
+            "contextParameters": {
+              "scope": "0"
+            },
+            "contextResponseBindings": {
+              "startDate": {
+                "path": "/data/startDate",
+                "format": "date"
+              },
+              "endDate": {
+                "path": "/data/endDate",
+                "format": "date"
+              }
+            }
+          },
+          {
+            "id": "approval_rate",
+            "kind": "attribute",
+            "concept": "approval rate",
+            "aliases": [
+              "Approval Rate of Application",
+              "نسبة الموافقة"
+            ],
+            "operationRef": "GET /api/license/dashboard/performance",
+            "sourcePath": "/data/summary",
+            "fields": [
+              "approvalRateOfApplication"
+            ],
+            "meaning": "Approve decisions divided by approved plus rejected application decisions in the selected period, as returned by the service. It is not all received applications or all task types. Use the same percentage display rule as the page.",
+            "displayUnit": "%",
+            "displayScale": {
+              "threshold": 1,
+              "atMostFactor": 100,
+              "otherwiseFactor": 1,
+              "decimals": 1
+            },
+            "contextParameters": {
+              "scope": "0"
+            },
+            "contextResponseBindings": {
+              "startDate": {
+                "path": "/data/startDate",
+                "format": "date"
+              },
+              "endDate": {
+                "path": "/data/endDate",
+                "format": "date"
+              }
+            }
+          },
+          {
+            "id": "overdue_tasks",
+            "kind": "attribute",
+            "concept": "overdue tasks",
+            "aliases": [
+              "Overdue Tasks",
+              "المهام المتأخرة"
+            ],
+            "operationRef": "GET /api/license/dashboard/performance",
+            "sourcePath": "/data/summary",
+            "fields": [
+              "overdueTasks"
+            ],
+            "meaning": "Returned count of open overdue tasks in the application-only performance population and selected period. It is distinct from the SLA compliance percentage and may differ from a differently scoped queue.",
+            "displayUnit": "tasks",
+            "contextParameters": {
+              "scope": "0"
+            },
+            "contextResponseBindings": {
+              "startDate": {
+                "path": "/data/startDate",
+                "format": "date"
+              },
+              "endDate": {
+                "path": "/data/endDate",
+                "format": "date"
+              }
+            }
+          },
+          {
+            "id": "performance_metrics",
+            "kind": "attribute",
+            "concept": "performance metrics",
+            "aliases": [
+              "My Performance",
+              "Team Performance",
+              "مؤشرات الأداء"
+            ],
+            "operationRef": "GET /api/license/dashboard/performance",
+            "sourcePath": "/data/summary",
+            "fields": [
+              "slaComplianceRate",
+              "averageHandlingTimeMinutes",
+              "approvalRateOfApplication",
+              "overdueTasks"
+            ],
+            "meaning": "The four metrics displayed together in My Performance / Team Performance: SLA Compliance, Avg. Processing Time, Overdue Tasks, and Approval Rate. This group does not represent the other Dashboard panels. These four values are the performance-panel component of a current Dashboard key-metric summary; include other observed overview and distribution panels separately. A historical completed-task series is a different metric, not a performance snapshot.",
+            "contextParameters": {
+              "scope": "0"
+            },
+            "contextResponseBindings": {
+              "startDate": {
+                "path": "/data/startDate",
+                "format": "date"
+              },
+              "endDate": {
+                "path": "/data/endDate",
+                "format": "date"
+              }
+            }
+          },
+          {
+            "id": "dashboard_summary_component",
+            "kind": "attribute",
+            "concept": "dashboard key metrics",
+            "aliases": [
+              "key metrics",
+              "key indicators",
+              "dashboard key metrics",
+              "dashboard key indicators",
+              "المؤشرات الرئيسية",
+              "المؤشرات الأساسية",
+              "key metrics displayed on the current Dashboard",
+              "key indicators displayed on the current Dashboard",
+              "المؤشرات الرئيسية المعروضة في لوحة المعلومات الحالية",
+              "المؤشرات الأساسية المعروضة في لوحة المعلومات الحالية"
+            ],
+            "operationRef": "GET /api/license/dashboard/performance",
+            "sourcePath": "/data/summary",
+            "fields": [
+              "slaComplianceRate",
+              "averageHandlingTimeMinutes",
+              "approvalRateOfApplication",
+              "overdueTasks"
+            ],
+            "meaning": "The four metrics displayed together in My Performance / Team Performance: SLA Compliance, Avg. Processing Time, Overdue Tasks, and Approval Rate. This group does not represent the other Dashboard panels. These four values are the performance-panel component of a current Dashboard key-metric summary; include other observed overview and distribution panels separately. A historical completed-task series is a different metric, not a performance snapshot.",
+            "contextParameters": {
+              "scope": "0"
+            },
+            "contextResponseBindings": {
+              "startDate": {
+                "path": "/data/startDate",
+                "format": "date"
+              },
+              "endDate": {
+                "path": "/data/endDate",
+                "format": "date"
+              }
+            },
+            "summaryComponent": {
+              "group": "admin.dashboard.license-key-metrics",
+              "component": "performance",
+              "requiredComponents": [
+                "overview",
+                "performance",
+                "distribution"
+              ]
+            }
+          }
+        ],
+        "fields": {
+          "slaComplianceRate": "Current displayed SLA compliance percentage for the application-only performance pipeline, within the current response period and authenticated scope. Null is unavailable. The frontend scales a raw value <=1 by 100; values >1 are already percentage points. Do not substitute overdue count or infer a denominator from another card. The older all-task tooltip is broader than the inspected backend implementation.",
+          "/data/startDate": "Returned beginning of the current query window.",
+          "/data/endDate": "Returned ending of the current query window.",
+          "averageHandlingTimeMinutes": "Observed average handling duration of the application-only performance pipeline, in minutes. The page formats these minutes into minutes/hours/days; preserve units and do not confuse this with a count.",
+          "approvalRateOfApplication": "Approve decisions divided by approved plus rejected application decisions in the selected period, as returned by the service. It is not all received applications or all task types. Use the same percentage display rule as the page.",
+          "overdueTasks": "Returned count of open overdue tasks in the application-only performance population and selected period. It is distinct from the SLA compliance percentage and may differ from a differently scoped queue."
+        },
+        "constraints": [
+          "This source snapshot defines field meanings, not current values or access grants. Verify the native response and current authenticated scope. A missing field is unavailable, not zero.",
+          "The current Dashboard is a selected UI context, not automatically personal scope. Preserve observed department, roleVariant and applied timeFilter. The same route can display another department or period.",
+          "The backend ResolveRoleScopeAsync uses the authenticated role context. A manually supplied scope query parameter cannot grant or independently establish personal, department or managed-team access.",
+          "Each panel has its own population and time basis. Do not turn an overview response, attention list or performance summary into a common record collection, and do not add counts from different panels.",
+          "A summary of current Dashboard key metrics covers the visible task tabs, Service Application and Profile Verification summary cards, License Distribution, and My/Team Performance where observed. Keep panel names with their values; unavailable panels stay explicitly unavailable. It is not just one SLA percentage.",
+          "A requested individual indicator uses only its matching property. A full Dashboard overview must not silently substitute an attention-table row list for all key metrics.",
+          "The inspected backend performance pipeline is application-only. Do not repeat an older UI tooltip as proof that enquiries, refunds and appeals are included in these performance metrics.",
+          "Approval-rate and SLA-rate raw values are rendered with the frontend percentage formatter; report a raw/display ambiguity rather than inventing a new conversion.",
+          "Returned startDate/endDate establish the actual normalized inclusive reporting period. They do not establish timezone if the API provides no offset."
+        ]
+      }
+    },
+    {
+      "id": "admin.dashboard.license-performance.department",
+      "kind": "field_semantics",
+      "revision": 5,
+      "status": "active",
+      "title": "License Dashboard performance snapshot (department)",
+      "applicability": {
+        "portal": "admin",
+        "environments": [
+          "local"
+        ],
+        "pageRefs": [
+          "/dashboard"
+        ],
+        "runtimeVerification": "pending",
+        "deployedBuildMatch": "unknown"
+      },
+      "sources": [
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/licenseDashboard.ts",
+          "revision": "sha256:7ed99b6783c36f5849e1d21584a68630bcb8e48f64e9ec2c4fef470759b5cf8b",
+          "locator": "getScope; createTaskHubDonutCard; createPerformanceTiles; createDistributionStatusCard; createTrendCard; getLicenseDashboardData",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/LicenseDashboard/LicenseDashboardAppService.cs",
+          "revision": "sha256:a3a0bd755cf7ac404d6388b6b03021880de5a0cf0bd3035725b95a6d4dba0890",
+          "locator": "GetTaskTabCountsAsync; GetPriorityCardsAsync; BuildServiceApplicationCardAsync; BuildProfileVerificationCardAsync; GetPerformanceMetricsAsync; GetPerformanceTrendAsync; ResolveRoleScopeAsync",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/services/dashboardApiShared.ts",
+          "revision": "sha256:3c31d383c4781bb437c3aedf348f9e50fde1f7e8e390f4ad396bba30d4718760",
+          "locator": "resolveDashboardDateRange; resolveDashboardTrendDateRange; formatPercent",
+          "verification": "source_inspected"
+        },
+        {
+          "kind": "source_code",
+          "reference": "navigation-knowledge/sources/umc-admin-portal-target/src/pages/Dashboard/index.tsx",
+          "revision": "sha256:7c9a862100b8cb2ed0300767b555a354dd402c7ca1fa7584f2ffb1ce5d032485",
+          "locator": "applied department, roleVariant and timeFilter reader attributes; cancel stale requests on context changes",
+          "verification": "source_inspected"
+        }
+      ],
+      "payload": {
+        "pageRef": "/dashboard",
+        "sourceBinding": {
+          "operationRef": "GET /api/license/dashboard/performance",
+          "sourcePath": "/data/summary"
+        },
+        "bindings": [
+          {
+            "operationRef": "GET /api/license/dashboard/performance",
+            "sourcePath": "/data/summary",
+            "fields": [
+              "slaComplianceRate",
+              "averageHandlingTimeMinutes",
+              "approvalRateOfApplication",
+              "overdueTasks"
+            ],
+            "contextParameters": {
+              "scope": "1"
+            },
+            "contextResponseBindings": {
+              "startDate": {
+                "path": "/data/startDate",
+                "format": "date"
+              },
+              "endDate": {
+                "path": "/data/endDate",
+                "format": "date"
+              }
+            },
+            "id": "object",
+            "kind": "object",
+            "concept": "dashboard",
+            "aliases": [
+              "dashboard",
+              "current dashboard",
+              "dashboard snapshot",
+              "dashboard metric",
+              "performance snapshot",
+              "لوحة المعلومات"
+            ],
+            "meaning": "The selected License Dashboard performance snapshot, not an SLA contract or a collection of task rows."
+          },
+          {
+            "operationRef": "GET /api/license/dashboard/performance",
+            "sourcePath": "/data/summary",
+            "fields": [
+              "slaComplianceRate",
+              "averageHandlingTimeMinutes",
+              "approvalRateOfApplication",
+              "overdueTasks"
+            ],
+            "contextParameters": {
+              "scope": "1"
+            },
+            "contextResponseBindings": {
+              "startDate": {
+                "path": "/data/startDate",
+                "format": "date"
+              },
+              "endDate": {
+                "path": "/data/endDate",
+                "format": "date"
+              }
+            },
+            "id": "grain",
+            "kind": "grain",
+            "concept": "dashboard",
+            "aliases": [
+              "dashboard",
+              "current dashboard",
+              "dashboard snapshot",
+              "dashboard metric",
+              "performance snapshot",
+              "لوحة المعلومات"
+            ],
+            "observationShape": "singleton_object",
+            "meaning": "One current authorized performance response for its selected scope and date period. Numeric metric values are not entity identifiers."
+          },
+          {
+            "operationRef": "GET /api/license/dashboard/performance",
+            "sourcePath": "/data/summary",
+            "fields": [
+              "slaComplianceRate"
+            ],
+            "contextParameters": {
+              "scope": "1"
+            },
+            "contextResponseBindings": {
+              "startDate": {
+                "path": "/data/startDate",
+                "format": "date"
+              },
+              "endDate": {
+                "path": "/data/endDate",
+                "format": "date"
+              }
+            },
+            "id": "sla_compliance",
+            "kind": "attribute",
+            "concept": "SLA compliance",
+            "aliases": [
+              "SLA Compliance",
+              "SLA compliance rate",
+              "compliance rate",
+              "SLA Compliance value",
+              "SLA compliance value",
+              "معدل الامتثال لاتفاقية مستوى الخدمة",
+              "الالتزام باتفاقية مستوى الخدمة",
+              "service level agreement compliance",
+              "service level agreement compliance rate",
+              "service level agreement SLA compliance",
+              "service level agreement SLA compliance rate"
+            ],
+            "displayUnit": "%",
+            "displayScale": {
+              "threshold": 1,
+              "atMostFactor": 100,
+              "otherwiseFactor": 1,
+              "decimals": 1
+            },
+            "meaning": "Current displayed SLA compliance percentage for the application-only performance pipeline, within the current response period and authenticated scope. Null is unavailable. The frontend scales a raw value <=1 by 100; values >1 are already percentage points. Do not substitute overdue count or infer a denominator from another card. The older all-task tooltip is broader than the inspected backend implementation."
+          },
+          {
+            "operationRef": "GET /api/license/dashboard/performance",
+            "sourcePath": "/data/summary",
+            "fields": [
+              "slaComplianceRate"
+            ],
+            "contextParameters": {
+              "scope": "1"
+            },
+            "contextResponseBindings": {
+              "startDate": {
+                "path": "/data/startDate",
+                "format": "date"
+              },
+              "endDate": {
+                "path": "/data/endDate",
+                "format": "date"
+              }
+            },
+            "id": "scope",
+            "kind": "scope",
+            "concept": "team",
+            "meaning": "Observed scope=1 is department performance. It does not independently prove a manager reporting hierarchy or an arbitrary cross-department scope. This must agree with the current native identity/role and selected rendered panel; query scope alone is not an authorization proof because the service resolves scope from the authenticated role."
+          },
+          {
+            "id": "average_processing_time",
+            "kind": "attribute",
+            "concept": "average processing time",
+            "aliases": [
+              "Avg. Processing Time",
+              "average handling time",
+              "متوسط وقت المعالجة"
+            ],
+            "operationRef": "GET /api/license/dashboard/performance",
+            "sourcePath": "/data/summary",
+            "fields": [
+              "averageHandlingTimeMinutes"
+            ],
+            "meaning": "Observed average handling duration of the application-only performance pipeline, in minutes. The page formats these minutes into minutes/hours/days; preserve units and do not confuse this with a count.",
+            "displayUnit": "min",
+            "contextParameters": {
+              "scope": "1"
+            },
+            "contextResponseBindings": {
+              "startDate": {
+                "path": "/data/startDate",
+                "format": "date"
+              },
+              "endDate": {
+                "path": "/data/endDate",
+                "format": "date"
+              }
+            }
+          },
+          {
+            "id": "approval_rate",
+            "kind": "attribute",
+            "concept": "approval rate",
+            "aliases": [
+              "Approval Rate of Application",
+              "نسبة الموافقة"
+            ],
+            "operationRef": "GET /api/license/dashboard/performance",
+            "sourcePath": "/data/summary",
+            "fields": [
+              "approvalRateOfApplication"
+            ],
+            "meaning": "Approve decisions divided by approved plus rejected application decisions in the selected period, as returned by the service. It is not all received applications or all task types. Use the same percentage display rule as the page.",
+            "displayUnit": "%",
+            "displayScale": {
+              "threshold": 1,
+              "atMostFactor": 100,
+              "otherwiseFactor": 1,
+              "decimals": 1
+            },
+            "contextParameters": {
+              "scope": "1"
+            },
+            "contextResponseBindings": {
+              "startDate": {
+                "path": "/data/startDate",
+                "format": "date"
+              },
+              "endDate": {
+                "path": "/data/endDate",
+                "format": "date"
+              }
+            }
+          },
+          {
+            "id": "overdue_tasks",
+            "kind": "attribute",
+            "concept": "overdue tasks",
+            "aliases": [
+              "Overdue Tasks",
+              "المهام المتأخرة"
+            ],
+            "operationRef": "GET /api/license/dashboard/performance",
+            "sourcePath": "/data/summary",
+            "fields": [
+              "overdueTasks"
+            ],
+            "meaning": "Returned count of open overdue tasks in the application-only performance population and selected period. It is distinct from the SLA compliance percentage and may differ from a differently scoped queue.",
+            "displayUnit": "tasks",
+            "contextParameters": {
+              "scope": "1"
+            },
+            "contextResponseBindings": {
+              "startDate": {
+                "path": "/data/startDate",
+                "format": "date"
+              },
+              "endDate": {
+                "path": "/data/endDate",
+                "format": "date"
+              }
+            }
+          },
+          {
+            "id": "performance_metrics",
+            "kind": "attribute",
+            "concept": "performance metrics",
+            "aliases": [
+              "My Performance",
+              "Team Performance",
+              "مؤشرات الأداء"
+            ],
+            "operationRef": "GET /api/license/dashboard/performance",
+            "sourcePath": "/data/summary",
+            "fields": [
+              "slaComplianceRate",
+              "averageHandlingTimeMinutes",
+              "approvalRateOfApplication",
+              "overdueTasks"
+            ],
+            "meaning": "The four metrics displayed together in My Performance / Team Performance: SLA Compliance, Avg. Processing Time, Overdue Tasks, and Approval Rate. This group does not represent the other Dashboard panels. These four values are the performance-panel component of a current Dashboard key-metric summary; include other observed overview and distribution panels separately. A historical completed-task series is a different metric, not a performance snapshot.",
+            "contextParameters": {
+              "scope": "1"
+            },
+            "contextResponseBindings": {
+              "startDate": {
+                "path": "/data/startDate",
+                "format": "date"
+              },
+              "endDate": {
+                "path": "/data/endDate",
+                "format": "date"
+              }
+            }
+          },
+          {
+            "id": "dashboard_summary_component",
+            "kind": "attribute",
+            "concept": "dashboard key metrics",
+            "aliases": [
+              "key metrics",
+              "key indicators",
+              "dashboard key metrics",
+              "dashboard key indicators",
+              "المؤشرات الرئيسية",
+              "المؤشرات الأساسية",
+              "key metrics displayed on the current Dashboard",
+              "key indicators displayed on the current Dashboard",
+              "المؤشرات الرئيسية المعروضة في لوحة المعلومات الحالية",
+              "المؤشرات الأساسية المعروضة في لوحة المعلومات الحالية"
+            ],
+            "operationRef": "GET /api/license/dashboard/performance",
+            "sourcePath": "/data/summary",
+            "fields": [
+              "slaComplianceRate",
+              "averageHandlingTimeMinutes",
+              "approvalRateOfApplication",
+              "overdueTasks"
+            ],
+            "meaning": "The four metrics displayed together in My Performance / Team Performance: SLA Compliance, Avg. Processing Time, Overdue Tasks, and Approval Rate. This group does not represent the other Dashboard panels. These four values are the performance-panel component of a current Dashboard key-metric summary; include other observed overview and distribution panels separately. A historical completed-task series is a different metric, not a performance snapshot.",
+            "contextParameters": {
+              "scope": "1"
+            },
+            "contextResponseBindings": {
+              "startDate": {
+                "path": "/data/startDate",
+                "format": "date"
+              },
+              "endDate": {
+                "path": "/data/endDate",
+                "format": "date"
+              }
+            },
+            "summaryComponent": {
+              "group": "admin.dashboard.license-key-metrics",
+              "component": "performance",
+              "requiredComponents": [
+                "overview",
+                "performance",
+                "distribution"
+              ]
+            }
+          }
+        ],
+        "fields": {
+          "slaComplianceRate": "Current displayed SLA compliance percentage for the application-only performance pipeline, within the current response period and authenticated scope. Null is unavailable. The frontend scales a raw value <=1 by 100; values >1 are already percentage points. Do not substitute overdue count or infer a denominator from another card. The older all-task tooltip is broader than the inspected backend implementation.",
+          "/data/startDate": "Returned beginning of the current query window.",
+          "/data/endDate": "Returned ending of the current query window.",
+          "averageHandlingTimeMinutes": "Observed average handling duration of the application-only performance pipeline, in minutes. The page formats these minutes into minutes/hours/days; preserve units and do not confuse this with a count.",
+          "approvalRateOfApplication": "Approve decisions divided by approved plus rejected application decisions in the selected period, as returned by the service. It is not all received applications or all task types. Use the same percentage display rule as the page.",
+          "overdueTasks": "Returned count of open overdue tasks in the application-only performance population and selected period. It is distinct from the SLA compliance percentage and may differ from a differently scoped queue."
+        },
+        "constraints": [
+          "This source snapshot defines field meanings, not current values or access grants. Verify the native response and current authenticated scope. A missing field is unavailable, not zero.",
+          "The current Dashboard is a selected UI context, not automatically personal scope. Preserve observed department, roleVariant and applied timeFilter. The same route can display another department or period.",
+          "The backend ResolveRoleScopeAsync uses the authenticated role context. A manually supplied scope query parameter cannot grant or independently establish personal, department or managed-team access.",
+          "Each panel has its own population and time basis. Do not turn an overview response, attention list or performance summary into a common record collection, and do not add counts from different panels.",
+          "A summary of current Dashboard key metrics covers the visible task tabs, Service Application and Profile Verification summary cards, License Distribution, and My/Team Performance where observed. Keep panel names with their values; unavailable panels stay explicitly unavailable. It is not just one SLA percentage.",
+          "A requested individual indicator uses only its matching property. A full Dashboard overview must not silently substitute an attention-table row list for all key metrics.",
+          "The inspected backend performance pipeline is application-only. Do not repeat an older UI tooltip as proof that enquiries, refunds and appeals are included in these performance metrics.",
+          "Approval-rate and SLA-rate raw values are rendered with the frontend percentage formatter; report a raw/display ambiguity rather than inventing a new conversion.",
+          "Returned startDate/endDate establish the actual normalized inclusive reporting period. They do not establish timezone if the API provides no offset."
+        ]
+      }
+    }
+  ]
+}

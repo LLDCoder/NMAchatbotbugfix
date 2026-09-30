@@ -1,0 +1,839 @@
+{
+  "sourceAudit": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/groups1113-20260928/round25-b11-v34/B-11__en-audit-db.json",
+  "sourceAuditSha256": "ee18b98a151ac6953e15481b85b42a114f08c325feb16b2f8bda30e4d84441d7",
+  "requestId": "8432a13d-5c01-4f65-8d47-dc9c2032ea4d",
+  "conversationId": "conv_1beabc59ea704c6abb7c",
+  "prompt": "I am seeing a conflicting status for this same application on the page. Please re-check the current record, explain which source and observation time your answer uses, and tell me how to refresh or verify the discrepancy. Do not change any data.",
+  "task": {
+    "view": "",
+    "stage": "task",
+    "filters": [],
+    "groupBy": [],
+    "readOnly": true,
+    "timeField": "",
+    "timeRange": "unknown",
+    "outputShape": "detail",
+    "searchQuery": "application current status source observation time refresh verify conflicting status discrepancy application ML-1-7-6577159",
+    "slotUpdates": [
+      {
+        "field": "businessObject",
+        "value": "application",
+        "source": "previous",
+        "evidence": "this same application"
+      },
+      {
+        "field": "requestedGrain",
+        "value": "application",
+        "source": "previous",
+        "evidence": "this same application"
+      },
+      {
+        "field": "requestedAttributes",
+        "value": [
+          "status",
+          "source of the status answer",
+          "observation time of the status answer",
+          "documented procedure to refresh or verify a status discrepancy"
+        ],
+        "source": "current",
+        "evidence": "explain which source and observation time your answer uses, and tell me how to refresh or verify the discrepancy"
+      },
+      {
+        "field": "outputShape",
+        "value": "detail",
+        "source": "current",
+        "evidence": "re-check the current record"
+      },
+      {
+        "field": "recordIdentity",
+        "value": "ML-1-7-6577159",
+        "source": "previous",
+        "evidence": "this same application"
+      },
+      {
+        "field": "requestedScope",
+        "value": "unknown",
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "timeRange",
+        "value": "unknown",
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "filters",
+        "value": [],
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "businessFocus",
+        "value": "",
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "disclosurePurpose",
+        "value": "",
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "requestedMeasures",
+        "value": [],
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "groupBy",
+        "value": [],
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "view",
+        "value": "",
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "timeField",
+        "value": "",
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "requestedOrdering",
+        "value": [],
+        "source": "previous",
+        "evidence": ""
+      },
+      {
+        "field": "groupCompleteness",
+        "value": "observed",
+        "source": "previous",
+        "evidence": ""
+      }
+    ],
+    "responseMode": "answer",
+    "businessFocus": "",
+    "clarification": null,
+    "needsLiveData": true,
+    "businessObject": "application",
+    "recordIdentity": "ML-1-7-6577159",
+    "requestedGrain": "application",
+    "requestedScope": "unknown",
+    "contextRelation": "continue",
+    "unresolvedSlots": [],
+    "disclosurePurpose": "",
+    "groupCompleteness": "observed",
+    "requestBoundaries": [],
+    "requestedMeasures": [],
+    "requestedOrdering": [],
+    "requestedAttributes": [
+      "status",
+      "source of the status answer",
+      "observation time of the status answer",
+      "documented procedure to refresh or verify a status discrepancy"
+    ],
+    "evidenceExplanations": [
+      {
+        "kind": "source",
+        "attribute": "source of the status answer",
+        "questionQuote": "explain which source and observation time your answer uses",
+        "aboutAttribute": "status"
+      },
+      {
+        "kind": "observation_time",
+        "attribute": "observation time of the status answer",
+        "questionQuote": "explain which source and observation time your answer uses",
+        "aboutAttribute": "status"
+      },
+      {
+        "kind": "knowledge_guidance",
+        "attribute": "documented procedure to refresh or verify a status discrepancy",
+        "questionQuote": "tell me how to refresh or verify the discrepancy",
+        "aboutAttribute": ""
+      }
+    ]
+  },
+  "coverage": [
+    {
+      "reason": "The read-only guidance documents both a refresh procedure (reopen the same application/task from a permitted entry, wait for the new read, confirm application number and task, read the returned status, record observation time) and a discrepancy-verification procedure (keep both values with page/field/object/task/role/time, verify the same typed object and task, compare the same field meaning, re-read the same authorized detail, retain unresolved disagreement). No opposing clause in the same document or other applicable passages forbids these steps.",
+      "status": "covered",
+      "evidence": [
+        {
+          "sourceId": "k_4f9269b49716110907ab:p8"
+        },
+        {
+          "sourceId": "k_4f9269b49716110907ab:p9"
+        },
+        {
+          "sourceId": "k_4f9269b49716110907ab:p10"
+        },
+        {
+          "sourceId": "k_4f9269b49716110907ab:p11"
+        },
+        {
+          "sourceId": "k_4f9269b49716110907ab:p12"
+        },
+        {
+          "sourceId": "k_4f9269b49716110907ab:p13"
+        }
+      ],
+      "followupQuery": "",
+      "requirementId": "attribute_3",
+      "requiredPoints": [
+        "Refresh: reopen the same application/task from a permitted list or entry, selecting the intended task if several match.",
+        "Wait for the new read to finish; failure, denial or mismatch leaves the refresh unconfirmed.",
+        "Confirm the application number and task, then read the returned application status separately from workflow position and historical decisions.",
+        "Record the observation time, keeping any source-reported business update time separate; a later read does not prove a changed record.",
+        "No dedicated Refresh button is asserted; focusing an already mounted page does not prove a new read, and no business action should be used to refresh.",
+        "Verify discrepancy: keep both values with page, field, selected object/task, role/view and observation time, labelling unobserved values as reported or unavailable.",
+        "Verify the same typed business object and relevant task via the current permitted mapping, and compare the same field meaning (application lifecycle vs workflow position vs completed-task decision vs payment/other-module status).",
+        "Re-read the same authorized detail and compare scope, applicable version and times; if disagreement remains without a verified reconciliation rule, retain both findings and do not automatically prefer list, detail, later capture or a prior answer."
+      ],
+      "missingEvidenceType": "none"
+    }
+  ],
+  "rejectedPlans": [
+    {
+      "stage": "KnowledgeAnswerDraft",
+      "attempt": 1,
+      "failure": "{\"code\": \"knowledge_answer_navigation_citation_missing\", \"blockId\": \"navigation\", \"route\": \"/licensing/applications\", \"routeQuoteIndexes\": [], \"correction\": \"Cite a supplied quote containing this exact authorized route (the authenticated page catalog can prove visibility) and applicable business knowledge for any workflow or object relationship. A different module does not establish this navigation. Do not invent citations.\"}",
+      "candidate": {
+        "stage": "knowledge_answer_draft",
+        "blocks": [
+          {
+            "id": "refresh_procedure",
+            "text": "To refresh the status of an application, reopen the same application and its task from a permitted list or entry, selecting the intended task if more than one matches. Wait for the new read to finish; if it fails, is denied, or does not match, the refresh is unconfirmed. Then confirm the application number and task, and read the returned application status separately from the workflow position or any historical decision. Record the observation time, keeping any business update time reported by the source separate — a later read does not by itself prove the record changed. There is no dedicated Refresh button; focusing an already open page does not prove a new read, and no business action should be used to refresh.",
+            "quoteIndexes": [
+              1,
+              2,
+              3
+            ],
+            "requirementIds": [
+              "attribute_3"
+            ]
+          },
+          {
+            "id": "verify_discrepancy",
+            "text": "To verify a reported status discrepancy, keep both values together with the page, field, selected object and task, role or view, and observation time, labelling any value you have not observed as reported or unavailable. Verify the same typed business object and the relevant task through the current permitted mapping — similar references are not enough — and compare the same field meaning, since the application lifecycle, workflow position, completed-task decision, and payment or other-module status are distinct facts. Re-read the same authorized detail and compare scope, applicable version and times. If disagreement remains without a verified reconciliation rule, retain both findings and the unresolved points rather than automatically preferring a list, a detail view, a later capture, or a prior answer.",
+            "quoteIndexes": [
+              4,
+              5
+            ],
+            "requirementIds": [
+              "attribute_3"
+            ]
+          },
+          {
+            "id": "navigation",
+            "text": "You can carry out these read-only steps from the Applications page: [Applications](/licensing/applications).",
+            "quoteIndexes": [
+              0
+            ],
+            "requirementIds": [
+              "attribute_3"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "stage": "KnowledgeAnswerDraft",
+      "attempt": 2,
+      "failure": "{\"code\": \"knowledge_answer_navigation_citation_missing\", \"blockId\": \"navigation\", \"route\": \"/licensing/applications\", \"routeQuoteIndexes\": [], \"correction\": \"Cite a supplied quote containing this exact authorized route (the authenticated page catalog can prove visibility) and applicable business knowledge for any workflow or object relationship. A different module does not establish this navigation. Do not invent citations.\"}",
+      "candidate": {
+        "stage": "knowledge_answer_draft",
+        "blocks": [
+          {
+            "id": "refresh_procedure",
+            "text": "To refresh the status of an application, reopen the same application and its task from a permitted list or entry, selecting the intended task if more than one matches. Wait for the new read to finish; if it fails, is denied, or does not match, the refresh remains unconfirmed. Then confirm the application number and task, and read the returned application status separately from the workflow position and any historical decisions. Record the observation time, keeping any business update time reported by the source separate, since a later read does not by itself prove the record changed. There is no dedicated Refresh button; focusing an already loaded page does not prove a new read, and no business action should be used to refresh.",
+            "quoteIndexes": [
+              1,
+              2,
+              3
+            ],
+            "requirementIds": [
+              "attribute_3"
+            ]
+          },
+          {
+            "id": "verify_discrepancy",
+            "text": "To verify a reported status discrepancy, keep both values together with the page, field, selected object and task, role or view, and observation time, labelling any value you have not observed as reported or unavailable. Verify the same typed business object and the relevant task through the current permitted mapping, and compare the same field meaning: the application lifecycle status, the workflow position, a completed-task decision, and a payment or other-module status are distinct facts. Re-read the same authorized detail and compare scope, applicable version and times. If disagreement remains without a verified reconciliation rule, retain both findings and do not automatically prefer the list, the detail, a later capture, or a prior answer.",
+            "quoteIndexes": [
+              4,
+              5
+            ],
+            "requirementIds": [
+              "attribute_3"
+            ]
+          },
+          {
+            "id": "navigation",
+            "text": "You can reopen the application from the Applications page to perform the re-read described above: [Applications](/licensing/applications).",
+            "quoteIndexes": [
+              1
+            ],
+            "requirementIds": [
+              "attribute_3"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "permission": {
+    "roles": [
+      "Foreign Media Manager",
+      "Licensing Manager"
+    ],
+    "account": "[redacted]",
+    "pageCount": 5,
+    "observedAt": "2026-09-28T19:59:14.061245+00:00",
+    "buttonCount": 22,
+    "currentRole": "Foreign Media Manager",
+    "departments": [
+      "1"
+    ],
+    "fingerprint": "137549e932bef4870c7547df2edbbcfe81c1cbbc6ef1fe9eeda85efe79744b0a",
+    "subpageCount": 18,
+    "preferredLanguage": "en"
+  },
+  "principalRef": "7da85129c1862eb3c3f0",
+  "knowledgeInputs": [
+    {
+      "stage": "RoutingDecision",
+      "phase": "",
+      "document": {
+        "chunkId": "KB/pages/admin/licensing-application-detail/Application Details-入口参数与审查证据.json",
+        "passages": [
+          {
+            "sha256": "8df249c737d821bb873d5e164bbbef0d17dff95d55d83632b3b6fff37395c8e1",
+            "sourceId": "k_4f9269b49716110907ab:p0",
+            "characters": 754
+          },
+          {
+            "sha256": "b59aff672a625bb42d13b44f5c6b6c8c9b12a2e3d8864a049105f2876b0d6062",
+            "sourceId": "k_4f9269b49716110907ab:p1",
+            "characters": 1000
+          },
+          {
+            "sha256": "54bece0060af8fc8516c733aea2f7ee18f9158d72ad037f47c226fb3678bd19b",
+            "sourceId": "k_4f9269b49716110907ab:p2",
+            "characters": 992
+          },
+          {
+            "sha256": "abb543a43e2a5d981f2ddbf37096b3b42074f34f2c8b58154c880752ce26b111",
+            "sourceId": "k_4f9269b49716110907ab:p3",
+            "characters": 872
+          },
+          {
+            "sha256": "68b9b082310f70131bce53499189926a84b20c99b6ae13ce507fc9e3b0013f69",
+            "sourceId": "k_4f9269b49716110907ab:p4",
+            "characters": 917
+          },
+          {
+            "sha256": "b644de71fc82f2a9a35b9ace80df1384f83a2312de320032dc5d321f4c5eee6a",
+            "sourceId": "k_4f9269b49716110907ab:p5",
+            "characters": 837
+          },
+          {
+            "sha256": "4f7781cc2b3a166a07bb791e5a8189067387aafc6922a2a025bd2a71f8650b64",
+            "sourceId": "k_4f9269b49716110907ab:p6",
+            "characters": 964
+          },
+          {
+            "sha256": "10039ef1f728d9bf8c9f72b8df3e68ac3d20a990c4f7613326b7fab147601e1b",
+            "sourceId": "k_4f9269b49716110907ab:p7",
+            "characters": 925
+          },
+          {
+            "sha256": "55156688fb794b2ec0f5a8c17a43d50efd0b9ce68465f8bbe1feff32e0cfeb5d",
+            "sourceId": "k_4f9269b49716110907ab:p8",
+            "characters": 979
+          },
+          {
+            "sha256": "bbfd94d89613cace2c9df4aa4005e498c7017bee2db7ca44cbbab6ce026723f3",
+            "sourceId": "k_4f9269b49716110907ab:p9",
+            "characters": 848
+          },
+          {
+            "sha256": "b8d9e0f489f35dfa05bceefe937b554e5f5e5fab933ce2b13e7e0a38cc5cb921",
+            "sourceId": "k_4f9269b49716110907ab:p10",
+            "characters": 802
+          },
+          {
+            "sha256": "571616c1e6cab62a332d9865220ca410f6c73f6028656381605d547ec6ab6970",
+            "sourceId": "k_4f9269b49716110907ab:p11",
+            "characters": 895
+          },
+          {
+            "sha256": "9a2551c1021e3adb55d1a9f9c4be69fa3a8b6b752209757bbe95a5db1d7fb5b2",
+            "sourceId": "k_4f9269b49716110907ab:p12",
+            "characters": 909
+          },
+          {
+            "sha256": "6fd817f4b467fbe2e86cf86c38cf3560b0ddd56ee7e5b8186aa02ca647877a50",
+            "sourceId": "k_4f9269b49716110907ab:p13",
+            "characters": 988
+          },
+          {
+            "sha256": "b9713f328c19ac6e7829b74d92b363d554a15f5a4b55b2fd46f26d0a382c33b1",
+            "sourceId": "k_4f9269b49716110907ab:p14",
+            "characters": 933
+          },
+          {
+            "sha256": "4df2c911040a7d72f65ef468524c8bde3082321ce7318e3e42aa983bd4cd6371",
+            "sourceId": "k_4f9269b49716110907ab:p15",
+            "characters": 985
+          },
+          {
+            "sha256": "7448817f068ea1b7e977a327d7a596c4ec7fab1c67ebbb71be54bc0a31d40f77",
+            "sourceId": "k_4f9269b49716110907ab:p16",
+            "characters": 989
+          },
+          {
+            "sha256": "9e830477a6eabc3a99579aed6f4c78f38998183b4a520338fc82aeab959547dc",
+            "sourceId": "k_4f9269b49716110907ab:p17",
+            "characters": 376
+          }
+        ],
+        "recordId": "admin.page-docs.licensing.application-detail.routing-evidence",
+        "truncated": false,
+        "documentId": "",
+        "documentVersion": ""
+      }
+    },
+    {
+      "stage": "KnowledgeCoverage",
+      "phase": "",
+      "document": {
+        "chunkId": "KB/pages/admin/licensing-application-detail/Application Details-入口参数与审查证据.json",
+        "passages": [
+          {
+            "sha256": "8df249c737d821bb873d5e164bbbef0d17dff95d55d83632b3b6fff37395c8e1",
+            "sourceId": "k_4f9269b49716110907ab:p0",
+            "characters": 754
+          },
+          {
+            "sha256": "b59aff672a625bb42d13b44f5c6b6c8c9b12a2e3d8864a049105f2876b0d6062",
+            "sourceId": "k_4f9269b49716110907ab:p1",
+            "characters": 1000
+          },
+          {
+            "sha256": "54bece0060af8fc8516c733aea2f7ee18f9158d72ad037f47c226fb3678bd19b",
+            "sourceId": "k_4f9269b49716110907ab:p2",
+            "characters": 992
+          },
+          {
+            "sha256": "abb543a43e2a5d981f2ddbf37096b3b42074f34f2c8b58154c880752ce26b111",
+            "sourceId": "k_4f9269b49716110907ab:p3",
+            "characters": 872
+          },
+          {
+            "sha256": "68b9b082310f70131bce53499189926a84b20c99b6ae13ce507fc9e3b0013f69",
+            "sourceId": "k_4f9269b49716110907ab:p4",
+            "characters": 917
+          },
+          {
+            "sha256": "b644de71fc82f2a9a35b9ace80df1384f83a2312de320032dc5d321f4c5eee6a",
+            "sourceId": "k_4f9269b49716110907ab:p5",
+            "characters": 837
+          },
+          {
+            "sha256": "4f7781cc2b3a166a07bb791e5a8189067387aafc6922a2a025bd2a71f8650b64",
+            "sourceId": "k_4f9269b49716110907ab:p6",
+            "characters": 964
+          },
+          {
+            "sha256": "10039ef1f728d9bf8c9f72b8df3e68ac3d20a990c4f7613326b7fab147601e1b",
+            "sourceId": "k_4f9269b49716110907ab:p7",
+            "characters": 925
+          },
+          {
+            "sha256": "55156688fb794b2ec0f5a8c17a43d50efd0b9ce68465f8bbe1feff32e0cfeb5d",
+            "sourceId": "k_4f9269b49716110907ab:p8",
+            "characters": 979
+          },
+          {
+            "sha256": "bbfd94d89613cace2c9df4aa4005e498c7017bee2db7ca44cbbab6ce026723f3",
+            "sourceId": "k_4f9269b49716110907ab:p9",
+            "characters": 848
+          },
+          {
+            "sha256": "b8d9e0f489f35dfa05bceefe937b554e5f5e5fab933ce2b13e7e0a38cc5cb921",
+            "sourceId": "k_4f9269b49716110907ab:p10",
+            "characters": 802
+          },
+          {
+            "sha256": "571616c1e6cab62a332d9865220ca410f6c73f6028656381605d547ec6ab6970",
+            "sourceId": "k_4f9269b49716110907ab:p11",
+            "characters": 895
+          },
+          {
+            "sha256": "9a2551c1021e3adb55d1a9f9c4be69fa3a8b6b752209757bbe95a5db1d7fb5b2",
+            "sourceId": "k_4f9269b49716110907ab:p12",
+            "characters": 909
+          },
+          {
+            "sha256": "6fd817f4b467fbe2e86cf86c38cf3560b0ddd56ee7e5b8186aa02ca647877a50",
+            "sourceId": "k_4f9269b49716110907ab:p13",
+            "characters": 988
+          },
+          {
+            "sha256": "b9713f328c19ac6e7829b74d92b363d554a15f5a4b55b2fd46f26d0a382c33b1",
+            "sourceId": "k_4f9269b49716110907ab:p14",
+            "characters": 933
+          },
+          {
+            "sha256": "4df2c911040a7d72f65ef468524c8bde3082321ce7318e3e42aa983bd4cd6371",
+            "sourceId": "k_4f9269b49716110907ab:p15",
+            "characters": 985
+          },
+          {
+            "sha256": "7448817f068ea1b7e977a327d7a596c4ec7fab1c67ebbb71be54bc0a31d40f77",
+            "sourceId": "k_4f9269b49716110907ab:p16",
+            "characters": 989
+          },
+          {
+            "sha256": "9e830477a6eabc3a99579aed6f4c78f38998183b4a520338fc82aeab959547dc",
+            "sourceId": "k_4f9269b49716110907ab:p17",
+            "characters": 376
+          }
+        ],
+        "recordId": "admin.page-docs.licensing.application-detail.routing-evidence",
+        "truncated": false,
+        "documentId": "",
+        "documentVersion": ""
+      }
+    },
+    {
+      "stage": "KnowledgeCoverage",
+      "phase": "consistency_review",
+      "document": {
+        "chunkId": "KB/pages/admin/licensing-application-detail/Application Details-入口参数与审查证据.json",
+        "passages": [
+          {
+            "sha256": "8df249c737d821bb873d5e164bbbef0d17dff95d55d83632b3b6fff37395c8e1",
+            "sourceId": "k_4f9269b49716110907ab:p0",
+            "characters": 754
+          },
+          {
+            "sha256": "b59aff672a625bb42d13b44f5c6b6c8c9b12a2e3d8864a049105f2876b0d6062",
+            "sourceId": "k_4f9269b49716110907ab:p1",
+            "characters": 1000
+          },
+          {
+            "sha256": "54bece0060af8fc8516c733aea2f7ee18f9158d72ad037f47c226fb3678bd19b",
+            "sourceId": "k_4f9269b49716110907ab:p2",
+            "characters": 992
+          },
+          {
+            "sha256": "abb543a43e2a5d981f2ddbf37096b3b42074f34f2c8b58154c880752ce26b111",
+            "sourceId": "k_4f9269b49716110907ab:p3",
+            "characters": 872
+          },
+          {
+            "sha256": "68b9b082310f70131bce53499189926a84b20c99b6ae13ce507fc9e3b0013f69",
+            "sourceId": "k_4f9269b49716110907ab:p4",
+            "characters": 917
+          },
+          {
+            "sha256": "b644de71fc82f2a9a35b9ace80df1384f83a2312de320032dc5d321f4c5eee6a",
+            "sourceId": "k_4f9269b49716110907ab:p5",
+            "characters": 837
+          },
+          {
+            "sha256": "4f7781cc2b3a166a07bb791e5a8189067387aafc6922a2a025bd2a71f8650b64",
+            "sourceId": "k_4f9269b49716110907ab:p6",
+            "characters": 964
+          },
+          {
+            "sha256": "10039ef1f728d9bf8c9f72b8df3e68ac3d20a990c4f7613326b7fab147601e1b",
+            "sourceId": "k_4f9269b49716110907ab:p7",
+            "characters": 925
+          },
+          {
+            "sha256": "55156688fb794b2ec0f5a8c17a43d50efd0b9ce68465f8bbe1feff32e0cfeb5d",
+            "sourceId": "k_4f9269b49716110907ab:p8",
+            "characters": 979
+          },
+          {
+            "sha256": "bbfd94d89613cace2c9df4aa4005e498c7017bee2db7ca44cbbab6ce026723f3",
+            "sourceId": "k_4f9269b49716110907ab:p9",
+            "characters": 848
+          },
+          {
+            "sha256": "b8d9e0f489f35dfa05bceefe937b554e5f5e5fab933ce2b13e7e0a38cc5cb921",
+            "sourceId": "k_4f9269b49716110907ab:p10",
+            "characters": 802
+          },
+          {
+            "sha256": "571616c1e6cab62a332d9865220ca410f6c73f6028656381605d547ec6ab6970",
+            "sourceId": "k_4f9269b49716110907ab:p11",
+            "characters": 895
+          },
+          {
+            "sha256": "9a2551c1021e3adb55d1a9f9c4be69fa3a8b6b752209757bbe95a5db1d7fb5b2",
+            "sourceId": "k_4f9269b49716110907ab:p12",
+            "characters": 909
+          },
+          {
+            "sha256": "6fd817f4b467fbe2e86cf86c38cf3560b0ddd56ee7e5b8186aa02ca647877a50",
+            "sourceId": "k_4f9269b49716110907ab:p13",
+            "characters": 988
+          },
+          {
+            "sha256": "b9713f328c19ac6e7829b74d92b363d554a15f5a4b55b2fd46f26d0a382c33b1",
+            "sourceId": "k_4f9269b49716110907ab:p14",
+            "characters": 933
+          },
+          {
+            "sha256": "4df2c911040a7d72f65ef468524c8bde3082321ce7318e3e42aa983bd4cd6371",
+            "sourceId": "k_4f9269b49716110907ab:p15",
+            "characters": 985
+          },
+          {
+            "sha256": "7448817f068ea1b7e977a327d7a596c4ec7fab1c67ebbb71be54bc0a31d40f77",
+            "sourceId": "k_4f9269b49716110907ab:p16",
+            "characters": 989
+          },
+          {
+            "sha256": "9e830477a6eabc3a99579aed6f4c78f38998183b4a520338fc82aeab959547dc",
+            "sourceId": "k_4f9269b49716110907ab:p17",
+            "characters": 376
+          }
+        ],
+        "recordId": "admin.page-docs.licensing.application-detail.routing-evidence",
+        "truncated": false,
+        "documentId": "",
+        "documentVersion": ""
+      }
+    },
+    {
+      "stage": "SourceSelection",
+      "phase": "",
+      "document": {
+        "chunkId": "KB/pages/admin/licensing-application-detail/Application Details-入口参数与审查证据.json",
+        "passages": [
+          {
+            "sha256": "8df249c737d821bb873d5e164bbbef0d17dff95d55d83632b3b6fff37395c8e1",
+            "sourceId": "k_4f9269b49716110907ab:p0",
+            "characters": 754
+          },
+          {
+            "sha256": "b59aff672a625bb42d13b44f5c6b6c8c9b12a2e3d8864a049105f2876b0d6062",
+            "sourceId": "k_4f9269b49716110907ab:p1",
+            "characters": 1000
+          },
+          {
+            "sha256": "54bece0060af8fc8516c733aea2f7ee18f9158d72ad037f47c226fb3678bd19b",
+            "sourceId": "k_4f9269b49716110907ab:p2",
+            "characters": 992
+          },
+          {
+            "sha256": "abb543a43e2a5d981f2ddbf37096b3b42074f34f2c8b58154c880752ce26b111",
+            "sourceId": "k_4f9269b49716110907ab:p3",
+            "characters": 872
+          },
+          {
+            "sha256": "68b9b082310f70131bce53499189926a84b20c99b6ae13ce507fc9e3b0013f69",
+            "sourceId": "k_4f9269b49716110907ab:p4",
+            "characters": 917
+          },
+          {
+            "sha256": "b644de71fc82f2a9a35b9ace80df1384f83a2312de320032dc5d321f4c5eee6a",
+            "sourceId": "k_4f9269b49716110907ab:p5",
+            "characters": 837
+          },
+          {
+            "sha256": "4f7781cc2b3a166a07bb791e5a8189067387aafc6922a2a025bd2a71f8650b64",
+            "sourceId": "k_4f9269b49716110907ab:p6",
+            "characters": 964
+          },
+          {
+            "sha256": "10039ef1f728d9bf8c9f72b8df3e68ac3d20a990c4f7613326b7fab147601e1b",
+            "sourceId": "k_4f9269b49716110907ab:p7",
+            "characters": 925
+          },
+          {
+            "sha256": "55156688fb794b2ec0f5a8c17a43d50efd0b9ce68465f8bbe1feff32e0cfeb5d",
+            "sourceId": "k_4f9269b49716110907ab:p8",
+            "characters": 979
+          },
+          {
+            "sha256": "bbfd94d89613cace2c9df4aa4005e498c7017bee2db7ca44cbbab6ce026723f3",
+            "sourceId": "k_4f9269b49716110907ab:p9",
+            "characters": 848
+          },
+          {
+            "sha256": "b8d9e0f489f35dfa05bceefe937b554e5f5e5fab933ce2b13e7e0a38cc5cb921",
+            "sourceId": "k_4f9269b49716110907ab:p10",
+            "characters": 802
+          },
+          {
+            "sha256": "571616c1e6cab62a332d9865220ca410f6c73f6028656381605d547ec6ab6970",
+            "sourceId": "k_4f9269b49716110907ab:p11",
+            "characters": 895
+          },
+          {
+            "sha256": "9a2551c1021e3adb55d1a9f9c4be69fa3a8b6b752209757bbe95a5db1d7fb5b2",
+            "sourceId": "k_4f9269b49716110907ab:p12",
+            "characters": 909
+          },
+          {
+            "sha256": "6fd817f4b467fbe2e86cf86c38cf3560b0ddd56ee7e5b8186aa02ca647877a50",
+            "sourceId": "k_4f9269b49716110907ab:p13",
+            "characters": 988
+          },
+          {
+            "sha256": "b9713f328c19ac6e7829b74d92b363d554a15f5a4b55b2fd46f26d0a382c33b1",
+            "sourceId": "k_4f9269b49716110907ab:p14",
+            "characters": 933
+          },
+          {
+            "sha256": "4df2c911040a7d72f65ef468524c8bde3082321ce7318e3e42aa983bd4cd6371",
+            "sourceId": "k_4f9269b49716110907ab:p15",
+            "characters": 985
+          },
+          {
+            "sha256": "7448817f068ea1b7e977a327d7a596c4ec7fab1c67ebbb71be54bc0a31d40f77",
+            "sourceId": "k_4f9269b49716110907ab:p16",
+            "characters": 989
+          },
+          {
+            "sha256": "9e830477a6eabc3a99579aed6f4c78f38998183b4a520338fc82aeab959547dc",
+            "sourceId": "k_4f9269b49716110907ab:p17",
+            "characters": 376
+          }
+        ],
+        "recordId": "admin.page-docs.licensing.application-detail.routing-evidence",
+        "truncated": false,
+        "documentId": "",
+        "documentVersion": ""
+      }
+    },
+    {
+      "stage": "AnalysisPlan",
+      "phase": "",
+      "document": {
+        "chunkId": "KB/pages/admin/licensing-application-detail/Application Details-入口参数与审查证据.json",
+        "passages": [
+          {
+            "sha256": "8df249c737d821bb873d5e164bbbef0d17dff95d55d83632b3b6fff37395c8e1",
+            "sourceId": "k_4f9269b49716110907ab:p0",
+            "characters": 754
+          },
+          {
+            "sha256": "b59aff672a625bb42d13b44f5c6b6c8c9b12a2e3d8864a049105f2876b0d6062",
+            "sourceId": "k_4f9269b49716110907ab:p1",
+            "characters": 1000
+          },
+          {
+            "sha256": "54bece0060af8fc8516c733aea2f7ee18f9158d72ad037f47c226fb3678bd19b",
+            "sourceId": "k_4f9269b49716110907ab:p2",
+            "characters": 992
+          },
+          {
+            "sha256": "abb543a43e2a5d981f2ddbf37096b3b42074f34f2c8b58154c880752ce26b111",
+            "sourceId": "k_4f9269b49716110907ab:p3",
+            "characters": 872
+          },
+          {
+            "sha256": "68b9b082310f70131bce53499189926a84b20c99b6ae13ce507fc9e3b0013f69",
+            "sourceId": "k_4f9269b49716110907ab:p4",
+            "characters": 917
+          },
+          {
+            "sha256": "b644de71fc82f2a9a35b9ace80df1384f83a2312de320032dc5d321f4c5eee6a",
+            "sourceId": "k_4f9269b49716110907ab:p5",
+            "characters": 837
+          },
+          {
+            "sha256": "4f7781cc2b3a166a07bb791e5a8189067387aafc6922a2a025bd2a71f8650b64",
+            "sourceId": "k_4f9269b49716110907ab:p6",
+            "characters": 964
+          },
+          {
+            "sha256": "10039ef1f728d9bf8c9f72b8df3e68ac3d20a990c4f7613326b7fab147601e1b",
+            "sourceId": "k_4f9269b49716110907ab:p7",
+            "characters": 925
+          },
+          {
+            "sha256": "55156688fb794b2ec0f5a8c17a43d50efd0b9ce68465f8bbe1feff32e0cfeb5d",
+            "sourceId": "k_4f9269b49716110907ab:p8",
+            "characters": 979
+          },
+          {
+            "sha256": "bbfd94d89613cace2c9df4aa4005e498c7017bee2db7ca44cbbab6ce026723f3",
+            "sourceId": "k_4f9269b49716110907ab:p9",
+            "characters": 848
+          },
+          {
+            "sha256": "b8d9e0f489f35dfa05bceefe937b554e5f5e5fab933ce2b13e7e0a38cc5cb921",
+            "sourceId": "k_4f9269b49716110907ab:p10",
+            "characters": 802
+          },
+          {
+            "sha256": "571616c1e6cab62a332d9865220ca410f6c73f6028656381605d547ec6ab6970",
+            "sourceId": "k_4f9269b49716110907ab:p11",
+            "characters": 895
+          },
+          {
+            "sha256": "9a2551c1021e3adb55d1a9f9c4be69fa3a8b6b752209757bbe95a5db1d7fb5b2",
+            "sourceId": "k_4f9269b49716110907ab:p12",
+            "characters": 909
+          },
+          {
+            "sha256": "6fd817f4b467fbe2e86cf86c38cf3560b0ddd56ee7e5b8186aa02ca647877a50",
+            "sourceId": "k_4f9269b49716110907ab:p13",
+            "characters": 988
+          },
+          {
+            "sha256": "b9713f328c19ac6e7829b74d92b363d554a15f5a4b55b2fd46f26d0a382c33b1",
+            "sourceId": "k_4f9269b49716110907ab:p14",
+            "characters": 933
+          },
+          {
+            "sha256": "4df2c911040a7d72f65ef468524c8bde3082321ce7318e3e42aa983bd4cd6371",
+            "sourceId": "k_4f9269b49716110907ab:p15",
+            "characters": 985
+          },
+          {
+            "sha256": "7448817f068ea1b7e977a327d7a596c4ec7fab1c67ebbb71be54bc0a31d40f77",
+            "sourceId": "k_4f9269b49716110907ab:p16",
+            "characters": 989
+          },
+          {
+            "sha256": "9e830477a6eabc3a99579aed6f4c78f38998183b4a520338fc82aeab959547dc",
+            "sourceId": "k_4f9269b49716110907ab:p17",
+            "characters": 376
+          }
+        ],
+        "recordId": "admin.page-docs.licensing.application-detail.routing-evidence",
+        "truncated": false,
+        "documentId": "",
+        "documentVersion": ""
+      }
+    }
+  ],
+  "knowledgeRecord": {
+    "chunkId": "KB/pages/admin/licensing-application-detail/Application Details-入口参数与审查证据.json",
+    "recordId": "admin.page-docs.licensing.application-detail.routing-evidence",
+    "revision": "6",
+    "sourceId": "k_4f9269b49716110907ab",
+    "documentId": "",
+    "verification": "reference_only"
+  },
+  "actualMissing": [
+    "knowledge_answer_navigation_citation_missing",
+    "attribute_3",
+    "requirements_incomplete",
+    "stage_quality_incomplete"
+  ],
+  "replayLimitation": "Offline deterministic contract replay only; independent semantic review is simulated, not a live model or business acceptance."
+}

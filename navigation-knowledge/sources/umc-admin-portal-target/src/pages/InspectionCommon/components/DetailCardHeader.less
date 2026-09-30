@@ -1,0 +1,107 @@
+@import "@/styles/variables.less";
+
+.inspection-common-detail-card-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border: none;
+  background: transparent;
+  color: @text-color;
+  cursor: pointer;
+  text-align: left;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+  }
+}
+
+.inspection-common-detail-card-header--static {
+  cursor: default;
+}
+
+.inspection-common-detail-card-header--preview {
+  align-items: center;
+  min-height: 72px;
+  padding: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    padding: 12px;
+  }
+}
+
+.inspection-common-detail-card-header--preview
+  .inspection-common-detail-card-header__title {
+  font-size: 18px;
+  line-height: 22px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      font-size: 16px;
+    }
+}
+
+.inspection-common-detail-card-header__title {
+  min-width: 0;
+  color: #361e12;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+.inspection-common-detail-card-header__actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 8px;
+  }
+}
+
+.inspection-common-detail-card-header__chevron,
+.inspection-common-detail-card-header__expand,
+.inspection-common-detail-card-header__shrink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  flex-shrink: 0;
+}
+
+.inspection-common-detail-card-header__chevron {
+  transition: transform 0.2s ease;
+}
+
+.inspection-common-detail-card-header__chevron.is-open,
+.inspection-common-detail-card-header__chevron--open {
+  transform: rotate(180deg);
+}
+
+.inspection-common-detail-card-header__chevron img,
+.inspection-common-detail-card-header__chevron svg,
+.inspection-common-detail-card-header__expand img,
+.inspection-common-detail-card-header__expand svg,
+.inspection-common-detail-card-header__shrink img,
+.inspection-common-detail-card-header__shrink svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  object-fit: contain;
+}
+
+.inspection-common-detail-card-header__expand,
+.inspection-common-detail-card-header__shrink {
+  cursor: pointer;
+}

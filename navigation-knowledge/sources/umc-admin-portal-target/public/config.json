@@ -1,0 +1,9 @@
+{
+  "signalr": {
+    "hubUrl": "/chathub"
+  },
+  "ffAi": {
+    "apiBaseUrl": "/dsh-api",
+    "cardAllowedExternalHosts": []
+  }
+}

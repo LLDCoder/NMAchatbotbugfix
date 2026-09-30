@@ -1,0 +1,125 @@
+@import "@/styles/variables.less";
+
+.disposition-approve-confirm-modal {
+  width: 640px !important;
+  max-width: calc(100vw - 64px);
+
+  .ant-modal-content {
+    overflow: hidden;
+    border-radius: 20px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      border-radius: 10px;
+    }
+  }
+
+  // No antd title, so the close button alone forms the header band. The body
+  // reserves that band as top padding, then keeps 40px on the other 3 sides.
+  .ant-modal-close {
+    top: 0;
+    right: 8px;
+  }
+
+  .ant-modal-close-x {
+    width: 56px;
+    height: 56px;
+    color: #5f646d;
+    font-size: 16px;
+    line-height: 56px;
+  }
+
+  .ant-modal-body {
+    padding: 56px 40px 40px;
+    /* rwd-ramp */
+    @media (max-width: 1919.98px) {
+      padding: 48px 24px 24px;
+    }
+  }
+}
+
+.disposition-approve-confirm-modal__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.disposition-approve-confirm-modal__icon {
+  display: flex;
+  width: 64px;
+  height: 64px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-bottom: 24px;
+  border-radius: 50%;
+  background: @primary-bgColor;
+
+  img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    margin-bottom: 16px;
+  }
+}
+
+.disposition-approve-confirm-modal__title {
+  margin: 0 0 12px;
+  color: @text-color;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    margin-bottom: 8px;
+    font-size: 20px;
+  }
+}
+
+.disposition-approve-confirm-modal__message {
+  margin: 0;
+  color: #5f646d;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.disposition-approve-confirm-modal__footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    gap: 12px;
+    margin-top: 24px;
+  }
+}
+
+// `.ant-btn` raises specificity above CustomButton's own size classes.
+.disposition-approve-confirm-modal__button.ant-btn {
+  min-width: 160px;
+  height: 48px;
+  padding: 0 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: none;
+  /* rwd-ramp */
+  @media (max-width: 1919.98px) {
+    min-width: 120px;
+    height: 40px;
+    font-size: 14px;
+  }
+}

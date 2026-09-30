@@ -1,0 +1,68 @@
+{
+  "PersonalCenter": {
+    "personalInformation": "المعلومات الشخصية",
+    "personalPhoto": "الصورة الشخصية",
+    "firstName": "الاسم الأول",
+    "lastName": "اسم العائلة",
+    "email": "البريد الإلكتروني",
+    "gender": "الجنس",
+    "genderMale": "ذكر",
+    "genderFemale": "أنثى",
+    "emiratesId": "رقم الهوية الإماراتية",
+    "mobilePhone": "رقم الهاتف المتحرك",
+    "mobilePhoneInvalid": "يجب أن يتكون رقم الهاتف المتحرك من 9 أرقام.",
+    "organizationRole": "المنظمة والدور",
+    "departments": "الأقسام",
+    "assignRoles": "الأدوار المعيّنة",
+    "addressInformation": "معلومات العنوان",
+    "emirate": "الإمارة",
+    "region": "المنطقة",
+    "area": "الحي",
+    "street": "الشارع",
+    "placeholderSelectEmirate": "اختر الإمارة",
+    "placeholderSelectRegion": "اختر المنطقة",
+    "placeholderSelectArea": "اختر الحي",
+    "placeholderEnterStreet": "أدخل الشارع",
+    "loginSettings": "إعدادات تسجيل الدخول",
+    "lastLoginDate": "تاريخ آخر تسجيل دخول",
+    "changePassword": "تغيير كلمة المرور",
+    "confirm": "تأكيد",
+    "verifyCode": "التحقق من الرمز",
+    "changePasswordMessages": {
+      "firstLoginEmailNotice": "لأسباب أمنية، يجب تغيير كلمة المرور المؤقتة. سيتم إرسال رمز تحقق إلى بريدك الإلكتروني.",
+      "normalEmailNotice": "سيتم إرسال رمز تحقق إلى بريدك الإلكتروني المسجل لتغيير كلمة المرور.",
+      "firstLoginPasswordNotice": "يرجى تعيين كلمة المرور الجديدة.",
+      "normalPasswordNotice": "يرجى إدخال كلمة المرور الحالية وتعيين كلمة المرور الجديدة."
+    },
+    "changePasswordFields": {
+      "currentPassword": "كلمة المرور الحالية",
+      "newPassword": "كلمة المرور الجديدة",
+      "confirmPassword": "تأكيد كلمة المرور"
+    },
+    "changePasswordPlaceholders": {
+      "currentPassword": "أدخل كلمة المرور الحالية",
+      "newPassword": "أدخل كلمة المرور الجديدة",
+      "confirmPassword": "أدخل تأكيد كلمة المرور"
+    },
+    "changePasswordValidation": {
+      "enterCurrentPassword": "يرجى إدخال كلمة المرور الحالية",
+      "enterNewPassword": "يرجى إدخال كلمة المرور الجديدة",
+      "enterConfirmPassword": "يرجى إدخال تأكيد كلمة المرور",
+      "newPasswordSameAsCurrent": "يجب ألا تكون كلمة المرور الجديدة هي نفسها كلمة المرور الحالية.",
+      "passwordsDoNotMatch": "كلمتا المرور غير متطابقتين"
+    },
+    "changePasswordErrors": {
+      "currentPasswordIncorrect": "كلمة المرور الحالية غير صحيحة"
+    },
+    "leavePageTitle": "مغادرة الصفحة؟",
+    "leavePageContent": "لديك تغييرات غير محفوظة ستُفقد عند المغادرة. هل تريد المتابعة؟",
+    "leave": "مغادرة",
+    "operationSuccessful": "تمت العملية بنجاح",
+    "operationFailed": "فشلت العملية",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "edit": "تعديل",
+    "avatarMaxFileSize": "الحد الأقصى لحجم الملف: 5 ميجابايت.",
+    "avatarInvalidFileType": "نوع الملف غير صالح."
+  }
+}
