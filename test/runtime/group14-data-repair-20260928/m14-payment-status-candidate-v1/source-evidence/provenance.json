@@ -1,0 +1,20 @@
+{
+  "originalEnum": "/Users/lld/work/slkj/AIChatbot/gitlab-code-20260722/Dev/customerportalservice/UMC.CustomerPortal.Domain/Share/Enums/ServiceApplicationPaymentStatus.cs",
+  "originalEnumSHA256": "bdc53586f1d60c63b502f6d7784c7c3264f44aaf097ca3e4fbe69dddc1732d41",
+  "copiedEnum": "/Users/lld/work/slkj/AIChatbot/BugFix/test/runtime/group14-data-repair-20260928/m14-payment-status-candidate-v1/source-evidence/ServiceApplicationPaymentStatus.cs",
+  "copiedEnumSHA256": "bdc53586f1d60c63b502f6d7784c7c3264f44aaf097ca3e4fbe69dddc1732d41",
+  "snapshotDate": "2026-07-22 directory label; deployment match unknown",
+  "currentAdminContract": "/Users/lld/work/slkj/AIChatbot/BugFix/navigation-knowledge/sources/adminportalservice/UMC.AdminPortal.Application/Services/ApplicationApp/ApplicationAppService.cs",
+  "currentAdminSHA256": "22e94773e70c95fab9ce479919b51d0241e046bf085cd0c3f8b5991b9004772e",
+  "currentAdminLocator": "4322-4332",
+  "confirmedExecutableValues": {
+    "1": "Pending",
+    "2": "InProgress",
+    "3": "Completed"
+  },
+  "unconfirmedEnumValues": {
+    "4": "Failed is stated only in current Admin comment and existing KB prose",
+    "5": "Cancelled is stated only in current Admin comment and existing KB prose"
+  },
+  "state3Meaning": "Completed includes fully settled or completed through free-flow shortcut; do not claim funds receipt for every Completed value."
+}
